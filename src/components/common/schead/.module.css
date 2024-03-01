@@ -1,0 +1,10 @@
+.header_search {
+  @apply w-[234px] h-[36px] my-[22px] shadow-md flex border-[1px] rounded-full border-[#5a5550]/80;
+}
+
+.header_search > input {
+  @apply w-[190px] h-[26px] m-[4px] px-[8px] rounded-full;
+}
+.header_search > button {
+  @apply w-[24px] h-[24px] mt-[3px] mr-[10px] rounded-full;
+}

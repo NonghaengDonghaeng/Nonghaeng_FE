@@ -1,0 +1,57 @@
+.header_inner {
+  @apply h-full px-[24px] flex justify-between;
+}
+
+/* home_logo */
+.header_inner > a > img {
+  @apply w-[130px] h-[34px] my-[23px];
+}
+
+/* header_menu */
+.header_inner > ul {
+  @apply w-[382px] mt-[28px] flex justify-between;
+}
+.header_inner > ul > li {
+  @apply relative;
+}
+.header_inner > ul > li > a {
+  @apply px-[16.6px] text-[18px] font-[600] text-[#5a5550];
+}
+.header_inner > ul > li > a:hover {
+  @apply text-[#ff7a00];
+}
+
+/* subMenu */
+.subMenu {
+  @apply w-full h-0 top-[52px] text-center absolute z-10 overflow-hidden duration-500;
+}
+.subMenu > li {
+  @apply mt-[22px] text-white;
+}
+/* subMenu_bg */
+.subMenu_bg {
+  @apply w-full h-0 left-0 top-[80px] absolute overflow-hidden duration-500 bg-[#ff7a00]/80;
+}
+.on {
+  @apply h-[220px];
+}
+
+/* header_sub */
+.header_inner > div:nth-child(4) {
+  @apply w-[160px] text-[12px] text-[#5a5550] font-[300] my-[22px] flex justify-between;
+}
+.header_inner > div:nth-child(4) > a:nth-child(-n + 2) {
+  @apply my-[8px];
+}
+.header_inner > div:nth-child(4) > a:nth-child(-n + 2):hover {
+  @apply text-[#ff7a00];
+}
+.header_inner > div:nth-child(4) > a:nth-child(3) {
+  @apply w-[36px] h-[36px] p-[8px] rounded-full;
+}
+.header_inner > div:nth-child(4) > a:nth-child(3):hover {
+  @apply bg-[#ff7a00]/50;
+}
+.header_inner > div:nth-child(4) > a > img {
+  @apply w-[20px] h-[20px];
+}
