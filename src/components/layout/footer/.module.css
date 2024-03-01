@@ -11,6 +11,7 @@
   @apply border-[1px];
 }
 
+/* footer_main */
 .footer_inner > div:last-child {
   @apply w-[80%] mt-[20px] mx-auto text-white;
 }
