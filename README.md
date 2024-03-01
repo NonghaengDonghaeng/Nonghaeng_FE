@@ -34,3 +34,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+layout
+components중 모든 페이지에서 사용하는 Header와 Footer는 레이아웃을 통해 사용
+mediaquary를 통해 레이아웃 크기 및 hidden관리
+
+기본구조
+밑의 기본 구조를 기반으로 프로젝트 진행. header와 footer는 레이아웃을 통해 사용하므로 모든 pages는 nav와 main태그가 가장 큰 부모태그임
