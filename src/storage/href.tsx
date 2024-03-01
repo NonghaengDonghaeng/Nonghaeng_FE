@@ -32,3 +32,13 @@ export const headerHref = [
     ],
   },
 ];
+
+// footer href
+export const footerHref = [
+  { href: "/", title: "소개" },
+  { href: "/", title: "이벤트" },
+  { href: "/", title: "이용약관" },
+  { href: "/", title: "개인정보처리방침" },
+  { href: "/", title: "이메일수집거부" },
+  { href: "/", title: "고객문의" },
+];
