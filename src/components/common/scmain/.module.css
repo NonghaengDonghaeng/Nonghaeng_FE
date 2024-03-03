@@ -13,11 +13,16 @@
   @apply w-[18px] my-[6px];
 }
 .home_search > div > ul {
-  @apply w-full h-[200px] rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
+  @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
 }
-
+.home_search > div:first-child > ul {
+  @apply h-[246px];
+}
+.home_search > div > ul > li {
+  @apply py-[10px] px-[20px];
+}
 .home_search > div > ul > li:hover {
-  @apply bg-stone/20;
+  @apply bg-stone/10;
 }
 .off {
   @apply text-stone bg-white;
