@@ -22,15 +22,16 @@
 }
 
 #header {
-  @apply w-full h-[80px] top-0 fixed z-[100] shadow-md;
+  @apply w-full h-[80px] top-0 fixed z-[100] shadow-md bg-white;
 }
 
 #nav {
 }
 
 #main {
+  @apply w-[80%] mx-auto;
 }
 
 #footer {
-  @apply w-full h-[300px] bg-[#5a5550]/80;
+  @apply w-full h-[300px] bg-stone/80;
 }

@@ -1,5 +1,5 @@
 .header_search {
-  @apply w-[234px] h-[36px] my-[22px] shadow-md flex border-[1px] rounded-full border-[#5a5550]/80;
+  @apply w-[234px] h-[36px] my-[22px] shadow-md flex border-[1px] rounded-full border-stone/80;
 }
 
 .header_search > input {

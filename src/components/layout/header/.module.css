@@ -15,10 +15,10 @@
   @apply relative;
 }
 .header_inner > ul > li > a {
-  @apply px-[16.6px] text-[18px] font-[600] text-[#5a5550];
+  @apply px-[20px] text-[16px] font-[600] text-stone;
 }
 .header_inner > ul > li > a:hover {
-  @apply text-[#ff7a00];
+  @apply text-orange;
 }
 
 /* subMenu */
@@ -30,7 +30,7 @@
 }
 /* subMenu_bg */
 .subMenu_bg {
-  @apply w-full h-0 left-0 top-[80px] absolute overflow-hidden duration-500 bg-[#ff7a00]/80;
+  @apply w-full h-0 left-0 top-[80px] absolute overflow-hidden duration-500 bg-orange/80;
 }
 .on {
   @apply h-[220px];
@@ -38,19 +38,19 @@
 
 /* header_sub */
 .header_inner > div:nth-child(4) {
-  @apply w-[160px] text-[12px] text-[#5a5550] font-[300] my-[22px] flex justify-between;
+  @apply w-[160px] text-[12px] text-stone font-[300] my-[22px] flex justify-between;
 }
 .header_inner > div:nth-child(4) > a:nth-child(-n + 2) {
   @apply my-[8px];
 }
 .header_inner > div:nth-child(4) > a:nth-child(-n + 2):hover {
-  @apply text-[#ff7a00];
+  @apply text-orange;
 }
 .header_inner > div:nth-child(4) > a:nth-child(3) {
   @apply w-[36px] h-[36px] p-[8px] rounded-full;
 }
 .header_inner > div:nth-child(4) > a:nth-child(3):hover {
-  @apply bg-[#ff7a00]/50;
+  @apply bg-orange/50;
 }
 .header_inner > div:nth-child(4) > a > img {
   @apply w-[20px] h-[20px];

@@ -1,0 +1,35 @@
+.home_search {
+  @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[524px] flex justify-between absolute bg-yellow/85;
+}
+
+/* region, category box*/
+.home_search > div {
+  @apply w-[180px] h-[48px] rounded-[5px];
+}
+.home_search > div > label {
+  @apply py-[12px] px-[20px] font-[400]  flex justify-between cursor-pointer;
+}
+.home_search > div > label > img {
+  @apply w-[18px] my-[6px];
+}
+.home_search > div > ul {
+  @apply w-full h-[200px] rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
+}
+
+.home_search > div > ul > li:hover {
+  @apply bg-stone/20;
+}
+.off {
+  @apply text-stone bg-white;
+}
+.off > ul {
+  @apply hidden;
+}
+.on {
+  @apply text-white bg-stone;
+}
+
+/* input */
+.home_search > input {
+  @apply w-[208px] h-[48px] px-[16px] rounded-[5px];
+}
