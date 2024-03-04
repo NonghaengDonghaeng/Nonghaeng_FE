@@ -33,6 +33,15 @@ export const headerHref = [
   },
 ];
 
+// nav href
+export const introduceHref = {
+  mainMenu: { href: "/pages/introduce", title: "농행동행" },
+  subMenu: [
+    { href: "/pages/introduce/nonghang", title: "농행동행 소개" },
+    { href: "/pages/introduce/tour", title: "농촌관광 소개" },
+  ],
+};
+
 // footer href
 export const footerHref = [
   { href: "/", title: "소개" },

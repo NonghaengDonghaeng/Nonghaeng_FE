@@ -1,2 +1,19 @@
 .nav_inner {
+  @apply w-full h-[80px] mt-[200px] px-[10%] absolute flex;
+}
+
+/* nav_main */
+.nav_inner > a {
+  @apply text-[36px] my-[14px] font-[800] flex text-stone;
+}
+.nav_inner > a > div {
+  @apply w-[14px] h-[36px] my-[8px] mr-[16px] rounded-full bg-green;
+}
+
+/* nav_sub */
+.nav_inner > ul {
+  @apply w-[50%] h-full right-0 p-[28px] absolute rounded-l-full flex bg-green;
+}
+.nav_inner > ul > li {
+  @apply mr-[28px] text-white;
 }
