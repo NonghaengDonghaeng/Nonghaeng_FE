@@ -1,3 +1,10 @@
 .section1 {
-  @apply w-full h-[];
+  @apply w-full h-[240px] left-0 top-[80px] absolute bg-yellow/80;
+}
+.section1 > h1 {
+  @apply mt-[30px] text-[26px] font-[500] text-center text-stone;
+}
+
+.section2 {
+  @apply mt-[320px] h-[1000px];
 }
