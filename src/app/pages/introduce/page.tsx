@@ -5,7 +5,7 @@ export default function page() {
   return (
     <>
       <Nav href={introduceHref} />
-      <main id="main"></main>
+      <main id="main">농행동행 메인</main>
     </>
   );
 }

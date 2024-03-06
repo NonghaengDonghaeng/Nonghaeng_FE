@@ -16,7 +16,7 @@ export default function useHook() {
    */
   function useSearch({ region, category, search_word }: searchType) {
     if (region == "" && category == "") {
-      router.push(`/pages/search?search_word=${search_word}`);
+      // router.push(`/pages/search?search_word=${search_word}`);
       window.location.replace(`/pages/search?search_word=${search_word}`);
     } else if (category == "유형 선택") {
       alert("유형을 선택해주세요");

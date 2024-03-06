@@ -41,6 +41,14 @@ export const introduceHref = {
     { href: "/pages/introduce/tour", title: "농촌관광 소개" },
   ],
 };
+export const tripHref = {
+  mainMenu: { href: "/pages/trip", title: "농촌여행" },
+  subMenu: [
+    { href: "/pages/trip/tour", title: "농촌관광" },
+    { href: "/pages/trip/experience", title: "농촌체험" },
+    { href: "/pages/trip/lodgment", title: "농촌숙박" },
+  ],
+};
 
 // footer href
 export const footerHref = [

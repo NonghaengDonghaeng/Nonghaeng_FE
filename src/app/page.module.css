@@ -1,6 +1,6 @@
 /* section1 */
 .section1 {
-  @apply h-[500px] mt-[80px];
+  @apply h-[500px] mt-[80px] mb-[56px];
 }
 .section1 > img {
   @apply h-[500px] left-0 absolute;
@@ -20,4 +20,17 @@
 
 /* section2 */
 .section2 {
+  @apply mt-[136px];
+}
+.section2 article {
+  @apply h-[300px] my-[40px] border-[2px];
+}
+.section2 article > h1 {
+  @apply text-[22px] font-[500] text-stone flex justify-between;
+}
+.section2 article > h1 > a {
+  @apply text-[15px] text-green  mt-[5px] flex;
+}
+.section2 article > h1 > a > img {
+  @apply w-[8px] h-[12px] m-[5px];
 }

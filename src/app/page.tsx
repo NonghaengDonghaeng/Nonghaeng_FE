@@ -1,9 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import ScMain from "@/components/common/scmain/scmain";
 import styles from "./page.module.css";
 import section1_bg from "img/main/section1_bg.png";
 import more_nonghang from "img/main/more_nonghang.png";
+import more_green from "img/main/more_green.png";
 
 export default function Home() {
   return (
@@ -23,9 +24,28 @@ export default function Home() {
           농행동행 알아보기
           <Image src={more_nonghang} alt="more_nonghang"></Image>
         </Link>
-        <ScMain />
       </section>
-      <section className={styles.section2}></section>
+      <ScMain />
+      <section className={styles.section2}>
+        <article>
+          <h1>
+            우수 체험
+            <Link href="/pages/trip/experience">
+              더 많은 농촌체험 보러가기
+              <Image src={more_green} alt="more_experience"></Image>
+            </Link>
+          </h1>
+        </article>
+        <article>
+          <h1>
+            우수 숙박
+            <Link href="/pages/trip/lodgment">
+              더 많은 농촌숙박 보러가기
+              <Image src={more_green} alt="more_lodgement"></Image>
+            </Link>
+          </h1>
+        </article>
+      </section>
     </main>
   );
 }
