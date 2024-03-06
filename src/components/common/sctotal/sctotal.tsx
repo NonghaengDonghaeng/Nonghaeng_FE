@@ -1,25 +1,24 @@
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import ScButton from "../scbutton/scbutton";
+import useHook from "../../../hooks/useHook";
 import styles from "./.module.css";
 import { inputType, formType } from "@/types/eventtype";
-import { stringify } from "querystring";
 
 export default function ScTotal() {
-  const router = useRouter();
   const searchParams = useSearchParams();
+  const useSearch = useHook();
 
   const [search_word, setSearch_word] = useState<string>(
     searchParams.get("search_word") || ""
   );
-
   function onChange(e: inputType) {
     setSearch_word(e.target.value);
   }
 
   function onSubmit(e: formType) {
     e.preventDefault();
-    router.push(`/pages/search?search_word=${search_word}`);
+    useSearch({ region: "", category: "", search_word: search_word });
   }
 
   return (

@@ -1,13 +1,17 @@
 "use client";
 import { useState } from "react";
+import useHook from "../../../hooks/useHook";
 import Image from "next/image";
 import styles from "./.module.css";
 import ScButton from "@/components/common/scbutton/scbutton";
 import { region, category } from "@/storage/name";
 import click_false from "img/main/click_false.png";
 import click_true from "img/main/click_true.png";
+import { formType, inputType } from "@/types/eventtype";
 
 export default function ScMain() {
+  const useSearch = useHook();
+
   const [isClick, setIsClick] = useState({ region: false, category: false });
   function onClick(name: string) {
     if (name == "region") {
@@ -24,10 +28,19 @@ export default function ScMain() {
     category: "유형 선택",
     search_word: "",
   });
-  function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function onChange(e: inputType) {
     setSearchItem({
       ...searchItem,
       search_word: e.target.value,
+    });
+  }
+
+  function onSubmit(e: formType) {
+    e.preventDefault();
+    useSearch({
+      region: searchItem.region,
+      category: searchItem.category,
+      search_word: searchItem.search_word,
     });
   }
 
@@ -49,7 +62,7 @@ export default function ScMain() {
   ));
 
   return (
-    <form className={styles.home_search}>
+    <form className={styles.home_search} onSubmit={onSubmit}>
       <div
         className={isClick.region ? styles.on : styles.off}
         onClick={() => onClick("region")}

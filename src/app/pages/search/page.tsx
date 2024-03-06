@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import ScTotal from "@/components/common/sctotal/sctotal";
 import styles from "./.module.css";
@@ -16,7 +16,7 @@ export default function page() {
       <section className={styles.section1}>
         <h1>통합검색</h1>
         <ScTotal />
-        {searchParams.get("search_word")}
+        {search_word}
       </section>
       <section className={styles.section2}></section>
     </main>

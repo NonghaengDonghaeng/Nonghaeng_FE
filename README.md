@@ -41,3 +41,6 @@ mediaquary를 통해 레이아웃 크기 및 hidden관리
 
 기본구조
 밑의 기본 구조를 기반으로 프로젝트 진행. header와 footer는 레이아웃을 통해 사용하므로 모든 pages는 nav와 main태그가 가장 큰 부모태그임
+
+redux
+search_word: onChange action이 아닌 onSubmit시에 store에 저장하는 action기능.
