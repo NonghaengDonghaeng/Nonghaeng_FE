@@ -1,0 +1,6 @@
+.on {
+  @apply w-full h-full mt-[57px] z-[101] top-[-57px] left-0 fixed bg-slate-800/40;
+}
+.off {
+  @apply hidden;
+}

@@ -1,0 +1,16 @@
+.sctour_button > div > button {
+  @apply flex;
+}
+.sctour_button > div > button > img {
+  @apply w-[16px] h-[16px] m-[10px];
+}
+.sctour_button > div > button > span {
+  @apply text-[18px] my-[4px] text-stone font-[500];
+}
+
+.sctour_on {
+  @apply w-[500px] h-[400px] rounded-3xl top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-[102] fixed bg-white;
+}
+.sctour_off {
+  @apply hidden;
+}
