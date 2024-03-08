@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import ScButton from "../scbutton/scbutton";
-import useHook from "../../../hooks/useHook";
+import { useSearch } from "@/hooks/useHook";
 import styles from "./.module.css";
 import { inputType, formType } from "@/types/eventtype";
 
 export default function ScTotal() {
   const searchParams = useSearchParams();
-  const useSearch = useHook();
+  const search = useSearch();
 
   const [search_word, setSearch_word] = useState<string>(
     searchParams.get("search_word") || ""
@@ -18,7 +18,7 @@ export default function ScTotal() {
 
   function onSubmit(e: formType) {
     e.preventDefault();
-    useSearch({ region: "", category: "", search_word: search_word });
+    search({ region: "", category: "", search_word: search_word });
   }
 
   return (

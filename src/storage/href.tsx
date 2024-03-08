@@ -13,8 +13,8 @@ export const headerHref = [
     href: "/pages/trip",
     subMenu: [
       { title: "농촌관광", href: "/pages/trip/tour" },
-      { title: "농촌체험", href: "/pages/trip/experience" },
-      { title: "농촌숙박", href: "/pages/trip/lodgment" },
+      { title: "농촌체험", href: "/pages/trip/exp" },
+      { title: "농촌숙박", href: "/pages/trip/lodg" },
     ],
   },
   {
@@ -45,8 +45,8 @@ export const tripHref = {
   mainMenu: { href: "/pages/trip", title: "농촌여행" },
   subMenu: [
     { href: "/pages/trip/tour", title: "농촌관광" },
-    { href: "/pages/trip/experience", title: "농촌체험" },
-    { href: "/pages/trip/lodgment", title: "농촌숙박" },
+    { href: "/pages/trip/exp", title: "농촌체험" },
+    { href: "/pages/trip/lodg", title: "농촌숙박" },
   ],
 };
 

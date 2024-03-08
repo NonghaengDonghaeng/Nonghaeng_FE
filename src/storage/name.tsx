@@ -11,3 +11,16 @@ export const region = [
   "충청",
 ];
 export const category = ["관광", "체험", "숙박"];
+
+export const category_tour = [
+  "농촌체험휴양마을",
+  "농촌교육농장",
+  "우수관광농원",
+];
+
+export const category_exp = [
+  "농촌체험",
+  "만들기 체험",
+  "문화체험",
+  "레포츠 체험",
+];

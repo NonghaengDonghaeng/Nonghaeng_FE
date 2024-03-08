@@ -1,17 +1,17 @@
-.tour_list > div {
+.exp_list > div {
   @apply mt-[60px] flex justify-between;
 }
-.tour_list > div > h1 {
+.exp_list > div > h1 {
   @apply text-[24px] font-[600] mt-[1px] text-green;
 }
 
-.tour_list > hr {
+.exp_list > hr {
   @apply border-[1px] border-stone;
 }
 
-.tour_list > article {
+.exp_list > article {
   @apply my-[20px] flex justify-between;
 }
-.tour_list > article div {
+.exp_list > article div {
   @apply w-[48%] h-[400px] bg-slate-200;
 }

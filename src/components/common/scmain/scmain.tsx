@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import useHook from "../../../hooks/useHook";
+import { useSearch } from "@/hooks/useHook";
 import Image from "next/image";
 import styles from "./.module.css";
 import ScButton from "@/components/common/scbutton/scbutton";
@@ -10,7 +10,7 @@ import click_true from "img/main/click_true.png";
 import { formType, inputType } from "@/types/eventtype";
 
 export default function ScMain() {
-  const useSearch = useHook();
+  const search = useSearch();
 
   const [isClick, setIsClick] = useState({ region: false, category: false });
   function onClick(name: string) {
@@ -37,7 +37,7 @@ export default function ScMain() {
 
   function onSubmit(e: formType) {
     e.preventDefault();
-    useSearch({
+    search({
       region: searchItem.region,
       category: searchItem.category,
       search_word: searchItem.search_word,

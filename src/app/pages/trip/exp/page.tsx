@@ -4,23 +4,27 @@ import Nav from "@/components/layout/nav/nav";
 import { tripHref } from "@/storage/href";
 import styles from "./.module.css";
 import ScDetail from "@/components/common/scdetail/scdetail";
-import ScTour from "@/components/common/sctour/sctour";
 import Overlay from "@/components/common/overlay/overlay";
+import ScExp from "@/components/common/scexp/scexp";
 
 export default function page() {
   const [isClick, setIsClick] = useState(false);
 
   function onSubmit() {
-    console.log("농촌관광 api요청", selectItem);
+    console.log("농촌체험 api요청", selectItem);
   }
 
   const [selectItem, setSelectItem] = useState<{
     region: string[];
     category: string[];
+    maxCost: string;
+    minCost: string;
     search_word: string;
   }>({
     region: [],
     category: [],
+    maxCost: "",
+    minCost: "",
     search_word: "",
   });
 
@@ -28,11 +32,11 @@ export default function page() {
     <>
       <Nav href={tripHref} />
       <main id="main">
-        <section className={styles.tour_list}>
+        <section className={styles.exp_list}>
           <div>
-            <h1>농촌관광</h1>
+            <h1>농촌체험</h1>
             <ScDetail setIsClick={setIsClick} />
-            <ScTour
+            <ScExp
               isClick={isClick}
               setIsClick={setIsClick}
               selectItem={selectItem}
