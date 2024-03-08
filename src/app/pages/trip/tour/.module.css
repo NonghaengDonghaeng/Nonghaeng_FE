@@ -5,16 +5,6 @@
   @apply text-[24px] font-[600] mt-[1px] text-green;
 }
 
-.tour_list > div > button {
-  @apply flex;
-}
-.tour_list > div > button > img {
-  @apply w-[16px] h-[16px] m-[10px];
-}
-.tour_list > div > button > span {
-  @apply text-[18px] my-[4px] text-stone font-[500];
-}
-
 .tour_list > hr {
   @apply border-[1px] border-stone;
 }

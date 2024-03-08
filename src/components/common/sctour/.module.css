@@ -1,16 +1,22 @@
-.sctour_button > div > button {
-  @apply flex;
-}
-.sctour_button > div > button > img {
-  @apply w-[16px] h-[16px] m-[10px];
-}
-.sctour_button > div > button > span {
-  @apply text-[18px] my-[4px] text-stone font-[500];
+/* search_tour */
+.search_tour {
+  @apply w-[500px] h-[400px] px-[20px] rounded-3xl top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-[102] fixed bg-white;
 }
 
-.sctour_on {
-  @apply w-[500px] h-[400px] rounded-3xl top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-[102] fixed bg-white;
+.search_tour > div {
+  @apply text-stone flex justify-between;
 }
-.sctour_off {
+.search_tour > div > span {
+  @apply text-[22px] font-[500] mt-[10px];
+}
+.search_tour > div > button {
+  @apply text-[30px];
+}
+
+.search_tour > hr {
+  @apply my-[6px] border-[1px] border-stone/40;
+}
+
+.off {
   @apply hidden;
 }
