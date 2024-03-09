@@ -6,6 +6,7 @@ import styles from "./.module.css";
 import ScDetail from "@/components/common/scdetail/scdetail";
 import ScTour from "@/components/common/sctour/sctour";
 import Overlay from "@/components/common/overlay/overlay";
+import Link from "next/link";
 
 export default function page() {
   const [isClick, setIsClick] = useState(false);

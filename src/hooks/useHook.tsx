@@ -10,7 +10,7 @@ type searchType = {
 export function useSearch() {
   const router = useRouter();
 
-  /**custom searchHook
+  /**custom search
    * @param {region} 스트링타입의 지역정보
    * @param {category} 스트링타입의 유형정보
    * @param {search_word} 스트링 타입의 검색어
@@ -55,6 +55,12 @@ type changeType = {
 };
 
 export function useChange() {
+  /**custom change 
+   @param {selectItem} 객체, region: 스트링, 배열 category:스트링, 배열
+   @param {setSelectItem} 스테이트함수
+   @param {e} 이벤트 파라미터
+  */
+
   function change({ selectItem, setSelectItem, e }: changeType) {
     let newArray;
     if (e.target.name == "region") {

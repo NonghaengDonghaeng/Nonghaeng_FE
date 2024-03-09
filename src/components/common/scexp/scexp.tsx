@@ -1,4 +1,5 @@
-import { inputType, setBooleanType } from "@/types/eventtype";
+import { useChange } from "@/hooks/useHook";
+import { inputType, setAnyType, setBooleanType } from "@/types/eventtype";
 import styles from "./.module.css";
 import { region, category_exp } from "@/storage/name";
 
@@ -9,22 +10,18 @@ export default function ScExp({
   setSelectItem,
   onSubmit,
 }: propsType) {
-  // updateItem
-  function onChange(e: inputType) {
-    setSelectItem({ ...selectItem, [e.target.name]: e.target.value });
-    console.log(selectItem);
-  }
+  const change = useChange();
 
   // list
   const regionList = region.map((item, index) => (
     <li key={index}>
-      <input type="checkbox" />
+      <input type="checkbox" name="region" value={item} />
       {item}
     </li>
   ));
   const categoryList = category_exp.map((item, index) => (
     <li key={index}>
-      <input type="checkbox" />
+      <input type="checkbox" name="category" value={item} />
       {item}
     </li>
   ));
@@ -36,7 +33,9 @@ export default function ScExp({
         <button onClick={() => setIsClick(false)}>x</button>
       </div>
       <hr />
-      <div onChange={onChange}>
+      <div
+        onChange={(e: inputType) => change({ selectItem, setSelectItem, e })}
+      >
         <div>
           <span>지역선택</span>
           <ul>{regionList}</ul>
@@ -70,14 +69,6 @@ type propsType = {
     minCost: string;
     search_word: string;
   };
-  setSelectItem: React.Dispatch<
-    React.SetStateAction<{
-      region: string[];
-      category: string[];
-      maxCost: string;
-      minCost: string;
-      search_word: string;
-    }>
-  >;
+  setSelectItem: setAnyType;
   onSubmit: () => void;
 };

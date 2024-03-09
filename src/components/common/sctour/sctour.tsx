@@ -1,5 +1,5 @@
 import { useChange } from "@/hooks/useHook";
-import { inputType, setBooleanType } from "@/types/eventtype";
+import { inputType, setAnyType, setBooleanType } from "@/types/eventtype";
 import styles from "./.module.css";
 import { region, category_tour } from "@/storage/name";
 
@@ -58,6 +58,6 @@ export type propsType = {
     category: string[];
     search_word: string;
   };
-  setSelectItem: React.Dispatch<React.SetStateAction<any>>;
+  setSelectItem: setAnyType;
   onSubmit: () => void;
 };

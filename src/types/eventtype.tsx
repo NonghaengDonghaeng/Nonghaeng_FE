@@ -16,3 +16,5 @@ export type setIsClickType = {
 };
 
 export type setBooleanType = React.Dispatch<React.SetStateAction<boolean>>;
+
+export type setAnyType = React.Dispatch<React.SetStateAction<any>>;
