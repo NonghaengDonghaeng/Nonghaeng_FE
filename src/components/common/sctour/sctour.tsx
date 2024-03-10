@@ -1,4 +1,4 @@
-import { useChange } from "@/hooks/useHook";
+import { useChange } from "@/hooks/useChange";
 import { inputType, setAnyType, setBooleanType } from "@/types/eventtype";
 import styles from "./.module.css";
 import { region, category_tour } from "@/storage/name";

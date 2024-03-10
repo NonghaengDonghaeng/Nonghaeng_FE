@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useSearch } from "@/hooks/useHook";
+import { useSearch } from "@/hooks/useSearch";
 import Image from "next/image";
 import styles from "./.module.css";
 import ScButton from "@/components/common/scbutton/scbutton";

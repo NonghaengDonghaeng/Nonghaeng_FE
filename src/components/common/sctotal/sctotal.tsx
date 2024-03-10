@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import ScButton from "../scbutton/scbutton";
-import { useSearch } from "@/hooks/useHook";
+import { useSearch } from "@/hooks/useSearch";
 import styles from "./.module.css";
 import { inputType, formType } from "@/types/eventtype";
 

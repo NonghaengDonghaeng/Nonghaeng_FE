@@ -1,4 +1,4 @@
-import { useChange } from "@/hooks/useHook";
+import { useChange } from "@/hooks/useChange";
 import { inputType, setAnyType, setBooleanType } from "@/types/eventtype";
 import styles from "./.module.css";
 import { region, category_exp } from "@/storage/name";
@@ -48,7 +48,7 @@ export default function ScExp({
           <span>상품가격</span>
           <div>
             <input placeholder="최소가격" name="minCost"></input>
-            <label>~</label>
+            <label>-</label>
             <input placeholder="최대가격" name="maxCost"></input>
           </div>
         </div>

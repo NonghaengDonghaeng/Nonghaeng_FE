@@ -38,10 +38,10 @@
 
 /* 가격 */
 .search_exp > div:nth-child(3) > div:nth-child(3) > div > input {
-  @apply my-[8px] px-[14px] border border-stone/40 rounded-md;
+  @apply w-[206px] my-[8px] px-[14px] border border-stone/40 rounded-md;
 }
 .search_exp > div:nth-child(3) > div:nth-child(3) > div > label {
-  @apply mx-[16px] text-[22px] text-stone;
+  @apply mx-[16px] text-[24px] text-stone;
 }
 
 .search_exp > div > input {

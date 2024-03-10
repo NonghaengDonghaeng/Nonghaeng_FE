@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useSearch } from "@/hooks/useHook";
+import { useSearch } from "@/hooks/useSearch";
 import styles from "./.module.css";
 import { formType, inputType } from "@/types/eventtype";
 import searchImg from "img/header/searchImg.png";
