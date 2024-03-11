@@ -3,7 +3,7 @@
 }
 
 .trip_main > article > h1 {
-  @apply mt-[40px] text-[24px] font-[600] items-center flex justify-between  text-green;
+  @apply mt-[60px] text-[24px] font-[600] items-center flex justify-between  text-green;
 }
 .trip_main > article > h1 > a {
   @apply text-[15px] flex items-center;

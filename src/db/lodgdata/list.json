@@ -1,0 +1,49 @@
+{
+  "content": [
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "2",
+      "one_line_intro": "촌캉스",
+      "min_price": 50000,
+      "max_price": 90000
+    },
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "2",
+      "one_line_intro": "촌캉스",
+      "min_price": 50000,
+      "max_price": 90000
+    },
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "2",
+      "one_line_intro": "촌캉스",
+      "min_price": 50000,
+      "max_price": 90000
+    },
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "2",
+      "one_line_intro": "촌캉스",
+      "min_price": 50000,
+      "max_price": 90000
+    },
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "2",
+      "one_line_intro": "촌캉스",
+      "min_price": 50000,
+      "max_price": 90000
+    }
+  ]
+}
