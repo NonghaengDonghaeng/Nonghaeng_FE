@@ -30,7 +30,7 @@ export default function Home() {
         <article>
           <h1>
             우수 체험
-            <Link href="/pages/trip/experience">
+            <Link href="/pages/trip/exp">
               더 많은 농촌체험 보러가기
               <Image src={more_green} alt="more_experience"></Image>
             </Link>

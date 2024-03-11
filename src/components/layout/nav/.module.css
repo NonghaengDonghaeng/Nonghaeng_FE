@@ -12,8 +12,8 @@
 
 /* nav_sub */
 .nav_inner > ul {
-  @apply w-[50%] h-full right-0 p-[28px] absolute rounded-l-full flex bg-green;
+  @apply w-[50%] h-full left-[50%] p-[28px] pr-[10%] absolute rounded-l-full flex justify-between bg-green;
 }
 .nav_inner > ul > li {
-  @apply mr-[28px] text-white;
+  @apply text-white;
 }

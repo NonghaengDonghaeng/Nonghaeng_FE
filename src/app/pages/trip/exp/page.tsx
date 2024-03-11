@@ -6,6 +6,8 @@ import styles from "./.module.css";
 import ScDetail from "@/components/common/search/scdetail/scdetail";
 import Overlay from "@/components/common/overlay/overlay";
 import ScExp from "@/components/common/search/scexp/scexp";
+import ExpList from "@/components/common/explist/explist";
+import exp_list from "@/db/expdata/list.json";
 
 type selectItemType = {
   region: string[];
@@ -34,7 +36,7 @@ export default function page() {
     <>
       <Nav href={tripHref} />
       <main id="main">
-        <section className={styles.exp_list}>
+        <section className={styles.exp_main}>
           <div>
             <h1>농촌체험</h1>
             <ScDetail setIsClick={setIsClick} />
@@ -49,8 +51,7 @@ export default function page() {
           </div>
           <hr></hr>
           <article>
-            <div></div>
-            <div></div>
+            <ExpList content={exp_list.content} />
           </article>
         </section>
       </main>

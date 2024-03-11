@@ -1,9 +1,9 @@
 .search_detail {
-  @apply flex mt-[10px];
+  @apply flex items-center;
 }
 .search_detail > img {
-  @apply w-[16px] h-[16px] my-[10px] mr-[10px];
+  @apply w-[16px] h-[16px] mr-[10px];
 }
 .search_detail > span {
-  @apply text-[18px] my-[5px] text-stone font-[500];
+  @apply text-[18px] text-stone font-[500];
 }

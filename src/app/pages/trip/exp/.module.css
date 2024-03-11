@@ -1,17 +1,14 @@
-.exp_list > div {
-  @apply mt-[60px] flex justify-between;
+.exp_main > div {
+  @apply mt-[60px] flex items-center justify-between;
 }
-.exp_list > div > h1 {
-  @apply text-[24px] font-[600] mt-[1px] text-green;
+.exp_main > div > h1 {
+  @apply text-[24px] font-[600] text-green;
 }
 
-.exp_list > hr {
+.exp_main > hr {
   @apply border-[1px] border-stone;
 }
 
-.exp_list > article {
-  @apply my-[20px] flex justify-between;
-}
-.exp_list > article div {
-  @apply w-[48%] h-[400px] bg-slate-200;
+.exp_main > article {
+  @apply my-[20px] h-[420px];
 }

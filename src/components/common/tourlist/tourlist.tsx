@@ -5,7 +5,7 @@ import region_img from "img/region/orange.png";
 import exp_img from "img/exp/orange.png";
 import lodg_img from "img/lodg/orange.png";
 
-type tourContentType = {
+type contentType = {
   content: {
     tour_id: number;
     name: string;
@@ -18,10 +18,10 @@ type tourContentType = {
   }[];
 };
 
-export default function TourList({ content }: tourContentType) {
+export default function TourList({ content }: contentType) {
   const tourList = content.map((item, index) => (
     <li key={index}>
-      <Link href={`tour/detail?tour_id=${item.tour_id}`}>
+      <Link href={`/pages/trip/tour/detail?tour_id=${item.tour_id}`}>
         <div>
           <img src={item.img_url} />
           <span>
