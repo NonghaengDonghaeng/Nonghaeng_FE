@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import ScMain from "@/components/common/scmain/scmain";
+import ScMain from "@/components/common/search/scmain/scmain";
 import styles from "./page.module.css";
 import section1_bg from "img/main/section1_bg.png";
 import more_nonghang from "img/main/more_nonghang.png";

@@ -1,65 +1,14 @@
-.tour_list > div {
+.tour_main > div {
   @apply mt-[60px] flex justify-between;
 }
-.tour_list > div > h1 {
+.tour_main > div > h1 {
   @apply text-[24px] font-[600] mt-[1px] text-green;
 }
 
-.tour_list > hr {
+.tour_main > hr {
   @apply border-[1px] border-stone;
 }
 
-.tour_list > article {
+.tour_main > article {
   @apply my-[20px] h-[420px];
-}
-.tour_list > article > ul {
-  @apply w-full;
-}
-
-/* 관광리스트 객체 영역 */
-.tour_list > article > ul > li {
-  @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
-}
-.tour_list > article > ul > li:nth-child(2n-1) {
-  @apply clear-left mr-[2%];
-}
-.tour_list > article > ul > li > a {
-  @apply w-full h-full flex;
-}
-
-/* 사진영역 */
-.tour_list > article > ul > li > a > div:first-child {
-  @apply w-[45%] h-full;
-}
-.tour_list > article > ul > li > a > div:first-child > img {
-  @apply w-[17.6%] h-[200px] rounded-xl absolute;
-}
-.tour_list > article > ul > li > a > div:first-child > span {
-  @apply ml-[20px] mt-[20px] absolute flex items-center text-[18px] font-[500] text-white;
-}
-.tour_list > article > ul > li > a > div:first-child > span > img {
-  @apply w-[16px] h-[20px] mr-[6px];
-}
-
-/* 설명영역 */
-.tour_list > article > ul > li > a > div:last-child {
-  @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
-}
-.tour_list > article > ul > li > a > div:last-child > h1 {
-  @apply text-[18px] font-[500] flex justify-between;
-}
-.tour_list > article > ul > li > a > div:last-child > h1 > span {
-  @apply h-full px-[4px] py-[2px] mt-[6px] text-[8px] rounded-full text-white bg-orange;
-}
-.tour_list > article > ul > li > a > div:last-child > h2 {
-  @apply w-full h-[36px] my-[34px] text-[12px] font-[400] block;
-}
-.tour_list > article > ul > li > a > div:last-child > div {
-  @apply w-full h-[30px] flex justify-between;
-}
-.tour_list > article > ul > li > a > div:last-child > div > span {
-  @apply flex items-center text-[14px] font-[500];
-}
-.tour_list > article > ul > li > a > div:last-child > div > span > img {
-  @apply w-[18px] mr-[6px];
 }

@@ -3,9 +3,17 @@ import { useState } from "react";
 import Nav from "@/components/layout/nav/nav";
 import { tripHref } from "@/storage/href";
 import styles from "./.module.css";
-import ScDetail from "@/components/common/scdetail/scdetail";
+import ScDetail from "@/components/common/search/scdetail/scdetail";
 import Overlay from "@/components/common/overlay/overlay";
-import ScExp from "@/components/common/scexp/scexp";
+import ScExp from "@/components/common/search/scexp/scexp";
+
+type selectItemType = {
+  region: string[];
+  category: string[];
+  maxCost: string;
+  minCost: string;
+  search_word: string;
+};
 
 export default function page() {
   const [isClick, setIsClick] = useState(false);
@@ -14,13 +22,7 @@ export default function page() {
     console.log("농촌체험 api요청", selectItem);
   }
 
-  const [selectItem, setSelectItem] = useState<{
-    region: string[];
-    category: string[];
-    maxCost: string;
-    minCost: string;
-    search_word: string;
-  }>({
+  const [selectItem, setSelectItem] = useState<selectItemType>({
     region: [],
     category: [],
     maxCost: "",

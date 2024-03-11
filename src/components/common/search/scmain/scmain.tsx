@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useSearch } from "@/hooks/useSearch";
 import Image from "next/image";
 import styles from "./.module.css";
-import ScButton from "@/components/common/scbutton/scbutton";
+import ScButton from "@/components/common/search/scbutton/scbutton";
 import { region, category } from "@/storage/name";
 import click_false from "img/main/click_false.png";
 import click_true from "img/main/click_true.png";

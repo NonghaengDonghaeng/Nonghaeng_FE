@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import styles from "./.module.css";
 import { headerHref } from "@/storage/href";
-import ScHead from "@/components/common/schead/schead";
+import ScHead from "@/components/common/search/schead/schead";
 import homeImg from "img/header/homeImg.png";
 import sitemapImg from "img/header/sitemapImg.png";
 
