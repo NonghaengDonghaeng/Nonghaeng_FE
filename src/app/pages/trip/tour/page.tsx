@@ -8,12 +8,14 @@ import TourList from "@/components/common/tourlist/tourlist";
 import styles from "./.module.css";
 import { tripHref } from "@/storage/href";
 import tour_list from "@/db/tourdata/list.json";
+import PgButton from "@/components/common/pgbutton/pgbutton";
 
 // type
 type selectItemType = {
   region: string[];
   category: string[];
   search_word: string;
+  page_index: number;
 };
 
 export default function page() {
@@ -27,6 +29,7 @@ export default function page() {
     region: [],
     category: [],
     search_word: "",
+    page_index: 1,
   });
 
   return (
@@ -50,6 +53,7 @@ export default function page() {
           <article>
             <TourList content={tour_list.content} />
           </article>
+          <PgButton />
         </section>
       </main>
     </>

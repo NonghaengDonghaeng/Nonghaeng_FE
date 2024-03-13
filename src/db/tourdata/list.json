@@ -30,5 +30,30 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005204/0"
     }
-  ]
+  ],
+  "pageable": {
+    "pageNumber": 1,
+    "pageSize": 3,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 3,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalPages": 2,
+  "totalElements": 4,
+  "first": false,
+  "size": 3,
+  "number": 1,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 1,
+  "empty": false
 }
