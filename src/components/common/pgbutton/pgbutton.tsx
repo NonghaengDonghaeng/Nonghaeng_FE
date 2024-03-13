@@ -1,11 +1,9 @@
-import { useState } from "react";
 import styles from "./.module.css";
 import tour_list from "@/db/tourdata/list.json";
 
-type page_indexType = any;
+type PropsType = { selectItem: any; setSelectItem: any };
 
-export default function PgButton({ page_index }: page_indexType) {
-  const [pageIndex, setPageIndex] = useState(page_index);
+export default function PgButton({ selectItem, setSelectItem }: PropsType) {
   const totalPages = tour_list.totalPages;
 
   function numbering(totalPages: number) {
@@ -15,11 +13,16 @@ export default function PgButton({ page_index }: page_indexType) {
     }
     return pageNum;
   }
+
+  function onFilter(index: number) {
+    setSelectItem({ ...selectItem, page_index: index + 1 });
+  }
+
   const pageList = numbering(totalPages).map((item, index) => (
     <li
       key={index}
-      className={`${pageIndex == `${index + 1}` && styles.on}`}
-      onClick={() => setPageIndex(index)}
+      className={`${selectItem.page_index == `${index + 1}` && styles.on}`}
+      onClick={() => onFilter(index)}
     >
       {item}
     </li>

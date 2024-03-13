@@ -1,3 +1,10 @@
 .on {
   @apply bg-slate-200;
 }
+
+.page_button {
+  @apply w-full my-[20px];
+}
+.page_button > ul {
+  @apply flex;
+}

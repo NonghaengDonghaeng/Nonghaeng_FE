@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import Nav from "@/components/layout/nav/nav";
@@ -23,21 +23,21 @@ type selectItemType = {
 export default function page() {
   const setUrl = useSetUrl();
   const searchParams = useSearchParams();
-  const urlParams = new URLSearchParams();
 
   const [isClick, setIsClick] = useState(false);
-
-  const [selectItem, setSelectItem] = useState<selectItemType>({
-    page_index: searchParams.get("page_index") || 1,
-    search_word: searchParams.get("search_word") || "",
-    region: searchParams.getAll("region"),
-    category: searchParams.getAll("category"),
-  });
-  console.log(selectItem);
 
   function filter() {
     setUrl(selectItem);
   }
+
+  const [selectItem, setSelectItem] = useState<selectItemType>({
+    page_index: searchParams.get("page_index") || "1",
+    search_word: searchParams.get("search_word") || "",
+    region: searchParams.getAll("region"),
+    category: searchParams.getAll("category"),
+  });
+
+  useEffect(() => filter(), [selectItem]);
 
   return (
     <>
@@ -60,11 +60,7 @@ export default function page() {
           <article>
             <TourList content={tour_list.content} />
           </article>
-          <PgButton
-            page_index={selectItem.page_index}
-            setSelectItem={setSelectItem}
-            filter={filter}
-          />
+          <PgButton selectItem={selectItem} setSelectItem={setSelectItem} />
         </section>
       </main>
     </>
