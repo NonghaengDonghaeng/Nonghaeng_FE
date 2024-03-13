@@ -8,7 +8,7 @@ export default function ScTour({
   setIsClick,
   selectItem,
   setSelectItem,
-  onSubmit,
+  filter,
 }: propsType) {
   const change = useChange();
   // list
@@ -45,7 +45,7 @@ export default function ScTour({
         </div>
         <input placeholder="키워드 검색" name="search_word"></input>
       </div>
-      <button onClick={onSubmit}>선택한 조건으로 검색하기</button>
+      <button onClick={filter}>선택한 조건으로 검색하기</button>
     </div>
   );
 }
@@ -59,5 +59,5 @@ export type propsType = {
     search_word: string;
   };
   setSelectItem: setAnyType;
-  onSubmit: () => void;
+  filter: () => void;
 };
