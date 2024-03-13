@@ -16,7 +16,7 @@ import PgButton from "@/components/common/pgbutton/pgbutton";
 type selectItemType = {
   page_index: any;
   search_word: any;
-  region: string[];
+  region: any;
   category: string[];
 };
 
@@ -30,7 +30,7 @@ export default function page() {
   const [selectItem, setSelectItem] = useState<selectItemType>({
     page_index: searchParams.get("page_index") || 1,
     search_word: searchParams.get("search_word") || "",
-    region: urlParams.getAll("region"),
+    region: searchParams.getAll("region"),
     category: searchParams.getAll("category"),
   });
   console.log(selectItem);
