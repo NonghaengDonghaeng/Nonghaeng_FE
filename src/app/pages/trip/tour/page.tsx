@@ -10,7 +10,7 @@ import TourList from "@/components/common/tourlist/tourlist";
 import styles from "./.module.css";
 import { tripHref } from "@/storage/href";
 import tour_list from "@/db/tourdata/list.json";
-import PgButton from "@/components/common/paging/paging";
+import Paging from "@/components/common/paging/paging";
 
 // type
 type selectItemType = {
@@ -37,7 +37,7 @@ export default function page() {
     category: searchParams.getAll("category"),
   });
 
-  useEffect(() => filter(), [selectItem]);
+  useEffect(() => filter(), [selectItem.page_index]);
 
   return (
     <>
@@ -60,7 +60,11 @@ export default function page() {
           <article>
             <TourList content={tour_list.content} />
           </article>
-          <PgButton selectItem={selectItem} setSelectItem={setSelectItem} />
+          <Paging
+            selectItem={selectItem}
+            setSelectItem={setSelectItem}
+            filter={filter}
+          />
         </section>
       </main>
     </>

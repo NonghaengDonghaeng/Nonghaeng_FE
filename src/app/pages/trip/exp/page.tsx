@@ -26,11 +26,6 @@ export default function page() {
   const setUrl = useSetUrl();
   const [isClick, setIsClick] = useState(false);
 
-  function filter() {
-    setUrl(selectItem);
-    window.location.replace("");
-  }
-
   const [selectItem, setSelectItem] = useState<selectItemType>({
     page_index: searchParams.get("page_index") || "1",
     search_word: searchParams.get("search_word") || "",
@@ -39,9 +34,14 @@ export default function page() {
     max_cost: searchParams.get("max_cost") || "",
     min_cost: searchParams.get("min_cost") || "",
   });
-  console.log(selectItem.region);
 
-  // useEffect(() => filter(), [selectItem.page_index]);
+  function filter() {
+    setUrl(selectItem);
+  }
+
+  useEffect(() => {
+    filter();
+  }, [selectItem.page_index]);
 
   return (
     <>

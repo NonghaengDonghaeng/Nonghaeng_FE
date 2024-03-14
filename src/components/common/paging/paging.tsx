@@ -1,5 +1,7 @@
 import styles from "./.module.css";
 import tour_list from "@/db/tourdata/list.json";
+import { useEffect } from "react";
+import useSetUrl from "@/hooks/useSetUrl";
 
 type PropsType = { selectItem: any; setSelectItem: any; filter: () => void };
 
@@ -8,6 +10,7 @@ export default function Paging({
   setSelectItem,
   filter,
 }: PropsType) {
+  const setUrl = useSetUrl;
   const totalPages = tour_list.totalPages;
 
   function numbering(totalPages: number) {
@@ -20,7 +23,6 @@ export default function Paging({
 
   function onFilter(index: number) {
     setSelectItem({ ...selectItem, page_index: `${index + 1}` });
-    filter();
   }
 
   const pageList = numbering(totalPages).map((item, index) => (
