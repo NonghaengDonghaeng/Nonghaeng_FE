@@ -3,6 +3,19 @@ import { inputType, setAnyType, setBooleanType } from "@/types/eventtype";
 import styles from "./.module.css";
 import { region, category_tour } from "@/storage/name";
 
+type propsType = {
+  isClick: boolean;
+  setIsClick: setBooleanType;
+  selectItem: {
+    page_index: string;
+    search_word: string;
+    region: string[];
+    category: string[];
+  };
+  setSelectItem: setAnyType;
+  filter: () => void;
+};
+
 export default function ScTour({
   isClick,
   setIsClick,
@@ -11,14 +24,13 @@ export default function ScTour({
   filter,
 }: propsType) {
   const change = useChange();
-  // list
+
   const categoryList = category_tour.map((item, index) => (
     <li key={index}>
       <input type="checkbox" name="category" value={item} />
       {item}
     </li>
   ));
-
   const regionList = region.map((item, index) => (
     <li key={index}>
       <input type="checkbox" name="region" value={item} />
@@ -49,15 +61,3 @@ export default function ScTour({
     </div>
   );
 }
-
-export type propsType = {
-  isClick: boolean;
-  setIsClick: setBooleanType;
-  selectItem: {
-    region: string[];
-    category: string[];
-    search_word: string;
-  };
-  setSelectItem: setAnyType;
-  filter: () => void;
-};

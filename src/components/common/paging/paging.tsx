@@ -1,9 +1,13 @@
 import styles from "./.module.css";
 import tour_list from "@/db/tourdata/list.json";
 
-type PropsType = { selectItem: any; setSelectItem: any };
+type PropsType = { selectItem: any; setSelectItem: any; filter: () => void };
 
-export default function PgButton({ selectItem, setSelectItem }: PropsType) {
+export default function Paging({
+  selectItem,
+  setSelectItem,
+  filter,
+}: PropsType) {
   const totalPages = tour_list.totalPages;
 
   function numbering(totalPages: number) {
@@ -15,19 +19,21 @@ export default function PgButton({ selectItem, setSelectItem }: PropsType) {
   }
 
   function onFilter(index: number) {
-    setSelectItem({ ...selectItem, page_index: index + 1 });
+    setSelectItem({ ...selectItem, page_index: `${index + 1}` });
+    filter();
   }
 
   const pageList = numbering(totalPages).map((item, index) => (
     <li
       key={index}
-      className={`${selectItem.page_index == `${index + 1}` && styles.on}`}
+      className={`${
+        selectItem.page_index == `${index + 1}` ? styles.on : styles.off
+      }`}
       onClick={() => onFilter(index)}
     >
       {item}
     </li>
   ));
-
   return (
     <div className={styles.page_button}>
       <ul>{pageList}</ul>

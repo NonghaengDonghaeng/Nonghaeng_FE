@@ -1,5 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import useSetUrl from "@/hooks/useSetUrl";
 import Nav from "@/components/layout/nav/nav";
 import { tripHref } from "@/storage/href";
 import styles from "./.module.css";
@@ -8,29 +10,38 @@ import Overlay from "@/components/common/overlay/overlay";
 import ScExp from "@/components/common/search/scexp/scexp";
 import ExpList from "@/components/common/explist/explist";
 import exp_list from "@/db/expdata/list.json";
+import Paging from "@/components/common/paging/paging";
 
 type selectItemType = {
+  page_index: string;
+  search_word: string;
   region: string[];
   category: string[];
-  maxCost: string;
-  minCost: string;
-  search_word: string;
+  max_cost: string;
+  min_cost: string;
 };
 
 export default function page() {
+  const searchParams = useSearchParams();
+  const setUrl = useSetUrl();
   const [isClick, setIsClick] = useState(false);
 
-  function onSubmit() {
-    console.log("농촌체험 api요청", selectItem);
+  function filter() {
+    setUrl(selectItem);
+    window.location.replace("");
   }
 
   const [selectItem, setSelectItem] = useState<selectItemType>({
-    region: [],
-    category: [],
-    maxCost: "",
-    minCost: "",
-    search_word: "",
+    page_index: searchParams.get("page_index") || "1",
+    search_word: searchParams.get("search_word") || "",
+    region: Array.from(new Set(searchParams.getAll("region"))),
+    category: searchParams.getAll("category"),
+    max_cost: searchParams.get("max_cost") || "",
+    min_cost: searchParams.get("min_cost") || "",
   });
+  console.log(selectItem.region);
+
+  // useEffect(() => filter(), [selectItem.page_index]);
 
   return (
     <>
@@ -45,7 +56,7 @@ export default function page() {
               setIsClick={setIsClick}
               selectItem={selectItem}
               setSelectItem={setSelectItem}
-              onSubmit={onSubmit}
+              filter={filter}
             />
             <Overlay isClick={isClick} />
           </div>
@@ -53,6 +64,11 @@ export default function page() {
           <article>
             <ExpList content={exp_list.content} />
           </article>
+          <Paging
+            selectItem={selectItem}
+            setSelectItem={setSelectItem}
+            filter={filter}
+          />
         </section>
       </main>
     </>

@@ -8,11 +8,10 @@ export default function ScExp({
   setIsClick,
   selectItem,
   setSelectItem,
-  onSubmit,
+  filter,
 }: propsType) {
   const change = useChange();
 
-  // list
   const regionList = region.map((item, index) => (
     <li key={index}>
       <input type="checkbox" name="region" value={item} />
@@ -25,7 +24,6 @@ export default function ScExp({
       {item}
     </li>
   ));
-
   return (
     <div className={`${styles.search_exp} ${!isClick && styles.off}`}>
       <div>
@@ -47,14 +45,14 @@ export default function ScExp({
         <div>
           <span>상품가격</span>
           <div>
-            <input placeholder="최소가격" name="minCost"></input>
+            <input placeholder="최소가격" name="min_cost"></input>
             <label>-</label>
-            <input placeholder="최대가격" name="maxCost"></input>
+            <input placeholder="최대가격" name="max_cost"></input>
           </div>
         </div>
         <input placeholder="키워드 검색" name="search_word"></input>
       </div>
-      <button onClick={onSubmit}>선택한 조건으로 검색하기</button>
+      <button onClick={filter}>선택한 조건으로 검색하기</button>
     </div>
   );
 }
@@ -63,12 +61,13 @@ type propsType = {
   isClick: boolean;
   setIsClick: setBooleanType;
   selectItem: {
+    page_index: string;
+    search_word: string;
     region: string[];
     category: string[];
-    maxCost: string;
-    minCost: string;
-    search_word: string;
+    max_cost: string;
+    min_cost: string;
   };
   setSelectItem: setAnyType;
-  onSubmit: () => void;
+  filter: () => void;
 };

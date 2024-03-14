@@ -1,4 +1,4 @@
-.exp_main > div {
+.exp_main > div:first-child {
   @apply mt-[60px] flex items-center justify-between;
 }
 .exp_main > div > h1 {

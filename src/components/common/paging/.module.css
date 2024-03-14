@@ -1,0 +1,19 @@
+.on {
+  @apply bg-stone/20 text-stone;
+}
+.off {
+  @apply text-stone/60;
+}
+
+.page_button {
+  @apply w-full my-[20px] text-center;
+}
+.page_button > ul {
+  @apply inline-flex;
+}
+.page_button > ul > li {
+  @apply w-[32px] h-[32px] p-[4px] cursor-pointer rounded-full;
+}
+.page_button > ul > li:hover {
+  @apply bg-stone/20 text-stone;
+}

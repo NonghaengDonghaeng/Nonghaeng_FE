@@ -14,7 +14,7 @@ export default function page() {
       <main id="main">
         <section className={styles.lodg_main}>
           <div>
-            <h1>농촌관광</h1>
+            <h1>농촌숙박</h1>
             <ScDetail setIsClick={setIsClick} />
             <Overlay isClick={isClick} />
           </div>

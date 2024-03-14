@@ -10,11 +10,11 @@ import TourList from "@/components/common/tourlist/tourlist";
 import styles from "./.module.css";
 import { tripHref } from "@/storage/href";
 import tour_list from "@/db/tourdata/list.json";
-import PgButton from "@/components/common/pgbutton/pgbutton";
+import PgButton from "@/components/common/paging/paging";
 
 // type
 type selectItemType = {
-  page_index: any;
+  page_index: string;
   search_word: any;
   region: any;
   category: string[];
