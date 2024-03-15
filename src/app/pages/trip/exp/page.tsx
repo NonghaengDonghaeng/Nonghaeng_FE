@@ -35,13 +35,14 @@ export default function page() {
     min_cost: searchParams.get("min_cost") || "",
   });
 
-  function filter() {
-    setUrl(selectItem);
-  }
+  const [state, setState] = useState(false);
 
   useEffect(() => {
-    filter();
-  }, [selectItem.page_index]);
+    console.log("useEffect시작");
+    setUrl(selectItem);
+    console.log("api");
+    console.log("seEffect종료");
+  }, [state]);
 
   return (
     <>
@@ -56,7 +57,8 @@ export default function page() {
               setIsClick={setIsClick}
               selectItem={selectItem}
               setSelectItem={setSelectItem}
-              filter={filter}
+              state={state}
+              setState={setState}
             />
             <Overlay isClick={isClick} />
           </div>
@@ -67,7 +69,8 @@ export default function page() {
           <Paging
             selectItem={selectItem}
             setSelectItem={setSelectItem}
-            filter={filter}
+            state={state}
+            setState={setState}
           />
         </section>
       </main>

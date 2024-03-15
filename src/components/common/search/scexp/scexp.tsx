@@ -2,15 +2,21 @@ import { useChange } from "@/hooks/useChange";
 import { inputType, setAnyType, setBooleanType } from "@/types/eventtype";
 import styles from "./.module.css";
 import { region, category_exp } from "@/storage/name";
+import { useState } from "react";
 
 export default function ScExp({
   isClick,
   setIsClick,
   selectItem,
   setSelectItem,
-  filter,
+  state,
+  setState,
 }: propsType) {
   const change = useChange();
+
+  const subSelectItem = useState({
+    region: [],
+  });
 
   const regionList = region.map((item, index) => (
     <li key={index}>
@@ -32,7 +38,10 @@ export default function ScExp({
       </div>
       <hr />
       <div
-        onChange={(e: inputType) => change({ selectItem, setSelectItem, e })}
+        onChange={(e: inputType) => {
+          change({ selectItem, setSelectItem, e });
+          console.log("지역이 item에 담김");
+        }}
       >
         <div>
           <span>지역선택</span>
@@ -52,7 +61,14 @@ export default function ScExp({
         </div>
         <input placeholder="키워드 검색" name="search_word"></input>
       </div>
-      <button onClick={filter}>선택한 조건으로 검색하기</button>
+      <button
+        onClick={() => {
+          setState(!state);
+          console.log("state값 변경");
+        }}
+      >
+        선택한 조건으로 검색하기
+      </button>
     </div>
   );
 }
@@ -69,5 +85,6 @@ type propsType = {
     min_cost: string;
   };
   setSelectItem: setAnyType;
-  filter: () => void;
+  state: boolean;
+  setState: setAnyType;
 };

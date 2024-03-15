@@ -14,6 +14,7 @@ export default function useSetUrl() {
   const urlParams = new URLSearchParams();
 
   function setUrl(selectItem: selectItemType) {
+    console.log("url에 item 값 담김");
     if (selectItem.page_index) {
       urlParams.set("page_index", `${selectItem.page_index}`);
     }
