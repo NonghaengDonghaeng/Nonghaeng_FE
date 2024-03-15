@@ -1,6 +1,10 @@
-import { isClickType } from "@/types/eventtype";
 import styles from "./.module.css";
+import { pageStateType } from "@/types/pageState";
 
-export default function Overlay({ isClick }: isClickType) {
-  return <div className={isClick ? styles.on : styles.off}></div>;
+type propsType = {
+  pageState: pageStateType;
+};
+
+export default function Overlay({ pageState }: propsType) {
+  return <div className={pageState.isClick ? styles.on : styles.off}></div>;
 }

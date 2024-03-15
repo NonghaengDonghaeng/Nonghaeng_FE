@@ -5,44 +5,34 @@ import useSetUrl from "@/hooks/useSetUrl";
 import Nav from "@/components/layout/nav/nav";
 import { tripHref } from "@/storage/href";
 import styles from "./.module.css";
-import ScDetail from "@/components/common/search/scdetail/scdetail";
+import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
 import Overlay from "@/components/common/overlay/overlay";
-import ScExp from "@/components/common/search/scexp/scexp";
 import ExpList from "@/components/common/explist/explist";
 import exp_list from "@/db/expdata/list.json";
 import Paging from "@/components/common/paging/paging";
-
-type selectItemType = {
-  page_index: string;
-  search_word: string;
-  region: string[];
-  category: string[];
-  max_cost: string;
-  min_cost: string;
-};
+import { pageStateType } from "@/types/pageState";
+import ScDetail from "@/components/common/search/scdetail/scdetail";
 
 export default function page() {
   const searchParams = useSearchParams();
   const setUrl = useSetUrl();
-  const [isClick, setIsClick] = useState(false);
 
-  const [selectItem, setSelectItem] = useState<selectItemType>({
+  const [pageState, setPageState] = useState<pageStateType>({
+    isClick: false,
+    state: false,
+    page_type: "exp",
     page_index: searchParams.get("page_index") || "1",
     search_word: searchParams.get("search_word") || "",
-    region: Array.from(new Set(searchParams.getAll("region"))),
-    category: searchParams.getAll("category"),
+    region: Array.from(new Set(searchParams.getAll("region"))) || [],
+    category: searchParams.getAll("category") || [],
+
     max_cost: searchParams.get("max_cost") || "",
     min_cost: searchParams.get("min_cost") || "",
   });
 
-  const [state, setState] = useState(false);
-
   useEffect(() => {
-    console.log("useEffect시작");
-    setUrl(selectItem);
-    console.log("api");
-    console.log("seEffect종료");
-  }, [state]);
+    setUrl({ pageState });
+  }, [pageState.state, pageState.page_index]);
 
   return (
     <>
@@ -51,27 +41,15 @@ export default function page() {
         <section className={styles.exp_main}>
           <div>
             <h1>농촌체험</h1>
-            <ScDetail setIsClick={setIsClick} />
-            <ScExp
-              isClick={isClick}
-              setIsClick={setIsClick}
-              selectItem={selectItem}
-              setSelectItem={setSelectItem}
-              state={state}
-              setState={setState}
-            />
-            <Overlay isClick={isClick} />
+            <ScDetailOn pageState={pageState} setPageState={setPageState} />
+            <ScDetail pageState={pageState} setPageState={setPageState} />
+            <Overlay pageState={pageState} />
           </div>
           <hr></hr>
           <article>
             <ExpList content={exp_list.content} />
           </article>
-          <Paging
-            selectItem={selectItem}
-            setSelectItem={setSelectItem}
-            state={state}
-            setState={setState}
-          />
+          <Paging pageState={pageState} setPageState={setPageState} />
         </section>
       </main>
     </>

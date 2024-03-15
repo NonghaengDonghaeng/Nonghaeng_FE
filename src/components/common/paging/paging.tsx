@@ -1,23 +1,13 @@
 import styles from "./.module.css";
 import tour_list from "@/db/tourdata/list.json";
-import { useEffect } from "react";
-import useSetUrl from "@/hooks/useSetUrl";
-import { setAnyType } from "@/types/eventtype";
+import { pageStateType, setPageStateType } from "@/types/pageState";
 
-type PropsType = {
-  selectItem: any;
-  setSelectItem: any;
-  state: boolean;
-  setState: setAnyType;
+type propsType = {
+  pageState: pageStateType;
+  setPageState: setPageStateType;
 };
 
-export default function Paging({
-  selectItem,
-  setSelectItem,
-  state,
-  setState,
-}: PropsType) {
-  const setUrl = useSetUrl;
+export default function Paging({ pageState, setPageState }: propsType) {
   const totalPages = tour_list.totalPages;
 
   function numbering(totalPages: number) {
@@ -29,15 +19,14 @@ export default function Paging({
   }
 
   function onFilter(index: number) {
-    setSelectItem({ ...selectItem, page_index: `${index + 1}` });
-    setState(!state);
+    setPageState({ ...pageState, page_index: `${index + 1}` });
   }
 
   const pageList = numbering(totalPages).map((item, index) => (
     <li
       key={index}
       className={`${
-        selectItem.page_index == `${index + 1}` ? styles.on : styles.off
+        pageState.page_index == `${index + 1}` ? styles.on : styles.off
       }`}
       onClick={() => onFilter(index)}
     >
