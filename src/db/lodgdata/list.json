@@ -4,46 +4,86 @@
       "tour_id": 4,
       "tour_name": "창민체험휴양마을",
       "area_name": "대전",
-      "room_type_name": "2",
-      "one_line_intro": "촌캉스",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
-      "max_price": 90000
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000000901/0"
     },
     {
       "tour_id": 4,
       "tour_name": "창민체험휴양마을",
       "area_name": "대전",
-      "room_type_name": "2",
-      "one_line_intro": "촌캉스",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
-      "max_price": 90000
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015242/0"
     },
     {
       "tour_id": 4,
       "tour_name": "창민체험휴양마을",
       "area_name": "대전",
-      "room_type_name": "2",
-      "one_line_intro": "촌캉스",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
-      "max_price": 90000
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002462/0"
     },
     {
       "tour_id": 4,
       "tour_name": "창민체험휴양마을",
       "area_name": "대전",
-      "room_type_name": "2",
-      "one_line_intro": "촌캉스",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
-      "max_price": 90000
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015230/0"
     },
     {
       "tour_id": 4,
       "tour_name": "창민체험휴양마을",
       "area_name": "대전",
-      "room_type_name": "2",
-      "one_line_intro": "촌캉스",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
-      "max_price": 90000
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
+    },
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "min_price": 50000,
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
     }
-  ]
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": true,
+      "unsorted": true,
+      "sorted": false
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalPages": 1,
+  "totalElements": 1,
+  "first": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "unsorted": true,
+    "sorted": false
+  },
+  "numberOfElements": 1,
+  "empty": false
 }

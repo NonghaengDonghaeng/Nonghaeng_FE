@@ -1,4 +1,5 @@
 .footer_inner {
+  @apply block;
 }
 
 /* footer_sub */

@@ -24,3 +24,5 @@ export const category_exp = [
   "문화체험",
   "레포츠 체험",
 ];
+
+export const category_lodg = ["마을숙박", "민박", "캠핑"];

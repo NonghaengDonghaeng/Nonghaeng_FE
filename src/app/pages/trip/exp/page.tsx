@@ -24,14 +24,14 @@ export default function page() {
     page_index: searchParams.get("page_index") || "1",
     search_word: searchParams.get("search_word") || "",
     region: Array.from(new Set(searchParams.getAll("region"))) || [],
-    category: searchParams.getAll("category") || [],
-
+    category: Array.from(new Set(searchParams.getAll("category"))) || [],
     max_cost: searchParams.get("max_cost") || "",
     min_cost: searchParams.get("min_cost") || "",
   });
 
   useEffect(() => {
     setUrl({ pageState });
+    // exp_list api 요청
   }, [pageState.state, pageState.page_index]);
 
   return (
@@ -49,7 +49,11 @@ export default function page() {
           <article>
             <ExpList content={exp_list.content} />
           </article>
-          <Paging pageState={pageState} setPageState={setPageState} />
+          <Paging
+            pageState={pageState}
+            setPageState={setPageState}
+            totalPages={exp_list.totalPages}
+          />
         </section>
       </main>
     </>

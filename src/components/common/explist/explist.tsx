@@ -38,7 +38,7 @@ export default function ExpList({ content }: cotentType) {
             <label>인원:</label>
             최소{item.min_participant}명~최대{item.max_participant}명
           </p>
-          <p>{item.price}원 ~</p>
+          <p>{item.price}원</p>
         </div>
       </Link>
     </li>

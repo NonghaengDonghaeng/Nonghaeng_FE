@@ -44,3 +44,17 @@ mediaquary를 통해 레이아웃 크기 및 hidden관리
 
 redux
 search_word: onChange action이 아닌 onSubmit시에 store에 저장하는 action기능.
+
+리스트 페이지 기본 아이템
+isClick: boolean;
+state: boolean;
+page_type: string;
+page_index: string;
+search_word: string;
+region: string[];
+category: string[];
+
+검색 컴포넌트 기본 아이템
+search_word:string
+region:string;
+category:string;

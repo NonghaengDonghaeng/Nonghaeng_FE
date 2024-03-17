@@ -28,12 +28,12 @@ export function useSearch() {
       }
       if (category == "체험") {
         router.push(
-          `/pages/trip/experience?region=${region}&search_word=${search_word}`
+          `/pages/trip/exp?region=${region}&search_word=${search_word}`
         );
       }
       if (category == "숙박") {
         router.push(
-          `/pages/trip/lodgment?region=${region}&search_word=${search_word}`
+          `/pages/trip/lodg?region=${region}&search_word=${search_word}`
         );
       }
     }

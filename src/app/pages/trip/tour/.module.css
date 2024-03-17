@@ -10,5 +10,5 @@
 }
 
 .tour_main > article {
-  @apply my-[20px] h-[420px];
+  @apply my-[20px];
 }
