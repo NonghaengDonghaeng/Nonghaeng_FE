@@ -16,8 +16,10 @@ export default function useSetUrl() {
     if (pageState.search_word) {
       urlParams.set("search_word", `${pageState.search_word}`);
     }
-    pageState.region.map((item) => urlParams.append("region", `${item}`));
-    pageState.category.map((item) => urlParams.append("category", `${item}`));
+    Array.isArray(pageState.region) &&
+      pageState.region.map((item) => urlParams.append("region", `${item}`));
+    Array.isArray(pageState.category) &&
+      pageState.category.map((item) => urlParams.append("category", `${item}`));
     if (pageState.max_cost) {
       urlParams.set("max_cost", `${pageState.max_cost}`);
     }

@@ -2,15 +2,33 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useChange } from "@/hooks/useChange";
+import { useSearch } from "@/hooks/useSearch";
 import styles from "./.module.css";
 import { headerHref } from "@/storage/href";
-import ScHead from "@/components/common/search/schead/schead";
 import homeImg from "img/header/homeImg.png";
 import sitemapImg from "img/header/sitemapImg.png";
+import searchImg from "img/header/searchImg.png";
+import { inputType } from "@/types/eventtype";
+import { pageStateType } from "@/types/pageState";
+import { formType } from "@/types/eventtype";
 
 type SubMenuType = { href: string; title: string };
 
 export default function Header() {
+  const change = useChange();
+  const search = useSearch();
+
+  const [pageState, setPageState] = useState<pageStateType>({
+    search_word: "",
+    region: "",
+    category: "",
+  });
+  function onSubmit(e: formType) {
+    e.preventDefault();
+    search({ pageState });
+  }
+
   const [isHover, setIsHover] = useState(false);
   const subMenuList = (subMenu: SubMenuType[]) => (
     <ul className={`${styles.subMenu} ${isHover && styles.on}`}>
@@ -40,7 +58,16 @@ export default function Header() {
         >
           {mainMenuList}
         </ul>
-        <ScHead />
+        <form className={styles.header_search} onSubmit={onSubmit}>
+          <input
+            onChange={(e: inputType) => change({ pageState, setPageState, e })}
+            placeholder="알고 싶은 정보가 있으세요?"
+            name="search_word"
+          ></input>
+          <button type="submit">
+            <Image src={searchImg} alt="searchImg"></Image>
+          </button>
+        </form>
         <div>
           <Link href="/pages/mypage/login">로그인</Link>
           <Link href="/pages/mypage">마이페이지</Link>

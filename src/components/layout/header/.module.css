@@ -36,6 +36,18 @@
   @apply h-[220px];
 }
 
+/* header_search */
+.header_inner > form {
+  @apply w-[234px] h-[36px] my-[22px] shadow-md flex border-[1px] rounded-full border-stone/80;
+}
+
+.header_inner > form > input {
+  @apply w-[190px] h-[30px] m-[2px] px-[8px] rounded-full;
+}
+.header_inner > form > button {
+  @apply w-[24px] h-[24px] mt-[3px] ml-[4px] mr-[10px] rounded-full;
+}
+
 /* header_sub */
 .header_inner > div:nth-child(4) {
   @apply w-[160px] text-[12px] text-stone font-[300] my-[22px] flex justify-between;

@@ -15,10 +15,9 @@ export function useChange() {
   */
 
   function change({ pageState, setPageState, e }: changeType) {
-    let newArray;
-    if (e.target.name == "region") {
+    if (e.target.name == "region" && Array.isArray(pageState.region) == true) {
+      let newArray;
       if (pageState.region.includes(e.target.value)) {
-        console.log("지역 포함");
         newArray = pageState.region.filter(
           (region) => region !== e.target.value
         );
@@ -26,7 +25,11 @@ export function useChange() {
         newArray = [...pageState.region, e.target.value];
       }
       setPageState({ ...pageState, region: newArray });
-    } else if (e.target.name == "category") {
+    } else if (
+      e.target.name == "category" &&
+      Array.isArray(pageState.category) == true
+    ) {
+      let newArray;
       if (pageState.category.includes(e.target.value)) {
         newArray = pageState.category.filter(
           (category) => category !== e.target.value

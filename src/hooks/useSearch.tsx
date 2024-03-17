@@ -1,9 +1,8 @@
 import { useRouter } from "next/navigation";
+import { pageStateType } from "@/types/pageState";
 
-type searchType = {
-  region: string;
-  category: string;
-  search_word: string;
+type propsType = {
+  pageState: pageStateType;
 };
 
 export function useSearch() {
@@ -14,26 +13,28 @@ export function useSearch() {
    * @param {category} 스트링타입의 유형정보
    * @param {search_word} 스트링 타입의 검색어
    */
-  function search({ region, category, search_word }: searchType) {
-    if (region == "" && category == "") {
+  function search({ pageState }: propsType) {
+    if (pageState.region == "" && pageState.category == "") {
       // router.push(`/pages/search?search_word=${search_word}`);
-      window.location.replace(`/pages/search?search_word=${search_word}`);
-    } else if (category == "유형 선택") {
+      window.location.replace(
+        `/pages/search?search_word=${pageState.search_word}`
+      );
+    } else if (pageState.category == "유형 선택") {
       alert("유형을 선택해주세요");
     } else {
-      if (category == "관광") {
+      if (pageState.category == "관광") {
         router.push(
-          `/pages/trip/tour?region=${region}&search_word=${search_word}`
+          `/pages/trip/tour?region=${pageState.region}&search_word=${pageState.search_word}`
         );
       }
-      if (category == "체험") {
+      if (pageState.category == "체험") {
         router.push(
-          `/pages/trip/exp?region=${region}&search_word=${search_word}`
+          `/pages/trip/exp?region=${pageState.region}&search_word=${pageState.search_word}`
         );
       }
-      if (category == "숙박") {
+      if (pageState.category == "숙박") {
         router.push(
-          `/pages/trip/lodg?region=${region}&search_word=${search_word}`
+          `/pages/trip/lodg?region=${pageState.region}&search_word=${pageState.search_word}`
         );
       }
     }
