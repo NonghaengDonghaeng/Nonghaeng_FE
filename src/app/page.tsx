@@ -5,8 +5,14 @@ import styles from "./page.module.css";
 import section1_bg from "img/main/section1_bg.png";
 import more_nonghang from "img/main/more_nonghang.png";
 import more_green from "img/main/more_green.png";
+import ExpList from "@/components/common/explist/explist";
+import LodgList from "@/components/common/lodglist/lodglist";
+import exp_list from "@/db/expdata/list.json";
+import lodg_list from "@/db/lodgdata/list.json";
 
 export default function Home() {
+  // api요청
+
   return (
     <main id="main">
       <section className={styles.section1}>
@@ -35,6 +41,8 @@ export default function Home() {
               <Image src={more_green} alt="more_experience"></Image>
             </Link>
           </h1>
+          <hr />
+          <ExpList content={exp_list.content.slice(0, 4)} />
         </article>
         <article>
           <h1>
@@ -44,6 +52,8 @@ export default function Home() {
               <Image src={more_green} alt="more_lodgement"></Image>
             </Link>
           </h1>
+          <hr />
+          <LodgList content={lodg_list.content.slice(0, 4)} />
         </article>
       </section>
     </main>

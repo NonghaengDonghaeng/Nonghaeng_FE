@@ -20,17 +20,20 @@
 
 /* section2 */
 .section2 {
-  @apply mt-[136px];
+  @apply mt-[120px];
 }
-.section2 article {
-  @apply h-[300px] my-[40px] border-[2px];
+.section2 > article > h1 {
+  @apply mt-[60px] text-[24px] font-[600] items-center flex justify-between  text-green;
 }
-.section2 article > h1 {
-  @apply text-[22px] font-[500] text-stone flex justify-between;
+.section2 > article > h1 > a {
+  @apply text-[15px] flex items-center;
 }
-.section2 article > h1 > a {
-  @apply text-[15px] text-green  mt-[5px] flex;
+.section2 > article > h1 > a > img {
+  @apply w-[8px] h-[12px] ml-[5px];
 }
-.section2 article > h1 > a > img {
-  @apply w-[8px] h-[12px] m-[5px];
+.section2 > article > hr {
+  @apply border-[1px] border-stone;
+}
+.section2 > article > ul {
+  @apply my-[20px] h-[420px];
 }

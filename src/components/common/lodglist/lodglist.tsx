@@ -19,7 +19,7 @@ type propsType = {
 export default function LodgList({ content }: propsType) {
   const lodgList = content.map((item, index) => (
     <li key={index}>
-      <Link href={`pages/trip/exp/detail?tour_id=${item.tour_id}`}>
+      <Link href={`pages/trip/lodg/detail?tour_id=${item.tour_id}`}>
         <div>
           <img src={item.img_url} />
           <span>
