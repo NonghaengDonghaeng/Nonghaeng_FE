@@ -15,32 +15,32 @@ export function useChange() {
   */
 
   function change({ pageState, setPageState, e }: changeType) {
-    if (e.target.name == "region" && Array.isArray(pageState.region) == true) {
-      let newArray;
-      if (pageState.region.includes(e.target.value)) {
-        newArray = pageState.region.filter(
-          (region) => region !== e.target.value
-        );
-      } else {
-        newArray = [...pageState.region, e.target.value];
-      }
-      setPageState({ ...pageState, region: newArray });
-    } else if (
-      e.target.name == "category" &&
+    if (
+      Array.isArray(pageState.region) &&
       Array.isArray(pageState.category) == true
     ) {
       let newArray;
-      if (pageState.category.includes(e.target.value)) {
-        newArray = pageState.category.filter(
-          (category) => category !== e.target.value
-        );
-      } else {
-        newArray = [...pageState.category, e.target.value];
+      if (e.target.name == "region") {
+        if (pageState.region.includes(e.target.value)) {
+          newArray = pageState.region.filter(
+            (region) => region !== e.target.value
+          );
+        } else {
+          newArray = [...pageState.region, e.target.value];
+        }
+        setPageState({ ...pageState, region: newArray });
+      } else if (e.target.name == "category") {
+        if (pageState.category.includes(e.target.value)) {
+          newArray = pageState.category.filter(
+            (category) => category !== e.target.value
+          );
+        } else {
+          newArray = [...pageState.category, e.target.value];
+        }
+        setPageState({ ...pageState, category: newArray });
       }
-      setPageState({ ...pageState, category: newArray });
-    } else {
-      setPageState({ ...pageState, [e.target.name]: e.target.value });
     }
+    setPageState({ ...pageState, [e.target.name]: e.target.value });
   }
   return change;
 }

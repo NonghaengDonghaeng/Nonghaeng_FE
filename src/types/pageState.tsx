@@ -1,5 +1,5 @@
 export type pageStateType = {
-  isClick?: boolean;
+  isClick?: any;
   state?: boolean;
   page_type?: string;
   page_index?: string;
@@ -12,7 +12,7 @@ export type pageStateType = {
 
 export type setPageStateType = React.Dispatch<
   React.SetStateAction<{
-    isClick?: boolean;
+    isClick?: any;
     state?: boolean;
     page_type?: string;
     page_index?: string;

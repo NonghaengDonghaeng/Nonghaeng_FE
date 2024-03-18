@@ -1,32 +1,34 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import ScButton from "../scbutton/scbutton";
+import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
+import ScButton from "../scbutton/scbutton";
 import styles from "./.module.css";
 import { inputType, formType } from "@/types/eventtype";
+import { pageStateType } from "@/types/pageState";
 
 export default function ScTotal() {
   const searchParams = useSearchParams();
   const search = useSearch();
+  const change = useChange();
 
-  const [search_word, setSearch_word] = useState<string>(
-    searchParams.get("search_word") || ""
-  );
-  function onChange(e: inputType) {
-    setSearch_word(e.target.value);
-  }
+  const [pageState, setPageState] = useState<pageStateType>({
+    search_word: searchParams.get("search_word") || "",
+    region: "",
+    category: "",
+  });
 
   function onSubmit(e: formType) {
     e.preventDefault();
-    search({ region: "", category: "", search_word: search_word });
+    search({ pageState });
   }
 
   return (
     <form className={styles.total_search} onSubmit={onSubmit}>
       <input
         placeholder="검색어를 입력해보세요."
-        value={search_word}
-        onChange={onChange}
+        name="search_word"
+        onChange={(e: inputType) => change({ pageState, setPageState, e })}
       ></input>
       <ScButton />
     </form>
