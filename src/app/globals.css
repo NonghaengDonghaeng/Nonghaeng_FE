@@ -26,7 +26,7 @@
 }
 
 #nav {
-  @apply h-[240px] mt-[80px] mb-[40px] bg-slate-200;
+  @apply h-[240px] mt-[80px] mb-[40px];
 }
 
 #main {

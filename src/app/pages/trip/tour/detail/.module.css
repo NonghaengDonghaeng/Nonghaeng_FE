@@ -1,0 +1,6 @@
+.section1 {
+  @apply mt-[80px];
+}
+.section2 > article {
+  @apply w-full h-[600px];
+}

@@ -1,5 +1,9 @@
+"use client";
+import { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./.module.css";
+import bg_img1 from "img/nav/nav_bg1.png";
 
 type hrefType = {
   href: {
@@ -18,6 +22,7 @@ export default function Nav({ href }: hrefType) {
   return (
     <nav id="nav">
       <div className={styles.nav_inner}>
+        <Image src={bg_img1} alt="bg_img" />
         <Link href={href.mainMenu.href}>
           <div></div>
           {href.mainMenu.title}
