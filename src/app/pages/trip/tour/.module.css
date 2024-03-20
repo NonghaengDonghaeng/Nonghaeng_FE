@@ -6,7 +6,7 @@
 }
 
 .tour_main > hr {
-  @apply border-[1px] border-stone;
+  @apply border-[1px] border-stone/80;
 }
 
 .tour_main > article {

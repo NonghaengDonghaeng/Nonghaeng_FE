@@ -22,7 +22,7 @@ export default function Nav({ href }: hrefType) {
   return (
     <nav id="nav">
       <div className={styles.nav_inner}>
-        <Image src={bg_img1} alt="bg_img" />
+        <Image src={bg_img1} alt="bg_img" width={1000} priority={true} />
         <Link href={href.mainMenu.href}>
           <div></div>
           {href.mainMenu.title}

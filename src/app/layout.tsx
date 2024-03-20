@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Head from "next/head";
+import ScollTop from "@/components/layout/scrolltop/scrolltop";
 import Header from "../components/layout/header/header";
 import Footer from "../components/layout/footer/footer";
 import "./globals.css";
@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ScollTop />
         <Header />
         {children}
         <Footer />

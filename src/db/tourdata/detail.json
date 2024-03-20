@@ -1,0 +1,52 @@
+{
+  "main_img_url": "https://www.chamchamtrip.com//upload/ckeditor/2022/11/6e931c13-f67a-487e-a442-b47750e80f10",
+  "name": "창민체험휴양마을",
+  "homepage_url": "창민체험휴양마을.com",
+  "introduction": "아주좋은 마을입니다. 블라블라",
+  "one_line_intro": "촌캉스",
+  "summary": "아주좋은 마을입니다.",
+  "restaurant": "없음.",
+  "parking": "숙소 예약시 1객실당 2대 이용가능.",
+  "toilet": "30명 이용가능한 세미나실",
+  "amenities": "5인실 2, 8인실 1",
+  "area_name": "대전",
+  "room_summary_list": [
+    {
+      "roomId": 1,
+      "roomName": "사랑방",
+      "price": 80000
+    },
+    {
+      "roomId": 2,
+      "roomName": "사랑방12",
+      "price": 70000
+    }
+  ],
+  "exp_summary_list": [
+    {
+      "expId": 2,
+      "expName": "소타기 체험",
+      "price": 9000
+    },
+    {
+      "expId": 3,
+      "expName": "말타기 체험",
+      "price": 1000
+    },
+    {
+      "expId": 4,
+      "expName": "말타기 체험",
+      "price": 1000
+    },
+    {
+      "expId": 5,
+      "expName": "말타기 체험",
+      "price": 1000
+    },
+    {
+      "expId": 6,
+      "expName": "말타기 체험",
+      "price": 1000
+    }
+  ]
+}

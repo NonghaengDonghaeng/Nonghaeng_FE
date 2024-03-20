@@ -1,5 +1,5 @@
 .search_main {
-  @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[524px] flex justify-between absolute bg-yellow/85;
+  @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[524px] flex justify-between absolute z-30 bg-yellow/85;
 }
 
 /* region, category box*/

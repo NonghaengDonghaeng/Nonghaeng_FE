@@ -12,7 +12,7 @@
   @apply w-[8px] h-[12px] ml-[5px];
 }
 .trip_main > article > hr {
-  @apply border-[1px] border-stone;
+  @apply border-[1px] border-stone/80;
 }
 .trip_main > article > ul {
   @apply my-[20px] h-[420px];

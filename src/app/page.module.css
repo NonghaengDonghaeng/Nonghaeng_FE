@@ -32,7 +32,7 @@
   @apply w-[8px] h-[12px] ml-[5px];
 }
 .section2 > article > hr {
-  @apply border-[1px] border-stone;
+  @apply border-[1px] border-stone/80;
 }
 .section2 > article > ul {
   @apply my-[20px] h-[420px];
