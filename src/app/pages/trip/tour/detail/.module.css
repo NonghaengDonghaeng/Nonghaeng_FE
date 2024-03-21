@@ -38,20 +38,20 @@
 }
 
 .section1 > div:nth-child(3) {
-  @apply w-full h-[140px] my-[40px] flex border-[1px] border-stone/40 rounded-md;
+  @apply w-full h-[140px] my-[40px] px-[40px] py-[36px] flex justify-between border-[1px] border-stone/40 rounded-md;
 }
 .section1 > div:nth-child(3) > ul:first-child {
-  @apply w-[50%] pl-[40px] py-[35px];
+  @apply w-[380px];
 }
 .section1 > div:nth-child(3) > ul:first-child > li {
-  @apply mb-[20px] mr-[20px] flex float-left items-center text-[16px] font-[400];
+  @apply mb-[20px] mr-[20px] flex float-left items-center text-[14px] font-[400];
 }
 .section1 > div:nth-child(3) > ul:first-child > li > img {
   @apply w-[20px] h-[22px] mr-[6px];
 }
 
 .section1 > div:nth-child(3) > ul:last-child {
-  @apply w-[50%] pl-[18%] pr-[40px] py-[35px] flex justify-between;
+  @apply w-[200px] flex justify-between;
 }
 .section1 > div:nth-child(3) > ul:last-child > li {
   @apply w-[100px] h-[68px] px-[16px] rounded-md items-center flex justify-between cursor-pointer text-orange;
