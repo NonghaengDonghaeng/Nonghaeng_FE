@@ -1,14 +1,76 @@
 .section1 {
-  @apply w-full h-[900px] mt-[80px] bg-slate-200;
+  @apply w-full h-[900px] mt-[80px]  text-stone font-[500];
 }
 .section1 > img {
   @apply w-full h-[500px] rounded-3xl;
 }
 .section1 > div:nth-child(2) {
-  @apply w-full h-[140px] my-[40px] bg-slate-400;
+  @apply w-full h-[140px] my-[40px]  flex;
 }
+.section1 > div:nth-child(2) > div:first-child {
+  @apply w-[50%] py-[20px];
+}
+.section1 > div:nth-child(2) > div > h1 {
+  @apply flex items-center text-[24px] font-[600];
+}
+.section1 > div:nth-child(2) > div > h1 > span {
+  @apply ml-[14px] flex items-center text-[18px] font-[400];
+}
+.section1 > div:nth-child(2) > div > h1 > span > img {
+  @apply w-[22px] h-[20px] mr-[6px];
+}
+.section1 > div:nth-child(2) > div > h2 {
+  @apply my-[6px] text-[16px];
+}
+
+.section1 > div:nth-child(2) > div:last-child {
+  @apply w-[50%] items-center flex justify-between;
+}
+.section1 > div:nth-child(2) > div > img {
+  @apply w-[100px] h-[100px] rounded-lg cursor-pointer;
+}
+
+.img_on {
+  @apply border-b-[2px] border-b-orange;
+}
+.img_off {
+  @apply opacity-[40%];
+}
+
 .section1 > div:nth-child(3) {
-  @apply w-full h-[140px] my-[40px] bg-slate-400;
+  @apply w-full h-[140px] my-[40px] flex border-[1px] border-stone/40 rounded-md;
+}
+.section1 > div:nth-child(3) > ul:first-child {
+  @apply w-[50%] pl-[40px] py-[35px];
+}
+.section1 > div:nth-child(3) > ul:first-child > li {
+  @apply mb-[20px] mr-[20px] flex float-left items-center text-[16px] font-[400];
+}
+.section1 > div:nth-child(3) > ul:first-child > li > img {
+  @apply w-[20px] h-[22px] mr-[6px];
+}
+
+.section1 > div:nth-child(3) > ul:last-child {
+  @apply w-[50%] pl-[18%] pr-[40px] py-[35px] flex justify-between;
+}
+.section1 > div:nth-child(3) > ul:last-child > li {
+  @apply w-[100px] h-[68px] px-[16px] rounded-md items-center flex justify-between cursor-pointer text-orange;
+}
+.section1 > div:nth-child(3) > ul:last-child > li > img {
+  @apply w-[30px] h-[30px];
+}
+.section1 > div:nth-child(3) > ul:last-child > li > span > label {
+  @apply w-full h-[16px] px-[10px] block text-[12px] rounded-full cursor-pointer;
+}
+
+._on {
+  @apply bg-orange/20;
+}
+._on > span > label {
+  @apply bg-white;
+}
+._off > span > label {
+  @apply bg-orange/20;
 }
 
 .section2 > article {
