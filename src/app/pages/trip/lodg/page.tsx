@@ -44,7 +44,7 @@ export default function page() {
             <h1>농촌숙박</h1>
             <ScDetailOn pageState={pageState} setPageState={setPageState} />
             <ScDetail pageState={pageState} setPageState={setPageState} />
-            <Overlay pageState={pageState} />
+            <Overlay isClick={pageState.isClick} />
           </div>
           <hr></hr>
           <article>

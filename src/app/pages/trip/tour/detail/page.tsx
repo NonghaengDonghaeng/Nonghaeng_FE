@@ -12,13 +12,14 @@ import address_img from "img/tour/address-img.png";
 import email_img from "img/tour/email_img.png";
 import exp_img from "img/exp/orange.png";
 import lodg_img from "img/lodg/orange.png";
+import SubList from "@/components/common/sublist/sublist";
 
 export default function page() {
   const { element, moveElement } = useMove();
   const [pageState, setPageState] = useState({
+    isClick: { exp: false, lodg: false },
     img_url: tour_detail.main_img_url,
   });
-  const [isClick, setIsClick] = useState({ exp: false, lodg: false });
 
   const imgList = tour_detail.sub_img_url.map((item, index) => (
     <img
@@ -69,8 +70,13 @@ export default function page() {
           </ul>
           <ul>
             <li
-              className={`${isClick.exp ? styles._on : styles._off}`}
-              onClick={() => setIsClick({ exp: !isClick.exp, lodg: false })}
+              className={`${pageState.isClick.exp ? styles._on : styles._off}`}
+              onClick={() =>
+                setPageState({
+                  ...pageState,
+                  isClick: { exp: !pageState.isClick.exp, lodg: false },
+                })
+              }
             >
               <Image src={exp_img} alt="exp_img" />
               <span>
@@ -78,14 +84,20 @@ export default function page() {
               </span>
             </li>
             <li
-              className={`${isClick.lodg ? styles._on : styles._off}`}
-              onClick={() => setIsClick({ exp: false, lodg: !isClick.lodg })}
+              className={`${pageState.isClick.lodg ? styles._on : styles._off}`}
+              onClick={() =>
+                setPageState({
+                  ...pageState,
+                  isClick: { exp: false, lodg: !pageState.isClick.lodg },
+                })
+              }
             >
               <Image src={lodg_img} alt="lodg_img" />
               <span>
                 숙박<label> {tour_detail.room_summary_list.length}</label>
               </span>
             </li>
+            <SubList isClick={pageState.isClick} tour_detail={tour_detail} />
           </ul>
         </div>
       </section>
