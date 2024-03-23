@@ -29,12 +29,15 @@
 .section1 > div:nth-child(2) > div > img {
   @apply w-[100px] h-[100px] rounded-lg cursor-pointer;
 }
+.section1 > div:nth-child(2) > div > img:hover {
+  @apply opacity-100 border-b-[2px] duration-500 border-b-orange;
+}
 
 .img_on {
-  @apply border-b-[2px] border-b-orange;
+  @apply border-b-[2px] duration-500 border-b-orange;
 }
 .img_off {
-  @apply opacity-[40%];
+  @apply opacity-[40%] duration-500;
 }
 
 .section1 > div:nth-child(3) {
@@ -55,6 +58,12 @@
 }
 .section1 > div:nth-child(3) > ul:nth-child(2) > li {
   @apply w-[100px] h-[68px] px-[16px] rounded-md items-center flex justify-between cursor-pointer text-orange;
+}
+.section1 > div:nth-child(3) > ul:nth-child(2) > li:hover {
+  @apply bg-orange/20 duration-500;
+}
+.section1 > div:nth-child(3) > ul:nth-child(2) > li:hover > span > label {
+  @apply bg-white duration-500;
 }
 .section1 > div:nth-child(3) > ul:nth-child(2) > li > img {
   @apply w-[30px] h-[30px];
