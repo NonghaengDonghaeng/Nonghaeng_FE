@@ -7,7 +7,8 @@
     "https://www.chamchamtrip.com/upload/ckeditor/2023/01/a06765ea-024d-4835-aaeb-735344b59001"
   ],
   "experience_name": "소타기 체험",
-  "experience_type_name": "4",
+  "grade": 5,
+  "experience_type_name": "만들기체험",
   "start_date": "2024-01-01",
   "end_date": "2024-12-31",
   "min_participant": 2,
