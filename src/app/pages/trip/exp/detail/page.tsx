@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import useMove from "@/hooks/useMove";
-import DetailNav from "@/components/common/detailnav/detailnav";
+import SubNav from "@/components/common/subnav/subnav";
 import styles from "./.module.css";
 import exp_detail from "@/db/expdata/detail.json";
 import grade_img from "img/tour/grade_img.png";
@@ -51,7 +51,6 @@ export default function page() {
             >
               {exp_detail.tour_info.tourName}
             </Link>
-
             {" > "}
             {exp_detail.experience_name}
           </span>
@@ -93,15 +92,27 @@ export default function page() {
       </section>
       <section className={styles.section2}>
         <article ref={element[0]}>
-          <DetailNav moveElement={moveElement} nowRef={"기본정보"} />
+          <SubNav
+            moveElement={moveElement}
+            title={["기본정보", "체험후기", "체험문의"]}
+            nowRef={0}
+          />
           기본정보
         </article>
         <article ref={element[1]}>
-          <DetailNav moveElement={moveElement} nowRef={"여행후기"} />
+          <SubNav
+            moveElement={moveElement}
+            title={["기본정보", "체험후기", "체험문의"]}
+            nowRef={1}
+          />
           여행후기
         </article>
         <article ref={element[2]}>
-          <DetailNav moveElement={moveElement} nowRef={"고객문의"} />
+          <SubNav
+            moveElement={moveElement}
+            title={["기본정보", "체험후기", "체험문의"]}
+            nowRef={2}
+          />
           문의
         </article>
       </section>
