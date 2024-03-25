@@ -4,7 +4,7 @@ import SubNav from "@/components/common/subnav/subnav";
 import useMove from "@/hooks/useMove";
 import styles from "./.module.css";
 import lodg_list from "@/db/lodgdata/detail.json";
-import CustomCalendar from "@/components/common/customcalendar/cumstomcalendar";
+import CustomCalendar from "@/components/common/customcalendar/customcalendar";
 
 export default function page() {
   const { element, moveElement } = useMove();
