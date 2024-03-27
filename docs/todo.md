@@ -40,4 +40,15 @@
 
 ### 오늘할일(3,25)
 
-- customCalendar 제작
+- customCalendar 제작(진행중, calendar라이브러리는 react-modern-calendar로 선택)
+
+### 오늘할일(3,26)
+
+- CustomCalendar defaultProps문제 해결 (x, 경고문 있는 상태로 사용)
+- CustomCalendar 제작 (o, 라이브러리 선택완료)
+
+### 오늘할일(3,27)
+
+- 숙박중간페이지 section2 프레임 제작
+- 숙박중간리스트 컴포넌트 제작
+- 숙박상세페이지 프레임 제작
