@@ -2,5 +2,16 @@
 }
 
 .sub_lodg_list > ul:first-child {
-  @apply w-full h-[80px] flex bg-slate-200;
+  @apply w-full h-[80px]  py-[20px] flex justify-between bg-slate-200;
+}
+.sub_lodg_list > ul:first-child > li:first-child > div:first-child {
+  @apply w-[280px] h-[40px] rounded-full flex justify-center items-center border-stone/40 border-[1px] text-[16px] cursor-pointer text-stone bg-white;
+}
+
+.sub_lodg_list > ul:first-child > li:nth-child(2) {
+  @apply flex;
+}
+
+.off {
+  @apply hidden;
 }

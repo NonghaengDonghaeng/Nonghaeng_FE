@@ -1,0 +1,9 @@
+.click_count {
+  @apply w-[80px] h-[40px] px-[8px] flex items-center justify-between rounded-full border-stone/40 border-[1px] text-[18px] cursor-pointer text-stone bg-white;
+}
+.click_count > button {
+  @apply text-[22px];
+}
+.click_count > button:hover {
+  @apply text-orange;
+}

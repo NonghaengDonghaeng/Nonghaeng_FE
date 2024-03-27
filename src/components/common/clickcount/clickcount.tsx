@@ -1,27 +1,24 @@
+import styles from "./.module.css";
 import { inputType } from "@/types/eventtype";
 
 type PropsType = {
   count: number;
-  setCount: React.Dispatch<React.SetStateAction<any>>;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export default function InputCount({ count, setCount }: PropsType) {
-  function countChange(e: inputType) {
-    setCount(e.target.value);
-  }
-
+export default function ClickCount({ count, setCount }: PropsType) {
   return (
-    <div>
+    <div className={styles.click_count}>
       <button
         onClick={() => {
           if (count > 0) {
             setCount(count - 1);
-          } else alert("사람수가 0이하");
+          } else alert("0이하");
         }}
       >
         -
       </button>
-      <input onChange={countChange} value={count}></input>
+      {count}
       <button onClick={() => setCount(count + 1)}>+</button>
     </div>
   );
