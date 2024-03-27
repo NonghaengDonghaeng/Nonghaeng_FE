@@ -2,7 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./.module.css";
 
-export default function SubList({ isClick, tour_detail }) {
+type PropsType = {
+  isClick: any;
+  tour_detail: {
+    exp_summary_list: any[];
+    room_summary_list: any[];
+  };
+};
+
+export default function SubList({ isClick, tour_detail }: PropsType) {
   const expList = tour_detail.exp_summary_list.map((item, index) => (
     <li key={index}>
       <img></img>

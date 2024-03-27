@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 import section1_bg from "img/main/section1_bg.png";
 import more_nonghang from "img/main/more_nonghang.png";
 import more_green from "img/main/more_green.png";
-import ExpList from "@/components/common/explist/explist";
-import LodgList from "@/components/common/lodglist/lodglist";
+import ExpList from "@/components/common/list/explist/explist";
+import LodgList from "@/components/common/list/lodglist/lodglist";
 import exp_list from "@/db/expdata/list.json";
 import lodg_list from "@/db/lodgdata/list.json";
 

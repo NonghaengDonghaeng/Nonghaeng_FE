@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import Nav from "@/components/layout/nav/nav";
 import Overlay from "@/components/common/overlay/overlay";
-import TourList from "@/components/common/tourlist/tourlist";
+import TourList from "@/components/common/list/tourlist/tourlist";
 import styles from "./.module.css";
 import { tripHref } from "@/storage/href";
 import tour_list from "@/db/tourdata/list.json";

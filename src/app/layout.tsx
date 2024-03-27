@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ScollTop from "@/components/layout/scrolltop/scrolltop";
@@ -31,3 +33,4 @@ export default function RootLayout({
     </html>
   );
 }
+/* eslint-enable */

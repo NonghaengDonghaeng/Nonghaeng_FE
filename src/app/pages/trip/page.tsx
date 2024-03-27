@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import Nav from "@/components/layout/nav/nav";
-import TourList from "@/components/common/tourlist/tourlist";
-import ExpList from "@/components/common/explist/explist";
-import LodgList from "@/components/common/lodglist/lodglist";
+import TourList from "@/components/common/list/tourlist/tourlist";
+import ExpList from "@/components/common/list/explist/explist";
+import LodgList from "@/components/common/list/lodglist/lodglist";
 import styles from "./.module.css";
 import { tripHref } from "@/storage/href";
 import tour_list from "@/db/tourdata/list.json";

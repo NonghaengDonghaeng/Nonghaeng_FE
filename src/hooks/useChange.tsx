@@ -2,8 +2,30 @@ import { inputType } from "@/types/eventtype";
 import { pageStateType, setPageStateType } from "@/types/pageState";
 
 type changeType = {
-  pageState: pageStateType;
-  setPageState: setPageStateType;
+  pageState: {
+    isClick?: any;
+    state?: boolean | undefined;
+    page_type?: string | undefined;
+    page_index?: string | undefined;
+    search_word?: string;
+    region?: string[] | string;
+    category?: string[] | string;
+    max_cost?: string | undefined;
+    min_cost?: string | undefined;
+  };
+  setPageState: React.Dispatch<
+    React.SetStateAction<{
+      isClick?: any;
+      state?: boolean;
+      page_type?: string;
+      page_index?: string;
+      search_word?: string;
+      region?: string[] | string;
+      category?: string[] | string;
+      max_cost?: string;
+      min_cost?: string;
+    }>
+  >;
   e: inputType;
 };
 

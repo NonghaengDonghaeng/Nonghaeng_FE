@@ -1,16 +1,14 @@
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import React, { useState } from "react";
-import { Calendar, DayRange } from "react-modern-calendar-datepicker";
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import { Calendar } from "react-modern-calendar-datepicker";
+import { DayValue } from "react-modern-calendar-datepicker";
 
 const CustomCalendar = () => {
-  const [selectedDayRange, setSelectedDayRange] = useState<DayRange>({
-    from: null,
-    to: null,
-  });
+  const [selectedDay, setSelectedDay] = React.useState<DayValue>(null);
   return (
     <Calendar
-      value={selectedDayRange}
-      onChange={setSelectedDayRange}
+      value={selectedDay}
+      onChange={setSelectedDay}
       shouldHighlightWeekends
     />
   );

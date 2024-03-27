@@ -7,7 +7,7 @@ import { tripHref } from "@/storage/href";
 import styles from "./.module.css";
 import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
 import Overlay from "@/components/common/overlay/overlay";
-import ExpList from "@/components/common/explist/explist";
+import ExpList from "@/components/common/list/explist/explist";
 import exp_list from "@/db/expdata/list.json";
 import Paging from "@/components/common/paging/paging";
 import { pageStateType } from "@/types/pageState";

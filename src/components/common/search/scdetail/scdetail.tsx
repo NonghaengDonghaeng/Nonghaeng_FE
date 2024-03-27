@@ -23,7 +23,9 @@ export default function ScDetail({ pageState, setPageState }: propsType) {
         type="checkbox"
         name="region"
         value={item}
-        defaultChecked={pageState.region.includes(item)}
+        defaultChecked={
+          Array.isArray(pageState.region) && pageState.region.includes(item)
+        }
       />
       {item}
     </li>
@@ -34,7 +36,9 @@ export default function ScDetail({ pageState, setPageState }: propsType) {
         type="checkbox"
         name="category"
         value={item}
-        defaultChecked={pageState.category.includes(item)}
+        defaultChecked={
+          Array.isArray(pageState.category) && pageState.category.includes(item)
+        }
       />
       {item}
     </li>
@@ -45,7 +49,9 @@ export default function ScDetail({ pageState, setPageState }: propsType) {
         type="checkbox"
         name="category"
         value={item}
-        defaultChecked={pageState.category.includes(item)}
+        defaultChecked={
+          Array.isArray(pageState.category) && pageState.category.includes(item)
+        }
       />
       {item}
     </li>
@@ -56,7 +62,9 @@ export default function ScDetail({ pageState, setPageState }: propsType) {
         type="checkbox"
         name="category"
         value={item}
-        defaultChecked={pageState.category.includes(item)}
+        defaultChecked={
+          Array.isArray(pageState.category) && pageState.category.includes(item)
+        }
       />
       {item}
     </li>

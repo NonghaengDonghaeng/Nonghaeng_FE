@@ -3,9 +3,9 @@ export type pageStateType = {
   state?: boolean;
   page_type?: string;
   page_index?: string;
-  search_word: string;
-  region: string[] | string;
-  category: string[] | string;
+  search_word?: string;
+  region?: string[] | string;
+  category?: string[] | string;
   max_cost?: string;
   min_cost?: string;
 };
@@ -16,9 +16,9 @@ export type setPageStateType = React.Dispatch<
     state?: boolean;
     page_type?: string;
     page_index?: string;
-    search_word: string;
-    region: string[] | string;
-    category: string[] | string;
+    search_word?: string;
+    region?: string[] | string;
+    category?: string[] | string;
     max_cost?: string;
     min_cost?: string;
   }>

@@ -1,0 +1,6 @@
+.sub_lodg_list {
+}
+
+.sub_lodg_list > ul:first-child {
+  @apply w-full h-[80px] flex bg-slate-200;
+}

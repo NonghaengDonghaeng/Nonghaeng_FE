@@ -12,7 +12,7 @@ import address_img from "img/tour/address-img.png";
 import email_img from "img/tour/email_img.png";
 import exp_img from "img/exp/orange.png";
 import lodg_img from "img/lodg/orange.png";
-import SubList from "@/components/common/sublist/sublist";
+import SubList from "@/components/common/list/sublist/sublist";
 
 export default function page() {
   const { element, moveElement } = useMove();

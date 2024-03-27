@@ -7,7 +7,7 @@ import Nav from "@/components/layout/nav/nav";
 import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
 import ScDetail from "@/components/common/search/scdetail/scdetail";
 import Overlay from "@/components/common/overlay/overlay";
-import LodgList from "@/components/common/lodglist/lodglist";
+import LodgList from "@/components/common/list/lodglist/lodglist";
 import Paging from "@/components/common/paging/paging";
 import styles from "./.module.css";
 import { pageStateType } from "@/types/pageState";

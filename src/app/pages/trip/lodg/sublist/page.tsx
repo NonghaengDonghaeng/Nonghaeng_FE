@@ -4,7 +4,7 @@ import SubNav from "@/components/common/subnav/subnav";
 import useMove from "@/hooks/useMove";
 import styles from "./.module.css";
 import lodg_list from "@/db/lodgdata/detail.json";
-import CustomCalendar from "@/components/common/customcalendar/customcalendar";
+import SubLodgList from "@/components/common/list/sublodglist/sublodglist";
 
 export default function page() {
   const { element, moveElement } = useMove();
@@ -52,7 +52,7 @@ export default function page() {
             title={["객실선택", "기본정보", "숙박후기"]}
             nowRef={0}
           />
-          <CustomCalendar />
+          <SubLodgList />
         </article>
         <article ref={element[1]}>
           <SubNav
