@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import SubNav from "@/components/common/subnav/subnav";
 import useMove from "@/hooks/useMove";
 import styles from "./.module.css";
-import lodg_list from "@/db/lodgdata/detail.json";
+import sub_lodg_detail from "@/db/lodgdata/detail.json";
 import SubLodgList from "@/components/common/list/sublodglist/sublodglist";
 
 export default function page() {
   const { element, moveElement } = useMove();
 
   const [pageState, setPageState] = useState({
-    img_url: lodg_list.main_img_url,
+    img_url: sub_lodg_detail.main_img_url,
   });
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function page() {
     // 방 리스트는 리스트 컴포넌트에서 api요청
   }, []);
 
-  const imgList = lodg_list.sub_img_url.map((item, index) => (
+  const imgList = sub_lodg_detail.sub_img_url.map((item, index) => (
     <li
       key={index}
       onClick={() => setPageState({ ...pageState, img_url: item })}
@@ -40,9 +40,9 @@ export default function page() {
           <ul>{imgList}</ul>
         </article>
         <article>
-          <h1>{lodg_list.tour_name}</h1>
+          <h1>{sub_lodg_detail.tour_name}</h1>
           <hr />
-          <h2>{lodg_list.tour_one_line_intro}</h2>
+          <h2>{sub_lodg_detail.tour_one_line_intro}</h2>
         </article>
       </section>
       <section className={styles.section2}>
@@ -52,7 +52,9 @@ export default function page() {
             title={["객실선택", "기본정보", "숙박후기"]}
             nowRef={0}
           />
-          <SubLodgList />
+          <SubLodgList
+            sub_lodg_list_props={sub_lodg_detail.room_summary_dto_list}
+          />
         </article>
         <article ref={element[1]}>
           <SubNav

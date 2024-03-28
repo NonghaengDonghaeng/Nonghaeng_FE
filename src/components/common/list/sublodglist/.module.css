@@ -1,17 +1,65 @@
 .sub_lodg_list {
+  @apply text-stone font-[500];
 }
 
 .sub_lodg_list > ul:first-child {
-  @apply w-full h-[80px]  py-[20px] flex justify-between bg-slate-200;
+  @apply w-full h-[80px]  py-[20px] flex items-center justify-between;
 }
 .sub_lodg_list > ul:first-child > li:first-child > div:first-child {
-  @apply w-[280px] h-[40px] rounded-full flex justify-center items-center border-stone/40 border-[1px] text-[16px] cursor-pointer text-stone bg-white;
+  @apply w-[240px] h-[30px] rounded-full flex justify-center items-center border-stone/40 border-[1px] text-[14px] cursor-pointer text-stone font-[400];
 }
 
-.sub_lodg_list > ul:first-child > li:nth-child(2) {
-  @apply flex;
+.sub_lodg_list > ul:first-child > li {
+  @apply flex items-center text-[14px] text-orange;
+}
+.sub_lodg_list > ul:first-child > li > img {
+  @apply w-[18px] h-[20px] ml-[6px];
+}
+.sub_lodg_list > ul:first-child > li:nth-child(2) > div {
+  @apply mx-[6px];
+}
+.sub_lodg_list > ul:first-child > li:nth-child(2) > button {
+  @apply w-[60px] h-[30px] ml-[10px] rounded-full bg-orange/40 text-white;
+}
+.sub_lodg_list > ul:first-child > li:nth-child(2) > button:hover {
+  @apply bg-orange;
 }
 
 .off {
   @apply hidden;
+}
+
+.sub_lodg_list > div:nth-child(2) {
+  @apply absolute;
+}
+
+.sub_lodg_list > ul:nth-child(3) > li > a {
+  @apply w-full h-[240px] mt-[20px] flex rounded-xl border-[1px] border-stone/20;
+}
+.sub_lodg_list > ul:nth-child(3) > li > a > img {
+  @apply w-[40%] rounded-l-xl;
+}
+.sub_lodg_list > ul:nth-child(3) > li > a > div {
+  @apply w-[60%] px-[40px] py-[24px];
+}
+.sub_lodg_list > ul:nth-child(3) > li > a > div > h1 {
+  @apply flex items-center text-[20px] text-orange;
+}
+.sub_lodg_list > ul:nth-child(3) > li > a > div > h1 > span {
+  @apply ml-[20px] flex text-[14px] font-[400];
+}
+.sub_lodg_list > ul:nth-child(3) > li > a > div > h1 > span > img {
+  @apply w-[18px] h-[20px] mr-[6px];
+}
+.sub_lodg_list > ul:nth-child(3) > li > a > div > P {
+  @apply my-[10px] text-[20px];
+}
+.sub_lodg_list > ul:nth-child(3) > li > a > div > div {
+  @apply w-full h-[112px] rounded-xl px-[18px] py-[4px] bg-stone/5;
+}
+.sub_lodg_list > ul:nth-child(3) > li > a > div > div > P {
+  @apply my-[8px] text-[14px] font-[400];
+}
+.sub_lodg_list > ul:nth-child(3) > li > a > div > div > P > label {
+  @apply text-[16px] font-[500] mr-[8px];
 }

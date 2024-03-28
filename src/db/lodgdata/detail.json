@@ -18,6 +18,7 @@
   "amenities": "5인실 2, 8인실 1",
   "room_summary_dto_list": [
     {
+      "img_url": "https://www.chamchamtrip.com/site/resource/file/FILE_000000000003418/2",
       "room_id": 1,
       "room_name": "사랑방",
       "num_of_room": 3,
@@ -30,6 +31,7 @@
       "room_configuration": "화장실 1개, 거실1개, 방2개"
     },
     {
+      "img_url": "https://www.chamchamtrip.com/site/resource/file/FILE_000000000003418/1",
       "room_id": 2,
       "room_name": "사랑방12",
       "num_of_room": 2,
