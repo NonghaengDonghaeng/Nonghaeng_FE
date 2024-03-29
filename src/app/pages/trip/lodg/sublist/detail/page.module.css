@@ -1,0 +1,82 @@
+.section1 {
+  @apply w-full h-[420px] mt-[80px]  text-stone font-[500] flex justify-between;
+}
+.section1 > article:first-child {
+  @apply w-[50%] h-full;
+}
+.section1 > article:first-child > img {
+  @apply w-full h-[300px] rounded-xl;
+}
+.section1 > article:first-child > ul {
+  @apply h-[120px] py-[20px] flex justify-between;
+}
+.section1 > article:first-child > ul > li {
+  @apply w-[100px] h-[80px];
+}
+.section1 > article:first-child > ul > li > img {
+  @apply w-[100px] h-[80px] rounded-xl cursor-pointer;
+}
+.section1 > article:first-child > ul > li > img:hover {
+  @apply opacity-100 border-b-[2px] duration-500 border-b-orange;
+}
+
+.img_on {
+  @apply border-b-[2px] duration-500 border-b-orange;
+}
+.img_off {
+  @apply opacity-[40%];
+}
+
+.section1 > article:last-child {
+  @apply w-[40%] h-full py-[20px];
+}
+.section1 > article:last-child > span {
+  @apply opacity-40 font-[400];
+}
+.section1 > article:last-child h1 {
+  @apply flex text-[24px] font-[600] my-[20px];
+}
+.section1 > article:last-child h1 > span {
+  @apply ml-[14px] flex items-center text-[16px] font-[400] text-orange;
+}
+.section1 > article:last-child > hr {
+  @apply my-[20px] border-stone/40;
+}
+.section1 > article:last-child > p {
+  @apply my-[8px] text-[14px] font-[400];
+}
+.section1 > article:last-child > p > label {
+  @apply text-[16px] font-[500] mr-[10px];
+}
+.section1 > article:last-child > ul:nth-child(7) {
+  @apply my-[40px] flex justify-between;
+}
+.section1 > article:last-child > ul:nth-child(7) > li {
+  @apply flex items-center;
+}
+.section1 > article:last-child > ul:nth-child(7) > li > img {
+  @apply w-[18px] h-[20px] mr-[6px];
+}
+.section1 > article:last-child > ul:nth-child(7) > li:last-child > div {
+  @apply w-[120px] h-[30px] flex items-center justify-center text-[14px] border-[1px] border-stone/40 rounded-full;
+}
+
+.section1 > article:last-child > ul:nth-child(8) {
+  @apply w-full h-[50px] mt-[50px] flex cursor-pointer;
+}
+.section1 > article:last-child > ul:nth-child(8) > li {
+  @apply w-[50%] flex items-center justify-center rounded-md;
+}
+.section1 > article:last-child > ul:nth-child(8) > li:nth-child(1) {
+  @apply bg-orange/10;
+}
+.section1 > article:last-child > ul:nth-child(8) > li:nth-child(2) {
+  @apply bg-green/10;
+}
+.section1 > article:last-child > ul:nth-child(8) > li > img {
+  @apply w-[20px] h-[18px] ml-[10px];
+}
+
+.section2 > article {
+  @apply w-full h-[600px];
+}

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import SubNav from "@/components/common/subnav/subnav";
 import useMove from "@/hooks/useMove";
 import styles from "./.module.css";
-import sub_lodg_detail from "@/db/lodgdata/detail.json";
+import sub_lodg_detail from "@/db/lodgdata/subdetail.json";
 import SubLodgList from "@/components/common/list/sublodglist/sublodglist";
 
 export default function page() {

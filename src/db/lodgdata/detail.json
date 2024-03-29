@@ -1,47 +1,29 @@
 {
-  "main_img_url": "https://www.chamchamtrip.com/upload/ckeditor/2022/11/6e931c13-f67a-487e-a442-b47750e80f10",
+  "main_img_url": "https://www.chamchamtrip.com/site/resource/file/FILE_000000000003417/0",
   "sub_img_url": [
-    "https://www.chamchamtrip.com/upload/ckeditor/2022/11/d66b4ece-24d9-4968-abf4-9b32b61cca6e",
-    "https://www.chamchamtrip.com/upload/ckeditor/2022/11/e389d916-eb7b-406f-af94-7895abb1b944",
-    "https://www.chamchamtrip.com/upload/ckeditor/2022/11/b396e88e-6d11-470a-b6eb-bdb330631468",
-    "https://www.chamchamtrip.com/upload/ckeditor/2022/11/ff987438-7545-4253-b990-44c7d733c55c"
+    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/0",
+    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/1",
+    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/2",
+    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/3"
   ],
-  "tour_name": "가람농촌펜션",
-  "tour_one_line_intro": "전주 한옥마을에서 자전거로 15분 거리에 위치한 가람농촌펜션은 깔끔한 숙박시설과 조미료가 들어가지 않은 건상식을 맛볼 수 있습니다.",
-  "area_name": "대전",
-  "address": "대전광역시 유성구 노은로 353,301-1701",
-  "call_number": "041-1234-1234",
-  "homepage_url": "창민체험휴양마을.com",
-  "restaurant": "없음.",
-  "parking": "숙소 예약시 1객실당 2대 이용가능.",
-  "toilet": "30명 이용가능한 세미나실",
-  "amenities": "5인실 2, 8인실 1",
-  "room_summary_dto_list": [
-    {
-      "img_url": "https://www.chamchamtrip.com/site/resource/file/FILE_000000000003418/2",
-      "room_id": 1,
-      "room_name": "사랑방",
-      "num_of_room": 3,
-      "price": 60000,
-      "price_holiday": 90000,
-      "standard_capacity": 2,
-      "max_capacity": 4,
-      "checkin_time": "15:00:00",
-      "checkout_time": "11:00:00",
-      "room_configuration": "화장실 1개, 거실1개, 방2개"
-    },
-    {
-      "img_url": "https://www.chamchamtrip.com/site/resource/file/FILE_000000000003418/1",
-      "room_id": 2,
-      "room_name": "사랑방12",
-      "num_of_room": 2,
-      "price": 50000,
-      "price_holiday": 80000,
-      "standard_capacity": 2,
-      "max_capacity": 4,
-      "checkin_time": "15:00:00",
-      "checkout_time": "11:00:00",
-      "room_configuration": "화장실 1개, 거실1개, 방2개"
-    }
-  ]
+  "room_name": "사랑방12",
+  "room_type_name": "2",
+  "summary": "연인끼리 와서 쉬다가기 좋아요12",
+  "price_peak": 70000,
+  "price_off_peak": 50000,
+  "price_holiday": 80000,
+  "standard_capacity": 2,
+  "max_capacity": 4,
+  "additional_cost": 15000,
+  "checkin_time": "15:00:00",
+  "checkout_time": "11:00:00",
+  "current_num_of_room": 1,
+  "room_configuration": "화장실 1개, 거실1개, 방2개",
+  "inclusions": "객실 내 화장실, 무료 WIFI",
+  "requirement": "각종그릇, 에어컨, TV, 커피포트, 샴푸, 린스, 바디워시, 치약",
+  "facilities": "식당",
+  "usage_tips": "시원하게 흐르는 요천강변이 가까워 산책을 즐기기 좋음",
+  "precautions": "전 객실 금연입니다.",
+  "tour_id": 4,
+  "tour_name": "창민체험휴양마을"
 }

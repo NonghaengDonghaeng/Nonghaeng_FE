@@ -33,33 +33,33 @@
   @apply absolute;
 }
 
-.sub_lodg_list > ul:nth-child(3) > li > a {
+.sub_lodg_list > ul:nth-child(2) > li > a {
   @apply w-full h-[240px] mt-[20px] flex rounded-xl border-[1px] border-stone/20;
 }
-.sub_lodg_list > ul:nth-child(3) > li > a > img {
+.sub_lodg_list > ul:nth-child(2) > li > a > img {
   @apply w-[40%] rounded-l-xl;
 }
-.sub_lodg_list > ul:nth-child(3) > li > a > div {
+.sub_lodg_list > ul:nth-child(2) > li > a > div {
   @apply w-[60%] px-[40px] py-[24px];
 }
-.sub_lodg_list > ul:nth-child(3) > li > a > div > h1 {
+.sub_lodg_list > ul:nth-child(2) > li > a > div > h1 {
   @apply flex items-center text-[20px] text-orange;
 }
-.sub_lodg_list > ul:nth-child(3) > li > a > div > h1 > span {
+.sub_lodg_list > ul:nth-child(2) > li > a > div > h1 > span {
   @apply ml-[20px] flex text-[14px] font-[400];
 }
-.sub_lodg_list > ul:nth-child(3) > li > a > div > h1 > span > img {
+.sub_lodg_list > ul:nth-child(2) > li > a > div > h1 > span > img {
   @apply w-[18px] h-[20px] mr-[6px];
 }
-.sub_lodg_list > ul:nth-child(3) > li > a > div > P {
+.sub_lodg_list > ul:nth-child(2) > li > a > div > P {
   @apply my-[10px] text-[20px];
 }
-.sub_lodg_list > ul:nth-child(3) > li > a > div > div {
+.sub_lodg_list > ul:nth-child(2) > li > a > div > div {
   @apply w-full h-[112px] rounded-xl px-[18px] py-[4px] bg-stone/5;
 }
-.sub_lodg_list > ul:nth-child(3) > li > a > div > div > P {
+.sub_lodg_list > ul:nth-child(2) > li > a > div > div > P {
   @apply my-[8px] text-[14px] font-[400];
 }
-.sub_lodg_list > ul:nth-child(3) > li > a > div > div > P > label {
+.sub_lodg_list > ul:nth-child(2) > li > a > div > div > P > label {
   @apply text-[16px] font-[500] mr-[8px];
 }
