@@ -2,7 +2,17 @@ import { pageStateType } from "@/types/pageState";
 import { useRouter } from "next/navigation";
 
 type propsType = {
-  pageState: pageStateType;
+  pageState: {
+    isClick?: any;
+    state?: boolean;
+    page_type?: string;
+    page_index?: string;
+    search_word?: string;
+    region?: string[] | string;
+    category?: string[] | string;
+    max_cost?: string;
+    min_cost?: string;
+  };
 };
 
 export default function useSetUrl() {

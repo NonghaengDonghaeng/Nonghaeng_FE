@@ -11,7 +11,7 @@ export default function ClickCount({ count, setCount }: PropsType) {
     <div className={styles.click_count}>
       <button
         onClick={() => {
-          if (count > 0) {
+          if (count > 1) {
             setCount(count - 1);
           } else alert("0이하");
         }}

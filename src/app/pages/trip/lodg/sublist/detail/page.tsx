@@ -1,14 +1,14 @@
 "use client";
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import ClickCount from "@/components/common/clickcount/clickcount";
 import SubNav from "@/components/common/subnav/subnav";
 import useMove from "@/hooks/useMove";
 import styles from "./page.module.css";
-import { DayRange } from "react-modern-calendar-datepicker";
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import { Calendar, DayRange } from "react-modern-calendar-datepicker";
 import lodg_detail from "@/db/lodgdata/detail.json";
 import room_img from "img/lodg/room.png";
 import person_img from "img/lodg/person.png";
@@ -18,15 +18,28 @@ import reservation_img from "img/exp/reservation.png";
 
 export default function page() {
   const searchParams = useSearchParams();
-  const [lodg_id, setLodg_id] = useState(searchParams.get("lodg_id"));
+  const router = useRouter();
   const { element, moveElement } = useMove();
+
+  const [lodg_id, setLodg_id] = useState(searchParams.get("lodg_id"));
+  const [isClick, setIsClick] = useState(false);
   const [img_url, setImg_url] = useState(lodg_detail.main_img_url);
-  const [person_count, setPerson_count] = useState(0);
-  const [room_count, setRoom_count] = useState(0);
+  const [person_count, setPerson_count] = useState(1);
+  const [room_count, setRoom_count] = useState(1);
   const [dayRange, setDayRange] = React.useState<DayRange>({
     from: null,
     to: null,
   });
+
+  function routeReservation() {
+    // if ((dayRange.from || dayRange.to) == null) {
+    //   alert("날짜를 선택해주세요.");
+    // } else {
+    router.push(
+      `/pages/reservation/lodg?lodg_id=${lodg_id}&person_count=${person_count}&room_count=${room_count}`
+    );
+    // }
+  }
 
   const imgList = lodg_detail.sub_img_url.map((item, index) => (
     <li key={index} onClick={() => setImg_url(item)}>
@@ -37,7 +50,7 @@ export default function page() {
     </li>
   ));
 
-  useEffect(() => console.log(`숙박 상세페이지 api, lodg_id=${lodg_id}`));
+  useEffect(() => console.log(`숙박 상세페이지 api, lodg_id=${lodg_id}`), []);
 
   return (
     <main id="main">
@@ -84,7 +97,7 @@ export default function page() {
             </li>
             <li>
               <Image src={calenda_img} alt="calenda_img" />
-              <div>
+              <div onClick={() => setIsClick(!isClick)}>
                 {dayRange.from
                   ? `${dayRange.from?.year}, ${dayRange.from?.month}, ${dayRange.from?.day} `
                   : "체크인"}
@@ -95,16 +108,20 @@ export default function page() {
               </div>
             </li>
           </ul>
+          {/* <Calendar
+            calendarClassName={`${isClick ? styles.on : styles.off}`}
+            value={dayRange}
+            onChange={setDayRange}
+            shouldHighlightWeekends
+          /> */}
           <ul>
             <li onClick={() => console.log("좋아요 api")}>
               좋아요
               <Image src={great_img} alt="great_img" />
             </li>
-            <li>
-              <Link href={`/pages/reservation/lodg?lodg_id=${lodg_id}`}>
-                예약하기
-                <Image src={reservation_img} alt="reservation_img" />
-              </Link>
+            <li onClick={routeReservation}>
+              예약하기
+              <Image src={reservation_img} alt="reservation_img" />
             </li>
           </ul>
         </article>
