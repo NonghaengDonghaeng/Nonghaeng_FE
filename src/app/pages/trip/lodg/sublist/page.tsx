@@ -14,7 +14,7 @@ export default function page() {
   });
 
   useEffect(() => {
-    console.log("숙박 기본정보 api");
+    console.log("숙박중간페이지 api");
     // 숙소 기본정보를 불러오는 api요청
     // 방 리스트는 리스트 컴포넌트에서 api요청
   }, []);
