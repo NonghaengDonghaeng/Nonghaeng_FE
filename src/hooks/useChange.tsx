@@ -1,17 +1,19 @@
 import { inputType } from "@/types/eventtype";
-import { pageStateType, setPageStateType } from "@/types/pageState";
 
-type changeType = {
+type PropsType = {
   pageState: {
     isClick?: any;
-    state?: boolean | undefined;
-    page_type?: string | undefined;
-    page_index?: string | undefined;
+    state?: boolean;
+    page_type?: string;
+    page_index?: string;
     search_word?: string;
     region?: string[] | string;
     category?: string[] | string;
-    max_cost?: string | undefined;
-    min_cost?: string | undefined;
+    max_cost?: string;
+    min_cost?: string;
+    user_name?: string;
+    phone_number?: string;
+    email?: string;
   };
   setPageState: React.Dispatch<
     React.SetStateAction<{
@@ -24,6 +26,9 @@ type changeType = {
       category?: string[] | string;
       max_cost?: string;
       min_cost?: string;
+      user_name?: string;
+      phone_number?: string;
+      email?: string;
     }>
   >;
   e: inputType;
@@ -36,7 +41,7 @@ export function useChange() {
    @param {e} 이벤트 파라미터
   */
 
-  function change({ pageState, setPageState, e }: changeType) {
+  function change({ pageState, setPageState, e }: PropsType) {
     if (Array.isArray(pageState.region) && Array.isArray(pageState.category)) {
       if (e.target.name == "region") {
         let newArray;
