@@ -1,5 +1,5 @@
 .click_count {
-  @apply w-[60px] h-[30px] px-[8px] flex items-center justify-between rounded-full border-stone/40 border-[1px] text-[14px] cursor-pointer text-stone font-[400] bg-white;
+  @apply w-[60px] h-[30px] px-[8px] flex items-center justify-between rounded-xl border-stone/40 border-[1px] text-[14px] cursor-pointer text-stone font-[400] bg-white;
 }
 .click_count > button {
   @apply text-[18px];

@@ -1,0 +1,11 @@
+{
+  "room_reservation_id": 2,
+  "room_name": "사랑방",
+  "reservation_dates": ["2024-03-18"],
+  "reservation_name": "changmin",
+  "number": "1234-1234",
+  "email": "user@user.com",
+  "num_of_room": 1,
+  "num_of_participant": 2,
+  "final_price": 60000
+}

@@ -6,7 +6,7 @@
   @apply w-full h-[60px] flex items-center justify-between;
 }
 .sub_lodg_list > ul:first-child > li:first-child > div:first-child {
-  @apply w-[240px] h-[30px] rounded-full flex justify-center items-center border-stone/40 border-[1px] text-[14px] cursor-pointer text-stone font-[400];
+  @apply w-[240px] h-[30px] rounded-xl flex justify-center items-center border-stone/40 border-[1px] text-[14px] cursor-pointer text-stone font-[400];
 }
 
 .sub_lodg_list > ul:first-child > li {

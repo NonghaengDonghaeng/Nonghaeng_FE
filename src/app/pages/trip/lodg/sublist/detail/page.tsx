@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import ClickCount from "@/components/common/clickcount/clickcount";
@@ -16,6 +17,8 @@ import great_img from "img/exp/great.png";
 import reservation_img from "img/exp/reservation.png";
 
 export default function page() {
+  const searchParams = useSearchParams();
+  const [lodg_id, setLodg_id] = useState(searchParams.get("lodg_id"));
   const { element, moveElement } = useMove();
   const [img_url, setImg_url] = useState(lodg_detail.main_img_url);
   const [person_count, setPerson_count] = useState(0);
@@ -33,6 +36,8 @@ export default function page() {
       />
     </li>
   ));
+
+  useEffect(() => console.log(`숙박 상세페이지 api, lodg_id=${lodg_id}`));
 
   return (
     <main id="main">
@@ -96,8 +101,10 @@ export default function page() {
               <Image src={great_img} alt="great_img" />
             </li>
             <li>
-              예약하기
-              <Image src={reservation_img} alt="reservation_img" />
+              <Link href={`/pages/reservation/lodg?lodg_id=${lodg_id}`}>
+                예약하기
+                <Image src={reservation_img} alt="reservation_img" />
+              </Link>
             </li>
           </ul>
         </article>
