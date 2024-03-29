@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
 import styles from "./.module.css";
@@ -24,6 +24,7 @@ export default function Header() {
     region: "",
     category: "",
   });
+
   function onSubmit(e: formType) {
     e.preventDefault();
     search({ pageState });
