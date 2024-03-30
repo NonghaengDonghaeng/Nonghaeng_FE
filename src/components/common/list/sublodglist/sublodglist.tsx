@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import Image from "next/image";
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import { Calendar } from "react-modern-calendar-datepicker";
 import styles from "./.module.css";
 import ClickCount from "../../clickcount/clickcount";
-import { DayRange } from "react-modern-calendar-datepicker";
 import room_img from "img/lodg/room.png";
 import calendar_img from "img/lodg/calendar.png";
 import person_img from "img/lodg/person.png";
@@ -30,12 +27,10 @@ type PropsType = {
 export default function SubLodgList({ sub_lodg_list_props }: PropsType) {
   const sub_lodg_list = sub_lodg_list_props;
   const [isClick, setIsClick] = useState(false);
-  const [dayRange, setDayRange] = React.useState<DayRange>({
-    from: null,
-    to: null,
-  });
   const [personCount, setPersonCount] = useState<number>(0);
   const [roomCount, setRoomCount] = useState(0);
+  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [endDate, setEndDate] = useState<Date>(new Date());
 
   function handleSubLodgList() {
     console.log("숙박중간페이지 리스트 api");
@@ -82,15 +77,6 @@ export default function SubLodgList({ sub_lodg_list_props }: PropsType) {
     <div className={styles.sub_lodg_list}>
       <ul>
         <li>
-          <div onClick={() => setIsClick(!isClick)}>
-            {dayRange.from
-              ? `${dayRange.from?.year}, ${dayRange.from?.month}, ${dayRange.from?.day} `
-              : "체크인"}
-            {" ~ "}
-            {dayRange.to
-              ? `${dayRange.to?.year}, ${dayRange.to?.month}, ${dayRange.to?.day}`
-              : "체크아웃"}
-          </div>
           <Image src={calendar_img} alt="calendar_img" />
         </li>
         <li>
@@ -103,12 +89,6 @@ export default function SubLodgList({ sub_lodg_list_props }: PropsType) {
           <button onClick={handleSubLodgList}>검색</button>
         </li>
       </ul>
-      {/* <Calendar
-        calendarClassName={`${isClick ? styles.on : styles.off}`}
-        value={dayRange}
-        onChange={setDayRange}
-        shouldHighlightWeekends
-      /> */}
       <ul>{subLodgList}</ul>
     </div>
   );

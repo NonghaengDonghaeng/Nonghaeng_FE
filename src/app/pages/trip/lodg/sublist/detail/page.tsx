@@ -7,8 +7,6 @@ import ClickCount from "@/components/common/clickcount/clickcount";
 import SubNav from "@/components/common/subnav/subnav";
 import useMove from "@/hooks/useMove";
 import styles from "./page.module.css";
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import { Calendar, DayRange } from "react-modern-calendar-datepicker";
 import lodg_detail from "@/db/lodgdata/detail.json";
 import room_img from "img/lodg/room.png";
 import person_img from "img/lodg/person.png";
@@ -26,10 +24,6 @@ export default function page() {
   const [img_url, setImg_url] = useState(lodg_detail.main_img_url);
   const [person_count, setPerson_count] = useState(1);
   const [room_count, setRoom_count] = useState(1);
-  const [dayRange, setDayRange] = React.useState<DayRange>({
-    from: null,
-    to: null,
-  });
 
   function routeReservation() {
     // if ((dayRange.from || dayRange.to) == null) {
@@ -97,23 +91,8 @@ export default function page() {
             </li>
             <li>
               <Image src={calenda_img} alt="calenda_img" />
-              <div onClick={() => setIsClick(!isClick)}>
-                {dayRange.from
-                  ? `${dayRange.from?.year}, ${dayRange.from?.month}, ${dayRange.from?.day} `
-                  : "체크인"}
-                {" ~ "}
-                {dayRange.to
-                  ? `${dayRange.to?.year}, ${dayRange.to?.month}, ${dayRange.to?.day}`
-                  : "체크아웃"}
-              </div>
             </li>
           </ul>
-          {/* <Calendar
-            calendarClassName={`${isClick ? styles.on : styles.off}`}
-            value={dayRange}
-            onChange={setDayRange}
-            shouldHighlightWeekends
-          /> */}
           <ul>
             <li onClick={() => console.log("좋아요 api")}>
               좋아요
