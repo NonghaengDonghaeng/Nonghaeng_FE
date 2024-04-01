@@ -1,5 +1,5 @@
 import Nav from "@/components/layout/nav/nav";
-import { tripHref } from "@/storage/href";
+import { tripHref } from "../../../../public/href/href";
 
 export default function TripLayout({
   children,

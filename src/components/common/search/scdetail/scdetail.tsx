@@ -8,7 +8,7 @@ import {
   category_exp,
   category_tour,
   category_lodg,
-} from "@/storage/name";
+} from "../../../../../public/name/name";
 import search_img from "img/header/sitemapImg.png";
 
 type propsType = {

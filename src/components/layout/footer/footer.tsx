@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./.module.css";
-import { footerHref } from "@/storage/href";
+import { footerHref } from "../../../../public/href/href";
 
 export default function Footer() {
   const mainLink = footerHref.map((item, index) => (
