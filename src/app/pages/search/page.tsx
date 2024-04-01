@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import ScTotal from "@/components/common/search/sctotal/sctotal";
-import styles from "./.module.css";
+import styles from "./page.module.css";
 
 export default function page() {
   const searchParams = useSearchParams();

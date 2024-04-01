@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./.module.css";
+import styles from "./scbutton.module.css";
 import search_img from "img/main/search.png";
 
 export default function ScButton() {

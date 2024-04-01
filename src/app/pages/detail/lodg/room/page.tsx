@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import ClickCount from "@/components/common/clickcount/clickcount";
-import SubNav from "@/components/common/subnav/subnav";
+import NavDetail from "@/components/common/navdetail/navdetail";
 import useMove from "@/hooks/useMove";
 import styles from "./page.module.css";
 import lodg_detail from "@/db/lodgdata/detail.json";
@@ -107,7 +107,7 @@ export default function page() {
       </section>
       <section className={styles.section2}>
         <article ref={element[0]}>
-          <SubNav
+          <NavDetail
             moveElement={moveElement}
             title={["기본정보", "숙박후기", "숙박문의"]}
             nowRef={0}
@@ -115,7 +115,7 @@ export default function page() {
           기본정보
         </article>
         <article ref={element[1]}>
-          <SubNav
+          <NavDetail
             moveElement={moveElement}
             title={["기본정보", "숙박후기", "숙박문의"]}
             nowRef={1}
@@ -123,7 +123,7 @@ export default function page() {
           여행후기
         </article>
         <article ref={element[2]}>
-          <SubNav
+          <NavDetail
             moveElement={moveElement}
             title={["기본정보", "숙박후기", "숙박문의"]}
             nowRef={2}

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import styles from "./.module.css";
+import styles from "./page.module.css";
 import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
 import Overlay from "@/components/common/overlay/overlay";
 import ExpList from "@/components/common/list/explist/explist";

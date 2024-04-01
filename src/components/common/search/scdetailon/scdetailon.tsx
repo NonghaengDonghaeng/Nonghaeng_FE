@@ -1,6 +1,6 @@
 import Image from "next/image";
 import search_img from "img/header/sitemapImg.png";
-import styles from "./.module.css";
+import styles from "./scdetailon.module.css";
 import { pageStateType, setPageStateType } from "@/types/pageState";
 
 type propsType = {

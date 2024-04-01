@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import SubNav from "@/components/common/subnav/subnav";
+import NavDetail from "@/components/common/navdetail/navdetail";
 import useMove from "@/hooks/useMove";
-import styles from "./.module.css";
+import styles from "./page.module.css";
 import sub_lodg_detail from "@/db/lodgdata/subdetail.json";
-import SubLodgList from "@/components/common/list/sublodglist/sublodglist";
+import SubLodgList from "@/components/common/list/roomlist/sublodglist";
 
 export default function page() {
   const { element, moveElement } = useMove();
@@ -47,7 +47,7 @@ export default function page() {
       </section>
       <section className={styles.section2}>
         <article ref={element[0]}>
-          <SubNav
+          <NavDetail
             moveElement={moveElement}
             title={["객실선택", "기본정보", "숙박후기"]}
             nowRef={0}
@@ -57,14 +57,14 @@ export default function page() {
           />
         </article>
         <article ref={element[1]}>
-          <SubNav
+          <NavDetail
             moveElement={moveElement}
             title={["객실선택", "기본정보", "숙박후기"]}
             nowRef={1}
           />
         </article>
         <article ref={element[2]}>
-          <SubNav
+          <NavDetail
             moveElement={moveElement}
             title={["객실선택", "기본정보", "숙박후기"]}
             nowRef={2}

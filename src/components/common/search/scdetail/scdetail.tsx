@@ -1,5 +1,5 @@
 import { useChange } from "@/hooks/useChange";
-import styles from "./.module.css";
+import styles from "./scdetail.module.css";
 import { pageStateType, setPageStateType } from "@/types/pageState";
 import { inputType } from "@/types/eventtype";
 import {

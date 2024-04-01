@@ -1,4 +1,4 @@
-import styles from "./.module.css";
+import styles from "./clickcount.module.css";
 import { inputType } from "@/types/eventtype";
 
 type PropsType = {

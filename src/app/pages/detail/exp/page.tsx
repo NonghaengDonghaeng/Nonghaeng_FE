@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import useMove from "@/hooks/useMove";
-import SubNav from "@/components/common/subnav/subnav";
-import styles from "./.module.css";
+import NavDetail from "@/components/common/navdetail/navdetail";
+import styles from "./page.module.css";
 import exp_detail from "@/db/expdata/detail.json";
 import grade_img from "img/tour/grade_img.png";
 import participant_img from "img/exp/participant.png";
@@ -92,7 +92,7 @@ export default function page() {
       </section>
       <section className={styles.section2}>
         <article ref={element[0]}>
-          <SubNav
+          <NavDetail
             moveElement={moveElement}
             title={["기본정보", "체험후기", "체험문의"]}
             nowRef={0}
@@ -100,7 +100,7 @@ export default function page() {
           기본정보
         </article>
         <article ref={element[1]}>
-          <SubNav
+          <NavDetail
             moveElement={moveElement}
             title={["기본정보", "체험후기", "체험문의"]}
             nowRef={1}
@@ -108,7 +108,7 @@ export default function page() {
           여행후기
         </article>
         <article ref={element[2]}>
-          <SubNav
+          <NavDetail
             moveElement={moveElement}
             title={["기본정보", "체험후기", "체험문의"]}
             nowRef={2}

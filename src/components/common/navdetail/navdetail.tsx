@@ -1,4 +1,4 @@
-import styles from "./.module.css";
+import styles from "./navdetail.module.css";
 /**
  *
  * @param moveElement useMove훅을 통해 moveElement(넘버)형태로 넣으면 됨
@@ -6,7 +6,7 @@ import styles from "./.module.css";
  * @param nowRef 컴포넌트가 사용된 위치를 확인하기 위한용으로 컴포넌트가 몇번째로 사용되었는지 넘버타입으로 넣으면 됨
  */
 
-export default function SubNav({ moveElement, title, nowRef }: any) {
+export default function NavDetail({ moveElement, title, nowRef }: any) {
   const navList = title.map((item: string, index: number) => (
     <li
       key={index}

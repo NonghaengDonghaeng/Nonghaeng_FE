@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./.module.css";
+import styles from "./lodglist.module.css";
 import region_img from "img/region/orange.png";
 
 type propsType = {

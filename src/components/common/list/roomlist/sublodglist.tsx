@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import Image from "next/image";
-import styles from "./.module.css";
+import styles from "./roomlist.module.css";
 import ClickCount from "../../clickcount/clickcount";
 import room_img from "img/lodg/room.png";
 import calendar_img from "img/lodg/calendar.png";
@@ -24,7 +24,7 @@ type PropsType = {
   }[];
 };
 
-export default function SubLodgList({ sub_lodg_list_props }: PropsType) {
+export default function RoomList({ sub_lodg_list_props }: PropsType) {
   const sub_lodg_list = sub_lodg_list_props;
   const [isClick, setIsClick] = useState(false);
   const [personCount, setPersonCount] = useState<number>(0);

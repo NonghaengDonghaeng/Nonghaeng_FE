@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./.module.css";
+import styles from "./sublist.module.css";
 
 type PropsType = {
   isClick: any;
