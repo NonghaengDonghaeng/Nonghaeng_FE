@@ -5,8 +5,10 @@ import useSetUrl from "@/hooks/useSetUrl";
 import Overlay from "@/components/common/overlay/overlay";
 import TourList from "@/components/common/list/tourlist/tourlist";
 import Paging from "@/components/common/paging/paging";
-import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
-import ScDetail from "@/components/common/search/scdetail/scdetail";
+import {
+  ScDetail,
+  ScDetailOn,
+} from "@/components/common/search/scdetail/scdetail";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageState";
 import tour_list from "@/db/tourdata/list.json";

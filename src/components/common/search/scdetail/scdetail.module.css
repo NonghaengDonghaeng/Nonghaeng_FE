@@ -50,3 +50,14 @@
 .off {
   @apply hidden;
 }
+
+/* search_detail_on */
+.search_detail_on {
+  @apply flex items-center;
+}
+.search_detail_on > img {
+  @apply w-[16px] h-[16px] mr-[10px];
+}
+.search_detail_on > span {
+  @apply text-[18px] text-stone font-[500];
+}

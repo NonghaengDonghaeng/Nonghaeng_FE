@@ -1,4 +1,5 @@
 import { useChange } from "@/hooks/useChange";
+import Image from "next/image";
 import styles from "./scdetail.module.css";
 import { pageStateType, setPageStateType } from "@/types/pageState";
 import { inputType } from "@/types/eventtype";
@@ -8,13 +9,14 @@ import {
   category_tour,
   category_lodg,
 } from "@/storage/name";
+import search_img from "img/header/sitemapImg.png";
 
 type propsType = {
   pageState: pageStateType;
   setPageState: setPageStateType;
 };
 
-export default function ScDetail({ pageState, setPageState }: propsType) {
+export function ScDetail({ pageState, setPageState }: propsType) {
   const change = useChange();
 
   const regionList = region.map((item, index) => (
@@ -124,5 +126,17 @@ export default function ScDetail({ pageState, setPageState }: propsType) {
         선택한 조건으로 검색하기
       </button>
     </div>
+  );
+}
+
+export function ScDetailOn({ pageState, setPageState }: propsType) {
+  return (
+    <button
+      className={styles.search_detail_on}
+      onClick={() => setPageState({ ...pageState, isClick: true })}
+    >
+      <Image src={search_img} alt="filter_img" />
+      <span>상세검색</span>
+    </button>
   );
 }

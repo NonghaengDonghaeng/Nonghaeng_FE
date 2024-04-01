@@ -3,8 +3,10 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
-import ScDetail from "@/components/common/search/scdetail/scdetail";
+import {
+  ScDetail,
+  ScDetailOn,
+} from "@/components/common/search/scdetail/scdetail";
 import Overlay from "@/components/common/overlay/overlay";
 import LodgList from "@/components/common/list/lodglist/lodglist";
 import Paging from "@/components/common/paging/paging";

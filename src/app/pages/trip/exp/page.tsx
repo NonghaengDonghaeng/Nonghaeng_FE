@@ -2,8 +2,10 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
-import ScDetail from "@/components/common/search/scdetail/scdetail";
+import {
+  ScDetail,
+  ScDetailOn,
+} from "@/components/common/search/scdetail/scdetail";
 import Overlay from "@/components/common/overlay/overlay";
 import ExpList from "@/components/common/list/explist/explist";
 import exp_list from "@/db/expdata/list.json";
