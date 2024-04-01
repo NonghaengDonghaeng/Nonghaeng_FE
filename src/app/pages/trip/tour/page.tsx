@@ -4,12 +4,12 @@ import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import Overlay from "@/components/common/overlay/overlay";
 import TourList from "@/components/common/list/tourlist/tourlist";
-import styles from "./page.module.css";
-import tour_list from "@/db/tourdata/list.json";
 import Paging from "@/components/common/paging/paging";
-import { pageStateType } from "@/types/pageState";
 import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
 import ScDetail from "@/components/common/search/scdetail/scdetail";
+import styles from "./page.module.css";
+import { pageStateType } from "@/types/pageState";
+import tour_list from "@/db/tourdata/list.json";
 
 export default function page() {
   const searchParams = useSearchParams();
@@ -19,15 +19,16 @@ export default function page() {
     isClick: false,
     state: false,
     page_type: "tour",
-    page_index: searchParams.get("page_index") || "1",
+    page_index: Number(searchParams.get("page_index")) || 1,
     search_word: searchParams.get("search_word") || "",
     region: Array.from(new Set(searchParams.getAll("region"))) || [],
     category: Array.from(new Set(searchParams.getAll("category"))) || [],
   });
 
+  // api useEffect
   useEffect(() => {
     setUrl({ pageState });
-    // tour_list api요청
+    console.log("농촌관광 메인 api");
   }, [pageState.state, pageState.page_index]);
 
   return (

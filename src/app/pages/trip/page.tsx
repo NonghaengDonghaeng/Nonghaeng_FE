@@ -1,3 +1,5 @@
+"use client";
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import TourList from "@/components/common/list/tourlist/tourlist";
@@ -10,7 +12,11 @@ import lodg_list from "@/db/lodgdata/list.json";
 import more_green from "img/main/more_green.png";
 
 export default function page() {
-  // 직접 api요청
+  // api useEffect
+  useEffect(() =>
+    // 관광리스트4개, 체험리스트4개, 숙박리스트4개 api
+    console.log("농촌여행 메인 api")
+  );
 
   return (
     <main id="main">

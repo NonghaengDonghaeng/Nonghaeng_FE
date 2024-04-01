@@ -2,7 +2,7 @@ export type pageStateType = {
   isClick?: any;
   state?: boolean;
   page_type?: string;
-  page_index?: string;
+  page_index?: number;
   search_word?: string;
   region?: string[] | string;
   category?: string[] | string;
@@ -15,7 +15,7 @@ export type setPageStateType = React.Dispatch<
     isClick?: any;
     state?: boolean;
     page_type?: string;
-    page_index?: string;
+    page_index?: number;
     search_word?: string;
     region?: string[] | string;
     category?: string[] | string;

@@ -20,7 +20,7 @@ export default function page() {
     isClick: false,
     state: false,
     page_type: "lodg",
-    page_index: searchParams.get("page_index") || "1",
+    page_index: Number(searchParams.get("page_index")) || 1,
     search_word: searchParams.get("search_word") || "",
     region: Array.from(new Set(searchParams.getAll("region"))) || [],
     category: Array.from(new Set(searchParams.getAll("category"))) || [],
@@ -28,9 +28,10 @@ export default function page() {
     min_cost: searchParams.get("min_cost") || "",
   });
 
+  // api useEffect
   useEffect(() => {
     setUrl({ pageState });
-    // lodg_list api 요청
+    console.log("농촌숙박 메인 api");
   }, [pageState.state, pageState.page_index]);
 
   return (

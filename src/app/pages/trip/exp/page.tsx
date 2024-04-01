@@ -2,14 +2,14 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import styles from "./page.module.css";
 import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
+import ScDetail from "@/components/common/search/scdetail/scdetail";
 import Overlay from "@/components/common/overlay/overlay";
 import ExpList from "@/components/common/list/explist/explist";
 import exp_list from "@/db/expdata/list.json";
 import Paging from "@/components/common/paging/paging";
+import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageState";
-import ScDetail from "@/components/common/search/scdetail/scdetail";
 
 export default function page() {
   const searchParams = useSearchParams();
@@ -19,7 +19,7 @@ export default function page() {
     isClick: false,
     state: false,
     page_type: "exp",
-    page_index: searchParams.get("page_index") || "1",
+    page_index: Number(searchParams.get("page_index")) || 1,
     search_word: searchParams.get("search_word") || "",
     region: Array.from(new Set(searchParams.getAll("region"))) || [],
     category: Array.from(new Set(searchParams.getAll("category"))) || [],
@@ -27,8 +27,10 @@ export default function page() {
     min_cost: searchParams.get("min_cost") || "",
   });
 
+  // api useEffect
   useEffect(() => {
     setUrl({ pageState });
+    console.log("농촌체험 메인 api");
     // exp_list api 요청
   }, [pageState.state, pageState.page_index]);
 

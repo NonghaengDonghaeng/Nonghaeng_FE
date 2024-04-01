@@ -24,9 +24,9 @@ export default function Paging({
     <li
       key={index}
       className={`${
-        pageState.page_index == `${index + 1}` ? styles.on : styles.off
+        pageState.page_index == index + 1 ? styles.on : styles.off
       }`}
-      onClick={() => setPageState({ ...pageState, page_index: `${index + 1}` })}
+      onClick={() => setPageState({ ...pageState, page_index: index + 1 })}
     >
       {item}
     </li>
