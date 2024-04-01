@@ -79,10 +79,10 @@
 
 1. nav layout
 
-- trip main페이지
-- tour main페이지
-- exp main페이지
-- lodg main페이지
+- trip main페이지(pages/trip)
+- tour main페이지(pages/trip/tour)
+- exp main페이지(pages/trip/exp)
+- lodg main페이지(pages/trip/lodg)
 
 2. detail layout
 

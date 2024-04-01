@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./.module.css";
+import styles from "./tourlist.module.css";
 import region_img from "img/region/orange.png";
 import exp_img from "img/exp/orange.png";
 import lodg_img from "img/lodg/orange.png";
@@ -21,7 +21,7 @@ type contentType = {
 export default function TourList({ content }: contentType) {
   const tourList = content.map((item, index) => (
     <li key={index}>
-      <Link href={`/pages/trip/tour/detail?tour_id=${item.tour_id}`}>
+      <Link href={`/pages/detail?tour_id=${item.tour_id}`}>
         <div>
           <img src={item.img_url} />
           <span>

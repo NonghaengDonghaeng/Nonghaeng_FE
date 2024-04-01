@@ -20,7 +20,7 @@ type cotentType = {
 export default function ExpList({ content }: cotentType) {
   const expList = content.map((item, index) => (
     <li key={index}>
-      <Link href={`/pages/trip/exp/detail?exp_id=${item.experience_id}`}>
+      <Link href={`/pages/detail/exp?exp_id=${item.experience_id}`}>
         <div>
           <img src={item.img_url} />
           <span>
