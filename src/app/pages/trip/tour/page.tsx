@@ -2,11 +2,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import Nav from "@/components/layout/nav/nav";
 import Overlay from "@/components/common/overlay/overlay";
 import TourList from "@/components/common/list/tourlist/tourlist";
-import styles from "./.module.css";
-import { tripHref } from "@/storage/href";
+import styles from "./page.module.css";
 import tour_list from "@/db/tourdata/list.json";
 import Paging from "@/components/common/paging/paging";
 import { pageStateType } from "@/types/pageState";
@@ -33,27 +31,24 @@ export default function page() {
   }, [pageState.state, pageState.page_index]);
 
   return (
-    <>
-      <Nav href={tripHref} />
-      <main id="main">
-        <section className={styles.tour_main}>
-          <div>
-            <h1>농촌관광</h1>
-            <ScDetailOn pageState={pageState} setPageState={setPageState} />
-            <ScDetail pageState={pageState} setPageState={setPageState} />
-            <Overlay isClick={pageState.isClick} />
-          </div>
-          <hr></hr>
-          <article>
-            <TourList content={tour_list.content} />
-          </article>
-          <Paging
-            pageState={pageState}
-            setPageState={setPageState}
-            totalPages={tour_list.totalPages}
-          />
-        </section>
-      </main>
-    </>
+    <main id="main">
+      <section className={styles.tour_main}>
+        <div>
+          <h1>농촌관광</h1>
+          <ScDetailOn pageState={pageState} setPageState={setPageState} />
+          <ScDetail pageState={pageState} setPageState={setPageState} />
+          <Overlay isClick={pageState.isClick} />
+        </div>
+        <hr></hr>
+        <article>
+          <TourList content={tour_list.content} />
+        </article>
+        <Paging
+          pageState={pageState}
+          setPageState={setPageState}
+          totalPages={tour_list.totalPages}
+        />
+      </section>
+    </main>
   );
 }

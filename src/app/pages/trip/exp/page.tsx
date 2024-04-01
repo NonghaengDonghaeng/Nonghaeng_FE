@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import Nav from "@/components/layout/nav/nav";
-import { tripHref } from "@/storage/href";
 import styles from "./.module.css";
 import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
 import Overlay from "@/components/common/overlay/overlay";
@@ -35,27 +33,24 @@ export default function page() {
   }, [pageState.state, pageState.page_index]);
 
   return (
-    <>
-      <Nav href={tripHref} />
-      <main id="main">
-        <section className={styles.exp_main}>
-          <div>
-            <h1>농촌체험</h1>
-            <ScDetailOn pageState={pageState} setPageState={setPageState} />
-            <ScDetail pageState={pageState} setPageState={setPageState} />
-            <Overlay isClick={pageState.isClick} />
-          </div>
-          <hr></hr>
-          <article>
-            <ExpList content={exp_list.content} />
-          </article>
-          <Paging
-            pageState={pageState}
-            setPageState={setPageState}
-            totalPages={exp_list.totalPages}
-          />
-        </section>
-      </main>
-    </>
+    <main id="main">
+      <section className={styles.exp_main}>
+        <div>
+          <h1>농촌체험</h1>
+          <ScDetailOn pageState={pageState} setPageState={setPageState} />
+          <ScDetail pageState={pageState} setPageState={setPageState} />
+          <Overlay isClick={pageState.isClick} />
+        </div>
+        <hr></hr>
+        <article>
+          <ExpList content={exp_list.content} />
+        </article>
+        <Paging
+          pageState={pageState}
+          setPageState={setPageState}
+          totalPages={exp_list.totalPages}
+        />
+      </section>
+    </main>
   );
 }

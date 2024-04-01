@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import Nav from "@/components/layout/nav/nav";
 import ScDetailOn from "@/components/common/search/scdetailon/scdetailon";
 import ScDetail from "@/components/common/search/scdetail/scdetail";
 import Overlay from "@/components/common/overlay/overlay";
@@ -11,7 +10,6 @@ import LodgList from "@/components/common/list/lodglist/lodglist";
 import Paging from "@/components/common/paging/paging";
 import styles from "./.module.css";
 import { pageStateType } from "@/types/pageState";
-import { tripHref } from "@/storage/href";
 import lodg_list from "@/db/lodgdata/list.json";
 
 export default function page() {
@@ -36,27 +34,24 @@ export default function page() {
   }, [pageState.state, pageState.page_index]);
 
   return (
-    <>
-      <Nav href={tripHref} />
-      <main id="main">
-        <section className={styles.lodg_main}>
-          <div>
-            <h1>농촌숙박</h1>
-            <ScDetailOn pageState={pageState} setPageState={setPageState} />
-            <ScDetail pageState={pageState} setPageState={setPageState} />
-            <Overlay isClick={pageState.isClick} />
-          </div>
-          <hr></hr>
-          <article>
-            <LodgList content={lodg_list.content} />
-          </article>
-          <Paging
-            pageState={pageState}
-            setPageState={setPageState}
-            totalPages={lodg_list.totalPages}
-          />
-        </section>
-      </main>
-    </>
+    <main id="main">
+      <section className={styles.lodg_main}>
+        <div>
+          <h1>농촌숙박</h1>
+          <ScDetailOn pageState={pageState} setPageState={setPageState} />
+          <ScDetail pageState={pageState} setPageState={setPageState} />
+          <Overlay isClick={pageState.isClick} />
+        </div>
+        <hr></hr>
+        <article>
+          <LodgList content={lodg_list.content} />
+        </article>
+        <Paging
+          pageState={pageState}
+          setPageState={setPageState}
+          totalPages={lodg_list.totalPages}
+        />
+      </section>
+    </main>
   );
 }

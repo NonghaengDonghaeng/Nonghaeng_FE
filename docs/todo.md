@@ -76,3 +76,19 @@
 ### 오늘할일(4,1)
 
 - nav사용 페이지 layout적용
+
+1. nav layout
+
+- trip main페이지
+- tour main페이지
+- exp main페이지
+- lodg main페이지
+
+2. detail layout
+
+- tour detail페이지
+- exp detail페이지
+- lodg subdetail(숙박중간)페이지
+- lodg detail페이지
+
+3. reservation

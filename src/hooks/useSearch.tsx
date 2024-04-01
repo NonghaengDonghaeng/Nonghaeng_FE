@@ -9,9 +9,9 @@ export function useSearch() {
   const router = useRouter();
 
   /**custom search
-   * @param {region} 스트링타입의 지역정보
-   * @param {category} 스트링타입의 유형정보
-   * @param {search_word} 스트링 타입의 검색어
+   * @param {region}:스트링타입의 지역정보
+   * @param {category}:스트링타입의 유형정보
+   * @param {search_word}:스트링 타입의 검색어
    */
   function search({ pageState }: propsType) {
     // 지역x, 카테고리x

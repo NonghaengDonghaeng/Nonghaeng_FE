@@ -36,9 +36,9 @@ type PropsType = {
 
 export function useChange() {
   /**custom change 
-   @param {selectItem} 객체, region: 스트링, 배열 category:스트링, 배열
-   @param {setSelectItem} 스테이트함수
-   @param {e} 이벤트 파라미터
+   @param {selectItem}:useState object
+   @param {setSelectItem}:setUseState function
+   @param {e}:event(type=inputType)
   */
 
   function change({ pageState, setPageState, e }: PropsType) {
