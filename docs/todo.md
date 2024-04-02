@@ -92,3 +92,7 @@
 - lodg detail페이지
 
 3. reservation
+
+### 오늘할일(4,2)
+
+-쉬는날

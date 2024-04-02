@@ -5,14 +5,14 @@ import Image from "next/image";
 import styles from "./.module.css";
 import bg_img1 from "img/nav/nav_bg1.png";
 
-type hrefType = {
+type propsType = {
   href: {
     mainMenu: { href: string; title: string };
     subMenu: { href: string; title: string }[];
   };
 };
 
-export default function Nav({ href }: hrefType) {
+export default function Nav({ href }: propsType) {
   const subMenuList = href.subMenu.map((item, index) => (
     <li key={index}>
       <Link href={item.href}>{item.title}</Link>
