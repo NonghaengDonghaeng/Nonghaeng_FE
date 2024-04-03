@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 import Image from "next/image";
 import styles from "./roomlist.module.css";
 import ClickCount from "../../clickcount/clickcount";
@@ -7,6 +9,8 @@ import room_img from "img/lodg/room.png";
 import calendar_img from "img/lodg/calendar.png";
 import person_img from "img/lodg/person.png";
 import Link from "next/link";
+import moment from "moment";
+import CustomRangeCalendar from "../../calendar/calendar";
 
 type PropsType = {
   sub_lodg_list_props: {
@@ -29,8 +33,8 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
   const [isClick, setIsClick] = useState(false);
   const [personCount, setPersonCount] = useState<number>(0);
   const [roomCount, setRoomCount] = useState(0);
-  const [startDate, setStartDate] = useState<Date>(new Date());
-  const [endDate, setEndDate] = useState<Date>(new Date());
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
   function handleSubLodgList() {
     console.log("숙박중간페이지 리스트 api");
@@ -77,6 +81,11 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
     <div className={styles.sub_lodg_list}>
       <ul>
         <li>
+          <div onClick={() => setIsClick(!isClick)}>
+            {startDate || "체크인"}
+            {" - "}
+            {endDate || "체크아웃"}
+          </div>
           <Image src={calendar_img} alt="calendar_img" />
         </li>
         <li>
@@ -89,6 +98,11 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
           <button onClick={handleSubLodgList}>검색</button>
         </li>
       </ul>
+      <CustomRangeCalendar
+        setStartDate={setStartDate}
+        setEndDate={setEndDate}
+        isClick={isClick}
+      />
       <ul>{subLodgList}</ul>
     </div>
   );

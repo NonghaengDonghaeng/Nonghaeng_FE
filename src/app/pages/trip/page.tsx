@@ -19,7 +19,7 @@ export default function page() {
   );
 
   return (
-    <main id="main">
+    <>
       <section className={styles.trip_main}>
         <article>
           <h1>
@@ -55,6 +55,6 @@ export default function page() {
           <LodgList content={lodg_list.content.slice(0, 4)} />
         </article>
       </section>
-    </main>
+    </>
   );
 }

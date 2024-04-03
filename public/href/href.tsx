@@ -57,6 +57,10 @@ export const commuHref = {
     { href: "/pages/commu/inquiry", title: "고객문의" },
   ],
 };
+export const itemHref = {
+  mainMenu: { title: "기획상품", href: "/pages/item" },
+  subMenu: [],
+};
 
 // footer href
 export const footerHref = [
