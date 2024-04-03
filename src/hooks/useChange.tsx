@@ -1,7 +1,7 @@
 import { inputType } from "@/types/eventtype";
 
 type PropsType = {
-  pageState: {
+  changeItem: {
     isClick?: any;
     state?: boolean;
     page_type?: string;
@@ -15,7 +15,7 @@ type PropsType = {
     phone_number?: string;
     email?: string;
   };
-  setPageState: React.Dispatch<
+  setChangeItem: React.Dispatch<
     React.SetStateAction<{
       isClick?: any;
       state?: boolean;
@@ -36,38 +36,41 @@ type PropsType = {
 
 export function useChange() {
   /**custom change 
-   @param {selectItem}:useState object
-   @param {setSelectItem}:setUseState function
-   @param {e}:event(type=inputType)
+   @param changeItem:useState object
+   @param setChangeItem:setUseState function
+   @param e:event(type=inputType)
   */
 
-  function change({ pageState, setPageState, e }: PropsType) {
-    if (Array.isArray(pageState.region) && Array.isArray(pageState.category)) {
+  function change({ changeItem, setChangeItem, e }: PropsType) {
+    if (
+      Array.isArray(changeItem.region) &&
+      Array.isArray(changeItem.category)
+    ) {
       if (e.target.name == "region") {
         let newArray;
-        if (pageState.region.includes(e.target.value)) {
-          newArray = pageState.region.filter(
+        if (changeItem.region.includes(e.target.value)) {
+          newArray = changeItem.region.filter(
             (region) => region !== e.target.value
           );
         } else {
-          newArray = [...pageState.region, e.target.value];
+          newArray = [...changeItem.region, e.target.value];
         }
-        setPageState({ ...pageState, region: newArray });
+        setChangeItem({ ...changeItem, region: newArray });
         return;
       } else if (e.target.name == "category") {
         let newArray;
-        if (pageState.category.includes(e.target.value)) {
-          newArray = pageState.category.filter(
+        if (changeItem.category.includes(e.target.value)) {
+          newArray = changeItem.category.filter(
             (category) => category !== e.target.value
           );
         } else {
-          newArray = [...pageState.category, e.target.value];
+          newArray = [...changeItem.category, e.target.value];
         }
-        setPageState({ ...pageState, category: newArray });
+        setChangeItem({ ...changeItem, category: newArray });
         return;
       }
     }
-    setPageState({ ...pageState, [e.target.name]: e.target.value });
+    setChangeItem({ ...changeItem, [e.target.name]: e.target.value });
   }
   return change;
 }

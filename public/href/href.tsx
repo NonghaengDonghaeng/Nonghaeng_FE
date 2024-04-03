@@ -2,10 +2,10 @@
 export const headerHref = [
   {
     title: "농행동행",
-    href: "/pages/introduce",
+    href: "/pages/intro",
     subMenu: [
-      { title: "농행동행 소개", href: "/pages/introduce/nonghang" },
-      { title: "농촌관광 소개", href: "/pages/introduce/tour" },
+      { title: "농행동행 소개", href: "/pages/intro/nonghang" },
+      { title: "농촌관광 소개", href: "/pages/intro/tour" },
     ],
   },
   {
@@ -34,11 +34,11 @@ export const headerHref = [
 ];
 
 // nav href
-export const introduceHref = {
-  mainMenu: { href: "/pages/introduce", title: "농행동행" },
+export const introHref = {
+  mainMenu: { href: "/pages/intro", title: "농행동행" },
   subMenu: [
-    { href: "/pages/introduce/nonghang", title: "농행동행 소개" },
-    { href: "/pages/introduce/tour", title: "농촌관광 소개" },
+    { href: "/pages/intro/nonghang", title: "농행동행 소개" },
+    { href: "/pages/intro/tour", title: "농촌관광 소개" },
   ],
 };
 export const tripHref = {

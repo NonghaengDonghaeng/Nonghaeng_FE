@@ -29,7 +29,7 @@ export default function page() {
 
   // api useEffect
   useEffect(() => {
-    setUrl({ pageState });
+    setUrl({ urlItem: pageState });
     console.log("농촌관광 메인 api");
   }, [pageState.state, pageState.page_index]);
 

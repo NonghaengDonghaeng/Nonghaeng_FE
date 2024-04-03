@@ -3,18 +3,13 @@ import { Metadata } from "next";
 import { tripHref } from "../../../../public/href/href";
 
 export const metadata: Metadata = {
-  title: "농행동행 | 농촌여행",
+  title: "농행동행 | 상세보기",
 };
 
-export default function TripLayout({
+export default function DetailLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <Nav href={tripHref} />
-      {children}
-    </>
-  );
+  return <main id="main">{children}</main>;
 }

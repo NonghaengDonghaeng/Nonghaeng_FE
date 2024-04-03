@@ -33,7 +33,7 @@ export default function page() {
   ));
 
   return (
-    <main id="main">
+    <>
       <section className={styles.section1}>
         <img src={pageState.img_url} />
         <div>
@@ -127,6 +127,6 @@ export default function page() {
           문의
         </article>
       </section>
-    </main>
+    </>
   );
 }

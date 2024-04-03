@@ -33,7 +33,7 @@ export default function page() {
     </li>
   ));
   return (
-    <main id="main">
+    <>
       <section className={styles.section1}>
         <article>
           <img src={pageState.img_url}></img>
@@ -71,6 +71,6 @@ export default function page() {
           />
         </article>
       </section>
-    </main>
+    </>
   );
 }

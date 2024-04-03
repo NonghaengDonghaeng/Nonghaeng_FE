@@ -30,7 +30,7 @@ export default function page() {
     //   alert("날짜를 선택해주세요.");
     // } else {
     router.push(
-      `/pages/reservation/lodg?lodg_id=${lodg_id}&person_count=${person_count}&room_count=${room_count}`
+      `/pages/reserve/lodg?lodg_id=${lodg_id}&person_count=${person_count}&room_count=${room_count}`
     );
     // }
   }
@@ -47,7 +47,7 @@ export default function page() {
   useEffect(() => console.log(`숙박 상세페이지 api, lodg_id=${lodg_id}`), []);
 
   return (
-    <main id="main">
+    <>
       <section className={styles.section1}>
         <article>
           <img src={img_url} />
@@ -55,9 +55,7 @@ export default function page() {
         </article>
         <article>
           <span>
-            <Link
-              href={`/pages/trip/tour/detail?tour_id=${lodg_detail.tour_id}`}
-            >
+            <Link href={`/pages/detail/tour?tour_id=${lodg_detail.tour_id}`}>
               {lodg_detail.tour_name}
             </Link>
             {" > "}
@@ -131,6 +129,6 @@ export default function page() {
           문의
         </article>
       </section>
-    </main>
+    </>
   );
 }

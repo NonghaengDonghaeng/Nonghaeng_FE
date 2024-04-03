@@ -1,10 +1,5 @@
 import { useRef } from "react";
 
-type propsType = {
-  element: any;
-  moveElement: void;
-};
-
 export default function useMove() {
   const element = [
     useRef<HTMLDivElement>(null),

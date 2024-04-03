@@ -15,7 +15,7 @@ export default function ScMain() {
   const search = useSearch();
   const change = useChange();
 
-  const [pageState, setPageState] = useState<pageStateType>({
+  const [searhcItem, setSearchItem] = useState<pageStateType>({
     search_word: "",
     region: "지역선택",
     category: "유형선택",
@@ -24,13 +24,13 @@ export default function ScMain() {
 
   function onSubmit(e: formType) {
     e.preventDefault();
-    search({ pageState });
+    search({ searchItem: searhcItem });
   }
 
   const regionList = region.map((item, index) => (
     <li
       key={index}
-      onClick={() => setPageState({ ...pageState, region: item })}
+      onClick={() => setSearchItem({ ...searhcItem, region: item })}
     >
       {item}
     </li>
@@ -38,7 +38,7 @@ export default function ScMain() {
   const categoryList = category.map((item, index) => (
     <li
       key={index}
-      onClick={() => setPageState({ ...pageState, category: item })}
+      onClick={() => setSearchItem({ ...searhcItem, category: item })}
     >
       {item}
     </li>
@@ -51,7 +51,7 @@ export default function ScMain() {
         onClick={() => setIsClick({ ...isClick, region: !isClick.region })}
       >
         <label>
-          {pageState.region}
+          {searhcItem.region}
           <Image
             src={isClick.region ? click_true : click_false}
             alt="click_false"
@@ -64,7 +64,7 @@ export default function ScMain() {
         onClick={() => setIsClick({ ...isClick, category: !isClick.category })}
       >
         <label>
-          {pageState.category}
+          {searhcItem.category}
           <Image
             src={isClick.category ? click_true : click_false}
             alt="click_false"
@@ -75,7 +75,9 @@ export default function ScMain() {
       <input
         placeholder="검색어를 입력해보세요."
         name="search_word"
-        onChange={(e: inputType) => change({ pageState, setPageState, e })}
+        onChange={(e: inputType) =>
+          change({ changeItem: searhcItem, setChangeItem: setSearchItem, e })
+        }
       ></input>
       <ScButton />
     </form>

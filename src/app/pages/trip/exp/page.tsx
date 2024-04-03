@@ -31,7 +31,7 @@ export default function page() {
 
   // api useEffect
   useEffect(() => {
-    setUrl({ pageState });
+    setUrl({ urlItem: pageState });
     console.log("농촌체험 메인 api");
     // exp_list api 요청
   }, [pageState.state, pageState.page_index]);

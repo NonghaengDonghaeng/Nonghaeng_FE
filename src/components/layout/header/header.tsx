@@ -19,15 +19,13 @@ export default function Header() {
   const change = useChange();
   const search = useSearch();
 
-  const [pageState, setPageState] = useState<pageStateType>({
+  const [searchItem, setSearchItem] = useState<pageStateType>({
     search_word: "",
-    region: "",
-    category: "",
   });
 
   function onSubmit(e: formType) {
     e.preventDefault();
-    search({ pageState });
+    search({ searchItem: searchItem });
   }
 
   const [isHover, setIsHover] = useState(false);
@@ -61,7 +59,13 @@ export default function Header() {
         </ul>
         <form className={styles.header_search} onSubmit={onSubmit}>
           <input
-            onChange={(e: inputType) => change({ pageState, setPageState, e })}
+            onChange={(e: inputType) =>
+              change({
+                changeItem: searchItem,
+                setChangeItem: setSearchItem,
+                e,
+              })
+            }
             placeholder="알고 싶은 정보가 있으세요?"
             name="search_word"
           ></input>

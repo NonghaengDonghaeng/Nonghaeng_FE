@@ -38,7 +38,7 @@ export default function page() {
     </li>
   ));
   return (
-    <main id="main">
+    <>
       <section className={styles.section1}>
         <article>
           <img src={pageState.img_url} />
@@ -47,7 +47,7 @@ export default function page() {
         <article>
           <span>
             <Link
-              href={`/pages/trip/tour/detail?tour_id=${exp_detail.tour_info.tourId}`}
+              href={`/pages/detail/tour?tour_id=${exp_detail.tour_info.tourId}`}
             >
               {exp_detail.tour_info.tourName}
             </Link>
@@ -116,6 +116,6 @@ export default function page() {
           문의
         </article>
       </section>
-    </main>
+    </>
   );
 }

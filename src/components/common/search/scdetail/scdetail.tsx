@@ -83,7 +83,11 @@ export function ScDetail({ pageState, setPageState }: propsType) {
         </button>
       </span>
       <hr></hr>
-      <div onChange={(e: inputType) => change({ pageState, setPageState, e })}>
+      <div
+        onChange={(e: inputType) =>
+          change({ changeItem: pageState, setChangeItem: setPageState, e })
+        }
+      >
         <div>
           <span>지역선택</span>
           <ul>{regionList}</ul>
