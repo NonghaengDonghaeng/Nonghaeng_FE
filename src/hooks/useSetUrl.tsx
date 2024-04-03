@@ -1,4 +1,3 @@
-import { pageStateType } from "@/types/pageState";
 import { useRouter } from "next/navigation";
 
 type propsType = {
