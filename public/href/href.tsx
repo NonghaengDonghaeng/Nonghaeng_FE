@@ -24,11 +24,11 @@ export const headerHref = [
   },
   {
     title: "커뮤니티",
-    href: "/pages/community",
+    href: "/pages/commu",
     subMenu: [
-      { title: "공지사항", href: "/pages/community/notification" },
-      { title: "농행후기", href: "/pages/community/review" },
-      { title: "고객문의", href: "/pages/community/inquiry" },
+      { title: "공지사항", href: "/pages/commu/notification" },
+      { title: "농행후기", href: "/pages/commu/review" },
+      { title: "고객문의", href: "/pages/commu/inquiry" },
     ],
   },
 ];
@@ -47,6 +47,14 @@ export const tripHref = {
     { href: "/pages/trip/tour", title: "농촌관광" },
     { href: "/pages/trip/exp", title: "농촌체험" },
     { href: "/pages/trip/lodg", title: "농촌숙박" },
+  ],
+};
+export const commuHref = {
+  mainMenu: { href: "/page/cummu", title: "커뮤니티" },
+  subMenu: [
+    { href: "/pages/commu/notification", title: "공지사항" },
+    { href: "/pages/commu/review", title: "농행후기" },
+    { href: "/pages/commu/inquiry", title: "고객문의" },
   ],
 };
 

@@ -1,9 +1,9 @@
 import Nav from "@/components/layout/nav/nav";
 import { Metadata } from "next";
-import { tripHref } from "../../../../public/href/href";
+import { commuHref } from "../../../../public/href/href";
 
 export const metadata: Metadata = {
-  title: "농행동행 | 농촌여행",
+  title: "농행동행 | 커뮤니티",
 };
 
 export default function TripLayout({
@@ -13,7 +13,7 @@ export default function TripLayout({
 }>) {
   return (
     <>
-      <Nav href={tripHref} />
+      <Nav href={commuHref} />
       <main id="main">{children}</main>
     </>
   );

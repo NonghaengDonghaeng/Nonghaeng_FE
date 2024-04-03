@@ -37,7 +37,7 @@ export default function page() {
   }, [pageState.state, pageState.page_index]);
 
   return (
-    <main id="main">
+    <>
       <section className={styles.exp_main}>
         <div>
           <h1>농촌체험</h1>
@@ -55,6 +55,6 @@ export default function page() {
           totalPages={exp_list.totalPages}
         />
       </section>
-    </main>
+    </>
   );
 }

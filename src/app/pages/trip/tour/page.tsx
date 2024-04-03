@@ -34,7 +34,7 @@ export default function page() {
   }, [pageState.state, pageState.page_index]);
 
   return (
-    <main id="main">
+    <>
       <section className={styles.tour_main}>
         <div>
           <h1>농촌관광</h1>
@@ -52,6 +52,6 @@ export default function page() {
           totalPages={tour_list.totalPages}
         />
       </section>
-    </main>
+    </>
   );
 }

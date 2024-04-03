@@ -13,20 +13,24 @@ type PropsType = {
 export default function SubList({ isClick, tour_detail }: PropsType) {
   const expList = tour_detail.exp_summary_list.map((item, index) => (
     <li key={index}>
-      <img></img>
-      <div>
-        <span>{item.expName}</span>
-        {item.price}원
-      </div>
+      <Link href={`/pages/detail/exp?exp_id=${item.expId}`}>
+        <img></img>
+        <div>
+          <span>{item.expName}</span>
+          {item.price}원
+        </div>
+      </Link>
     </li>
   ));
   const lodgList = tour_detail.room_summary_list.map((item, index) => (
     <li key={index}>
-      <img></img>
-      <div>
-        <span>{item.roomName}</span>
-        {item.price}원
-      </div>
+      <Link href={`/pages/detail/lodg?lodg_id=${item.roomId}`}>
+        <img></img>
+        <div>
+          <span>{item.roomName}</span>
+          {item.price}원
+        </div>
+      </Link>
     </li>
   ));
 

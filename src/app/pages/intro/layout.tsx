@@ -14,7 +14,7 @@ export default function IntroLayout({
   return (
     <>
       <Nav href={introHref} />
-      {children}
+      <main id="main">{children}</main>
     </>
   );
 }
