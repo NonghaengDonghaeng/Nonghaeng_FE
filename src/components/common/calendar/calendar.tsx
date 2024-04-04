@@ -7,6 +7,7 @@ type PropsType = {
   setCheck_in?: any;
   setCheck_out?: any;
   isClick?: boolean;
+  setIsClick?: any;
   day?: any;
   setDay?: any;
 };
@@ -41,10 +42,16 @@ export function CustomRangeCalendar({
   );
 }
 
-export function CustomCalendar({ day, setDay }: PropsType) {
+export function CustomCalendar({
+  day,
+  setDay,
+  isClick,
+  setIsClick,
+}: PropsType) {
   const onChange = (e: any) => {
     const selectDay = moment(e).format("YYYY-MM-DD");
     setDay(selectDay);
+    setIsClick(!isClick);
   };
 
   return (
@@ -60,6 +67,7 @@ export function CustomCalendar({ day, setDay }: PropsType) {
       next2Label={null}
       prev2Label={null}
       showNeighboringMonth={false}
+      className={isClick ? styles.on : styles.off}
     />
   );
 }

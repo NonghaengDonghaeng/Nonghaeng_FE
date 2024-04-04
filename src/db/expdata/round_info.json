@@ -1,0 +1,19 @@
+{
+  "experience_id": 4,
+  "check_date": "2024-03-16",
+  "num_of_round": 2,
+  "content": [
+    {
+      "round_id": 7,
+      "start_time": "13:00",
+      "end_time": "15:00",
+      "remain_participant": 20
+    },
+    {
+      "round_id": 8,
+      "start_time": "15:00",
+      "end_time": "17:00",
+      "remain_participant": 20
+    }
+  ]
+}
