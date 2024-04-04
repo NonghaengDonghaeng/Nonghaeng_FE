@@ -20,8 +20,9 @@ export default function page() {
     img_url: exp_detail.main_img_url,
   });
 
+  // api useEffect
   useEffect(() => {
-    // api요청
+    console.log("체험 상세 api");
   }, []);
 
   const imgList = exp_detail.sub_img_url.map((item, index) => (
@@ -84,8 +85,10 @@ export default function page() {
               <Image src={great_img} alt="great_img" />
             </li>
             <li>
-              예약하기
-              <Image src={reservation_img} alt="reservation_img" />
+              <Link href="/pages/reserve/exp">
+                예약하기
+                <Image src={reservation_img} alt="reservation_img" />
+              </Link>
             </li>
           </ul>
         </article>

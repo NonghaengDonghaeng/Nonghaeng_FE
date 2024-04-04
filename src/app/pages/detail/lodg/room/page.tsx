@@ -1,13 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import useMove from "@/hooks/useMove";
 import Link from "next/link";
 import Image from "next/image";
 import ClickCount from "@/components/common/clickcount/clickcount";
-import CustomRangeCalendar from "@/components/common/calendar/calendar";
-import "react-calendar/dist/Calendar.css";
+import { CustomRangeCalendar } from "@/components/common/calendar/calendar";
 import NavDetail from "@/components/common/navdetail/navdetail";
-import useMove from "@/hooks/useMove";
 import styles from "./page.module.css";
 import lodg_detail from "@/db/lodgdata/detail.json";
 import room_img from "img/lodg/room.png";
@@ -21,7 +20,7 @@ export default function page() {
   const router = useRouter();
   const { element, moveElement } = useMove();
 
-  const [lodg_id, setLodg_id] = useState(searchParams.get("lodg_id"));
+  const [room_id, setRoom_id] = useState(searchParams.get("room_id"));
   const [isClick, setIsClick] = useState(false);
   const [img_url, setImg_url] = useState(lodg_detail.main_img_url);
   const [person_count, setPerson_count] = useState(1);
@@ -34,7 +33,7 @@ export default function page() {
       alert("날짜를 선택해주세요.");
     } else {
       router.push(
-        `/pages/reserve/lodg?lodg_id=${lodg_id}&person_count=${person_count}&room_count=${room_count}&check_in=${startDate}&check_out=${endDate}`
+        `/pages/reserve/lodg?room_id=${room_id}&person_count=${person_count}&room_count=${room_count}&check_in=${check_in}&check_out=${check_out}`
       );
     }
   }
@@ -59,7 +58,7 @@ export default function page() {
         </article>
         <article>
           <span>
-            <Link href={`/pages/detail/tour?tour_id=${lodg_detail.tour_id}`}>
+            <Link href={`/pages/detail?tour_id=${lodg_detail.tour_id}`}>
               {lodg_detail.tour_name}
             </Link>
             {" > "}

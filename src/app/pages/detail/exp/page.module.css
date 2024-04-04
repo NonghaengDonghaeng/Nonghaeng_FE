@@ -66,7 +66,10 @@
 .section1 > article:last-child > ul > li:nth-child(2) {
   @apply bg-green/10;
 }
-.section1 > article:last-child > ul > li > img {
+.section1 > article:last-child > ul > li:nth-child(2) > a {
+  @apply flex;
+}
+.section1 > article:last-child > ul > li img {
   @apply w-[20px] h-[18px] ml-[10px];
 }
 

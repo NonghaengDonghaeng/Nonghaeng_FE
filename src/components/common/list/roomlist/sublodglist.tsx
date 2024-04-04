@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
 import Image from "next/image";
 import styles from "./roomlist.module.css";
 import ClickCount from "../../clickcount/clickcount";
@@ -9,8 +7,7 @@ import room_img from "img/lodg/room.png";
 import calendar_img from "img/lodg/calendar.png";
 import person_img from "img/lodg/person.png";
 import Link from "next/link";
-import moment from "moment";
-import CustomRangeCalendar from "../../calendar/calendar";
+import { CustomRangeCalendar } from "../../calendar/calendar";
 
 type PropsType = {
   sub_lodg_list_props: {

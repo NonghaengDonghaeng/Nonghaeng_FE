@@ -1,0 +1,13 @@
+.reserve_exp {
+  @apply mt-[80px] text-stone font-[500];
+}
+
+.reserve_exp > article > h1 {
+  @apply text-[22px] items-center flex;
+}
+.reserve_exp > article > h1 > div {
+  @apply w-[6px] h-[36px] rounded-full mr-[8px] bg-green;
+}
+.reserve_exp > article > hr {
+  @apply my-[20px] border-stone/40;
+}

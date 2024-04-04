@@ -2,25 +2,55 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
-import reservation_info from "@/db/lodgdata/reservatoin_info.json";
 
 export default function page() {
   const searchParams = useSearchParams();
 
-  const [lodg_id, setLodg_id] = useState(searchParams.get("lodg_id"));
+  const [room_id, setRoom_id] = useState(searchParams.get("room_id"));
+  const [person_count, setPerson_count] = useState(
+    searchParams.get("person_count")
+  );
+  const [room_count, setRoom_count] = useState(searchParams.get("room_count"));
+  const [check_in, setCheck_in] = useState(searchParams.get("check_in"));
+  const [check_out, setCheck_out] = useState(searchParams.get("check_out"));
 
-  useEffect(() => console.log(`숙박예약페이지 api, lodg_id=${lodg_id}`));
+  useEffect(() => console.log("숙박예약페이지 api"), []);
+
   return (
-    <main id="main">
-      <section className={styles.reservation_lodg}>
-        <article>
-          <h1>
-            <div />
-            {reservation_info.room_name}
-          </h1>
-        </article>
-        <article></article>
-      </section>
-    </main>
+    <section className={styles.reserve_lodg}>
+      <article>
+        <h1>
+          <div />
+          예약하기
+        </h1>
+        <hr />
+        <p>
+          <label>체크인 / 체크아웃</label>
+          {check_in} / {check_out}
+        </p>
+        <p>
+          <label>객실</label>
+          {room_count}개
+        </p>
+        <p>
+          <label>인원</label>
+          {person_count}명
+        </p>
+      </article>
+      <article>
+        <h1>
+          <div />
+          예약자 정보
+        </h1>
+        <hr />
+      </article>
+      <article>
+        <h1>
+          <div />
+          결제수단
+        </h1>
+        <hr />
+      </article>
+    </section>
   );
 }
