@@ -3,21 +3,21 @@ import moment from "moment";
 import styles from "./calendar.module.css";
 
 type PropsType = {
-  setStartDate: any;
-  setEndDate: any;
+  setCheck_in: any;
+  setCheck_out: any;
   isClick: boolean;
 };
 
 export default function CustomRangeCalendar({
-  setStartDate,
-  setEndDate,
+  setCheck_in,
+  setCheck_out,
   isClick,
 }: PropsType) {
   const changeDate = (e: any) => {
     const startDateFormat = moment(e[0]).format("YYYY-MM-DD");
     const endDateFormat = moment(e[1]).format("YYYY-MM-DD");
-    setStartDate(startDateFormat);
-    setEndDate(endDateFormat);
+    setCheck_in(startDateFormat);
+    setCheck_out(endDateFormat);
   };
 
   return (

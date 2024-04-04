@@ -20,22 +20,23 @@ export default function page() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { element, moveElement } = useMove();
+
   const [lodg_id, setLodg_id] = useState(searchParams.get("lodg_id"));
   const [isClick, setIsClick] = useState(false);
   const [img_url, setImg_url] = useState(lodg_detail.main_img_url);
   const [person_count, setPerson_count] = useState(1);
   const [room_count, setRoom_count] = useState(1);
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [check_in, setCheck_in] = useState(null);
+  const [check_out, setCheck_out] = useState(null);
 
   function routeReservation() {
-    // if ((dayRange.from || dayRange.to) == null) {
-    //   alert("날짜를 선택해주세요.");
-    // } else {
-    router.push(
-      `/pages/reserve/lodg?lodg_id=${lodg_id}&person_count=${person_count}&room_count=${room_count}`
-    );
-    // }
+    if (!check_in || !check_out) {
+      alert("날짜를 선택해주세요.");
+    } else {
+      router.push(
+        `/pages/reserve/lodg?lodg_id=${lodg_id}&person_count=${person_count}&room_count=${room_count}&check_in=${startDate}&check_out=${endDate}`
+      );
+    }
   }
 
   const imgList = lodg_detail.sub_img_url.map((item, index) => (
@@ -93,9 +94,9 @@ export default function page() {
             <li>
               <Image src={calenda_img} alt="calenda_img" />
               <div onClick={() => setIsClick(!isClick)}>
-                {startDate || "체크인"}
+                {check_in || "체크인"}
                 {" - "}
-                {endDate || "체크아웃"}
+                {check_out || "체크아웃"}
               </div>
             </li>
           </ul>
@@ -110,8 +111,8 @@ export default function page() {
             </li>
           </ul>
           <CustomRangeCalendar
-            setStartDate={setStartDate}
-            setEndDate={setEndDate}
+            setCheck_in={setCheck_in}
+            setCheck_out={setCheck_out}
             isClick={isClick}
           />
         </article>

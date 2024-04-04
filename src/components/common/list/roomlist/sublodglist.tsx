@@ -33,8 +33,8 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
   const [isClick, setIsClick] = useState(false);
   const [personCount, setPersonCount] = useState<number>(0);
   const [roomCount, setRoomCount] = useState(0);
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [check_in, setCheck_in] = useState(null);
+  const [check_out, setCheck_out] = useState(null);
 
   function handleSubLodgList() {
     console.log("숙박중간페이지 리스트 api");
@@ -82,9 +82,9 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
       <ul>
         <li>
           <div onClick={() => setIsClick(!isClick)}>
-            {startDate || "체크인"}
+            {check_in || "체크인"}
             {" - "}
-            {endDate || "체크아웃"}
+            {check_out || "체크아웃"}
           </div>
           <Image src={calendar_img} alt="calendar_img" />
         </li>
@@ -99,8 +99,8 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
         </li>
       </ul>
       <CustomRangeCalendar
-        setStartDate={setStartDate}
-        setEndDate={setEndDate}
+        setCheck_in={setCheck_in}
+        setCheck_out={setCheck_out}
         isClick={isClick}
       />
       <ul>{subLodgList}</ul>
