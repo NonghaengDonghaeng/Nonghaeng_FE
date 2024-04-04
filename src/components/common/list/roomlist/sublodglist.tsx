@@ -43,7 +43,7 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
 
   const subLodgList = sub_lodg_list.map((item, index) => (
     <li key={index}>
-      <Link href={`/pages/detail/lodg/room?lodg_id=${item.room_id}`}>
+      <Link href={`/pages/detail/lodg/room?room_id=${item.room_id}`}>
         <img src={item.img_url} />
         <div>
           <h1>

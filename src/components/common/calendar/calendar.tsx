@@ -19,6 +19,7 @@ export default function CustomRangeCalendar({
     setStartDate(startDateFormat);
     setEndDate(endDateFormat);
   };
+
   return (
     <Calendar
       onChange={changeDate}

@@ -4,6 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import ClickCount from "@/components/common/clickcount/clickcount";
+import CustomRangeCalendar from "@/components/common/calendar/calendar";
+import "react-calendar/dist/Calendar.css";
 import NavDetail from "@/components/common/navdetail/navdetail";
 import useMove from "@/hooks/useMove";
 import styles from "./page.module.css";
@@ -18,12 +20,13 @@ export default function page() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { element, moveElement } = useMove();
-
   const [lodg_id, setLodg_id] = useState(searchParams.get("lodg_id"));
   const [isClick, setIsClick] = useState(false);
   const [img_url, setImg_url] = useState(lodg_detail.main_img_url);
   const [person_count, setPerson_count] = useState(1);
   const [room_count, setRoom_count] = useState(1);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
   function routeReservation() {
     // if ((dayRange.from || dayRange.to) == null) {
@@ -44,7 +47,7 @@ export default function page() {
     </li>
   ));
 
-  useEffect(() => console.log(`숙박 상세페이지 api, lodg_id=${lodg_id}`), []);
+  useEffect(() => console.log("농촌숙박 상세 api"), []);
 
   return (
     <>
@@ -89,6 +92,11 @@ export default function page() {
             </li>
             <li>
               <Image src={calenda_img} alt="calenda_img" />
+              <div onClick={() => setIsClick(!isClick)}>
+                {startDate || "체크인"}
+                {" - "}
+                {endDate || "체크아웃"}
+              </div>
             </li>
           </ul>
           <ul>
@@ -101,6 +109,11 @@ export default function page() {
               <Image src={reservation_img} alt="reservation_img" />
             </li>
           </ul>
+          <CustomRangeCalendar
+            setStartDate={setStartDate}
+            setEndDate={setEndDate}
+            isClick={isClick}
+          />
         </article>
       </section>
       <section className={styles.section2}>
