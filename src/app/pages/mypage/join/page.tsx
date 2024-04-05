@@ -6,7 +6,14 @@ import axios from "axios";
 
 export default function page() {
   const change = useChange();
-  const [user_state, setUser_state] = useState<{}>({
+  const [user_state, setUser_state] = useState<{
+    area_code?: string;
+    eamil?: string;
+    name?: string;
+    password?: string;
+    check_password?: string;
+    number?: string;
+  }>({
     area_code: "",
     eamil: "",
     name: "",
@@ -15,10 +22,21 @@ export default function page() {
     number: "",
   });
 
-  const onSubmit = () => {
-    const response = axios
-      .post("http://localhost:8080/join", user_state)
-      .then((response) => console.log(response));
+  function onSubmit(e) {
+    e.preventDefault();
+    join();
+  }
+
+  const join = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/join",
+        user_state
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -40,7 +58,7 @@ export default function page() {
               area_code<input name="area_code"></input>
             </p>
             <p>
-              email<input name="eamil"></input>
+              email<input name="email"></input>
             </p>
             <p>
               name<input name="name"></input>
