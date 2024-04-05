@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { inputType } from "@/types/eventtype";
+import axios from "axios";
 
 export default function page() {
   const change = useChange();
@@ -14,13 +15,18 @@ export default function page() {
     number: "",
   });
 
-  useEffect(() => console.log(user_state), [user_state]);
+  const onSubmit = () => {
+    const response = axios
+      .post("http://localhost:8080/join", user_state)
+      .then((response) => console.log(response));
+  };
+
   return (
     <section>
       <h1>회원가입</h1>
       <article>
         <h1>user회원가입</h1>
-        <form>
+        <form onSubmit={onSubmit}>
           <div
             onChange={(e: inputType) =>
               change({
