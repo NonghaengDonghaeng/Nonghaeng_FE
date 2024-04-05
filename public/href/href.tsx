@@ -61,6 +61,10 @@ export const itemHref = {
   mainMenu: { title: "기획상품", href: "/pages/item" },
   subMenu: [],
 };
+export const mypageHref = {
+  mainMenu: { title: "마이페이지", href: "/pages/mypage" },
+  subMenu: [],
+};
 
 // footer href
 export const footerHref = [

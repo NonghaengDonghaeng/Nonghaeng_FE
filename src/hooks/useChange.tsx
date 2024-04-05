@@ -11,9 +11,12 @@ type PropsType = {
     category?: string[] | string;
     max_cost?: string;
     min_cost?: string;
-    user_name?: string;
-    phone_number?: string;
-    email?: string;
+    area_code?: string;
+    eamil?: string;
+    name?: string;
+    password?: string;
+    check_password?: string;
+    number?: string;
   };
   setChangeItem: React.Dispatch<
     React.SetStateAction<{
@@ -26,9 +29,12 @@ type PropsType = {
       category?: string[] | string;
       max_cost?: string;
       min_cost?: string;
-      user_name?: string;
-      phone_number?: string;
-      email?: string;
+      area_code?: string;
+      eamil?: string;
+      name?: string;
+      password?: string;
+      check_password?: string;
+      number?: string;
     }>
   >;
   e: inputType;
