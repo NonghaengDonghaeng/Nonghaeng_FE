@@ -3,19 +3,31 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { CustomCalendar } from "@/components/common/calendar/calendar";
 import exp_round_info from "@/db/expdata/round_info.json";
+import { stringify } from "querystring";
 
 export default function page() {
   const [day, setDay] = useState(null);
   const [isClick, setIsClick] = useState(false);
-  const [round_info, setRound_info] = useState([]);
+  const [round_info, setRound_info] = useState<any[]>([]);
 
   useEffect(() => {
     console.log("체험 예약 api");
   }, []);
   useEffect(() => console.log(`${day}회차 api`), [day]);
+  useEffect(() => console.log(round_info), [round_info]);
 
   const round_list = exp_round_info.content.map((item, index) => (
-    <li key={index}>
+    <li
+      key={index}
+      onClick={() => {
+        if (!round_info.includes(item.round_id))
+          setRound_info([...round_info, item.round_id]);
+        else {
+          setRound_info(round_info.filter((id) => id !== item.round_id));
+        }
+      }}
+      className={round_info.includes(item.round_id) ? styles.on : styles.off}
+    >
       <label>
         {item.start_time} - {item.end_time}
       </label>
