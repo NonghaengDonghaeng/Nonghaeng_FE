@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import ScMain from "@/components/common/search/scmain/scmain";
@@ -9,9 +10,25 @@ import ExpList from "@/components/common/list/explist/explist";
 import LodgList from "@/components/common/list/lodglist/lodglist";
 import exp_list from "@/db/expdata/list.json";
 import lodg_list from "@/db/lodgdata/list.json";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function Home() {
   // api요청
+
+  const api = async () => {
+    const token = localStorage.getItem("accessToken");
+    try {
+      const response = await axios.get("http://localhost:8080/test/jwt", {
+        headers: { Authorization: token },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  api();
 
   return (
     <main id="main">
