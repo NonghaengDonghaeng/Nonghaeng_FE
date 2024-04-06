@@ -31,4 +31,3 @@ export default function RootLayout({
     </html>
   );
 }
-/* eslint-enable */
