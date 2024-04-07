@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { formType, inputType } from "@/types/eventtype";
 import axios from "axios";
-import { headers } from "../../../../../public/headers";
+import { setCookie } from "cookies-next";
 
 export default function page() {
   const change = useChange();
@@ -18,18 +18,18 @@ export default function page() {
 
   function onSubmit(e: formType) {
     e.preventDefault();
-    login();
+    loginApi();
   }
 
-  const login = async () => {
+  const loginApi = async () => {
     try {
       const response = await axios.post(
         "http://localhost:8080/login",
         user_state
       );
       console.log(response.headers.authorization);
-      let token = response.headers.authorization;
-      localStorage.setItem("accessToken", `Bearer ${token}`);
+      let token = response.headers["authorization"];
+      setCookie("token", token);
     } catch (error) {
       console.log(error);
     }

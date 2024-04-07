@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
 import styles from "./.module.css";
@@ -12,10 +12,11 @@ import searchImg from "img/header/searchImg.png";
 import { inputType } from "@/types/eventtype";
 import { pageStateType } from "@/types/pageState";
 import { formType } from "@/types/eventtype";
+import { getCookie } from "cookies-next";
 
 type SubMenuType = { href: string; title: string };
 
-export default function Header() {
+function Header() {
   const change = useChange();
   const search = useSearch();
 
@@ -27,6 +28,9 @@ export default function Header() {
     e.preventDefault();
     search({ searchItem: searchItem });
   }
+  // function logoutApi() {
+  //   deleteCookie("token");
+  // }
 
   const [isHover, setIsHover] = useState(false);
   const subMenuList = (subMenu: SubMenuType[]) => (
@@ -89,3 +93,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Header;

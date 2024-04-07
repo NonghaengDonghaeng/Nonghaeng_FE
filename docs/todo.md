@@ -121,5 +121,9 @@
 
 ### 오늘할일(4,6)
 
-- ssr에서 login state를 관리할 수 있는 방법 공부
-- cookie를 통한 login state 관리 공부
+- ssr에서 login state를 관리할 수 있는 방법 공부 (x, 진행중)
+- cookie를 통한 login state 관리 공부 (0, get, set 라이브러리를 통해 구현)
+
+### 오늘할일(4,7)
+
+- ssr에서 cookie get 방법 찾기

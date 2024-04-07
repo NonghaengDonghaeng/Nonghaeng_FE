@@ -16,19 +16,19 @@ import axios from "axios";
 export default function Home() {
   // api요청
 
-  const api = async () => {
-    const token = localStorage.getItem("accessToken");
-    try {
-      const response = await axios.get("http://localhost:8080/test/jwt", {
-        headers: { Authorization: token },
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const api = async () => {
+  //   const token = localStorage.getItem("accessToken");
+  //   try {
+  //     const response = await axios.get("http://localhost:8080/test/jwt", {
+  //       headers: { Authorization: token },
+  //     });
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  api();
+  // api();
 
   return (
     <main id="main">
