@@ -1,0 +1,132 @@
+{
+  "tourContent": [
+    {
+      "tour_id": 1,
+      "name": "창민체험휴양마을",
+      "area_name": "대전",
+      "tour_type": "우수관광농원",
+      "count_experience": 0,
+      "count_room": 0,
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015238/0"
+    },
+    {
+      "tour_id": 2,
+      "name": "창민체험휴양마을",
+      "area_name": "대전",
+      "tour_type": "우수관광농원",
+      "count_experience": 0,
+      "count_room": 0,
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002444/0"
+    },
+    {
+      "tour_id": 3,
+      "name": "창민체험휴양마을",
+      "area_name": "대전",
+      "tour_type": "우수관광농원",
+      "count_experience": 0,
+      "count_room": 0,
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005204/0"
+    },
+    {
+      "tour_id": 2,
+      "name": "창민체험휴양마을",
+      "area_name": "대전",
+      "tour_type": "우수관광농원",
+      "count_experience": 0,
+      "count_room": 0,
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002444/0"
+    }
+  ],
+  "expContent": [
+    {
+      "experience_id": 5,
+      "experience_name": "말타기 체험",
+      "price": 1000,
+      "min_participant": 2,
+      "max_participant": 20,
+      "area_name": "대전",
+      "tour_name": "창민체험휴양마을",
+      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
+    },
+    {
+      "experience_id": 6,
+      "experience_name": "말타기 체험",
+      "price": 1000,
+      "min_participant": 2,
+      "max_participant": 20,
+      "area_name": "대전",
+      "tour_name": "창민체험휴양마을",
+      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014148/0"
+    },
+    {
+      "experience_id": 6,
+      "experience_name": "말타기 체험",
+      "price": 1000,
+      "min_participant": 2,
+      "max_participant": 20,
+      "area_name": "대전",
+      "tour_name": "창민체험휴양마을",
+      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003150/3"
+    },
+    {
+      "experience_id": 6,
+      "experience_name": "말타기 체험",
+      "price": 1000,
+      "min_participant": 2,
+      "max_participant": 20,
+      "area_name": "대전",
+      "tour_name": "창민체험휴양마을",
+      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
+    }
+  ],
+  "lodgContent": [
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "min_price": 50000,
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000000901/0"
+    },
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "min_price": 50000,
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015242/0"
+    },
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "min_price": 50000,
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002462/0"
+    },
+    {
+      "tour_id": 4,
+      "tour_name": "창민체험휴양마을",
+      "area_name": "대전",
+      "room_type_name": "농촌민박",
+      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "min_price": 50000,
+      "max_price": 90000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015230/0"
+    }
+  ]
+}

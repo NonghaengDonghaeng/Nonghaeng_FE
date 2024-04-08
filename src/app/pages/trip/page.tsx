@@ -1,22 +1,31 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import TourList from "@/components/common/list/tourlist/tourlist";
 import ExpList from "@/components/common/list/explist/explist";
 import LodgList from "@/components/common/list/lodglist/lodglist";
 import styles from "./page.module.css";
-import tour_list from "@/db/tourdata/list.json";
-import exp_list from "@/db/expdata/list.json";
-import lodg_list from "@/db/lodgdata/list.json";
+import {
+  expListContentDataType,
+  lodgListContentDataType,
+  tourListContentDataType,
+} from "@/types/dataType";
 import more_green from "img/main/more_green.png";
+import tripPageResData from "@/db/tripPageResData.json";
 
 export default function page() {
+  const [resData, setResData] = useState<{
+    tourContent: tourListContentDataType;
+    expContent: expListContentDataType;
+    lodgContent: lodgListContentDataType;
+  }>();
+
   // api useEffect
-  useEffect(() =>
-    // 관광리스트4개, 체험리스트4개, 숙박리스트4개 api
-    console.log("농촌여행 메인 api")
-  );
+  useEffect(() => {
+    console.log("농촌여행 메인 api");
+    setResData(tripPageResData);
+  }, []);
 
   return (
     <>
@@ -30,7 +39,7 @@ export default function page() {
             </Link>
           </h1>
           <hr />
-          <TourList content={tour_list.content.slice(0, 4)} />
+          <TourList content={resData?.tourContent} />
         </article>
         <article>
           <h1>
@@ -41,7 +50,7 @@ export default function page() {
             </Link>
           </h1>
           <hr />
-          <ExpList content={exp_list.content.slice(0, 4)} />
+          <ExpList content={resData?.expContent} />
         </article>
         <article>
           <h1>
@@ -52,7 +61,7 @@ export default function page() {
             </Link>
           </h1>
           <hr />
-          <LodgList content={lodg_list.content.slice(0, 4)} />
+          <LodgList content={resData?.lodgContent} />
         </article>
       </section>
     </>

@@ -1,34 +1,30 @@
 "use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScMain from "@/components/common/search/scmain/scmain";
+import ExpList from "@/components/common/list/explist/explist";
+import LodgList from "@/components/common/list/lodglist/lodglist";
 import styles from "./page.module.css";
+import {
+  expListContentDataType,
+  lodgListContentDataType,
+} from "@/types/dataType";
 import section1_bg from "img/main/section1_bg.png";
 import more_nonghang from "img/main/more_nonghang.png";
 import more_green from "img/main/more_green.png";
-import ExpList from "@/components/common/list/explist/explist";
-import LodgList from "@/components/common/list/lodglist/lodglist";
-import exp_list from "@/db/expdata/list.json";
-import lodg_list from "@/db/lodgdata/list.json";
-import { useEffect } from "react";
-import axios from "axios";
+import homePageResData from "@/db/homePageResData.json";
 
 export default function Home() {
-  // api요청
+  const [resData, setResData] = useState<{
+    expContent: expListContentDataType;
+    lodgContent: lodgListContentDataType;
+  }>();
 
-  // const api = async () => {
-  //   const token = localStorage.getItem("accessToken");
-  //   try {
-  //     const response = await axios.get("http://localhost:8080/test/jwt", {
-  //       headers: { Authorization: token },
-  //     });
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // api();
+  useEffect(() => {
+    console.log("홈 페이지 api");
+    setResData(homePageResData);
+  }, []);
 
   return (
     <main id="main">
@@ -59,7 +55,7 @@ export default function Home() {
             </Link>
           </h1>
           <hr />
-          <ExpList content={exp_list.content.slice(0, 4)} />
+          <ExpList content={resData?.expContent} />
         </article>
         <article>
           <h1>
@@ -70,7 +66,7 @@ export default function Home() {
             </Link>
           </h1>
           <hr />
-          <LodgList content={lodg_list.content.slice(0, 4)} />
+          <LodgList content={resData?.lodgContent} />
         </article>
       </section>
     </main>

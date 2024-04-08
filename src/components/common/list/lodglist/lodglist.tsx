@@ -2,22 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./lodglist.module.css";
 import region_img from "img/region/orange.png";
+import { lodgListContentDataType } from "@/types/dataType";
 
 type propsType = {
-  content: {
-    tour_id: number;
-    tour_name: string;
-    area_name: string;
-    room_type_name: string;
-    one_line_intro: string;
-    min_price: number;
-    max_price: number;
-    img_url: string;
-  }[];
+  content: lodgListContentDataType | undefined;
 };
 
 export default function LodgList({ content }: propsType) {
-  const lodgList = content.map((item, index) => (
+  const lodgList = content?.map((item, index) => (
     <li key={index}>
       <Link href={`/pages/detail/lodg?lodg_id=${item.tour_id}`}>
         <div>

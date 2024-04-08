@@ -9,7 +9,7 @@ import { region, category } from "../../../../../public/name/name";
 import click_false from "img/main/click_false.png";
 import click_true from "img/main/click_true.png";
 import { formType, inputType } from "@/types/eventtype";
-import { pageStateType } from "@/types/pageState";
+import { pageStateType } from "@/types/pageStateType";
 
 export default function ScMain() {
   const search = useSearch();

@@ -5,7 +5,7 @@ import { useSearch } from "@/hooks/useSearch";
 import ScButton from "../scbutton/scbutton";
 import styles from "./sctotal.module.css";
 import { inputType, formType } from "@/types/eventtype";
-import { pageStateType } from "@/types/pageState";
+import { pageStateType } from "@/types/pageStateType";
 
 export default function ScTotal() {
   const searchParams = useSearchParams();

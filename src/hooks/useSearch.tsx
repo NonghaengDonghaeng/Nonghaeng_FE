@@ -1,5 +1,5 @@
 import { useRouter } from "next/navigation";
-import { pageStateType } from "@/types/pageState";
+import { pageStateType } from "@/types/pageStateType";
 
 type propsType = {
   searchItem: {

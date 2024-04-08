@@ -1,10 +1,10 @@
 import styles from "./paging.module.css";
-import { pageStateType, setPageStateType } from "@/types/pageState";
+import { pageStateType, setPageStateType } from "@/types/pageStateType";
 
 type propsType = {
   pageState: pageStateType;
   setPageState: setPageStateType;
-  totalPages: number;
+  totalPages: number | undefined;
 };
 
 export default function Paging({
@@ -20,7 +20,7 @@ export default function Paging({
     return pageNum;
   }
 
-  const pageList = numbering(totalPages).map((item, index) => (
+  const pageList = numbering(totalPages || 1).map((item, index) => (
     <li
       key={index}
       className={`${

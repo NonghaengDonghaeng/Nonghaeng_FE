@@ -132,10 +132,10 @@
 
 - api로 받은 데이터 변수로 저장하여 사용하는 형태로 .json변경
 
-1. home page api data
-2. trip page api data
-3. tour page api data
-4. exp page api data
+1. home page api data (o)
+2. trip page api data (o)
+3. tour page api data (o)
+4. exp page api data (o)
 5. lodg page api data
 6. tour detail page api data
 7. exp detail page api data

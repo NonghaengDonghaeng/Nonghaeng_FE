@@ -8,10 +8,11 @@ import {
 } from "@/components/common/search/scdetail/scdetail";
 import Overlay from "@/components/common/overlay/overlay";
 import ExpList from "@/components/common/list/explist/explist";
-import exp_list from "@/db/expdata/list.json";
 import Paging from "@/components/common/paging/paging";
 import styles from "./page.module.css";
-import { pageStateType } from "@/types/pageState";
+import { pageStateType } from "@/types/pageStateType";
+import { expListPageDatatype } from "@/types/dataType";
+import expListPageResData from "@/db/expdata/list.json";
 
 export default function page() {
   const searchParams = useSearchParams();
@@ -29,11 +30,13 @@ export default function page() {
     min_cost: searchParams.get("min_cost") || "",
   });
 
+  const [resData, setResData] = useState<expListPageDatatype>();
+
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
     console.log("농촌체험 메인 api");
-    // exp_list api 요청
+    setResData(expListPageResData);
   }, [pageState.state, pageState.page_index]);
 
   return (
@@ -47,12 +50,12 @@ export default function page() {
         </div>
         <hr></hr>
         <article>
-          <ExpList content={exp_list.content} />
+          <ExpList content={resData?.content} />
         </article>
         <Paging
           pageState={pageState}
           setPageState={setPageState}
-          totalPages={exp_list.totalPages}
+          totalPages={resData?.totalPages}
         />
       </section>
     </>

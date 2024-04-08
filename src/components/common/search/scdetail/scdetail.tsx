@@ -1,7 +1,7 @@
 import { useChange } from "@/hooks/useChange";
 import Image from "next/image";
 import styles from "./scdetail.module.css";
-import { pageStateType, setPageStateType } from "@/types/pageState";
+import { pageStateType, setPageStateType } from "@/types/pageStateType";
 import { inputType } from "@/types/eventtype";
 import {
   region,

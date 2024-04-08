@@ -10,7 +10,7 @@ import homeImg from "img/header/homeImg.png";
 import sitemapImg from "img/header/sitemapImg.png";
 import searchImg from "img/header/searchImg.png";
 import { inputType } from "@/types/eventtype";
-import { pageStateType } from "@/types/pageState";
+import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventtype";
 
 type SubMenuType = { href: string; title: string };

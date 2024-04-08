@@ -2,23 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./explist.module.css";
 import region_img from "img/region/orange.png";
+import { expListContentDataType } from "@/types/dataType";
 
 type cotentType = {
-  content: {
-    experience_id: number;
-    experience_name: string;
-    price: number;
-    min_participant: number;
-    max_participant: number;
-    area_name: string;
-    tour_name: string;
-    summary: string;
-    img_url: string;
-  }[];
+  content: expListContentDataType | undefined;
 };
 
 export default function ExpList({ content }: cotentType) {
-  const expList = content.map((item, index) => (
+  const expList = content?.map((item, index) => (
     <li key={index}>
       <Link href={`/pages/detail/exp?exp_id=${item.experience_id}`}>
         <div>

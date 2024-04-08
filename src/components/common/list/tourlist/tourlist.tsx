@@ -4,22 +4,14 @@ import styles from "./tourlist.module.css";
 import region_img from "img/region/orange.png";
 import exp_img from "img/exp/orange.png";
 import lodg_img from "img/lodg/orange.png";
+import { tourListContentDataType } from "@/types/dataType";
 
-type contentType = {
-  content: {
-    tour_id: number;
-    name: string;
-    area_name: string;
-    tour_type: string;
-    count_experience: number;
-    count_room: number;
-    one_line_intro: string;
-    img_url: string;
-  }[];
+type PropsType = {
+  content: tourListContentDataType | undefined;
 };
 
-export default function TourList({ content }: contentType) {
-  const tourList = content.map((item, index) => (
+export default function TourList({ content }: PropsType) {
+  const tourList = content?.map((item, index) => (
     <li key={index}>
       <Link href={`/pages/detail?tour_id=${item.tour_id}`}>
         <div>
