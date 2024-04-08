@@ -126,4 +126,19 @@
 
 ### 오늘할일(4,7)
 
-- ssr에서 cookie get 방법 찾기
+- ssr에서 cookie get 방법 찾기(x, 진행중)
+
+### 오늘할일(4,8)
+
+- api로 받은 데이터 변수로 저장하여 사용하는 형태로 .json변경
+
+1. home page api data
+2. trip page api data
+3. tour page api data
+4. exp page api data
+5. lodg page api data
+6. tour detail page api data
+7. exp detail page api data
+8. lodg detail page api data
+9. room detail page api data
+   `

@@ -1,11 +1,9 @@
-import type { Metadata, NextPageContext } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ScollTop from "@/components/layout/scrolltop/scrolltop";
 import Header from "../components/layout/header/header";
 import Footer from "../components/layout/footer/footer";
 import "./globals.css";
-import { Cookie } from "next/font/google";
-import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
