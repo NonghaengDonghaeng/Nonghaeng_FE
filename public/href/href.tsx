@@ -67,7 +67,11 @@ export const mypageHref = {
 };
 export const adminHref = {
   mainMenu: { title: "관리자 페이지", href: "/pages/admin" },
-  subMenu: [],
+  subMenu: [
+    { href: "/pages/admin/tour", title: "관광등록" },
+    { href: "/pages/admin/experience", title: "체험등록" },
+    { href: "/pages/admin/room", title: "숙소등록" },
+  ],
 };
 
 // footer href
