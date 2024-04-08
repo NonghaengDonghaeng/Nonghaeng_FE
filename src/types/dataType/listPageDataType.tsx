@@ -118,3 +118,17 @@ export type lodgListPageDataType = {
   numberOfElements: number;
   empty: boolean;
 };
+
+export type roomListDataType = {
+  img_url: string;
+  room_id: number;
+  room_name: string;
+  num_of_room: number;
+  price: number;
+  price_holiday: number;
+  standard_capacity: number;
+  max_capacity: number;
+  checkin_time: string;
+  checkout_time: string;
+  room_configuration: string;
+}[];
