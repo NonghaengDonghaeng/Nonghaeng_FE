@@ -8,7 +8,7 @@ import {
   ScDetailOn,
 } from "@/components/common/search/scdetail/scdetail";
 import Overlay from "@/components/common/overlay/overlay";
-import LodgList from "@/components/common/list/lodglist/lodglist";
+import { LodgList } from "@/components/common/list/list";
 import Paging from "@/components/common/paging/paging";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";

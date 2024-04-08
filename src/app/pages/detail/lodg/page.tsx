@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import NavDetail from "@/components/common/navdetail/navdetail";
 import useMove from "@/hooks/useMove";
-import RoomList from "@/components/common/list/roomlist/roomlist";
+import { RoomList } from "@/components/common/list/list";
 import styles from "./page.module.css";
 import { lodgDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import lodgDetailPageResData from "@/db/lodgdata/detail.json";

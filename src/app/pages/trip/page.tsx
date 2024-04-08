@@ -2,9 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import TourList from "@/components/common/list/tourlist/tourlist";
-import ExpList from "@/components/common/list/explist/explist";
-import LodgList from "@/components/common/list/lodglist/lodglist";
+import { TourList, ExpList, LodgList } from "@/components/common/list/list";
 import styles from "./page.module.css";
 import {
   expListContentDataType,

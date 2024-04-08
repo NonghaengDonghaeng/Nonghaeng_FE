@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import Overlay from "@/components/common/overlay/overlay";
-import TourList from "@/components/common/list/tourlist/tourlist";
+import { TourList } from "@/components/common/list/list";
 import Paging from "@/components/common/paging/paging";
 import {
   ScDetail,
