@@ -5,64 +5,98 @@ import { inputType } from "@/types/eventtype";
 import axios from "axios";
 
 export default function page() {
-  const [addTourDate, setAddTourDate] = useState<addExperienceDataType>({
-    experience_type: "",
-    experience_name: "",
-    start_date: "",
-    end_date: "",
-    min_participant: 0, // Assuming this is a number field
-    max_participant: 0, // Assuming this is a number field
-    price: 0, // Assuming this is a number field
-    duration_hours: 0, // Assuming this is a number field
-    check_point: "",
-    summary: "",
-    detail_introduction: "",
-    supplies: "",
-    precautions: "",
-    exp_round_dto_list: [],
-  });
+  const [addExperienceData, setAddExperienceData] =
+    useState<addExperienceDataType>({
+      experience_type: "",
+      experience_name: "",
+      start_date: "",
+      end_date: "",
+      min_participant: 0, // Assuming this is a number field
+      max_participant: 0, // Assuming this is a number field
+      price: 0, // Assuming this is a number field
+      duration_hours: 0, // Assuming this is a number field
+      check_point: "",
+      summary: "",
+      detail_introduction: "",
+      supplies: "",
+      precautions: "",
+      exp_round_dto_list: [
+        { start_time: "", end_time: "", max_participant: 0 },
+      ],
+    });
 
-  enum TourType {
-    VILLAGE,
-    EDUCATION_FARM,
-    TOURIST_FARM,
-    FANCH,
-    BED_BREAKFAST,
-  }
-  const TOUR_TYPE_CODE: { [key in TourType]: string } = {
-    [TourType.VILLAGE]: "1",
-    [TourType.EDUCATION_FARM]: "2",
-    [TourType.TOURIST_FARM]: "3",
-    [TourType.FANCH]: "4",
-    [TourType.BED_BREAKFAST]: "5",
+  const ExperienceType = {
+    RURAL: { code: "1", name: "농촌체험" },
+    CRAFTING: { code: "2", name: "만들기체험" },
+    CULTURE: { code: "3", name: "문화체험" },
+    LEISURE_SPORTS: { code: "4", name: "레포츠체험" },
+    ETC: { code: "5", name: "그 외" },
   };
 
   useEffect(() => {
-    console.log(addTourDate);
-  }, [addTourDate]);
+    console.log(addExperienceData);
+  }, [addExperienceData]);
 
   const handleChange = (e: inputType) => {
     const { name, value } = e.target;
-    setAddTourDate((prevData) => ({
+    let newValue =
+      e.target.type === "date" ? formatDate(e.target.valueAsDate) : value;
+    newValue = e.target.type === "time" ? formatTime(value) : value;
+    setAddExperienceData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: newValue,
+    }));
+  };
+
+  const formatTime = (time) => {
+    const [hours, minutes] = time.split(":");
+    return `${hours}:${minutes}`;
+  };
+
+  const formatDate = (date) => {
+    if (!date) return ""; // Return empty string if date is null or undefined
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Month is zero-based
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  };
+
+  const handleEpisodeChange = (index, e) => {
+    const { name, value } = e.target;
+    const episodes = [...addExperienceData.exp_round_dto_list];
+    episodes[index][name] = value;
+    setAddExperienceData((prevData) => ({
+      ...prevData,
+      exp_round_dto_list: episodes,
+    }));
+  };
+
+  const handleAddEpisode = () => {
+    setAddExperienceData((prevData) => ({
+      ...prevData,
+      exp_round_dto_list: [
+        ...prevData.exp_round_dto_list,
+        { start_time: "", end_time: "", max_participant: 0 },
+      ],
     }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add form submission logic here
-    console.log("Form submitted:", addTourDate);
-    addTour();
+
+    console.log("Form submitted:", addExperienceData);
+    addExperience();
   };
 
-  const addTour = async () => {
+  const addExperience = async () => {
     try {
       const token = localStorage.getItem("jwt");
       console.log(token);
       const response = await axios.post(
-        "http://localhost:8080/tours/seller/add",
-        addTourDate,
+        "http://localhost:8080/experiences/seller/add",
+        addExperienceData,
         {
           headers: { Authorization: token },
         }
@@ -75,105 +109,168 @@ export default function page() {
 
   return (
     <section>
-      <h1 className="text-lg m-3">관광 등록하기</h1>
+      <h1 className="text-lg m-3">체험 등록하기</h1>
       <article>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col space-y-2 m-1">
             <p className="space-x-3">
-              <label className="text-sm">관광이름</label>
+              <label className="text-sm">체험 이름</label>
               <input
-                name="tour_name"
-                value={addTourDate.tour_name}
+                name="experience_name"
+                value={addExperienceData.experience_name}
                 onChange={handleChange}
-              ></input>
+              />
             </p>
             <p className="space-x-3">
-              <label className="text-sm">관광유형</label>
+              <label className="text-sm">체험 유형</label>
+              {/* Replace with your own logic for selecting experience type */}
               <select
-                name="tour_type"
-                value={addTourDate.tour_type}
+                name="experience_type"
+                value={addExperienceData.experience_type}
                 onChange={handleChange}
               >
-                <option value="">선택해주세요</option>
-                <option value={TOUR_TYPE_CODE[TourType.VILLAGE]}>
-                  농촌체험휴양마을
-                </option>
-                <option value={TOUR_TYPE_CODE[TourType.EDUCATION_FARM]}>
-                  농촌교육농장
-                </option>
-                <option value={TOUR_TYPE_CODE[TourType.TOURIST_FARM]}>
-                  우수관광농원
-                </option>
-                <option>낙농체험목장</option>
+                <option value="">체험 유형 선택</option>
+                {Object.values(ExperienceType).map((type) => (
+                  <option key={type.code} value={type.code}>
+                    {type.name}
+                  </option>
+                ))}
               </select>
             </p>
+            {/* Add other fields */}
             <p className="space-x-3">
-              <label className="text-sm">소개글</label>
+              <label className="text-sm">시작 날짜</label>
               <input
-                name="introduction"
-                value={addTourDate.introduction}
+                type="date"
+                name="start_date"
+                value={addExperienceData.start_date}
                 onChange={handleChange}
-              ></input>
+              />
             </p>
             <p className="space-x-3">
-              <label className="text-sm">homepage_url</label>
+              <label className="text-sm">마감 날짜</label>
               <input
-                name="homepage_url"
-                value={addTourDate.homepage_url}
+                type="date"
+                name="end_date"
+                value={addExperienceData.end_date}
                 onChange={handleChange}
-              ></input>
+              />
             </p>
             <p className="space-x-3">
-              <label className="text-sm">one_line_intro</label>
+              <label className="text-sm">최소인원</label>
               <input
-                name="one_line_intro"
-                value={addTourDate.one_line_intro}
+                name="min_participant"
+                value={addExperienceData.min_participant}
                 onChange={handleChange}
-              ></input>
+              />
             </p>
             <p className="space-x-3">
-              <label className="text-sm">summary</label>
+              <label className="text-sm">최대인원</label>
+              <input
+                name="max_participant"
+                value={addExperienceData.max_participant}
+                onChange={handleChange}
+              />
+            </p>
+            <p className="space-x-3">
+              <label className="text-sm">가격</label>
+              <input
+                name="price"
+                value={addExperienceData.price}
+                onChange={handleChange}
+              />
+            </p>
+            <p className="space-x-3">
+              <label className="text-sm">체험 소모시간</label>
+              <input
+                name="duration_hours"
+                value={addExperienceData.duration_hours}
+                onChange={handleChange}
+              />
+            </p>
+            <p className="space-x-3">
+              <label className="text-sm">체크포인트</label>
+              <input
+                name="check_point"
+                value={addExperienceData.check_point}
+                onChange={handleChange}
+              />
+            </p>
+            <p className="space-x-3">
+              <label className="text-sm">요약</label>
               <input
                 name="summary"
-                value={addTourDate.summary}
+                value={addExperienceData.summary}
                 onChange={handleChange}
-              ></input>
+              />
             </p>
             <p className="space-x-3">
-              <label className="text-sm">restaurant</label>
+              <label className="text-sm">상세소개</label>
               <input
-                name="restaurant"
-                value={addTourDate.restaurant}
+                name="detail_introduction"
+                value={addExperienceData.detail_introduction}
                 onChange={handleChange}
-              ></input>
+              />
             </p>
             <p className="space-x-3">
-              <label className="text-sm">parking</label>
+              <label className="text-sm">준비물</label>
               <input
-                name="parking"
-                value={addTourDate.parking}
+                name="supplies"
+                value={addExperienceData.supplies}
                 onChange={handleChange}
-              ></input>
+              />
             </p>
             <p className="space-x-3">
-              <label className="text-sm">toilet</label>
+              <label className="text-sm">주의사항</label>
               <input
-                name="toilet"
-                value={addTourDate.toilet}
+                name="precautions"
+                value={addExperienceData.precautions}
                 onChange={handleChange}
-              ></input>
+              />
             </p>
-            <p className="space-x-3">
-              <label className="text-sm">amenities</label>
-              <input
-                name="amenities"
-                value={addTourDate.amenities}
-                onChange={handleChange}
-              ></input>
-            </p>
+            <div>
+              {addExperienceData.exp_round_dto_list.map((episode, index) => (
+                <div key={index} className="flex space-x-2">
+                  <div>
+                    <label className="text-sm">시작 시간</label>
+                    <input
+                      name="start_time"
+                      type="time"
+                      value={episode.start_time}
+                      onChange={(e) => handleEpisodeChange(index, e)}
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm">종료 시간</label>
+                    <input
+                      name="end_time"
+                      type="time"
+                      value={episode.end_time}
+                      onChange={(e) => handleEpisodeChange(index, e)}
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm">최대 참가자 수</label>
+                    <input
+                      type="number"
+                      name="max_participant"
+                      value={episode.max_participant}
+                      onChange={(e) => handleEpisodeChange(index, e)}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button
+              className="rounded-lg bg-green text-white m-2"
+              type="button"
+              onClick={handleAddEpisode}
+            >
+              회차 추가
+            </button>
           </div>
           <button className="rounded-lg bg-green text-white m-2" type="submit">
-            관광 등록하기
+            체험 등록하기
           </button>
         </form>
       </article>
