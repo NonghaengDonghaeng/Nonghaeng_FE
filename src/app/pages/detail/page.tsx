@@ -1,10 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import useMove from "@/hooks/useMove";
 import NavDetail from "@/components/common/navdetail/navdetail";
 import styles from "./page.module.css";
-import tour_detail from "@/db/tourdata/detail.json";
 import grade_img from "img/tour/grade_img.png";
 import comment_img from "img/tour/comment_img.png";
 import tell_img from "img/tour/tel_img.png";
@@ -13,15 +12,32 @@ import email_img from "img/tour/email_img.png";
 import exp_img from "img/exp/orange.png";
 import lodg_img from "img/lodg/orange.png";
 import SubList from "@/components/common/list/sublist/sublist";
+import { tourDetailPageDataType } from "@/types/dataType/detailPageDataType";
+import tourDetailPageResData from "@/db/tourdata/detail.json";
 
 export default function page() {
   const { element, moveElement } = useMove();
-  const [pageState, setPageState] = useState({
+  const [pageState, setPageState] = useState<{
+    isClick: { exp: boolean; lodg: boolean };
+    img_url: string | undefined;
+  }>({
     isClick: { exp: false, lodg: false },
-    img_url: tour_detail.main_img_url,
+    img_url: "",
   });
 
-  const imgList = tour_detail.sub_img_url.map((item, index) => (
+  const [resData, setResData] = useState<tourDetailPageDataType>();
+
+  useEffect(() => {
+    console.log("농촌관광 상세 api");
+    setResData(tourDetailPageResData);
+  }, []);
+
+  useEffect(
+    () => setPageState({ ...pageState, img_url: resData?.main_img_url }),
+    [resData?.main_img_url]
+  );
+
+  const imgList = resData?.sub_img_url.map((item, index) => (
     <img
       className={`${
         pageState.img_url == item ? styles.img_on : styles.img_off
@@ -39,17 +55,17 @@ export default function page() {
         <div>
           <div>
             <h1>
-              {tour_detail.name}
+              {resData?.name}
               <span>
                 <Image src={grade_img} alt="star_img" />
-                {tour_detail.grade}
+                {resData?.grade}
               </span>
               <span>
                 <Image src={comment_img} alt="comment_img" />
-                {tour_detail.comment_count}
+                {resData?.comment_count}
               </span>
             </h1>
-            <h2>{tour_detail.introduction}</h2>
+            <h2>{resData?.introduction}</h2>
           </div>
           <div>{imgList}</div>
         </div>
@@ -57,15 +73,15 @@ export default function page() {
           <ul>
             <li>
               <Image src={tell_img} alt="tel_img" />
-              {tour_detail.tel}
+              {resData?.tel}
             </li>
             <li>
               <Image src={email_img} alt="email_img" />
-              {tour_detail.homepage_url}
+              {resData?.homepage_url}
             </li>
             <li>
               <Image src={address_img} alt="address_img" />
-              {tour_detail.address}
+              {resData?.address}
             </li>
           </ul>
           <ul>
@@ -80,7 +96,7 @@ export default function page() {
             >
               <Image src={exp_img} alt="exp_img" />
               <span>
-                체험<label> {tour_detail.exp_summary_list.length}</label>
+                체험<label> {resData?.exp_summary_list.length}</label>
               </span>
             </li>
             <li
@@ -94,10 +110,14 @@ export default function page() {
             >
               <Image src={lodg_img} alt="lodg_img" />
               <span>
-                숙박<label> {tour_detail.room_summary_list.length}</label>
+                숙박<label> {resData?.room_summary_list.length}</label>
               </span>
             </li>
-            <SubList isClick={pageState.isClick} tour_detail={tour_detail} />
+            <SubList
+              isClick={pageState.isClick}
+              expSubListData={resData?.exp_summary_list}
+              lodgSubListData={resData?.room_summary_list}
+            />
           </ul>
         </div>
       </section>

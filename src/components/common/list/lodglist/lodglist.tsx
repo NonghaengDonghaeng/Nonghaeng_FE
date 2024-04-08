@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./lodglist.module.css";
 import region_img from "img/region/orange.png";
-import { lodgListContentDataType } from "@/types/dataType";
+import { lodgListContentDataType } from "@/types/dataType/listPageDataType";
 
 type propsType = {
   content: lodgListContentDataType | undefined;

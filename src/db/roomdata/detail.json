@@ -1,0 +1,29 @@
+{
+  "main_img_url": "https://www.chamchamtrip.com/site/resource/file/FILE_000000000003417/0",
+  "sub_img_url": [
+    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/0",
+    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/1",
+    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/2",
+    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/3"
+  ],
+  "room_name": "사랑방12",
+  "room_type_name": "2",
+  "summary": "연인끼리 와서 쉬다가기 좋아요12",
+  "price_peak": 70000,
+  "price_off_peak": 50000,
+  "price_holiday": 80000,
+  "standard_capacity": 2,
+  "max_capacity": 4,
+  "additional_cost": 15000,
+  "checkin_time": "15:00:00",
+  "checkout_time": "11:00:00",
+  "current_num_of_room": 1,
+  "room_configuration": "화장실 1개, 거실1개, 방2개",
+  "inclusions": "객실 내 화장실, 무료 WIFI",
+  "requirement": "각종그릇, 에어컨, TV, 커피포트, 샴푸, 린스, 바디워시, 치약",
+  "facilities": "식당",
+  "usage_tips": "시원하게 흐르는 요천강변이 가까워 산책을 즐기기 좋음",
+  "precautions": "전 객실 금연입니다.",
+  "tour_id": 4,
+  "tour_name": "창민체험휴양마을"
+}

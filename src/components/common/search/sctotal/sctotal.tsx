@@ -4,7 +4,7 @@ import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
 import ScButton from "../scbutton/scbutton";
 import styles from "./sctotal.module.css";
-import { inputType, formType } from "@/types/eventtype";
+import { inputType, formType } from "@/types/eventType";
 import { pageStateType } from "@/types/pageStateType";
 
 export default function ScTotal() {

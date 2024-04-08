@@ -10,7 +10,7 @@ import {
   expListContentDataType,
   lodgListContentDataType,
   tourListContentDataType,
-} from "@/types/dataType";
+} from "@/types/dataType/listPageDataType";
 import more_green from "img/main/more_green.png";
 import tripPageResData from "@/db/tripPageResData.json";
 

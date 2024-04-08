@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./explist.module.css";
 import region_img from "img/region/orange.png";
-import { expListContentDataType } from "@/types/dataType";
+import { expListContentDataType } from "@/types/dataType/listPageDataType";
 
 type cotentType = {
   content: expListContentDataType | undefined;

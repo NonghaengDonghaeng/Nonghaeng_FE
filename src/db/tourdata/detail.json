@@ -24,39 +24,46 @@
     {
       "roomId": 1,
       "roomName": "사랑방",
-      "price": 80000
+      "price": 80000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002444/0"
     },
     {
       "roomId": 2,
       "roomName": "사랑방12",
-      "price": 70000
+      "price": 70000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002444/0"
     }
   ],
   "exp_summary_list": [
     {
       "expId": 2,
       "expName": "소타기 체험",
-      "price": 9000
+      "price": 9000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
     },
     {
       "expId": 3,
       "expName": "말타기 체험",
-      "price": 1000
+      "price": 1000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
     },
     {
       "expId": 4,
       "expName": "말타기 체험",
-      "price": 1000
+      "price": 1000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
     },
     {
       "expId": 5,
       "expName": "말타기 체험",
-      "price": 1000
+      "price": 1000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
     },
     {
       "expId": 6,
       "expName": "말타기 체험",
-      "price": 1000
+      "price": 1000,
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
     }
   ]
 }

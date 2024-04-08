@@ -1,0 +1,28 @@
+[
+  {
+    "img_url": "https://www.chamchamtrip.com/site/resource/file/FILE_000000000003418/2",
+    "room_id": 1,
+    "room_name": "온돌방",
+    "num_of_room": 3,
+    "price": 60000,
+    "price_holiday": 90000,
+    "standard_capacity": 2,
+    "max_capacity": 4,
+    "checkin_time": "15:00:00",
+    "checkout_time": "11:00:00",
+    "room_configuration": "화장실 1개, 거실1개, 방2개"
+  },
+  {
+    "img_url": "https://www.chamchamtrip.com/site/resource/file/FILE_000000000003418/1",
+    "room_id": 2,
+    "room_name": "온돌방12",
+    "num_of_room": 2,
+    "price": 50000,
+    "price_holiday": 80000,
+    "standard_capacity": 2,
+    "max_capacity": 4,
+    "checkin_time": "15:00:00",
+    "checkout_time": "11:00:00",
+    "room_configuration": "화장실 1개, 거실1개, 방2개"
+  }
+]

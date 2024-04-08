@@ -136,7 +136,7 @@
 2. trip page api data (o)
 3. tour page api data (o)
 4. exp page api data (o)
-5. lodg page api data
+5. lodg page api data (o)
 6. tour detail page api data
 7. exp detail page api data
 8. lodg detail page api data

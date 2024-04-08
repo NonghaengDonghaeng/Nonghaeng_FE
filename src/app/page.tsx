@@ -9,7 +9,7 @@ import styles from "./page.module.css";
 import {
   expListContentDataType,
   lodgListContentDataType,
-} from "@/types/dataType";
+} from "@/types/dataType/listPageDataType";
 import section1_bg from "img/main/section1_bg.png";
 import more_nonghang from "img/main/more_nonghang.png";
 import more_green from "img/main/more_green.png";

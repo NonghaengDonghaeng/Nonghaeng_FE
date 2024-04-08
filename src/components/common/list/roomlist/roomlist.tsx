@@ -8,37 +8,33 @@ import calendar_img from "img/lodg/calendar.png";
 import person_img from "img/lodg/person.png";
 import Link from "next/link";
 import { CustomRangeCalendar } from "../../calendar/calendar";
+import { roomListDataType } from "@/types/dataType/listPageDataType";
+import roomListResData from "@/db/roomdata/list.json";
 
 type PropsType = {
-  sub_lodg_list_props: {
-    img_url: string;
-    room_id: number;
-    room_name: string;
-    num_of_room: number;
-    price: number;
-    price_holiday: number;
-    standard_capacity: number;
-    max_capacity: number;
-    checkin_time: string;
-    checkout_time: string;
-    room_configuration: string;
-  }[];
+  roomListData: roomListDataType | undefined;
 };
 
-export default function RoomList({ sub_lodg_list_props }: PropsType) {
-  const sub_lodg_list = sub_lodg_list_props;
+export default function RoomList({ roomListData }: PropsType) {
   const [isClick, setIsClick] = useState(false);
+  const [state, setState] = useState(false);
   const [personCount, setPersonCount] = useState<number>(0);
   const [roomCount, setRoomCount] = useState(0);
   const [check_in, setCheck_in] = useState(null);
   const [check_out, setCheck_out] = useState(null);
 
-  function handleSubLodgList() {
-    console.log("숙박중간페이지 리스트 api");
-    // const sub_lodg_list = api로 받아온 숙박 중간페이지 리스트
+  const [resData, setResData] = useState<roomListDataType | undefined>();
+
+  useEffect(() => {
+    setResData(roomListData);
+  }, [roomListData]);
+
+  function getRoomList() {
+    console.log("방 리스트 api");
+    setResData(roomListResData);
   }
 
-  const subLodgList = sub_lodg_list.map((item, index) => (
+  const roomList = resData?.map((item, index) => (
     <li key={index}>
       <Link href={`/pages/detail/lodg/room?room_id=${item.room_id}`}>
         <img src={item.img_url} />
@@ -75,7 +71,7 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
   ));
 
   return (
-    <div className={styles.sub_lodg_list}>
+    <div className={styles.room_list}>
       <ul>
         <li>
           <div onClick={() => setIsClick(!isClick)}>
@@ -92,7 +88,7 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
           <ClickCount count={roomCount} setCount={setRoomCount} />
           {"객실수"}
           <Image src={room_img} alt="room_img" />
-          <button onClick={handleSubLodgList}>검색</button>
+          <button onClick={getRoomList}>검색</button>
         </li>
       </ul>
       <CustomRangeCalendar
@@ -100,7 +96,7 @@ export default function RoomList({ sub_lodg_list_props }: PropsType) {
         setCheck_out={setCheck_out}
         isClick={isClick}
       />
-      <ul>{subLodgList}</ul>
+      <ul>{roomList}</ul>
     </div>
   );
 }

@@ -1,20 +1,25 @@
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./sublist.module.css";
 
 type PropsType = {
-  isClick: any;
-  tour_detail: {
-    exp_summary_list: any[];
-    room_summary_list: any[];
-  };
+  isClick: { exp: boolean; lodg: boolean };
+  expSubListData:
+    | { expId: number; expName: string; price: number; img_url: string }[]
+    | undefined;
+  lodgSubListData:
+    | { roomId: number; roomName: string; price: number; img_url: string }[]
+    | undefined;
 };
 
-export default function SubList({ isClick, tour_detail }: PropsType) {
-  const expList = tour_detail.exp_summary_list.map((item, index) => (
+export default function SubList({
+  isClick,
+  expSubListData,
+  lodgSubListData,
+}: PropsType) {
+  const expList = expSubListData?.map((item, index) => (
     <li key={index}>
       <Link href={`/pages/detail/exp?exp_id=${item.expId}`}>
-        <img></img>
+        <img src={item.img_url}></img>
         <div>
           <span>{item.expName}</span>
           {item.price}원
@@ -22,10 +27,10 @@ export default function SubList({ isClick, tour_detail }: PropsType) {
       </Link>
     </li>
   ));
-  const lodgList = tour_detail.room_summary_list.map((item, index) => (
+  const lodgList = lodgSubListData?.map((item, index) => (
     <li key={index}>
       <Link href={`/pages/detail/lodg?lodg_id=${item.roomId}`}>
-        <img></img>
+        <img src={item.img_url}></img>
         <div>
           <span>{item.roomName}</span>
           {item.price}원

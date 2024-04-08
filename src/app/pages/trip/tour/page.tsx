@@ -11,7 +11,7 @@ import {
 } from "@/components/common/search/scdetail/scdetail";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
-import { tourListPageDataType } from "@/types/dataType";
+import { tourListPageDataType } from "@/types/dataType/listPageDataType";
 import tourListPageResData from "@/db/tourdata/list.json";
 
 export default function page() {

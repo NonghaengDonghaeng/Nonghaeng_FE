@@ -11,7 +11,7 @@ import ExpList from "@/components/common/list/explist/explist";
 import Paging from "@/components/common/paging/paging";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
-import { expListPageDatatype } from "@/types/dataType";
+import { expListPageDatatype } from "@/types/dataType/listPageDataType";
 import expListPageResData from "@/db/expdata/list.json";
 
 export default function page() {

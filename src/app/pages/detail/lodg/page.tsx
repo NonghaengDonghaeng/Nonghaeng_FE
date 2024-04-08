@@ -2,33 +2,30 @@
 import { useEffect, useState } from "react";
 import NavDetail from "@/components/common/navdetail/navdetail";
 import useMove from "@/hooks/useMove";
+import RoomList from "@/components/common/list/roomlist/roomlist";
 import styles from "./page.module.css";
-import sub_lodg_detail from "@/db/lodgdata/subdetail.json";
-import SubLodgList from "@/components/common/list/roomlist/sublodglist";
+import { lodgDetailPageDataType } from "@/types/dataType/detailPageDataType";
+import lodgDetailPageResData from "@/db/lodgdata/detail.json";
 
 export default function page() {
   const { element, moveElement } = useMove();
 
-  const [pageState, setPageState] = useState({
-    img_url: sub_lodg_detail.main_img_url,
-  });
+  const [imgUrl, setImgUrl] = useState<string | undefined>();
+
+  const [resData, setResData] = useState<lodgDetailPageDataType | undefined>();
 
   useEffect(() => {
     console.log("숙박중간페이지 api");
-    // 숙소 기본정보를 불러오는 api요청
-    // 방 리스트는 리스트 컴포넌트에서 api요청
+    setResData(lodgDetailPageResData);
   }, []);
 
-  const imgList = sub_lodg_detail.sub_img_url.map((item, index) => (
-    <li
-      key={index}
-      onClick={() => setPageState({ ...pageState, img_url: item })}
-    >
+  useEffect(() => setImgUrl(resData?.main_img_url), [resData?.main_img_url]);
+
+  const imgList = resData?.sub_img_url.map((item, index) => (
+    <li key={index} onClick={() => setImgUrl(item)}>
       <img
         src={item}
-        className={`${
-          pageState.img_url == item ? styles.img_on : styles.img_off
-        }`}
+        className={`${imgUrl == item ? styles.img_on : styles.img_off}`}
       />
     </li>
   ));
@@ -36,13 +33,13 @@ export default function page() {
     <>
       <section className={styles.section1}>
         <article>
-          <img src={pageState.img_url}></img>
+          <img src={imgUrl}></img>
           <ul>{imgList}</ul>
         </article>
         <article>
-          <h1>{sub_lodg_detail.tour_name}</h1>
+          <h1>{resData?.tour_name}</h1>
           <hr />
-          <h2>{sub_lodg_detail.tour_one_line_intro}</h2>
+          <h2>{resData?.tour_one_line_intro}</h2>
         </article>
       </section>
       <section className={styles.section2}>
@@ -52,9 +49,7 @@ export default function page() {
             title={["객실선택", "기본정보", "숙박후기"]}
             nowRef={0}
           />
-          <SubLodgList
-            sub_lodg_list_props={sub_lodg_detail.room_summary_dto_list}
-          />
+          <RoomList roomListData={resData?.room_summary_dto_list} />
         </article>
         <article ref={element[1]}>
           <NavDetail

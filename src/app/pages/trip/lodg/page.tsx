@@ -12,7 +12,7 @@ import LodgList from "@/components/common/list/lodglist/lodglist";
 import Paging from "@/components/common/paging/paging";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
-import { lodgListPageDataType } from "@/types/dataType";
+import { lodgListPageDataType } from "@/types/dataType/listPageDataType";
 import lodgListPageResData from "@/db/lodgdata/list.json";
 
 export default function page() {

@@ -4,7 +4,7 @@ import styles from "./tourlist.module.css";
 import region_img from "img/region/orange.png";
 import exp_img from "img/exp/orange.png";
 import lodg_img from "img/lodg/orange.png";
-import { tourListContentDataType } from "@/types/dataType";
+import { tourListContentDataType } from "@/types/dataType/listPageDataType";
 
 type PropsType = {
   content: tourListContentDataType | undefined;

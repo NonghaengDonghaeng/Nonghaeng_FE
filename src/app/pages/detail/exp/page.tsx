@@ -5,36 +5,35 @@ import Image from "next/image";
 import useMove from "@/hooks/useMove";
 import NavDetail from "@/components/common/navdetail/navdetail";
 import styles from "./page.module.css";
-import exp_detail from "@/db/expdata/detail.json";
+import reservation_img from "img/exp/reservation.png";
+import { expDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import grade_img from "img/tour/grade_img.png";
 import participant_img from "img/exp/participant.png";
 import time_img from "img/exp/time.png";
 import price_img from "img/exp/price.png";
 import great_img from "img/exp/great.png";
-import reservation_img from "img/exp/reservation.png";
+import expDetailPageResData from "@/db/expdata/detail.json";
 
 export default function page() {
   const { element, moveElement } = useMove();
 
-  const [pageState, setPageState] = useState({
-    img_url: exp_detail.main_img_url,
-  });
+  const [imgUrl, setImgUrl] = useState<string>();
+
+  const [resData, setResData] = useState<expDetailPageDataType | undefined>();
 
   // api useEffect
   useEffect(() => {
     console.log("체험 상세 api");
+    setResData(expDetailPageResData);
   }, []);
 
-  const imgList = exp_detail.sub_img_url.map((item, index) => (
-    <li
-      key={index}
-      onClick={() => setPageState({ ...pageState, img_url: item })}
-    >
+  useEffect(() => setImgUrl(resData?.main_img_url), [resData?.main_img_url]);
+
+  const imgList = resData?.sub_img_url.map((item, index) => (
+    <li key={index} onClick={() => setImgUrl(item)}>
       <img
         src={item}
-        className={`${
-          pageState.img_url == item ? styles.img_on : styles.img_off
-        }`}
+        className={`${imgUrl == item ? styles.img_on : styles.img_off}`}
       />
     </li>
   ));
@@ -42,42 +41,40 @@ export default function page() {
     <>
       <section className={styles.section1}>
         <article>
-          <img src={pageState.img_url} />
+          <img src={imgUrl} />
           <ul>{imgList}</ul>
         </article>
         <article>
           <span>
-            <Link
-              href={`/pages/detail/tour?tour_id=${exp_detail.tour_info.tourId}`}
-            >
-              {exp_detail.tour_info.tourName}
+            <Link href={`/pages/detail?tour_id=${resData?.tour_info.tourId}`}>
+              {resData?.tour_info.tourName}
             </Link>
             {" > "}
-            {exp_detail.experience_name}
+            {resData?.experience_name}
           </span>
           <h1>
-            {exp_detail.experience_name}
+            {resData?.experience_name}
             <span>
               <Image src={grade_img} alt="grade_img" />
-              {exp_detail.grade.toFixed(1)}
+              {resData?.grade.toFixed(1)}
             </span>
           </h1>
           <hr />
           <p>
             <Image src={participant_img} alt="participant_img" />
             <label>참여인원</label>
-            {exp_detail.min_participant}명{" ~ "}
-            {exp_detail.max_participant}명
+            {resData?.min_participant}명{" ~ "}
+            {resData?.max_participant}명
           </p>
           <p>
             <Image src={time_img} alt="time_img" />
             <label>소요시간</label>
-            {exp_detail.duration_hours}시간
+            {resData?.duration_hours}시간
           </p>
           <p>
             <Image src={price_img} alt="price_img" />
             <label>체험비용</label>
-            {exp_detail.price}원
+            {resData?.price}원
           </p>
           <ul>
             <li onClick={() => console.log("좋아요 api")}>

@@ -8,12 +8,13 @@ import ClickCount from "@/components/common/clickcount/clickcount";
 import { CustomRangeCalendar } from "@/components/common/calendar/calendar";
 import NavDetail from "@/components/common/navdetail/navdetail";
 import styles from "./page.module.css";
-import lodg_detail from "@/db/lodgdata/detail.json";
 import room_img from "img/lodg/room.png";
 import person_img from "img/lodg/person.png";
 import calenda_img from "img/lodg/calendar.png";
 import great_img from "img/exp/great.png";
 import reservation_img from "img/exp/reservation.png";
+import { roomDetailPageDataType } from "@/types/dataType/detailPageDataType";
+import roomDetailPageResData from "@/db/roomdata/detail.json";
 
 export default function page() {
   const searchParams = useSearchParams();
@@ -22,11 +23,20 @@ export default function page() {
 
   const [room_id, setRoom_id] = useState(searchParams.get("room_id"));
   const [isClick, setIsClick] = useState(false);
-  const [img_url, setImg_url] = useState(lodg_detail.main_img_url);
+  const [imgUrl, setImgUrl] = useState<string>();
   const [person_count, setPerson_count] = useState(1);
   const [room_count, setRoom_count] = useState(1);
   const [check_in, setCheck_in] = useState(null);
   const [check_out, setCheck_out] = useState(null);
+
+  const [resData, setResData] = useState<roomDetailPageDataType>();
+
+  useEffect(() => {
+    console.log("농촌숙박 상세 api");
+    setResData(roomDetailPageResData);
+  }, []);
+
+  useEffect(() => setImgUrl(resData?.main_img_url), [resData?.main_img_url]);
 
   function routeReservation() {
     if (!check_in || !check_out) {
@@ -38,48 +48,45 @@ export default function page() {
     }
   }
 
-  const imgList = lodg_detail.sub_img_url.map((item, index) => (
-    <li key={index} onClick={() => setImg_url(item)}>
+  const imgList = resData?.sub_img_url.map((item, index) => (
+    <li key={index} onClick={() => setImgUrl(item)}>
       <img
         src={item}
-        className={`${img_url == item ? styles.img_on : styles.img_off}`}
+        className={`${imgUrl == item ? styles.img_on : styles.img_off}`}
       />
     </li>
   ));
-
-  useEffect(() => console.log("농촌숙박 상세 api"), []);
-
   return (
     <>
       <section className={styles.section1}>
         <article>
-          <img src={img_url} />
+          <img src={imgUrl} />
           <ul>{imgList}</ul>
         </article>
         <article>
           <span>
-            <Link href={`/pages/detail?tour_id=${lodg_detail.tour_id}`}>
-              {lodg_detail.tour_name}
+            <Link href={`/pages/detail?tour_id=${resData?.tour_id}`}>
+              {resData?.tour_name}
             </Link>
             {" > "}
-            {lodg_detail.room_name}
+            {resData?.room_name}
           </span>
           <h1>
-            {lodg_detail.room_name}
-            <span>잔여객실 : {lodg_detail.current_num_of_room}</span>
+            {resData?.room_name}
+            <span>잔여객실 : {resData?.current_num_of_room}</span>
           </h1>
           <hr />
           <p>
             <label>인원</label>
-            {`${lodg_detail.standard_capacity}인기준(최대${lodg_detail.max_capacity}인)`}
+            {`${resData?.standard_capacity}인기준(최대${resData?.max_capacity}인)`}
           </p>
           <p>
             <label>체크인 / 체크아웃</label>
-            {`${lodg_detail.checkin_time} / ${lodg_detail.checkout_time}`}
+            {`${resData?.checkin_time} / ${resData?.checkout_time}`}
           </p>
           <p>
             <label>가격</label>
-            {`${lodg_detail.price_off_peak}원(주말, 공휴일 ${lodg_detail.price_holiday}원)`}
+            {`${resData?.price_off_peak}원(주말, 공휴일 ${resData?.price_holiday}원)`}
           </p>
           <ul>
             <li>

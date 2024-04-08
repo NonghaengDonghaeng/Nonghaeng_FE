@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useChange } from "@/hooks/useChange";
-import { formType, inputType } from "@/types/eventtype";
+import { formType, inputType } from "@/types/eventType";
 import axios from "axios";
 import { setCookie } from "cookies-next";
 

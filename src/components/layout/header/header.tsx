@@ -9,9 +9,9 @@ import { headerHref } from "../../../../public/href/href";
 import homeImg from "img/header/homeImg.png";
 import sitemapImg from "img/header/sitemapImg.png";
 import searchImg from "img/header/searchImg.png";
-import { inputType } from "@/types/eventtype";
+import { inputType } from "@/types/eventType";
 import { pageStateType } from "@/types/pageStateType";
-import { formType } from "@/types/eventtype";
+import { formType } from "@/types/eventType";
 
 type SubMenuType = { href: string; title: string };
 
