@@ -65,6 +65,10 @@ export const mypageHref = {
   mainMenu: { title: "마이페이지", href: "/pages/mypage" },
   subMenu: [],
 };
+export const adminHref = {
+  mainMenu: { title: "관리자 페이지", href: "/pages/admin" },
+  subMenu: [],
+};
 
 // footer href
 export const footerHref = [

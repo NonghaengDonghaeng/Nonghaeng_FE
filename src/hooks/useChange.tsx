@@ -32,6 +32,7 @@ type PropsType = {
       area_code?: string;
       eamil?: string;
       name?: string;
+      username?: string;
       password?: string;
       check_password?: string;
       number?: string;
