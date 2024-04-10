@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
-import styles from "./.module.css";
+import styles from "./Header.module.css";
 import { headerHref } from "../../../../public/href/href";
 import homeImg from "img/header/homeImg.png";
 import sitemapImg from "img/header/sitemapImg.png";

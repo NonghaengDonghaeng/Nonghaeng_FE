@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Nav from "@/components/layout/nav/nav";
+import Nav from "@/components/layout/Nav/Nav";
 import { adminHref, mypageHref } from "../../../../public/href/href";
 
 export const metadata: Metadata = {

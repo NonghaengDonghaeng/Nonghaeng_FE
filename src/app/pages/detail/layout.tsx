@@ -1,4 +1,4 @@
-import Nav from "@/components/layout/nav/nav";
+import Nav from "@/components/layout/Nav/Nav";
 import { Metadata } from "next";
 import { tripHref } from "../../../../public/href/href";
 

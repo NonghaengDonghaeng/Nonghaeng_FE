@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import ScollTop from "@/components/layout/scrolltop/scrolltop";
-import Header from "../components/layout/header/header";
-import Footer from "../components/layout/footer/footer";
+import ScollTop from "@/components/layout/ScrollTop/ScrollTop";
+import Header from "../components/layout/Header/Header";
+import Footer from "../components/layout/Footer/Footer";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });

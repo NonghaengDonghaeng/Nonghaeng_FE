@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./.module.css";
+import styles from "./Nav.module.css";
 import bg_img1 from "img/nav/nav_bg1.png";
 
 type propsType = {
