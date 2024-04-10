@@ -10,6 +10,7 @@ import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
 import { tourListPageDataType } from "@/types/dataType/listPageDataType";
 import tourListPageResData from "@/db/tourdata/list.json";
+import axios from "axios";
 
 export default function page() {
   const searchParams = useSearchParams();
@@ -31,6 +32,12 @@ export default function page() {
   useEffect(() => {
     setUrl({ urlItem: pageState });
     console.log("농촌관광 메인 api");
+    async () => {
+      try {
+        const res = await axios.get(`http://localhost:8080/tours?page=${pageState.page_index}&keyword=${pageState.search_word}`)
+        setResData(res)
+      }
+    };
     setResData(tourListPageResData);
   }, [pageState.state, pageState.page_index]);
 
