@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { addTourDataType } from "@/types/adminDataType";
-import { inputType } from "@/types/eventtype";
+import { inputType } from "@/types/eventType";
 import axios from "axios";
 
 export default function page() {

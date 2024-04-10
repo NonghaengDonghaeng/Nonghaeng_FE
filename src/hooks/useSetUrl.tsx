@@ -2,9 +2,6 @@ import { useRouter } from "next/navigation";
 
 type propsType = {
   urlItem: {
-    isClick?: any;
-    state?: boolean;
-    page_type?: string;
     page_index?: number;
     search_word?: string;
     region?: string[] | string;

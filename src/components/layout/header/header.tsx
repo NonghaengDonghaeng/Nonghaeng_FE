@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
 import styles from "./Header.module.css";
@@ -12,6 +12,7 @@ import searchImg from "img/header/searchImg.png";
 import { inputType } from "@/types/eventType";
 import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventType";
+import store from "@/redux/loginStateStore";
 
 type SubMenuType = { href: string; title: string };
 

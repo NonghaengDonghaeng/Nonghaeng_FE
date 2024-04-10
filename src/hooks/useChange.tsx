@@ -2,40 +2,13 @@ import { inputType } from "@/types/eventType";
 
 type PropsType = {
   changeItem: {
-    isClick?: any;
-    state?: boolean;
-    page_type?: string;
-    page_index?: number;
-    search_word?: string;
     region?: string[] | string;
     category?: string[] | string;
-    max_cost?: string;
-    min_cost?: string;
-    area_code?: string;
-    eamil?: string;
-    name?: string;
-    password?: string;
-    check_password?: string;
-    number?: string;
   };
   setChangeItem: React.Dispatch<
     React.SetStateAction<{
-      isClick?: any;
-      state?: boolean;
-      page_type?: string;
-      page_index?: number;
-      search_word?: string;
       region?: string[] | string;
       category?: string[] | string;
-      max_cost?: string;
-      min_cost?: string;
-      area_code?: string;
-      eamil?: string;
-      name?: string;
-      username?: string;
-      password?: string;
-      check_password?: string;
-      number?: string;
     }>
   >;
   e: inputType;
@@ -46,9 +19,11 @@ export function useChange() {
    @param changeItem:useState object
    @param setChangeItem:setUseState function
    @param e:event(type=inputType)
+   변경할 아이템은 객체형태로 changeItem, set함수는 setChangeItem, 이벤트는 e
   */
 
   function change({ changeItem, setChangeItem, e }: PropsType) {
+    // region, category가 배열인 경우
     if (
       Array.isArray(changeItem.region) &&
       Array.isArray(changeItem.category)
@@ -77,6 +52,7 @@ export function useChange() {
         return;
       }
     }
+    // 배열 이외의 모든 아이템변경
     setChangeItem({ ...changeItem, [e.target.name]: e.target.value });
   }
   return change;
