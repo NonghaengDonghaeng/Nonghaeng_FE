@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { CustomCalendar } from "@/components/common/calendar/calendar";
+import { CustomCalendar } from "@/components/common/Calendar/Calendar";
 import exp_round_info from "@/db/expdata/round_info.json";
-import { stringify } from "querystring";
 
 export default function page() {
   const [day, setDay] = useState(null);

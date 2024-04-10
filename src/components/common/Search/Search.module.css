@@ -1,0 +1,136 @@
+/*
+1.ScButton
+2.ScMain
+3.ScTotal
+4.ScDetail
+5.ScDetailOn
+ */
+
+/* SchButton
+--------------------------------------------------------------*/
+.search_button {
+  @apply w-[88px] h-[48px] p-[12px] rounded-[5px] flex justify-between text-white bg-stone;
+}
+
+.search_button > img {
+  @apply w-[20px];
+}
+
+/* ScMain 
+--------------------------------------------------------------*/
+.search_main {
+  @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[524px] flex justify-between absolute z-30 bg-yellow/85;
+}
+
+/* region, category box*/
+.search_main > div {
+  @apply w-[180px] h-[48px] rounded-[5px];
+}
+.search_main > div > label {
+  @apply py-[12px] px-[20px] font-[400]  flex justify-between cursor-pointer;
+}
+.search_main > div > label > img {
+  @apply w-[18px] my-[6px];
+}
+.search_main > div > ul {
+  @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
+}
+.search_main > div:first-child > ul {
+  @apply h-[246px];
+}
+.search_main > div > ul > li {
+  @apply py-[10px] px-[20px];
+}
+.search_main > div > ul > li:hover {
+  @apply bg-stone/10;
+}
+.search_main_off {
+  @apply text-stone bg-white;
+}
+.search_main_off > ul {
+  @apply hidden;
+}
+.search_main_on {
+  @apply text-white bg-stone;
+}
+
+/* input */
+.search_main > input {
+  @apply w-[208px] h-[48px] px-[16px] rounded-[5px];
+}
+
+/* SchTotal 
+--------------------------------------------------------------*/
+.total_search {
+  @apply w-[500px] h-[80px] mx-auto mt-[10px] p-[16px] rounded-[5px] flex justify-between  bg-[#FFFFFF]/50;
+}
+.total_search > input {
+  @apply w-full mr-[16px] px-[20px] rounded-[5px];
+}
+
+/* ScDetail
+--------------------------------------------------------------*/
+.search_detail {
+  @apply w-[500px] h-[400px] px-[20px] rounded-3xl top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-[102] fixed text-stone font-[500] bg-white;
+}
+
+.search_detail > span {
+  @apply text-[22px] flex justify-between items-center;
+}
+.search_detail > span > button {
+  @apply text-[30px] pb-[5px];
+}
+
+.search_detail > hr {
+  @apply border-[1px] border-stone/40;
+}
+
+.search_detail > div {
+  @apply h-[252px] overflow-y-scroll;
+}
+.search_detail > div > div {
+  @apply mt-[12px];
+}
+.search_detail > div > div > span {
+  @apply block text-[16px] font-[600];
+}
+.search_detail > div > div > ul {
+  @apply flex;
+}
+.search_detail > div > div > ul > li {
+  @apply mr-[6px] text-stone/80;
+}
+
+/* 가격선택 */
+.search_detail > div > div:nth-child(3) > input {
+  @apply px-[14px] border rounded-md border-stone/40;
+}
+.search_detail > div > div:nth-child(3) > label {
+  @apply h-[26px] mx-[8px] text-[22px];
+}
+
+/* 키워드 검색 */
+.search_detail > div > input {
+  @apply w-full h-[38px] mt-[12px] px-[14px] shadow-inner border border-stone/40 rounded-xl;
+}
+
+/* 검색버튼 */
+.search_detail > button {
+  @apply w-full h-[56px] my-[20px] text-white font-[500] rounded-xl bg-green;
+}
+
+.searhc_detail_off {
+  @apply hidden;
+}
+
+/* ScDetailOn
+--------------------------------------------------------------*/
+.search_detail_on {
+  @apply flex items-center;
+}
+.search_detail_on > img {
+  @apply w-[16px] h-[16px] mr-[10px];
+}
+.search_detail_on > span {
+  @apply text-[18px] text-stone font-[500];
+}

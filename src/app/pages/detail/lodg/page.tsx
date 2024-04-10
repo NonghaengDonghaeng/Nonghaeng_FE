@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import NavDetail from "@/components/common/navdetail/navdetail";
+import NavDetail from "@/components/common/NavDetail/NavDetail";
 import useMove from "@/hooks/useMove";
-import { RoomList } from "@/components/common/list/list";
+import { RoomList } from "@/components/common/List/List";
 import styles from "./page.module.css";
 import { lodgDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import lodgDetailPageResData from "@/db/lodgdata/detail.json";

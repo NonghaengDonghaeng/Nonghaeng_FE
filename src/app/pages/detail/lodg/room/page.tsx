@@ -4,16 +4,16 @@ import { useRouter, useSearchParams } from "next/navigation";
 import useMove from "@/hooks/useMove";
 import Link from "next/link";
 import Image from "next/image";
-import ClickCount from "@/components/common/clickcount/clickcount";
-import { CustomRangeCalendar } from "@/components/common/calendar/calendar";
-import NavDetail from "@/components/common/navdetail/navdetail";
+import ClickCount from "@/components/common/ClickCount/ClickCount";
+import { CustomRangeCalendar } from "@/components/common/Calendar/Calendar";
+import NavDetail from "@/components/common/NavDetail/NavDetail";
 import styles from "./page.module.css";
+import { roomDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import room_img from "img/lodg/room.png";
 import person_img from "img/lodg/person.png";
 import calenda_img from "img/lodg/calendar.png";
 import great_img from "img/exp/great.png";
 import reservation_img from "img/exp/reservation.png";
-import { roomDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import roomDetailPageResData from "@/db/roomdata/detail.json";
 
 export default function page() {

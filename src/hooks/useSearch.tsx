@@ -20,7 +20,7 @@ export function useSearch() {
 
   function search({ searchItem }: propsType) {
     // 지역x, 카테고리x
-    if (searchItem.region == "" && searchItem.category == "") {
+    if (!searchItem.region && !searchItem.category) {
       // router.push(`/pages/search?search_word=${search_word}`);
       window.location.replace(
         `/pages/search?search_word=${searchItem.search_word}`

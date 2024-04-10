@@ -2,8 +2,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import useMove from "@/hooks/useMove";
-import NavDetail from "@/components/common/navdetail/navdetail";
+import NavDetail from "@/components/common/NavDetail/NavDetail";
+import { SubList } from "@/components/common/List/List";
 import styles from "./page.module.css";
+import { tourDetailPageDataType } from "@/types/dataType/detailPageDataType";
+import tourDetailPageResData from "@/db/tourdata/detail.json";
 import grade_img from "img/tour/grade_img.png";
 import comment_img from "img/tour/comment_img.png";
 import tell_img from "img/tour/tel_img.png";
@@ -11,9 +14,6 @@ import address_img from "img/tour/address-img.png";
 import email_img from "img/tour/email_img.png";
 import exp_img from "img/exp/orange.png";
 import lodg_img from "img/lodg/orange.png";
-import { SubList } from "@/components/common/list/list";
-import { tourDetailPageDataType } from "@/types/dataType/detailPageDataType";
-import tourDetailPageResData from "@/db/tourdata/detail.json";
 
 export default function page() {
   const { element, moveElement } = useMove();

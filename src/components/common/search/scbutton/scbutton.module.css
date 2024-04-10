@@ -1,7 +1,0 @@
-.search_button {
-  @apply w-[88px] h-[48px] p-[12px] rounded-[5px] flex justify-between text-white bg-stone;
-}
-
-.search_button > img {
-  @apply w-[20px];
-}

@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import useMove from "@/hooks/useMove";
-import NavDetail from "@/components/common/navdetail/navdetail";
+import NavDetail from "@/components/common/NavDetail/NavDetail";
 import styles from "./page.module.css";
-import reservation_img from "img/exp/reservation.png";
 import { expDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import grade_img from "img/tour/grade_img.png";
 import participant_img from "img/exp/participant.png";
 import time_img from "img/exp/time.png";
 import price_img from "img/exp/price.png";
 import great_img from "img/exp/great.png";
+import reservation_img from "img/exp/reservation.png";
 import expDetailPageResData from "@/db/expdata/detail.json";
 
 export default function page() {

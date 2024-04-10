@@ -2,13 +2,10 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import Overlay from "@/components/common/overlay/overlay";
-import { TourList } from "@/components/common/list/list";
-import Paging from "@/components/common/paging/paging";
-import {
-  ScDetail,
-  ScDetailOn,
-} from "@/components/common/search/scdetail/scdetail";
+import Overlay from "@/components/common/Overlay/Overlay";
+import { TourList } from "@/components/common/List/List";
+import Paging from "@/components/common/Paging/Paging";
+import { ScDetail, ScDetailOn } from "@/components/common/Search/Search";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
 import { tourListPageDataType } from "@/types/dataType/listPageDataType";
