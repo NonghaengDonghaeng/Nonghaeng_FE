@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { formType, inputType } from "@/types/eventType";
+import { RiKakaoTalkFill } from "react-icons/ri";
 import axios from "axios";
 
 export default function page() {
@@ -27,6 +28,20 @@ export default function page() {
     e.preventDefault();
     loginApi();
   }
+
+  const KakaoLoginApi = async () => {
+    // window.location.href = "http://localhost:8080/oauth2/authorization/kakao";
+
+    try {
+      const response = await axios.get(
+        "http://localhost:8080/oauth2/authorization/kakao"
+      );
+      console.log("이동");
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const loginApi = async () => {
     try {
@@ -87,6 +102,15 @@ export default function page() {
           </div>
           <button type="submit">로그인</button>
         </form>
+        <button
+          className="flex items-center justify-center h-[56px] bg-[#FAE84C] w-full rounded-3xl"
+          onClick={KakaoLoginApi}
+        >
+          <div className="mr-2 text-2xl">
+            <RiKakaoTalkFill />
+          </div>
+          <span className="text-base font-semibold">카카오톡으로 계속하기</span>
+        </button>
       </article>
 
       <article className="flex flex-col space-y-3">
