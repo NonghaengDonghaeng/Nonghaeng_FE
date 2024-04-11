@@ -272,6 +272,7 @@ export function ScDetail({ pageState, setPageState }: ScDetailPropsType) {
         onClick={() =>
           setPageState({
             ...pageState,
+            page_index: 1,
             state: !pageState.state,
             isClick: false,
           })

@@ -28,17 +28,29 @@ export default function page() {
 
   const [resData, setResData] = useState<tourListPageDataType>();
 
+  async function tourApi() {
+    try {
+      let token = localStorage.getItem("jwt");
+      const res = await axios.get(
+        `http://localhost:8080/tours?page=${pageState.page_index}&keyword=${pageState.search_word}`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      setResData(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
     console.log("농촌관광 메인 api");
-    async () => {
-      try {
-        const res = await axios.get(`http://localhost:8080/tours?page=${pageState.page_index}&keyword=${pageState.search_word}`)
-        setResData(res)
-      }
-    };
-    setResData(tourListPageResData);
+    tourApi();
+    // setResData(tourListPageResData);
   }, [pageState.state, pageState.page_index]);
 
   return (
