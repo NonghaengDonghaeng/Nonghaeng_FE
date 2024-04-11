@@ -5,9 +5,9 @@ function updateLoginReducer(state = false, action: { type: string }) {
     case "LOGIN":
       return (state = true);
     case "LOGOUT":
-      localStorage.removeItem("token");
       return (state = false);
   }
+  return state;
 }
 
 const store = configureStore({ reducer: updateLoginReducer });

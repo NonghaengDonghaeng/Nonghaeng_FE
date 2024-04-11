@@ -13,12 +13,33 @@ import { inputType } from "@/types/eventType";
 import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventType";
 import store from "@/redux/loginStateStore";
+import { useRouter } from "next/navigation";
 
 type SubMenuType = { href: string; title: string };
 
 function Header() {
   const change = useChange();
   const search = useSearch();
+  const router = useRouter();
+
+  const [loginState, setLoginState] = useState(false);
+
+  useEffect(() => {
+    console.log("로그아웃 상태");
+    if (localStorage.getItem("jwt")) {
+      store.dispatch({ type: "LOGIN" });
+      setLoginState(true);
+    } else {
+      setLoginState(false);
+      router.replace("/pages/mypage/login");
+    }
+  }, []);
+
+  function logout() {
+    localStorage.removeItem("jwt");
+    setLoginState(false);
+    store.dispatch({ type: "LOGOUT" });
+  }
 
   const [searchItem, setSearchItem] = useState<pageStateType>({
     search_word: "",
@@ -75,7 +96,12 @@ function Header() {
           </button>
         </form>
         <div>
-          <Link href="/pages/mypage/login">로그인</Link>
+          {loginState ? (
+            <button onClick={logout}>로그아웃</button>
+          ) : (
+            <Link href="/pages/mypage/login">로그인</Link>
+          )}
+
           <Link href="/pages/mypage">마이페이지</Link>
           <Link href="/pages/sitemap">
             <Image src={sitemapImg} alt="sitemapImg" priority={true}></Image>
