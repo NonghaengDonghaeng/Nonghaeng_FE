@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
 import styles from "./Header.module.css";
-import { headerHref } from "../../../../public/href/href";
+import { headerHref } from "href/href";
 import homeImg from "img/header/homeImg.png";
 import sitemapImg from "img/header/sitemapImg.png";
 import searchImg from "img/header/searchImg.png";
@@ -13,25 +13,21 @@ import { inputType } from "@/types/eventType";
 import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventType";
 import store from "@/redux/loginStateStore";
-import { useRouter } from "next/navigation";
 
 type SubMenuType = { href: string; title: string };
 
 function Header() {
   const change = useChange();
   const search = useSearch();
-  const router = useRouter();
 
   const [loginState, setLoginState] = useState(false);
 
   useEffect(() => {
-    console.log("로그아웃 상태");
     if (localStorage.getItem("jwt")) {
       store.dispatch({ type: "LOGIN" });
       setLoginState(true);
     } else {
       setLoginState(false);
-      router.replace("/pages/mypage/login");
     }
   }, []);
 
