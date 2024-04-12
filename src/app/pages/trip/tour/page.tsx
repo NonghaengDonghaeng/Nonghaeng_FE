@@ -9,7 +9,6 @@ import { ScDetail, ScDetailOn } from "@/components/common/Search/Search";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
 import { tourListPageDataType } from "@/types/dataType/listPageDataType";
-import tourListPageResData from "@/db/tourdata/list.json";
 import axios from "axios";
 
 export default function Page() {
