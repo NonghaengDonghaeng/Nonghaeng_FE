@@ -1,4 +1,4 @@
-import styles from "./paging.module.css";
+import styles from "./Paging.module.css";
 import { pageStateType, setPageStateType } from "@/types/pageStateType";
 
 type propsType = {
