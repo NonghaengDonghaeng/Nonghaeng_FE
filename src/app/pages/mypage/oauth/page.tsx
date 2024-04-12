@@ -15,7 +15,7 @@ export default function page() {
     try {
       console.log(code);
       const response = await axios.get(
-        `http://localhost:8080/login/oauth2/code/kakao?code=${code}`
+        `http://localhost:8080/login/pages/mypage/oauth?code=${code}`
       );
 
       let token = response.headers["authorization"];

@@ -30,17 +30,7 @@ export default function page() {
   }
 
   const KakaoLoginApi = async () => {
-    // window.location.href = "http://localhost:8080/oauth2/authorization/kakao";
-
-    try {
-      const response = await axios.get(
-        "http://localhost:8080/oauth2/authorization/kakao"
-      );
-      console.log("이동");
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
+    window.location.href = "http://localhost:8080/oauth2/authorization/kakao";
   };
 
   const loginApi = async () => {
