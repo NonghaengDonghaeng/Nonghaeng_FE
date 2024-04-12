@@ -26,7 +26,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Suspense fallback={<>Loading...</>}>
-          <AdminRoute />
           <ScollTop />
           <Header />
           {children}
