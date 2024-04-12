@@ -1,0 +1,33 @@
+.nav_detail {
+  @apply w-full h-[52px] flex justify-between list-none;
+}
+
+.nav_detail > li {
+  @apply w-[33.3333333%] h-full text-center cursor-pointer;
+}
+.nav_detail > li > span {
+  @apply my-[12px] text-[18px] font-[500] block;
+}
+.nav_detail > li:hover > span {
+  @apply text-green;
+}
+.nav_detail > li > hr {
+  @apply border-[1px];
+}
+.nav_detail > li:hover > hr {
+  @apply border-green;
+}
+
+.on {
+  @apply text-green;
+}
+.on > hr {
+  @apply border-green;
+}
+
+.off {
+  @apply text-stone/40;
+}
+.off > hr {
+  @apply border-stone/40;
+}

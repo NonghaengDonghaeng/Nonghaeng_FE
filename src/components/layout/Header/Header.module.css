@@ -1,0 +1,69 @@
+.header_inner {
+  @apply h-full px-[24px] flex justify-between;
+}
+
+/* home_logo */
+.header_inner > a > img {
+  @apply w-[130px] h-[34px] my-[23px];
+}
+
+/* header_menu */
+.header_inner > ul {
+  @apply w-[382px] mt-[28px] flex justify-between;
+}
+.header_inner > ul > li {
+  @apply relative;
+}
+.header_inner > ul > li > a {
+  @apply px-[20px] text-[16px] font-[600] text-stone;
+}
+.header_inner > ul > li > a:hover {
+  @apply text-orange;
+}
+
+/* subMenu */
+.subMenu {
+  @apply w-full h-0 top-[52px] text-center absolute z-10 overflow-hidden duration-500;
+}
+.subMenu > li {
+  @apply mt-[22px] text-white;
+}
+/* subMenu_bg */
+.subMenu_bg {
+  @apply w-full h-0 left-0 top-[80px] absolute overflow-hidden duration-500 bg-orange/80;
+}
+.on {
+  @apply h-[220px];
+}
+
+/* header_search */
+.header_inner > form {
+  @apply w-[234px] h-[36px] my-[22px] shadow-md flex border-[1px] rounded-full border-stone/80;
+}
+
+.header_inner > form > input {
+  @apply w-[190px] h-[30px] m-[2px] px-[8px] rounded-full;
+}
+.header_inner > form > button {
+  @apply w-[24px] h-[24px] mt-[3px] ml-[4px] mr-[10px] rounded-full;
+}
+
+/* header_sub */
+.header_inner > div:nth-child(4) {
+  @apply w-[160px] text-[12px] text-stone font-[300] my-[22px] flex justify-between;
+}
+.header_inner > div:nth-child(4) > a:nth-child(-n + 2) {
+  @apply my-[8px];
+}
+.header_inner > div:nth-child(4) > a:nth-child(-n + 2):hover {
+  @apply text-orange;
+}
+.header_inner > div:nth-child(4) > a:nth-child(3) {
+  @apply w-[36px] h-[36px] p-[8px] rounded-full;
+}
+.header_inner > div:nth-child(4) > a:nth-child(3):hover {
+  @apply bg-orange/50;
+}
+.header_inner > div:nth-child(4) > a > img {
+  @apply w-[20px] h-[20px];
+}

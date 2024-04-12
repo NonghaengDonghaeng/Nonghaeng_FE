@@ -1,0 +1,20 @@
+.footer_inner {
+  @apply block;
+}
+
+/* footer_sub */
+.footer_inner > div:first-child {
+  @apply w-[80%] h-[80px] mx-auto;
+}
+
+.footer_inner > hr {
+  @apply border-[1px];
+}
+
+/* footer_main */
+.footer_inner > div:last-child {
+  @apply w-[80%] mt-[20px] mx-auto text-white;
+}
+.footer_inner > div:last-child > * {
+  @apply my-[20px] mr-[20px];
+}
