@@ -30,7 +30,12 @@ export function TourList({ content }: TourListPropsType) {
     <li key={index}>
       <Link href={`/pages/detail?tour_id=${item.tour_id}`}>
         <div>
-          <Image src={item.img_url} alt="tour_list_img" />
+          <Image
+            src={item.img_url}
+            alt="tour_list_img"
+            width={800}
+            height={800}
+          />
           <span>
             <Image src={region_img} alt="region_img" />
             {item.area_name}
@@ -70,7 +75,12 @@ export function ExpList({ content }: ExpListPropsType) {
     <li key={index}>
       <Link href={`/pages/detail/exp?exp_id=${item.experience_id}`}>
         <div>
-          <Image src={item.img_url} alt="exp_list_img" />
+          <Image
+            src={item.img_url}
+            alt="exp_list_img"
+            width={800}
+            height={800}
+          />
           <span>
             <Image src={region_img} alt="region_img" />
             {item.area_name}
@@ -104,7 +114,12 @@ export function LodgList({ content }: LodgListPropsType) {
     <li key={index}>
       <Link href={`/pages/detail/lodg?lodg_id=${item.tour_id}`}>
         <div>
-          <Image src={item.img_url} alt="lodg_list_img" />
+          <Image
+            src={item.img_url}
+            alt="lodg_list_img"
+            width={800}
+            height={800}
+          />
           <span>
             <Image src={region_img} alt="region_img" />
             {item.area_name}
@@ -144,7 +159,12 @@ export function SubList({
   const expList = expSubListData?.map((item, index) => (
     <li key={index}>
       <Link href={`/pages/detail/exp?exp_id=${item.expId}`}>
-        <Image src={item.img_url} alt="exp_sub_ist_img" />
+        <Image
+          src={item.img_url}
+          alt="exp_sub_ist_img"
+          width={800}
+          height={800}
+        />
         <div>
           <span>{item.expName}</span>
           {item.price}원
@@ -155,7 +175,12 @@ export function SubList({
   const lodgList = lodgSubListData?.map((item, index) => (
     <li key={index}>
       <Link href={`/pages/detail/lodg?lodg_id=${item.roomId}`}>
-        <Image src={item.img_url} alt="lodg_sub_list_img" />
+        <Image
+          src={item.img_url}
+          alt="lodg_sub_list_img"
+          width={800}
+          height={800}
+        />
         <div>
           <span>{item.roomName}</span>
           {item.price}원
@@ -206,7 +231,12 @@ export function RoomList({ roomListData }: RoomListPropsType) {
   const roomList = resData?.map((item, index) => (
     <li key={index}>
       <Link href={`/pages/detail/lodg/room?room_id=${item.room_id}`}>
-        <Image src={item.img_url} alt="room_list_img" />
+        <Image
+          src={item.img_url}
+          alt="room_list_img"
+          width={800}
+          height={800}
+        />
         <div>
           <h1>
             {item.room_name}

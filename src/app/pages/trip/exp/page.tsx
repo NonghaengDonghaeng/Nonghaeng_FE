@@ -11,8 +11,6 @@ import { pageStateType } from "@/types/pageStateType";
 import { expListPageDatatype } from "@/types/dataType/listPageDataType";
 import expListPageResData from "@/db/expdata/list.json";
 import axios from "axios";
-import { pages } from "next/dist/build/templates/app-page";
-import { headers } from "next/headers";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -32,28 +30,29 @@ export default function Page() {
 
   const [resData, setResData] = useState<expListPageDatatype>();
 
-  async function expApi() {
-    try {
-      const token = localStorage.getItem("jwt");
-      console.log(pageState.search_word);
-      const res = await axios.get(
-        `http://localhost:8080/experiences?page=${
-          Number(pageState.page_index) - 1
-        }&keyword=${pageState.search_word}`,
-        { headers: { Authorization: token } }
-      );
-      console.log(res);
-      setResData(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  // async function expApi() {
+  //   try {
+  //     const token = localStorage.getItem("jwt");
+  //     console.log(pageState.search_word);
+  //     const res = await axios.get(
+  //       `http://localhost:8080/experiences?page=${
+  //         Number(pageState.page_index) - 1
+  //       }&keyword=${pageState.search_word}`,
+  //       { headers: { Authorization: token } }
+  //     );
+  //     console.log(res);
+  //     setResData(res.data);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
 
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
     console.log("농촌체험 메인 api");
-    expApi();
+    // expApi();
+    setResData(expListPageResData);
   }, [pageState.state, pageState.page_index]);
 
   return (

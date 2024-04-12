@@ -46,13 +46,20 @@ export default function Page() {
       src={item}
       onClick={() => setPageState({ ...pageState, img_url: item })}
       alt="sub_img"
+      width={800}
+      height={800}
     />
   ));
 
   return (
     <>
       <section className={styles.section1}>
-        <Image src={pageState.img_url} alt="main_img" />
+        <Image
+          src={pageState.img_url}
+          alt="main_img"
+          width={800}
+          height={800}
+        />
         <div>
           <div>
             <h1>

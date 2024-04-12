@@ -54,6 +54,8 @@ export default function Page() {
         src={item}
         className={`${imgUrl == item ? styles.img_on : styles.img_off}`}
         alt="sub_img"
+        width={800}
+        height={800}
       />
     </li>
   ));
@@ -61,7 +63,7 @@ export default function Page() {
     <>
       <section className={styles.section1}>
         <article>
-          <Image src={imgUrl} alt="main_img" />
+          <Image src={imgUrl} alt="main_img" width={800} height={800} />
           <ul>{imgList}</ul>
         </article>
         <article>
