@@ -4,7 +4,7 @@ import { useChange } from "@/hooks/useChange";
 import { formType, inputType } from "@/types/eventType";
 import axios from "axios";
 
-export default function page() {
+export default function Page() {
   const change = useChange();
   const [user_state, setUser_state] = useState<{
     area_code?: string;

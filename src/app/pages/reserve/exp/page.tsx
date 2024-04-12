@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { CustomCalendar } from "@/components/common/Calendar/Calendar";
 import exp_round_info from "@/db/expdata/round_info.json";
 
-export default function page() {
+export default function Page() {
   const [day, setDay] = useState(null);
   const [isClick, setIsClick] = useState(false);
   const [round_info, setRound_info] = useState<any[]>([]);

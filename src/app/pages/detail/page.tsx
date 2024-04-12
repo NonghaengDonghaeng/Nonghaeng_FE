@@ -15,7 +15,7 @@ import email_img from "img/tour/email_img.png";
 import exp_img from "img/exp/orange.png";
 import lodg_img from "img/lodg/orange.png";
 
-export default function page() {
+export default function Page() {
   const { element, moveElement } = useMove();
   const [pageState, setPageState] = useState<{
     isClick: { exp: boolean; lodg: boolean };

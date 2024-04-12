@@ -14,7 +14,7 @@ import great_img from "img/exp/great.png";
 import reservation_img from "img/exp/reservation.png";
 import expDetailPageResData from "@/db/expdata/detail.json";
 
-export default function page() {
+export default function Page() {
   const { element, moveElement } = useMove();
 
   const [imgUrl, setImgUrl] = useState<string>();

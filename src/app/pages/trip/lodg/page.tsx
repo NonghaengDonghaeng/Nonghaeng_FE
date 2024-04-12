@@ -12,7 +12,7 @@ import { pageStateType } from "@/types/pageStateType";
 import { lodgListPageDataType } from "@/types/dataType/listPageDataType";
 import lodgListPageResData from "@/db/lodgdata/list.json";
 
-export default function page() {
+export default function Page() {
   const searchParams = useSearchParams();
   const setUrl = useSetUrl();
 

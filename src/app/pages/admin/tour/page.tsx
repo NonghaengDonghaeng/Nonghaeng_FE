@@ -4,7 +4,7 @@ import { addTourDataType } from "@/types/adminDataType";
 import { inputType } from "@/types/eventType";
 import axios from "axios";
 
-export default function page() {
+export default function Page() {
   const [addTourDate, setAddTourDate] = useState<addTourDataType>({
     tour_type: "",
     tour_name: "",
@@ -88,7 +88,7 @@ export default function page() {
               <select
                 name="tour_type"
                 value={addTourDate.tour_type}
-                onChange={handleChange}
+                onChange={() => handleChange}
               >
                 <option value="">선택해주세요</option>
                 <option value={TOUR_TYPE_CODE[TourType.VILLAGE]}>

@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { ScTotal } from "@/components/common/Search/Search";
 import styles from "./page.module.css";
 
-export default function page() {
+export default function Page() {
   const searchParams = useSearchParams();
 
   const [search_word, setSearch_word] = useState(

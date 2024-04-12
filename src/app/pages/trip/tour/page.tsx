@@ -12,7 +12,7 @@ import { tourListPageDataType } from "@/types/dataType/listPageDataType";
 import tourListPageResData from "@/db/tourdata/list.json";
 import axios from "axios";
 
-export default function page() {
+export default function Page() {
   const searchParams = useSearchParams();
   const setUrl = useSetUrl();
 

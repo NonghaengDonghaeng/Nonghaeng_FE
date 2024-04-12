@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
 
-export default function page() {
+export default function Page() {
   const searchParams = useSearchParams();
 
   const [room_id, setRoom_id] = useState(searchParams.get("room_id"));

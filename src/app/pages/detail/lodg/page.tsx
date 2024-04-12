@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 import { lodgDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import lodgDetailPageResData from "@/db/lodgdata/detail.json";
 
-export default function page() {
+export default function Page() {
   const { element, moveElement } = useMove();
 
   const [imgUrl, setImgUrl] = useState<string | undefined>();

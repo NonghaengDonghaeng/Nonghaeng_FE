@@ -4,14 +4,14 @@ import React, { useEffect, useState } from "react";
 import TripLayout from "../layout";
 import { RecoilRoot } from "recoil";
 
-export default function page() {
+export default function Page() {
   useEffect(() => {
     const code = new URL(window.location.href).searchParams.get("code");
     console.log(code);
     getTokenApi(code);
   }, []);
 
-  const getTokenApi = async (code: string) => {
+  const getTokenApi = async (code: any) => {
     try {
       console.log(code);
       const response = await axios.get(

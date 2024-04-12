@@ -4,26 +4,25 @@ import { addExperienceDataType } from "@/types/adminDataType";
 import { inputType } from "@/types/eventType";
 import axios from "axios";
 
-export default function page() {
-  const [addExperienceData, setAddExperienceData] =
-    useState<addExperienceDataType>({
-      experience_type: "",
-      experience_name: "",
-      start_date: "",
-      end_date: "",
-      min_participant: 0, // Assuming this is a number field
-      max_participant: 0, // Assuming this is a number field
-      price: 0, // Assuming this is a number field
-      duration_hours: 0, // Assuming this is a number field
-      check_point: "",
-      summary: "",
-      detail_introduction: "",
-      supplies: "",
-      precautions: "",
-      exp_round_dto_list: [
-        { start_time: "", end_time: "", max_participant: 0 },
-      ],
-    });
+export default function Page() {
+  const [addExperienceData, setAddExperienceData] = useState<
+    addExperienceDataType
+  >({
+    experience_type: "",
+    experience_name: "",
+    start_date: "",
+    end_date: "",
+    min_participant: 0, // Assuming this is a number field
+    max_participant: 0, // Assuming this is a number field
+    price: 0, // Assuming this is a number field
+    duration_hours: 0, // Assuming this is a number field
+    check_point: "",
+    summary: "",
+    detail_introduction: "",
+    supplies: "",
+    precautions: "",
+    exp_round_dto_list: [{ start_time: "", end_time: "", max_participant: 0 }],
+  });
 
   const ExperienceType = {
     RURAL: { code: "1", name: "농촌체험" },
@@ -48,12 +47,12 @@ export default function page() {
     }));
   };
 
-  const formatTime = (time) => {
+  const formatTime = (time: any) => {
     const [hours, minutes] = time.split(":");
     return `${hours}:${minutes}`;
   };
 
-  const formatDate = (date) => {
+  const formatDate = (date: any) => {
     if (!date) return ""; // Return empty string if date is null or undefined
 
     const year = date.getFullYear();
@@ -63,10 +62,10 @@ export default function page() {
     return `${year}-${month}-${day}`;
   };
 
-  const handleEpisodeChange = (index, e) => {
+  const handleEpisodeChange = (index: any, e: inputType) => {
     const { name, value } = e.target;
     const episodes = [...addExperienceData.exp_round_dto_list];
-    episodes[index][name] = value;
+    // episodes[index][name] = value;
     setAddExperienceData((prevData) => ({
       ...prevData,
       exp_round_dto_list: episodes,
@@ -127,7 +126,7 @@ export default function page() {
               <select
                 name="experience_type"
                 value={addExperienceData.experience_type}
-                onChange={handleChange}
+                onChange={() => handleChange}
               >
                 <option value="">체험 유형 선택</option>
                 {Object.values(ExperienceType).map((type) => (

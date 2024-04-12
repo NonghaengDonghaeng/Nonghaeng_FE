@@ -4,11 +4,23 @@ type PropsType = {
   changeItem: {
     region?: string[] | string;
     category?: string[] | string;
+    area_code?: string;
+    eamil?: string;
+    name?: string;
+    password?: string;
+    check_password?: string;
+    number?: string;
   };
   setChangeItem: React.Dispatch<
     React.SetStateAction<{
       region?: string[] | string;
       category?: string[] | string;
+      area_code?: string;
+      eamil?: string;
+      name?: string;
+      password?: string;
+      check_password?: string;
+      number?: string;
     }>
   >;
   e: inputType;

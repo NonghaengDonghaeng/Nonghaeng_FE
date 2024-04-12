@@ -16,7 +16,7 @@ import great_img from "img/exp/great.png";
 import reservation_img from "img/exp/reservation.png";
 import roomDetailPageResData from "@/db/roomdata/detail.json";
 
-export default function page() {
+export default function Page() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { element, moveElement } = useMove();

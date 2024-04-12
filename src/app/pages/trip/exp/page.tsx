@@ -14,7 +14,7 @@ import axios from "axios";
 import { pages } from "next/dist/build/templates/app-page";
 import { headers } from "next/headers";
 
-export default function page() {
+export default function Page() {
   const searchParams = useSearchParams();
   const setUrl = useSetUrl();
 

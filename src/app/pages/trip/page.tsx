@@ -12,7 +12,7 @@ import {
 import more_green from "img/main/more_green.png";
 import tripPageResData from "@/db/tripPageResData.json";
 
-export default function page() {
+export default function Page() {
   const [resData, setResData] = useState<{
     tourContent: tourListContentDataType;
     expContent: expListContentDataType;
