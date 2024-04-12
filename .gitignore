@@ -35,9 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#tour_list selectItem
-region: []
-category: []
-search_word: ""
-page_index: number
-#tour url
+# docs
+/docs
