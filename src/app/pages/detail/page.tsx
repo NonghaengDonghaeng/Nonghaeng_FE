@@ -19,7 +19,7 @@ export default function Page() {
   const { element, moveElement } = useMove();
   const [pageState, setPageState] = useState<{
     isClick: { exp: boolean; lodg: boolean };
-    img_url: string | undefined;
+    img_url: string | any;
   }>({
     isClick: { exp: false, lodg: false },
     img_url: "",
@@ -38,20 +38,21 @@ export default function Page() {
   );
 
   const imgList = resData?.sub_img_url.map((item, index) => (
-    <img
+    <Image
       className={`${
         pageState.img_url == item ? styles.img_on : styles.img_off
       }`}
       key={index}
       src={item}
       onClick={() => setPageState({ ...pageState, img_url: item })}
+      alt="sub_img"
     />
   ));
 
   return (
     <>
       <section className={styles.section1}>
-        <img src={pageState.img_url} />
+        <Image src={pageState.img_url} alt="main_img" />
         <div>
           <div>
             <h1>

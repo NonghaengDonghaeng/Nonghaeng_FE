@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import useMove from "@/hooks/useMove";
 import { RoomList } from "@/components/common/List/List";
@@ -10,7 +11,7 @@ import lodgDetailPageResData from "@/db/lodgdata/detail.json";
 export default function Page() {
   const { element, moveElement } = useMove();
 
-  const [imgUrl, setImgUrl] = useState<string | undefined>();
+  const [imgUrl, setImgUrl] = useState<string | any>();
 
   const [resData, setResData] = useState<lodgDetailPageDataType | undefined>();
 
@@ -23,9 +24,10 @@ export default function Page() {
 
   const imgList = resData?.sub_img_url.map((item, index) => (
     <li key={index} onClick={() => setImgUrl(item)}>
-      <img
+      <Image
         src={item}
         className={`${imgUrl == item ? styles.img_on : styles.img_off}`}
+        alt="sub_img"
       />
     </li>
   ));
@@ -33,7 +35,7 @@ export default function Page() {
     <>
       <section className={styles.section1}>
         <article>
-          <img src={imgUrl}></img>
+          <Image src={imgUrl} alt="main_img" />
           <ul>{imgList}</ul>
         </article>
         <article>

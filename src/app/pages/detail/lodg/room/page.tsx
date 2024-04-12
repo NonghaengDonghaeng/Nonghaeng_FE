@@ -23,7 +23,7 @@ export default function Page() {
 
   const [room_id, setRoom_id] = useState(searchParams.get("room_id"));
   const [isClick, setIsClick] = useState(false);
-  const [imgUrl, setImgUrl] = useState<string>();
+  const [imgUrl, setImgUrl] = useState<string | any>();
   const [person_count, setPerson_count] = useState(1);
   const [room_count, setRoom_count] = useState(1);
   const [check_in, setCheck_in] = useState(null);
@@ -50,9 +50,10 @@ export default function Page() {
 
   const imgList = resData?.sub_img_url.map((item, index) => (
     <li key={index} onClick={() => setImgUrl(item)}>
-      <img
+      <Image
         src={item}
         className={`${imgUrl == item ? styles.img_on : styles.img_off}`}
+        alt="sub_img"
       />
     </li>
   ));
@@ -60,7 +61,7 @@ export default function Page() {
     <>
       <section className={styles.section1}>
         <article>
-          <img src={imgUrl} />
+          <Image src={imgUrl} alt="main_img" />
           <ul>{imgList}</ul>
         </article>
         <article>

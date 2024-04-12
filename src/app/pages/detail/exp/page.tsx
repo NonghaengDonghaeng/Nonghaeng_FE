@@ -17,7 +17,7 @@ import expDetailPageResData from "@/db/expdata/detail.json";
 export default function Page() {
   const { element, moveElement } = useMove();
 
-  const [imgUrl, setImgUrl] = useState<string>();
+  const [imgUrl, setImgUrl] = useState<string | any>();
 
   const [resData, setResData] = useState<expDetailPageDataType | undefined>();
 
@@ -31,9 +31,10 @@ export default function Page() {
 
   const imgList = resData?.sub_img_url.map((item, index) => (
     <li key={index} onClick={() => setImgUrl(item)}>
-      <img
+      <Image
         src={item}
         className={`${imgUrl == item ? styles.img_on : styles.img_off}`}
+        alt="sub_img"
       />
     </li>
   ));
@@ -41,7 +42,7 @@ export default function Page() {
     <>
       <section className={styles.section1}>
         <article>
-          <img src={imgUrl} />
+          <Image src={imgUrl} alt="main_img" />
           <ul>{imgList}</ul>
         </article>
         <article>
