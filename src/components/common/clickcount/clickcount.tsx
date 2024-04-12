@@ -1,4 +1,4 @@
-import styles from "./clickcount.module.css";
+import styles from "./ClickCount.module.css";
 
 type PropsType = {
   count: number;

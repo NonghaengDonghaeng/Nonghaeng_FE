@@ -1,4 +1,4 @@
-import styles from "./overlay.module.css";
+import styles from "./Overlay.module.css";
 
 type PropsType = {
   isClick: boolean;

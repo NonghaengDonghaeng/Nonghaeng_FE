@@ -1,7 +1,7 @@
 import Calendar from "react-calendar";
 import moment from "moment";
 import "react-calendar/dist/Calendar.css";
-import styles from "./calendar.module.css";
+import styles from "./Calendar.module.css";
 
 type PropsType = {
   setCheck_in?: any;

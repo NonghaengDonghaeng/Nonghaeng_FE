@@ -1,4 +1,4 @@
-import styles from "./navdetail.module.css";
+import styles from "./NavDetail.module.css";
 /**
  *
  * @param moveElement useMove훅을 통해 moveElement(넘버)형태로 넣으면 됨
