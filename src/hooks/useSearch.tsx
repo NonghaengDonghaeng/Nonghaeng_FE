@@ -12,6 +12,14 @@ type propsType = {
 export function useSearch() {
   const router = useRouter();
 
+  // const tripMap: { ["관광"]: string; ["체험"]: string; ["숙박"]: string } = {
+  //   ["관광"]: "tour",
+  //   ["체험"]: "exp",
+  //   ["숙박"]: "lodg",
+  // };
+
+  // const returnTripMap = ()
+
   /**custom search
    * @param region:스트링타입의 지역정보
    * @param category:스트링타입의 유형정보
@@ -30,6 +38,13 @@ export function useSearch() {
     else if (searchItem.category == "유형선택") {
       alert("유형을 선택해주세요");
     }
+    //  else {
+    //   router.push(
+    //     `/pages/${tripMap[searchItem.category]}?region=${
+    //       searchItem.region
+    //     }&search_word=${searchItem.search_word}`
+    //   );
+    // }
     // 지역x, 카테고리 o
     else if (
       searchItem.region == "지역선택" &&
