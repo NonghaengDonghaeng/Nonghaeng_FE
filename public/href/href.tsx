@@ -50,7 +50,7 @@ export const tripHref = {
   ],
 };
 export const commuHref = {
-  mainMenu: { href: "/pages/cummu", title: "커뮤니티" },
+  mainMenu: { href: "/pages/commu", title: "커뮤니티" },
   subMenu: [
     { href: "/pages/commu/notice", title: "공지사항" },
     { href: "/pages/commu/review", title: "농행후기" },
