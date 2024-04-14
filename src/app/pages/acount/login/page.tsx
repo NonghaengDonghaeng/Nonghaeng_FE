@@ -34,7 +34,10 @@ export default function Page() {
     //   "https://nonghaeng.duckdns.org/oauth2/authorization/kakao";
     try {
       const res = await axios.get(
-        "https://nonghaeng.duckdns.org/oauth2/authorization/kakao"
+        "https://nonghaeng.duckdns.org/oauth2/authorization/kakao",
+        {
+          withCredentials: true,
+        }
       );
       console.log(res);
     } catch (err) {

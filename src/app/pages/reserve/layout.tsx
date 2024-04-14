@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "농행동행 | 예약",
 };
 
-export default function TripLayout({
+export default function ReserveLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

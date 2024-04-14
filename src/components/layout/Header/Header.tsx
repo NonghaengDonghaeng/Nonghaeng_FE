@@ -98,7 +98,9 @@ function Header() {
             <Link href="/pages/acount/login">로그인</Link>
           )}
 
-          <Link href="/pages/mypage">마이페이지</Link>
+          <Link href={loginState ? "/pages/mypage" : "/pages/acount/login"}>
+            마이페이지
+          </Link>
           <Link href="/pages/sitemap">
             <Image src={sitemapImg} alt="sitemapImg" priority={true}></Image>
           </Link>

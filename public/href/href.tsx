@@ -69,7 +69,7 @@ export const mypageHref = {
   ],
 };
 export const acountHref = {
-  mainMenu: { title: "마이페이지", href: "/pages/acount" },
+  mainMenu: { title: "마이페이지", href: "/pages/acount/login" },
   subMenu: [
     { href: "/pages/acount/login", title: "로그인" },
     { href: "/pages/acount/join", title: "회원가입" },

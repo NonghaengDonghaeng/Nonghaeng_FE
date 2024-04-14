@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "농행동행 | 커뮤니티",
 };
 
-export default function TripLayout({
+export default function CommuLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

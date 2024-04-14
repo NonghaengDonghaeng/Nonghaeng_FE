@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "농행동행 | 관리자페이지",
 };
 
-export default function TripLayout({
+export default function AdminLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

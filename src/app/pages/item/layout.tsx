@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "농행동행 | 기획상품",
 };
 
-export default function TripLayout({
+export default function ItemLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
