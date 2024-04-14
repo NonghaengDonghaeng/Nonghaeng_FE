@@ -77,6 +77,10 @@ export const acountHref = {
     { href: "/pages/acount/findpass", title: "비밀번호찾기" },
   ],
 };
+export const sitemapHref = {
+  mainMenu: { title: "사이트맵", href: "/pages/sitemap" },
+  subMenu: [],
+};
 export const adminHref = {
   mainMenu: { title: "관리자 페이지", href: "/pages/admin" },
   subMenu: [
