@@ -15,7 +15,7 @@ export default function Page() {
     try {
       console.log(code);
       const response = await axios.get(
-        `https://nonghaeng.duckdns.org/login/pages/mypage/oauth?code=${code}`
+        `https://nonghaeng.duckdns.org/pages/mypage/oauth?code=${code}`
       );
 
       let token = response.headers["authorization"];
