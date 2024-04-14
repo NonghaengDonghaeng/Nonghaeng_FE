@@ -8,7 +8,7 @@ export default function AdminRoute() {
   const pathName = usePathname();
 
   useEffect(() => {
-    if (!localStorage.getItem("jwt")) {
+    if (!localStorage.getItem("jwt") && pathName !== "/pages/mypage/join") {
       console.log("로그인이 안된 상태");
       router.replace("/pages/mypage/login");
     }

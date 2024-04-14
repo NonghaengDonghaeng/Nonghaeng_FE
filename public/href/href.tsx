@@ -65,6 +65,13 @@ export const mypageHref = {
   mainMenu: { title: "마이페이지", href: "/pages/mypage" },
   subMenu: [],
 };
+export const acountHref = {
+  mainMenu: { title: "마이페이지", href: "/pages/acount" },
+  subMenu: [
+    { href: "/pages/acount/login", title: "로그인" },
+    { href: "/pages/acount/join", title: "회원가입" },
+  ],
+};
 export const adminHref = {
   mainMenu: { title: "관리자 페이지", href: "/pages/admin" },
   subMenu: [

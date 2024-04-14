@@ -30,14 +30,13 @@ export default function Page() {
   }
 
   const KakaoLoginApi = async () => {
-    window.location.href =
-      "https://nonghaeng.duckdns.org/oauth2/authorization/kakao";
+    window.location.href = "//nonghaeng.duckdns.org/oauth2/authorization/kakao";
   };
 
   const loginApi = async () => {
     try {
       const response = await axios.post(
-        "https://nonghaeng.duckdns.org/login",
+        "//nonghaeng.duckdns.org/login",
         user_state
       );
       console.log(response.headers.authorization);

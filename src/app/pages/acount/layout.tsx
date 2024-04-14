@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import Nav from "@/components/layout/Nav/Nav";
-import { adminHref, mypageHref } from "../../../../public/href/href";
+import { mypageHref } from "../../../../public/href/href";
+import AdminRoute from "@/components/layout/AdminRoute/AdminRoute";
 
 export const metadata: Metadata = {
-  title: "농행동행 | 관리자페이지",
+  title: "농행동행 | 마이페이지",
 };
 
 export default function TripLayout({
@@ -13,7 +14,8 @@ export default function TripLayout({
 }>) {
   return (
     <>
-      <Nav href={adminHref} />
+      <AdminRoute />
+      <Nav href={mypageHref} />
       <main id="main">{children}</main>
     </>
   );
