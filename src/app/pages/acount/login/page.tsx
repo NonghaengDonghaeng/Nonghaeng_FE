@@ -34,7 +34,12 @@ export default function Page() {
 
   useEffect(() => {
     let token = params.get("accessToken");
-    localStorage.setItem("jwt", token);
+    if (token) {
+      {
+        console.log("토큰 확인");
+        localStorage.setItem("jwt", token);
+      }
+    }
   }, [pathName]);
 
   const KakaoLoginApi = async () => {
