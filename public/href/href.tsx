@@ -63,13 +63,18 @@ export const itemHref = {
 };
 export const mypageHref = {
   mainMenu: { title: "마이페이지", href: "/pages/mypage" },
-  subMenu: [],
+  subMenu: [
+    { href: "/pages/mypage/reserve", title: "최근예약" },
+    { href: "/pages/mypage/edit", title: "회원정보수정" },
+  ],
 };
 export const acountHref = {
   mainMenu: { title: "마이페이지", href: "/pages/acount" },
   subMenu: [
     { href: "/pages/acount/login", title: "로그인" },
     { href: "/pages/acount/join", title: "회원가입" },
+    { href: "/pages/acount/findid", title: "아이디찾기" },
+    { href: "/pages/acount/findpass", title: "비밀번호찾기" },
   ],
 };
 export const adminHref = {

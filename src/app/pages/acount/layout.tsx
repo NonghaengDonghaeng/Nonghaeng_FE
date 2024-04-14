@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Nav from "@/components/layout/Nav/Nav";
-import { mypageHref } from "../../../../public/href/href";
+import { acountHref } from "href/href";
 import AdminRoute from "@/components/layout/AdminRoute/AdminRoute";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function TripLayout({
   return (
     <>
       <AdminRoute />
-      <Nav href={mypageHref} />
+      <Nav href={acountHref} />
       <main id="main">{children}</main>
     </>
   );

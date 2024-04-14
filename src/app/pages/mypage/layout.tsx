@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Nav from "@/components/layout/Nav/Nav";
-import { mypageHref } from "../../../../public/href/href";
+import { mypageHref } from "href/href";
 import AdminRoute from "@/components/layout/AdminRoute/AdminRoute";
 
 export const metadata: Metadata = {

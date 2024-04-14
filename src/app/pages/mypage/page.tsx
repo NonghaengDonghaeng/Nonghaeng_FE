@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1 className="mt-80">로그인중</h1>;
+  return <h1 className="mt-80">마이페이지</h1>;
 }

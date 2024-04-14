@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import TripLayout from "../layout";
+import TripLayout from "../../mypage/layout";
 import { RecoilRoot } from "recoil";
 
 export default function Page() {

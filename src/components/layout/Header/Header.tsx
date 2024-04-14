@@ -95,7 +95,7 @@ function Header() {
           {loginState ? (
             <button onClick={logout}>로그아웃</button>
           ) : (
-            <Link href="/pages/mypage/login">로그인</Link>
+            <Link href="/pages/acount/login">로그인</Link>
           )}
 
           <Link href="/pages/mypage">마이페이지</Link>
