@@ -33,6 +33,7 @@ export default function Page() {
     loginApi();
   }
 
+  // 해야할것: url을 통한 jwt 통신x -> header로 받을 수 있는 방법 찾기
   useEffect(() => {
     let token = params.get("accessToken");
     if (token) {
@@ -41,8 +42,6 @@ export default function Page() {
         localStorage.setItem("jwt", token);
         router.push("/");
       }
-    } else {
-      alert("토큰 없음");
     }
   }, [pathName]);
 
