@@ -1,12 +1,15 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { formType, inputType } from "@/types/eventType";
 import { RiKakaoTalkFill } from "react-icons/ri";
+import { usePathname, useSearchParams } from "next/navigation";
 import axios from "axios";
 
 export default function Page() {
   const change = useChange();
+  const params = useSearchParams();
+  const pathName = usePathname();
 
   const [user_state, setUser_state] = useState<{
     number?: string;
@@ -28,6 +31,11 @@ export default function Page() {
     e.preventDefault();
     loginApi();
   }
+
+  useEffect(() => {
+    let token = params.get("accessToken");
+    localStorage.setItem("jwt", token);
+  }, [pathName]);
 
   const KakaoLoginApi = async () => {
     window.location.href =
