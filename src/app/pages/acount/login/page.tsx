@@ -40,7 +40,7 @@ export default function Page() {
       {
         console.log("토큰 확인");
         localStorage.setItem("jwt", token);
-        router.push("/");
+        router.replace("/");
       }
     }
   }, [pathName]);
@@ -69,8 +69,8 @@ export default function Page() {
       );
       console.log(response.headers.authorization);
       let token = response.headers["authorization"];
-
       localStorage.setItem("jwt", "Bearer " + token);
+      router.replace("/");
     } catch (error) {
       console.log(error);
     }

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
 import styles from "./Header.module.css";
@@ -19,6 +20,7 @@ type SubMenuType = { href: string; title: string };
 function Header() {
   const change = useChange();
   const search = useSearch();
+  const pathName = usePathname();
 
   const [loginState, setLoginState] = useState(false);
 
@@ -29,7 +31,7 @@ function Header() {
     } else {
       setLoginState(false);
     }
-  }, []);
+  }, [pathName]);
 
   function logout() {
     localStorage.removeItem("jwt");
