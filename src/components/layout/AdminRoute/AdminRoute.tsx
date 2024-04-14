@@ -14,15 +14,16 @@ export default function AdminRoute() {
       pathName !== "/pages/acount/login" &&
       pathName !== "/pages/acount/join" &&
       pathName !== "/pages/acount/findid" &&
-      pathName !== "/pages/acount/find"
+      pathName !== "/pages/acount/findpass"
     ) {
       console.log("로그아웃 상태");
       router.replace("/pages/acount/login");
     } else if (
-      (localStorage.getItem("jwt") && pathName == "/pages/acount/login") ||
-      pathName == "/pages/acount/join" ||
-      pathName == "/pages/acount/findid" ||
-      pathName == "/pages/acount/finpass"
+      localStorage.getItem("jwt") &&
+      (pathName == "/pages/acount/login" ||
+        pathName == "/pages/acount/join" ||
+        pathName == "/pages/acount/findid" ||
+        pathName == "/pages/acount/finpass")
     ) {
       console.log("로그인 상태");
       router.replace("/pages/mypage");
