@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { formType, inputType } from "@/types/eventType";
 import { RiKakaoTalkFill } from "react-icons/ri";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import axios from "axios";
 
 export default function Page() {
   const change = useChange();
   const params = useSearchParams();
   const pathName = usePathname();
+  const router = useRouter();
 
   const [user_state, setUser_state] = useState<{
     number?: string;
@@ -38,7 +39,10 @@ export default function Page() {
       {
         console.log("토큰 확인");
         localStorage.setItem("jwt", token);
+        router.push("/");
       }
+    } else {
+      alert("토큰 없음");
     }
   }, [pathName]);
 
