@@ -38,7 +38,7 @@ export default function Home() {
           테마별 숨은 명소를 모두 모아
           <br />더 편안한 여행계획을 만드는 똑똑한 플랫폼
         </h2>
-        <Link href="/pages/intro">
+        <Link href="/pages/intro/nonghaeng">
           농행동행 알아보기
           <Image src={more_nonghang} alt="more_nonghang"></Image>
         </Link>

@@ -4,7 +4,7 @@ export const headerHref = [
     title: "농행동행",
     href: "/pages/intro",
     subMenu: [
-      { title: "농행동행 소개", href: "/pages/intro/nonghang" },
+      { title: "농행동행 소개", href: "/pages/intro/nongheang" },
       { title: "농촌관광 소개", href: "/pages/intro/tour" },
     ],
   },
@@ -26,7 +26,7 @@ export const headerHref = [
     title: "커뮤니티",
     href: "/pages/commu",
     subMenu: [
-      { title: "공지사항", href: "/pages/commu/notification" },
+      { title: "공지사항", href: "/pages/commu/notice" },
       { title: "농행후기", href: "/pages/commu/review" },
       { title: "고객문의", href: "/pages/commu/inquiry" },
     ],
