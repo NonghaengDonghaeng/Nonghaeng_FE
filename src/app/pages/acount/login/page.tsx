@@ -30,19 +30,19 @@ export default function Page() {
   }
 
   const KakaoLoginApi = async () => {
-    // window.location.href =
-    //   "https://nonghaeng.duckdns.org/oauth2/authorization/kakao";
-    try {
-      const res = await axios.get(
-        "https://nonghaeng.duckdns.org/oauth2/authorization/kakao",
-        {
-          withCredentials: true,
-        }
-      );
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
+    window.location.href =
+      "https://nonghaeng.duckdns.org/oauth2/authorization/kakao";
+    // try {
+    //   const res = await axios.get(
+    //     "https://nonghaeng.duckdns.org/oauth2/authorization/kakao",
+    //     {
+    //       withCredentials: true,
+    //     }
+    //   );
+    //   console.log(res);
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
 
   const loginApi = async () => {
