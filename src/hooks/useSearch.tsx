@@ -3,8 +3,8 @@ import { useRouter } from "next/navigation";
 type propsType = {
   searchItem: {
     search_word?: string;
-    region?: string;
-    category?: string;
+    region?: string[] | string;
+    category?: string[] | string;
   };
 };
 
@@ -32,7 +32,7 @@ export function useSearch() {
       );
     }
     // 카테고리o, 지역 ?
-    else if (searchItem.category) {
+    else if (typeof searchItem.category == "string") {
       router.push(
         `/pages/trip/${tripMap[searchItem.category]}?${
           searchItem.region !== "지역선택" && `region=${searchItem.region}`
