@@ -38,7 +38,7 @@ export default function Home() {
           테마별 숨은 명소를 모두 모아
           <br />더 편안한 여행계획을 만드는 똑똑한 플랫폼
         </h2>
-        <Link href="/pages/introduce">
+        <Link href="/pages/intro">
           농행동행 알아보기
           <Image src={more_nonghang} alt="more_nonghang"></Image>
         </Link>
@@ -59,7 +59,7 @@ export default function Home() {
         <article>
           <h1>
             우수 숙박
-            <Link href="/pages/trip/lodgment">
+            <Link href="/pages/trip/lodg">
               더 많은 농촌숙박 보러가기
               <Image src={more_green} alt="more_lodgement"></Image>
             </Link>
