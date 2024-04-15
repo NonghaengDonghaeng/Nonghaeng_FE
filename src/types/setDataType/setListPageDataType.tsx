@@ -1,5 +1,6 @@
 import {
   expListPageDatatype,
+  lodgListPageDataType,
   tourListPageDataType,
 } from "../dataType/listPageDataType";
 
@@ -9,4 +10,8 @@ export type setTourListPageDataType = React.Dispatch<
 
 export type setExpListPageDataType = React.Dispatch<
   React.SetStateAction<expListPageDatatype>
+>;
+
+export type setLodgListPageDataType = React.Dispatch<
+  React.SetStateAction<lodgListPageDataType>
 >;

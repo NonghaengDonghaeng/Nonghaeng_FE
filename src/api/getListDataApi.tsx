@@ -1,5 +1,6 @@
 import {
   setExpListPageDataType,
+  setLodgListPageDataType,
   setTourListPageDataType,
 } from "@/types/setDataType/setListPageDataType";
 import axios from "axios";
@@ -51,6 +52,31 @@ export const getExpListApi = async ({
       { headers: { Authorization: token } }
     );
     setResData(res.data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+type LodgPropsType = {
+  pageIndex: number | undefined;
+  searchWord: string | undefined;
+  setResData: setLodgListPageDataType | any;
+};
+
+export const getLodgListApi = async ({
+  pageIndex,
+  searchWord,
+  setResData,
+}: LodgPropsType) => {
+  try {
+    console.log("숙박 리스트 api");
+    let token = localStorage.getItem("jwt");
+    const res = await axios.get(
+      process.env.NEXT_PUBLIC_API_URL +
+        `rooms?page=${pageIndex}&keywor=${searchWord}`,
+      { headers: { Authorization: token } }
+    );
+    setResData(res);
   } catch (err) {
     console.log(err);
   }

@@ -10,6 +10,7 @@ import Paging from "@/components/common/Paging/Paging";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
 import { lodgListPageDataType } from "@/types/dataType/listPageDataType";
+import { getLodgListApi } from "@/api/getListDataApi";
 import lodgListPageResData from "@/db/lodgdata/list.json";
 
 export default function Page() {
@@ -33,8 +34,11 @@ export default function Page() {
   // api useEffect1
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    console.log("농촌숙박 메인 api");
-    setResData(lodgListPageResData);
+    getLodgListApi({
+      pageIndex: pageState.page_index,
+      searchWord: pageState.search_word,
+      setResData,
+    });
   }, [pageState.state, pageState.page_index]);
 
   return (
