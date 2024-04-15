@@ -2,91 +2,91 @@
 export const headerHref = [
   {
     title: "농행동행",
-    href: "/pages/intro",
+    href: "/intro",
     subMenu: [
-      { title: "농행동행 소개", href: "/pages/intro/nonghaeng" },
-      { title: "농촌관광 소개", href: "/pages/intro/tour" },
+      { title: "농행동행 소개", href: "/intro/nonghaeng" },
+      { title: "농촌관광 소개", href: "/intro/tour" },
     ],
   },
   {
     title: "농촌여행",
-    href: "/pages/trip",
+    href: "/trip",
     subMenu: [
-      { title: "농촌관광", href: "/pages/trip/tour" },
-      { title: "농촌체험", href: "/pages/trip/exp" },
-      { title: "농촌숙박", href: "/pages/trip/lodg" },
+      { title: "농촌관광", href: "/trip/tour" },
+      { title: "농촌체험", href: "/trip/exp" },
+      { title: "농촌숙박", href: "/trip/lodg" },
     ],
   },
   {
     title: "기획상품",
-    href: "/pages/item",
+    href: "/item",
     subMenu: [],
   },
   {
     title: "커뮤니티",
-    href: "/pages/commu",
+    href: "/commu",
     subMenu: [
-      { title: "공지사항", href: "/pages/commu/notice" },
-      { title: "농행후기", href: "/pages/commu/review" },
-      { title: "고객문의", href: "/pages/commu/inquiry" },
+      { title: "공지사항", href: "/commu/notice" },
+      { title: "농행후기", href: "/commu/review" },
+      { title: "고객문의", href: "/commu/inquiry" },
     ],
   },
 ];
 
 // nav href
 export const introHref = {
-  mainMenu: { href: "/pages/intro", title: "농행동행" },
+  mainMenu: { href: "/intro", title: "농행동행" },
   subMenu: [
-    { href: "/pages/intro/nonghaeng", title: "농행동행 소개" },
-    { href: "/pages/intro/tour", title: "농촌관광 소개" },
+    { href: "/intro/nonghaeng", title: "농행동행 소개" },
+    { href: "/intro/tour", title: "농촌관광 소개" },
   ],
 };
 export const tripHref = {
-  mainMenu: { href: "/pages/trip", title: "농촌여행" },
+  mainMenu: { href: "/trip", title: "농촌여행" },
   subMenu: [
-    { href: "/pages/trip/tour", title: "농촌관광" },
-    { href: "/pages/trip/exp", title: "농촌체험" },
-    { href: "/pages/trip/lodg", title: "농촌숙박" },
+    { href: "/trip/tour", title: "농촌관광" },
+    { href: "/trip/exp", title: "농촌체험" },
+    { href: "/trip/lodg", title: "농촌숙박" },
   ],
 };
 export const commuHref = {
-  mainMenu: { href: "/pages/commu", title: "커뮤니티" },
+  mainMenu: { href: "/commu", title: "커뮤니티" },
   subMenu: [
-    { href: "/pages/commu/notice", title: "공지사항" },
-    { href: "/pages/commu/review", title: "농행후기" },
-    { href: "/pages/commu/inquiry", title: "고객문의" },
+    { href: "/commu/notice", title: "공지사항" },
+    { href: "/commu/review", title: "농행후기" },
+    { href: "/commu/inquiry", title: "고객문의" },
   ],
 };
 export const itemHref = {
-  mainMenu: { title: "기획상품", href: "/pages/item" },
+  mainMenu: { title: "기획상품", href: "/item" },
   subMenu: [],
 };
 export const mypageHref = {
-  mainMenu: { title: "마이페이지", href: "/pages/mypage" },
+  mainMenu: { title: "마이페이지", href: "/mypage" },
   subMenu: [
-    { href: "/pages/mypage/reserve", title: "최근예약" },
-    { href: "/pages/mypage/edit", title: "회원정보수정" },
+    { href: "/mypage/reserve", title: "최근예약" },
+    { href: "/mypage/edit", title: "회원정보수정" },
   ],
 };
 export const acountHref = {
-  mainMenu: { title: "마이페이지", href: "/pages/acount/login" },
+  mainMenu: { title: "마이페이지", href: "/acount/login" },
   subMenu: [
-    { href: "/pages/acount/login", title: "로그인" },
-    { href: "/pages/acount/join", title: "회원가입" },
-    { href: "/pages/acount/findid", title: "아이디찾기" },
-    { href: "/pages/acount/findpass", title: "비밀번호찾기" },
+    { href: "/acount/login", title: "로그인" },
+    { href: "/acount/join", title: "회원가입" },
+    { href: "/acount/findid", title: "아이디찾기" },
+    { href: "/acount/findpass", title: "비밀번호찾기" },
   ],
 };
 export const sitemapHref = {
-  mainMenu: { title: "사이트맵", href: "/pages/sitemap" },
+  mainMenu: { title: "사이트맵", href: "/sitemap" },
   subMenu: [],
 };
 export const adminHref = {
-  mainMenu: { title: "관리자 페이지", href: "/pages/admin" },
+  mainMenu: { title: "관리자 페이지", href: "/admin" },
   subMenu: [
-    { href: "/pages/admin/tour", title: "관광등록" },
-    { href: "/pages/admin/experience", title: "체험등록" },
-    { href: "/pages/admin/room", title: "숙소등록" },
+    { href: "/admin/tour", title: "관광등록" },
+    { href: "/admin/experience", title: "체험등록" },
+    { href: "/admin/room", title: "숙소등록" },
   ],
 };
 

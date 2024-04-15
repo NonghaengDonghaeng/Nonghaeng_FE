@@ -26,10 +26,8 @@ export function useSearch() {
   function search({ searchItem }: propsType) {
     // 지역x, 카테고리x
     if (!searchItem.region && !searchItem.category) {
-      // router.push(`/pages/search?search_word=${search_word}`);
-      window.location.replace(
-        `/pages/search?search_word=${searchItem.search_word}`
-      );
+      // router.push(`/search?search_word=${search_word}`);
+      window.location.replace(`/search?search_word=${searchItem.search_word}`);
     }
     // 카테고리o, 지역 ?
     else if (
@@ -37,7 +35,7 @@ export function useSearch() {
       searchItem.category !== "유형선택"
     ) {
       router.push(
-        `/pages/trip/${tripMap[searchItem.category]}?${
+        `/trip/${tripMap[searchItem.category]}?${
           searchItem.region !== "지역선택" && `region=${searchItem.region}`
         }&search_word=${searchItem.search_word}`
       );

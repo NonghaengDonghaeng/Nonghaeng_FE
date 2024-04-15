@@ -43,7 +43,7 @@ export default function Page() {
       alert("날짜를 선택해주세요.");
     } else {
       router.push(
-        `/pages/reserve/lodg?room_id=${room_id}&person_count=${person_count}&room_count=${room_count}&check_in=${check_in}&check_out=${check_out}`
+        `/reserve/lodg?room_id=${room_id}&person_count=${person_count}&room_count=${room_count}&check_in=${check_in}&check_out=${check_out}`
       );
     }
   }
@@ -68,7 +68,7 @@ export default function Page() {
         </article>
         <article>
           <span>
-            <Link href={`/pages/detail?tour_id=${resData?.tour_id}`}>
+            <Link href={`/detail?tour_id=${resData?.tour_id}`}>
               {resData?.tour_name}
             </Link>
             {" > "}

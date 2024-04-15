@@ -97,13 +97,13 @@ function Header() {
           {loginState ? (
             <button onClick={logout}>로그아웃</button>
           ) : (
-            <Link href="/pages/acount/login">로그인</Link>
+            <Link href="/acount/login">로그인</Link>
           )}
 
-          <Link href={loginState ? "/pages/mypage" : "/pages/acount/login"}>
+          <Link href={loginState ? "/mypage" : "/acount/login"}>
             마이페이지
           </Link>
-          <Link href="/pages/sitemap">
+          <Link href="/sitemap">
             <Image src={sitemapImg} alt="sitemapImg" priority={true}></Image>
           </Link>
         </div>

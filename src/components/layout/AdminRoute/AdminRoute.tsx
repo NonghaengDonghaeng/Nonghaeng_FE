@@ -11,22 +11,22 @@ export default function AdminRoute() {
     console.log(pathName);
     if (
       !localStorage.getItem("jwt") &&
-      pathName !== "/pages/acount/login" &&
-      pathName !== "/pages/acount/join" &&
-      pathName !== "/pages/acount/findid" &&
-      pathName !== "/pages/acount/findpass"
+      pathName !== "/acount/login" &&
+      pathName !== "/acount/join" &&
+      pathName !== "/acount/findid" &&
+      pathName !== "/acount/findpass"
     ) {
       console.log("로그아웃 상태");
-      router.replace("/pages/acount/login");
+      router.replace("/acount/login");
     } else if (
       localStorage.getItem("jwt") &&
-      (pathName == "/pages/acount/login" ||
-        pathName == "/pages/acount/join" ||
-        pathName == "/pages/acount/findid" ||
-        pathName == "/pages/acount/finpass")
+      (pathName == "/acount/login" ||
+        pathName == "/acount/join" ||
+        pathName == "/acount/findid" ||
+        pathName == "/acount/finpass")
     ) {
       console.log("로그인 상태");
-      router.replace("/pages/mypage");
+      router.replace("/mypage");
     }
   }, [pathName]);
   return null;

@@ -28,7 +28,7 @@ type TourListPropsType = {
 export function TourList({ content }: TourListPropsType) {
   const tourList = content?.map((item, index) => (
     <li key={index}>
-      <Link href={`/pages/detail?tour_id=${item.tour_id}`}>
+      <Link href={`/detail?tour_id=${item.tour_id}`}>
         <div>
           <Image
             src={item.img_url}
@@ -73,7 +73,7 @@ type ExpListPropsType = {
 export function ExpList({ content }: ExpListPropsType) {
   const expList = content?.map((item, index) => (
     <li key={index}>
-      <Link href={`/pages/detail/exp?exp_id=${item.experience_id}`}>
+      <Link href={`/detail/exp?exp_id=${item.experience_id}`}>
         <div>
           <Image
             src={item.img_url}
@@ -112,7 +112,7 @@ type LodgListPropsType = {
 export function LodgList({ content }: LodgListPropsType) {
   const lodgList = content?.map((item, index) => (
     <li key={index}>
-      <Link href={`/pages/detail/lodg?lodg_id=${item.tour_id}`}>
+      <Link href={`/detail/lodg?lodg_id=${item.tour_id}`}>
         <div>
           <Image
             src={item.img_url}
@@ -158,7 +158,7 @@ export function SubList({
 }: SubListPropsType) {
   const expList = expSubListData?.map((item, index) => (
     <li key={index}>
-      <Link href={`/pages/detail/exp?exp_id=${item.expId}`}>
+      <Link href={`/detail/exp?exp_id=${item.expId}`}>
         <Image
           src={item.img_url}
           alt="exp_sub_ist_img"
@@ -174,7 +174,7 @@ export function SubList({
   ));
   const lodgList = lodgSubListData?.map((item, index) => (
     <li key={index}>
-      <Link href={`/pages/detail/lodg?lodg_id=${item.roomId}`}>
+      <Link href={`/detail/lodg?lodg_id=${item.roomId}`}>
         <Image
           src={item.img_url}
           alt="lodg_sub_list_img"
@@ -230,7 +230,7 @@ export function RoomList({ roomListData }: RoomListPropsType) {
 
   const roomList = resData?.map((item, index) => (
     <li key={index}>
-      <Link href={`/pages/detail/lodg/room?room_id=${item.room_id}`}>
+      <Link href={`/detail/lodg/room?room_id=${item.room_id}`}>
         <Image
           src={item.img_url}
           alt="room_list_img"

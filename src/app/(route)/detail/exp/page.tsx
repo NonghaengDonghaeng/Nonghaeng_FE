@@ -49,7 +49,7 @@ export default function Page() {
         </article>
         <article>
           <span>
-            <Link href={`/pages/detail?tour_id=${resData?.tour_info.tourId}`}>
+            <Link href={`/detail?tour_id=${resData?.tour_info.tourId}`}>
               {resData?.tour_info.tourName}
             </Link>
             {" > "}
@@ -85,7 +85,7 @@ export default function Page() {
               <Image src={great_img} alt="great_img" />
             </li>
             <li>
-              <Link href="/pages/reserve/exp">
+              <Link href="/reserve/exp">
                 예약하기
                 <Image src={reservation_img} alt="reservation_img" />
               </Link>
