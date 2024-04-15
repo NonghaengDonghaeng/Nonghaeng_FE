@@ -1,0 +1,7 @@
+.loading {
+  @apply w-full h-[300px];
+}
+
+.loading > img {
+  @apply w-[40px] h-[40px] mx-auto mt-[120px] animate-spin;
+}
