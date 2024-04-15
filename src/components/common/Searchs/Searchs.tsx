@@ -13,7 +13,7 @@ import {
   category_exp,
   category_tour,
   category_lodg,
-} from "name/name";
+} from "../../../../public/name/name";
 import search_detail_img from "img/sitemap_grey.png";
 import search_img from "img/search_white.png";
 import click_false from "img/more_grey.png";

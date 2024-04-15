@@ -12,13 +12,13 @@ export default function Page() {
   );
 
   return (
-    <main id="main">
+    <>
       <section className={styles.section1}>
         <h1>통합검색</h1>
         <ScTotal />
         {search_word}
       </section>
       <section className={styles.section2}></section>
-    </main>
+    </>
   );
 }

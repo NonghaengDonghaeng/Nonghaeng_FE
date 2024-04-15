@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
 import styles from "./Header.module.css";
-import { headerHref } from "href/href";
+import { headerHref } from "../../../../public/href/href";
 import homeImg from "img/nonghaeng.png";
 import sitemapImg from "img/sitemap_grey.png";
 import searchImg from "img/search_grey.png";

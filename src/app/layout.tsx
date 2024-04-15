@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import ScollTop from "@/components/layout/ScrollTop/ScrollTop";
 import Header from "../components/layout/Header/Header";
 import Footer from "../components/layout/Footer/Footer";
-import AdminRoute from "@/components/layout/AdminRoute/AdminRoute";
 import "./globals.css";
 import Loading from "@/components/layout/Loading/Loading";
 
