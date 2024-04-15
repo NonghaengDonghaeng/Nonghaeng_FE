@@ -30,22 +30,22 @@ export default function Page() {
 
   const [resData, setResData] = useState<expListPageDatatype>();
 
-  // async function expApi() {
-  //   try {
-  //     const token = localStorage.getItem("jwt");
-  //     console.log(pageState.search_word);
-  //     const res = await axios.get(
-  //       `http://localhost:8080/experiences?page=${
-  //         Number(pageState.page_index) - 1
-  //       }&keyword=${pageState.search_word}`,
-  //       { headers: { Authorization: token } }
-  //     );
-  //     console.log(res);
-  //     setResData(res.data);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
+  async function expApi() {
+    try {
+      const token = localStorage.getItem("jwt");
+      console.log(pageState.search_word);
+      const res = await axios.get(
+        `http://localhost:8080/experiences?page=${
+          Number(pageState.page_index) - 1
+        }&keyword=${pageState.search_word}`,
+        { headers: { Authorization: token } }
+      );
+      console.log(res);
+      setResData(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   // api useEffect
   useEffect(() => {
