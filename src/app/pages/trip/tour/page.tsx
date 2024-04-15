@@ -31,11 +31,11 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    console.log("농촌관광 메인 api");
     let res = getTourListApi({
       pageIndex: pageState.page_index,
       searchWord: pageState.search_word,
     });
+    console.log(res);
     setResData(res);
   }, [pageState.state, pageState.page_index]);
 
