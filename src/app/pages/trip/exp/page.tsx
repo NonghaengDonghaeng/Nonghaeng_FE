@@ -51,8 +51,8 @@ export default function Page() {
   useEffect(() => {
     setUrl({ urlItem: pageState });
     console.log("농촌체험 메인 api");
-    // expApi();
-    setResData(expListPageResData);
+    expApi();
+    // setResData(expListPageResData);
   }, [pageState.state, pageState.page_index]);
 
   return (
