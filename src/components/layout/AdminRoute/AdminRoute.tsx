@@ -8,7 +8,6 @@ export default function AdminRoute() {
   const pathName = usePathname();
 
   useEffect(() => {
-    console.log(pathName);
     if (
       !localStorage.getItem("jwt") &&
       pathName !== "/acount/login" &&

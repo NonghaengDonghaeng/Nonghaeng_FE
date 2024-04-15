@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import useMove from "@/hooks/useMove";
-import { RoomList } from "@/components/common/List/List";
+import { RoomList } from "@/components/common/Lists/Lists";
 import styles from "./page.module.css";
 import { lodgDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import lodgDetailPageResData from "@/db/lodgdata/detail.json";

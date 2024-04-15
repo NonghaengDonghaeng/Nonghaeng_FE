@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ScMain } from "@/components/common/Search/Search";
-import { ExpList, LodgList } from "@/components/common/List/List";
+import { ScMain } from "@/components/common/Searchs/Searchs";
+import { ExpList, LodgList } from "@/components/common/Lists/Lists";
 import styles from "./page.module.css";
 import {
   expListContentDataType,

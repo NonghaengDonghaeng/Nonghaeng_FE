@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { CustomCalendar } from "@/components/common/Calendar/Calendar";
+import { CustomCalendar } from "@/components/common/Calendars/Calendars";
 import exp_round_info from "@/db/expdata/round_info.json";
 
 export default function Page() {

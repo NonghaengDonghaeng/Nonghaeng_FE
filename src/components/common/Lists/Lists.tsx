@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./List.module.css";
+import styles from "./Lists.module.css";
 import region_img from "img/location_orange.png";
 import exp_img from "img/exp_orange.png";
 import lodg_img from "img/lodg_orange.png";
@@ -16,7 +16,7 @@ import React from "react";
 import room_img from "img/room_orange.png";
 import calendar_img from "img/calendar_orange.png";
 import person_img from "img/participant_orange.png";
-import { CustomRangeCalendar } from "../Calendar/Calendar";
+import { CustomRangeCalendar } from "../Calendars/Calendars";
 import roomListResData from "@/db/roomdata/list.json";
 
 // TourList -----------------------------------------------------

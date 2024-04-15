@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import { ScDetail, ScDetailOn } from "@/components/common/Search/Search";
+import { ScDetail, ScDetailOn } from "@/components/common/Searchs/Searchs";
 import Overlay from "@/components/common/Overlay/Overlay";
-import { ExpList } from "@/components/common/List/List";
+import { ExpList } from "@/components/common/Lists/Lists";
 import Paging from "@/components/common/Paging/Paging";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";

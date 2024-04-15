@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { ScTotal } from "@/components/common/Search/Search";
+import { ScTotal } from "@/components/common/Searchs/Searchs";
 import styles from "./page.module.css";
 
 export default function Page() {

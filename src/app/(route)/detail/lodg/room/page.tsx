@@ -5,7 +5,7 @@ import useMove from "@/hooks/useMove";
 import Link from "next/link";
 import Image from "next/image";
 import ClickCount from "@/components/common/ClickCount/ClickCount";
-import { CustomRangeCalendar } from "@/components/common/Calendar/Calendar";
+import { CustomRangeCalendar } from "@/components/common/Calendars/Calendars";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import styles from "./page.module.css";
 import { roomDetailPageDataType } from "@/types/dataType/detailPageDataType";

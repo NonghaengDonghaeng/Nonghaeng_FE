@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import useMove from "@/hooks/useMove";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
-import { SubList } from "@/components/common/List/List";
+import { SubList } from "@/components/common/Lists/Lists";
 import styles from "./page.module.css";
 import { tourDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import tourDetailPageResData from "@/db/tourdata/detail.json";
