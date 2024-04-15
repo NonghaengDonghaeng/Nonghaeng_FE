@@ -32,7 +32,10 @@ export function useSearch() {
       );
     }
     // 카테고리o, 지역 ?
-    else if (typeof searchItem.category == "string") {
+    else if (
+      typeof searchItem.category == "string" &&
+      searchItem.category == "유형선택"
+    ) {
       router.push(
         `/pages/trip/${tripMap[searchItem.category]}?${
           searchItem.region !== "지역선택" && `region=${searchItem.region}`
