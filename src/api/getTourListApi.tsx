@@ -1,11 +1,17 @@
+import { setTourListPageDataType } from "@/types/setDataType/setListPageDataType";
 import axios from "axios";
 
 type PropsType = {
   pageIndex: number | undefined;
   searchWord: string | undefined;
+  setResData: setTourListPageDataType | any;
 };
 
-export const getTourListApi = async ({ pageIndex, searchWord }: PropsType) => {
+export const getTourListApi = async ({
+  pageIndex,
+  searchWord,
+  setResData,
+}: PropsType) => {
   console.log("관광 리스트 api");
   try {
     let token = localStorage.getItem("jwt");
@@ -16,7 +22,8 @@ export const getTourListApi = async ({ pageIndex, searchWord }: PropsType) => {
         headers: { Authorization: token },
       }
     );
-    return res;
+    console.log(res.data);
+    setResData(res.data);
   } catch (err) {
     console.log(err);
   }

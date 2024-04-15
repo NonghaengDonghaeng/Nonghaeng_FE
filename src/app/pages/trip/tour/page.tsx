@@ -10,7 +10,6 @@ import { getTourListApi } from "@/api/getTourListApi";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
 import { tourListPageDataType } from "@/types/dataType/listPageDataType";
-import tourListPageResData from "@/db/tourdata/list.json";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -26,17 +25,16 @@ export default function Page() {
     category: Array.from(new Set(searchParams.getAll("category"))) || [],
   });
 
-  const [resData, setResData] = useState<tourListPageDataType | any>();
+  const [resData, setResData] = useState<tourListPageDataType>();
 
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    let res = getTourListApi({
+    getTourListApi({
       pageIndex: pageState.page_index,
       searchWord: pageState.search_word,
+      setResData,
     });
-    console.log(res);
-    setResData(res);
   }, [pageState.state, pageState.page_index]);
 
   return (
