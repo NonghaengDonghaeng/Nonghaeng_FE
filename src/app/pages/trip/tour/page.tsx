@@ -6,11 +6,11 @@ import Overlay from "@/components/common/Overlay/Overlay";
 import { TourList } from "@/components/common/List/List";
 import Paging from "@/components/common/Paging/Paging";
 import { ScDetail, ScDetailOn } from "@/components/common/Search/Search";
+import { getTourListApi } from "@/api/getTourListApi";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
 import { tourListPageDataType } from "@/types/dataType/listPageDataType";
 import tourListPageResData from "@/db/tourdata/list.json";
-import axios from "axios";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -26,31 +26,17 @@ export default function Page() {
     category: Array.from(new Set(searchParams.getAll("category"))) || [],
   });
 
-  const [resData, setResData] = useState<tourListPageDataType>();
-
-  // async function tourApi() {
-  //   try {
-  //     let token = localStorage.getItem("jwt");
-  //     const res = await axios.get(
-  //       `http://localhost:8080/tours?page=${pageState.page_index}&keyword=${pageState.search_word}`,
-  //       {
-  //         headers: {
-  //           Authorization: token,
-  //         },
-  //       }
-  //     );
-  //     setResData(res.data);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
+  const [resData, setResData] = useState<tourListPageDataType | any>();
 
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
     console.log("농촌관광 메인 api");
-    // tourApi();
-    setResData(tourListPageResData);
+    let res = getTourListApi({
+      pageIndex: pageState.page_index,
+      searchWord: pageState.search_word,
+    });
+    setResData(res);
   }, [pageState.state, pageState.page_index]);
 
   return (
