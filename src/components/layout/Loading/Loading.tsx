@@ -11,6 +11,7 @@ export default function Loading() {
         alt="loading_img"
         width={800}
         height={800}
+        priority={true}
       ></Image>
     </div>
   );
