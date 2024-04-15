@@ -35,7 +35,7 @@ export default function Page() {
       const token = localStorage.getItem("jwt");
       console.log(pageState.search_word);
       const res = await axios.get(
-        `http://localhost:8080/experiences?page=${
+        `https://nonghaeng.duckdns.org/experiences?page=${
           Number(pageState.page_index) - 1
         }&keyword=${pageState.search_word}`,
         { headers: { Authorization: token } }
