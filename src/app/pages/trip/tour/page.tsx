@@ -6,7 +6,7 @@ import Overlay from "@/components/common/Overlay/Overlay";
 import { TourList } from "@/components/common/List/List";
 import Paging from "@/components/common/Paging/Paging";
 import { ScDetail, ScDetailOn } from "@/components/common/Search/Search";
-import { getTourListApi } from "@/api/getTourListApi";
+import { getTourListApi } from "@/api/getListDataApi";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
 import { tourListPageDataType } from "@/types/dataType/listPageDataType";

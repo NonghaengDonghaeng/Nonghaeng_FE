@@ -9,8 +9,8 @@ import Paging from "@/components/common/Paging/Paging";
 import styles from "./page.module.css";
 import { pageStateType } from "@/types/pageStateType";
 import { expListPageDatatype } from "@/types/dataType/listPageDataType";
+import { getExpListApi } from "@/api/getListDataApi";
 import expListPageResData from "@/db/expdata/list.json";
-import axios from "axios";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -30,29 +30,14 @@ export default function Page() {
 
   const [resData, setResData] = useState<expListPageDatatype>();
 
-  async function expApi() {
-    try {
-      const token = localStorage.getItem("jwt");
-      console.log(pageState.search_word);
-      const res = await axios.get(
-        `https://nonghaeng.duckdns.org/experiences?page=${
-          Number(pageState.page_index) - 1
-        }&keyword=${pageState.search_word}`,
-        { headers: { Authorization: token } }
-      );
-      console.log(res);
-      setResData(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    console.log("농촌체험 메인 api");
-    expApi();
-    // setResData(expListPageResData);
+    getExpListApi({
+      pageIndex: pageState.page_index,
+      searchWord: pageState.search_word,
+      setResData,
+    });
   }, [pageState.state, pageState.page_index]);
 
   return (
