@@ -6,12 +6,12 @@ import useMove from "@/hooks/useMove";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import styles from "./page.module.css";
 import { expDetailPageDataType } from "@/types/dataType/detailPageDataType";
-import grade_img from "img/tour/grade_img.png";
-import participant_img from "img/exp/participant.png";
-import time_img from "img/exp/time.png";
-import price_img from "img/exp/price.png";
-import great_img from "img/exp/great.png";
-import reservation_img from "img/exp/reservation.png";
+import grade_img from "img/grade_orange.png";
+import participant_img from "img/participant_orange.png";
+import time_img from "img/time_orange.png";
+import price_img from "img/price_orange.png";
+import great_img from "img/great_orange.png";
+import reservation_img from "img/calendar_green.png";
 import expDetailPageResData from "@/db/expdata/detail.json";
 
 export default function Page() {

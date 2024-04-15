@@ -9,7 +9,7 @@ import {
   lodgListContentDataType,
   tourListContentDataType,
 } from "@/types/dataType/listPageDataType";
-import more_green from "img/main/more_green.png";
+import more_green from "img/more_green.png";
 import tripPageResData from "@/db/tripPageResData.json";
 
 export default function Page() {

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./List.module.css";
-import region_img from "img/region/orange.png";
-import exp_img from "img/exp/orange.png";
-import lodg_img from "img/lodg/orange.png";
+import region_img from "img/location_orange.png";
+import exp_img from "img/exp_orange.png";
+import lodg_img from "img/lodg_orange.png";
 import ClickCount from "../ClickCount/ClickCount";
 import {
   tourListContentDataType,
@@ -13,9 +13,9 @@ import {
 } from "@/types/dataType/listPageDataType";
 import { useEffect, useState } from "react";
 import React from "react";
-import room_img from "img/lodg/room.png";
-import calendar_img from "img/lodg/calendar.png";
-import person_img from "img/lodg/person.png";
+import room_img from "img/room_orange.png";
+import calendar_img from "img/calendar_orange.png";
+import person_img from "img/participant_orange.png";
 import { CustomRangeCalendar } from "../Calendar/Calendar";
 import roomListResData from "@/db/roomdata/list.json";
 

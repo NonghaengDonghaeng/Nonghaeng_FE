@@ -7,13 +7,13 @@ import { SubList } from "@/components/common/List/List";
 import styles from "./page.module.css";
 import { tourDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import tourDetailPageResData from "@/db/tourdata/detail.json";
-import grade_img from "img/tour/grade_img.png";
-import comment_img from "img/tour/comment_img.png";
-import tell_img from "img/tour/tel_img.png";
-import address_img from "img/tour/address-img.png";
-import email_img from "img/tour/email_img.png";
-import exp_img from "img/exp/orange.png";
-import lodg_img from "img/lodg/orange.png";
+import grade_img from "img/grade_orange.png";
+import comment_img from "img/comment_orange.png";
+import tell_img from "img/tel_orange.png";
+import address_img from "img/location_orange.png";
+import email_img from "img/email_orange.png";
+import exp_img from "img/exp_orange.png";
+import lodg_img from "img/lodg_orange.png";
 
 export default function Page() {
   const { element, moveElement } = useMove();

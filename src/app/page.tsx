@@ -9,9 +9,9 @@ import {
   expListContentDataType,
   lodgListContentDataType,
 } from "@/types/dataType/listPageDataType";
-import section1_bg from "img/main/section1_bg.png";
-import more_nonghang from "img/main/more_nonghang.png";
-import more_green from "img/main/more_green.png";
+import section1_bg from "img/bg/home_bg1.png";
+import more_nonghang from "img/more_nonghaeng_white.png";
+import more_green from "img/more_green.png";
 import homePageResData from "@/db/homePageResData.json";
 
 export default function Home() {

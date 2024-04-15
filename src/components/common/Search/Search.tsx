@@ -14,10 +14,10 @@ import {
   category_tour,
   category_lodg,
 } from "name/name";
-import search_detail_img from "img/header/sitemapImg.png";
-import search_img from "img/main/search.png";
-import click_false from "img/main/click_false.png";
-import click_true from "img/main/click_true.png";
+import search_detail_img from "img/sitemap_grey.png";
+import search_img from "img/search_white.png";
+import click_false from "img/more_grey.png";
+import click_true from "img/more_white.png";
 
 /*
 1.ScButton

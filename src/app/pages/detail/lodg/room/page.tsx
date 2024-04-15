@@ -9,11 +9,11 @@ import { CustomRangeCalendar } from "@/components/common/Calendar/Calendar";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import styles from "./page.module.css";
 import { roomDetailPageDataType } from "@/types/dataType/detailPageDataType";
-import room_img from "img/lodg/room.png";
-import person_img from "img/lodg/person.png";
-import calenda_img from "img/lodg/calendar.png";
-import great_img from "img/exp/great.png";
-import reservation_img from "img/exp/reservation.png";
+import room_img from "img/room_orange.png";
+import person_img from "img/participant_orange.png";
+import calenda_img from "img/calendar_orange.png";
+import great_img from "img/great_orange.png";
+import reservation_img from "img/calendar_green.png";
 import roomDetailPageResData from "@/db/roomdata/detail.json";
 
 export default function Page() {
