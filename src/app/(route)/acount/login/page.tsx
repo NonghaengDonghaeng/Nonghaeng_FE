@@ -39,7 +39,7 @@ export default function Page() {
     if (token) {
       {
         console.log("토큰 확인");
-        localStorage.setItem("jwt", token);
+        localStorage.setItem("jwt", "Bearer " + token);
         router.push("/");
       }
     }
