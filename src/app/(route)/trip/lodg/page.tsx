@@ -35,7 +35,8 @@ export default function Page() {
   useEffect(() => {
     setUrl({ urlItem: pageState });
     getLodgListApi({
-      pageIndex: pageState.page_index,
+      pageIndex:
+        pageState.page_index !== undefined ? pageState.page_index - 1 : 0,
       searchWord: pageState.search_word,
       setResData,
     });

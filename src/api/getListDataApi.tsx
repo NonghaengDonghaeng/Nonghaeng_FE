@@ -21,7 +21,7 @@ export const getTourListApi = async ({
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
       process.env.NEXT_PUBLIC_API_URL +
-        `tours?page=${pageIndex - 1}&keyword=${searchWord}`,
+        `tours?page=${pageIndex}&keyword=${searchWord}`,
       {
         headers: { Authorization: token },
       }
@@ -48,7 +48,7 @@ export const getExpListApi = async ({
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
       process.env.NEXT_PUBLIC_API_URL +
-        `experiences?page=${pageIndex - 1}&keyword=${searchWord}`,
+        `experiences?page=${pageIndex}&keyword=${searchWord}`,
       { headers: { Authorization: token } }
     );
     setResData(res.data);
@@ -73,7 +73,7 @@ export const getLodgListApi = async ({
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
       process.env.NEXT_PUBLIC_API_URL +
-        `rooms?page=${pageIndex - 1}&keyword=${searchWord}`,
+        `rooms?page=${pageIndex}&keyword=${searchWord}`,
       { headers: { Authorization: token } }
     );
     setResData(res);
