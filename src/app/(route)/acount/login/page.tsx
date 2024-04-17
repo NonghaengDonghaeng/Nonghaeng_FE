@@ -48,17 +48,6 @@ export default function Page() {
   const KakaoLoginApi = async () => {
     window.location.href =
       "https://nonghaeng.duckdns.org/oauth2/authorization/kakao";
-    // try {
-    //   const res = await axios.get(
-    //     "https://nonghaeng.duckdns.org/oauth2/authorization/kakao",
-    //     {
-    //       withCredentials: true,
-    //     }
-    //   );
-    //   console.log(res);
-    // } catch (err) {
-    //   console.log(err);
-    // }
   };
 
   const loginApi = async () => {
@@ -84,7 +73,7 @@ export default function Page() {
   const sellerLoginApi = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/seller-login",
+        "https://nonghaeng.duckdns.org/seller-login",
         seller_state
       );
       let token = response.headers["authorization"];
@@ -97,31 +86,68 @@ export default function Page() {
 
   return (
     <section className="flex flex-row m3 ">
-      <article className="flex flex-col space-y-3">
-        <h1 className="text-lg m3">일반 로그인</h1>
-        <form onSubmit={onSubmit}>
-          <div
-            onChange={(e: inputType) =>
-              change({
-                changeItem: user_state,
-                setChangeItem: setUser_state,
-                e,
-              })
-            }
-          >
-            <p>
-              number
-              <input name="number"></input>
-            </p>
-            <p>
-              password
-              <input name="password"></input>
-            </p>
+      <article className="flex flex-col space-y-3 w-1/2 pr-3 mr-10 mb-8">
+        <div className="text-center mb-3">
+          <h1 className="text-2xl font-bold mt-14 mb-10">소비자 로그인</h1>
+        </div>
+        <form onSubmit={onSubmit} className="w-full">
+          <div className="flex flex-row items-center mb-3">
+            <label
+              className="mr-4 font-bold"
+              style={{ minWidth: "100px", textAlign: "center" }}
+            >
+              전화번호
+            </label>
+            <input
+              className="w-full h-12 border border-gray-300 rounded-xl pl-4"
+              name="number"
+              placeholder="전화번호"
+              onChange={(e: inputType) =>
+                change({
+                  changeItem: user_state,
+                  setChangeItem: setUser_state,
+                  e,
+                })
+              }
+            ></input>
           </div>
-          <button type="submit">로그인</button>
+          <div className="flex flex-row items-center mb-3">
+            <label
+              className="mr-4 font-bold"
+              style={{ minWidth: "100px", textAlign: "center" }}
+            >
+              비밀번호
+            </label>
+            <input
+              className="w-full h-12 border border-gray-300 rounded-xl pl-4"
+              name="password"
+              placeholder="비밀번호"
+              onChange={(e: inputType) =>
+                change({
+                  changeItem: user_state,
+                  setChangeItem: setUser_state,
+                  e,
+                })
+              }
+            ></input>
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-green text-white py-2 rounded-xl"
+          >
+            로그인
+          </button>
         </form>
+        <div className="text-gray-500 text-center mt-3">
+          <p>
+            계정이 없으신가요? <a href="/acount/join">회원가입</a>
+          </p>
+          <p>
+            비밀번호를 잊으셨나요? <a href="/acount/findpass">비밀번호 찾기</a>
+          </p>
+        </div>
         <button
-          className="flex items-center justify-center h-[56px] bg-[#FAE84C] w-full rounded-3xl"
+          className="flex items-center justify-center h-[50px] bg-[#FAE84C] w-full rounded-3xl"
           onClick={KakaoLoginApi}
         >
           <div className="mr-2 text-2xl">
@@ -131,29 +157,66 @@ export default function Page() {
         </button>
       </article>
 
-      <article className="flex flex-col space-y-3">
-        <h1 className="text-lg m3">판매자 로그인</h1>
-        <form onSubmit={onSubmit2}>
-          <div
-            onChange={(e: inputType) =>
-              change({
-                changeItem: seller_state,
-                setChangeItem: setSeller_state,
-                e,
-              })
-            }
-          >
-            <p>
-              number
-              <input name="username"></input>
-            </p>
-            <p>
-              password
-              <input name="password"></input>
-            </p>
+      <article className="flex flex-col space-y-3 w-1/2 pr-3 ml-10">
+        <div className="text-center mb-3">
+          <h1 className="text-2xl font-bold mt-14 mb-10">판매자 로그인</h1>
+        </div>
+        <form onSubmit={onSubmit2} className="w-full">
+          <div className="flex flex-row items-center mb-3">
+            <label
+              className="mr-4 font-bold"
+              style={{ minWidth: "100px", textAlign: "center" }}
+            >
+              아이디
+            </label>
+            <input
+              className="w-full h-12 border border-gray-300 rounded-xl pl-4"
+              name="username"
+              placeholder="아이디"
+              onChange={(e: inputType) =>
+                change({
+                  changeItem: seller_state,
+                  setChangeItem: setSeller_state,
+                  e,
+                })
+              }
+            ></input>
           </div>
-          <button type="submit">로그인</button>
+          <div className="flex flex-row items-center mb-3">
+            <label
+              className="mr-4 font-bold"
+              style={{ minWidth: "100px", textAlign: "center" }}
+            >
+              비밀번호
+            </label>
+            <input
+              className="w-full h-12 border border-gray-300 rounded-xl pl-4"
+              name="password"
+              placeholder="비밀번호"
+              onChange={(e: inputType) =>
+                change({
+                  changeItem: seller_state,
+                  setChangeItem: setSeller_state,
+                  e,
+                })
+              }
+            ></input>
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-green text-white py-2 rounded-xl"
+          >
+            로그인
+          </button>
         </form>
+        <div className="text-gray-500 text-center mt-3">
+          <p>
+            계정이 없으신가요? <a href="/acount/join">회원가입</a>
+          </p>
+          <p>
+            비밀번호를 잊으셨나요? <a href="/acount/findpass">비밀번호 찾기</a>
+          </p>
+        </div>
       </article>
     </section>
   );
