@@ -1,4 +1,4 @@
-import { inputType } from "@/types/eventType";
+import { inputType, selectType } from "@/types/eventType";
 
 type PropsType = {
   changeItem: {
@@ -23,7 +23,7 @@ type PropsType = {
       number?: string;
     }>
   >;
-  e: inputType;
+  e: inputType | selectType;
 };
 
 export function useChange() {
