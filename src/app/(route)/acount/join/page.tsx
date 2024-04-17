@@ -2,10 +2,12 @@
 import { useEffect, useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { formType, inputType, selectType } from "@/types/eventType";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 
 export default function Page() {
   const change = useChange();
+  const router = useRouter();
   const [user_state, setUser_state] = useState<{
     area_code?: string;
     eamil?: string;
@@ -72,6 +74,7 @@ export default function Page() {
         user_state
       );
       console.log(response);
+      router.push("/acount/login");
     } catch (error) {
       console.log(error);
     }
@@ -84,6 +87,7 @@ export default function Page() {
         user_state
       );
       console.log(response);
+      router.push("/acount/login");
     } catch (error) {
       console.log(error);
     }
