@@ -74,7 +74,7 @@ export default function Page() {
         user_state
       );
       console.log(response);
-      router.push("/acount/login");
+      // router.push("/acount/login");
     } catch (error) {
       console.log(error);
     }
@@ -87,7 +87,7 @@ export default function Page() {
         user_state
       );
       console.log(response);
-      router.push("/acount/login");
+      // router.push("/acount/login");
     } catch (error) {
       console.log(error);
     }
