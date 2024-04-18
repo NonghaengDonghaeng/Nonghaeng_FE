@@ -1,21 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import styles from "./page.module.css";
 import { regionMap } from "name/name";
 import { formType, inputType } from "@/types/eventType";
+import { userType } from "@/types/userType";
+import { joinUserApi } from "@/api/joinApi";
 
 export default function Page() {
   const change = useChange();
-  const [userState, setUserState] = useState<{
-    area_code?: string;
-    eamil?: string;
-    name?: string;
-    password?: string;
-    check_password?: string;
-    number?: string;
-  }>({
+  const [user, setUser] = useState<userType>({
     area_code: "",
     eamil: "",
     name: "",
@@ -26,21 +20,8 @@ export default function Page() {
 
   function onSubmitUser(e: formType) {
     e.preventDefault();
-    joinUser();
+    joinUserApi({ user });
   }
-
-  const joinUser = async () => {
-    try {
-      const response = await axios.post(
-        "https://nonghaeng.duckdns.org/join",
-        userState
-      );
-      console.log(response);
-      // router.push("/acount/login");
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const regionList = regionMap.map((item, index) => (
     <option value={item.code} key={index}>
@@ -54,7 +35,7 @@ export default function Page() {
       <form onSubmit={onSubmitUser}>
         <div
           onChange={(e: inputType) =>
-            change({ changeItem: userState, setChangeItem: setUserState, e })
+            change({ changeItem: user, setChangeItem: setUser, e })
           }
         >
           <div>

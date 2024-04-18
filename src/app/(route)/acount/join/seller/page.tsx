@@ -1,28 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import styles from "./page.module.css";
 import { regionMap } from "name/name";
 import { formType, inputType } from "@/types/eventType";
+import { sellerType } from "@/types/userType";
+import { joinSellerApi } from "@/api/joinApi";
 
 export default function Page() {
   const change = useChange();
-  const [sellerState, setSellerState] = useState<{
-    phone_number?: string;
-    business_number?: string;
-    username?: string;
-    password?: string;
-    check_password?: string;
-    name?: string;
-    email?: string;
-    address?: string;
-    call_number?: string;
-    area_code?: string;
-    bank_code?: string;
-    bank_account?: string;
-    bank_account_name?: string;
-  }>({
+  const [seller, setSeller] = useState<sellerType>({
     phone_number: "",
     business_number: "",
     username: "",
@@ -40,21 +27,8 @@ export default function Page() {
 
   function onSubmitSeller(e: formType) {
     e.preventDefault();
-    joinSeller();
+    joinSellerApi({ seller });
   }
-
-  const joinSeller = async () => {
-    try {
-      const response = await axios.post(
-        "https://nonghaeng.duckdns.org/seller-join",
-        sellerState
-      );
-      console.log(response);
-      // router.push("/acount/login");
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const regionList = regionMap.map((item, index) => (
     <option value={item.code} key={index}>
@@ -69,8 +43,8 @@ export default function Page() {
         <div
           onChange={(e: inputType) =>
             change({
-              changeItem: sellerState,
-              setChangeItem: setSellerState,
+              changeItem: seller,
+              setChangeItem: setSeller,
               e,
             })
           }
