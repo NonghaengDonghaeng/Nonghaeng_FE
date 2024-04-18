@@ -1,0 +1,28 @@
+.join_user {
+  @apply w-[70%] mt-[80px] mx-auto mb-[40px] text-stone font-[500];
+}
+
+.join_user > h1 {
+  @apply text-[24px] text-center;
+}
+.join_user > hr {
+  @apply my-[20px] border-[1px] border-stone/40;
+}
+
+.join_user > form > div {
+}
+.join_user > form > div > div {
+  @apply my-[20px] flex justify-between;
+}
+.join_user > form > div > div > label {
+  @apply text-[18px];
+}
+.join_user > form > div > div > input {
+  @apply w-[70%] px-[4px] border-[1px] rounded-md;
+}
+.join_user > form > div > div > select {
+  @apply w-[70%] border-[1px] rounded-md;
+}
+.join_user > form > button {
+  @apply w-full h-[60px] bg-green text-white rounded-md;
+}

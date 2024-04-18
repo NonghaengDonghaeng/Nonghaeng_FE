@@ -12,6 +12,8 @@ export default function AdminRoute() {
       !localStorage.getItem("jwt") &&
       pathName !== "/acount/login" &&
       pathName !== "/acount/join" &&
+      pathName !== "/acount/join/user" &&
+      pathName !== "/acount/join/seller" &&
       pathName !== "/acount/findid" &&
       pathName !== "/acount/findpass"
     ) {
@@ -21,6 +23,8 @@ export default function AdminRoute() {
       localStorage.getItem("jwt") &&
       (pathName == "/acount/login" ||
         pathName == "/acount/join" ||
+        pathName == "/acount/join/user" ||
+        pathName == "/acount/join/seller" ||
         pathName == "/acount/findid" ||
         pathName == "/acount/finpass")
     ) {

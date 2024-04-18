@@ -1,0 +1,31 @@
+.join_seller {
+  @apply w-[70%] mt-[80px] mx-auto mb-[40px] text-stone font-[500];
+}
+
+.join_seller > h1 {
+  @apply text-[24px] text-center;
+}
+.join_seller > hr {
+  @apply my-[20px] border-[1px] border-stone/40;
+}
+
+.join_seller > form > div {
+}
+.join_seller > form > div > span {
+  @apply text-[20px] flex justify-center;
+}
+.join_seller > form > div > div {
+  @apply my-[20px] flex justify-between;
+}
+.join_seller > form > div > div > label {
+  @apply text-[18px];
+}
+.join_seller > form > div > div > input {
+  @apply w-[70%] px-[4px] border-[1px] rounded-md;
+}
+.join_seller > form > div > div > select {
+  @apply w-[70%] border-[1px] rounded-md;
+}
+.join_seller > form > button {
+  @apply w-full h-[60px] bg-green text-white rounded-md;
+}

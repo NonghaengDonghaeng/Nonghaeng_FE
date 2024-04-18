@@ -1,0 +1,43 @@
+.mypage_main {
+  @apply mt-[80px] mb-[40px];
+}
+
+.mypage_main > article:nth-child(1) {
+  @apply w-full h-[200px] p-[40px] flex rounded-md text-stone font-[500] bg-stone/10;
+}
+.mypage_main > article:nth-child(1) > div {
+  @apply w-[33.3333%] px-[20px];
+}
+
+.mypage_main > article:nth-child(1) > div:nth-child(1) > h1 {
+  @apply text-[24px];
+}
+.mypage_main > article:nth-child(1) > div:nth-child(1) > a {
+  @apply flex items-center mt-[10px] text-stone/60;
+}
+.mypage_main > article:nth-child(1) > div:nth-child(1) > a > img {
+  @apply w-[18px] h-[22px] mr-[8px];
+}
+
+.mypage_main > article:nth-child(1) > div:nth-child(2),
+.mypage_main > article:nth-child(1) > div:nth-child(3) {
+  @apply border-l-[1px] border-stone/40;
+}
+
+.mypage_main > article:nth-child(1) > div:nth-child(2),
+.mypage_main > article:nth-child(1) > div:nth-child(3) > h1 {
+  @apply text-[18px];
+}
+
+.mypage_main > article:nth-child(2),
+.mypage_main > article:nth-child(3) {
+  @apply my-[40px] text-stone font-[500];
+}
+
+.mypage_main > article > h1 {
+  @apply text-[18px];
+}
+
+.mypage_main > article > hr {
+  @apply border-stone/40 my-[10px];
+}
