@@ -41,3 +41,26 @@
 .mypage_main > article > hr {
   @apply border-stone/40 my-[10px];
 }
+
+.reserve_list {
+}
+
+.reserve_list > li {
+  @apply w-full h-[100px] my-[10px] rounded-md bg-stone/10;
+}
+
+.room_list {
+  @apply h-full p-[20px] text-center items-center flex justify-between;
+}
+
+.room_list > li {
+  @apply h-full px-[10px] flex items-center border-l-[1px] border-stone/40;
+}
+
+.exp_list {
+  @apply h-full p-[20px] text-center items-center flex justify-between;
+}
+
+.exp_list > li {
+  @apply h-full px-[10px] flex items-center border-l-[1px] border-stone/40;
+}
