@@ -56,8 +56,6 @@ export default function Page() {
     }
   };
 
-  useEffect(() => console.log(sellerState), [sellerState]);
-
   const regionList = regionMap.map((item, index) => (
     <option value={item.code} key={index}>
       {item.title}
