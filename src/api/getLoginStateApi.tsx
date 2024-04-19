@@ -8,7 +8,7 @@ export const verityJwtApi = async () => {
       const res = await axios.get("https://nonghaeng.duckdns.org/test/jwt", {
         headers: { Authorization: token },
       });
-      console.log("검증완료, 로그인 유지");
+      console.log(res.data);
       store.dispatch({ type: "LOGIN" });
     } catch (err) {
       console.log(err);
