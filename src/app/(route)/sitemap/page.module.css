@@ -1,0 +1,19 @@
+.sitemap {
+  @apply mt-[80px] mb-[40px] text-stone font-[500];
+}
+
+.sitemap > article {
+  @apply h-[300px] my-[40px] flex justify-between;
+}
+
+.sitemap > article > div {
+  @apply w-[30%] px-[20px] rounded-md border-[1px] border-stone/20;
+}
+
+.sitemap > article > div > span {
+  @apply text-[20px] font-[600] flex justify-center;
+}
+
+.sitemap > article > div > a {
+  @apply my-[10px] block;
+}
