@@ -14,8 +14,8 @@
 .section1 > a {
   @apply w-[200px] h-[36px] absolute top-[360px] flex rounded-full py-[6px] px-[20px] text-white bg-orange;
 }
-.section1 > a > img {
-  @apply w-[22px] h-[10px] my-[7px] ml-[22px];
+.section1 > a > svg {
+  @apply my-[5px] ml-[18px];
 }
 
 /* section2 */

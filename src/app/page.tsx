@@ -10,7 +10,7 @@ import {
   lodgListContentDataType,
 } from "@/types/dataType/listPageDataType";
 import section1_bg from "img/bg/home_bg1.png";
-import more_nonghang from "img/more_nonghaeng_white.png";
+import More_nonghang from "icon/more_nonghaeng_white.svg";
 import more_green from "img/more_green.png";
 import homePageResData from "@/db/homePageResData.json";
 
@@ -40,7 +40,7 @@ export default function Home() {
         </h2>
         <Link href="/intro/nonghaeng">
           농행동행 알아보기
-          <Image src={more_nonghang} alt="more_nonghang"></Image>
+          <More_nonghang width={26} height={14} />
         </Link>
       </section>
       <ScMain />
