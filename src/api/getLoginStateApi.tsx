@@ -5,7 +5,7 @@ export const verityJwtApi = async () => {
   let token = localStorage.getItem("jwt");
   if (token) {
     try {
-      const res = await axios
+      await axios
         .get("https://nonghaeng.duckdns.org/test/jwt", {
           headers: { Authorization: token },
         })
