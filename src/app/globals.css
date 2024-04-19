@@ -25,6 +25,9 @@ html {
   scroll-behavior: smooth;
   margin: 0;
 }
+img {
+  @apply object-cover;
+}
 
 #header {
   @apply w-full h-[80px] top-0 fixed z-[100] shadow-md bg-white;
@@ -35,7 +38,7 @@ html {
 }
 
 #main {
-  @apply w-[80%] mx-auto;
+  @apply w-[80%] mx-auto text-stone font-[500];
 }
 
 #footer {

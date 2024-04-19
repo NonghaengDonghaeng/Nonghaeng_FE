@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import person_img from "img/participant_orange.png";
-import mypageResData from "@/db/mypageResData.json";
 import { mypageDataType } from "@/types/dataType/mypageDataType";
-import { getMypageApi } from "@/api/getUserDataApi";
+import { getMypageApi } from "@/api/getMypageDataApi";
 
 export default function Page() {
   const [resData, setResData] = useState<mypageDataType>();

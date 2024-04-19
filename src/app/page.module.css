@@ -3,7 +3,7 @@
   @apply h-[500px] mt-[80px] mb-[56px];
 }
 .section1 > img {
-  @apply h-[500px] left-0 absolute;
+  @apply h-[500px] left-0 absolute object-cover;
 }
 .section1 > h1 {
   @apply text-[25px] font-[500] text-stone absolute top-[160px];

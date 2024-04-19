@@ -2,7 +2,7 @@
   @apply w-full h-[900px] mt-[80px]  text-stone font-[500];
 }
 .section1 > img {
-  @apply w-full h-[500px] rounded-3xl;
+  @apply w-full h-[500px] rounded-3xl object-cover;
 }
 .section1 > div:nth-child(2) {
   @apply w-full h-[140px] my-[40px]  flex;
@@ -17,7 +17,7 @@
   @apply ml-[14px] flex items-center text-[18px] font-[400];
 }
 .section1 > div:nth-child(2) > div > h1 > span > img {
-  @apply w-[20px] h-[18px] mr-[6px];
+  @apply w-[20px] h-[18px] mr-[6px] object-cover;
 }
 .section1 > div:nth-child(2) > div > h2 {
   @apply my-[6px] text-[16px];
