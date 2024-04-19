@@ -15,7 +15,7 @@
   @apply w-[200px] h-[36px] absolute top-[360px] flex rounded-full py-[6px] px-[20px] text-white bg-orange;
 }
 .section1 > a > svg {
-  @apply my-[5px] ml-[18px];
+  @apply my-[6px] ml-[18px];
 }
 
 /* section2 */
@@ -28,8 +28,8 @@
 .section2 > article > h1 > a {
   @apply text-[15px] flex items-center;
 }
-.section2 > article > h1 > a > img {
-  @apply w-[8px] h-[12px] ml-[5px];
+.section2 > article > h1 > a > svg {
+  @apply ml-[5px];
 }
 .section2 > article > hr {
   @apply border-[1px] border-stone/80;

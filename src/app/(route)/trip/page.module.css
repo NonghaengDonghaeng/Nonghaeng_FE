@@ -8,8 +8,8 @@
 .trip_main > article > h1 > a {
   @apply text-[15px] flex items-center;
 }
-.trip_main > article > h1 > a > img {
-  @apply w-[8px] h-[12px] ml-[5px];
+.trip_main > article > h1 > a > svg {
+  @apply ml-[5px];
 }
 .trip_main > article > hr {
   @apply border-[1px] border-stone/80;

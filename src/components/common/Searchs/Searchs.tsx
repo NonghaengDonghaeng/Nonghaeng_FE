@@ -14,10 +14,10 @@ import {
   category_tour,
   category_lodg,
 } from "../../../../public/name/name";
-import search_detail_img from "img/sitemap_grey.png";
-import search_img from "img/search_white.png";
-import click_false from "img/more_grey.png";
-import click_true from "img/more_white.png";
+import Sitemap_gray_Ic from "icon/sitemap_gray.svg";
+import Search_white_Ic from "icon/search_white.svg";
+import More_gray_Ic from "icon/more_gray.svg";
+import More_white_Ic from "icon/more_white.svg";
 
 /*
 1.ScButton
@@ -34,7 +34,7 @@ export function ScButton() {
   return (
     <button className={styles.search_button} type="submit">
       검색
-      <Image src={search_img} alt="search_img"></Image>
+      <Search_white_Ic />
     </button>
   );
 }
@@ -85,10 +85,7 @@ export function ScMain() {
       >
         <label>
           {searhcItem.region}
-          <Image
-            src={isClick.region ? click_true : click_false}
-            alt="click_false"
-          ></Image>
+          {isClick.region ? <More_white_Ic /> : <More_gray_Ic />}
         </label>
         <ul>{regionList}</ul>
       </div>
@@ -100,10 +97,7 @@ export function ScMain() {
       >
         <label>
           {searhcItem.category}
-          <Image
-            src={isClick.category ? click_true : click_false}
-            alt="click_false"
-          ></Image>
+          {isClick.category ? <More_white_Ic /> : <More_gray_Ic />}
         </label>
         <ul>{categoryList}</ul>
       </div>
@@ -293,7 +287,7 @@ export function ScDetailOn({ pageState, setPageState }: ScDetailPropsType) {
       className={styles.search_detail_on}
       onClick={() => setPageState({ ...pageState, isClick: true })}
     >
-      <Image src={search_detail_img} alt="filter_img" />
+      <Sitemap_gray_Ic />
       <span>상세검색</span>
     </button>
   );

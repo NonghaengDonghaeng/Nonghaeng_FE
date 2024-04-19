@@ -9,11 +9,7 @@
 /* SchButton
 --------------------------------------------------------------*/
 .search_button {
-  @apply w-[88px] h-[48px] p-[12px] rounded-[5px] flex justify-between text-white bg-stone;
-}
-
-.search_button > img {
-  @apply w-[20px];
+  @apply w-[88px] h-[48px] p-[10px] rounded-[5px] flex justify-between items-center text-white bg-stone;
 }
 
 /* ScMain 
@@ -29,8 +25,8 @@
 .search_main > div > label {
   @apply py-[12px] px-[20px] font-[400]  flex justify-between cursor-pointer;
 }
-.search_main > div > label > img {
-  @apply w-[18px] my-[6px];
+.search_main > div > label > svg {
+  @apply mt-[6px];
 }
 .search_main > div > ul {
   @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
@@ -128,8 +124,8 @@
 .search_detail_on {
   @apply flex items-center;
 }
-.search_detail_on > img {
-  @apply w-[16px] h-[16px] mr-[10px];
+.search_detail_on > svg {
+  @apply mr-[10px];
 }
 .search_detail_on > span {
   @apply text-[18px] text-stone font-[500];

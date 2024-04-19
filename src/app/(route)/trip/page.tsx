@@ -9,7 +9,7 @@ import {
   lodgListContentDataType,
   tourListContentDataType,
 } from "@/types/dataType/listPageDataType";
-import more_green from "img/more_green.png";
+import More_green_Ic from "icon/more_green.svg";
 import tripPageResData from "@/db/tripPageResData.json";
 
 export default function Page() {
@@ -33,7 +33,7 @@ export default function Page() {
             농촌관광
             <Link href="trip/tour">
               더 많은 농촌관광 보러가기
-              <Image src={more_green} alt="more_green" />
+              <More_green_Ic />
             </Link>
           </h1>
           <hr />
@@ -44,7 +44,7 @@ export default function Page() {
             농촌체험
             <Link href="trip/exp">
               더 많은 농촌체험 보러가기
-              <Image src={more_green} alt="more_green" />
+              <More_green_Ic />
             </Link>
           </h1>
           <hr />
@@ -55,7 +55,7 @@ export default function Page() {
             농촌숙박
             <Link href="trip/exp">
               더 많은 농촌숙박 보러가기
-              <Image src={more_green} alt="more_green" />
+              <More_green_Ic />
             </Link>
           </h1>
           <hr />

@@ -8,8 +8,8 @@ import { useSearch } from "@/hooks/useSearch";
 import styles from "./Header.module.css";
 import { headerHref } from "../../../../public/href/href";
 import homeImg from "img/nonghaeng.png";
-import sitemapImg from "img/sitemap_grey.png";
-import searchImg from "img/search_grey.png";
+import Sitemap_gray_Ic from "icon/sitemap_gray.svg";
+import Search_gray_Ic from "icon/search_gray.svg";
 import { inputType } from "@/types/eventType";
 import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventType";
@@ -90,7 +90,7 @@ function Header() {
             name="search_word"
           ></input>
           <button type="submit">
-            <Image src={searchImg} alt="searchImg"></Image>
+            <Search_gray_Ic />
           </button>
         </form>
         <div>
@@ -104,7 +104,7 @@ function Header() {
             마이페이지
           </Link>
           <Link href="/sitemap">
-            <Image src={sitemapImg} alt="sitemapImg" priority={true}></Image>
+            <Sitemap_gray_Ic />
           </Link>
         </div>
         <div

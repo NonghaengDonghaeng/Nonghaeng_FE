@@ -10,8 +10,8 @@ import {
   lodgListContentDataType,
 } from "@/types/dataType/listPageDataType";
 import section1_bg from "img/bg/home_bg1.png";
-import More_nonghang from "icon/more_nonghaeng_white.svg";
-import more_green from "img/more_green.png";
+import More_nonghang_Ic from "icon/more_nonghaeng_white.svg";
+import More_green_Ic from "icon/more_green.svg";
 import homePageResData from "@/db/homePageResData.json";
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
         </h2>
         <Link href="/intro/nonghaeng">
           농행동행 알아보기
-          <More_nonghang width={26} height={14} />
+          <More_nonghang_Ic />
         </Link>
       </section>
       <ScMain />
@@ -50,7 +50,7 @@ export default function Home() {
             우수 체험
             <Link href="/trip/exp">
               더 많은 농촌체험 보러가기
-              <Image src={more_green} alt="more_experience"></Image>
+              <More_green_Ic />
             </Link>
           </h1>
           <hr />
@@ -61,7 +61,7 @@ export default function Home() {
             우수 숙박
             <Link href="/trip/lodg">
               더 많은 농촌숙박 보러가기
-              <Image src={more_green} alt="more_lodgement"></Image>
+              <More_green_Ic />
             </Link>
           </h1>
           <hr />
