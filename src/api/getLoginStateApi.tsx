@@ -10,7 +10,7 @@ export const VerifyJwtApi = async () => {
       const res = await axios.get("https://nonghaeng.duckdns.org/valid", {
         headers: { Authorization: token },
       });
-      if (res.data.valid == true) {
+      if (res.data.valid) {
         console.log("검증완료, 로그인 유지");
         store.dispatch({ type: "LOGIN" });
       } else {
