@@ -13,6 +13,7 @@ import { inputType } from "@/types/eventType";
 import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventType";
 import store from "@/redux/loginStateStore";
+import { verityJwtApi } from "@/api/getLoginStateApi";
 
 type SubMenuType = { href: string; title: string };
 
@@ -25,6 +26,7 @@ function Header() {
 
   useEffect(() => {
     if (localStorage.getItem("jwt")) {
+      verityJwtApi({ setLoginState });
       store.dispatch({ type: "LOGIN" });
       setLoginState(true);
     } else {

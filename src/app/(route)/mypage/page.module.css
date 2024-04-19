@@ -15,8 +15,8 @@
 .mypage_main > article:nth-child(1) > div:nth-child(1) > a {
   @apply flex items-center mt-[10px] text-stone/60;
 }
-.mypage_main > article:nth-child(1) > div:nth-child(1) > a > img {
-  @apply w-[18px] h-[22px] mr-[8px];
+.mypage_main > article:nth-child(1) > div:nth-child(1) > a > svg {
+  @apply mr-[8px];
 }
 
 .mypage_main > article:nth-child(1) > div:nth-child(2),
