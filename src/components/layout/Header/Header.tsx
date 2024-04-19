@@ -1,13 +1,12 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
 import styles from "./Header.module.css";
 import { headerHref } from "../../../../public/href/href";
-import homeImg from "img/nonghaeng.png";
+import Nonghaeng_Ic from "icon/nonghaeng.svg";
 import Sitemap_gray_Ic from "icon/sitemap_gray.svg";
 import Search_gray_Ic from "icon/search_gray.svg";
 import { inputType } from "@/types/eventType";
@@ -69,7 +68,7 @@ function Header() {
     <header id="header">
       <div className={styles.header_inner}>
         <Link href="/">
-          <Image src={homeImg} alt="homeImg" priority={true}></Image>
+          <Nonghaeng_Ic />
         </Link>
         <ul
           onMouseOver={() => setIsHover(true)}

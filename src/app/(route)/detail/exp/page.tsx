@@ -6,12 +6,12 @@ import useMove from "@/hooks/useMove";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import styles from "./page.module.css";
 import { expDetailPageDataType } from "@/types/dataType/detailPageDataType";
-import grade_img from "img/grade_orange.png";
-import participant_img from "img/participant_orange.png";
-import time_img from "img/time_orange.png";
-import price_img from "img/price_orange.png";
-import great_img from "img/great_orange.png";
-import reservation_img from "img/calendar_green.png";
+import Grade_orange_Ic from "icon/grade_orange.svg";
+import Person_orange_Ic from "icon/person_orange.svg";
+import Time_orange_Ic from "icon/time_orange.svg";
+import Price_orange_Ic from "icon/price_orange.svg";
+import Great_orange_Ic from "icon/great_orange.svg";
+import Calendar_green_Ic from "icon/calendar_green.svg";
 import expDetailPageResData from "@/db/expdata/detail.json";
 
 export default function Page() {
@@ -58,36 +58,36 @@ export default function Page() {
           <h1>
             {resData?.experience_name}
             <span>
-              <Image src={grade_img} alt="grade_img" />
+              <Grade_orange_Ic />
               {resData?.grade.toFixed(1)}
             </span>
           </h1>
           <hr />
           <p>
-            <Image src={participant_img} alt="participant_img" />
+            <Person_orange_Ic />
             <label>참여인원</label>
             {resData?.min_participant}명{" ~ "}
             {resData?.max_participant}명
           </p>
           <p>
-            <Image src={time_img} alt="time_img" />
+            <Time_orange_Ic />
             <label>소요시간</label>
             {resData?.duration_hours}시간
           </p>
           <p>
-            <Image src={price_img} alt="price_img" />
+            <Price_orange_Ic />
             <label>체험비용</label>
             {resData?.price}원
           </p>
           <ul>
             <li onClick={() => console.log("좋아요 api")}>
               좋아요
-              <Image src={great_img} alt="great_img" />
+              <Great_orange_Ic />
             </li>
             <li>
               <Link href="/reserve/exp">
                 예약하기
-                <Image src={reservation_img} alt="reservation_img" />
+                <Calendar_green_Ic />
               </Link>
             </li>
           </ul>

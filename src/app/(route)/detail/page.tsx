@@ -7,13 +7,13 @@ import { SubList } from "@/components/common/Lists/Lists";
 import styles from "./page.module.css";
 import { tourDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import tourDetailPageResData from "@/db/tourdata/detail.json";
-import grade_img from "img/grade_orange.png";
-import comment_img from "img/comment_orange.png";
-import tell_img from "img/tel_orange.png";
-import address_img from "img/location_orange.png";
-import email_img from "img/email_orange.png";
-import exp_img from "img/exp_orange.png";
-import lodg_img from "img/lodg_orange.png";
+import Grade_orange_Ic from "icon/grade_orange.svg";
+import Comment_orange_Ic from "icon/commnet_orange.svg";
+import Location_orange_Ic from "icon/location_orange.svg";
+import Email_orange_Ic from "icon/email_orange.svg";
+import Tell_orange_Ic from "icon/tell_orange.svg";
+import Exp_orange_Ic from "icon/exp_orange.svg";
+import Lodg_orange_Ic from "icon/lodg_orange.svg";
 
 export default function Page() {
   const { element, moveElement } = useMove();
@@ -65,11 +65,11 @@ export default function Page() {
             <h1>
               {resData?.name}
               <span>
-                <Image src={grade_img} alt="star_img" />
+                <Grade_orange_Ic />
                 {resData?.grade}
               </span>
               <span>
-                <Image src={comment_img} alt="comment_img" />
+                <Comment_orange_Ic />
                 {resData?.comment_count}
               </span>
             </h1>
@@ -80,15 +80,15 @@ export default function Page() {
         <div>
           <ul>
             <li>
-              <Image src={tell_img} alt="tel_img" />
+              <Tell_orange_Ic />
               {resData?.tel}
             </li>
             <li>
-              <Image src={email_img} alt="email_img" />
+              <Email_orange_Ic />
               {resData?.homepage_url}
             </li>
             <li>
-              <Image src={address_img} alt="address_img" />
+              <Location_orange_Ic />
               {resData?.address}
             </li>
           </ul>
@@ -102,7 +102,7 @@ export default function Page() {
                 })
               }
             >
-              <Image src={exp_img} alt="exp_img" />
+              <Exp_orange_Ic />
               <span>
                 체험<label> {resData?.exp_summary_list.length}</label>
               </span>
@@ -116,7 +116,7 @@ export default function Page() {
                 })
               }
             >
-              <Image src={lodg_img} alt="lodg_img" />
+              <Lodg_orange_Ic />
               <span>
                 숙박<label> {resData?.room_summary_list.length}</label>
               </span>

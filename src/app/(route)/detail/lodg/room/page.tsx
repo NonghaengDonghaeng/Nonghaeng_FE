@@ -9,11 +9,11 @@ import { CustomRangeCalendar } from "@/components/common/Calendars/Calendars";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import styles from "./page.module.css";
 import { roomDetailPageDataType } from "@/types/dataType/detailPageDataType";
-import room_img from "img/room_orange.png";
-import person_img from "img/participant_orange.png";
-import calenda_img from "img/calendar_orange.png";
-import great_img from "img/great_orange.png";
-import reservation_img from "img/calendar_green.png";
+import Room_orange_Ic from "icon/room_orange.svg";
+import Person_orange_Ic from "icon/person_orange.svg";
+import Calendar_green_Ic from "icon/calendar_green.svg";
+import Great_orange_Ic from "icon/great_orange.svg";
+import Calendar_orange_Ic from "icon/calendar_orange.svg";
 import roomDetailPageResData from "@/db/roomdata/detail.json";
 
 export default function Page() {
@@ -93,15 +93,15 @@ export default function Page() {
           </p>
           <ul>
             <li>
-              <Image src={room_img} alt="room_img" />
+              <Room_orange_Ic />
               <ClickCount count={room_count} setCount={setRoom_count} />
             </li>
             <li>
-              <Image src={person_img} alt="person_img" />
+              <Person_orange_Ic />
               <ClickCount count={person_count} setCount={setPerson_count} />
             </li>
             <li>
-              <Image src={calenda_img} alt="calenda_img" />
+              <Calendar_orange_Ic />
               <div onClick={() => setIsClick(!isClick)}>
                 {check_in || "체크인"}
                 {" - "}
@@ -112,11 +112,11 @@ export default function Page() {
           <ul>
             <li onClick={() => console.log("좋아요 api")}>
               좋아요
-              <Image src={great_img} alt="great_img" />
+              <Great_orange_Ic />
             </li>
             <li onClick={routeReservation}>
               예약하기
-              <Image src={reservation_img} alt="reservation_img" />
+              <Calendar_green_Ic />
             </li>
           </ul>
           <CustomRangeCalendar

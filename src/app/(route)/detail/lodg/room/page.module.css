@@ -52,10 +52,10 @@
   @apply my-[20px];
 }
 .section1 > article:last-child > ul:nth-child(7) > li {
-  @apply float-left flex mr-[20px] items-center;
+  @apply float-left h-[40px] flex mr-[20px] items-center;
 }
-.section1 > article:last-child > ul:nth-child(7) > li > img {
-  @apply w-[18px] h-[20px] mr-[6px];
+.section1 > article:last-child > ul:nth-child(7) > li > svg {
+  @apply mr-[6px];
 }
 .section1 > article:last-child > ul:nth-child(7) > li:last-child {
   @apply clear-left mt-[10px] mb-[30px];
@@ -76,8 +76,8 @@
 .section1 > article:last-child > ul:nth-child(8) > li:nth-child(2) {
   @apply bg-green/10;
 }
-.section1 > article:last-child > ul:nth-child(8) > li > img {
-  @apply w-[20px] h-[18px] ml-[10px];
+.section1 > article:last-child > ul:nth-child(8) > li > svg {
+  @apply ml-[10px];
 }
 .section2 > article {
   @apply w-full h-[600px];

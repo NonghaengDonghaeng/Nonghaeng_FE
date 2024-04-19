@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-import person_img from "img/participant_orange.png";
+import Person_orange_Ic from "icon/person_orange.svg";
 import { mypageDataType } from "@/types/dataType/mypageDataType";
 import { getMypageApi } from "@/api/getMypageDataApi";
 
@@ -46,7 +46,7 @@ export default function Page() {
         <div>
           <h1>{resData?.name}의 마이페이지</h1>
           <Link href="/mypage/edit">
-            <Image src={person_img} alt="person_img" />
+            <Person_orange_Ic />
             회원정보 관리
           </Link>
         </div>

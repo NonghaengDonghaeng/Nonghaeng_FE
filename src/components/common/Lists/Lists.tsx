@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Lists.module.css";
-import region_img from "img/location_orange.png";
-import exp_img from "img/exp_orange.png";
-import lodg_img from "img/lodg_orange.png";
+import Location_orange_Ic from "icon/location_orange.svg";
+import Exp_orange_Ic from "icon/exp_orange.svg";
+import Lodg_orange_Ic from "icon/lodg_orange.svg";
 import ClickCount from "../ClickCount/ClickCount";
 import {
   tourListContentDataType,
@@ -13,9 +13,9 @@ import {
 } from "@/types/dataType/listPageDataType";
 import { useEffect, useState } from "react";
 import React from "react";
-import room_img from "img/room_orange.png";
-import calendar_img from "img/calendar_orange.png";
-import person_img from "img/participant_orange.png";
+import Room_orange_Ic from "icon/room_orange.svg";
+import Calendar_orange_Ic from "icon/calendar_orange.svg";
+import Person_orange_Ic from "icon/person_orange.svg";
 import { CustomRangeCalendar } from "../Calendars/Calendars";
 import roomListResData from "@/db/roomdata/list.json";
 
@@ -37,7 +37,7 @@ export function TourList({ content }: TourListPropsType) {
             height={800}
           />
           <span>
-            <Image src={region_img} alt="region_img" />
+            <Location_orange_Ic />
             {item.area_name}
           </span>
         </div>
@@ -49,11 +49,11 @@ export function TourList({ content }: TourListPropsType) {
           <h2>{item.one_line_intro}</h2>
           <div>
             <span>
-              <Image src={exp_img} alt="exp_img" />
+              <Exp_orange_Ic />
               체험:{item.count_experience}
             </span>
             <span>
-              <Image src={lodg_img} alt="lodg_img" />
+              <Lodg_orange_Ic />
               숙박:{item.count_room}
             </span>
           </div>
@@ -82,7 +82,7 @@ export function ExpList({ content }: ExpListPropsType) {
             height={800}
           />
           <span>
-            <Image src={region_img} alt="region_img" />
+            <Location_orange_Ic />
             {item.area_name}
           </span>
         </div>
@@ -121,7 +121,7 @@ export function LodgList({ content }: LodgListPropsType) {
             height={800}
           />
           <span>
-            <Image src={region_img} alt="region_img" />
+            <Location_orange_Ic />
             {item.area_name}
           </span>
         </div>
@@ -241,7 +241,7 @@ export function RoomList({ roomListData }: RoomListPropsType) {
           <h1>
             {item.room_name}
             <span>
-              <Image src={room_img} alt="room_img" />
+              <Room_orange_Ic />
               {"객실수 : "}
               {item.num_of_room}
             </span>
@@ -278,15 +278,15 @@ export function RoomList({ roomListData }: RoomListPropsType) {
             {" - "}
             {check_out || "체크아웃"}
           </div>
-          <Image src={calendar_img} alt="calendar_img" />
+          <Calendar_orange_Ic />
         </li>
         <li>
           <ClickCount count={personCount} setCount={setPersonCount} />
           {"인원수"}
-          <Image src={person_img} alt="person_img" />
+          <Person_orange_Ic />
           <ClickCount count={roomCount} setCount={setRoomCount} />
           {"객실수"}
-          <Image src={room_img} alt="room_img" />
+          <Room_orange_Ic />
           <button onClick={getRoomList}>검색</button>
         </li>
       </ul>

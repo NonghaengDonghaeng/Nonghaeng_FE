@@ -22,10 +22,10 @@
   @apply w-[17.6%] h-[200px] rounded-xl absolute;
 }
 .tour_list > li > a > div:first-child > span {
-  @apply ml-[20px] mt-[20px] absolute flex items-center text-[18px] font-[500] text-white;
+  @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
 }
-.tour_list > li > a > div:first-child > span > img {
-  @apply w-[16px] h-[20px] mr-[6px];
+.tour_list > li > a > div:first-child > span > svg {
+  @apply mr-[6px];
 }
 
 /* 설명영역 */
@@ -47,8 +47,8 @@
 .tour_list > li > a > div:last-child > div > span {
   @apply flex items-center text-[14px] font-[500];
 }
-.tour_list > li > a > div:last-child > div > span > img {
-  @apply w-[18px] mr-[6px];
+.tour_list > li > a > div:last-child > div > span > svg {
+  @apply mr-[6px];
 }
 
 /* ExpList 
@@ -75,10 +75,10 @@
   @apply w-[17.6%] h-[200px] rounded-xl absolute;
 }
 .exp_list > li > a > div:first-child > span {
-  @apply ml-[20px] mt-[20px] absolute flex items-center text-[18px] font-[500] text-white;
+  @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
 }
-.exp_list > li > a > div:first-child > span > img {
-  @apply w-[16px] h-[20px] mr-[6px];
+.exp_list > li > a > div:first-child > span > svg {
+  @apply mr-[6px];
 }
 
 /* 설명영역 */
@@ -129,10 +129,10 @@
   @apply w-[17.6%] h-[200px] rounded-xl absolute;
 }
 .lodg_list > li > a > div:first-child > span {
-  @apply ml-[20px] mt-[20px] absolute flex items-center text-[18px] font-[500] text-white;
+  @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
 }
-.lodg_list > li > a > div:first-child > span > img {
-  @apply w-[16px] h-[20px] mr-[6px];
+.lodg_list > li > a > div:first-child > span > svg {
+  @apply mr-[6px];
 }
 
 /* 설명영역 */
@@ -203,8 +203,8 @@
 .room_list > ul:first-child > li:first-child > div:first-child {
   @apply w-[200px] h-[30px] flex justify-center items-center border-[1px]  border-stone/40 rounded-xl cursor-pointer text-[14px] font-[400] text-stone;
 }
-.room_list > ul:first-child > li > img {
-  @apply w-[18px] h-[20px] ml-[6px];
+.room_list > ul:first-child > li > svg {
+  @apply ml-[6px];
 }
 .room_list > ul:first-child > li:nth-child(2) > div {
   @apply mx-[6px];
@@ -240,10 +240,10 @@
   @apply flex items-center text-[20px] text-orange;
 }
 .room_list > ul:nth-child(3) > li > a > div > h1 > span {
-  @apply ml-[20px] flex text-[14px] font-[400];
+  @apply ml-[20px] flex items-center text-[14px] font-[400];
 }
-.room_list > ul:nth-child(3) > li > a > div > h1 > span > img {
-  @apply w-[18px] h-[20px] mr-[6px];
+.room_list > ul:nth-child(3) > li > a > div > h1 > span > svg {
+  @apply mr-[6px];
 }
 .room_list > ul:nth-child(3) > li > a > div > P {
   @apply my-[10px] text-[20px];

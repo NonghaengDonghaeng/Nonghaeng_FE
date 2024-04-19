@@ -14,10 +14,10 @@
   @apply flex items-center text-[24px] font-[600];
 }
 .section1 > div:nth-child(2) > div > h1 > span {
-  @apply ml-[14px] flex items-center text-[18px] font-[400];
+  @apply ml-[14px] flex items-center text-[16px]  font-[400];
 }
-.section1 > div:nth-child(2) > div > h1 > span > img {
-  @apply w-[20px] h-[18px] mr-[6px] object-cover;
+.section1 > div:nth-child(2) > div > h1 > span > svg {
+  @apply mr-[6px];
 }
 .section1 > div:nth-child(2) > div > h2 {
   @apply my-[6px] text-[16px];
@@ -49,8 +49,8 @@
 .section1 > div:nth-child(3) > ul:first-child > li {
   @apply mb-[20px] mr-[20px] flex float-left items-center text-[14px] font-[400];
 }
-.section1 > div:nth-child(3) > ul:first-child > li > img {
-  @apply w-[20px] h-[22px] mr-[6px];
+.section1 > div:nth-child(3) > ul:first-child > li > svg {
+  @apply mr-[6px];
 }
 
 .section1 > div:nth-child(3) > ul:nth-child(2) {
@@ -65,9 +65,7 @@
 .section1 > div:nth-child(3) > ul:nth-child(2) > li:hover > span > label {
   @apply bg-white duration-500;
 }
-.section1 > div:nth-child(3) > ul:nth-child(2) > li > img {
-  @apply w-[30px] h-[30px];
-}
+
 .section1 > div:nth-child(3) > ul:nth-child(2) > li > span > label {
   @apply w-full h-[16px] px-[10px] block text-[12px] rounded-full cursor-pointer;
 }

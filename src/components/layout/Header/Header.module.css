@@ -3,9 +3,6 @@
 }
 
 /* home_logo */
-.header_inner > a > img {
-  @apply w-[130px] h-[34px];
-}
 
 /* header_menu */
 .header_inner > ul {

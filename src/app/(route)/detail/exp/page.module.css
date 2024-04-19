@@ -39,8 +39,8 @@
 .section1 > article:last-child h1 > span {
   @apply ml-[14px] flex items-center text-[16px] font-[400];
 }
-.section1 > article:last-child h1 > span > img {
-  @apply w-[20px] h-[18px] mr-[6px];
+.section1 > article:last-child h1 > span > svg {
+  @apply mr-[6px];
 }
 .section1 > article:last-child > hr {
   @apply border-stone/40;
@@ -48,14 +48,14 @@
 .section1 > article:last-child > p {
   @apply my-[20px] flex items-center font-[400];
 }
-.section1 > article:last-child > p > img {
-  @apply w-[20px] h-[18px] mr-[10px];
+.section1 > article:last-child > p > svg {
+  @apply mr-[10px];
 }
 .section1 > article:last-child > p > label {
   @apply text-orange mr-[10px] font-[500];
 }
 .section1 > article:last-child > ul {
-  @apply w-full h-[50px] mt-[98px] flex cursor-pointer;
+  @apply w-full h-[50px] mt-[102px] flex cursor-pointer;
 }
 .section1 > article:last-child > ul > li {
   @apply w-[50%] flex items-center justify-center rounded-md;
@@ -69,8 +69,8 @@
 .section1 > article:last-child > ul > li:nth-child(2) > a {
   @apply flex;
 }
-.section1 > article:last-child > ul > li img {
-  @apply w-[20px] h-[18px] ml-[10px];
+.section1 > article:last-child > ul > li svg {
+  @apply ml-[10px];
 }
 
 .section2 > article {
