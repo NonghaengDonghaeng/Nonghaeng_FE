@@ -11,7 +11,7 @@ export const verifyJwtApi = async () => {
       if (res.status == 200) {
         console.log("검증완료, 로그인 유지");
         store.dispatch({ type: "LOGIN" });
-      } else {
+      } else if (res.status == 400) {
         alert("세션이 만료되었습니다.");
         store.dispatch({ type: "LOGOUT" });
         localStorage.removeItem("jwt");
