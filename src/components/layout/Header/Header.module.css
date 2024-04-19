@@ -9,10 +9,10 @@
   @apply w-[400px] flex justify-between;
 }
 .header_inner > ul > li {
-  @apply relative;
+  @apply relative w-[100px] text-center;
 }
 .header_inner > ul > li > a {
-  @apply px-[20px] text-[16px] font-[600] text-stone;
+  @apply text-[16px] font-[600] text-stone;
 }
 .header_inner > ul > li > a:hover {
   @apply text-orange;

@@ -5,20 +5,17 @@ export const verityJwtApi = async () => {
   let token = localStorage.getItem("jwt");
   if (token) {
     try {
-      await axios
-        .get("https://nonghaeng.duckdns.org/test/jwt", {
-          headers: { Authorization: token },
-        })
-        .then((res) => {
-          if (res.status == 200) {
-            console.log("검증완료, 로그인 유지");
-            store.dispatch({ type: "LOGIN" });
-          } else {
-            alert("세션이 만료되었습니다.");
-            store.dispatch({ type: "LOGOUT" });
-            localStorage.removeItem("jwt");
-          }
-        });
+      const res = await axios.get("https://nonghaeng.duckdns.org/test/jwt", {
+        headers: { Authorization: token },
+      });
+      if (res.status == 200) {
+        console.log("검증완료, 로그인 유지");
+        store.dispatch({ type: "LOGIN" });
+      } else {
+        alert("세션이 만료되었습니다.");
+        store.dispatch({ type: "LOGOUT" });
+        localStorage.removeItem("jwt");
+      }
     } catch (err) {
       console.log(err);
     }
