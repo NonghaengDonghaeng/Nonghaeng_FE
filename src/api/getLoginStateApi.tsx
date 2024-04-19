@@ -1,17 +1,15 @@
 import axios from "axios";
+import store from "@/redux/loginStateStore";
 
-type JwtPropsType = {
-  setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-export const verityJwtApi = async ({ setLoginState }: JwtPropsType) => {
+export const verityJwtApi = async () => {
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.get("https://nonghaeng.duckdns.org/test/jwt", {
       headers: { Authorization: token },
     });
-    console.log(res.data);
+    store.dispatch({ type: "LOGIN" });
   } catch (err) {
     console.log(err);
+    store.dispatch({ type: "LOGOUT" });
   }
 };
