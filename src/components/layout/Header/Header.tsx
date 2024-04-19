@@ -13,7 +13,7 @@ import { inputType } from "@/types/eventType";
 import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventType";
 import store from "@/redux/loginStateStore";
-import { verifyJwtApi } from "@/api/getLoginStateApi";
+import { verifyJwtApi } from "@/api/loginApi";
 
 type SubMenuType = { href: string; title: string };
 

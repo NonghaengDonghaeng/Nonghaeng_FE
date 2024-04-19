@@ -8,9 +8,14 @@ export const verifyJwtApi = async () => {
       const res = await axios.get("https://nonghaeng.duckdns.org/valid", {
         headers: { Authorization: token },
       });
-      if (res.status == 200) {
+      if (res.data.valid == true) {
         console.log("검증완료, 로그인 유지");
         store.dispatch({ type: "LOGIN" });
+      } else {
+        alert("세션이 만료되었습니다.");
+        store.dispatch({ type: "LOGOUT" });
+        localStorage.removeItem("jwt");
+        window.location.replace("/");
       }
     } catch (err) {
       alert("세션이 만료되었습니다.");
