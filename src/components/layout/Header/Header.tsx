@@ -25,10 +25,11 @@ function Header() {
   const [loginState, setLoginState] = useState(false);
 
   useEffect(() => {
-    verityJwtApi();
-    if (store.getState() == true) {
-      setLoginState(true);
-    } else setLoginState(false);
+    verityJwtApi().then(() => {
+      if (store.getState() == true) {
+        setLoginState(true);
+      } else setLoginState(false);
+    });
   }, [pathName]);
 
   function logout() {
