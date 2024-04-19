@@ -10,7 +10,7 @@ export const verityJwtApi = async () => {
       });
       console.log(res);
       console.log(res.status);
-      if (res.status == 200) {
+      if (res.data.length < 50) {
         console.log("검증완료, 로그인 유지");
         store.dispatch({ type: "LOGIN" });
       } else {
