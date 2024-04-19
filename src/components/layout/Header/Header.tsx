@@ -13,7 +13,7 @@ import { inputType } from "@/types/eventType";
 import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventType";
 import store from "@/redux/loginStateStore";
-import { verityJwtApi } from "@/api/getLoginStateApi";
+import { VerifyJwtApi } from "@/api/getLoginStateApi";
 
 type SubMenuType = { href: string; title: string };
 
@@ -25,7 +25,7 @@ function Header() {
   const [loginState, setLoginState] = useState(false);
 
   useEffect(() => {
-    verityJwtApi().then(() => {
+    VerifyJwtApi().then(() => {
       if (store.getState() == true) {
         setLoginState(true);
       } else setLoginState(false);

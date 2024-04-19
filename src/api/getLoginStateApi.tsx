@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import store from "@/redux/loginStateStore";
 
-export const verityJwtApi = async () => {
+export const VerifyJwtApi = async () => {
   const router = useRouter();
   let token = localStorage.getItem("jwt");
   if (token) {
