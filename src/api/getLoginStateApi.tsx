@@ -1,9 +1,8 @@
 import axios from "axios";
-import { useRouter } from "next/router";
+
 import store from "@/redux/loginStateStore";
 
-export const VerifyJwtApi = async () => {
-  const router = useRouter();
+export const verifyJwtApi = async () => {
   let token = localStorage.getItem("jwt");
   if (token) {
     try {
@@ -17,7 +16,7 @@ export const VerifyJwtApi = async () => {
         alert("세션이 만료되었습니다.");
         store.dispatch({ type: "LOGOUT" });
         localStorage.removeItem("jwt");
-        router.push("/");
+        window.location.replace("/");
       }
     } catch (err) {
       console.log(err);
