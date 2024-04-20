@@ -14,10 +14,14 @@ import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventType";
 import store from "@/redux/loginStateStore";
 import { verifyJwtApi } from "@/api/loginApi";
+import { useMediaQuery } from "react-responsive";
 
 type SubMenuType = { href: string; title: string };
 
 function Header() {
+  const isMobile = useMediaQuery({
+    query: "(max-width : 767px)",
+  });
   const change = useChange();
   const search = useSearch();
   const pathName = usePathname();
@@ -70,12 +74,15 @@ function Header() {
         <Link href="/">
           <Nonghaeng_Ic />
         </Link>
-        <ul
-          onMouseOver={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
-        >
-          {mainMenuList}
-        </ul>
+        {!isMobile && (
+          <ul
+            onMouseOver={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+          >
+            {mainMenuList}
+          </ul>
+        )}
+
         <form className={styles.header_search} onSubmit={onSubmit}>
           <input
             onChange={(e: inputType) =>
