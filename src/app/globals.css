@@ -44,3 +44,5 @@ img {
 #footer {
   @apply w-full h-[300px] bg-stone/80;
 }
+
+/* @media(max-width:) */
