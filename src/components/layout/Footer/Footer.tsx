@@ -42,7 +42,7 @@ export default function Footer() {
             </li>
             <li
               onClick={() =>
-                setIsClick({ ...isClick, menu: !isClick.menu, search: false })
+                setIsClick({ ...isClick, search: !isClick.search, menu: false })
               }
             >
               <Search_Ic />
