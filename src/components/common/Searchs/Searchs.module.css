@@ -14,45 +14,100 @@
 
 /* ScMain 
 --------------------------------------------------------------*/
-.search_main {
-  @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[524px] flex justify-between absolute bg-yellow/85;
+/* desktop */
+@media (min-width: 768px) {
+  .search_main {
+    @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[510px] flex justify-between absolute bg-yellow/85;
+  }
+  .search_main > div {
+    @apply flex justify-between;
+  }
+  .search_main > div:nth-child(1) {
+    @apply w-[50%];
+  }
+  .search_main > div:nth-child(2) {
+    @apply w-[45%];
+  }
+  /* region, category box*/
+  .search_main > div > div {
+    @apply w-[48%] h-[48px] rounded-[5px];
+  }
+  .search_main > div > div > label {
+    @apply py-[12px] px-[20px] flex justify-between cursor-pointer;
+  }
+  .search_main > div > div > label > svg {
+    @apply mt-[6px];
+  }
+  .search_main > div > div > ul {
+    @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
+  }
+  .search_main > div > div:first-child > ul {
+    @apply h-[246px];
+  }
+  .search_main > div > div > ul > li {
+    @apply py-[10px] px-[20px];
+  }
+  .search_main > div > ul > li:hover {
+    @apply bg-stone/10;
+  }
+  .search_main_off {
+    @apply text-stone bg-white;
+  }
+  .search_main_off > ul {
+    @apply hidden;
+  }
+  .search_main_on {
+    @apply text-white bg-stone;
+  }
+  /* input */
+  .search_main > div > input {
+    @apply w-[60%] h-[48px] px-[16px] rounded-[5px];
+  }
 }
 
-/* region, category box*/
-.search_main > div {
-  @apply w-[180px] h-[48px] rounded-[5px];
-}
-.search_main > div > label {
-  @apply py-[12px] px-[20px] font-[400]  flex justify-between cursor-pointer;
-}
-.search_main > div > label > svg {
-  @apply mt-[6px];
-}
-.search_main > div > ul {
-  @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
-}
-.search_main > div:first-child > ul {
-  @apply h-[246px];
-}
-.search_main > div > ul > li {
-  @apply py-[10px] px-[20px];
-}
-.search_main > div > ul > li:hover {
-  @apply bg-stone/10;
-}
-.search_main_off {
-  @apply text-stone bg-white;
-}
-.search_main_off > ul {
-  @apply hidden;
-}
-.search_main_on {
-  @apply text-white bg-stone;
-}
-
-/* input */
-.search_main > input {
-  @apply w-[208px] h-[48px] px-[16px] rounded-[5px];
+/* mobile */
+@media (max-width: 767px) {
+  .search_main {
+    @apply w-[95%] h-[112px] px-[2.5%] mx-auto rounded-[5px] top-[322px] absolute bg-yellow/85;
+  }
+  /* region, category box*/
+  .search_main > div {
+    @apply flex justify-between relative my-[8px];
+  }
+  .search_main > div:nth-child(1) {
+    @apply z-[10];
+  }
+  .search_main > div > div {
+    @apply w-[48%] h-[38px] rounded-[5px];
+  }
+  .search_main > div > div > label {
+    @apply w-full h-full px-[10%] flex justify-between items-center cursor-pointer;
+  }
+  .search_main > div > div > ul {
+    @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
+  }
+  .search_main > div > div:first-child > ul {
+    @apply h-[246px];
+  }
+  .search_main > div > div > ul > li {
+    @apply py-[10px] px-[20px];
+  }
+  .search_main > div > div > ul > li:hover {
+    @apply bg-stone/10;
+  }
+  .search_main_off {
+    @apply text-stone bg-white;
+  }
+  .search_main_off > ul {
+    @apply hidden;
+  }
+  .search_main_on {
+    @apply text-white bg-stone;
+  }
+  /* input */
+  .search_main > div > input {
+    @apply w-[70%] h-[48px] px-[16px] rounded-[5px];
+  }
 }
 
 /* SchTotal 

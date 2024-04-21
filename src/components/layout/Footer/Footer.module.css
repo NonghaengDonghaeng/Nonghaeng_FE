@@ -1,6 +1,9 @@
 /* desktop
 ----------------------------------*/
 @media (min-width: 768px) {
+  .footer_inner > ul {
+    @apply hidden;
+  }
   .footer_inner > div:first-child {
     @apply w-[80%] h-[80px] mx-auto;
   }
@@ -8,10 +11,10 @@
     @apply border-[1px];
   }
   /* footer_main */
-  .footer_inner > div:last-child {
+  .footer_inner > div:nth-child(3) {
     @apply w-[80%] mt-[20px] mx-auto text-white;
   }
-  .footer_inner > div:last-child > * {
+  .footer_inner > div:nth-child(3) > * {
     @apply my-[20px] mr-[20px];
   }
 }

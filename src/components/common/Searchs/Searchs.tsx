@@ -78,38 +78,44 @@ export function ScMain() {
 
   return (
     <form className={styles.search_main} onSubmit={onSubmit}>
-      <div
-        className={
-          isClick.region ? styles.search_main_on : styles.search_main_off
-        }
-        onClick={() => setIsClick({ ...isClick, region: !isClick.region })}
-      >
-        <label>
-          {searhcItem.region}
-          {isClick.region ? <More_white_Ic /> : <More_gray_Ic />}
-        </label>
-        <ul>{regionList}</ul>
+      <div>
+        <div
+          className={
+            isClick.region ? styles.search_main_on : styles.search_main_off
+          }
+          onClick={() => setIsClick({ ...isClick, region: !isClick.region })}
+        >
+          <label>
+            {searhcItem.region}
+            {isClick.region ? <More_white_Ic /> : <More_gray_Ic />}
+          </label>
+          <ul>{regionList}</ul>
+        </div>
+        <div
+          className={
+            isClick.category ? styles.search_main_on : styles.search_main_off
+          }
+          onClick={() =>
+            setIsClick({ ...isClick, category: !isClick.category })
+          }
+        >
+          <label>
+            {searhcItem.category}
+            {isClick.category ? <More_white_Ic /> : <More_gray_Ic />}
+          </label>
+          <ul>{categoryList}</ul>
+        </div>
       </div>
-      <div
-        className={
-          isClick.category ? styles.search_main_on : styles.search_main_off
-        }
-        onClick={() => setIsClick({ ...isClick, category: !isClick.category })}
-      >
-        <label>
-          {searhcItem.category}
-          {isClick.category ? <More_white_Ic /> : <More_gray_Ic />}
-        </label>
-        <ul>{categoryList}</ul>
+      <div>
+        <input
+          placeholder="검색어를 입력해보세요."
+          name="search_word"
+          onChange={(e: inputType) =>
+            change({ changeItem: searhcItem, setChangeItem: setSearchItem, e })
+          }
+        ></input>
+        <ScButton />
       </div>
-      <input
-        placeholder="검색어를 입력해보세요."
-        name="search_word"
-        onChange={(e: inputType) =>
-          change({ changeItem: searhcItem, setChangeItem: setSearchItem, e })
-        }
-      ></input>
-      <ScButton />
     </form>
   );
 }
