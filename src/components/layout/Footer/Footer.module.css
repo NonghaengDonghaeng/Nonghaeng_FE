@@ -1,9 +1,9 @@
-/* desktop
-----------------------------------*/
 .footer_inner {
   @apply w-full;
 }
 
+/* desktop
+----------------------------------*/
 @media (min-width: 768px) {
   .footer_inner > div:first-child {
     @apply w-[80%] h-[80px] mx-auto;
@@ -34,5 +34,8 @@
   }
   .footer_inner > ul {
     @apply px-[5%] pt-[8px] flex items-center justify-between opacity-[80%];
+  }
+  .footer_inner > ul > li {
+    @apply cursor-pointer;
   }
 }

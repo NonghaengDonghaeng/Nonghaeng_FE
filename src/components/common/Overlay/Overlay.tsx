@@ -5,5 +5,5 @@ type PropsType = {
 };
 
 export default function Overlay({ isClick }: PropsType) {
-  return <div className={isClick ? styles.on : styles.off} />;
+  return <div className={isClick ? styles.on : styles.off}></div>;
 }

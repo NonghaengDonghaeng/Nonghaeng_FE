@@ -15,7 +15,7 @@
 /* ScMain 
 --------------------------------------------------------------*/
 .search_main {
-  @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[524px] flex justify-between absolute z-30 bg-yellow/85;
+  @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[524px] flex justify-between absolute bg-yellow/85;
 }
 
 /* region, category box*/
@@ -129,4 +129,10 @@
 }
 .search_detail_on > span {
   @apply text-[18px] text-stone font-[500];
+}
+
+@media (max-width: 767px) {
+  .ScMobile {
+    @apply fixed w-full h-full top-[60px] z-[50] bg-slate-100;
+  }
 }

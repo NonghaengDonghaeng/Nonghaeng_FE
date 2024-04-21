@@ -25,6 +25,9 @@ html {
   scroll-behavior: smooth;
   margin: 0;
 }
+body {
+  @apply text-stone font-[500];
+}
 img {
   @apply object-cover;
 }
@@ -38,7 +41,7 @@ img {
     @apply h-[240px] mt-[80px] mb-[40px];
   }
   #main {
-    @apply w-[80%] mx-auto text-stone font-[500] overflow-hidden;
+    @apply w-[80%] mx-auto  overflow-hidden;
   }
   #footer {
     @apply w-full h-[300px] bg-stone/80;
@@ -57,9 +60,9 @@ img {
     @apply h-[240px] mt-[60px] mb-[40px];
   }
   #main {
-    @apply w-[95%] mx-auto text-stone font-[500];
+    @apply w-[95%] mx-auto;
   }
   #footer {
-    @apply w-full h-[80px] bottom-0 fixed shadow-top bg-white;
+    @apply w-full h-[80px] bottom-0 fixed z-[100] shadow-top bg-white;
   }
 }

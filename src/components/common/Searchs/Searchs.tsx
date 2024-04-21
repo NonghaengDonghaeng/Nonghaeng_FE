@@ -292,3 +292,7 @@ export function ScDetailOn({ pageState, setPageState }: ScDetailPropsType) {
     </button>
   );
 }
+
+export default function ScMobile() {
+  return <div className={styles.ScMobile}>검색컴포넌트</div>;
+}
