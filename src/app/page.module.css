@@ -63,10 +63,13 @@
 
   /* section2 */
   .section2 {
-    @apply mt-[120px];
+    @apply mt-[100px] mb-[100px];
+  }
+  .section2 > article {
+    @apply w-full h-[700px] mt-[40px];
   }
   .section2 > article > h1 {
-    @apply mt-[60px] text-[24px] font-[600] items-center flex justify-between  text-green;
+    @apply text-[24px] font-[600] items-center flex justify-between  text-green;
   }
   .section2 > article > h1 > a {
     @apply text-[15px] flex items-center;
@@ -75,9 +78,6 @@
     @apply ml-[5px];
   }
   .section2 > article > hr {
-    @apply border-[1px] border-stone/80;
-  }
-  .section2 > article > ul {
-    @apply my-[20px] h-[420px];
+    @apply border-[1px] mb-[20px] border-stone/80;
   }
 }

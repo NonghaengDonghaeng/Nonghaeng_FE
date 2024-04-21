@@ -1,9 +1,11 @@
 .trip_main {
-  @apply mt-[60px];
+  @apply mt-[60px] mb-[100px];
 }
-
+.trip_main > article {
+  @apply w-full h-[700px] mt-[60px];
+}
 .trip_main > article > h1 {
-  @apply mt-[60px] text-[24px] font-[600] items-center flex justify-between  text-green;
+  @apply text-[24px] font-[600] items-center flex justify-between text-green;
 }
 .trip_main > article > h1 > a {
   @apply text-[15px] flex items-center;
@@ -12,8 +14,5 @@
   @apply ml-[5px];
 }
 .trip_main > article > hr {
-  @apply border-[1px] border-stone/80;
-}
-.trip_main > article > ul {
-  @apply my-[20px] h-[420px];
+  @apply border-[1px] mb-[20px] border-stone/80;
 }

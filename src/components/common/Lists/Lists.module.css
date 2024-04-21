@@ -1,158 +1,296 @@
 /* TourList 
 ----------------------------------------------------------*/
-.tour_list {
+/* 데스크탑 */
+@media (min-width: 768px) {
+  .tour_list {
+  }
+  .tour_list > li {
+    @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
+  }
+  .tour_list > li:nth-child(2n-1) {
+    @apply clear-left mr-[2%];
+  }
+  .tour_list > li > a {
+    @apply w-full h-full flex;
+  }
+  /* 사진영역 */
+  .tour_list > li > a > div:first-child {
+    @apply w-[45%] h-full;
+  }
+  .tour_list > li > a > div:first-child > img {
+    @apply w-[17.6%] h-[200px] rounded-xl absolute;
+  }
+  .tour_list > li > a > div:first-child > span {
+    @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
+  }
+  .tour_list > li > a > div:first-child > span > svg {
+    @apply mr-[6px];
+  }
+  /* 설명영역 */
+  .tour_list > li > a > div:last-child {
+    @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
+  }
+  .tour_list > li > a > div:last-child > h1 {
+    @apply text-[18px] font-[500] flex justify-between;
+  }
+  .tour_list > li > a > div:last-child > h1 > span {
+    @apply h-full px-[4px] py-[2px] mt-[6px] text-[8px] rounded-full text-white bg-orange;
+  }
+  .tour_list > li > a > div:last-child > h2 {
+    @apply w-full h-[36px] my-[34px] text-[12px] font-[400] block;
+  }
+  .tour_list > li > a > div:last-child > div {
+    @apply w-full h-[30px] flex justify-between;
+  }
+  .tour_list > li > a > div:last-child > div > span {
+    @apply flex items-center text-[14px] font-[500];
+  }
+  .tour_list > li > a > div:last-child > div > span > svg {
+    @apply mr-[6px];
+  }
 }
-
-/* 관광리스트 객체 영역 */
-.tour_list > li {
-  @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
-}
-.tour_list > li:nth-child(2n-1) {
-  @apply clear-left mr-[2%];
-}
-.tour_list > li > a {
-  @apply w-full h-full flex;
-}
-
-/* 사진영역 */
-.tour_list > li > a > div:first-child {
-  @apply w-[45%] h-full;
-}
-.tour_list > li > a > div:first-child > img {
-  @apply w-[17.6%] h-[200px] rounded-xl absolute;
-}
-.tour_list > li > a > div:first-child > span {
-  @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
-}
-.tour_list > li > a > div:first-child > span > svg {
-  @apply mr-[6px];
-}
-
-/* 설명영역 */
-.tour_list > li > a > div:last-child {
-  @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
-}
-.tour_list > li > a > div:last-child > h1 {
-  @apply text-[18px] font-[500] flex justify-between;
-}
-.tour_list > li > a > div:last-child > h1 > span {
-  @apply h-full px-[4px] py-[2px] mt-[6px] text-[8px] rounded-full text-white bg-orange;
-}
-.tour_list > li > a > div:last-child > h2 {
-  @apply w-full h-[36px] my-[34px] text-[12px] font-[400] block;
-}
-.tour_list > li > a > div:last-child > div {
-  @apply w-full h-[30px] flex justify-between;
-}
-.tour_list > li > a > div:last-child > div > span {
-  @apply flex items-center text-[14px] font-[500];
-}
-.tour_list > li > a > div:last-child > div > span > svg {
-  @apply mr-[6px];
+/* 모바일 */
+@media (max-width: 767px) {
+  .tour_list {
+  }
+  /* 사진영역 */
+  .tour_list > li {
+    @apply w-[49%] h-[300px] mb-[20px] float-left rounded-xl;
+  }
+  .tour_list > li:nth-child(2n-1) {
+    @apply clear-left mr-[2%];
+  }
+  .tour_list > li > a {
+    @apply w-full h-full;
+  }
+  .tour_list > li > a > div:nth-child(1) {
+    @apply h-[160px] p-[10px] relative;
+  }
+  .tour_list > li > a > div:nth-child(1) > img {
+    @apply w-full h-full absolute left-0 top-0 rounded-md z-0;
+  }
+  .tour_list > li > a > div:nth-child(1) > span {
+    @apply z-[1] flex items-center absolute text-white;
+  }
+  .tour_list > li > a > div:nth-child(1) > span > svg {
+    @apply mr-[6px];
+  }
+  /* 설명영역 */
+  .tour_list > li > a > div:nth-child(2) {
+    @apply h-[140px] p-[10px] rounded-md border-[1px] border-stone/20;
+  }
+  .tour_list > li > a > div:nth-child(2) > h1 {
+    @apply text-[18px] font-[600];
+  }
+  .tour_list > li > a > div:nth-child(2) > h1 > span {
+    @apply text-[12px] text-white font-[400] px-[4px] inline-block rounded-full bg-orange;
+  }
+  .tour_list > li > a > div:nth-child(2) > h2 {
+    @apply hidden;
+  }
+  .tour_list > li > a > div:nth-child(2) > div {
+    @apply w-full mt-[22px] flex justify-between;
+  }
+  .tour_list > li > a > div:nth-child(2) > div > span {
+    @apply flex items-center;
+  }
 }
 
 /* ExpList 
 ----------------------------------------------------------*/
-.exp_list {
+/* 데스크탑 */
+@media (min-width: 768px) {
+  .exp_list {
+  }
+  .exp_list > li {
+    @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
+  }
+  .exp_list > li:nth-child(2n-1) {
+    @apply clear-left mr-[2%];
+  }
+  .exp_list > li > a {
+    @apply w-full h-full flex;
+  }
+  /* 사진영역 */
+  .exp_list > li > a > div:first-child {
+    @apply w-[45%] h-full;
+  }
+  .exp_list > li > a > div:first-child > img {
+    @apply w-[17.6%] h-[200px] rounded-xl absolute;
+  }
+  .exp_list > li > a > div:first-child > span {
+    @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
+  }
+  .exp_list > li > a > div:first-child > span > svg {
+    @apply mr-[6px];
+  }
+  /* 설명영역 */
+  .exp_list > li > a > div:last-child {
+    @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
+  }
+  .exp_list > li > a > div:last-child > h1 {
+    @apply text-[18px] font-[500] flex justify-between;
+  }
+  .exp_list > li > a > div:last-child > h1 > span {
+    @apply h-full px-[4px] py-[2px] mt-[6px] text-[8px] rounded-full text-white bg-orange;
+  }
+  .exp_list > li > a > div:last-child > h2 {
+    @apply w-full h-[36px] my-[20px] text-[12px] font-[400] block;
+  }
+  .exp_list > li > a > div:last-child > p:nth-child(3) {
+    @apply my-[6px] text-[14px];
+  }
+  .exp_list > li > a > div:last-child > p > label {
+    @apply text-[14px] font-[500] mr-[6px];
+  }
+  .exp_list > li > a > div:last-child > p:nth-child(4) {
+    @apply text-[18px] font-[500];
+  }
 }
-
-/* 관광리스트 객체 영역 */
-.exp_list > li {
-  @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
-}
-.exp_list > li:nth-child(2n-1) {
-  @apply clear-left mr-[2%];
-}
-.exp_list > li > a {
-  @apply w-full h-full flex;
-}
-
-/* 사진영역 */
-.exp_list > li > a > div:first-child {
-  @apply w-[45%] h-full;
-}
-.exp_list > li > a > div:first-child > img {
-  @apply w-[17.6%] h-[200px] rounded-xl absolute;
-}
-.exp_list > li > a > div:first-child > span {
-  @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
-}
-.exp_list > li > a > div:first-child > span > svg {
-  @apply mr-[6px];
-}
-
-/* 설명영역 */
-.exp_list > li > a > div:last-child {
-  @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
-}
-.exp_list > li > a > div:last-child > h1 {
-  @apply text-[18px] font-[500] flex justify-between;
-}
-.exp_list > li > a > div:last-child > h1 > span {
-  @apply h-full px-[4px] py-[2px] mt-[6px] text-[8px] rounded-full text-white bg-orange;
-}
-.exp_list > li > a > div:last-child > h2 {
-  @apply w-full h-[36px] my-[20px] text-[12px] font-[400] block;
-}
-.exp_list > li > a > div:last-child > p:nth-child(3) {
-  @apply my-[6px] text-[14px];
-}
-.exp_list > li > a > div:last-child > p > label {
-  @apply text-[14px] font-[500] mr-[6px];
-}
-.exp_list > li > a > div:last-child > p:nth-child(4) {
-  @apply text-[18px] font-[500];
+/* 모바일 */
+@media (max-width: 767px) {
+  .exp_list {
+  }
+  /* 사진영역 */
+  .exp_list > li {
+    @apply w-[49%] h-[300px] mb-[20px] float-left rounded-xl;
+  }
+  .exp_list > li:nth-child(2n-1) {
+    @apply clear-left mr-[2%];
+  }
+  .exp_list > li > a {
+    @apply w-full h-full;
+  }
+  .exp_list > li > a > div:nth-child(1) {
+    @apply h-[160px] p-[10px] relative;
+  }
+  .exp_list > li > a > div:nth-child(1) > img {
+    @apply w-full h-full absolute left-0 top-0 rounded-md z-0;
+  }
+  .exp_list > li > a > div:nth-child(1) > span {
+    @apply z-[1] flex items-center absolute text-white;
+  }
+  .exp_list > li > a > div:nth-child(1) > span > svg {
+    @apply mr-[6px];
+  }
+  /* 설명영역 */
+  .exp_list > li > a > div:nth-child(2) {
+    @apply h-[140px] p-[10px] rounded-md border-[1px] border-stone/20;
+  }
+  .exp_list > li > a > div:nth-child(2) > h1 {
+    @apply text-[18px] font-[600];
+  }
+  .exp_list > li > a > div:nth-child(2) > h1 > span {
+    @apply text-[12px] text-white font-[400] px-[4px] inline-block rounded-full bg-orange;
+  }
+  .exp_list > li > a > div:nth-child(2) > h2 {
+    @apply hidden;
+  }
+  .exp_list > li > a > div:nth-child(2) > p:nth-child(3) {
+    @apply text-[14px] text-stone/60 my-[8px];
+  }
+  .exp_list > li > a > div:nth-child(2) > p:nth-child(3) > label {
+    @apply text-[16px] text-stone;
+  }
+  .exp_list > li > a > div:nth-child(2) > p:nth-child(4) {
+    @apply font-[600];
+  }
 }
 
 /* LodgList 
 ----------------------------------------------------------*/
-.lodg_list {
-  @apply block;
+/* 데스크탑 */
+@media (min-width: 768px) {
+  .lodg_list {
+    @apply block;
+  }
+  .lodg_list > li {
+    @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
+  }
+  .lodg_list > li:nth-child(2n-1) {
+    @apply clear-left mr-[2%];
+  }
+  .lodg_list > li > a {
+    @apply w-full h-full flex;
+  }
+  /* 사진영역 */
+  .lodg_list > li > a > div:first-child {
+    @apply w-[45%] h-full;
+  }
+  .lodg_list > li > a > div:first-child > img {
+    @apply w-[17.6%] h-[200px] rounded-xl absolute;
+  }
+  .lodg_list > li > a > div:first-child > span {
+    @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
+  }
+  .lodg_list > li > a > div:first-child > span > svg {
+    @apply mr-[6px];
+  }
+  /* 설명영역 */
+  .lodg_list > li > a > div:last-child {
+    @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
+  }
+  .lodg_list > li > a > div:last-child > h1 {
+    @apply text-[18px] font-[500] flex justify-between;
+  }
+  .lodg_list > li > a > div:last-child > h1 > span {
+    @apply h-full px-[4px] py-[2px] mt-[6px] text-[8px] rounded-full text-white bg-orange;
+  }
+  .lodg_list > li > a > div:last-child > h2 {
+    @apply w-full h-[36px] my-[16px] text-[12px] font-[400] block;
+  }
+  .lodg_list > li > a > div:last-child > p:nth-child(3) {
+    @apply my-[8px] text-[18px] font-[500];
+  }
+  .lodg_list > li > a > div:last-child > span {
+    @apply w-full h-[28px] py-[2px] text-center block rounded-md text-white bg-stone/60;
+  }
 }
-
-/* 관광리스트 객체 영역 */
-.lodg_list > li {
-  @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
-}
-.lodg_list > li:nth-child(2n-1) {
-  @apply clear-left mr-[2%];
-}
-.lodg_list > li > a {
-  @apply w-full h-full flex;
-}
-
-/* 사진영역 */
-.lodg_list > li > a > div:first-child {
-  @apply w-[45%] h-full;
-}
-.lodg_list > li > a > div:first-child > img {
-  @apply w-[17.6%] h-[200px] rounded-xl absolute;
-}
-.lodg_list > li > a > div:first-child > span {
-  @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
-}
-.lodg_list > li > a > div:first-child > span > svg {
-  @apply mr-[6px];
-}
-
-/* 설명영역 */
-.lodg_list > li > a > div:last-child {
-  @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
-}
-.lodg_list > li > a > div:last-child > h1 {
-  @apply text-[18px] font-[500] flex justify-between;
-}
-.lodg_list > li > a > div:last-child > h1 > span {
-  @apply h-full px-[4px] py-[2px] mt-[6px] text-[8px] rounded-full text-white bg-orange;
-}
-.lodg_list > li > a > div:last-child > h2 {
-  @apply w-full h-[36px] my-[16px] text-[12px] font-[400] block;
-}
-.lodg_list > li > a > div:last-child > p:nth-child(3) {
-  @apply my-[8px] text-[18px] font-[500];
-}
-.lodg_list > li > a > div:last-child > span {
-  @apply w-full h-[28px] py-[2px] text-center block rounded-md text-white bg-stone/60;
+/* 모바일 */
+@media (max-width: 767px) {
+  .lodg_list {
+  }
+  /* 사진영역 */
+  .lodg_list > li {
+    @apply w-[49%] h-[300px] mb-[20px] float-left rounded-xl;
+  }
+  .lodg_list > li:nth-child(2n-1) {
+    @apply clear-left mr-[2%];
+  }
+  .lodg_list > li > a {
+    @apply w-full h-full;
+  }
+  .lodg_list > li > a > div:nth-child(1) {
+    @apply h-[160px] p-[10px] relative;
+  }
+  .lodg_list > li > a > div:nth-child(1) > img {
+    @apply w-full h-full absolute left-0 top-0 rounded-md z-0;
+  }
+  .lodg_list > li > a > div:nth-child(1) > span {
+    @apply z-[1] flex items-center absolute text-white;
+  }
+  .lodg_list > li > a > div:nth-child(1) > span > svg {
+    @apply mr-[6px];
+  }
+  /* 설명영역 */
+  .lodg_list > li > a > div:nth-child(2) {
+    @apply h-[140px] p-[10px] rounded-md border-[1px] border-stone/20;
+  }
+  .lodg_list > li > a > div:nth-child(2) > h1 {
+    @apply text-[18px] font-[600];
+  }
+  .lodg_list > li > a > div:nth-child(2) > h1 > span {
+    @apply text-[12px] text-white font-[400] px-[4px] inline-block rounded-full bg-orange;
+  }
+  .lodg_list > li > a > div:nth-child(2) > h2 {
+    @apply hidden;
+  }
+  .lodg_list > li > a > div:nth-child(2) > p:nth-child(3) {
+    @apply text-[16px] font-[600] my-[6px];
+  }
+  .lodg_list > li > a > div:nth-child(2) > span {
+    @apply w-full h-[28px] flex justify-center items-center rounded-md text-white bg-stone/40;
+  }
 }
 
 /* SubList 
