@@ -29,20 +29,37 @@ img {
   @apply object-cover;
 }
 
-#header {
-  @apply w-full h-[80px] top-0 fixed z-[100] shadow-md bg-white;
+/* 데스크탑 */
+@media (min-width: 768px) {
+  #header {
+    @apply w-full h-[80px] top-0 fixed z-[100] shadow-md bg-white;
+  }
+  #nav {
+    @apply h-[240px] mt-[80px] mb-[40px];
+  }
+  #main {
+    @apply w-[80%] mx-auto text-stone font-[500] overflow-hidden;
+  }
+  #footer {
+    @apply w-full h-[300px] bg-stone/80;
+  }
 }
 
-#nav {
-  @apply h-[240px] mt-[80px] mb-[40px];
+/* 모바일 */
+@media (max-width: 767px) {
+  body::-webkit-scrollbar {
+    @apply hidden;
+  }
+  #header {
+    @apply w-full h-[60px] top-0 z-[100] fixed shadow-md bg-white;
+  }
+  #nav {
+    @apply h-[240px] mt-[60px] mb-[40px];
+  }
+  #main {
+    @apply w-[95%] mx-auto text-stone font-[500];
+  }
+  #footer {
+    @apply w-full h-[80px] bottom-0 fixed shadow-top bg-white;
+  }
 }
-
-#main {
-  @apply w-[80%] mx-auto text-stone font-[500];
-}
-
-#footer {
-  @apply w-full h-[300px] bg-stone/80;
-}
-
-/* @media(max-width:) */

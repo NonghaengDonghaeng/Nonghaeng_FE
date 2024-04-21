@@ -58,3 +58,18 @@
 .header_inner > div:nth-child(4) > a:nth-child(3):hover {
   @apply bg-orange/50;
 }
+
+@media (max-width: 767px) {
+  .header_inner {
+    @apply h-full flex justify-center;
+  }
+  .header_inner > ul {
+    @apply hidden;
+  }
+  .header_inner > form {
+    @apply hidden;
+  }
+  .header_inner > div:nth-child(4) {
+    @apply hidden;
+  }
+}
