@@ -1,5 +1,5 @@
 .trip_main {
-  @apply mt-[60px] mb-[100px];
+  @apply mt-[80px] mb-[80px];
 }
 .trip_main > article {
   @apply w-full h-[700px] mt-[60px];

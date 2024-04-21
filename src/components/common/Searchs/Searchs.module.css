@@ -9,7 +9,7 @@
 /* SchButton
 --------------------------------------------------------------*/
 .search_button {
-  @apply w-[88px] h-[48px] p-[10px] rounded-[5px] flex justify-between items-center text-white bg-stone;
+  @apply w-[68px] h-[44px] p-[6px] rounded-md flex justify-between items-center text-white bg-stone;
 }
 
 /* ScMain 
@@ -68,7 +68,7 @@
 /* mobile */
 @media (max-width: 767px) {
   .search_main {
-    @apply w-[95%] h-[112px] px-[2.5%] mx-auto rounded-[5px] top-[322px] absolute bg-yellow/85;
+    @apply w-[95%] h-[112px] px-[2.5%] mx-auto rounded-[5px] top-[322px] absolute bg-yellow/90;
   }
   /* region, category box*/
   .search_main > div {
@@ -78,7 +78,7 @@
     @apply z-[10];
   }
   .search_main > div > div {
-    @apply w-[48%] h-[38px] rounded-[5px];
+    @apply w-[48%] h-[44px] rounded-[5px];
   }
   .search_main > div > div > label {
     @apply w-full h-full px-[10%] flex justify-between items-center cursor-pointer;
@@ -106,7 +106,7 @@
   }
   /* input */
   .search_main > div > input {
-    @apply w-[70%] h-[48px] px-[16px] rounded-[5px];
+    @apply w-[75%] h-[44px] px-[16px] rounded-[5px];
   }
 }
 
