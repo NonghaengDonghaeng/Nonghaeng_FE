@@ -34,6 +34,9 @@ export default function Footer() {
           </div>
           <ul>
             <li
+              onTouchEnd={() =>
+                setIsClick({ ...isClick, menu: !isClick.menu, search: false })
+              }
               onClick={() =>
                 setIsClick({ ...isClick, menu: !isClick.menu, search: false })
               }
@@ -41,6 +44,9 @@ export default function Footer() {
               <Menu_Ic />
             </li>
             <li
+              onTouchEnd={() =>
+                setIsClick({ ...isClick, menu: !isClick.menu, search: false })
+              }
               onClick={() =>
                 setIsClick({ ...isClick, search: !isClick.search, menu: false })
               }
