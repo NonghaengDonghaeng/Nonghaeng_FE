@@ -33,23 +33,19 @@ export default function Footer() {
             <p>저작권 관련 글</p>
           </div>
           <ul>
-            <li>
-              <button
-                onClick={() =>
-                  setIsClick({ ...isClick, menu: !isClick.menu, search: false })
-                }
-              >
-                <Menu_Ic />
-              </button>
+            <li
+              onClick={() =>
+                setIsClick({ ...isClick, menu: !isClick.menu, search: false })
+              }
+            >
+              <Menu_Ic />
             </li>
-            <li>
-              <button
-                onClick={() =>
-                  setIsClick({ ...isClick, menu: !isClick.menu, search: false })
-                }
-              >
-                <Search_Ic />
-              </button>
+            <li
+              onClick={() =>
+                setIsClick({ ...isClick, menu: !isClick.menu, search: false })
+              }
+            >
+              <Search_Ic />
             </li>
             <li>
               <Link href="/">
