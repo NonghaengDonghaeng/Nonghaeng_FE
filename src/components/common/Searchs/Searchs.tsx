@@ -18,6 +18,7 @@ import Sitemap_gray_Ic from "icon/sitemap_gray.svg";
 import Search_white_Ic from "icon/search_white.svg";
 import More_gray_Ic from "icon/more_gray.svg";
 import More_white_Ic from "icon/more_white.svg";
+import Search_gray_Ic from "icon/search_gray.svg";
 
 /*
 1.ScButton
@@ -293,6 +294,39 @@ export function ScDetailOn({ pageState, setPageState }: ScDetailPropsType) {
   );
 }
 
-export default function ScMobile() {
-  return <div className={styles.ScMobile}>검색컴포넌트</div>;
+export default function ScBase() {
+  const search = useSearch();
+  const change = useChange();
+
+  const [searchItem, setSearchItem] = useState<{
+    searchWord?: string;
+  }>({
+    searchWord: "",
+  });
+
+  function onSubmit(e: formType) {
+    e.preventDefault();
+    search({ searchItem: searchItem });
+  }
+
+  return (
+    <div className={styles.search_base}>
+      <form onSubmit={onSubmit}>
+        <input
+          onChange={(e: inputType) =>
+            change({
+              changeItem: searchItem,
+              setChangeItem: setSearchItem,
+              e,
+            })
+          }
+          placeholder="알고 싶은 정보가 있으세요?"
+          name="search_word"
+        ></input>
+        <button type="submit">
+          <Search_gray_Ic />
+        </button>
+      </form>
+    </div>
+  );
 }

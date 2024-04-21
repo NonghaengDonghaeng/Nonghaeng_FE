@@ -7,14 +7,17 @@ import Menu_Ic from "icon/sitemap_gray.svg";
 import Search_Ic from "icon/search_gray.svg";
 import Person_Ic from "icon/person_gray.svg";
 import Great_Ic from "icon/great_gray.svg";
-
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import Menu from "@/components/common/Menu/Menu";
-import ScMobile from "@/components/common/Searchs/Searchs";
+import ScBase from "@/components/common/Searchs/Searchs";
 
 export default function Footer() {
+  const pathName = usePathname();
+
   const [isClick, setIsClick] = useState({ menu: false, search: false });
+  useEffect(() => setIsClick({ menu: false, search: false }), [pathName]);
 
   const mainLink = footerHref.map((item, index) => (
     <Link href={item.href} key={index}>
@@ -64,7 +67,7 @@ export default function Footer() {
         </div>
       </footer>
       {isClick.menu && <Menu />}
-      {isClick.search && <ScMobile />}
+      {isClick.search && <ScBase />}
     </>
   );
 }

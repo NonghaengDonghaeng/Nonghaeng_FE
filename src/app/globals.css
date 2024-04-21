@@ -54,7 +54,7 @@ img {
     @apply hidden;
   }
   #header {
-    @apply w-full h-[60px] top-0 z-[100] fixed shadow-md bg-white;
+    @apply w-full h-[60px]  top-0 z-[100] fixed shadow-md bg-white;
   }
   #nav {
     @apply h-[240px] mt-[60px] mb-[40px];

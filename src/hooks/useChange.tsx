@@ -2,8 +2,10 @@ import { inputType, selectType } from "@/types/eventType";
 
 type PropsType = {
   changeItem: {
+    searchWord?: string;
     region?: string[] | string;
     category?: string[] | string;
+
     area_code?: string;
     eamil?: string;
     name?: string;
@@ -13,6 +15,7 @@ type PropsType = {
   };
   setChangeItem: React.Dispatch<
     React.SetStateAction<{
+      searchWord?: string;
       region?: string[] | string;
       category?: string[] | string;
       area_code?: string;

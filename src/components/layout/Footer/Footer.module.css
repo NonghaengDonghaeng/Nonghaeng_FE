@@ -1,7 +1,3 @@
-.footer_inner {
-  @apply w-full;
-}
-
 /* desktop
 ----------------------------------*/
 @media (min-width: 768px) {

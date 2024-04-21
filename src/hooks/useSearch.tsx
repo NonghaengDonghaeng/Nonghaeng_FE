@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation";
 
 type propsType = {
   searchItem: {
-    search_word?: string;
+    searchWord?: string;
     region?: string[] | string;
     category?: string[] | string;
   };
@@ -27,7 +27,7 @@ export function useSearch() {
     // 지역x, 카테고리x
     if (!searchItem.region && !searchItem.category) {
       // router.push(`/search?search_word=${search_word}`);
-      window.location.replace(`/search?search_word=${searchItem.search_word}`);
+      window.location.replace(`/search?search_word=${searchItem.searchWord}`);
     }
     // 카테고리o, 지역 ?
     else if (
@@ -37,7 +37,7 @@ export function useSearch() {
       router.push(
         `/trip/${tripMap[searchItem.category]}?${
           searchItem.region !== "지역선택" && `region=${searchItem.region}`
-        }&search_word=${searchItem.search_word}`
+        }&search_word=${searchItem.searchWord}`
       );
     }
     // 카테고리x

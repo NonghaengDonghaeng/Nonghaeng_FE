@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useChange } from "@/hooks/useChange";
 import { useSearch } from "@/hooks/useSearch";
 import styles from "./Header.module.css";
-import { headerHref } from "../../../../public/href/href";
+import { menuHref } from "href/href";
 import Nonghaeng_Ic from "icon/nonghaeng.svg";
 import Sitemap_gray_Ic from "icon/sitemap_gray.svg";
 import Search_gray_Ic from "icon/search_gray.svg";
@@ -14,6 +14,7 @@ import { pageStateType } from "@/types/pageStateType";
 import { formType } from "@/types/eventType";
 import store from "@/redux/loginStateStore";
 import { verifyJwtApi } from "@/api/loginApi";
+import ScBase from "@/components/common/Searchs/Searchs";
 
 type SubMenuType = { href: string; title: string };
 
@@ -23,9 +24,6 @@ function Header() {
   const pathName = usePathname();
 
   const [loginState, setLoginState] = useState(false);
-  const [searchItem, setSearchItem] = useState<pageStateType>({
-    search_word: "",
-  });
 
   useEffect(() => {
     verifyJwtApi().then(() => {
@@ -41,11 +39,6 @@ function Header() {
     store.dispatch({ type: "LOGOUT" });
   }
 
-  function onSubmit(e: formType) {
-    e.preventDefault();
-    search({ searchItem: searchItem });
-  }
-
   const [isHover, setIsHover] = useState(false);
   const subMenuList = (subMenu: SubMenuType[]) => (
     <ul className={`${styles.subMenu} ${isHover && styles.on}`}>
@@ -56,7 +49,7 @@ function Header() {
       ))}
     </ul>
   );
-  const mainMenuList = headerHref.map((item, index) => (
+  const mainMenuList = menuHref.map((item, index) => (
     <li key={index}>
       <Link href={item.href}>{item.title}</Link>
       {item.subMenu && subMenuList(item.subMenu)}
@@ -75,22 +68,7 @@ function Header() {
         >
           {mainMenuList}
         </ul>
-        <form onSubmit={onSubmit}>
-          <input
-            onChange={(e: inputType) =>
-              change({
-                changeItem: searchItem,
-                setChangeItem: setSearchItem,
-                e,
-              })
-            }
-            placeholder="알고 싶은 정보가 있으세요?"
-            name="search_word"
-          ></input>
-          <button type="submit">
-            <Search_gray_Ic />
-          </button>
-        </form>
+        <ScBase />
         <div>
           {loginState ? (
             <button onClick={logout}>로그아웃</button>
