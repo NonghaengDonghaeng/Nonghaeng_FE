@@ -1,7 +1,7 @@
 import styles from "./Overlay.module.css";
 
 type PropsType = {
-  isClick: boolean;
+  isClick: boolean | undefined;
 };
 
 export default function Overlay({ isClick }: PropsType) {

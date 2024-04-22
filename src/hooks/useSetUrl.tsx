@@ -2,12 +2,12 @@ import { useRouter } from "next/navigation";
 
 type propsType = {
   urlItem: {
-    page_index?: number;
-    search_word?: string;
+    pageIndex?: number;
+    searchWord?: string;
     region?: string[] | string;
     category?: string[] | string;
-    max_cost?: string;
-    min_cost?: string;
+    maxCost?: string;
+    minCost?: string;
   };
 };
 
@@ -20,11 +20,11 @@ export default function useSetUrl() {
    */
 
   function setUrl({ urlItem }: propsType) {
-    if (urlItem.page_index) {
-      urlParams.set("page_index", `${urlItem.page_index}`);
+    if (urlItem.pageIndex) {
+      urlParams.set("page_index", `${urlItem.pageIndex}`);
     }
-    if (urlItem.search_word) {
-      urlParams.set("search_word", `${urlItem.search_word}`);
+    if (urlItem.searchWord) {
+      urlParams.set("search_word", `${urlItem.searchWord}`);
     }
     if (Array.isArray(urlItem.region)) {
       urlItem.region.map((item) => urlParams.append("region", `${item}`));
@@ -32,11 +32,11 @@ export default function useSetUrl() {
     if (Array.isArray(urlItem.category)) {
       urlItem.category.map((item) => urlParams.append("category", `${item}`));
     }
-    if (urlItem.max_cost) {
-      urlParams.set("max_cost", `${urlItem.max_cost}`);
+    if (urlItem.maxCost) {
+      urlParams.set("max_cost", `${urlItem.maxCost}`);
     }
-    if (urlItem.min_cost) {
-      urlParams.set("min_cost", `${urlItem.min_cost}`);
+    if (urlItem.minCost) {
+      urlParams.set("min_cost", `${urlItem.minCost}`);
     }
     router.push(`?${urlParams}`);
   }

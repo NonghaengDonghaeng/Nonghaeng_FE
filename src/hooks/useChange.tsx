@@ -5,7 +5,6 @@ type PropsType = {
     searchWord?: string;
     region?: string[] | string;
     category?: string[] | string;
-
     area_code?: string;
     eamil?: string;
     name?: string;

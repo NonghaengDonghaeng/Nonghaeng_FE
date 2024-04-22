@@ -8,19 +8,21 @@ import Paging from "@/components/common/Paging/Paging";
 import { ScDetail, ScDetailOn } from "@/components/common/Searchs/Searchs";
 import { getTourListApi } from "@/api/getListDataApi";
 import styles from "./page.module.css";
-import { pageStateType } from "@/types/pageStateType";
 import { tourListPageDataType } from "@/types/dataType/listPageDataType";
+import tourListPageResData from "@/db/tourdata/list.json";
+import { pageStateType } from "@/types/stateType";
 
 export default function Page() {
   const searchParams = useSearchParams();
   const setUrl = useSetUrl();
 
+  // pageState
   const [pageState, setPageState] = useState<pageStateType>({
     isClick: false,
+    pageIndex: Number(searchParams.get("page_index")) || 1,
     state: false,
-    page_type: "tour",
-    page_index: Number(searchParams.get("page_index")) || 1,
-    search_word: searchParams.get("search_word") || "",
+    pageType: "tour",
+    searchWord: searchParams.get("search_word") || "",
     region: Array.from(new Set(searchParams.getAll("region"))) || [],
     category: Array.from(new Set(searchParams.getAll("category"))) || [],
   });
@@ -30,13 +32,14 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    getTourListApi({
-      pageIndex:
-        pageState.page_index !== undefined ? pageState.page_index - 1 : 0,
-      searchWord: pageState.search_word,
-      setResData,
-    });
-  }, [pageState.state, pageState.page_index]);
+    // getTourListApi({
+    //   pageIndex:
+    //     pageState.page_index !== undefined ? pageState.page_index - 1 : 0,
+    //   searchWord: pageState.search_word,
+    //   setResData,
+    // });
+    setResData(tourListPageResData);
+  }, [pageState.state, pageState.pageIndex]);
 
   return (
     <>

@@ -7,7 +7,7 @@ import Overlay from "@/components/common/Overlay/Overlay";
 import { ExpList } from "@/components/common/Lists/Lists";
 import Paging from "@/components/common/Paging/Paging";
 import styles from "./page.module.css";
-import { pageStateType } from "@/types/pageStateType";
+import { pageStateType } from "@/types/stateType";
 import { expListPageDatatype } from "@/types/dataType/listPageDataType";
 import { getExpListApi } from "@/api/getListDataApi";
 import expListPageResData from "@/db/expdata/list.json";
@@ -19,13 +19,13 @@ export default function Page() {
   const [pageState, setPageState] = useState<pageStateType>({
     isClick: false,
     state: false,
-    page_type: "exp",
-    page_index: Number(searchParams.get("page_index")) || 1,
-    search_word: searchParams.get("search_word") || "",
+    pageType: "exp",
+    pageIndex: Number(searchParams.get("page_index")) || 1,
+    searchWord: searchParams.get("search_word") || "",
     region: Array.from(new Set(searchParams.getAll("region"))) || [],
     category: Array.from(new Set(searchParams.getAll("category"))) || [],
-    max_cost: searchParams.get("max_cost") || "",
-    min_cost: searchParams.get("min_cost") || "",
+    maxCost: searchParams.get("max_cost") || "",
+    minCost: searchParams.get("min_cost") || "",
   });
 
   const [resData, setResData] = useState<expListPageDatatype>();
@@ -35,11 +35,11 @@ export default function Page() {
     setUrl({ urlItem: pageState });
     getExpListApi({
       pageIndex:
-        pageState.page_index !== undefined ? pageState.page_index - 1 : 0,
-      searchWord: pageState.search_word,
+        pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
+      searchWord: pageState.searchWord,
       setResData,
     });
-  }, [pageState.state, pageState.page_index]);
+  }, [pageState.state, pageState.pageIndex]);
 
   return (
     <>

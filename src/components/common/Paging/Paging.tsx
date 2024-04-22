@@ -1,5 +1,6 @@
 import styles from "./Paging.module.css";
-import { pageStateType, setPageStateType } from "@/types/pageStateType";
+import { pageStateType } from "@/types/stateType";
+import { setPageStateType } from "@/types/setStateType";
 
 type propsType = {
   pageState: pageStateType;
@@ -23,10 +24,8 @@ export default function Paging({
   const pageList = numbering(totalPages || 1).map((item, index) => (
     <li
       key={index}
-      className={`${
-        pageState.page_index == index + 1 ? styles.on : styles.off
-      }`}
-      onClick={() => setPageState({ ...pageState, page_index: index + 1 })}
+      className={`${pageState.pageIndex == index + 1 ? styles.on : styles.off}`}
+      onClick={() => setPageState({ ...pageState, pageIndex: index + 1 })}
     >
       {item}
     </li>

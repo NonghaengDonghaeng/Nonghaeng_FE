@@ -1,12 +1,12 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import Image from "next/image";
 import styles from "./Searchs.module.css";
 import { useState } from "react";
 import { useSearch } from "@/hooks/useSearch";
 import { useChange } from "@/hooks/useChange";
 import { inputType, formType } from "@/types/eventType";
-import { pageStateType, setPageStateType } from "@/types/pageStateType";
+import { pageStateType } from "@/types/stateType";
+import { setPageStateType } from "@/types/setStateType";
 import {
   region,
   category,
@@ -48,7 +48,7 @@ export function ScMain() {
   const change = useChange();
 
   const [searhcItem, setSearchItem] = useState<pageStateType>({
-    search_word: "",
+    searchWord: "",
     region: "지역선택",
     category: "유형선택",
   });
@@ -109,7 +109,7 @@ export function ScMain() {
       <div>
         <input
           placeholder="검색어를 입력해보세요."
-          name="search_word"
+          name="searchWord"
           onChange={(e: inputType) =>
             change({ changeItem: searhcItem, setChangeItem: setSearchItem, e })
           }
@@ -129,7 +129,7 @@ export function ScTotal() {
   const change = useChange();
 
   const [searchItem, setSearchItem] = useState<pageStateType>({
-    search_word: searchParams.get("search_word") || "",
+    searchWord: searchParams.get("search_word") || "",
     region: "",
     category: "",
   });
@@ -143,7 +143,7 @@ export function ScTotal() {
     <form className={styles.total_search} onSubmit={onSubmit}>
       <input
         placeholder="검색어를 입력해보세요."
-        name="search_word"
+        name="searchWord"
         onChange={(e: inputType) =>
           change({ changeItem: searchItem, setChangeItem: setSearchItem, e })
         }
@@ -239,19 +239,19 @@ export function ScDetail({ pageState, setPageState }: ScDetailPropsType) {
           <span>지역선택</span>
           <ul>{regionList}</ul>
         </div>
-        {pageState.page_type == "tour" && (
+        {pageState.pageType == "tour" && (
           <div>
             <span>관광유형선택</span>
             <ul>{categoryList_tour}</ul>
           </div>
         )}
-        {pageState.page_type == "exp" && (
+        {pageState.pageType == "exp" && (
           <div>
             <span>체험유형선택</span>
             <ul>{categoryList_exp}</ul>
           </div>
         )}
-        {pageState.page_type == "lodg" && (
+        {pageState.pageType == "lodg" && (
           <div>
             <span>숙박유형선택</span>
             <ul>{categoryList_lodg}</ul>
@@ -259,21 +259,21 @@ export function ScDetail({ pageState, setPageState }: ScDetailPropsType) {
         )}
         <div
           className={`${
-            pageState.page_type == "tour" && styles.searhc_detail_off
+            pageState.pageType == "tour" && styles.searhc_detail_off
           }`}
         >
           <span>상품가격</span>
-          <input placeholder="최소가격" name="min_cost" />
+          <input placeholder="최소가격" name="minCost" />
           <label>-</label>
-          <input placeholder="최대가격" name="max_cost" />
+          <input placeholder="최대가격" name="maxCost" />
         </div>
-        <input placeholder="키워드 검색" name="search_word" />
+        <input placeholder="키워드 검색" name="searchWord" />
       </div>
       <button
         onClick={() =>
           setPageState({
             ...pageState,
-            page_index: 1,
+            pageIndex: 1,
             state: !pageState.state,
             isClick: false,
           })
@@ -327,7 +327,7 @@ export default function ScBase() {
             })
           }
           placeholder="알고 싶은 정보가 있으세요?"
-          name="search_word"
+          name="searchWord"
         ></input>
         <button type="submit">
           <Search_gray_Ic />

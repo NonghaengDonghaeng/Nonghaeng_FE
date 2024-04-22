@@ -8,7 +8,7 @@ import Overlay from "@/components/common/Overlay/Overlay";
 import { LodgList } from "@/components/common/Lists/Lists";
 import Paging from "@/components/common/Paging/Paging";
 import styles from "./page.module.css";
-import { pageStateType } from "@/types/pageStateType";
+import { pageStateType } from "@/types/stateType";
 import { lodgListPageDataType } from "@/types/dataType/listPageDataType";
 import { getLodgListApi } from "@/api/getListDataApi";
 import lodgListPageResData from "@/db/lodgdata/list.json";
@@ -20,13 +20,13 @@ export default function Page() {
   const [pageState, setPageState] = useState<pageStateType>({
     isClick: false,
     state: false,
-    page_type: "lodg",
-    page_index: Number(searchParams.get("page_index")) || 1,
-    search_word: searchParams.get("search_word") || "",
+    pageType: "lodg",
+    pageIndex: Number(searchParams.get("page_index")) || 1,
+    searchWord: searchParams.get("search_word") || "",
     region: Array.from(new Set(searchParams.getAll("region"))) || [],
     category: Array.from(new Set(searchParams.getAll("category"))) || [],
-    max_cost: searchParams.get("max_cost") || "",
-    min_cost: searchParams.get("min_cost") || "",
+    maxCost: searchParams.get("max_cost") || "",
+    minCost: searchParams.get("min_cost") || "",
   });
 
   const [resData, setResData] = useState<lodgListPageDataType>();
@@ -36,11 +36,11 @@ export default function Page() {
     setUrl({ urlItem: pageState });
     getLodgListApi({
       pageIndex:
-        pageState.page_index !== undefined ? pageState.page_index - 1 : 0,
-      searchWord: pageState.search_word,
+        pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
+      searchWord: pageState.searchWord,
       setResData,
     });
-  }, [pageState.state, pageState.page_index]);
+  }, [pageState.state, pageState.pageIndex]);
 
   return (
     <>
