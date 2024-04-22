@@ -5,10 +5,10 @@
   .tour_list {
   }
   .tour_list > li {
-    @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
+    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl;
   }
   .tour_list > li:nth-child(2n-1) {
-    @apply clear-left mr-[2%];
+    @apply mr-[2%];
   }
   .tour_list > li > a {
     @apply w-full h-full flex;
@@ -55,10 +55,10 @@
   }
   /* 사진영역 */
   .tour_list > li {
-    @apply w-[49%] h-[300px] mb-[20px] float-left rounded-xl;
+    @apply w-[49%] h-[300px] mb-[20px] inline-block rounded-xl;
   }
   .tour_list > li:nth-child(2n-1) {
-    @apply clear-left mr-[2%];
+    @apply mr-[2%];
   }
   .tour_list > li > a {
     @apply w-full h-full;
@@ -103,10 +103,10 @@
   .exp_list {
   }
   .exp_list > li {
-    @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
+    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl;
   }
   .exp_list > li:nth-child(2n-1) {
-    @apply clear-left mr-[2%];
+    @apply mr-[2%];
   }
   .exp_list > li > a {
     @apply w-full h-full flex;
@@ -153,10 +153,10 @@
   }
   /* 사진영역 */
   .exp_list > li {
-    @apply w-[49%] h-[300px] mb-[20px] float-left rounded-xl;
+    @apply w-[49%] h-[300px] mb-[20px] inline-block rounded-xl;
   }
   .exp_list > li:nth-child(2n-1) {
-    @apply clear-left mr-[2%];
+    @apply mr-[2%];
   }
   .exp_list > li > a {
     @apply w-full h-full;
@@ -205,10 +205,10 @@
     @apply block;
   }
   .lodg_list > li {
-    @apply w-[49%] h-[200px] mb-[20px] float-left rounded-xl;
+    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl;
   }
   .lodg_list > li:nth-child(2n-1) {
-    @apply clear-left mr-[2%];
+    @apply mr-[2%];
   }
   .lodg_list > li > a {
     @apply w-full h-full flex;
@@ -252,10 +252,10 @@
   }
   /* 사진영역 */
   .lodg_list > li {
-    @apply w-[49%] h-[300px] mb-[20px] float-left rounded-xl;
+    @apply w-[49%] h-[300px] mb-[20px] inline-block rounded-xl;
   }
   .lodg_list > li:nth-child(2n-1) {
-    @apply clear-left mr-[2%];
+    @apply mr-[2%];
   }
   .lodg_list > li > a {
     @apply w-full h-full;

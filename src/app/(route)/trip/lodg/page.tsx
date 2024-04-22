@@ -35,12 +35,13 @@ export default function Page() {
   // api useEffect1
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    getLodgListApi({
-      pageIndex:
-        pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
-      searchWord: pageState.searchWord,
-      setResData,
-    });
+    // getLodgListApi({
+    //   pageIndex:
+    //     pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
+    //   searchWord: pageState.searchWord,
+    //   setResData,
+    // });
+    setResData(lodgListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 
   return (

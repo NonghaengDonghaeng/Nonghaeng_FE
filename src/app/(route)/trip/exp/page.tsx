@@ -33,12 +33,13 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    getExpListApi({
-      pageIndex:
-        pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
-      searchWord: pageState.searchWord,
-      setResData,
-    });
+    // getExpListApi({
+    //   pageIndex:
+    //     pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
+    //   searchWord: pageState.searchWord,
+    //   setResData,
+    // });
+    setResData(expListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 
   return (
