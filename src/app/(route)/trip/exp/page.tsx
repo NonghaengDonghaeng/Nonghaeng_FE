@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import { ScDetail, ScDetailOn } from "@/components/common/Searchs/Searchs";
+import { Filter, FilterOn } from "@/components/common/Filters/Filters";
 import Overlay from "@/components/common/Overlay/Overlay";
 import { ExpList } from "@/components/common/Lists/Lists";
 import Paging from "@/components/common/Paging/Paging";
@@ -46,11 +46,11 @@ export default function Page() {
       <section className={styles.exp_main}>
         <div>
           <h1>농촌체험</h1>
-          <ScDetailOn pageState={pageState} setPageState={setPageState} />
-          <ScDetail pageState={pageState} setPageState={setPageState} />
-          <Overlay isClick={pageState.isClick} />
+          <FilterOn pageState={pageState} setPageState={setPageState} />
+          {/* <Overlay isClick={pageState.isClick} /> */}
         </div>
         <hr></hr>
+        <Filter pageState={pageState} setPageState={setPageState} />
         <article>
           <ExpList content={resData?.content} />
         </article>

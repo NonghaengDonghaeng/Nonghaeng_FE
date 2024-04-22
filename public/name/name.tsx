@@ -18,6 +18,25 @@ export const category_tour = [
   "우수관광농원",
 ];
 
+export const tourCategoryMap = [
+  { code: "0", title: "농촌체험휴양마을" },
+  { code: "1", title: "농촌교육농장" },
+  { code: "2", title: "우수관광농원" },
+];
+
+export const expCategoryMap = [
+  { code: "0", title: "농촌체험" },
+  { code: "1", title: "만들기체험" },
+  { code: "2", title: "문화체험" },
+  { code: "3", title: "레포츠체험" },
+];
+
+export const lodgCategoryMap = [
+  { code: "0", title: "마을숙박" },
+  { code: "1", title: "민박" },
+  { code: "2", title: "캠핑" },
+];
+
 export const category_exp = [
   "농촌체험",
   "만들기 체험",

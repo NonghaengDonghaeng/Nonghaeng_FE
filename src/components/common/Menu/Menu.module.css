@@ -6,7 +6,7 @@
 
 @media (max-width: 767px) {
   .menu {
-    @apply fixed w-full left-0 h-full top-[60px] z-[50] bg-white;
+    @apply fixed w-full left-0 h-full top-0 pt-[60px] z-[50] bg-white;
   }
   .menu > div {
     @apply w-full border-b-[1px] border-stone/20;

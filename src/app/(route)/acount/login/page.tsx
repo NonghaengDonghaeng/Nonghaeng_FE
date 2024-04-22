@@ -156,7 +156,6 @@ export default function Page() {
           <span className="text-base font-semibold">카카오톡으로 계속하기</span>
         </button>
       </article>
-
       <article className="flex flex-col space-y-3 w-1/2 pr-3 ml-10">
         <div className="text-center mb-3">
           <h1 className="text-2xl font-bold mt-14 mb-10">판매자 로그인</h1>

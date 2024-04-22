@@ -5,12 +5,12 @@ import useSetUrl from "@/hooks/useSetUrl";
 import Overlay from "@/components/common/Overlay/Overlay";
 import { TourList } from "@/components/common/Lists/Lists";
 import Paging from "@/components/common/Paging/Paging";
-import { ScDetail, ScDetailOn } from "@/components/common/Searchs/Searchs";
 import { getTourListApi } from "@/api/getListDataApi";
 import styles from "./page.module.css";
 import { tourListPageDataType } from "@/types/dataType/listPageDataType";
 import tourListPageResData from "@/db/tourdata/list.json";
 import { pageStateType } from "@/types/stateType";
+import { Filter, FilterOn } from "@/components/common/Filters/Filters";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -46,11 +46,11 @@ export default function Page() {
       <section className={styles.tour_main}>
         <div>
           <h1>농촌관광</h1>
-          <ScDetailOn pageState={pageState} setPageState={setPageState} />
-          <ScDetail pageState={pageState} setPageState={setPageState} />
-          <Overlay isClick={pageState.isClick} />
+          <FilterOn pageState={pageState} setPageState={setPageState} />
+          {/* <Overlay isClick={pageState.isClick} /> */}
         </div>
         <hr></hr>
+        <Filter pageState={pageState} setPageState={setPageState} />
         <article>
           <TourList content={resData?.content} />
         </article>

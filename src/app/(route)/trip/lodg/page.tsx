@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import { ScDetail, ScDetailOn } from "@/components/common/Searchs/Searchs";
+
+import { Filter, FilterOn } from "@/components/common/Filters/Filters";
 import Overlay from "@/components/common/Overlay/Overlay";
 import { LodgList } from "@/components/common/Lists/Lists";
 import Paging from "@/components/common/Paging/Paging";
@@ -47,11 +48,11 @@ export default function Page() {
       <section className={styles.lodg_main}>
         <div>
           <h1>농촌숙박</h1>
-          <ScDetailOn pageState={pageState} setPageState={setPageState} />
-          <ScDetail pageState={pageState} setPageState={setPageState} />
-          <Overlay isClick={pageState.isClick} />
+          <FilterOn pageState={pageState} setPageState={setPageState} />
+          {/* <Overlay isClick={pageState.isClick} /> */}
         </div>
         <hr></hr>
+        <Filter pageState={pageState} setPageState={setPageState} />
         <article>
           <LodgList content={resData?.content} />
         </article>
