@@ -14,15 +14,14 @@ import Email_orange_Ic from "icon/email_orange.svg";
 import Tell_orange_Ic from "icon/tell_orange.svg";
 import Exp_orange_Ic from "icon/exp_orange.svg";
 import Lodg_orange_Ic from "icon/lodg_orange.svg";
+import DetailImg from "@/components/common/DetailImg/DetailImg";
 
 export default function Page() {
   const { element, moveElement } = useMove();
   const [pageState, setPageState] = useState<{
     isClick: { exp: boolean; lodg: boolean };
-    img_url: string | any;
   }>({
     isClick: { exp: false, lodg: false },
-    img_url: "",
   });
 
   const [resData, setResData] = useState<tourDetailPageDataType>();
@@ -32,33 +31,12 @@ export default function Page() {
     setResData(tourDetailPageResData);
   }, []);
 
-  useEffect(
-    () => setPageState({ ...pageState, img_url: resData?.main_img_url }),
-    [resData?.main_img_url]
-  );
-
-  const imgList = resData?.sub_img_url.map((item, index) => (
-    <Image
-      className={`${
-        pageState.img_url == item ? styles.img_on : styles.img_off
-      }`}
-      key={index}
-      src={item}
-      onClick={() => setPageState({ ...pageState, img_url: item })}
-      alt="sub_img"
-      width={800}
-      height={800}
-    />
-  ));
-
   return (
     <>
       <section className={styles.section1}>
-        <Image
-          src={pageState.img_url}
-          alt="main_img"
-          width={800}
-          height={800}
+        <DetailImg
+          mainImgUrl={resData?.main_img_url}
+          subImgUrl={resData?.sub_img_url}
         />
         <div>
           <div>
@@ -75,7 +53,6 @@ export default function Page() {
             </h1>
             <h2>{resData?.introduction}</h2>
           </div>
-          <div>{imgList}</div>
         </div>
         <div>
           <ul>

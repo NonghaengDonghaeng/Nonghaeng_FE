@@ -1,0 +1,17 @@
+.detail_img {
+}
+
+@media (max-width: 767px) {
+  .detail_img > img {
+    @apply w-full h-[200px] rounded-md;
+  }
+  .detail_img > ul {
+    @apply py-[8px] flex justify-between;
+  }
+  .detail_img > ul > li {
+    @apply w-[20%];
+  }
+  .detail_img > ul > li > img {
+    @apply rounded-md;
+  }
+}

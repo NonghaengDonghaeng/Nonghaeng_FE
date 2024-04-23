@@ -1,5 +1,5 @@
 .section1 {
-  @apply w-full h-[900px] mt-[80px]  text-stone font-[500];
+  @apply w-full h-[900px] mt-[60px]  text-stone font-[500];
 }
 .section1 > img {
   @apply w-full h-[500px] rounded-3xl object-cover;
