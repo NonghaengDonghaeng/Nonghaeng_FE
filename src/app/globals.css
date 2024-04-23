@@ -25,9 +25,11 @@ html {
   scroll-behavior: smooth;
   margin: 0;
 }
+
 body {
   @apply text-stone font-[500];
 }
+
 img {
   @apply object-cover;
 }
@@ -41,7 +43,7 @@ img {
     @apply h-[240px] mt-[60px] mb-[40px];
   }
   #main {
-    @apply w-[80%] mx-auto  overflow-hidden;
+    @apply w-[80%] mx-auto;
   }
   #footer {
     @apply w-full h-[300px] bg-stone/80;
@@ -50,7 +52,7 @@ img {
 
 /* 모바일 */
 @media (max-width: 767px) {
-  body::-webkit-scrollbar {
+  body ::-webkit-scrollbar {
     @apply hidden;
   }
   #header {

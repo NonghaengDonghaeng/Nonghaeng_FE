@@ -2,8 +2,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { useChange } from "@/hooks/useChange";
-import { useSearch } from "@/hooks/useSearch";
 import styles from "./Header.module.css";
 import { menuHref } from "href/href";
 import Nonghaeng_Ic from "icon/nonghaeng.svg";
@@ -15,8 +13,6 @@ import ScBase from "@/components/common/Searchs/Searchs";
 type SubMenuType = { href: string; title: string };
 
 function Header() {
-  const change = useChange();
-  const search = useSearch();
   const pathName = usePathname();
 
   const [loginState, setLoginState] = useState(false);
