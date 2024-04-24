@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import useMove from "@/hooks/useMove";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import { SubList } from "@/components/common/Lists/Lists";
@@ -34,26 +33,19 @@ export default function Page() {
   return (
     <>
       <section className={styles.section1}>
-        <DetailImg
-          mainImgUrl={resData?.main_img_url}
-          subImgUrl={resData?.sub_img_url}
-        />
-        <div>
-          <div>
-            <h1>
-              {resData?.name}
-              <span>
-                <Grade_orange_Ic />
-                {resData?.grade}
-              </span>
-              <span>
-                <Comment_orange_Ic />
-                {resData?.comment_count}
-              </span>
-            </h1>
-            <h2>{resData?.introduction}</h2>
-          </div>
-        </div>
+        <DetailImg imgUrl={resData?.img_url} />
+        <h1>
+          {resData?.name}
+          <span>
+            <Grade_orange_Ic />
+            {resData?.grade}
+          </span>
+          <span>
+            <Comment_orange_Ic />
+            {resData?.comment_count}
+          </span>
+        </h1>
+        <h2>{resData?.introduction}</h2>
         <div>
           <ul>
             <li>
@@ -98,12 +90,12 @@ export default function Page() {
                 숙박<label> {resData?.room_summary_list.length}</label>
               </span>
             </li>
-            <SubList
-              isClick={pageState.isClick}
-              expSubListData={resData?.exp_summary_list}
-              lodgSubListData={resData?.room_summary_list}
-            />
           </ul>
+          <SubList
+            isClick={pageState.isClick}
+            expSubListData={resData?.exp_summary_list}
+            lodgSubListData={resData?.room_summary_list}
+          />
         </div>
       </section>
       <section className={styles.section2}>

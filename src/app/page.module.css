@@ -14,10 +14,10 @@
     @apply text-stone/60 absolute top-[256px];
   }
   .section1 > a {
-    @apply w-[200px] h-[36px] absolute top-[360px] flex rounded-full py-[6px] px-[20px] text-white bg-orange;
+    @apply w-[200px] h-[36px] absolute top-[360px] flex items-center rounded-full py-[6px] px-[20px] text-white bg-orange;
   }
   .section1 > a > svg {
-    @apply my-[6px] ml-[18px];
+    @apply ml-[18px];
   }
 
   /* section2 */

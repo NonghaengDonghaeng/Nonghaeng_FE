@@ -1,8 +1,7 @@
 import { roomListDataType } from "./listPageDataType";
 
 export type tourDetailPageDataType = {
-  main_img_url: string;
-  sub_img_url: string[];
+  img_url: string[];
   name: string;
   grade: number;
   comment_count: number;
