@@ -31,8 +31,7 @@ export type tourDetailPageDataType = {
 };
 
 export type expDetailPageDataType = {
-  main_img_url: string;
-  sub_img_url: string[];
+  img_url: string[];
   experience_name: string;
   grade: number;
   experience_type_name: string;
