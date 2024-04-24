@@ -9,7 +9,7 @@
 /* SchButton
 --------------------------------------------------------------*/
 .search_button {
-  @apply w-[68px] h-[44px] p-[6px] rounded-md flex justify-between items-center text-white bg-stone;
+  @apply w-[72px] h-[44px] p-[6px] rounded-md flex justify-between items-center text-white bg-stone;
 }
 
 /* ScMain 
