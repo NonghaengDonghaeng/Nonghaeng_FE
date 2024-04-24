@@ -165,7 +165,7 @@
     @apply h-[160px] p-[10px] relative;
   }
   .exp_list > li > a > div:nth-child(1) > img {
-    @apply w-full h-full absolute left-0 top-0 rounded-md z-0;
+    @apply w-full h-full absolute left-0 top-0 rounded-md;
   }
   .exp_list > li > a > div:nth-child(1) > span {
     @apply z-[1] flex items-center absolute text-white;

@@ -39,7 +39,7 @@
     @apply mt-[6px];
   }
   .search_main > div > div > ul {
-    @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
+    @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer relative z-[10] text-stone bg-white;
   }
   .search_main > div > div:first-child > ul {
     @apply h-[246px];
@@ -84,7 +84,7 @@
     @apply w-full h-full px-[10%] flex justify-between items-center cursor-pointer;
   }
   .search_main > div > div > ul {
-    @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer text-stone bg-white;
+    @apply w-full rounded-[5px] border-[2px] relative z-[10] border-stone overflow-auto cursor-pointer text-stone bg-white;
   }
   .search_main > div > div:first-child > ul {
     @apply h-[246px];
