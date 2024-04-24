@@ -212,11 +212,10 @@ type RoomListPropsType = {
 
 export function RoomList({ roomListData }: RoomListPropsType) {
   const [isClick, setIsClick] = useState(false);
-  const [personCount, setPersonCount] = useState<number>(0);
-  const [roomCount, setRoomCount] = useState(0);
+  const [personCount, setPersonCount] = useState(1);
+  const [roomCount, setRoomCount] = useState(1);
   const [check_in, setCheck_in] = useState(null);
   const [check_out, setCheck_out] = useState(null);
-
   const [resData, setResData] = useState<roomListDataType | undefined>();
 
   useEffect(() => {
@@ -271,25 +270,29 @@ export function RoomList({ roomListData }: RoomListPropsType) {
 
   return (
     <div className={styles.room_list}>
-      <ul>
-        <li>
+      <div>
+        <div>
           <div onClick={() => setIsClick(!isClick)}>
             {check_in || "체크인"}
             {" - "}
             {check_out || "체크아웃"}
           </div>
           <Calendar_orange_Ic />
-        </li>
-        <li>
-          <ClickCount count={personCount} setCount={setPersonCount} />
-          {"인원수"}
-          <Person_orange_Ic />
-          <ClickCount count={roomCount} setCount={setRoomCount} />
-          {"객실수"}
-          <Room_orange_Ic />
+        </div>
+        <div>
+          <div>
+            <ClickCount count={personCount} setCount={setPersonCount} />
+            <label>인원수</label>
+            <Person_orange_Ic />
+          </div>
+          <div>
+            <ClickCount count={roomCount} setCount={setRoomCount} />
+            <label>객실수</label>
+            <Room_orange_Ic />
+          </div>
           <button onClick={getRoomList}>검색</button>
-        </li>
-      </ul>
+        </div>
+      </div>
       <CustomRangeCalendar
         setCheck_in={setCheck_in}
         setCheck_out={setCheck_out}

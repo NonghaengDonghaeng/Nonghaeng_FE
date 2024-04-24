@@ -1,17 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import useMove from "@/hooks/useMove";
 import { RoomList } from "@/components/common/Lists/Lists";
 import styles from "./page.module.css";
 import { lodgDetailPageDataType } from "@/types/dataType/detailPageDataType";
 import lodgDetailPageResData from "@/db/lodgdata/detail.json";
+import DetailImg from "@/components/common/DetailImg/DetailImg";
 
 export default function Page() {
   const { element, moveElement } = useMove();
-
-  const [imgUrl, setImgUrl] = useState<string | any>();
 
   const [resData, setResData] = useState<lodgDetailPageDataType | undefined>();
 
@@ -20,25 +18,11 @@ export default function Page() {
     setResData(lodgDetailPageResData);
   }, []);
 
-  useEffect(() => setImgUrl(resData?.main_img_url), [resData?.main_img_url]);
-
-  const imgList = resData?.sub_img_url.map((item, index) => (
-    <li key={index} onClick={() => setImgUrl(item)}>
-      <Image
-        src={item}
-        className={`${imgUrl == item ? styles.img_on : styles.img_off}`}
-        alt="sub_img"
-        width={800}
-        height={800}
-      />
-    </li>
-  ));
   return (
     <>
       <section className={styles.section1}>
         <article>
-          <Image src={imgUrl} alt="main_img" width={800} height={800} />
-          <ul>{imgList}</ul>
+          <DetailImg imgUrl={resData?.img_url} />
         </article>
         <article>
           <h1>{resData?.tour_name}</h1>

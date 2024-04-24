@@ -58,8 +58,7 @@ export type expDetailPageDataType = {
 };
 
 export type lodgDetailPageDataType = {
-  main_img_url: string;
-  sub_img_url: string[];
+  img_url: string[];
   tour_name: string;
   tour_one_line_intro: string;
   area_name: string;

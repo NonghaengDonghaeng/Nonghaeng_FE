@@ -359,71 +359,144 @@
 
 /* RoomList 
 ----------------------------------------------------------*/
-.room_list {
-  @apply text-stone font-[500];
+/* 데스크탑 */
+@media (min-width: 768px) {
+  .room_list {
+    @apply text-stone font-[500];
+  }
+
+  .room_list > div:first-child {
+    @apply w-full flex items-center justify-between;
+  }
+  .room_list > div:first-child > div {
+    @apply flex items-center text-[14px] text-orange;
+  }
+  .room_list > div:first-child > div:first-child > div:first-child {
+    @apply w-[200px] h-[30px] flex justify-center items-center border-[1px]  border-stone/40 rounded-xl cursor-pointer text-[14px] font-[400] text-stone;
+  }
+  .room_list > div:first-child > div > svg {
+    @apply ml-[6px];
+  }
+  .room_list > div:first-child > div:nth-child(2) > div {
+    @apply flex items-center mx-[12px];
+  }
+  .room_list > div:first-child > div > div > label {
+    @apply mx-[6px];
+  }
+  .room_list > div:first-child > div:nth-child(2) > button {
+    @apply w-[60px] h-[30px] ml-[10px] rounded-full bg-orange/40 text-white;
+  }
+  .room_list > div:first-child > div:nth-child(2) > button:hover {
+    @apply bg-orange;
+  }
+
+  .off {
+    @apply hidden;
+  }
+  .on {
+    @apply absolute;
+  }
+
+  .room_list > ul:nth-child(3) > li > a {
+    @apply w-full h-[240px] my-[20px] flex border-stone/20;
+  }
+  .room_list > ul:nth-child(3) > li > a > img {
+    @apply w-[40%] rounded-md;
+  }
+  .room_list > ul:nth-child(3) > li > a > div {
+    @apply w-full rounded-md border-[1px] border-stone/20 p-[20px];
+  }
+  .room_list > ul:nth-child(3) > li > a > div > h1 {
+    @apply flex items-center text-[20px] text-orange;
+  }
+  .room_list > ul:nth-child(3) > li > a > div > h1 > span {
+    @apply ml-[20px] flex items-center text-[14px] font-[400];
+  }
+  .room_list > ul:nth-child(3) > li > a > div > h1 > span > svg {
+    @apply mr-[6px];
+  }
+  .room_list > ul:nth-child(3) > li > a > div > P {
+    @apply my-[10px] text-[20px];
+  }
+  .room_list > ul:nth-child(3) > li > a > div > div {
+    @apply w-full h-[108px] rounded-md px-[18px] py-[2px] bg-stone/5;
+  }
+  .room_list > ul:nth-child(3) > li > a > div > div > P {
+    @apply my-[8px] text-[14px] text-stone/80 font-[400];
+  }
+  .room_list > ul:nth-child(3) > li > a > div > div > P > label {
+    @apply text-[16px] text-stone font-[500] mr-[8px];
+  }
 }
 
-.room_list > ul:first-child {
-  @apply w-full h-[60px] flex items-center justify-between;
-}
+/* 모바일 */
+@media (max-width: 767px) {
+  .room_list > div:first-child {
+    @apply w-full;
+  }
+  .room_list > div:first-child > div {
+    @apply flex items-center text-[14px] text-orange;
+  }
+  .room_list > div:first-child > div:first-child > div:first-child {
+    @apply w-full h-[30px] flex justify-center items-center border-[1px]  border-stone/40 rounded-xl cursor-pointer text-[14px] font-[400] text-stone;
+  }
+  .room_list > div:first-child > div > svg {
+    @apply ml-[6px];
+  }
+  .room_list > div:first-child > div {
+    @apply items-center flex justify-between;
+  }
+  .room_list > div:first-child > div > div {
+    @apply flex items-center;
+  }
+  .room_list > div:first-child > div > div > label {
+    @apply hidden;
+  }
+  .room_list > div:first-child > div > div > svg {
+    @apply ml-[6px];
+  }
+  .room_list > div:first-child > div:nth-child(2) > button {
+    @apply w-[60px] h-[30px] ml-[10px] rounded-full bg-orange/40 text-white;
+  }
+  .room_list > div:first-child > div:nth-child(2) > button:hover {
+    @apply bg-orange;
+  }
 
-.room_list > ul:first-child > li {
-  @apply flex items-center text-[14px] text-orange;
-}
-.room_list > ul:first-child > li:first-child > div:first-child {
-  @apply w-[200px] h-[30px] flex justify-center items-center border-[1px]  border-stone/40 rounded-xl cursor-pointer text-[14px] font-[400] text-stone;
-}
-.room_list > ul:first-child > li > svg {
-  @apply ml-[6px];
-}
-.room_list > ul:first-child > li:nth-child(2) > div {
-  @apply mx-[6px];
-}
-.room_list > ul:first-child > li:nth-child(2) > button {
-  @apply w-[60px] h-[30px] ml-[10px] rounded-full bg-orange/40 text-white;
-}
-.room_list > ul:first-child > li:nth-child(2) > button:hover {
-  @apply bg-orange;
-}
+  .off {
+    @apply hidden;
+  }
+  .on {
+    @apply absolute;
+  }
 
-.off {
-  @apply hidden;
-}
-.on {
-  @apply absolute;
-}
-
-.room_list > div:nth-child(3) {
-  @apply absolute;
-}
-
-.room_list > ul:nth-child(3) > li > a {
-  @apply w-full h-[240px] mt-[20px] flex rounded-xl border-[1px] border-stone/20;
-}
-.room_list > ul:nth-child(3) > li > a > img {
-  @apply w-[40%] rounded-l-xl;
-}
-.room_list > ul:nth-child(3) > li > a > div {
-  @apply w-[60%] px-[40px] py-[24px];
-}
-.room_list > ul:nth-child(3) > li > a > div > h1 {
-  @apply flex items-center text-[20px] text-orange;
-}
-.room_list > ul:nth-child(3) > li > a > div > h1 > span {
-  @apply ml-[20px] flex items-center text-[14px] font-[400];
-}
-.room_list > ul:nth-child(3) > li > a > div > h1 > span > svg {
-  @apply mr-[6px];
-}
-.room_list > ul:nth-child(3) > li > a > div > P {
-  @apply my-[10px] text-[20px];
-}
-.room_list > ul:nth-child(3) > li > a > div > div {
-  @apply w-full h-[112px] rounded-xl px-[18px] py-[4px] bg-stone/5;
-}
-.room_list > ul:nth-child(3) > li > a > div > div > P {
-  @apply my-[8px] text-[14px] font-[400];
-}
-.room_list > ul:nth-child(3) > li > a > div > div > P > label {
-  @apply text-[16px] font-[500] mr-[8px];
+  .room_list > ul > li {
+    @apply w-full h-[160px] my-[10px];
+  }
+  .room_list > ul > li > a {
+    @apply w-full h-full flex;
+  }
+  .room_list > ul > li > a > img {
+    @apply w-[40%] rounded-md;
+  }
+  .room_list > ul > li > a > div {
+    @apply w-full p-[10px] rounded-md border-[1px] border-stone/20;
+  }
+  .room_list > ul > li > a > div > h1 {
+    @apply flex text-[20px] items-center text-orange;
+  }
+  .room_list > ul > li > a > div > h1 > span {
+    @apply ml-[10px] flex items-center text-[12px];
+  }
+  .room_list > ul > li > a > div > h1 > span > svg {
+    @apply mr-[4px];
+  }
+  .room_list > ul > li > a > div > h2 {
+    @apply my-[10px];
+  }
+  .room_list > ul > li > a > div > div > p {
+    @apply my-[4px] text-[10px] text-stone/80 font-[400];
+  }
+  .room_list > ul > li > a > div > div > p > label {
+    @apply text-[12px] text-stone font-[500] mr-[10px];
+  }
 }
