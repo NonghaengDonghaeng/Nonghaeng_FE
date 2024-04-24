@@ -27,6 +27,9 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 body {
   @apply text-stone font-[500];
