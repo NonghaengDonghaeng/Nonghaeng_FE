@@ -6,18 +6,24 @@ import Home_Ic from "icon/home.svg";
 import Menu_Ic from "icon/sitemap_gray.svg";
 import Search_Ic from "icon/search_gray.svg";
 import Person_Ic from "icon/person_gray.svg";
-import Great_Ic from "icon/great_gray.svg";
+import Back_Ic from "icon/back_gray.svg";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
 import Menu from "@/components/common/Menu/Menu";
 import ScBase from "@/components/common/Searchs/Searchs";
 
 export default function Footer() {
   const pathName = usePathname();
+  const router = useRouter();
 
   const [isClick, setIsClick] = useState({ menu: false, search: false });
+
   useEffect(() => setIsClick({ menu: false, search: false }), [pathName]);
+
+  const routeBack = () => {
+    router.back();
+  };
 
   const mainLink = footerHref.map((item, index) => (
     <Link href={item.href} key={index}>
@@ -60,8 +66,8 @@ export default function Footer() {
                 <Person_Ic />
               </Link>
             </li>
-            <li>
-              <Great_Ic />
+            <li onClick={routeBack}>
+              <Back_Ic />
             </li>
           </ul>
         </div>
