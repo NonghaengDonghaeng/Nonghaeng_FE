@@ -62,7 +62,7 @@ img {
     @apply hidden;
   }
   #main {
-    @apply w-[95%] mx-auto;
+    @apply w-[95%] mt-[60px] mb-[100px] mx-auto;
   }
   #footer {
     @apply w-full h-[80px] bottom-0 fixed z-[100] shadow-top bg-white;

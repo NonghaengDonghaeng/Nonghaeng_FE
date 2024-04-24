@@ -73,8 +73,7 @@ export type lodgDetailPageDataType = {
 };
 
 export type roomDetailPageDataType = {
-  main_img_url: string;
-  sub_img_url: string[];
+  img_url: string[];
   room_name: string;
   room_type_name: string;
   summary: string;
