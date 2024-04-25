@@ -111,7 +111,7 @@ export default function Page() {
         </button>
         <p>
           <Link href="/acount/join">회원가입</Link>
-          {" / "}
+          {"  /  "}
           <Link href="/acount/findpass">비밀번호찾기</Link>
         </p>
       </article>
@@ -135,7 +135,7 @@ export default function Page() {
         </form>
         <p>
           <Link href="/acount/join">회원가입</Link>
-          {" / "}
+          {"  /  "}
           <Link href="/acount/findpass">비밀번호찾기</Link>
         </p>
       </article>
