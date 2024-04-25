@@ -63,10 +63,8 @@ export default function Footer() {
             >
               <Search_Ic />
             </li>
-            <li>
-              <Link href="/">
-                <Home_Ic />
-              </Link>
+            <li onClick={() => window.location.replace("/")}>
+              <Home_Ic />
             </li>
             <li>
               <Link href="/mypage">
