@@ -3,7 +3,10 @@
 }
 
 /* desktop */
-@media (min-width: 768px) {
+@media screen and (min-width: 1024px) {
+  .header_inner > button {
+    @apply hidden;
+  }
   .header_inner > ul {
     @apply w-[400px] h-[60px] flex justify-between items-center;
   }
@@ -38,15 +41,37 @@
     @apply text-orange;
   }
   .header_inner > div:nth-child(4) > a:nth-child(3) {
-    @apply w-[36px] h-[36px] p-[8px] rounded-full;
+    @apply w-[36px] h-[36px] flex items-center justify-center rounded-full;
   }
   .header_inner > div:nth-child(4) > a:nth-child(3):hover {
     @apply bg-orange/50;
   }
 }
 
+/* 테블릿 */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header_inner {
+    @apply h-full px-[24px] flex justify-between items-center;
+  }
+  .header_inner > ul {
+    @apply hidden;
+  }
+  .header_inner > div:nth-child(4) {
+    @apply hidden;
+  }
+  .header_inner > div:nth-child(6) {
+    @apply hidden;
+  }
+  .header_inner > button {
+    @apply w-[36px] h-[36px] flex items-center justify-center rounded-full;
+  }
+  .header_inner > button:hover {
+    @apply bg-orange/50;
+  }
+}
+
 /* mobile */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .header_inner {
     @apply h-full flex justify-center;
   }
@@ -57,6 +82,9 @@
     @apply hidden;
   }
   .header_inner > div:nth-child(4) {
+    @apply hidden;
+  }
+  .header_inner > button {
     @apply hidden;
   }
 }

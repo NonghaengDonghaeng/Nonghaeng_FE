@@ -10,6 +10,7 @@ import Back_Ic from "icon/back_gray.svg";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import Menu from "@/components/common/Menu/Menu";
 import ScBase from "@/components/common/Searchs/Searchs";
 
@@ -18,8 +19,14 @@ export default function Footer() {
   const router = useRouter();
 
   const [isClick, setIsClick] = useState({ menu: false, search: false });
+  const isTablet = useMediaQuery({
+    query: "(min-width:768px) and (max-width:1023px)",
+  });
 
-  useEffect(() => setIsClick({ menu: false, search: false }), [pathName]);
+  useEffect(() => setIsClick({ menu: false, search: false }), [
+    pathName,
+    isTablet,
+  ]);
 
   const routeBack = () => {
     router.back();

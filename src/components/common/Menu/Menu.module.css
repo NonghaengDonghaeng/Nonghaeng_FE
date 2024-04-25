@@ -1,15 +1,45 @@
-@media (min-width) {
+/* 데스크탑 */
+@media (min-width: 1024px) {
   .menu {
     @apply hidden;
   }
 }
 
-@media (max-width: 767px) {
+/* 테블릿 */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .menu {
+    @apply fixed w-[240px] h-[500px] rounded-md right-0 top-0 pt-[60px] z-[50] text-white bg-orange/80;
+  }
+  .menu > div {
+    @apply w-full;
+  }
+  .menu > div > span {
+    @apply flex h-[60px] items-center justify-center text-[18px];
+  }
+  .menu > div > span > svg {
+    @apply hidden;
+  }
+  .menu a:hover {
+    @apply text-white;
+  }
+  .menu > div:hover > ul {
+    @apply h-[100px] duration-500;
+  }
+  .menu > div > ul {
+    @apply w-full h-0 duration-500 overflow-hidden;
+  }
+  .menu > div > ul > li {
+    @apply flex justify-center text-stone/60;
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
   .menu {
     @apply fixed w-full left-0 h-full top-0 pt-[60px] z-[50] bg-white;
   }
   .menu > div {
-    @apply w-full border-b-[1px] border-stone/20;
+    @apply w-full;
   }
   .menu > div > span {
     @apply flex h-[60px] items-center justify-center text-[18px];

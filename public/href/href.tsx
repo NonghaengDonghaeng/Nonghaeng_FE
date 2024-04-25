@@ -1,5 +1,5 @@
 // header href
-export const menuHref = [
+export const headerMenuHref = [
   {
     title: "농행동행",
     href: "/intro",
@@ -98,4 +98,47 @@ export const footerHref = [
   { href: "/", title: "개인정보처리방침" },
   { href: "/", title: "이메일수집거부" },
   { href: "/", title: "고객문의" },
+];
+
+// menu fref
+export const menuHref = [
+  {
+    title: "농행동행",
+    href: "/intro",
+    subMenu: [
+      { title: "농행동행 소개", href: "/intro/nonghaeng" },
+      { title: "농촌관광 소개", href: "/intro/tour" },
+    ],
+  },
+  {
+    title: "농촌여행",
+    href: "/trip",
+    subMenu: [
+      { title: "농촌관광", href: "/trip/tour" },
+      { title: "농촌체험", href: "/trip/exp" },
+      { title: "농촌숙박", href: "/trip/lodg" },
+    ],
+  },
+  {
+    title: "기획상품",
+    href: "/item",
+    subMenu: [],
+  },
+  {
+    title: "커뮤니티",
+    href: "/commu",
+    subMenu: [
+      { title: "공지사항", href: "/commu/notice" },
+      { title: "농행후기", href: "/commu/review" },
+      { title: "고객문의", href: "/commu/inquiry" },
+    ],
+  },
+  {
+    title: "마이페이지",
+    href: "/mypage",
+    subMenu: [
+      { href: "/mypage/reserve", title: "최근예약" },
+      { href: "/acount/edit", title: "회원정보수정" },
+    ],
+  },
 ];

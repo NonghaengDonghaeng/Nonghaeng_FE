@@ -3,20 +3,32 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
-import { menuHref } from "href/href";
+import { headerMenuHref } from "href/href";
 import Nonghaeng_Ic from "icon/nonghaeng.svg";
 import Sitemap_gray_Ic from "icon/sitemap_gray.svg";
 import store from "@/redux/loginStateStore";
 import { verifyJwtApi } from "@/api/loginApi";
 import ScBase from "@/components/common/Searchs/Searchs";
+import Menu from "@/components/common/Menu/Menu";
+import { useMediaQuery } from "react-responsive";
+import Overlay from "@/components/common/Overlay/Overlay";
 
 type SubMenuType = { href: string; title: string };
 
 function Header() {
   const pathName = usePathname();
-
   const [loginState, setLoginState] = useState(false);
+  const [isClick, setIsClick] = useState(false);
 
+  const isMobile = useMediaQuery({
+    query: "(max-width:767px) ",
+  });
+  const isDesktop = useMediaQuery({
+    query: "(min-width:1024px) ",
+  });
+  useEffect(() => setIsClick(false), [isMobile, isDesktop]);
+
+  // 로그인 상태관리
   useEffect(() => {
     verifyJwtApi().then(() => {
       if (store.getState() == true) {
@@ -24,7 +36,6 @@ function Header() {
       } else setLoginState(false);
     });
   }, [pathName]);
-
   function logout() {
     localStorage.removeItem("jwt");
     setLoginState(false);
@@ -41,7 +52,7 @@ function Header() {
       ))}
     </ul>
   );
-  const mainMenuList = menuHref.map((item, index) => (
+  const mainMenuList = headerMenuHref.map((item, index) => (
     <li key={index}>
       <Link href={item.href}>{item.title}</Link>
       {item.subMenu && subMenuList(item.subMenu)}
@@ -49,38 +60,44 @@ function Header() {
   ));
 
   return (
-    <header id="header">
-      <div className={styles.header_inner}>
-        <Link href="/">
-          <Nonghaeng_Ic />
-        </Link>
-        <ul
-          onMouseOver={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
-        >
-          {mainMenuList}
-        </ul>
-        <ScBase />
-        <div>
-          {loginState ? (
-            <button onClick={logout}>로그아웃</button>
-          ) : (
-            <Link href="/acount/login">로그인</Link>
-          )}
-          <Link href={loginState ? "/mypage" : "/acount/login"}>
-            마이페이지
+    <>
+      <header id="header">
+        <div className={styles.header_inner}>
+          <Link href="/">
+            <Nonghaeng_Ic />
           </Link>
-          <Link href="/sitemap">
+          <ul
+            onMouseOver={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+          >
+            {mainMenuList}
+          </ul>
+          <ScBase />
+          <div>
+            {loginState ? (
+              <button onClick={logout}>로그아웃</button>
+            ) : (
+              <Link href="/acount/login">로그인</Link>
+            )}
+            <Link href={loginState ? "/mypage" : "/acount/login"}>
+              마이페이지
+            </Link>
+            <Link href="/sitemap">
+              <Sitemap_gray_Ic />
+            </Link>
+          </div>
+          <button onClick={() => setIsClick(!isClick)}>
             <Sitemap_gray_Ic />
-          </Link>
+          </button>
+          <div
+            className={`${styles.subMenu_bg} ${isHover && styles.on}`}
+            onMouseOver={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+          ></div>
         </div>
-        <div
-          className={`${styles.subMenu_bg} ${isHover && styles.on}`}
-          onMouseOver={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
-        ></div>
-      </div>
-    </header>
+      </header>
+      {isClick && <Menu />}
+    </>
   );
 }
 

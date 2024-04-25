@@ -8,8 +8,15 @@
 
 /* SchButton
 --------------------------------------------------------------*/
-.search_button {
-  @apply w-[72px] h-[44px] p-[6px] rounded-md flex justify-between items-center text-white bg-stone;
+@media (min-width: 768px) {
+  .search_button {
+    @apply w-[72px] h-[48px] rounded-md flex justify-center  items-center text-white bg-stone;
+  }
+}
+@media (max-width: 767px) {
+  .search_button {
+    @apply w-[72px] h-[44px] rounded-md flex justify-center  items-center text-white bg-stone;
+  }
 }
 
 /* ScMain 
@@ -122,7 +129,7 @@
 /* search_base */
 
 /* 데스크탑 */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .search_base > form {
     @apply w-[234px] h-[36px] shadow-md flex border-[1px] rounded-full border-stone/60;
   }
@@ -135,7 +142,7 @@
 }
 
 /* 모바일 */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .search_base {
     @apply fixed w-full h-full top-0 pt-[60px] z-[50] bg-white;
   }
