@@ -1,0 +1,79 @@
+/* 데스크탑 */
+@media (min-width: 768px) {
+  .login {
+    @apply my-[60px] flex justify-between;
+  }
+  .login > article {
+    @apply w-[48%] mt-[40px];
+  }
+  .login > article > h1 {
+    @apply text-[20px] font-[600] flex justify-center;
+  }
+  .login > article > form {
+    @apply w-full mt-[20px];
+  }
+  .login > article > form > div {
+    @apply w-full h-[30px] my-[10px] flex items-center;
+  }
+  .login > article > form > div > label {
+    @apply min-w-[100px] mr-[10px];
+  }
+  .login > article > form > div > input {
+    @apply w-full h-full px-[10px] rounded-md border border-stone/40;
+  }
+  .login > article > form > button {
+    @apply w-full h-[50px] my-[10px] text-white rounded-md bg-green;
+  }
+  .login > article > button {
+    @apply w-full h-[50px] my-[10px] bg-[#FAE84C] items-center flex justify-center rounded-md;
+  }
+  .login > article > button > span {
+    @apply ml-[10px];
+  }
+  .login > article > p {
+    @apply flex items-center justify-center text-stone/80;
+  }
+  .login > hr {
+    @apply my-[40px] border-stone/40;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .login {
+    @apply mt-[80px] mb-[80px];
+  }
+  .login > article {
+    @apply mt-[40px];
+  }
+  .login > article > h1 {
+    @apply text-[20px] font-[600] flex justify-center;
+  }
+  .login > article > form {
+    @apply w-full mt-[20px];
+  }
+  .login > article > form > div {
+    @apply w-full h-[30px] my-[10px] flex items-center;
+  }
+  .login > article > form > div > label {
+    @apply min-w-[100px] mr-[10px];
+  }
+  .login > article > form > div > input {
+    @apply w-full h-full px-[10px] rounded-md border border-stone/40;
+  }
+  .login > article > form > button {
+    @apply w-full h-[50px] my-[10px] text-white rounded-md bg-green;
+  }
+  .login > article > button {
+    @apply w-full h-[50px] my-[10px] bg-[#FAE84C] items-center flex justify-center rounded-md;
+  }
+  .login > article > button > span {
+    @apply ml-[10px];
+  }
+  .login > article > p {
+    @apply flex items-center justify-center text-stone/80;
+  }
+  .login > hr {
+    @apply my-[40px] border-stone/40;
+  }
+}

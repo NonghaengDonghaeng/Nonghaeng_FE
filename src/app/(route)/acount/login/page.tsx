@@ -5,6 +5,8 @@ import { formType, inputType } from "@/types/eventType";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import axios from "axios";
+import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Page() {
   const change = useChange();
@@ -12,7 +14,7 @@ export default function Page() {
   const pathName = usePathname();
   const router = useRouter();
 
-  const [user_state, setUser_state] = useState<{
+  const [user, setUser] = useState<{
     number?: string;
     password?: string;
   }>({
@@ -20,7 +22,7 @@ export default function Page() {
     password: "",
   });
 
-  const [seller_state, setSeller_state] = useState<{
+  const [seller, setSeller] = useState<{
     username?: string;
     password?: string;
   }>({
@@ -54,7 +56,7 @@ export default function Page() {
     try {
       const response = await axios.post(
         "https://nonghaeng.duckdns.org/login",
-        user_state
+        user
       );
       console.log(response.headers.authorization);
       let token = response.headers["authorization"];
@@ -74,7 +76,7 @@ export default function Page() {
     try {
       const response = await axios.post(
         "https://nonghaeng.duckdns.org/seller-login",
-        seller_state
+        seller
       );
       let token = response.headers["authorization"];
       console.log(response.headers.authorization);
@@ -85,137 +87,57 @@ export default function Page() {
   };
 
   return (
-    <section className="flex flex-row m3 ">
-      <article className="flex flex-col space-y-3 w-1/2 pr-3 mr-10 mb-8">
-        <div className="text-center mb-3">
-          <h1 className="text-2xl font-bold mt-14 mb-10">소비자 로그인</h1>
-        </div>
-        <form onSubmit={onSubmit} className="w-full">
-          <div className="flex flex-row items-center mb-3">
-            <label
-              className="mr-4 font-bold"
-              style={{ minWidth: "100px", textAlign: "center" }}
-            >
-              전화번호
-            </label>
-            <input
-              className="w-full h-12 border border-gray-300 rounded-xl pl-4"
-              name="number"
-              placeholder="전화번호"
-              onChange={(e: inputType) =>
-                change({
-                  changeItem: user_state,
-                  setChangeItem: setUser_state,
-                  e,
-                })
-              }
-            ></input>
+    <section className={styles.login}>
+      <article
+        onChange={(e: inputType) => {
+          change({ changeItem: user, setChangeItem: setUser, e });
+        }}
+      >
+        <h1>소비자 로그인</h1>
+        <form onSubmit={onSubmit}>
+          <div>
+            <label>전화번호</label>
+            <input name="number" placeholder="전화번호를 입력하세요"></input>
           </div>
-          <div className="flex flex-row items-center mb-3">
-            <label
-              className="mr-4 font-bold"
-              style={{ minWidth: "100px", textAlign: "center" }}
-            >
-              비밀번호
-            </label>
-            <input
-              className="w-full h-12 border border-gray-300 rounded-xl pl-4"
-              name="password"
-              placeholder="비밀번호"
-              onChange={(e: inputType) =>
-                change({
-                  changeItem: user_state,
-                  setChangeItem: setUser_state,
-                  e,
-                })
-              }
-            ></input>
+          <div>
+            <label>비밀번호</label>
+            <input name="password" placeholder="비밀번호를 입력하세요"></input>
           </div>
-          <button
-            type="submit"
-            className="w-full bg-green text-white py-2 rounded-xl"
-          >
-            로그인
-          </button>
+          <button type="submit">로그인</button>
         </form>
-        <div className="text-gray-500 text-center mt-3">
-          <p>
-            계정이 없으신가요? <a href="/acount/join">회원가입</a>
-          </p>
-          <p>
-            비밀번호를 잊으셨나요? <a href="/acount/findpass">비밀번호 찾기</a>
-          </p>
-        </div>
-        <button
-          className="flex items-center justify-center h-[50px] bg-[#FAE84C] w-full rounded-3xl"
-          onClick={KakaoLoginApi}
-        >
-          <div className="mr-2 text-2xl">
-            <RiKakaoTalkFill />
-          </div>
-          <span className="text-base font-semibold">카카오톡으로 계속하기</span>
+        <button onClick={KakaoLoginApi}>
+          <RiKakaoTalkFill />
+          <span>카카오톡으로 계속하기</span>
         </button>
+        <p>
+          <Link href="/acount/join">회원가입</Link>
+          {" / "}
+          <Link href="/acount/findpass">비밀번호찾기</Link>
+        </p>
       </article>
-      <article className="flex flex-col space-y-3 w-1/2 pr-3 ml-10">
-        <div className="text-center mb-3">
-          <h1 className="text-2xl font-bold mt-14 mb-10">판매자 로그인</h1>
-        </div>
-        <form onSubmit={onSubmit2} className="w-full">
-          <div className="flex flex-row items-center mb-3">
-            <label
-              className="mr-4 font-bold"
-              style={{ minWidth: "100px", textAlign: "center" }}
-            >
-              아이디
-            </label>
-            <input
-              className="w-full h-12 border border-gray-300 rounded-xl pl-4"
-              name="username"
-              placeholder="아이디"
-              onChange={(e: inputType) =>
-                change({
-                  changeItem: seller_state,
-                  setChangeItem: setSeller_state,
-                  e,
-                })
-              }
-            ></input>
+      <hr></hr>
+      <article
+        onChange={(e: inputType) => {
+          change({ changeItem: seller, setChangeItem: setSeller, e });
+        }}
+      >
+        <h1>판매자 로그인</h1>
+        <form onSubmit={onSubmit2}>
+          <div>
+            <label>아이디</label>
+            <input name="username" placeholder="아이디를 입력하세요"></input>
           </div>
-          <div className="flex flex-row items-center mb-3">
-            <label
-              className="mr-4 font-bold"
-              style={{ minWidth: "100px", textAlign: "center" }}
-            >
-              비밀번호
-            </label>
-            <input
-              className="w-full h-12 border border-gray-300 rounded-xl pl-4"
-              name="password"
-              placeholder="비밀번호"
-              onChange={(e: inputType) =>
-                change({
-                  changeItem: seller_state,
-                  setChangeItem: setSeller_state,
-                  e,
-                })
-              }
-            ></input>
+          <div>
+            <label>비밀번호</label>
+            <input name="password" placeholder="비밀번호를 입력하세요"></input>
           </div>
-          <button
-            type="submit"
-            className="w-full bg-green text-white py-2 rounded-xl"
-          >
-            로그인
-          </button>
+          <button type="submit">로그인</button>
         </form>
-        <div className="text-gray-500 text-center mt-3">
-          <p>
-            계정이 없으신가요? <a href="/acount/join">회원가입</a>
-          </p>
-          <p>
-            비밀번호를 잊으셨나요? <a href="/acount/findpass">비밀번호 찾기</a>
-          </p>
-        </div>
+        <p>
+          <Link href="/acount/join">회원가입</Link>
+          {" / "}
+          <Link href="/acount/findpass">비밀번호찾기</Link>
+        </p>
       </article>
     </section>
   );

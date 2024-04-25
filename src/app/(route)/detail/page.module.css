@@ -1,7 +1,7 @@
 /* 데스크탑 */
 @media (min-width: 768px) {
   .section1 {
-    @apply w-full mt-[60px]  text-stone font-[500];
+    @apply w-full mt-[80px]  text-stone font-[500];
   }
   .section1 > h1 {
     @apply my-[20px] text-[24px] font-[600] flex items-center;

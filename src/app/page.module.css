@@ -2,7 +2,7 @@
 @media (min-width: 768px) {
   /* section1 */
   .section1 {
-    @apply h-[500px] mt-[60px];
+    @apply h-[500px] mt-[80px];
   }
   .section1 > img {
     @apply h-[500px] left-0 absolute object-cover;
