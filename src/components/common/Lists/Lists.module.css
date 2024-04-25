@@ -298,7 +298,7 @@
 /* 데스크탑 */
 @media (min-width: 768px) {
   .sub_list {
-    @apply w-[280px] h-[400px] p-[14px] top-[900px] right-[10%] border-[1px] overflow-scroll duration-500 border-orange rounded-md bg-white absolute;
+    @apply w-[280px] h-[400px] p-[14px] top-[920px] right-[10%] border-[1px] overflow-scroll duration-500 border-orange rounded-md bg-white absolute;
   }
   .sub_list > p {
     @apply text-[18px] font-[500] text-orange;
@@ -322,7 +322,7 @@
     @apply mb-[14px] block;
   }
   .sub_list_off {
-    @apply w-[280px] h-0 top-[900px] right-[10%] duration-500 overflow-hidden border-orange rounded-md bg-white absolute;
+    @apply w-[280px] h-0 top-[920px] right-[10%] duration-500 overflow-hidden border-orange rounded-md bg-white absolute;
   }
 }
 

@@ -43,7 +43,7 @@ img {
 }
 
 /* 데스크탑 */
-@media (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   #header {
     @apply w-full h-[80px] top-0 fixed z-[100] shadow-md bg-white;
   }
@@ -58,8 +58,24 @@ img {
   }
 }
 
+/* 테블릿 */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  #header {
+    @apply w-full h-[80px] top-0 fixed z-[100] shadow-md bg-white;
+  }
+  #nav {
+    @apply h-[240px] mt-[80px] mb-[40px];
+  }
+  #main {
+    @apply w-[90%] mx-auto;
+  }
+  #footer {
+    @apply w-full h-[300px] bg-stone/80;
+  }
+}
+
 /* 모바일 */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   #header {
     @apply w-full h-[60px] top-0 z-[100] fixed shadow-md bg-white;
   }
