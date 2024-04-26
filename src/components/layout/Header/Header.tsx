@@ -36,6 +36,7 @@ function Header() {
       } else setLoginState(false);
     });
   }, [pathName]);
+
   function logout() {
     localStorage.removeItem("jwt");
     setLoginState(false);

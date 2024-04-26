@@ -1,12 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useChange } from "@/hooks/useChange";
+import { kakaoLoginApi } from "@/api/loginApi";
+import { sellerLoginApi } from "@/api/loginApi";
 import { formType, inputType } from "@/types/eventType";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import axios from "axios";
+import { loginApi } from "@/api/loginApi";
 import styles from "./page.module.css";
 import Link from "next/link";
+import { sellerType, userType } from "@/types/userType";
 
 export default function Page() {
   const change = useChange();
@@ -14,25 +17,24 @@ export default function Page() {
   const pathName = usePathname();
   const router = useRouter();
 
-  const [user, setUser] = useState<{
-    number?: string;
-    password?: string;
-  }>({
+  const [user, setUser] = useState<userType>({
     number: "",
     password: "",
   });
 
-  const [seller, setSeller] = useState<{
-    username?: string;
-    password?: string;
-  }>({
+  const [seller, setSeller] = useState<sellerType>({
     username: "",
     password: "",
   });
 
-  function onSubmit(e: formType) {
+  function submitUser(e: formType) {
     e.preventDefault();
-    loginApi();
+    loginApi({ user });
+    router.push("/");
+  }
+  function submitSeller(e: formType) {
+    e.preventDefault();
+    sellerLoginApi({ seller });
   }
 
   // 해야할것: url을 통한 jwt 통신x -> header로 받을 수 있는 방법 찾기
@@ -47,45 +49,6 @@ export default function Page() {
     }
   }, [pathName]);
 
-  const KakaoLoginApi = async () => {
-    window.location.href =
-      "https://nonghaeng.duckdns.org/oauth2/authorization/kakao";
-  };
-
-  const loginApi = async () => {
-    try {
-      const response = await axios.post(
-        "https://nonghaeng.duckdns.org/login",
-        user
-      );
-      console.log(response.headers.authorization);
-      let token = response.headers["authorization"];
-      localStorage.setItem("jwt", "Bearer " + token);
-      router.push("/");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  function onSubmit2(e: formType) {
-    e.preventDefault();
-    sellerLoginApi();
-  }
-
-  const sellerLoginApi = async () => {
-    try {
-      const response = await axios.post(
-        "https://nonghaeng.duckdns.org/seller-login",
-        seller
-      );
-      let token = response.headers["authorization"];
-      console.log(response.headers.authorization);
-      localStorage.setItem("jwt", "Bearer " + token);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
     <section className={styles.login}>
       <article
@@ -94,7 +57,7 @@ export default function Page() {
         }}
       >
         <h1>소비자 로그인</h1>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={submitUser}>
           <div>
             <label>전화번호</label>
             <input name="number" placeholder="전화번호를 입력하세요"></input>
@@ -105,7 +68,7 @@ export default function Page() {
           </div>
           <button type="submit">로그인</button>
         </form>
-        <button onClick={KakaoLoginApi}>
+        <button onClick={kakaoLoginApi}>
           <RiKakaoTalkFill />
           <span>카카오톡으로 계속하기</span>
         </button>
@@ -122,7 +85,7 @@ export default function Page() {
         }}
       >
         <h1>판매자 로그인</h1>
-        <form onSubmit={onSubmit2}>
+        <form onSubmit={submitSeller}>
           <div>
             <label>아이디</label>
             <input name="username" placeholder="아이디를 입력하세요"></input>
