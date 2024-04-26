@@ -11,7 +11,6 @@ import { verifyJwtApi } from "@/api/loginApi";
 import ScBase from "@/components/common/Searchs/Searchs";
 import Menu from "@/components/common/Menu/Menu";
 import { useMediaQuery } from "react-responsive";
-import Overlay from "@/components/common/Overlay/Overlay";
 
 type SubMenuType = { href: string; title: string };
 
@@ -26,7 +25,7 @@ function Header() {
   const isDesktop = useMediaQuery({
     query: "(min-width:1024px) ",
   });
-  useEffect(() => setIsClick(false), [isMobile, isDesktop]);
+  useEffect(() => setIsClick(false), [isMobile, isDesktop, pathName]);
 
   // 로그인 상태관리
   useEffect(() => {
