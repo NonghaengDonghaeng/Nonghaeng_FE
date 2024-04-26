@@ -6,7 +6,7 @@ export const verifyJwtApi = async () => {
   let token = localStorage.getItem("jwt");
   if (token) {
     try {
-      const res = await axios.get("https://nonghaeng.duckdns.org/valid", {
+      const res = await axios.get(process.env.CHANGE_API_URL + "valid", {
         headers: { Authorization: token },
       });
       if (res.status == 200) {
@@ -28,7 +28,7 @@ type userPropsType = { user: userType };
 export const loginApi = async ({ user }: userPropsType) => {
   try {
     const response = await axios.post(
-      "https://nonghaeng.duckdns.org/login",
+      process.env.CHANGE_API_URL + "login",
       user
     );
     console.log(response.headers.authorization);
@@ -45,7 +45,7 @@ type sellerPropsType = { seller: sellerType };
 export const sellerLoginApi = async ({ seller }: sellerPropsType) => {
   try {
     const response = await axios.post(
-      "https://nonghaeng.duckdns.org/seller-login",
+      process.env.CHANGE_API_URL + "seller-login",
       seller
     );
     let token = response.headers["authorization"];
@@ -59,5 +59,5 @@ export const sellerLoginApi = async ({ seller }: sellerPropsType) => {
 // 카카오로그인
 export const kakaoLoginApi = async () => {
   window.location.href =
-    "https://nonghaeng.duckdns.org/oauth2/authorization/kakao";
+    process.env.CHANGE_API_URL + "oauth2/authorization/kakao";
 };

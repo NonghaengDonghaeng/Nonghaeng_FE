@@ -6,7 +6,7 @@ type userPropsType = { user: userType };
 export const joinUserApi = async ({ user }: userPropsType) => {
   try {
     const response = await axios.post(
-      "https://nonghaeng.duckdns.org/join",
+      process.env.CHANGE_API_URL + "join",
       user
     );
     console.log(response);
@@ -21,7 +21,7 @@ type sellerPropsType = { seller: sellerType };
 export const joinSellerApi = async ({ seller }: sellerPropsType) => {
   try {
     const response = await axios.post(
-      "https://nonghaeng.duckdns.org/seller-join",
+      process.env.CHANGE_API_URL + "seller-join",
       seller
     );
     console.log(response);
