@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./Footer.module.css";
-import { footerHref } from "../../../../public/href/href";
+import { footerHref } from "@/model/href/href";
 import Home_Ic from "icon/home.svg";
 import Menu_Ic from "icon/sitemap_gray.svg";
 import Search_Ic from "icon/search_gray.svg";

@@ -7,7 +7,7 @@ import {
   tourCategoryMap,
   lodgCategoryMap,
   expCategoryMap,
-} from "name/name";
+} from "@/model/name/name";
 import { inputType } from "@/types/eventType";
 import X_Ic from "icon/x_gray.svg";
 import Filter_Ic from "icon/sitemap_gray.svg";

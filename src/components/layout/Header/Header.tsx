@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
-import { headerMenuHref } from "href/href";
+import { headerMenuHref } from "@/model/href/href";
 import Nonghaeng_Ic from "icon/nonghaeng.svg";
 import Sitemap_gray_Ic from "icon/sitemap_gray.svg";
 import store from "@/redux/loginStateStore";

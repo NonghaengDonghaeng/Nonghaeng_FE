@@ -6,7 +6,7 @@ import { useSearch } from "@/hooks/useSearch";
 import { useChange } from "@/hooks/useChange";
 import { inputType, formType } from "@/types/eventType";
 import { pageStateType } from "@/types/stateType";
-import { region, category } from "../../../../public/name/name";
+import { region, category } from "@/model/name/name";
 import Search_white_Ic from "icon/search_white.svg";
 import More_gray_Ic from "icon/more_gray.svg";
 import More_white_Ic from "icon/more_white.svg";
