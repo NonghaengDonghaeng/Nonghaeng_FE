@@ -1,6 +1,6 @@
 import Nav from "@/components/layout/Nav/Nav";
 import { Metadata } from "next";
-import { tripHref } from "../../../../public/href/href";
+import { tripHref } from "@/model/href/href";
 
 export const metadata: Metadata = {
   title: "농행동행 | 농촌여행",

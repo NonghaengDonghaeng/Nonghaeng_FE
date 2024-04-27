@@ -1,6 +1,6 @@
 import Nav from "@/components/layout/Nav/Nav";
 import { Metadata } from "next";
-import { itemHref } from "../../../../public/href/href";
+import { itemHref } from "@/model/href/href";
 
 export const metadata: Metadata = {
   title: "농행동행 | 기획상품",

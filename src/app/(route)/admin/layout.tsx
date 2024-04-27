@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Nav from "@/components/layout/Nav/Nav";
-import { adminHref, mypageHref } from "../../../../public/href/href";
+import { adminHref, mypageHref } from "@/model/href/href";
 
 export const metadata: Metadata = {
   title: "농행동행 | 관리자페이지",

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import styles from "./page.module.css";
-import { regionMap } from "name/name";
+import { regionMap } from "@/model/name/name";
 import { formType, inputType } from "@/types/eventType";
 import { userType } from "@/types/userType";
 import { joinUserApi } from "@/api/joinApi";
