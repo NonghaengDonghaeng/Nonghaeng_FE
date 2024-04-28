@@ -1,0 +1,69 @@
+@media screen and (min-width: 768px) {
+  .check_reserve {
+    @apply w-[400px] h-[500px] p-[20px] top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] absolute rounded-md border border-stone/20 bg-white;
+  }
+  .check_reserve > h1 {
+    @apply text-center text-[22px];
+  }
+  .check_reserve > div:nth-child(2) {
+    @apply mt-[20px];
+  }
+  .check_reserve > div > p {
+    @apply my-[10px] flex;
+  }
+  .check_reserve > div > p > label {
+    @apply text-[18px] min-w-[100px];
+  }
+  .check_reserve > div > p > span {
+    @apply text-stone/80;
+  }
+  .check_reserve > div:nth-child(3) {
+    @apply flex;
+  }
+  .check_reserve > div:nth-child(3) > button {
+    @apply w-[50%] h-[50px] rounded-md;
+  }
+  .check_reserve > div:nth-child(3) > button:nth-child(1) {
+    @apply bg-stone/10;
+  }
+  .check_reserve > div:nth-child(3) > button:nth-child(2) {
+    @apply bg-stone/80 text-white;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .check_reserve {
+    @apply w-full h-full top-0 left-0 px-[2.5%] pt-[60px] absolute bg-white;
+  }
+  .check_reserve > h1 {
+    @apply text-center text-[22px];
+  }
+  .check_reserve > div:nth-child(2) {
+    @apply mt-[20px];
+  }
+  .check_reserve > div > p {
+    @apply my-[10px] flex;
+  }
+  .check_reserve > div > p > label {
+    @apply text-[18px] min-w-[100px];
+  }
+  .check_reserve > div > p > span {
+    @apply text-stone/80;
+  }
+  .check_reserve > div:nth-child(3) {
+    @apply flex;
+  }
+  .check_reserve > div:nth-child(3) > button {
+    @apply w-[50%] h-[50px] rounded-md;
+  }
+  .check_reserve > div:nth-child(3) > button:nth-child(1) {
+    @apply bg-stone/10;
+  }
+  .check_reserve > div:nth-child(3) > button:nth-child(2) {
+    @apply bg-stone/80 text-white;
+  }
+}
+
+.off {
+  @apply hidden;
+}

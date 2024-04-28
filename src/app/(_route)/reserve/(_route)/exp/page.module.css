@@ -1,7 +1,7 @@
 /* 데스크탑 */
 @media screen and (min-width: 768px) {
   .reserve_exp {
-    @apply mt-[80px] text-stone font-[500];
+    @apply mt-[80px] mb-[20px] text-stone font-[500];
   }
   .reserve_exp > article {
     @apply my-[20px];
@@ -30,6 +30,9 @@
   }
   .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul > li:hover {
     @apply bg-green/10 border-green/80 text-green border-[1px];
+  }
+  .reserve_exp > button {
+    @apply w-full h-[50px] rounded-md text-white bg-stone/80;
   }
 }
 
@@ -66,7 +69,7 @@
     @apply w-full h-[50px] mb-[10px] px-[6px] flex justify-between items-center rounded-xl text-[14px] bg-stone/5 cursor-pointer;
   }
   .reserve_exp > button {
-    @apply w-full h-[50px] text-center rounded-md text-white bg-stone/80;
+    @apply w-full h-[50px] rounded-md text-white bg-stone/80;
   }
 }
 

@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { CustomCalendar } from "@/components/common/Calendars/Calendars";
 import exp_round_info from "@/db/expdata/round_info.json";
+import CheckReserve from "../../(components)/CheckReserve/CheckReserve";
 
 export default function Page() {
   const [day, setDay] = useState(null);
   const [isClick, setIsClick] = useState(false);
+  const [isCheck, setIsCheck] = useState(false);
   const [round_info, setRound_info] = useState<any[]>([]);
 
   useEffect(() => {
@@ -69,7 +71,8 @@ export default function Page() {
         </h1>
         <hr />
       </article>
-      <button>결제진행</button>
+      <button onClick={() => setIsCheck(true)}>결제진행</button>
+      <CheckReserve isCheck={isCheck} setIsCheck={setIsCheck} day={day} />
     </section>
   );
 }
