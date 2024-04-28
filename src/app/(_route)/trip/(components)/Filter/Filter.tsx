@@ -1,6 +1,6 @@
 import { useChange } from "@/hooks/useChange";
 import { pageStateType } from "@/types/stateType";
-import styles from "./Filters.module.css";
+import styles from "./Filter.module.css";
 import { setPageStateType } from "@/types/setStateType";
 import {
   regionMap,
@@ -10,14 +10,13 @@ import {
 } from "@/model/name/name";
 import { inputType } from "@/types/eventType";
 import X_Ic from "icon/x_gray.svg";
-import Filter_Ic from "icon/sitemap_gray.svg";
 
 type FilterPropsType = {
   pageState: pageStateType;
   setPageState: setPageStateType;
 };
 
-export function Filter({ pageState, setPageState }: FilterPropsType) {
+export default function Filter({ pageState, setPageState }: FilterPropsType) {
   const change = useChange();
 
   const lodgCategoryList = lodgCategoryMap.map((item, index) => (
@@ -134,17 +133,5 @@ export function Filter({ pageState, setPageState }: FilterPropsType) {
         선택한 조건으로 검색하기
       </button>
     </div>
-  );
-}
-
-export function FilterOn({ pageState, setPageState }: FilterPropsType) {
-  return (
-    <button
-      className={styles.filter_on}
-      onClick={() => setPageState({ ...pageState, isClick: true })}
-    >
-      <Filter_Ic />
-      <span>상세검색</span>
-    </button>
   );
 }

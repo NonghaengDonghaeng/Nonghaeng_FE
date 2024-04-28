@@ -8,9 +8,10 @@ import Paging from "@/components/common/Paging/Paging";
 import { getTourListApi } from "@/api/getListDataApi";
 import styles from "./page.module.css";
 import { tourListPageDataType } from "@/types/dataType/listPageDataType";
-import tourListPageResData from "@/db/tourdata/list.json";
 import { pageStateType } from "@/types/stateType";
-import { Filter, FilterOn } from "@/components/common/Filters/Filters";
+import Filter from "../../(components)/Filter/Filter";
+import FilterOn from "../../(components)/FilterOn/FilterOn";
+import tourListPageResData from "@/db/tourdata/list.json";
 
 export default function Page() {
   const searchParams = useSearchParams();

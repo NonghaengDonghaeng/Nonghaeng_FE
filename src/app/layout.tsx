@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
-import ScollTop from "@/components/layout/ScrollTop/ScrollTop";
-import Header from "../components/layout/Header/Header";
-import Footer from "../components/layout/Footer/Footer";
+import ScollTop from "@/common/components/ScrollTop/ScrollTop";
+import Header from "@/common/components/Header/Header";
+import Footer from "@/common/components/Footer/Footer";
+import Loading from "@/common/components/Loading/Loading";
 import "./globals.css";
-import Loading from "@/components/layout/Loading/Loading";
 
 const inter = Inter({ subsets: ["latin"] });
 

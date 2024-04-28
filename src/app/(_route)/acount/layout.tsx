@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import Nav from "@/components/layout/Nav/Nav";
+import Nav from "@/common/components/Nav/Nav";
 import { acountHref } from "@/model/href/href";
-import AdminRoute from "@/components/layout/AdminRoute/AdminRoute";
+import AdminRoute from "@/common/components/AdminRoute/AdminRoute";
 
 export const metadata: Metadata = {
   title: "농행동행 | 마이페이지",

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Nav from "@/components/layout/Nav/Nav";
+import Nav from "@/common/components/Nav/Nav";
 import { sitemapHref } from "@/model/href/href";
 
 export const metadata: Metadata = {

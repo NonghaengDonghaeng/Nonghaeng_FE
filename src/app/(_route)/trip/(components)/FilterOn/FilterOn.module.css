@@ -1,0 +1,24 @@
+/* 데스크탑 */
+@media (min-width: 768px) {
+  .filter_on {
+    @apply absolute right-[10%] flex items-center;
+  }
+  .filter_on > svg {
+    @apply mr-[10px];
+  }
+  .filter_on > span {
+    @apply text-[18px] text-stone font-[500];
+  }
+}
+/* 모바일 */
+@media (max-width: 767px) {
+  .filter_on {
+    @apply absolute right-[2.5%] flex items-center;
+  }
+  .filter_on > svg {
+    @apply mr-[10px];
+  }
+  .filter_on > span {
+    @apply hidden;
+  }
+}

@@ -1,4 +1,4 @@
-import AdminRoute from "@/components/layout/AdminRoute/AdminRoute";
+import AdminRoute from "@/common/components/AdminRoute/AdminRoute";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
