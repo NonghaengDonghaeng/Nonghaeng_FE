@@ -1,3 +1,4 @@
+import AdminRoute from "@/components/layout/AdminRoute/AdminRoute";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,5 +10,10 @@ export default function ReserveLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <main id="main">{children}</main>;
+  return (
+    <>
+      <AdminRoute />
+      <main id="main">{children}</main>
+    </>
+  );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import useMove from "@/hooks/useMove";
 import NavDetail from "@/components/common/NavDetail/NavDetail";
 import styles from "./page.module.css";
@@ -17,8 +17,10 @@ import DetailImg from "@/components/common/DetailImg/DetailImg";
 
 export default function Page() {
   const { element, moveElement } = useMove();
+  const searchParams = useSearchParams();
 
   const [resData, setResData] = useState<expDetailPageDataType | undefined>();
+  const [expId, setExpId] = useState(searchParams.get("exp_id"));
 
   // api useEffect
   useEffect(() => {
@@ -73,7 +75,7 @@ export default function Page() {
               <Great_orange_Ic />
             </li>
             <li>
-              <Link href="/reserve/exp">
+              <Link href={`/reserve/exp?exp_id=${expId}`}>
                 예약하기
                 <Calendar_green_Ic />
               </Link>

@@ -51,7 +51,9 @@ export default function Page() {
           isClick={isClick}
           setIsClick={setIsClick}
         />
-        <ul>{round_list}</ul>
+        <div>
+          <ul>{round_list}</ul>
+        </div>
       </article>
       <article>
         <h1>
@@ -67,6 +69,7 @@ export default function Page() {
         </h1>
         <hr />
       </article>
+      <button>결제진행</button>
     </section>
   );
 }

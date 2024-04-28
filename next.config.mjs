@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ["www.chamchamtrip.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.chamchamtrip.com",
+      },
+    ],
   },
   webpack: (config) => {
     config.module.rules.push({

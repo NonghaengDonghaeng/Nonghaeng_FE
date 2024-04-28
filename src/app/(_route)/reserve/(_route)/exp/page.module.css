@@ -1,0 +1,77 @@
+/* 데스크탑 */
+@media screen and (min-width: 768px) {
+  .reserve_exp {
+    @apply mt-[80px] text-stone font-[500];
+  }
+  .reserve_exp > article {
+    @apply my-[20px];
+  }
+  .reserve_exp > article > h1 {
+    @apply text-[22px] items-center flex;
+  }
+  .reserve_exp > article > h1 > div {
+    @apply w-[6px] h-[36px] rounded-full mr-[8px] bg-green;
+  }
+  .reserve_exp > article > hr {
+    @apply my-[20px] border-stone/40;
+  }
+
+  .reserve_exp > article:nth-child(1) > div:nth-child(3) {
+    @apply w-[350px] h-[40px] my-[10px] flex justify-center items-center text-green shadow shadow-stone/40 rounded-md cursor-pointer;
+  }
+  .reserve_exp > article:nth-child(1) > div:nth-child(5) {
+    @apply w-[350px] h-[300px] p-[20px] shadow shadow-stone/40 rounded-md;
+  }
+  .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul {
+    @apply w-full h-full overflow-scroll;
+  }
+  .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul > li {
+    @apply w-full h-[50px] mb-[10px] px-[6px] flex justify-between items-center rounded-xl text-[14px] bg-stone/5 cursor-pointer;
+  }
+  .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul > li:hover {
+    @apply bg-green/10 border-green/80 text-green border-[1px];
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+  .reserve_exp {
+    @apply mt-[60px] text-stone font-[500];
+  }
+  .reserve_exp > article {
+    @apply my-[20px];
+  }
+  .reserve_exp > article > h1 {
+    @apply text-[22px] items-center flex;
+  }
+  .reserve_exp > article > h1 > div {
+    @apply w-[6px] h-[36px] rounded-full mr-[8px] bg-green;
+  }
+  .reserve_exp > article > hr {
+    @apply my-[10px] border-stone/40;
+  }
+  .reserve_exp > article:nth-child(1) > div:nth-child(3) {
+    @apply w-full h-[40px] my-[10px] flex justify-center items-center text-green shadow shadow-stone/40 rounded-md cursor-pointer;
+  }
+  .reserve_exp > article:nth-child(1) > div:nth-child(4) {
+    @apply w-[95%];
+  }
+  .reserve_exp > article:nth-child(1) > div:nth-child(5) {
+    @apply w-full h-[300px] p-[20px]  shadow shadow-stone/40 rounded-md;
+  }
+  .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul {
+    @apply w-full h-full overflow-scroll;
+  }
+  .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul > li {
+    @apply w-full h-[50px] mb-[10px] px-[6px] flex justify-between items-center rounded-xl text-[14px] bg-stone/5 cursor-pointer;
+  }
+  .reserve_exp > button {
+    @apply w-full h-[50px] text-center rounded-md text-white bg-stone/80;
+  }
+}
+
+.on {
+  @apply bg-green/10 border-green/80 text-green border-[1px];
+}
+.off {
+}
