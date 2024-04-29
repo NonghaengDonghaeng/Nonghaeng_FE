@@ -5,7 +5,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.chamchamtrip.com",
+        hostname: "**",
+        port: "",
+        pathname: "**",
       },
     ],
   },
