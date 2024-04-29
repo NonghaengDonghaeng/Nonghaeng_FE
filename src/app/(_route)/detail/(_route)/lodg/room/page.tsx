@@ -103,6 +103,7 @@ export default function Page() {
             setCheck_in={setCheck_in}
             setCheck_out={setCheck_out}
             isClick={isClick}
+            setIsClick={setIsClick}
           />
           <ul>
             <li onClick={() => console.log("좋아요 api")}>

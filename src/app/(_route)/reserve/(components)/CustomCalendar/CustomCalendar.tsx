@@ -2,12 +2,13 @@ import Calendar from "react-calendar";
 import moment from "moment";
 import "react-calendar/dist/Calendar.css";
 import styles from "./CustomCalendar.module.css";
+import { setBooleanType } from "@/common/types/setStateType";
 
 type PropsType = {
-  isClick?: boolean;
-  setIsClick?: any;
-  day?: any;
-  setDay?: any;
+  isClick: boolean;
+  setIsClick: setBooleanType;
+  day: any;
+  setDay: any;
 };
 
 export default function CustomCalendar({

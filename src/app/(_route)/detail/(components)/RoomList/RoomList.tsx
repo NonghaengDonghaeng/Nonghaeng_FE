@@ -103,6 +103,7 @@ export default function RoomList({ roomListData }: RoomListPropsType) {
         setCheck_in={setCheck_in}
         setCheck_out={setCheck_out}
         isClick={isClick}
+        setIsClick={setIsClick}
       />
       <ul>{roomList}</ul>
     </div>

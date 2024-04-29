@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import CustomCalendar from "../../(components)/CustomCalendar/CustomCalednar";
+import CustomCalendar from "../../(components)/CustomCalendar/CustomCalendar";
 import exp_round_info from "@/db/expdata/round_info.json";
 import CheckReserve from "../../(components)/CheckReserve/CheckReserve";
 
