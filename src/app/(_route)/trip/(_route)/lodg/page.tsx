@@ -9,7 +9,7 @@ import LodgList from "@/common/components/LodgList/LodgList";
 import Paging from "../../(components)/Paging/Paging";
 import styles from "./page.module.css";
 import { pageStateType } from "../../(types)/pageStateType";
-import { lodgListDataType } from "@/types/lodgListDataType";
+import { lodgListDataType } from "@/common/types/lodgListDataType";
 import { getLodgListApi } from "../../(api)/getLodgListApi";
 import lodgListPageResData from "@/db/lodgdata/list.json";
 

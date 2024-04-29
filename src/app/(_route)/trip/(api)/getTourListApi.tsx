@@ -1,4 +1,4 @@
-import { setTourListDataType } from "@/types/tourListDataType";
+import { setTourListDataType } from "@/common/types/tourListDataType";
 import axios from "axios";
 
 type TourPropsType = {

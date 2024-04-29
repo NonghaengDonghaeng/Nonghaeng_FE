@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useSearch } from "@/hooks/useSearch";
 import { useChange } from "@/hooks/useChange";
 import styles from "./SearchBasic.module.css";
-import { inputType, formType } from "@/types/eventType";
+import { inputType, formType } from "@/common/types/eventType";
 import Search_gray_Ic from "icon/search_gray.svg";
 
 export default function SearchBasic() {

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import styles from "./page.module.css";
 import { regionMap } from "@/model/name/name";
-import { formType, inputType } from "@/types/eventType";
+import { formType, inputType } from "@/common/types/eventType";
 import { userType } from "../../../(types)/userType";
 import { joinUserApi } from "@/app/(_route)/acount/(api)/joinApi";
 

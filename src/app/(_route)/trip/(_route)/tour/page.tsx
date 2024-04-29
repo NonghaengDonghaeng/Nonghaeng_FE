@@ -6,7 +6,7 @@ import TourList from "@/common/components/TourList/TourList";
 import Paging from "../../(components)/Paging/Paging";
 import { getTourListApi } from "../../(api)/getTourListApi";
 import styles from "./page.module.css";
-import { tourListDataType } from "@/types/tourListDataType";
+import { tourListDataType } from "@/common/types/tourListDataType";
 import { pageStateType } from "../../(types)/pageStateType";
 import Filter from "../../(components)/Filter/Filter";
 import FilterOn from "../../(components)/FilterOn/FilterOn";

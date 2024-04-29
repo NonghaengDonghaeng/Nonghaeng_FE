@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { addExperienceDataType } from "@/app/(_route)/admin/(types)/adminDataType";
-import { inputType } from "@/types/eventType";
+import { inputType } from "@/common/types/eventType";
 import axios from "axios";
 
 export default function Page() {

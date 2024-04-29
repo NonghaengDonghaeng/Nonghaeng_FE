@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./LodgList.module.css";
-import { lodgListContentDataType } from "@/types/lodgListDataType";
+import { lodgListContentDataType } from "@/common/types/lodgListDataType";
 import Location_orange_Ic from "icon/location_orange.svg";
 
 type LodgListPropsType = {

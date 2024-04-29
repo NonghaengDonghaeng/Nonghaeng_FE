@@ -1,4 +1,4 @@
-import { setLodgListDataType } from "@/types/lodgListDataType";
+import { setLodgListDataType } from "@/common/types/lodgListDataType";
 import axios from "axios";
 
 type LodgPropsType = {

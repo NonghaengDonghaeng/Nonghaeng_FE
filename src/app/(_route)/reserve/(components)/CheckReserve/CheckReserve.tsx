@@ -1,4 +1,4 @@
-import { setBooleanType } from "@/types/setStateType";
+import { setBooleanType } from "@/common/types/setStateType";
 import styles from "./CheckReserve.module.css";
 
 type ReserveInfoType = {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./TourList.module.css";
-import { tourListContentDataType } from "@/types/tourListDataType";
+import { tourListContentDataType } from "@/common/types/tourListDataType";
 import Location_orange_Ic from "icon/location_orange.svg";
 import Exp_orange_Ic from "icon/exp_orange.svg";
 import Lodg_orange_Ic from "icon/lodg_orange.svg";

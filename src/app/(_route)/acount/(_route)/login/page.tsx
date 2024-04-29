@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import { kakaoLoginApi } from "@/app/(_route)/acount/(api)/loginApi";
 import { sellerLoginApi } from "@/app/(_route)/acount/(api)/loginApi";
-import { formType, inputType } from "@/types/eventType";
+import { formType, inputType } from "@/common/types/eventType";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { loginApi } from "@/app/(_route)/acount/(api)/loginApi";

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ExpList.module.css";
-import { expListContentDataType } from "@/types/expListDataType";
+import { expListContentDataType } from "@/common/types/expListDataType";
 import Location_orange_Ic from "icon/location_orange.svg";
 
 type ExpListPropsType = {

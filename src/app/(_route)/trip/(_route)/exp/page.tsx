@@ -8,7 +8,7 @@ import ExpList from "@/common/components/ExpList/ExpList";
 import Paging from "../../(components)/Paging/Paging";
 import styles from "./page.module.css";
 import { pageStateType } from "../../(types)/pageStateType";
-import { expListDatatype } from "@/types/expListDataType";
+import { expListDatatype } from "@/common/types/expListDataType";
 import { getExpListApi } from "../../(api)/getExpListApi";
 import expListPageResData from "@/db/expdata/list.json";
 

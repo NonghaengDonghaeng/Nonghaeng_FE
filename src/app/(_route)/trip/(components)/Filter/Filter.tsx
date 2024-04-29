@@ -7,7 +7,7 @@ import {
   lodgCategoryMap,
   expCategoryMap,
 } from "@/model/name/name";
-import { inputType } from "@/types/eventType";
+import { inputType } from "@/common/types/eventType";
 import X_Ic from "icon/x_gray.svg";
 
 type FilterPropsType = {
