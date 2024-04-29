@@ -1,0 +1,146 @@
+/* 데스크탑 */
+@media screen and (min-width: 1024px) {
+  .tour_list {
+  }
+  .tour_list > li {
+    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl;
+  }
+  .tour_list > li:nth-child(2n-1) {
+    @apply mr-[2%];
+  }
+  .tour_list > li > a {
+    @apply w-full h-full flex;
+  }
+  /* 사진영역 */
+  .tour_list > li > a > div:first-child {
+    @apply w-[45%] h-full;
+  }
+  .tour_list > li > a > div:first-child > img {
+    @apply w-[17.6%] h-[200px] rounded-xl absolute;
+  }
+  .tour_list > li > a > div:first-child > span {
+    @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
+  }
+  .tour_list > li > a > div:first-child > span > svg {
+    @apply mr-[6px];
+  }
+  /* 설명영역 */
+  .tour_list > li > a > div:last-child {
+    @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
+  }
+  .tour_list > li > a > div:last-child > h1 {
+    @apply text-[18px] font-[500] flex justify-between;
+  }
+  .tour_list > li > a > div:last-child > h1 > span {
+    @apply h-full px-[4px] py-[2px] mt-[6px] text-[8px] rounded-full text-white bg-orange;
+  }
+  .tour_list > li > a > div:last-child > h2 {
+    @apply w-full h-[36px] my-[34px] text-[12px] font-[400] block;
+  }
+  .tour_list > li > a > div:last-child > div {
+    @apply w-full h-[30px] flex justify-between;
+  }
+  .tour_list > li > a > div:last-child > div > span {
+    @apply flex items-center text-[14px] font-[500];
+  }
+  .tour_list > li > a > div:last-child > div > span > svg {
+    @apply mr-[6px];
+  }
+}
+
+/* 테블릿  */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .tour_list {
+  }
+  .tour_list > li {
+    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl;
+  }
+  .tour_list > li:nth-child(2n-1) {
+    @apply mr-[2%];
+  }
+  .tour_list > li > a {
+    @apply w-full h-full flex;
+  }
+  /* 사진영역 */
+  .tour_list > li > a > div:first-child {
+    @apply w-[45%] h-full p-[16px] relative;
+  }
+  .tour_list > li > a > div:first-child > img {
+    @apply w-full h-full left-0 top-0 rounded-xl absolute;
+  }
+  .tour_list > li > a > div:first-child > span {
+    @apply absolute flex items-center text-[16px] font-[500] text-white;
+  }
+  .tour_list > li > a > div:first-child > span > svg {
+    @apply mr-[6px];
+  }
+  /* 설명영역 */
+  .tour_list > li > a > div:last-child {
+    @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
+  }
+  .tour_list > li > a > div:last-child > h1 {
+    @apply text-[18px] inline-block;
+  }
+  .tour_list > li > a > div:last-child > h1 > span {
+    @apply hidden;
+  }
+  .tour_list > li > a > div:last-child > h2 {
+    @apply w-full h-[36px] mt-[16px] mb-[48px] text-[12px] font-[400] block;
+  }
+  .tour_list > li > a > div:last-child > div {
+    @apply w-full h-[30px] flex justify-between;
+  }
+  .tour_list > li > a > div:last-child > div > span {
+    @apply flex items-center text-[14px] font-[500];
+  }
+  .tour_list > li > a > div:last-child > div > span > svg {
+    @apply mr-[6px];
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+  .tour_list {
+  }
+  /* 사진영역 */
+  .tour_list > li {
+    @apply w-[49%] h-[300px] mb-[20px] inline-block rounded-xl;
+  }
+  .tour_list > li:nth-child(2n-1) {
+    @apply mr-[2%];
+  }
+  .tour_list > li > a {
+    @apply w-full h-full;
+  }
+  .tour_list > li > a > div:nth-child(1) {
+    @apply h-[160px] p-[10px] relative;
+  }
+  .tour_list > li > a > div:nth-child(1) > img {
+    @apply w-full h-full absolute left-0 top-0 rounded-md z-0;
+  }
+  .tour_list > li > a > div:nth-child(1) > span {
+    @apply z-[1] flex items-center absolute text-white;
+  }
+  .tour_list > li > a > div:nth-child(1) > span > svg {
+    @apply mr-[6px];
+  }
+  /* 설명영역 */
+  .tour_list > li > a > div:nth-child(2) {
+    @apply h-[140px] p-[10px] rounded-md border-[1px] border-stone/20;
+  }
+  .tour_list > li > a > div:nth-child(2) > h1 {
+    @apply text-[18px] font-[600];
+  }
+  .tour_list > li > a > div:nth-child(2) > h1 > span {
+    @apply hidden;
+  }
+  .tour_list > li > a > div:nth-child(2) > h2 {
+    @apply w-full h-[20px] my-[10px] text-[12px] font-[400] overflow-hidden text-ellipsis text-nowrap;
+  }
+  .tour_list > li > a > div:nth-child(2) > div {
+    @apply w-full mt-[20px] flex justify-between;
+  }
+  .tour_list > li > a > div:nth-child(2) > div > span {
+    @apply flex items-center;
+  }
+}

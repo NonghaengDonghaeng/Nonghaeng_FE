@@ -5,13 +5,12 @@ import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import Filter from "../../(components)/Filter/Filter";
 import FilterOn from "../../(components)/FilterOn/FilterOn";
-import Overlay from "@/components/common/Overlay/Overlay";
-import { LodgList } from "@/components/common/Lists/Lists";
-import Paging from "@/components/common/Paging/Paging";
+import LodgList from "@/common/components/LodgList/LodgList";
+import Paging from "../../(components)/Paging/Paging";
 import styles from "./page.module.css";
-import { pageStateType } from "@/types/stateType";
-import { lodgListPageDataType } from "@/types/dataType/listPageDataType";
-import { getLodgListApi } from "@/api/getListDataApi";
+import { pageStateType } from "../../(types)/pageStateType";
+import { lodgListDataType } from "@/types/lodgListDataType";
+import { getLodgListApi } from "../../(api)/getLodgListApi";
 import lodgListPageResData from "@/db/lodgdata/list.json";
 
 export default function Page() {
@@ -30,7 +29,7 @@ export default function Page() {
     minCost: searchParams.get("min_cost") || "",
   });
 
-  const [resData, setResData] = useState<lodgListPageDataType>();
+  const [resData, setResData] = useState<lodgListDataType>();
 
   // api useEffect1
   useEffect(() => {

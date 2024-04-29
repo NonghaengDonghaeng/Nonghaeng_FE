@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { ScTotal } from "@/components/common/Searchs/Searchs";
+import SearchTotal from "./(components)/SearchTotal/SearchTotal";
 import styles from "./page.module.css";
 
 export default function Page() {
@@ -15,7 +15,7 @@ export default function Page() {
     <>
       <section className={styles.section1}>
         <h1>통합검색</h1>
-        <ScTotal />
+        <SearchTotal />
         {search_word}
       </section>
       <section className={styles.section2}></section>

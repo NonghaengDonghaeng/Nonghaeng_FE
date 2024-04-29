@@ -1,0 +1,6 @@
+.on {
+  @apply absolute;
+}
+.off {
+  @apply hidden;
+}

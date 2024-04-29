@@ -1,17 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
-import NavDetail from "@/components/common/NavDetail/NavDetail";
+import NavDetail from "../../(components)/NavDetail/NavDetail";
 import useMove from "@/hooks/useMove";
-import { RoomList } from "@/components/common/Lists/Lists";
+import RoomList from "../../(components)/RoomList/RoomList";
 import styles from "./page.module.css";
-import { lodgDetailPageDataType } from "@/types/dataType/detailPageDataType";
+import { lodgDetailDataType } from "../../(types)/lodgDetailDataType";
 import lodgDetailPageResData from "@/db/lodgdata/detail.json";
-import DetailImg from "@/components/common/DetailImg/DetailImg";
+import DetailImg from "../../(components)/DetailImg/DetailImg";
 
 export default function Page() {
   const { element, moveElement } = useMove();
 
-  const [resData, setResData] = useState<lodgDetailPageDataType | undefined>();
+  const [resData, setResData] = useState<lodgDetailDataType | undefined>();
 
   useEffect(() => {
     console.log("숙박중간페이지 api");

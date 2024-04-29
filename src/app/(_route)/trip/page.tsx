@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { TourList, ExpList, LodgList } from "@/components/common/Lists/Lists";
+import TourList from "@/common/components/TourList/TourList";
+import ExpList from "@/common/components/ExpList/ExpList";
+import LodgList from "@/common/components/LodgList/LodgList";
 import styles from "./page.module.css";
-import {
-  expListContentDataType,
-  lodgListContentDataType,
-  tourListContentDataType,
-} from "@/types/dataType/listPageDataType";
+import { tourListContentDataType } from "@/types/tourListDataType";
+import { expListContentDataType } from "@/types/expListDataType";
+import { lodgListContentDataType } from "@/types/lodgListDataType";
 import More_green_Ic from "icon/more_green.svg";
 import tripPageResData from "@/db/tripPageResData.json";
 

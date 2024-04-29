@@ -3,19 +3,18 @@ import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import useMove from "@/hooks/useMove";
 import Link from "next/link";
-import Image from "next/image";
-import ClickCount from "@/components/common/ClickCount/ClickCount";
-import { CustomRangeCalendar } from "@/components/common/Calendars/Calendars";
-import NavDetail from "@/components/common/NavDetail/NavDetail";
+import ClickCount from "@/common/components/ClickCount/ClickCount";
+import { CustomRangeCalendar } from "../../../(components)/CustomRoundCalendar/CustomRangeCalendar";
+import NavDetail from "../../../(components)/NavDetail/NavDetail";
 import styles from "./page.module.css";
-import { roomDetailPageDataType } from "@/types/dataType/detailPageDataType";
+import { roomDetailDataType } from "../../../(types)/roomDetailDataType";
 import Room_orange_Ic from "icon/room_orange.svg";
 import Person_orange_Ic from "icon/person_orange.svg";
 import Calendar_green_Ic from "icon/calendar_green.svg";
 import Great_orange_Ic from "icon/great_orange.svg";
 import Calendar_orange_Ic from "icon/calendar_orange.svg";
 import roomDetailPageResData from "@/db/roomdata/detail.json";
-import DetailImg from "@/components/common/DetailImg/DetailImg";
+import DetailImg from "../../../(components)/DetailImg/DetailImg";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -29,7 +28,7 @@ export default function Page() {
   const [check_in, setCheck_in] = useState(null);
   const [check_out, setCheck_out] = useState(null);
 
-  const [resData, setResData] = useState<roomDetailPageDataType>();
+  const [resData, setResData] = useState<roomDetailDataType>();
 
   useEffect(() => {
     console.log("농촌숙박 상세 api");

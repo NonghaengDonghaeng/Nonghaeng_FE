@@ -1,0 +1,6 @@
+.total_search {
+  @apply w-[500px] h-[80px] mx-auto mt-[10px] p-[16px] rounded-[5px] flex justify-between  bg-[#FFFFFF]/50;
+}
+.total_search > input {
+  @apply w-full mr-[16px] px-[20px] rounded-[5px];
+}

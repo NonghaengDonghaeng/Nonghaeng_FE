@@ -1,0 +1,10 @@
+@media (min-width: 768px) {
+  .search_button {
+    @apply w-[72px] h-[48px] rounded-md flex justify-center  items-center text-white bg-stone;
+  }
+}
+@media (max-width: 767px) {
+  .search_button {
+    @apply w-[72px] h-[44px] rounded-md flex justify-center  items-center text-white bg-stone;
+  }
+}

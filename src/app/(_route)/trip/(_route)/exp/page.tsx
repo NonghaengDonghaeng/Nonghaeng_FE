@@ -4,13 +4,12 @@ import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import Filter from "../../(components)/Filter/Filter";
 import FilterOn from "../../(components)/FilterOn/FilterOn";
-import Overlay from "@/components/common/Overlay/Overlay";
-import { ExpList } from "@/components/common/Lists/Lists";
-import Paging from "@/components/common/Paging/Paging";
+import ExpList from "@/common/components/ExpList/ExpList";
+import Paging from "../../(components)/Paging/Paging";
 import styles from "./page.module.css";
-import { pageStateType } from "@/types/stateType";
-import { expListPageDatatype } from "@/types/dataType/listPageDataType";
-import { getExpListApi } from "@/api/getListDataApi";
+import { pageStateType } from "../../(types)/pageStateType";
+import { expListDatatype } from "@/types/expListDataType";
+import { getExpListApi } from "../../(api)/getExpListApi";
 import expListPageResData from "@/db/expdata/list.json";
 
 export default function Page() {
@@ -29,7 +28,7 @@ export default function Page() {
     minCost: searchParams.get("min_cost") || "",
   });
 
-  const [resData, setResData] = useState<expListPageDatatype>();
+  const [resData, setResData] = useState<expListDatatype>();
 
   // api useEffect
   useEffect(() => {

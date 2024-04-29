@@ -1,0 +1,61 @@
+/* 데스크탑 */
+@media (min-width: 768px) {
+  .sub_list {
+    @apply w-[280px] h-[400px] p-[14px] top-[920px] right-[10%] border-[1px] overflow-scroll duration-500 border-orange rounded-md bg-white absolute;
+  }
+  .sub_list > p {
+    @apply text-[18px] font-[500] text-orange;
+  }
+  .sub_list > li {
+    @apply w-full h-[100px] mt-[14px]  rounded-md cursor-pointer;
+  }
+  .sub_list > li:hover {
+    @apply bg-orange/10;
+  }
+  .sub_list > li > a {
+    @apply flex;
+  }
+  .sub_list > li > a > img {
+    @apply w-[100px]  rounded-md;
+  }
+  .sub_list > li > a > div {
+    @apply w-full h-[100px] p-[20px] border-[1px] border-stone/20 rounded-md;
+  }
+  .sub_list > li > a > div > span {
+    @apply mb-[14px] block;
+  }
+  .sub_list_off {
+    @apply w-[280px] h-0 top-[920px] right-[10%] duration-500 overflow-hidden border-orange rounded-md bg-white absolute;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .sub_list {
+    @apply w-[95%] h-[400px] mr-[2.5%] p-[14px] border-[1px] overflow-scroll duration-500 border-orange rounded-md bg-white absolute;
+  }
+  .sub_list > p {
+    @apply text-[18px] font-[500] text-orange;
+  }
+  .sub_list > li {
+    @apply w-full h-[100px] mt-[14px]  rounded-md cursor-pointer;
+  }
+  .sub_list > li:hover {
+    @apply bg-orange/10;
+  }
+  .sub_list > li > a {
+    @apply flex;
+  }
+  .sub_list > li > a > img {
+    @apply w-[140px] h-[100px]  rounded-md;
+  }
+  .sub_list > li > a > div {
+    @apply w-full h-[100px] p-[20px] border-[1px] border-stone/20 rounded-md;
+  }
+  .sub_list > li > a > div > span {
+    @apply mb-[14px] block;
+  }
+  .sub_list_off {
+    @apply w-[95%] h-0 duration-500  overflow-hidden border-orange rounded-md bg-white absolute;
+  }
+}

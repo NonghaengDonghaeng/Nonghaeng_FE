@@ -1,5 +1,4 @@
-import { pageStateType } from "@/types/stateType";
-import { setPageStateType } from "@/types/setStateType";
+import { pageStateType, setPageStateType } from "../../(types)/pageStateType";
 import styles from "./FilterOn.module.css";
 import Filter_Ic from "icon/sitemap_gray.svg";
 

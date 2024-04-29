@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { addExperienceDataType } from "@/types/adminDataType";
+import { addExperienceDataType } from "@/app/(_route)/admin/(types)/adminDataType";
 import { inputType } from "@/types/eventType";
 import axios from "axios";
 

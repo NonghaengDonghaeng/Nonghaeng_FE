@@ -1,7 +1,6 @@
 import { useChange } from "@/hooks/useChange";
-import { pageStateType } from "@/types/stateType";
+import { pageStateType, setPageStateType } from "../../(types)/pageStateType";
 import styles from "./Filter.module.css";
-import { setPageStateType } from "@/types/setStateType";
 import {
   regionMap,
   tourCategoryMap,

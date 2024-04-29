@@ -1,15 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useChange } from "@/hooks/useChange";
-import { kakaoLoginApi } from "@/api/loginApi";
-import { sellerLoginApi } from "@/api/loginApi";
+import { kakaoLoginApi } from "@/app/(_route)/acount/(api)/loginApi";
+import { sellerLoginApi } from "@/app/(_route)/acount/(api)/loginApi";
 import { formType, inputType } from "@/types/eventType";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import { loginApi } from "@/api/loginApi";
+import { loginApi } from "@/app/(_route)/acount/(api)/loginApi";
 import styles from "./page.module.css";
 import Link from "next/link";
-import { sellerType, userType } from "@/types/userType";
+import { userType } from "../../(types)/userType";
+import { sellerType } from "../../(types)/sellerType";
 
 export default function Page() {
   const change = useChange();

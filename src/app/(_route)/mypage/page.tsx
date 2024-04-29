@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import Person_orange_Ic from "icon/person_orange.svg";
-import { mypageDataType } from "@/types/dataType/mypageDataType";
-import { getMypageApi } from "@/api/getMypageDataApi";
+import { mypageDataType } from "./(types)/mypageDataType";
+import { getMypageApi } from "@/app/(_route)/mypage/(api)/getMypageDataApi";
 
 export default function Page() {
   const router = useRouter();

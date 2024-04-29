@@ -2,13 +2,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ScMain } from "@/components/common/Searchs/Searchs";
-import { ExpList, LodgList } from "@/components/common/Lists/Lists";
+import SearchMain from "./(components)/SearchMain/SearchMain";
+import ExpList from "@/common/components/ExpList/ExpList";
+import LodgList from "@/common/components/LodgList/LodgList";
 import styles from "./page.module.css";
-import {
-  expListContentDataType,
-  lodgListContentDataType,
-} from "@/types/dataType/listPageDataType";
+import { expListContentDataType } from "@/types/expListDataType";
+import { lodgListContentDataType } from "@/types/lodgListDataType";
 import section1_bg from "img/bg/home_bg1.png";
 import More_nonghang_Ic from "icon/more_nonghaeng_white.svg";
 import More_green_Ic from "icon/more_green.svg";
@@ -43,7 +42,7 @@ export default function Home() {
           <More_nonghang_Ic />
         </Link>
       </section>
-      <ScMain />
+      <SearchMain />
       <section className={styles.section2}>
         <article>
           <h1>

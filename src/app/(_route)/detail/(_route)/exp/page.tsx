@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import useMove from "@/hooks/useMove";
-import NavDetail from "@/components/common/NavDetail/NavDetail";
+import NavDetail from "../../(components)/NavDetail/NavDetail";
 import styles from "./page.module.css";
-import { expDetailPageDataType } from "@/types/dataType/detailPageDataType";
+import { expDetailDataType } from "../../(types)/expDetailDataType";
 import Grade_orange_Ic from "icon/grade_orange.svg";
 import Person_orange_Ic from "icon/person_orange.svg";
 import Time_orange_Ic from "icon/time_orange.svg";
@@ -13,13 +13,13 @@ import Price_orange_Ic from "icon/price_orange.svg";
 import Great_orange_Ic from "icon/great_orange.svg";
 import Calendar_green_Ic from "icon/calendar_green.svg";
 import expDetailPageResData from "@/db/expdata/detail.json";
-import DetailImg from "@/components/common/DetailImg/DetailImg";
+import DetailImg from "../../(components)/DetailImg/DetailImg";
 
 export default function Page() {
   const { element, moveElement } = useMove();
   const searchParams = useSearchParams();
 
-  const [resData, setResData] = useState<expDetailPageDataType | undefined>();
+  const [resData, setResData] = useState<expDetailDataType | undefined>();
   const [expId, setExpId] = useState(searchParams.get("exp_id"));
 
   // api useEffect

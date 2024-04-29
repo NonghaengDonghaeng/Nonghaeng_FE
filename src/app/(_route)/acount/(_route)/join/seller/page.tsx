@@ -4,8 +4,8 @@ import { useChange } from "@/hooks/useChange";
 import styles from "./page.module.css";
 import { regionMap } from "@/model/name/name";
 import { formType, inputType } from "@/types/eventType";
-import { sellerType } from "@/types/userType";
-import { joinSellerApi } from "@/api/joinApi";
+import { sellerType } from "../../../(types)/sellerType";
+import { joinSellerApi } from "@/app/(_route)/acount/(api)/joinApi";
 
 export default function Page() {
   const change = useChange();

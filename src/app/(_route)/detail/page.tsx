@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import useMove from "@/hooks/useMove";
-import NavDetail from "@/components/common/NavDetail/NavDetail";
-import { SubList } from "@/components/common/Lists/Lists";
+import NavDetail from "./(components)/NavDetail/NavDetail";
+import SubList from "./(components)/SubList/SubList";
 import styles from "./page.module.css";
-import { tourDetailPageDataType } from "@/types/dataType/detailPageDataType";
+import { tourDetailDataType } from "./(types)/tourDetailDataType";
 import tourDetailPageResData from "@/db/tourdata/detail.json";
 import Grade_orange_Ic from "icon/grade_orange.svg";
 import Comment_orange_Ic from "icon/commnet_orange.svg";
@@ -13,7 +13,7 @@ import Email_orange_Ic from "icon/email_orange.svg";
 import Tell_orange_Ic from "icon/tell_orange.svg";
 import Exp_orange_Ic from "icon/exp_orange.svg";
 import Lodg_orange_Ic from "icon/lodg_orange.svg";
-import DetailImg from "@/components/common/DetailImg/DetailImg";
+import DetailImg from "./(components)/DetailImg/DetailImg";
 
 export default function Page() {
   const { element, moveElement } = useMove();
@@ -23,7 +23,7 @@ export default function Page() {
     isClick: { exp: false, lodg: false },
   });
 
-  const [resData, setResData] = useState<tourDetailPageDataType>();
+  const [resData, setResData] = useState<tourDetailDataType>();
 
   useEffect(() => {
     console.log("농촌관광 상세 api");

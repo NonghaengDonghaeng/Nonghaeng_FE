@@ -2,13 +2,12 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import Overlay from "@/components/common/Overlay/Overlay";
-import { TourList } from "@/components/common/Lists/Lists";
-import Paging from "@/components/common/Paging/Paging";
-import { getTourListApi } from "@/api/getListDataApi";
+import TourList from "@/common/components/TourList/TourList";
+import Paging from "../../(components)/Paging/Paging";
+import { getTourListApi } from "../../(api)/getTourListApi";
 import styles from "./page.module.css";
-import { tourListPageDataType } from "@/types/dataType/listPageDataType";
-import { pageStateType } from "@/types/stateType";
+import { tourListDataType } from "@/types/tourListDataType";
+import { pageStateType } from "../../(types)/pageStateType";
 import Filter from "../../(components)/Filter/Filter";
 import FilterOn from "../../(components)/FilterOn/FilterOn";
 import tourListPageResData from "@/db/tourdata/list.json";
@@ -28,7 +27,7 @@ export default function Page() {
     category: Array.from(new Set(searchParams.getAll("category"))) || [],
   });
 
-  const [resData, setResData] = useState<tourListPageDataType>();
+  const [resData, setResData] = useState<tourListDataType>();
 
   // api useEffect
   useEffect(() => {
