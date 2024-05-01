@@ -39,17 +39,13 @@ export default function Page() {
           <DetailImg imgUrl={resData?.img_url} />
         </article>
         <article>
-          {resData?.tour_info.tourId !== undefined ? (
-            <span>
-              <Link href={`/detail?tour_id=${resData?.tour_info.tourId}`}>
-                {resData?.tour_info.tourName}
-              </Link>
-              {" > "}
-              {resData?.experience_name}
-            </span>
-          ) : (
-            <></>
-          )}
+          {/* <span>
+            <Link href={`/detail?tour_id=${resData?.tour_info.tourId}`}>
+              {resData?.tour_info.tourName}
+            </Link>
+            {" > "}
+            {resData?.experience_name}
+          </span> */}
           <h1>
             {resData?.experience_name}
             <span>
