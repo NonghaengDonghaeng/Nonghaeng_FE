@@ -34,8 +34,7 @@ export default function Page() {
   useEffect(() => {
     setUrl({ urlItem: pageState });
     const res = getExpListApi({
-      pageIndex:
-        pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
+      pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     });
     setResData(expListPageResData);

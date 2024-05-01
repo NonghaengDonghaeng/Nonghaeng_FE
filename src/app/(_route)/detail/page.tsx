@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import useMove from "@/hooks/useMove";
 import NavDetail from "./(components)/NavDetail/NavDetail";
 import SubList from "./(components)/SubList/SubList";
@@ -14,9 +15,14 @@ import Tell_orange_Ic from "icon/tell_orange.svg";
 import Exp_orange_Ic from "icon/exp_orange.svg";
 import Lodg_orange_Ic from "icon/lodg_orange.svg";
 import DetailImg from "./(components)/DetailImg/DetailImg";
+import { getTourDetailApi } from "./(api)/getTourDetailApi";
 
 export default function Page() {
+  const searchParams = useSearchParams();
   const { element, moveElement } = useMove();
+  const [tourId, setTourId] = useState<number>(
+    Number(searchParams.get("tour_id"))
+  );
   const [pageState, setPageState] = useState<{
     isClick: { exp: boolean; lodg: boolean };
   }>({
@@ -27,6 +33,7 @@ export default function Page() {
 
   useEffect(() => {
     console.log("농촌관광 상세 api");
+    const res = getTourDetailApi({ tourId });
     setResData(tourDetailPageResData);
   }, []);
 

@@ -32,12 +32,10 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    // getTourListApi({
-    //   pageIndex:
-    //     pageState.page_index !== undefined ? pageState.page_index - 1 : 0,
-    //   searchWord: pageState.search_word,
-    //   setResData,
-    // });
+    const res = getTourListApi({
+      pageIndex: pageState.pageIndex,
+      searchWord: pageState.searchWord,
+    });
     setResData(tourListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 

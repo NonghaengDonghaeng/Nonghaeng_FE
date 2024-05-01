@@ -1,7 +1,7 @@
 import axios from "axios";
 
 type PropsType = {
-  pageIndex: number;
+  pageIndex: number | undefined;
   searchWord: string | undefined;
 };
 
@@ -11,7 +11,7 @@ export const getExpListApi = async ({ pageIndex, searchWord }: PropsType) => {
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
       process.env.NEXT_PUBLIC_API_URL +
-        `experiences?page=${pageIndex - 1}&keyword=${searchWord}`,
+        `experiences?page=${Number(pageIndex) - 1}&keyword=${searchWord}`,
       { headers: { Authorization: token } }
     );
     return res;
