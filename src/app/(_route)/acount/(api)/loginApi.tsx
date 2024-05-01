@@ -29,7 +29,7 @@ type userPropsType = { user: userType };
 export const loginApi = async ({ user }: userPropsType) => {
   try {
     const response = await axios.post(
-      process.env.NEXT_PUBLIC_API_URL_2 + "login",
+      process.env.NEXT_PUBLIC_API_URL + "login",
       user
     );
     console.log(response.headers.authorization);
@@ -46,7 +46,7 @@ type sellerPropsType = { seller: sellerType };
 export const sellerLoginApi = async ({ seller }: sellerPropsType) => {
   try {
     const response = await axios.post(
-      process.env.NEXT_PUBLIC_API_URL_2 + "seller-login",
+      process.env.NEXT_PUBLIC_API_URL + "seller-login",
       seller
     );
     let token = response.headers["authorization"];
@@ -60,5 +60,5 @@ export const sellerLoginApi = async ({ seller }: sellerPropsType) => {
 // 카카오로그인
 export const kakaoLoginApi = async () => {
   window.location.href =
-    process.env.NEXT_PUBLIC_API_URL_2 + "oauth2/authorization/kakao";
+    process.env.NEXT_PUBLIC_API_URL + "oauth2/authorization/kakao";
 };
