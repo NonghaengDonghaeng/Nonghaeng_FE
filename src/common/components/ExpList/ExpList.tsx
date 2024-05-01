@@ -14,7 +14,6 @@ export default function ExpList({ content }: ExpListPropsType) {
       <Link href={`/detail/exp?exp_id=${item.experience_id}`}>
         <div>
           <Image
-            loader={() => item.img_url}
             src={item.img_url}
             alt="exp_list_img"
             width={800}

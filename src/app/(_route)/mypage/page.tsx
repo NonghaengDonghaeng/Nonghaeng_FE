@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import Person_orange_Ic from "icon/person_orange.svg";
 import { mypageDataType } from "./(types)/mypageDataType";
 import { getMypageApi } from "@/app/(_route)/mypage/(api)/getMypageDataApi";
+import store from "@/redux/loginStateStore";
 
 export default function Page() {
   const router = useRouter();
@@ -18,6 +19,7 @@ export default function Page() {
 
   const logout = () => {
     localStorage.removeItem("jwt");
+    store.dispatch({ type: "LOGOUT" });
     router.push("/");
   };
 
