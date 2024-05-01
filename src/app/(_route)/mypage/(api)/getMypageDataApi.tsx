@@ -7,7 +7,7 @@ export const getMypageApi = async ({ setResData }: mypagePorpsType) => {
   console.log("마이페이지 api");
   try {
     let token = localStorage.getItem("jwt");
-    const res = await axios.get("https://nonghaeng.duckdns.org/my-page", {
+    const res = await axios.get(process.env.NEXT_PUBLIC_URL_API + "my-page", {
       headers: { Authorization: token },
     });
     setResData(await res.data);
