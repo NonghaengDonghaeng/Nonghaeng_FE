@@ -28,18 +28,17 @@ export default function Page() {
     minCost: searchParams.get("min_cost") || "",
   });
 
-  const [resData, setResData] = useState<expListDatatype>();
+  const [resData, setResData] = useState<expListDatatype | any>();
 
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    // getExpListApi({
-    //   pageIndex:
-    //     pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
-    //   searchWord: pageState.searchWord,
-    //   setResData,
-    // });
-    setResData(expListPageResData);
+    const res = getExpListApi({
+      pageIndex:
+        pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
+      searchWord: pageState.searchWord,
+    });
+    setResData(res);
   }, [pageState.state, pageState.pageIndex]);
 
   return (
