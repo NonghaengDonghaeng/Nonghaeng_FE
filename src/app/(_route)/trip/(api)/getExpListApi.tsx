@@ -1,4 +1,3 @@
-import { setExpListDataType } from "@/common/types/expListDataType";
 import axios from "axios";
 
 type ExpPropsType = {
