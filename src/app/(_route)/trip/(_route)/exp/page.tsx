@@ -38,7 +38,7 @@ export default function Page() {
         pageState.pageIndex !== undefined ? pageState.pageIndex - 1 : 0,
       searchWord: pageState.searchWord,
     });
-    setResData(res);
+    setResData(expListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 
   return (
