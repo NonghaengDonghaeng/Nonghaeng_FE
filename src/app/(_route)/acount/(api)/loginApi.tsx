@@ -7,7 +7,7 @@ export const verifyJwtApi = async () => {
   let token = localStorage.getItem("jwt");
   if (token) {
     try {
-      const res = await axios.get(process.env.NEXT_PUBLIC_API_URL_2 + "valid", {
+      const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "valid", {
         headers: { Authorization: token },
       });
       if (res.status == 200) {
