@@ -59,6 +59,7 @@ export const sellerLoginApi = async ({ seller }: sellerPropsType) => {
 
 // 카카오로그인
 export const kakaoLoginApi = async () => {
-  window.location.href =
-    process.env.NEXT_PUBLIC_API_URL + "oauth2/authorization/kakao";
+  window.location.replace(
+    process.env.NEXT_PUBLIC_API_URL + "oauth2/authorization/kakao"
+  );
 };
