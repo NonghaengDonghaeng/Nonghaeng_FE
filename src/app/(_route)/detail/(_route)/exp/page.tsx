@@ -14,18 +14,22 @@ import Great_orange_Ic from "icon/great_orange.svg";
 import Calendar_green_Ic from "icon/calendar_green.svg";
 import expDetailPageResData from "@/db/expdata/detail.json";
 import DetailImg from "../../(components)/DetailImg/DetailImg";
+import { getExpDetailApi } from "../../(api)/getExpDetailApi";
 
 export default function Page() {
   const { element, moveElement } = useMove();
   const searchParams = useSearchParams();
 
-  const [resData, setResData] = useState<expDetailDataType | undefined>();
-  const [expId, setExpId] = useState(searchParams.get("exp_id"));
+  const [resData, setResData] = useState<expDetailDataType | any>();
+  const [expId, setExpId] = useState<number>(
+    Number(searchParams.get("exp_id"))
+  );
 
   // api useEffect
   useEffect(() => {
     console.log("체험 상세 api");
-    setResData(expDetailPageResData);
+    const res = getExpDetailApi({ expId });
+    setResData(res);
   }, []);
 
   return (

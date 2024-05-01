@@ -1,14 +1,11 @@
 import axios from "axios";
 
-type ExpPropsType = {
+type PropsType = {
   pageIndex: number | undefined;
   searchWord: string | undefined;
 };
 
-export const getExpListApi = async ({
-  pageIndex,
-  searchWord,
-}: ExpPropsType) => {
+export const getExpListApi = async ({ pageIndex, searchWord }: PropsType) => {
   console.log("체험 리스트 api");
   try {
     let token = localStorage.getItem("jwt");
