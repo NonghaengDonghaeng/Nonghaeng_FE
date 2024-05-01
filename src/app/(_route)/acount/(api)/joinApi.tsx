@@ -7,7 +7,7 @@ type userPropsType = { user: userType };
 export const joinUserApi = async ({ user }: userPropsType) => {
   try {
     const response = await axios.post(
-      process.env.NEXT_PUBLIC_API_URL_2 + "join",
+      process.env.NEXT_PUBLIC_API_URL + "join",
       user
     );
     console.log(response);
@@ -22,7 +22,7 @@ type sellerPropsType = { seller: sellerType };
 export const joinSellerApi = async ({ seller }: sellerPropsType) => {
   try {
     const response = await axios.post(
-      process.env.NEXT_PUBLIC_API_URL_2 + "seller-join",
+      process.env.NEXT_PUBLIC_API_URL + "seller-join",
       seller
     );
     console.log(response);
