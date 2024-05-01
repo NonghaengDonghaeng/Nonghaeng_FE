@@ -28,8 +28,8 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     console.log("체험 상세 api");
-    // const res = getExpDetailApi({ expId });
-    setResData(expDetailPageResData);
+    const res = getExpDetailApi({ expId });
+    setResData(res);
   }, []);
 
   return (
