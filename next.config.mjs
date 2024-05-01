@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["nonghaeng-fe.vercel.app"],
+    domains: ["www.chamchamtrip.com"],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "nonghaeng-fe.vercel.app",
+        hostname: "www.chamchamtrip.com",
       },
     ],
   },
