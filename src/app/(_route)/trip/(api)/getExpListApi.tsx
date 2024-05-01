@@ -11,7 +11,7 @@ export const getExpListApi = async ({ pageIndex, searchWord }: PropsType) => {
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
       process.env.NEXT_PUBLIC_API_URL +
-        `experiences?page=${pageIndex}&keyword=${searchWord}`,
+        `experiences?page=${Number(pageIndex) - 1}&keyword=${searchWord}`,
       { headers: { Authorization: token } }
     );
     return res;
