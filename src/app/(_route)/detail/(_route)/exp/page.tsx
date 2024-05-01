@@ -39,7 +39,7 @@ export default function Page() {
           <DetailImg imgUrl={resData?.img_url} />
         </article>
         <article>
-          {resData?.tour_info.tourId !== undefined && (
+          {resData?.tour_info.tourId == Number && (
             <span>
               <Link href={`/detail?tour_id=${resData?.tour_info.tourId}`}>
                 {resData?.tour_info.tourName}
