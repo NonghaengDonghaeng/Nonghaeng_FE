@@ -112,5 +112,5 @@
 }
 
 .section2 > article {
-  @apply w-full h-[600px];
+  @apply w-full;
 }

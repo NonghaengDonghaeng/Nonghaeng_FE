@@ -5,7 +5,7 @@ import useSetUrl from "@/hooks/useSetUrl";
 import Filter from "../../(components)/Filter/Filter";
 import FilterOn from "../../(components)/FilterOn/FilterOn";
 import ExpList from "@/common/components/ExpList/ExpList";
-import Paging from "../../(components)/Paging/Paging";
+import Paging from "@/common/components/Paging/Paging";
 import styles from "./page.module.css";
 import { pageStateType } from "../../(types)/pageStateType";
 import { expListDatatype } from "@/common/types/expListDataType";
@@ -33,11 +33,11 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    const res = getExpListApi({
+    const res: expListDatatype | any = getExpListApi({
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     });
-    setResData(expListPageResData);
+    setResData(res);
   }, [pageState.state, pageState.pageIndex]);
 
   return (

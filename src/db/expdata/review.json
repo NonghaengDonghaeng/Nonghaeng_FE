@@ -1,0 +1,65 @@
+{
+  "content": [
+    {
+      "review_id": 0,
+      "exp_name": "벼따기 체험",
+      "title": "체험리뷰제목1",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0",
+      "author": "user1",
+      "create_date": "2024-05-03",
+      "type": "experience"
+    },
+    {
+      "review_id": 1,
+      "exp_name": "벼따기 체험",
+      "title": "체험리뷰제목1",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0",
+      "author": "user1",
+      "create_date": "2024-05-03",
+      "type": "experience"
+    },
+    {
+      "review_id": 2,
+      "exp_name": "벼따기 체험",
+      "title": "체험리뷰제목1",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0",
+      "author": "user1",
+      "create_date": "2024-05-03",
+      "type": "experience"
+    },
+    {
+      "review_id": 3,
+      "exp_name": "벼따기 체험",
+      "title": "체험리뷰제목2",
+      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0",
+      "author": "user1",
+      "create_date": "2024-05-03",
+      "type": "experience"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 1,
+    "pageSize": 3,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 3,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalPages": 2,
+  "totalElements": 5,
+  "first": false,
+  "size": 3,
+  "number": 1,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 2,
+  "empty": false
+}

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import TourList from "@/common/components/TourList/TourList";
-import Paging from "../../(components)/Paging/Paging";
+import Paging from "@/common/components/Paging/Paging";
 import { getTourListApi } from "../../(api)/getTourListApi";
 import styles from "./page.module.css";
 import { tourListDataType } from "@/common/types/tourListDataType";
@@ -32,11 +32,11 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    const res = getTourListApi({
+    const res: tourListDataType | any = getTourListApi({
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     });
-    setResData(tourListPageResData);
+    setResData(res);
   }, [pageState.state, pageState.pageIndex]);
 
   return (

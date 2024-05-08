@@ -1,5 +1,8 @@
 import styles from "./Paging.module.css";
-import { pageStateType, setPageStateType } from "../../(types)/pageStateType";
+import {
+  pageStateType,
+  setPageStateType,
+} from "@/app/(_route)/trip/(types)/pageStateType";
 
 type propsType = {
   pageState: pageStateType;

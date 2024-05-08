@@ -15,12 +15,13 @@ import Calendar_green_Ic from "icon/calendar_green.svg";
 import expDetailPageResData from "@/db/expdata/detail.json";
 import DetailImg from "../../(components)/DetailImg/DetailImg";
 import { getExpDetailApi } from "../../(api)/getExpDetailApi";
+import ExpCommentList from "../../(components)/ExpComment/ExpCommentList";
 
 export default function Page() {
   const { element, moveElement } = useMove();
   const searchParams = useSearchParams();
 
-  const [resData, setResData] = useState<expDetailDataType | any>();
+  const [resData, setResData] = useState<expDetailDataType>();
   const [expId, setExpId] = useState<number>(
     Number(searchParams.get("exp_id"))
   );
@@ -28,8 +29,8 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     console.log("체험 상세 api");
-    const res = getExpDetailApi({ expId });
-    setResData(expDetailPageResData);
+    const res: expDetailDataType | any = getExpDetailApi({ expId });
+    setResData(res);
   }, []);
 
   return (
@@ -88,30 +89,26 @@ export default function Page() {
         </article>
       </section>
       <section className={styles.section2}>
-        <article ref={element[0]}>
-          <NavDetail
-            moveElement={moveElement}
-            title={["기본정보", "체험후기", "체험문의"]}
-            nowRef={0}
-          />
-          기본정보
-        </article>
+        <NavDetail
+          moveElement={moveElement}
+          title={["기본정보", "체험후기", "체험문의"]}
+          nowRef={0}
+        />
+        <article ref={element[0]}>기본정보</article>
+        <NavDetail
+          moveElement={moveElement}
+          title={["기본정보", "체험후기", "체험문의"]}
+          nowRef={1}
+        />
         <article ref={element[1]}>
-          <NavDetail
-            moveElement={moveElement}
-            title={["기본정보", "체험후기", "체험문의"]}
-            nowRef={1}
-          />
-          여행후기
+          <ExpCommentList expId={expId} />
         </article>
-        <article ref={element[2]}>
-          <NavDetail
-            moveElement={moveElement}
-            title={["기본정보", "체험후기", "체험문의"]}
-            nowRef={2}
-          />
-          문의
-        </article>
+        <NavDetail
+          moveElement={moveElement}
+          title={["기본정보", "체험후기", "체험문의"]}
+          nowRef={2}
+        />
+        <article ref={element[2]}>문의</article>
       </section>
     </>
   );

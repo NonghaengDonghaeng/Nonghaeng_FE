@@ -1,7 +1,7 @@
 import axios from "axios";
 
 type PropsType = {
-  lodgId: number | undefined;
+  lodgId: number;
 };
 
 export const getLodgDetailApi = async ({ lodgId }: PropsType) => {

@@ -33,8 +33,8 @@ export default function Page() {
 
   useEffect(() => {
     console.log("농촌관광 상세 api");
-    const res = getTourDetailApi({ tourId });
-    setResData(tourDetailPageResData);
+    const res: tourDetailDataType | any = getTourDetailApi({ tourId });
+    setResData(res);
   }, []);
 
   return (
@@ -106,30 +106,24 @@ export default function Page() {
         </div>
       </section>
       <section className={styles.section2}>
-        <article ref={element[0]}>
-          <NavDetail
-            moveElement={moveElement}
-            title={["기본정보", "여행후기", "여행문의"]}
-            nowRef={0}
-          />
-          기본정보
-        </article>
-        <article ref={element[1]}>
-          <NavDetail
-            moveElement={moveElement}
-            title={["기본정보", "여행후기", "여행문의"]}
-            nowRef={1}
-          />
-          여행후기
-        </article>
-        <article ref={element[2]}>
-          <NavDetail
-            moveElement={moveElement}
-            title={["기본정보", "여행후기", "여행문의"]}
-            nowRef={2}
-          />
-          문의
-        </article>
+        <NavDetail
+          moveElement={moveElement}
+          title={["기본정보", "여행후기", "여행문의"]}
+          nowRef={0}
+        />
+        <article ref={element[0]}>기본정보</article>
+        <NavDetail
+          moveElement={moveElement}
+          title={["기본정보", "여행후기", "여행문의"]}
+          nowRef={1}
+        />
+        <article ref={element[1]}></article>
+        <NavDetail
+          moveElement={moveElement}
+          title={["기본정보", "여행후기", "여행문의"]}
+          nowRef={2}
+        />
+        <article ref={element[2]}>문의</article>
       </section>
     </>
   );

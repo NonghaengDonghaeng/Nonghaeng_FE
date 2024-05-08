@@ -21,8 +21,8 @@ export default function Page() {
 
   useEffect(() => {
     console.log("숙박중간페이지 api");
-    getLodgDetailApi({ lodgId });
-    setResData(lodgDetailPageResData);
+    const res: lodgDetailDataType | any = getLodgDetailApi({ lodgId });
+    setResData(res);
   }, []);
 
   return (

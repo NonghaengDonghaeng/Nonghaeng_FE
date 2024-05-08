@@ -6,7 +6,7 @@ import useSetUrl from "@/hooks/useSetUrl";
 import Filter from "../../(components)/Filter/Filter";
 import FilterOn from "../../(components)/FilterOn/FilterOn";
 import LodgList from "@/common/components/LodgList/LodgList";
-import Paging from "../../(components)/Paging/Paging";
+import Paging from "@/common/components/Paging/Paging";
 import styles from "./page.module.css";
 import { pageStateType } from "../../(types)/pageStateType";
 import { lodgListDataType } from "@/common/types/lodgListDataType";
@@ -34,11 +34,11 @@ export default function Page() {
   // api useEffect1
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    const res = getLodgListApi({
+    const res: lodgListDataType | any = getLodgListApi({
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     });
-    setResData(lodgListPageResData);
+    setResData(res);
   }, [pageState.state, pageState.pageIndex]);
 
   return (
