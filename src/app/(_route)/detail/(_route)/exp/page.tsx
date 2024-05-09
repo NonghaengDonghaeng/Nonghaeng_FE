@@ -30,7 +30,7 @@ export default function Page() {
   useEffect(() => {
     console.log("체험 상세 api");
     const res: expDetailDataType | any = getExpDetailApi({ expId });
-    setResData(res);
+    setResData(expDetailPageResData);
   }, []);
 
   return (

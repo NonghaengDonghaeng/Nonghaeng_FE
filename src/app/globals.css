@@ -38,9 +38,9 @@ body {
   @apply hidden;
 }
 
-img {
+/* img {
   @apply object-cover;
-}
+} */
 
 /* 데스크탑 */
 @media screen and (min-width: 1024px) {

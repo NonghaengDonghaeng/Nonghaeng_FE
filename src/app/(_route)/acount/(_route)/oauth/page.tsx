@@ -14,7 +14,7 @@ export default function Page() {
     try {
       console.log(code);
       const response = await axios.get(
-        process.env.NEXT_PUBLIC_API_URL + `mypage/oauth?code=${code}`
+        `https://nonghaeng.duckdns.org/pages/mypage/oauth?code=${code}`
       );
 
       let token = response.headers["authorization"];

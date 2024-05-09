@@ -7,7 +7,7 @@ export type expListContentDataType = {
   area_name: string;
   tour_name: string;
   summary: string;
-  img_url: string;
+  photo_info_dto: string;
 }[];
 
 export type expListDatatype = {

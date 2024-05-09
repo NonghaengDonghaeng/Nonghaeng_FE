@@ -2,7 +2,6 @@
   .room_list {
     @apply text-stone font-[500];
   }
-
   .room_list > div:first-child {
     @apply w-full flex items-center justify-between;
   }

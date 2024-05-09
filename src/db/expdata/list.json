@@ -9,7 +9,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
+      "img_url": ""
     },
     {
       "experience_id": 6,
@@ -20,7 +20,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014148/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014148/0"
     },
     {
       "experience_id": 6,
@@ -31,7 +31,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003150/3"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003150/3"
     },
     {
       "experience_id": 6,
@@ -42,7 +42,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
     },
     {
       "experience_id": 6,
@@ -53,7 +53,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
     },
     {
       "experience_id": 6,
@@ -64,7 +64,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
     },
     {
       "experience_id": 6,
@@ -75,7 +75,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
     },
     {
       "experience_id": 6,
@@ -86,7 +86,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
     },
     {
       "experience_id": 6,
@@ -97,7 +97,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
     },
     {
       "experience_id": 6,
@@ -108,7 +108,7 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
     }
   ],
   "pageable": {

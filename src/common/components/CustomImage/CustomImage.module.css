@@ -1,0 +1,7 @@
+.img {
+  @apply object-cover;
+}
+
+.err_img {
+  @apply bg-stone/10 absolute mx-auto w-[20px] h-[10px];
+}

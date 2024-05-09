@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CustomImage from "../CustomImage/CustomImage";
 import Link from "next/link";
 import styles from "./ExpList.module.css";
 import { expListContentDataType } from "@/common/types/expListDataType";
@@ -13,12 +13,7 @@ export default function ExpList({ content }: ExpListPropsType) {
     <li key={index}>
       <Link href={`/detail/exp?exp_id=${item.experience_id}`}>
         <div>
-          <Image
-            src={item.img_url}
-            alt="exp_list_img"
-            width={800}
-            height={800}
-          />
+          <CustomImage src={item.photo_info_dto} />
           <span>
             <Location_orange_Ic />
             {item.area_name}

@@ -37,7 +37,7 @@ export default function Page() {
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     });
-    setResData(res);
+    setResData(expListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 
   return (
