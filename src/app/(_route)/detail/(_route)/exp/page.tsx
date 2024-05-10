@@ -28,10 +28,7 @@ export default function Page() {
 
   // api useEffect
   useEffect(() => {
-    console.log("체험 상세 api");
     getExpDetailApi({ expId }).then((res) => {
-      console.log(res);
-      console.log(res?.data);
       setResData(res?.data);
     });
     // setResData(expDetailPageResData);

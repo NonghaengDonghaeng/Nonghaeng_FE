@@ -5,6 +5,7 @@ type PropsType = {
 };
 
 export const getTourDetailApi = async ({ tourId }: PropsType) => {
+  console.log("농촌관광 상세 api");
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.get(

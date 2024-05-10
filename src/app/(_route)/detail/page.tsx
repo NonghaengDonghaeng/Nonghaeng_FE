@@ -32,9 +32,10 @@ export default function Page() {
   const [resData, setResData] = useState<tourDetailDataType>();
 
   useEffect(() => {
-    // console.log("농촌관광 상세 api");
-    // const res: tourDetailDataType | any = getTourDetailApi({ tourId });
-    setResData(tourDetailPageResData);
+    getTourDetailApi({ tourId }).then((res) => {
+      console.log(res, res?.data);
+      setResData(res?.data);
+    });
   }, []);
 
   return (

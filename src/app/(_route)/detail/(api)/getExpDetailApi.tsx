@@ -5,6 +5,7 @@ type PropsType = {
 };
 
 export const getExpDetailApi = async ({ expId }: PropsType) => {
+  console.log("체험 상세 api");
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
