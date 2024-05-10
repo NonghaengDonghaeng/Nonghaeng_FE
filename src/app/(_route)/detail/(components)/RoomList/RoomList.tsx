@@ -10,13 +10,15 @@ import Room_orange_Ic from "icon/room_orange.svg";
 import Calendar_orange_Ic from "icon/calendar_orange.svg";
 import Person_orange_Ic from "icon/person_orange.svg";
 import roomListResData from "@/db/roomdata/list.json";
+import { getRoomListApi } from "../../(api)/getRoomListApi";
 
 // RoomList -----------------------------------------------------
 type RoomListPropsType = {
+  lodgId: number;
   roomListData: roomListDataType | undefined;
 };
 
-export default function RoomList({ roomListData }: RoomListPropsType) {
+export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
   const [isClick, setIsClick] = useState(false);
   const [personCount, setPersonCount] = useState(1);
   const [roomCount, setRoomCount] = useState(1);
@@ -29,8 +31,19 @@ export default function RoomList({ roomListData }: RoomListPropsType) {
   }, [roomListData]);
 
   function getRoomList() {
-    console.log("방 리스트 api");
-    setResData(roomListResData);
+    if (!check_in || !check_out) {
+      alert("날짜를 선택하세요.");
+    } else {
+      getRoomListApi({
+        lodgId: lodgId,
+        checkIn: check_in,
+        checkOut: check_out,
+        personCount: personCount,
+        roomCount: roomCount,
+      }).then((res) => {
+        setResData(res?.data);
+      });
+    }
   }
 
   const roomList = resData?.map((item, index) => (

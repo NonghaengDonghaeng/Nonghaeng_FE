@@ -16,7 +16,6 @@ export default function Page() {
   const [lodgId, setLodgId] = useState<number>(
     Number(searchParams.get("lodg_id"))
   );
-
   const [resData, setResData] = useState<lodgDetailDataType | undefined>();
 
   useEffect(() => {
@@ -44,7 +43,10 @@ export default function Page() {
             title={["객실선택", "기본정보", "숙박후기"]}
             nowRef={0}
           />
-          <RoomList roomListData={resData?.room_summary_dto_list} />
+          <RoomList
+            lodgId={lodgId}
+            roomListData={resData?.room_summary_dto_list}
+          />
         </article>
         <article ref={element[1]}>
           <NavDetail
