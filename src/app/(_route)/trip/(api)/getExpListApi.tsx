@@ -14,8 +14,7 @@ export const getExpListApi = async ({ pageIndex, searchWord }: PropsType) => {
         `experiences?page=${Number(pageIndex) - 1}&keyword=${searchWord}`,
       { headers: { Authorization: token } }
     );
-    console.log(res);
-    return res.data;
+    return res;
   } catch (err) {
     console.log(err);
   }

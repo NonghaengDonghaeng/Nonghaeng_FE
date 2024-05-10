@@ -28,18 +28,19 @@ export default function Page() {
     minCost: searchParams.get("min_cost") || "",
   });
 
-  const [resData, setResData] = useState<expListDatatype | any>();
+  const [resData, setResData] = useState<expListDatatype>();
 
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    console.log("체험리스트 api");
-    const res: expListDatatype | any = getExpListApi({
+    getExpListApi({
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
+    }).then((res) => {
+      console.log(res);
+      console.log(res?.data);
+      setResData(res?.data);
     });
-    console.log(res);
-    setResData(res);
   }, [pageState.state, pageState.pageIndex]);
 
   return (
