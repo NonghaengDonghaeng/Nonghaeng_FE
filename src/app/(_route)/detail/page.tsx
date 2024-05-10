@@ -33,7 +33,6 @@ export default function Page() {
 
   useEffect(() => {
     getTourDetailApi({ tourId }).then((res) => {
-      console.log(res, res?.data);
       setResData(res?.data);
     });
   }, []);

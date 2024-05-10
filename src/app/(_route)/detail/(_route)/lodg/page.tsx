@@ -21,7 +21,6 @@ export default function Page() {
 
   useEffect(() => {
     getLodgDetailApi({ lodgId }).then((res) => {
-      console.log(res, res?.data);
       setResData(res?.data);
     });
   }, []);

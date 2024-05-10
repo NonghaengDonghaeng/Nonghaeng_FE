@@ -9,7 +9,7 @@ export const getLodgDetailApi = async ({ lodgId }: PropsType) => {
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
-      process.env.NEXT_PUBLIC_API_URL + `rooms/list/${lodgId}`,
+      process.env.NEXT_PUBLIC_API_URL + `rooms/middle-page/${lodgId}`,
       { headers: { Authorization: token } }
     );
     return res;

@@ -22,7 +22,7 @@ export default function ExpCommentList({ expId }: PropsType) {
       expId,
     }).then((res) => {
       console.log(res, res?.data);
-      setResData(expCommentData);
+      setResData(res?.data);
     });
   }, [pageState.pageIndex]);
 

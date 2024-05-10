@@ -5,8 +5,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.chamchamtrip.com",
+        hostname: "nonghaeng.s3.ap-northeast-2.amazonaws.com",
       },
+      { protocol: "https", hostname: "www.chamchamtrip.com" },
     ],
   },
   webpack: (config) => {
