@@ -38,6 +38,7 @@ export default function Page() {
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     });
+    console.log(res);
     setResData(res);
   }, [pageState.state, pageState.pageIndex]);
 
