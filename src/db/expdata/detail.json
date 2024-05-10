@@ -1,5 +1,16 @@
 {
-  "photo_info_dto_list": [],
+  "photo_info_dto_list": [
+    {
+      "photo_id": 5,
+      "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321340377_5798ce40-eb02-4fd5-98e3-e20bd55d87cf.jpeg",
+      "representative": true
+    },
+    {
+      "photo_id": 6,
+      "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321341447_8f739ba3-3ee1-4a32-a626-a5cb60582794.jpeg",
+      "representative": false
+    }
+  ],
   "experience_name": "소타기 체험",
   "experience_type_name": "만들기체험",
   "start_date": "2024-01-01",
@@ -13,6 +24,7 @@
   "summary": "소 타보슈",
   "supplies": "없음.",
   "precautions": "소 타다가 다치면 책임 못집니다.",
+  "likes": 1,
   "tour_info": {
     "tourId": 4,
     "tourName": "창민체험휴양마을",

@@ -37,8 +37,6 @@ export default function Page() {
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     }).then((res) => {
-      console.log(res);
-      console.log(res?.data);
       setResData(res?.data);
     });
   }, [pageState.state, pageState.pageIndex]);

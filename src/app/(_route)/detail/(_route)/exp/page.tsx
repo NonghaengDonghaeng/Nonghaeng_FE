@@ -16,6 +16,7 @@ import expDetailPageResData from "@/db/expdata/detail.json";
 import DetailImg from "../../(components)/DetailImg/DetailImg";
 import { getExpDetailApi } from "../../(api)/getExpDetailApi";
 import ExpCommentList from "../../(components)/ExpComment/ExpCommentList";
+import { likeApi } from "../../(api)/likeApi";
 
 export default function Page() {
   const { element, moveElement } = useMove();
@@ -31,7 +32,6 @@ export default function Page() {
     getExpDetailApi({ expId }).then((res) => {
       setResData(res?.data);
     });
-    // setResData(expDetailPageResData);
   }, []);
 
   return (
@@ -52,7 +52,7 @@ export default function Page() {
             {resData?.experience_name}
             <span>
               <Grade_orange_Ic />
-              {/* {resData?.grade.toFixed(1)} */}
+              {resData?.likes}
             </span>
           </h1>
           <hr />
@@ -76,7 +76,7 @@ export default function Page() {
             </p>
           </div>
           <ul>
-            <li onClick={() => console.log("좋아요 api")}>
+            <li onClick={() => likeApi({ type: "experience", id: expId })}>
               좋아요
               <Great_orange_Ic />
             </li>

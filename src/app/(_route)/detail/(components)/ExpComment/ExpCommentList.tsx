@@ -21,7 +21,6 @@ export default function ExpCommentList({ expId }: PropsType) {
     getExpCommentList({
       expId,
     }).then((res) => {
-      console.log(res, res?.data);
       setResData(res?.data);
     });
   }, [pageState.pageIndex]);

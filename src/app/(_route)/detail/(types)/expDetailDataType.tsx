@@ -18,6 +18,7 @@ export type expDetailDataType = {
   summary: string;
   supplies: string;
   precautions: string;
+  likes: number;
   tour_info: {
     tourId: number;
     tourName: string;
