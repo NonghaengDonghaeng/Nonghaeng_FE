@@ -49,7 +49,7 @@ export default function Page() {
     <>
       <section className={styles.section1}>
         <article>
-          <DetailImg imgUrl={resData?.img_url} />
+          <DetailImg photoInfo={resData?.photo_info_dto_list} />
         </article>
         <article>
           <span>

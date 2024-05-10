@@ -1,5 +1,9 @@
 export type roomDetailDataType = {
-  img_url: string[];
+  photo_info_dto_list: {
+    photo_id: number;
+    img_url: string | null;
+    representative: boolean;
+  }[];
   room_name: string;
   room_type_name: string;
   summary: string;

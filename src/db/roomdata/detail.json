@@ -1,10 +1,10 @@
 {
-  "img_url": [
-    "https://www.chamchamtrip.com/site/resource/file/FILE_000000000003417/0",
-    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/0",
-    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/1",
-    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/2",
-    "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003418/3"
+  "photo_info_dto_list": [
+    {
+      "photo_id": 3,
+      "img_url": null,
+      "representative": true
+    }
   ],
   "room_name": "사랑방12",
   "room_type_name": "2",
