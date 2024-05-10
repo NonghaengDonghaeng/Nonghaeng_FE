@@ -33,11 +33,12 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
+    console.log("체험리스트 api");
     const res: expListDatatype | any = getExpListApi({
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     });
-    setResData(expListPageResData);
+    setResData(res);
   }, [pageState.state, pageState.pageIndex]);
 
   return (

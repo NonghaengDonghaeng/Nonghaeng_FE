@@ -32,15 +32,15 @@ export default function Page() {
   const [resData, setResData] = useState<tourDetailDataType>();
 
   useEffect(() => {
-    console.log("농촌관광 상세 api");
-    const res: tourDetailDataType | any = getTourDetailApi({ tourId });
-    setResData(res);
+    // console.log("농촌관광 상세 api");
+    // const res: tourDetailDataType | any = getTourDetailApi({ tourId });
+    setResData(tourDetailPageResData);
   }, []);
 
   return (
     <>
       <section className={styles.section1}>
-        <DetailImg imgUrl={resData?.img_url} />
+        <DetailImg photoInfo={resData?.photo_info_dto_list} />
         <h1>
           {resData?.name}
           <span>

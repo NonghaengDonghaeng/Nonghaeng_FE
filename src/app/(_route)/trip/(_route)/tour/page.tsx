@@ -32,11 +32,12 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    const res: tourListDataType | any = getTourListApi({
-      pageIndex: pageState.pageIndex,
-      searchWord: pageState.searchWord,
-    });
-    setResData(res);
+    console.log("관광리스트 페이지 api");
+    // const res: tourListDataType | any = getTourListApi({
+    //   pageIndex: pageState.pageIndex,
+    //   searchWord: pageState.searchWord,
+    // });
+    setResData(tourListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 
   return (

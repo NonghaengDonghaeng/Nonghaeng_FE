@@ -1,5 +1,9 @@
 export type tourDetailDataType = {
-  img_url: string[];
+  photo_info_dto_list: {
+    photo_id: number;
+    img_url: string | null;
+    representative: boolean;
+  }[];
   name: string;
   grade: number;
   comment_count: number;

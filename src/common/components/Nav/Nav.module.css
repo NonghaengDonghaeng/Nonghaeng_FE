@@ -3,7 +3,7 @@
     @apply w-full h-[80px] mt-[200px] px-[10%] absolute flex;
   }
   .nav_inner > img {
-    @apply w-full h-[240px] absolute left-0 bottom-[40px] z-0;
+    @apply w-full h-[240px] object-cover absolute left-0 bottom-[40px] z-0;
   }
   /* nav_main */
   .nav_inner > a {

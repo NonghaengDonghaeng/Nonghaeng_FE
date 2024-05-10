@@ -21,7 +21,13 @@ export default function Nav({ href }: propsType) {
   return (
     <nav id="nav">
       <div className={styles.nav_inner}>
-        <Image src={bg_img1} alt="bg_img" width={1000} priority={true} />
+        <Image
+          src={bg_img1}
+          alt="bg_img"
+          width={800}
+          height={800}
+          priority={true}
+        />
         <Link href={href.mainMenu.href}>
           <div></div>
           {href.mainMenu.title}

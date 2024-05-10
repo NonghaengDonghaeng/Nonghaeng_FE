@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import CustomImage from "@/common/components/CustomImage/CustomImage";
 import styles from "./SubList.module.css";
 
 type SubListPropsType = {
@@ -20,12 +20,7 @@ export default function SubList({
   const expList = expSubListData?.map((item, index) => (
     <li key={index}>
       <Link href={`/detail/exp?exp_id=${item.expId}`}>
-        <Image
-          src={item.img_url}
-          alt="exp_sub_ist_img"
-          width={800}
-          height={800}
-        />
+        <CustomImage src={item.img_url} />
         <div>
           <span>{item.expName}</span>
           {item.price}원
@@ -36,12 +31,7 @@ export default function SubList({
   const lodgList = lodgSubListData?.map((item, index) => (
     <li key={index}>
       <Link href={`/detail/lodg?lodg_id=${item.roomId}`}>
-        <Image
-          src={item.img_url}
-          alt="lodg_sub_list_img"
-          width={800}
-          height={800}
-        />
+        <CustomImage src={item.img_url} />
         <div>
           <span>{item.roomName}</span>
           {item.price}원

@@ -34,11 +34,12 @@ export default function Page() {
   // api useEffect1
   useEffect(() => {
     setUrl({ urlItem: pageState });
-    const res: lodgListDataType | any = getLodgListApi({
-      pageIndex: pageState.pageIndex,
-      searchWord: pageState.searchWord,
-    });
-    setResData(res);
+    console.log("숙박리스트 페이지 api");
+    // const res: lodgListDataType | any = getLodgListApi({
+    //   pageIndex: pageState.pageIndex,
+    //   searchWord: pageState.searchWord,
+    // });
+    setResData(lodgListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 
   return (

@@ -6,7 +6,7 @@ export type lodgListContentDataType = {
   one_line_intro: string;
   min_price: number;
   max_price: number;
-  img_url: string;
+  photo_info_dto: string;
 }[];
 
 export type lodgListDataType = {

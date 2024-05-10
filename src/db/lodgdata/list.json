@@ -8,7 +8,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000000901/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000000901/0"
     },
     {
       "tour_id": 4,
@@ -18,7 +18,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015242/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015242/0"
     },
     {
       "tour_id": 4,
@@ -28,7 +28,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002462/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002462/0"
     },
     {
       "tour_id": 4,
@@ -38,7 +38,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015230/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015230/0"
     },
     {
       "tour_id": 4,
@@ -48,7 +48,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
     },
     {
       "tour_id": 4,
@@ -58,7 +58,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
     },
     {
       "tour_id": 4,
@@ -68,7 +68,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
     },
     {
       "tour_id": 4,
@@ -78,7 +78,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
     },
     {
       "tour_id": 4,
@@ -88,7 +88,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
     },
     {
       "tour_id": 4,
@@ -98,7 +98,7 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
+      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000005147/0"
     }
   ],
   "pageable": {

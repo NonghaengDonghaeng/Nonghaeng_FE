@@ -1,41 +1,39 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import CustomImage from "@/common/components/CustomImage/CustomImage";
 import styles from "./DetailImg.module.css";
 
-type DetailImgPropsType = {
-  imgUrl: string[] | undefined;
+type PropsType = {
+  photoInfo:
+    | {
+        photo_id: number;
+        img_url: string | null;
+        representative: boolean;
+      }[]
+    | undefined;
 };
 
-export default function DetailImg({ imgUrl }: DetailImgPropsType) {
-  const [mainImg, setMainImgUrl] = useState<string | any>();
+export default function DetailImg({ photoInfo }: PropsType) {
+  const [mainImg, setMainImgUrl] = useState<string | null>(null);
 
   useEffect(() => {
-    if (imgUrl) {
-      setMainImgUrl(imgUrl[0]);
+    if (photoInfo) {
+      setMainImgUrl(photoInfo[0].img_url);
     }
-  }, [imgUrl]);
+  }, [photoInfo]);
 
-  const subImgList = imgUrl?.map((item, index) => (
+  const subImgList = photoInfo?.map((item, index) => (
     <li
       key={index}
-      onClick={() => setMainImgUrl(item)}
-      className={mainImg == item ? styles.img_on : styles.img_off}
+      onClick={() => setMainImgUrl(item.img_url)}
+      className={mainImg == item.img_url ? styles.img_on : styles.img_off}
     >
-      <Image src={item} alt="sub_img" width={800} height={800}></Image>
+      <CustomImage src={item.img_url} />
     </li>
   ));
 
   return (
     <div className={styles.detail_img}>
-      {mainImg && (
-        <Image
-          src={mainImg}
-          alt="main_img"
-          width={800}
-          height={800}
-          priority={true}
-        ></Image>
-      )}
+      <CustomImage src={mainImg} />
       <ul>{subImgList}</ul>
     </div>
   );

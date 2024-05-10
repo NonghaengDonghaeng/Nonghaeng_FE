@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import CustomImage from "../CustomImage/CustomImage";
 import styles from "./LodgList.module.css";
 import { lodgListContentDataType } from "@/common/types/lodgListDataType";
 import Location_orange_Ic from "icon/location_orange.svg";
@@ -13,12 +13,7 @@ export default function LodgList({ content }: LodgListPropsType) {
     <li key={index}>
       <Link href={`/detail/lodg?lodg_id=${item.tour_id}`}>
         <div>
-          <Image
-            src={item.img_url}
-            alt="lodg_list_img"
-            width={800}
-            height={800}
-          />
+          <CustomImage src={item.photo_info_dto} />
           <span>
             <Location_orange_Ic />
             {item.area_name}

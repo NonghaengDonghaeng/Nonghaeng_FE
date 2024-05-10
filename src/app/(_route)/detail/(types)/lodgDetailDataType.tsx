@@ -13,7 +13,11 @@ export type roomListDataType = {
 }[];
 
 export type lodgDetailDataType = {
-  img_url: string[];
+  photo_info_dto_list: {
+    photo_id: number;
+    img_url: string | null;
+    representative: boolean;
+  }[];
   tour_name: string;
   tour_one_line_intro: string;
   area_name: string;

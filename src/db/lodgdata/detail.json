@@ -1,10 +1,10 @@
 {
-  "img_url": [
-    "https://www.chamchamtrip.com/upload/ckeditor/2022/11/6e931c13-f67a-487e-a442-b47750e80f10",
-    "https://www.chamchamtrip.com/upload/ckeditor/2022/11/d66b4ece-24d9-4968-abf4-9b32b61cca6e",
-    "https://www.chamchamtrip.com/upload/ckeditor/2022/11/e389d916-eb7b-406f-af94-7895abb1b944",
-    "https://www.chamchamtrip.com/upload/ckeditor/2022/11/b396e88e-6d11-470a-b6eb-bdb330631468",
-    "https://www.chamchamtrip.com/upload/ckeditor/2022/11/ff987438-7545-4253-b990-44c7d733c55c"
+  "photo_info_dto_list": [
+    {
+      "photo_id": 3,
+      "img_url": null,
+      "representative": true
+    }
   ],
   "tour_name": "가람농촌펜션",
   "tour_one_line_intro": "전주 한옥마을에서 자전거로 15분 거리에 위치한 가람농촌펜션은 깔끔한 숙박시설과 조미료가 들어가지 않은 건상식을 맛볼 수 있습니다.",

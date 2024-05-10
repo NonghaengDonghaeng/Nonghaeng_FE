@@ -20,16 +20,16 @@ export default function Page() {
   const [resData, setResData] = useState<lodgDetailDataType | undefined>();
 
   useEffect(() => {
-    console.log("숙박중간페이지 api");
-    const res: lodgDetailDataType | any = getLodgDetailApi({ lodgId });
-    setResData(res);
+    // console.log("숙박중간페이지 api");
+    // const res: lodgDetailDataType | any = getLodgDetailApi({ lodgId });
+    setResData(lodgDetailPageResData);
   }, []);
 
   return (
     <>
       <section className={styles.section1}>
         <article>
-          <DetailImg imgUrl={resData?.img_url} />
+          <DetailImg photoInfo={resData?.photo_info_dto_list} />
         </article>
         <article>
           <h1>{resData?.tour_name}</h1>

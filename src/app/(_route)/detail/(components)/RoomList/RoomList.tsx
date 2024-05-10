@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import styles from "./RoomList.module.css";
+import CustomImage from "@/common/components/CustomImage/CustomImage";
 import { CustomRangeCalendar } from "../CustomRoundCalendar/CustomRangeCalendar";
 import ClickCount from "@/common/components/ClickCount/ClickCount";
+import styles from "./RoomList.module.css";
 import { roomListDataType } from "../../(types)/lodgDetailDataType";
 import Room_orange_Ic from "icon/room_orange.svg";
 import Calendar_orange_Ic from "icon/calendar_orange.svg";
@@ -36,12 +36,7 @@ export default function RoomList({ roomListData }: RoomListPropsType) {
   const roomList = resData?.map((item, index) => (
     <li key={index}>
       <Link href={`/detail/lodg/room?room_id=${item.room_id}`}>
-        <Image
-          src={item.img_url}
-          alt="room_list_img"
-          width={800}
-          height={800}
-        />
+        <CustomImage src={item.img_url} />
         <div>
           <h1>
             {item.room_name}

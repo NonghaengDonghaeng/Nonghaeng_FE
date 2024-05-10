@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import CustomImage from "../CustomImage/CustomImage";
 import styles from "./TourList.module.css";
 import { tourListContentDataType } from "@/common/types/tourListDataType";
 import Location_orange_Ic from "icon/location_orange.svg";
@@ -15,12 +15,7 @@ export default function TourList({ content }: TourListPropsType) {
     <li key={index}>
       <Link href={`/detail?tour_id=${item.tour_id}`}>
         <div>
-          <Image
-            src={item.img_url}
-            alt="tour_list_img"
-            width={800}
-            height={800}
-          />
+          <CustomImage src={item.photo_info_dto} />
           <span>
             <Location_orange_Ic />
             {item.area_name}

@@ -30,14 +30,14 @@ export default function Page() {
   useEffect(() => {
     console.log("체험 상세 api");
     const res: expDetailDataType | any = getExpDetailApi({ expId });
-    setResData(expDetailPageResData);
+    setResData(res);
   }, []);
 
   return (
     <>
       <section className={styles.section1}>
         <article>
-          <DetailImg imgUrl={resData?.img_url} />
+          <DetailImg photoInfo={resData?.photo_info_dto_list} />
         </article>
         <article>
           <span>
@@ -51,7 +51,7 @@ export default function Page() {
             {resData?.experience_name}
             <span>
               <Grade_orange_Ic />
-              {resData?.grade.toFixed(1)}
+              {/* {resData?.grade.toFixed(1)} */}
             </span>
           </h1>
           <hr />

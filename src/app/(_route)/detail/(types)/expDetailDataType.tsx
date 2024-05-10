@@ -1,7 +1,11 @@
 export type expDetailDataType = {
-  img_url: string[];
+  photo_info_dto_list: {
+    photo_id: number;
+    img_url: string | null;
+    representative: boolean;
+  }[];
   experience_name: string;
-  grade: number;
+  // grade: number;
   experience_type_name: string;
   start_date: string;
   end_date: string;

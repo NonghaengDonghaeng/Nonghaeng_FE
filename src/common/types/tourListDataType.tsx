@@ -6,7 +6,7 @@ export type tourListContentDataType = {
   count_experience: number;
   count_room: number;
   one_line_intro: string;
-  img_url: string;
+  photo_info_dto: string;
 }[];
 
 export type tourListDataType = {
