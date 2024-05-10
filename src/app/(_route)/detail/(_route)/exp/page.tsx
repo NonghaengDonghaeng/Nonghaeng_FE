@@ -34,6 +34,7 @@ export default function Page() {
       console.log(res?.data);
       setResData(res?.data);
     });
+    // setResData(expDetailPageResData);
   }, []);
 
   return (

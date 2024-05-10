@@ -1,11 +1,5 @@
 {
-  "photo_info_dto_list": [
-    {
-      "photo_id": 3,
-      "img_url": null,
-      "representative": true
-    }
-  ],
+  "photo_info_dto_list": [],
   "room_name": "사랑방12",
   "room_type_name": "2",
   "summary": "연인끼리 와서 쉬다가기 좋아요12",

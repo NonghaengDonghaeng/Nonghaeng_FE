@@ -1,11 +1,5 @@
 {
-  "photo_info_dto_list": [
-    {
-      "photo_id": 3,
-      "img_url": null,
-      "representative": true
-    }
-  ],
+  "photo_info_dto_list": [],
   "tour_name": "가람농촌펜션",
   "tour_one_line_intro": "전주 한옥마을에서 자전거로 15분 거리에 위치한 가람농촌펜션은 깔끔한 숙박시설과 조미료가 들어가지 않은 건상식을 맛볼 수 있습니다.",
   "area_name": "대전",

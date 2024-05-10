@@ -1,11 +1,5 @@
 {
-  "photo_info_dto_list": [
-    {
-      "photo_id": 3,
-      "img_url": null,
-      "representative": true
-    }
-  ],
+  "photo_info_dto_list": [],
   "experience_name": "소타기 체험",
   "experience_type_name": "만들기체험",
   "start_date": "2024-01-01",

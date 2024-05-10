@@ -1,11 +1,5 @@
 {
-  "photo_info_dto_list": [
-    {
-      "photo_id": 3,
-      "img_url": null,
-      "representative": true
-    }
-  ],
+  "photo_info_dto_list": [],
   "name": "창민체험휴양마을",
   "grade": 5,
   "comment_count": 6,

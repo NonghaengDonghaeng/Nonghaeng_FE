@@ -16,7 +16,7 @@ export default function DetailImg({ photoInfo }: PropsType) {
   const [mainImg, setMainImgUrl] = useState<string | null>(null);
 
   useEffect(() => {
-    if (photoInfo) {
+    if (Array.isArray(photoInfo) && photoInfo?.length !== 0) {
       setMainImgUrl(photoInfo[0].img_url);
     }
   }, [photoInfo]);
