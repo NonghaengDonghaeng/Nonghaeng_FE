@@ -15,13 +15,14 @@ import Great_orange_Ic from "icon/great_orange.svg";
 import Calendar_orange_Ic from "icon/calendar_orange.svg";
 import roomDetailPageResData from "@/db/roomdata/detail.json";
 import DetailImg from "../../../(components)/DetailImg/DetailImg";
+import { getRoomDetailApi } from "../../../(api)/getRoomDetailApi";
 
 export default function Page() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { element, moveElement } = useMove();
 
-  const [room_id, setRoom_id] = useState(searchParams.get("room_id"));
+  const [roomId, setRoomId] = useState(Number(searchParams.get("room_id")));
   const [isClick, setIsClick] = useState(false);
   const [person_count, setPerson_count] = useState(1);
   const [room_count, setRoom_count] = useState(1);
@@ -31,8 +32,10 @@ export default function Page() {
   const [resData, setResData] = useState<roomDetailDataType>();
 
   useEffect(() => {
-    console.log("농촌숙박 상세 api");
-    setResData(roomDetailPageResData);
+    getRoomDetailApi({ roomId }).then((res) => {
+      console.log(res, res?.data);
+      setResData(res?.data);
+    });
   }, []);
 
   function routeReservation() {
@@ -40,7 +43,7 @@ export default function Page() {
       alert("날짜를 선택해주세요.");
     } else {
       router.push(
-        `/reserve/lodg?room_id=${room_id}&person_count=${person_count}&room_count=${room_count}&check_in=${check_in}&check_out=${check_out}`
+        `/reserve/lodg?room_id=${roomId}&person_count=${person_count}&room_count=${room_count}&check_in=${check_in}&check_out=${check_out}`
       );
     }
   }

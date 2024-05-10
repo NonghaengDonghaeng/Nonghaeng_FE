@@ -18,10 +18,12 @@ export default function ExpCommentList({ expId }: PropsType) {
   const [resData, setResData] = useState<expCommentListDataType>();
 
   useEffect(() => {
-    // const res: expCommentListDataType | undefined | any = getExpCommentList({
-    //   expId,
-    // });
-    setResData(expCommentData);
+    getExpCommentList({
+      expId,
+    }).then((res) => {
+      console.log(res, res?.data);
+      setResData(expCommentData);
+    });
   }, [pageState.pageIndex]);
 
   const commentList = resData?.content.map((item, index) => (
