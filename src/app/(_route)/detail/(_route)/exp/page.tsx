@@ -29,8 +29,11 @@ export default function Page() {
   // api useEffect
   useEffect(() => {
     console.log("체험 상세 api");
-    const res: expDetailDataType | any = getExpDetailApi({ expId });
-    setResData(res);
+    getExpDetailApi({ expId }).then((res) => {
+      console.log(res);
+      console.log(res?.data);
+      setResData(res?.data);
+    });
   }, []);
 
   return (
