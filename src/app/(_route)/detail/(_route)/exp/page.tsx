@@ -16,7 +16,7 @@ import expDetailPageResData from "@/db/expdata/detail.json";
 import DetailImg from "../../(components)/DetailImg/DetailImg";
 import { getExpDetailApi } from "../../(api)/getExpDetailApi";
 import ExpCommentList from "../../(components)/ExpComment/ExpCommentList";
-import { likeApi } from "../../(api)/likeApi";
+import { likeApi } from "@/common/api/likeApi";
 
 export default function Page() {
   const { element, moveElement } = useMove();

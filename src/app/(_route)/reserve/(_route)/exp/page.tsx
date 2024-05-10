@@ -1,33 +1,47 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
 import CustomCalendar from "../../(components)/CustomCalendar/CustomCalendar";
-import exp_round_info from "@/db/expdata/round_info.json";
 import CheckReserve from "../../(components)/CheckReserve/CheckReserve";
+import { getExpRoundApi } from "../../(api)/getExpRoundApi";
+import exp_round_info from "@/db/expdata/round_info.json";
+import { expRoundType } from "../../(types)/expRoundType";
 
 export default function Page() {
-  const [day, setDay] = useState(null);
+  const searchParams = useSearchParams();
+  const today = new Date();
+  const [day, setDay] = useState(
+    `${today.getFullYear()}-${(today.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${today.getDate().toString().padStart(2, "0")}`
+  );
+  const [expId, setExpId] = useState(Number(searchParams.get("exp_id")));
   const [isClick, setIsClick] = useState(false);
   const [isCheck, setIsCheck] = useState(false);
-  const [round_info, setRound_info] = useState<any[]>([]);
+  const [roundResData, setRoundResData] = useState<expRoundType>();
+  const [selectedRound, setSelectedRound] = useState<any[]>([]);
 
   useEffect(() => {
     console.log("체험 예약 api");
   }, []);
-  useEffect(() => console.log(`${day}회차 api`), [day]);
-  useEffect(() => console.log(round_info), [round_info]);
+  useEffect(() => {
+    getExpRoundApi({ date: day, id: expId }).then((res) =>
+      setRoundResData(res?.data)
+    );
+  }, [day]);
 
-  const round_list = exp_round_info.content.map((item, index) => (
+  const round_list = roundResData?.content.map((item, index) => (
     <li
       key={index}
       onClick={() => {
-        if (!round_info.includes(item.round_id))
-          setRound_info([...round_info, item.round_id]);
+        if (!selectedRound.includes(item.round_id))
+          setSelectedRound([...selectedRound, item.round_id]);
         else {
-          setRound_info(round_info.filter((id) => id !== item.round_id));
+          setSelectedRound(selectedRound.filter((id) => id !== item.round_id));
         }
       }}
-      className={round_info.includes(item.round_id) ? styles.on : styles.off}
+      className={selectedRound.includes(item.round_id) ? styles.on : styles.off}
     >
       <label>
         {item.start_time} - {item.end_time}
