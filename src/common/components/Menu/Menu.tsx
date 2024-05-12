@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./Menu.module.css";
 import { menuHref } from "@/model/href/href";
 import More_Ic from "icon/more_gray.svg";
+import SearchBasic from "../SearchBasic/SearchBasic";
 
 type ItemType = {
   title: string;
@@ -35,5 +36,10 @@ export default function Menu() {
     </div>
   ));
 
-  return <div className={styles.menu}>{mainMenuList}</div>;
+  return (
+    <div className={styles.menu}>
+      <SearchBasic />
+      {mainMenuList}
+    </div>
+  );
 }

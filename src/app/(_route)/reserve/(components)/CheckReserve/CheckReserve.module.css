@@ -1,6 +1,6 @@
 @media screen and (min-width: 768px) {
   .check_reserve {
-    @apply w-[400px] h-[500px] p-[20px] top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] absolute rounded-md border border-stone/20 bg-white;
+    @apply w-[400px] h-[500px] p-[20px] top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] fixed rounded-md border border-stone/20 bg-white;
   }
   .check_reserve > h1 {
     @apply text-center text-[22px];
@@ -31,9 +31,10 @@
   }
 }
 
+/* 모바일 */
 @media screen and (max-width: 767px) {
   .check_reserve {
-    @apply w-full h-full top-0 left-0 px-[2.5%] pt-[60px] absolute bg-white;
+    @apply w-full h-full top-0 left-0 px-[2.5%] pt-[60px] fixed bg-white;
   }
   .check_reserve > h1 {
     @apply text-center text-[22px];

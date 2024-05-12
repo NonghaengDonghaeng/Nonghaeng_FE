@@ -1,5 +1,5 @@
 /* 데스크탑 */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .search_base > form {
     @apply w-[234px] h-[36px] shadow-md flex border rounded-full border-stone/60;
   }
@@ -8,6 +8,22 @@
   }
   .search_base > form > button {
     @apply w-[24px] h-[24px] mt-[2px] ml-[4px] mr-[10px] rounded-full;
+  }
+}
+
+/* 테블릿 */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .search_base {
+    @apply w-full flex justify-center;
+  }
+  .search_base > form {
+    @apply w-[200px] h-[36px] my-[10px] flex border rounded-md bg-white;
+  }
+  .search_base > form > input {
+    @apply w-[160px] h-[30px] m-[2px] px-[8px] rounded-md text-[13px];
+  }
+  .search_base > form > button {
+    @apply w-[24px] h-[24px] mt-[2px]  mr-[10px] rounded-full;
   }
 }
 

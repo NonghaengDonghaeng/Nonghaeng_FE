@@ -5,8 +5,11 @@ import styles from "./page.module.css";
 import CustomCalendar from "../../(components)/CustomCalendar/CustomCalendar";
 import CheckReserve from "../../(components)/CheckReserve/CheckReserve";
 import { getExpRoundApi } from "../../(api)/getExpRoundApi";
-import exp_round_info from "@/db/expdata/round_info.json";
 import { expRoundType } from "../../(types)/expRoundType";
+import exp_round_info from "@/db/expdata/round_info.json";
+import userData from "@/db/reservePageResData.json";
+import { userInfoDataType } from "../../(types)/userInfoDataType";
+import { getReserveDataApi } from "../../(api)/getResrveDataApi";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -19,11 +22,12 @@ export default function Page() {
   const [expId, setExpId] = useState(Number(searchParams.get("exp_id")));
   const [isClick, setIsClick] = useState(false);
   const [isCheck, setIsCheck] = useState(false);
+  const [userResData, setUserResData] = useState<userInfoDataType>();
   const [roundResData, setRoundResData] = useState<expRoundType>();
   const [selectedRound, setSelectedRound] = useState<any[]>([]);
 
   useEffect(() => {
-    console.log("체험 예약 api");
+    getReserveDataApi().then((res) => setUserResData(res?.data));
   }, []);
   useEffect(() => {
     getExpRoundApi({ date: day, id: expId }).then((res) =>
@@ -77,6 +81,22 @@ export default function Page() {
           예약자 정보
         </h1>
         <hr />
+        <p>
+          <label>예약자명 :</label>
+          {userResData?.reservation_person_name}
+        </p>
+        <p>
+          <label>전화번호 :</label>
+          {userResData?.phone_number}
+        </p>
+        <p>
+          <label>이메일 :</label>
+          {userResData?.email}
+        </p>
+        <p>
+          <label>보유포인트 :</label>
+          {userResData?.point}
+        </p>
       </article>
       <article>
         <h1>

@@ -9,7 +9,7 @@
   @apply w-[6px] h-[36px] rounded-full mr-[8px] bg-green;
 }
 .reserve_lodg > article > hr {
-  @apply my-[20px] border-stone/40;
+  @apply my-[10px] border-stone/40;
 }
 
 .reserve_lodg > article > p {
