@@ -1,139 +1,117 @@
 {
   "content": [
     {
+      "experience_id": 1,
+      "experience_name": "감자수확 체험",
+      "price": 10000,
+      "min_participant": 10,
+      "max_participant": 60,
+      "area_name": "전북",
+      "tour_name": "산들강웅포마을",
+      "summary": "감자수확",
+      "likes": 0,
+      "photo_info_dto": {
+        "photo_id": 33,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715446223284_6e8c4a3b-1ea3-41cb-9d4c-de582d01cb4e.jpeg",
+        "representative": true
+      }
+    },
+    {
+      "experience_id": 2,
+      "experience_name": "반려식물심기",
+      "price": 17000,
+      "min_participant": 2,
+      "max_participant": 40,
+      "area_name": "전북",
+      "tour_name": "산들강웅포마을",
+      "summary": "화분이 아닌 액자에 식물을 심다?",
+      "likes": 0,
+      "photo_info_dto": {
+        "photo_id": 34,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715446238415_b6fea010-e4d7-4969-9c46-a615b94fe7e3.jpeg",
+        "representative": true
+      }
+    },
+    {
+      "experience_id": 3,
+      "experience_name": "쑥개떡만들기 체험",
+      "price": 10000,
+      "min_participant": 2,
+      "max_participant": 100,
+      "area_name": "전북",
+      "tour_name": "산들강웅포마을",
+      "summary": "봄나물 쑥을 이용해 떡을 만들어 보는 체험",
+      "likes": 0,
+      "photo_info_dto": {
+        "photo_id": 39,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715446252027_951ebb23-f7ca-4565-9b7c-35499fbfbaea.jpeg",
+        "representative": true
+      }
+    },
+    {
+      "experience_id": 4,
+      "experience_name": "블루베리호떡만들기 체험 ",
+      "price": 10000,
+      "min_participant": 4,
+      "max_participant": 40,
+      "area_name": "전북",
+      "tour_name": "산들강웅포마을",
+      "summary": "달달한 호떡과 새콤달콤한 블루베리가 만났다~",
+      "likes": 0,
+      "photo_info_dto": {
+        "photo_id": 41,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715446266850_b8ddec97-f479-4ff3-ad57-d5731d4f95cf.jpeg",
+        "representative": true
+      }
+    },
+    {
       "experience_id": 5,
-      "experience_name": "말타기 체험",
-      "price": 1000,
+      "experience_name": "고소한 들깨초콜릿만들기",
+      "price": 14000,
       "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/rooms/image_1715321333633_6088e0c8-4e03-4bac-a4f0-ba71fe91a3b0.jpeg"
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "max_participant": 30,
+      "area_name": "전북",
+      "tour_name": "동편제마을",
+      "summary": "달콤하고 즐거운 초콜릿체험",
+      "likes": 0,
       "photo_info_dto": null
     },
     {
       "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "experience_name": "산양교감체험 + 쿠킹교실",
+      "price": 18000,
+      "min_participant": 5,
+      "max_participant": 30,
+      "area_name": "전북",
+      "tour_name": "동편제마을",
+      "summary": "푸른 풀밭의 산양을 보며 자연을 느끼고, 친구들과 함께 팜피자를 만든다.",
+      "likes": 0,
       "photo_info_dto": null
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
     }
   ],
   "pageable": {
-    "pageNumber": 1,
-    "pageSize": 3,
+    "pageNumber": 0,
+    "pageSize": 10,
     "sort": {
       "empty": true,
       "sorted": false,
       "unsorted": true
     },
-    "offset": 3,
+    "offset": 0,
     "paged": true,
     "unpaged": false
   },
   "last": true,
-  "totalPages": 2,
-  "totalElements": 5,
-  "first": false,
-  "size": 3,
-  "number": 1,
+  "totalPages": 1,
+  "totalElements": 6,
+  "size": 10,
+  "number": 0,
   "sort": {
     "empty": true,
     "sorted": false,
     "unsorted": true
   },
-  "numberOfElements": 2,
+  "first": true,
+  "numberOfElements": 6,
   "empty": false
 }

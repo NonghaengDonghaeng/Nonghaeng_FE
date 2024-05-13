@@ -13,7 +13,7 @@ export default function ExpList({ content }: ExpListPropsType) {
     <li key={index}>
       <Link href={`/detail/exp?exp_id=${item.experience_id}`}>
         <div>
-          <CustomImage src={item.photo_info_dto} />
+          <CustomImage src={item.photo_info_dto?.img_url} />
           <span>
             <Location_orange_Ic />
             {item.area_name}

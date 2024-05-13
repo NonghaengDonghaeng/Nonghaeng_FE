@@ -8,6 +8,8 @@ const nextConfig = {
         hostname: "nonghaeng.s3.ap-northeast-2.amazonaws.com",
       },
       { protocol: "https", hostname: "www.chamchamtrip.com" },
+      { protocol: "https", hostname: "image.changmin.duckdns.org" },
+      { protocol: "https", hostname: "https://image.changmin.duckdns.org" },
     ],
   },
   webpack: (config) => {

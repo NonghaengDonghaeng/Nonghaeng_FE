@@ -30,8 +30,7 @@ export default function Page() {
 
   function submitUser(e: formType) {
     e.preventDefault();
-    loginApi({ user });
-    router.push("/");
+    loginApi({ user }).then(() => router.push("/"));
   }
   function submitSeller(e: formType) {
     e.preventDefault();

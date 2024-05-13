@@ -13,7 +13,7 @@ export default function LodgList({ content }: LodgListPropsType) {
     <li key={index}>
       <Link href={`/detail/lodg?lodg_id=${item.tour_id}`}>
         <div>
-          <CustomImage src={item.photo_info_dto} />
+          <CustomImage src={item?.photo_info_dto?.img_url} />
           <span>
             <Location_orange_Ic />
             {item.area_name}

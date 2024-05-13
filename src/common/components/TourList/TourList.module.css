@@ -29,7 +29,7 @@
     @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
   }
   .tour_list > li > a > div:last-child > h1 {
-    @apply text-[18px] font-[500] flex justify-between;
+    @apply text-[18px] font-[500] flex justify-between overflow-hidden text-ellipsis text-nowrap;
   }
   .tour_list > li > a > div:last-child > h1 > span {
     @apply h-full px-[4px] py-[2px] mt-[6px] text-[8px] rounded-full text-white bg-orange;
@@ -79,7 +79,7 @@
     @apply w-[55%] p-[20px] h-full border-stone/20 border-[1px] rounded-xl text-stone;
   }
   .tour_list > li > a > div:last-child > h1 {
-    @apply text-[18px] inline-block;
+    @apply text-[18px] inline-block overflow-hidden text-ellipsis text-nowrap;
   }
   .tour_list > li > a > div:last-child > h1 > span {
     @apply hidden;
@@ -129,7 +129,7 @@
     @apply h-[140px] p-[10px] rounded-md border-[1px] border-stone/20;
   }
   .tour_list > li > a > div:nth-child(2) > h1 {
-    @apply text-[18px] font-[600];
+    @apply text-[18px] font-[600] overflow-hidden text-ellipsis text-nowrap;
   }
   .tour_list > li > a > div:nth-child(2) > h1 > span {
     @apply hidden;

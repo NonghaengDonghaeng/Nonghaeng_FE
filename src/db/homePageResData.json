@@ -9,7 +9,11 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
+      "photo_info_dto": {
+        "photo_id": 6,
+        "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321341447_8f739ba3-3ee1-4a32-a626-a5cb60582794.jpeg",
+        "representative": false
+      }
     },
     {
       "experience_id": 6,
@@ -20,7 +24,11 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014148/0"
+      "photo_info_dto": {
+        "photo_id": 6,
+        "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321341447_8f739ba3-3ee1-4a32-a626-a5cb60582794.jpeg",
+        "representative": false
+      }
     },
     {
       "experience_id": 6,
@@ -31,7 +39,11 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000003150/3"
+      "photo_info_dto": {
+        "photo_id": 6,
+        "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321341447_8f739ba3-3ee1-4a32-a626-a5cb60582794.jpeg",
+        "representative": false
+      }
     },
     {
       "experience_id": 6,
@@ -42,7 +54,11 @@
       "area_name": "대전",
       "tour_name": "창민체험휴양마을",
       "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000014934/0"
+      "photo_info_dto": {
+        "photo_id": 6,
+        "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321341447_8f739ba3-3ee1-4a32-a626-a5cb60582794.jpeg",
+        "representative": false
+      }
     }
   ],
   "lodgContent": [
@@ -54,7 +70,11 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000000901/0"
+      "photo_info_dto": {
+        "photo_id": 6,
+        "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321341447_8f739ba3-3ee1-4a32-a626-a5cb60582794.jpeg",
+        "representative": false
+      }
     },
     {
       "tour_id": 4,
@@ -64,7 +84,11 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015242/0"
+      "photo_info_dto": {
+        "photo_id": 6,
+        "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321341447_8f739ba3-3ee1-4a32-a626-a5cb60582794.jpeg",
+        "representative": false
+      }
     },
     {
       "tour_id": 4,
@@ -74,7 +98,11 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002462/0"
+      "photo_info_dto": {
+        "photo_id": 6,
+        "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321341447_8f739ba3-3ee1-4a32-a626-a5cb60582794.jpeg",
+        "representative": false
+      }
     },
     {
       "tour_id": 4,
@@ -84,7 +112,11 @@
       "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
       "min_price": 50000,
       "max_price": 90000,
-      "photo_info_dto": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000015230/0"
+      "photo_info_dto": {
+        "photo_id": 6,
+        "img_url": "https://nonghaeng.s3.ap-northeast-2.amazonaws.com/experiences/image_1715321341447_8f739ba3-3ee1-4a32-a626-a5cb60582794.jpeg",
+        "representative": false
+      }
     }
   ]
 }

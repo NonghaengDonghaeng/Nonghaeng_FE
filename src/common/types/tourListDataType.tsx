@@ -1,3 +1,5 @@
+import { photoInfoDtoType } from "./photoInfoDtoType";
+
 export type tourListContentDataType = {
   tour_id: number;
   name: string;
@@ -6,7 +8,7 @@ export type tourListContentDataType = {
   count_experience: number;
   count_room: number;
   one_line_intro: string;
-  photo_info_dto: string;
+  photo_info_dto: photoInfoDtoType | null;
 }[];
 
 export type tourListDataType = {

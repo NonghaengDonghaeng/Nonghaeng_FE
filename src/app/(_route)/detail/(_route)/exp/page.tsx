@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import useMove from "@/hooks/useMove";
 import NavDetail from "../../(components)/NavDetail/NavDetail";
@@ -17,10 +18,12 @@ import DetailImg from "../../(components)/DetailImg/DetailImg";
 import { getExpDetailApi } from "../../(api)/getExpDetailApi";
 import ExpCommentList from "../../(components)/ExpComment/ExpCommentList";
 import { likeApi } from "@/common/api/likeApi";
+import store from "@/redux/loginStateStore";
 
 export default function Page() {
   const { element, moveElement } = useMove();
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   const [resData, setResData] = useState<expDetailDataType>();
   const [expId, setExpId] = useState<number>(
@@ -32,7 +35,18 @@ export default function Page() {
     getExpDetailApi({ expId }).then((res) => {
       setResData(res?.data);
     });
+    // setResData(expDetailPageResData);
   }, []);
+
+  const routeExpReserve = () => {
+    if (store.getState()) {
+      router.push(
+        `/reserve/exp?exp_id=${expId}&exp_name=${resData?.experience_name}&exp_price=${resData?.price}`
+      );
+    } else {
+      alert("로그인후 이용가능합니다.");
+    }
+  };
 
   return (
     <>
@@ -80,11 +94,9 @@ export default function Page() {
               좋아요
               <Great_orange_Ic />
             </li>
-            <li>
-              <Link href={`/reserve/exp?exp_id=${expId}`}>
-                예약하기
-                <Calendar_green_Ic />
-              </Link>
+            <li onClick={() => routeExpReserve()}>
+              예약하기
+              <Calendar_green_Ic />
             </li>
           </ul>
         </article>

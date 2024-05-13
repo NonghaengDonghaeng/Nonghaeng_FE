@@ -1,9 +1,7 @@
+import { photoInfoDtoType } from "@/common/types/photoInfoDtoType";
+
 export type roomDetailDataType = {
-  photo_info_dto_list: {
-    photo_id: number;
-    img_url: string | null;
-    representative: boolean;
-  }[];
+  photo_info_dto_list: photoInfoDtoType[];
   room_name: string;
   room_type_name: string;
   summary: string;

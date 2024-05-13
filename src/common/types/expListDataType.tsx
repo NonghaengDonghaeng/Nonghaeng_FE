@@ -1,3 +1,5 @@
+import { photoInfoDtoType } from "./photoInfoDtoType";
+
 export type expListContentDataType = {
   experience_id: number;
   experience_name: string;
@@ -7,7 +9,7 @@ export type expListContentDataType = {
   area_name: string;
   tour_name: string;
   summary: string;
-  photo_info_dto: string;
+  photo_info_dto: photoInfoDtoType | null;
 }[];
 
 export type expListDatatype = {

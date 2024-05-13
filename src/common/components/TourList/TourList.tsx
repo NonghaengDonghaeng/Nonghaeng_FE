@@ -15,7 +15,7 @@ export default function TourList({ content }: TourListPropsType) {
     <li key={index}>
       <Link href={`/detail?tour_id=${item.tour_id}`}>
         <div>
-          <CustomImage src={item.photo_info_dto} />
+          <CustomImage src={item?.photo_info_dto?.img_url} />
           <span>
             <Location_orange_Ic />
             {item.area_name}

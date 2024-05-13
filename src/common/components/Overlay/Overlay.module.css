@@ -7,11 +7,11 @@
   }
 }
 
-/* @media (max-width: 767px) {
+@media (max-width: 767px) {
   .on {
-    @apply fixed w-full h-full bottom-[80px] z-[101] bg-slate-100;
+    @apply hidden;
   }
   .off {
     @apply hidden;
   }
-} */
+}

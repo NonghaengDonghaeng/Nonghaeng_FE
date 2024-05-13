@@ -39,6 +39,7 @@ export default function Page() {
     }).then((res) => {
       setResData(res?.data);
     });
+    // setResData(expListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 
   return (

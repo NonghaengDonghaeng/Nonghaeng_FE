@@ -6,7 +6,7 @@ import styles from "./CustomImage.module.css";
 import defaultImg from "img/errorImg.png";
 
 type PropsType = {
-  src: string | null;
+  src: string | null | undefined;
 };
 
 // 이미지가 없는 경우 에뤄 발생 -> true -> 기본이미지 렌더링
@@ -14,7 +14,7 @@ export default function CustomImage({ src }: PropsType) {
   const [isImgError, setIsImgError] = useState<boolean>(true);
 
   useEffect(() => {
-    if (src == null || src == "") {
+    if (src == null || "" || undefined) {
       setIsImgError(true);
     } else setIsImgError(false);
   }, [src]);
@@ -22,7 +22,7 @@ export default function CustomImage({ src }: PropsType) {
   return (
     <Image
       className={styles.img}
-      src={isImgError || src == null ? defaultImg : src}
+      src={isImgError || src == (null || undefined) ? defaultImg : src}
       alt="img"
       width={800}
       height={800}

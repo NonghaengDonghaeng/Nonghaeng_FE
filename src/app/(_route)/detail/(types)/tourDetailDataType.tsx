@@ -1,9 +1,7 @@
+import { photoInfoDtoType } from "@/common/types/photoInfoDtoType";
+
 export type tourDetailDataType = {
-  photo_info_dto_list: {
-    photo_id: number;
-    img_url: string | null;
-    representative: boolean;
-  }[];
+  photo_info_dto_list: photoInfoDtoType[];
   name: string;
   grade: number;
   comment_count: number;
