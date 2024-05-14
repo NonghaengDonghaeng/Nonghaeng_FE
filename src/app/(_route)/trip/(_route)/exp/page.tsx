@@ -11,6 +11,7 @@ import { pageStateType } from "../../(types)/pageStateType";
 import { expListDatatype } from "@/common/types/expListDataType";
 import { getExpListApi } from "../../(api)/getExpListApi";
 import expListPageResData from "@/db/expdata/list.json";
+import Overlay from "@/common/components/Overlay/Overlay";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -51,7 +52,9 @@ export default function Page() {
           {/* <Overlay isClick={pageState.isClick} /> */}
         </div>
         <hr></hr>
-        <Filter pageState={pageState} setPageState={setPageState} />
+        <Overlay isClick={pageState.isClick}>
+          <Filter pageState={pageState} setPageState={setPageState} />
+        </Overlay>
         <article>
           <ExpList content={resData?.content} />
         </article>

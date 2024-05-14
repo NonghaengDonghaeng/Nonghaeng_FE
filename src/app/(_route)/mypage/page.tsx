@@ -23,31 +23,33 @@ export default function Page() {
     router.push("/");
   };
 
-  // const reserveList = resData?.reservations.map((item, index) => (
-  //   <li key={index}>
-  //     {item.type == "room" && (
-  //       <ul className={styles.room_list}>
-  //         숙박
-  //         <li>{item.room_name}</li>
-  //         <li>{item.num_of_participant}</li>
-  //         <li>{item.reservation_dates}</li>
-  //         <li>{item.price}</li>
-  //         <li>{item.num_of_room}</li>
-  //         <li>{item.reservation_state}</li>
-  //       </ul>
-  //     )}
-  //     {item.type == "experience" && (
-  //       <ul className={styles.exp_list}>
-  //         체험
-  //         <li>{item.experience_name}</li>
-  //         <li>{item.num_of_participant}</li>
-  //         <li>{item.reservation_date}</li>
-  //         <li>{item.price}</li>
-  //         <li>{item.reservation_state}</li>
-  //       </ul>
-  //     )}
-  //   </li>
-  // ));
+  // const reserveList =
+  //   resData?.reservations &&
+  //   resData.reservations?.map((item, index) => (
+  //     <li key={index}>
+  //       {item.type == "room" && (
+  //         <ul className={styles.room_list}>
+  //           숙박
+  //           <li>{item.room_name}</li>
+  //           <li>{item.num_of_participant}</li>
+  //           <li>{item.reservation_dates}</li>
+  //           <li>{item.price}</li>
+  //           <li>{item.num_of_room}</li>
+  //           <li>{item.reservation_state}</li>
+  //         </ul>
+  //       )}
+  //       {item.type == "experience" && (
+  //         <ul className={styles.exp_list}>
+  //           체험
+  //           <li>{item.experience_name}</li>
+  //           <li>{item.num_of_participant}</li>
+  //           <li>{item.reservation_date}</li>
+  //           <li>{item.price}</li>
+  //           <li>{item.reservation_state}</li>
+  //         </ul>
+  //       )}
+  //     </li>
+  //   ));
 
   return (
     <section className={styles.mypage_main}>
@@ -61,10 +63,11 @@ export default function Page() {
           <button onClick={logout}>로그아웃</button>
         </div>
         <div>
-          <h1>나의 예약</h1>
+          <h1>보유포인트</h1>
+          {resData?.point}
         </div>
         <div>
-          <h1>나의 작성글</h1>
+          <h1>나의 예약</h1>
         </div>
       </article>
       <article>

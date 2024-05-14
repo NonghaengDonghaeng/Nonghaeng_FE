@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import useMove from "@/hooks/useMove";
-import Link from "next/link";
 import ClickCount from "@/common/components/ClickCount/ClickCount";
 import { CustomRangeCalendar } from "../../../(components)/CustomRoundCalendar/CustomRangeCalendar";
 import NavDetail from "../../../(components)/NavDetail/NavDetail";
@@ -10,12 +9,12 @@ import styles from "./page.module.css";
 import { roomDetailDataType } from "../../../(types)/roomDetailDataType";
 import Room_orange_Ic from "icon/room_orange.svg";
 import Person_orange_Ic from "icon/person_orange.svg";
-import Calendar_green_Ic from "icon/calendar_green.svg";
-import Great_orange_Ic from "icon/great_orange.svg";
 import Calendar_orange_Ic from "icon/calendar_orange.svg";
 import roomDetailPageResData from "@/db/roomdata/detail.json";
 import DetailImg from "../../../(components)/DetailImg/DetailImg";
 import { getRoomDetailApi } from "../../../(api)/getRoomDetailApi";
+import LikeAndReserve from "../../../(components)/LikeAndReserve/LikeAndReserve";
+import RoomInfo from "../../../(components)/RoomInfo/RoomInfo";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -55,35 +54,7 @@ export default function Page() {
           <DetailImg photoInfo={resData?.photo_info_dto_list} />
         </article>
         <article>
-          <span>
-            <Link href={`/detail?tour_id=${resData?.tour_id}`}>
-              {resData?.tour_name}
-            </Link>
-            {" > "}
-            {resData?.room_name}
-          </span>
-          <h1>
-            {resData?.room_name}
-            <span>
-              <Room_orange_Ic />
-              잔여객실 : {resData?.current_num_of_room}
-            </span>
-          </h1>
-          <hr />
-          <div>
-            <p>
-              <label>인원</label>
-              {`${resData?.standard_capacity}인기준(최대${resData?.max_capacity}인)`}
-            </p>
-            <p>
-              <label>체크인 / 체크아웃</label>
-              {`${resData?.checkin_time} / ${resData?.checkout_time}`}
-            </p>
-            <p>
-              <label>가격</label>
-              {`${resData?.price_off_peak}원(주말, 공휴일 ${resData?.price_holiday}원)`}
-            </p>
-          </div>
+          <RoomInfo roomData={resData} />
           <div>
             <div>
               <Room_orange_Ic />
@@ -108,16 +79,11 @@ export default function Page() {
             isClick={isClick}
             setIsClick={setIsClick}
           />
-          <ul>
-            <li onClick={() => console.log("좋아요 api")}>
-              좋아요
-              <Great_orange_Ic />
-            </li>
-            <li onClick={routeReservation}>
-              예약하기
-              <Calendar_green_Ic />
-            </li>
-          </ul>
+          <LikeAndReserve
+            type="room"
+            id={roomId}
+            routerFunction={routeReservation}
+          />
         </article>
       </section>
       <section className={styles.section2}>

@@ -6,7 +6,7 @@
     @apply hidden;
   }
 }
-
+/* 
 @media (max-width: 767px) {
   .on {
     @apply hidden;
@@ -14,4 +14,4 @@
   .off {
     @apply hidden;
   }
-}
+} */

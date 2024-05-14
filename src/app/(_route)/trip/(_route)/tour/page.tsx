@@ -11,6 +11,7 @@ import { pageStateType } from "../../(types)/pageStateType";
 import Filter from "../../(components)/Filter/Filter";
 import FilterOn from "../../(components)/FilterOn/FilterOn";
 import tourListPageResData from "@/db/tourdata/list.json";
+import Overlay from "@/common/components/Overlay/Overlay";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -50,7 +51,9 @@ export default function Page() {
           {/* <Overlay isClick={pageState.isClick} /> */}
         </div>
         <hr></hr>
-        <Filter pageState={pageState} setPageState={setPageState} />
+        <Overlay isClick={pageState.isClick}>
+          <Filter pageState={pageState} setPageState={setPageState} />
+        </Overlay>
         <article>
           <TourList content={resData?.content} />
         </article>

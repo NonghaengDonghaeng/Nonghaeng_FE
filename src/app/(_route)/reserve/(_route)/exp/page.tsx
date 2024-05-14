@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import CustomCalendar from "../../(components)/CustomCalendar/CustomCalendar";
 import CheckReserve from "../../(components)/CheckReserve/CheckReserve";
@@ -12,9 +12,11 @@ import { userInfoDataType } from "../../(types)/userInfoDataType";
 import { getReserveDataApi } from "../../(api)/getResrveDataApi";
 import ClickCount from "@/common/components/ClickCount/ClickCount";
 import { expReserveApi } from "../../(api)/expReserveApi";
+import Overlay from "@/common/components/Overlay/Overlay";
 
 export default function Page() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const today = new Date();
 
   const [expId, setExpId] = useState(Number(searchParams.get("exp_id")));
@@ -52,6 +54,7 @@ export default function Page() {
     );
   }, [day]);
 
+  // 예약하기 function
   const expReserve = () => {
     if (paymentPrice < 0) {
       alert("포인트가 부족합니다.");
@@ -66,7 +69,9 @@ export default function Page() {
           email: userResData?.email,
           final_price: paymentPrice,
         },
-      }).then((res) => console.log(res?.data));
+      }).then((res) => {
+        console.log(res?.data);
+      });
     }
   };
 
@@ -161,16 +166,18 @@ export default function Page() {
       >
         결제진행
       </button>
-      <CheckReserve
-        isCheck={isCheck}
-        setIsCheck={setIsCheck}
-        day={day}
-        expName={expName}
-        selectedRound={selectedRound}
-        paymentPrice={paymentPrice}
-        point={Number(userResData?.point)}
-        expReserve={expReserve}
-      />
+      <Overlay isClick={isCheck}>
+        <CheckReserve
+          isCheck={isCheck}
+          setIsCheck={setIsCheck}
+          day={day}
+          expName={expName}
+          selectedRound={selectedRound}
+          paymentPrice={paymentPrice}
+          point={Number(userResData?.point)}
+          expReserve={expReserve}
+        />
+      </Overlay>
     </section>
   );
 }

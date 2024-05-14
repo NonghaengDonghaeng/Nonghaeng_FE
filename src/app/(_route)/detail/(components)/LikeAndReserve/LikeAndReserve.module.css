@@ -1,0 +1,15 @@
+.like_and_reserve {
+  @apply w-full h-[50px] my-[20px] flex;
+}
+.like_and_reserve > button {
+  @apply w-[50%] flex items-center justify-center rounded-md;
+}
+.like_and_reserve > button:nth-child(1) {
+  @apply bg-orange/10;
+}
+.like_and_reserve > button:nth-child(2) {
+  @apply bg-green/10;
+}
+.like_and_reserve > button > svg {
+  @apply ml-[6px];
+}

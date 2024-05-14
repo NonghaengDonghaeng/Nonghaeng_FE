@@ -12,6 +12,7 @@ import { pageStateType } from "../../(types)/pageStateType";
 import { lodgListDataType } from "@/common/types/lodgListDataType";
 import { getLodgListApi } from "../../(api)/getLodgListApi";
 import lodgListPageResData from "@/db/lodgdata/list.json";
+import Overlay from "@/common/components/Overlay/Overlay";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -52,7 +53,9 @@ export default function Page() {
           {/* <Overlay isClick={pageState.isClick} /> */}
         </div>
         <hr></hr>
-        <Filter pageState={pageState} setPageState={setPageState} />
+        <Overlay isClick={pageState.isClick}>
+          <Filter pageState={pageState} setPageState={setPageState} />
+        </Overlay>
         <article>
           <LodgList content={resData?.content} />
         </article>

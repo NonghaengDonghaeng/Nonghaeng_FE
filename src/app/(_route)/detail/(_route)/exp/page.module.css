@@ -9,105 +9,12 @@
   .section1 > article:last-child {
     @apply w-[40%] h-full py-[20px];
   }
-  .section1 > article:last-child > span {
-    @apply opacity-40 font-[400];
-  }
-  .section1 > article:last-child h1 {
-    @apply flex text-[24px] font-[600] my-[20px];
-  }
-  .section1 > article:last-child h1 > span {
-    @apply ml-[14px] flex items-center text-[16px] font-[400];
-  }
-  .section1 > article:last-child h1 > span > svg {
-    @apply mr-[6px];
-  }
-  .section1 > article:last-child > hr {
-    @apply border-stone/40;
-  }
-  .section1 > article:last-child > h2 {
-    @apply my-[20px];
-  }
-  .section1 > article:last-child > div > p {
-    @apply my-[20px] flex items-center font-[400];
-  }
-  .section1 > article:last-child > div > p > svg {
-    @apply mr-[10px];
-  }
-  .section1 > article:last-child > div > p > label {
-    @apply text-orange mr-[10px] font-[500];
-  }
-  .section1 > article:last-child > ul {
-    @apply w-full h-[50px] mt-[100px] flex cursor-pointer;
-  }
-  .section1 > article:last-child > ul > li {
-    @apply w-[50%] flex items-center justify-center rounded-md;
-  }
-  .section1 > article:last-child > ul > li:nth-child(1) {
-    @apply bg-orange/10;
-  }
-  .section1 > article:last-child > ul > li:nth-child(2) {
-    @apply bg-green/10;
-  }
-  .section1 > article:last-child > ul > li:nth-child(2) > a {
-    @apply flex;
-  }
-  .section1 > article:last-child > ul > li svg {
-    @apply ml-[10px];
-  }
 }
 
 /* 모바일 */
 @media (max-width: 767px) {
   .section1 {
     @apply w-full mt-[60px];
-  }
-  .section1 > article:last-child > span {
-    @apply hidden;
-  }
-  .section1 > article:last-child h1 {
-    @apply flex text-[24px] font-[600] my-[20px];
-  }
-  .section1 > article:last-child h1 > span {
-    @apply ml-[14px] flex items-center text-[16px] font-[400];
-  }
-  .section1 > article:last-child h1 > span > svg {
-    @apply mr-[6px];
-  }
-  .section1 > article:last-child > hr {
-    @apply hidden;
-  }
-  .section1 > article:last-child > h2 {
-    @apply my-[20px];
-  }
-  .section1 > article:last-child > div {
-    @apply p-[20px] border-[1px] border-stone/40 rounded-md;
-  }
-  .section1 > article:last-child > div > p {
-    @apply my-[10px] flex items-center font-[400];
-  }
-  .section1 > article:last-child > div > p > svg {
-    @apply mr-[10px];
-  }
-  .section1 > article:last-child > div > p > label {
-    @apply text-orange mr-[10px] font-[500];
-  }
-  .section1 > article:last-child > ul {
-    @apply w-full h-[50px] my-[20px] flex cursor-pointer;
-  }
-  .section1 > article:last-child > ul > li {
-    @apply w-[50%] flex items-center justify-center rounded-md;
-  }
-  .section1 > article:last-child > ul > li:nth-child(1) {
-    @apply bg-orange/10;
-  }
-  .section1 > article:last-child > ul > li:nth-child(2) {
-    @apply bg-green/10;
-  }
-  .section1 > article:last-child > ul > li:nth-child(2) > a {
-    @apply flex;
-  }
-  .section1 > article:last-child > ul > li svg {
-    @apply ml-[10px];
   }
 }
 

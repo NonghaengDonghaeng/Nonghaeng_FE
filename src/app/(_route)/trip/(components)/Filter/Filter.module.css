@@ -2,44 +2,90 @@
   @apply hidden;
 }
 
-.filter {
-  @apply w-full h-full fixed top-[0px] pt-[60px] px-[2.5%] left-0 z-[20] bg-white;
+/* 데스크탑 */
+@media screen and (min-width: 768px) {
+  .filter {
+    @apply w-[500px] h-[540px] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] px-[2.5%] z-[20] rounded-md border border-stone/20 bg-white;
+  }
+  .filter > h1 {
+    @apply my-[20px] flex justify-between items-center text-[22px] font-[600] text-green;
+  }
+  .filter > h1 > button {
+    @apply w-[30px] h-[30px] flex justify-center items-center rounded-full;
+  }
+  .filter > h1 > button:hover {
+    @apply bg-stone/20;
+  }
+  .filter > div {
+    @apply my-[20px];
+  }
+  .filter > div > span {
+    @apply text-[18px];
+  }
+  .filter > div > hr {
+    @apply my-[10px] border-stone/20;
+  }
+  .filter > div > ul {
+    @apply text-stone/40;
+  }
+  .filter > div > ul > li {
+    @apply px-[6px] mr-[10px] mb-[10px] inline-block rounded-full border-[1px];
+  }
+  .filter > div > ul > li > label {
+    @apply cursor-pointer;
+  }
+  .filter > div > ul > li > label > input {
+    @apply hidden;
+  }
+  .filter > input {
+    @apply w-full h-[40px] my-[20px] px-[10px] rounded-md border-stone/20 border-[1px] shadow-inner;
+  }
+  .filter > button {
+    @apply w-full h-[40px] rounded-md bg-green text-white;
+  }
 }
-.filter > h1 {
-  @apply my-[20px] flex justify-between items-center text-[22px] font-[600] text-green;
-}
-.filter > h1 > button {
-  @apply w-[30px] h-[30px] flex justify-center items-center rounded-full;
-}
-.filter > h1 > button:hover {
-  @apply bg-stone/20;
-}
-.filter > div {
-  @apply my-[20px];
-}
-.filter > div > span {
-  @apply text-[18px];
-}
-.filter > div > hr {
-  @apply my-[10px] border-stone/20;
-}
-.filter > div > ul {
-  @apply text-stone/40;
-}
-.filter > div > ul > li {
-  @apply px-[6px] mr-[10px] mb-[10px] inline-block rounded-full border-[1px];
-}
-.filter > div > ul > li > label {
-  @apply cursor-pointer;
-}
-.filter > div > ul > li > label > input {
-  @apply hidden;
-}
-.filter > input {
-  @apply w-full h-[40px] my-[20px] px-[10px] rounded-md border-stone/20 border-[1px] shadow-inner;
-}
-.filter > button {
-  @apply w-full h-[40px] rounded-md bg-green text-white;
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+  .filter {
+    @apply w-full h-full fixed top-[0px] pt-[60px] px-[2.5%] left-0 z-[20] bg-white;
+  }
+  .filter > h1 {
+    @apply my-[20px] flex justify-between items-center text-[22px] font-[600] text-green;
+  }
+  .filter > h1 > button {
+    @apply w-[30px] h-[30px] flex justify-center items-center rounded-full;
+  }
+  .filter > h1 > button:hover {
+    @apply bg-stone/20;
+  }
+  .filter > div {
+    @apply my-[20px];
+  }
+  .filter > div > span {
+    @apply text-[18px];
+  }
+  .filter > div > hr {
+    @apply my-[10px] border-stone/20;
+  }
+  .filter > div > ul {
+    @apply text-stone/40;
+  }
+  .filter > div > ul > li {
+    @apply px-[6px] mr-[10px] mb-[10px] inline-block rounded-full border-[1px];
+  }
+  .filter > div > ul > li > label {
+    @apply cursor-pointer;
+  }
+  .filter > div > ul > li > label > input {
+    @apply hidden;
+  }
+  .filter > input {
+    @apply w-full h-[40px] my-[20px] px-[10px] rounded-md border-stone/20 border-[1px] shadow-inner;
+  }
+  .filter > button {
+    @apply w-full h-[40px] rounded-md bg-green text-white;
+  }
 }
 
 .selected {
