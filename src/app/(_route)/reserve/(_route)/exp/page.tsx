@@ -5,14 +5,15 @@ import styles from "./page.module.css";
 import CustomCalendar from "../../(components)/CustomCalendar/CustomCalendar";
 import CheckReserve from "../../(components)/CheckReserve/CheckReserve";
 import { getExpRoundApi } from "../../(api)/getExpRoundApi";
-import { expRoundType } from "../../(types)/expRoundType";
-import exp_round_info from "@/db/expdata/round_info.json";
-import userData from "@/db/reservePageResData.json";
+import { expRoundListType, expRoundType } from "../../(types)/expRoundType";
 import { userInfoDataType } from "../../(types)/userInfoDataType";
-import { getReserveDataApi } from "../../(api)/getResrveDataApi";
+import { getUserDataApi } from "../../(api)/getUserDataApi";
 import ClickCount from "@/common/components/ClickCount/ClickCount";
 import { expReserveApi } from "../../(api)/expReserveApi";
 import Overlay from "@/common/components/Overlay/Overlay";
+import UserInfo from "../../(components)/UserInfo/UserInfo";
+import ExpRoundList from "../../(components)/ExpRoundList/ExpRoundList";
+import { expReserveInfoType } from "../../(types)/expReserveInfoType";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -28,13 +29,8 @@ export default function Page() {
     Number(searchParams.get("exp_price"))
   );
   const [userResData, setUserResData] = useState<userInfoDataType>();
-  const [roundResData, setRoundResData] = useState<expRoundType>();
-  const [selectedRound, setSelectedRound] = useState<{
-    round_id: number;
-    start_time: string;
-    end_time: string;
-    remain_participant: number;
-  }>();
+  const [roundResData, setRoundResData] = useState<expRoundListType>();
+  const [selectedRound, setSelectedRound] = useState<expRoundType>();
   const [day, setDay] = useState(
     `${today.getFullYear()}-${(today.getMonth() + 1)
       .toString()
@@ -42,10 +38,32 @@ export default function Page() {
   );
   const [paymentPrice, setPaymentPrice] = useState(expPrice);
 
+  const [expReserveInfo, setExpReserveInfo] = useState<expReserveInfoType>({
+    round_id: selectedRound?.round_id,
+    reservation_date: day,
+    num_of_participant: personCount,
+    reservation_name: userResData?.reservation_person_name,
+    number: userResData?.phone_number,
+    email: userResData?.email,
+    final_price: paymentPrice,
+  });
+
+  useEffect(() => {
+    setExpReserveInfo({
+      round_id: selectedRound?.round_id,
+      reservation_date: day,
+      num_of_participant: personCount,
+      reservation_name: userResData?.reservation_person_name,
+      number: userResData?.phone_number,
+      email: userResData?.email,
+      final_price: paymentPrice,
+    });
+  }, [selectedRound, day, personCount, userResData]);
+
   useEffect(() => setPaymentPrice(expPrice * personCount), [personCount]);
 
   useEffect(() => {
-    getReserveDataApi().then((res) => setUserResData(res?.data));
+    getUserDataApi().then((res) => setUserResData(res?.data));
   }, []);
 
   useEffect(() => {
@@ -54,41 +72,22 @@ export default function Page() {
     );
   }, [day]);
 
-  // 예약하기 function
-  const expReserve = () => {
-    if (paymentPrice < 0) {
-      alert("포인트가 부족합니다.");
-    } else {
-      expReserveApi({
-        expReserveInfo: {
-          round_id: selectedRound?.round_id,
-          reservation_date: day,
-          num_of_participant: personCount,
-          reservation_name: userResData?.reservation_person_name,
-          number: userResData?.phone_number,
-          email: userResData?.email,
-          final_price: paymentPrice,
-        },
-      }).then((res) => {
-        console.log(res?.data);
-      });
-    }
+  const checkExpReserve = () => {
+    if (!selectedRound) {
+      alert("회차를 선택해주세요.");
+    } else if (userResData && paymentPrice > userResData?.point) {
+      alert("보유포인트가 부족합니다.");
+    } else if (personCount > selectedRound.remain_participant) {
+      alert("인원이 초과되었습니다.");
+    } else setIsCheck(true);
   };
 
-  const round_list = roundResData?.content.map((item, index) => (
-    <li
-      key={index}
-      onClick={() => {
-        setSelectedRound(item);
-      }}
-      className={selectedRound == item ? styles.on : styles.off}
-    >
-      <label>
-        {item.start_time} - {item.end_time}
-      </label>
-      <label>잔여 : {item.remain_participant}</label>
-    </li>
-  ));
+  // 예약하기 function
+  const expReserve = () => {
+    expReserveApi({ expReserveInfo }).then((res) => {
+      console.log(res?.data);
+    });
+  };
 
   return (
     <section className={styles.reserve_exp}>
@@ -107,9 +106,27 @@ export default function Page() {
           isClick={isClick}
           setIsClick={setIsClick}
         />
-        <div>
-          <ul>{round_list}</ul>
-        </div>
+        <ExpRoundList
+          roundResData={roundResData}
+          selectedRound={selectedRound}
+          setSelectedRound={setSelectedRound}
+        />
+        <p>
+          <label>체험이름</label>
+          <span>{expName}</span>
+        </p>
+        <p>
+          <label>상품가격</label>
+          <span>{expPrice}</span>
+        </p>
+        <p>
+          <label>참여인원</label>
+          <ClickCount
+            count={personCount}
+            setCount={setPersonCount}
+            limitCount={selectedRound?.remain_participant}
+          />
+        </p>
       </article>
       <article>
         <h1>
@@ -117,34 +134,7 @@ export default function Page() {
           예약자 정보
         </h1>
         <hr />
-        <p>
-          <label>예약자명 :</label>
-          {userResData?.reservation_person_name}
-        </p>
-        <p>
-          <label>전화번호 :</label>
-          {userResData?.phone_number}
-        </p>
-        <p>
-          <label>이메일 :</label>
-          {userResData?.email}
-        </p>
-        <p>
-          <label>보유포인트 :</label>
-          {userResData?.point}
-        </p>
-        <p>
-          <label>체험이름</label>
-          {expName}
-        </p>
-        <p>
-          <label>참여인원 :</label>
-          <ClickCount count={personCount} setCount={setPersonCount} />
-        </p>
-        <p>
-          <label>상품가격: </label>
-          {expPrice}
-        </p>
+        <UserInfo userData={userResData} />
       </article>
       <article>
         <h1>
@@ -153,29 +143,20 @@ export default function Page() {
         </h1>
         <hr />
         <p>
-          <label>결제금액 :</label>
-          {paymentPrice}
+          <label>결제금액</label>
+          <span>{paymentPrice}</span>
         </p>
       </article>
-      <button
-        onClick={() => {
-          if (!selectedRound) {
-            alert("회차를 선택해주세요.");
-          } else setIsCheck(true);
-        }}
-      >
-        결제진행
-      </button>
+      <button onClick={() => checkExpReserve()}>결제진행</button>
       <Overlay isClick={isCheck}>
         <CheckReserve
           isCheck={isCheck}
           setIsCheck={setIsCheck}
-          day={day}
-          expName={expName}
-          selectedRound={selectedRound}
-          paymentPrice={paymentPrice}
-          point={Number(userResData?.point)}
-          expReserve={expReserve}
+          expReserveData={{
+            expReserveInfo: expReserveInfo,
+            selectedRound: selectedRound,
+          }}
+          reserveFuncion={expReserve}
         />
       </Overlay>
     </section>

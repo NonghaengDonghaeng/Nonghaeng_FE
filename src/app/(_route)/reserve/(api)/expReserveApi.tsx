@@ -1,15 +1,8 @@
 import axios from "axios";
+import { expReserveInfoType } from "../(types)/expReserveInfoType";
 
 type PropsType = {
-  expReserveInfo: {
-    round_id: number | undefined;
-    reservation_date: string;
-    num_of_participant: number;
-    reservation_name: string | undefined;
-    number: string | undefined;
-    email: string | undefined;
-    final_price: number;
-  };
+  expReserveInfo: expReserveInfoType;
 };
 
 export const expReserveApi = async ({ expReserveInfo }: PropsType) => {

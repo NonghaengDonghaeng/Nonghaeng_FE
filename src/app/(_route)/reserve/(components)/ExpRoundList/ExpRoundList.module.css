@@ -1,0 +1,31 @@
+/* 데스크탑 */
+@media screen and (min-width: 768px) {
+  .exp_round_list {
+    @apply w-[350px] h-[300px] p-[20px] shadow shadow-stone/40 rounded-md;
+  }
+  .exp_round_list > ul {
+    @apply w-full h-full overflow-scroll;
+  }
+  .exp_round_list > ul > li {
+    @apply w-full h-[50px] mb-[10px] px-[6px] flex justify-between items-center rounded-xl text-[14px] bg-stone/5 cursor-pointer;
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+  .exp_round_list {
+    @apply w-full h-[300px] p-[20px]  shadow shadow-stone/40 rounded-md;
+  }
+  .exp_round_list > ul {
+    @apply w-full h-full overflow-scroll;
+  }
+  .exp_round_list > ul > li {
+    @apply w-full h-[50px] mb-[10px] px-[6px] flex justify-between items-center rounded-xl text-[14px] bg-stone/5 cursor-pointer;
+  }
+}
+
+.on {
+  @apply bg-green/10 border-green/80 text-green border-[1px];
+}
+.off {
+}

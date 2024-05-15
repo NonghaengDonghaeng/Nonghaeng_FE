@@ -1,0 +1,27 @@
+/* 모바일 */
+@media screen and (max-width: 767px) {
+  .reserve_room {
+    @apply mt-[80px] text-stone font-[500];
+  }
+  .reserve_room > article > h1 {
+    @apply text-[22px] items-center flex;
+  }
+  .reserve_room > article > h1 > div {
+    @apply w-[6px] h-[36px] rounded-full mr-[8px] bg-green;
+  }
+  .reserve_room > article > hr {
+    @apply my-[10px] border-stone/40;
+  }
+  .reserve_room > article > p {
+    @apply w-full h-full my-[10px] flex text-stone;
+  }
+  .reserve_room > article > p > label {
+    @apply min-w-[100px] h-full text-[18px];
+  }
+  .reserve_room > article > p > span {
+    @apply text-stone/80;
+  }
+  .reserve_room > button {
+    @apply w-full h-[50px] rounded-md text-white bg-stone/80;
+  }
+}

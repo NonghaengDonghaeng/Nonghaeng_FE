@@ -1,16 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import Link from "next/link";
 import useMove from "@/hooks/useMove";
 import NavDetail from "../../(components)/NavDetail/NavDetail";
 import styles from "./page.module.css";
 import { expDetailDataType } from "../../(types)/expDetailDataType";
-import Grade_orange_Ic from "icon/grade_orange.svg";
-import Person_orange_Ic from "icon/person_orange.svg";
-import Time_orange_Ic from "icon/time_orange.svg";
-import Price_orange_Ic from "icon/price_orange.svg";
-import expDetailPageResData from "@/db/expdata/detail.json";
 import DetailImg from "../../(components)/DetailImg/DetailImg";
 import { getExpDetailApi } from "../../(api)/getExpDetailApi";
 import ExpCommentList from "../../(components)/ExpComment/ExpCommentList";

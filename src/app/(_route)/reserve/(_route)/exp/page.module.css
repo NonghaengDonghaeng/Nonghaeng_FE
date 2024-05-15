@@ -15,18 +15,17 @@
   .reserve_exp > article > hr {
     @apply my-[20px] border-stone/40;
   }
-
   .reserve_exp > article:nth-child(1) > div:nth-child(3) {
     @apply w-[350px] h-[40px] my-[10px] flex justify-center items-center text-green shadow shadow-stone/40 rounded-md cursor-pointer;
   }
-  .reserve_exp > article:nth-child(1) > div:nth-child(5) {
-    @apply w-[350px] h-[300px] p-[20px] shadow shadow-stone/40 rounded-md;
+  .reserve_exp > article > p {
+    @apply w-full h-full my-[10px] flex;
   }
-  .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul {
-    @apply w-full h-full overflow-scroll;
+  .reserve_exp > article > p > label {
+    @apply min-w-[100px] h-full text-[18px];
   }
-  .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul > li {
-    @apply w-full h-[50px] mb-[10px] px-[6px] flex justify-between items-center rounded-xl text-[14px] bg-stone/5 cursor-pointer;
+  .reserve_exp > article > p > span {
+    @apply text-stone/80;
   }
   .reserve_exp > button {
     @apply w-full h-[50px] rounded-md text-white bg-stone/80;
@@ -56,28 +55,16 @@
   .reserve_exp > article:nth-child(1) > div:nth-child(4) {
     @apply w-[95%];
   }
-  .reserve_exp > article:nth-child(1) > div:nth-child(5) {
-    @apply w-full h-[300px] p-[20px]  shadow shadow-stone/40 rounded-md;
-  }
-  .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul {
-    @apply w-full h-full overflow-scroll;
-  }
-  .reserve_exp > article:nth-child(1) > div:nth-child(5) > ul > li {
-    @apply w-full h-[50px] mb-[10px] px-[6px] flex justify-between items-center rounded-xl text-[14px] bg-stone/5 cursor-pointer;
-  }
-  .reserve_exp > button {
-    @apply w-full h-[50px] rounded-md text-white bg-stone/80;
-  }
   .reserve_exp > article > p {
     @apply w-full h-full my-[10px] flex;
   }
   .reserve_exp > article > p > label {
     @apply min-w-[100px] h-full text-[18px];
   }
-}
-
-.on {
-  @apply bg-green/10 border-green/80 text-green border-[1px];
-}
-.off {
+  .reserve_exp > article > p > span {
+    @apply text-stone/80;
+  }
+  .reserve_exp > button {
+    @apply w-full h-[50px] rounded-md text-white bg-stone/80;
+  }
 }

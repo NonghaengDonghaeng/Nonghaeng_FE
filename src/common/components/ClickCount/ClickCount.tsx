@@ -3,9 +3,10 @@ import styles from "./ClickCount.module.css";
 type PropsType = {
   count: number;
   setCount: React.Dispatch<React.SetStateAction<number>>;
+  limitCount?: number;
 };
 
-export default function ClickCount({ count, setCount }: PropsType) {
+export default function ClickCount({ count, setCount, limitCount }: PropsType) {
   return (
     <div className={styles.click_count}>
       <button
@@ -18,7 +19,15 @@ export default function ClickCount({ count, setCount }: PropsType) {
         -
       </button>
       {count}
-      <button onClick={() => setCount(count + 1)}>+</button>
+      <button
+        onClick={() => {
+          if (limitCount) {
+            if (count < limitCount) setCount(count + 1);
+          } else setCount(count + 1);
+        }}
+      >
+        +
+      </button>
     </div>
   );
 }

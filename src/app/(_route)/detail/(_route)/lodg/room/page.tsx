@@ -10,7 +10,6 @@ import { roomDetailDataType } from "../../../(types)/roomDetailDataType";
 import Room_orange_Ic from "icon/room_orange.svg";
 import Person_orange_Ic from "icon/person_orange.svg";
 import Calendar_orange_Ic from "icon/calendar_orange.svg";
-import roomDetailPageResData from "@/db/roomdata/detail.json";
 import DetailImg from "../../../(components)/DetailImg/DetailImg";
 import { getRoomDetailApi } from "../../../(api)/getRoomDetailApi";
 import LikeAndReserve from "../../../(components)/LikeAndReserve/LikeAndReserve";
@@ -40,9 +39,15 @@ export default function Page() {
   function routeReservation() {
     if (!check_in || !check_out) {
       alert("날짜를 선택해주세요.");
+    } else if (person_count > Number(resData?.max_capacity)) {
+      alert("인원이 초과 선택되었습니다.");
+    } else if (room_count > Number(resData?.current_num_of_room)) {
+      alert("방이 초과 선택되었습니다.");
+    } else if (resData?.current_num_of_room == 0) {
+      alert("예약가능한 방이 없습니다.");
     } else {
       router.push(
-        `/reserve/lodg?room_id=${roomId}&person_count=${person_count}&room_count=${room_count}&check_in=${check_in}&check_out=${check_out}`
+        `/reserve/room?room_id=${roomId}&room_name=${resData?.room_name}&room_price=${resData?.price_off_peak}&person_count=${person_count}&room_count=${room_count}&check_in=${check_in}&check_out=${check_out}`
       );
     }
   }
@@ -58,7 +63,11 @@ export default function Page() {
           <div>
             <div>
               <Room_orange_Ic />
-              <ClickCount count={room_count} setCount={setRoom_count} />
+              <ClickCount
+                count={room_count}
+                setCount={setRoom_count}
+                limitCount={resData?.current_num_of_room}
+              />
             </div>
             <div>
               <Person_orange_Ic />

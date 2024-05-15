@@ -4,3 +4,9 @@
 .off {
   @apply hidden;
 }
+
+@media screen and (max-width: 767px) {
+  .range_calendar {
+    @apply w-[95%];
+  }
+}

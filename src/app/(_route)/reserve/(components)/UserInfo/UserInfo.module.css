@@ -1,0 +1,25 @@
+/* 데스크탑 */
+@media screen and (min-width: 768px) {
+  .user_info > p {
+    @apply w-full h-full my-[10px] flex;
+  }
+  .user_info > p > label {
+    @apply min-w-[100px] h-full text-[18px];
+  }
+  .user_info > p > span {
+    @apply text-stone/80;
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+  .user_info > p {
+    @apply w-full h-full my-[10px] flex;
+  }
+  .user_info > p > label {
+    @apply min-w-[100px] h-full text-[18px];
+  }
+  .user_info > p > span {
+    @apply text-stone/80;
+  }
+}

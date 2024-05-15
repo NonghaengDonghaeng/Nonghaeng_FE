@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getReserveDataApi = async () => {
+export const getUserDataApi = async () => {
   try {
     console.log("예약정보 api");
     let token = localStorage.getItem("jwt");

@@ -38,7 +38,7 @@ export function CustomRangeCalendar({
       next2Label={null}
       prev2Label={null}
       showNeighboringMonth={false}
-      className={isClick ? styles.on : styles.off}
+      className={`${styles.range_calendar} ${isClick ? styles.on : styles.off}`}
     />
   );
 }

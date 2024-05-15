@@ -49,14 +49,14 @@ export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
   const roomList = resData?.map((item, index) => (
     <li key={index}>
       <Link href={`/detail/lodg/room?room_id=${item.room_id}`}>
-        <CustomImage src={item.img_url} />
+        <CustomImage src={item.photo_info_dto.img_url} />
         <div>
           <h1>
             {item.room_name}
             <span>
               <Room_orange_Ic />
               {"객실수 : "}
-              {item.num_of_room}
+              {item.current_num_of_room}
             </span>
           </h1>
           <p>
