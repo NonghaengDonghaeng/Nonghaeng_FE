@@ -1,7 +1,7 @@
 import { photoInfoDtoType } from "@/common/types/photoInfoDtoType";
 
 export type roomListDataType = {
-  photo_info_dto: photoInfoDtoType;
+  photo_info_dto: photoInfoDtoType | null;
   room_id: number;
   room_name: string;
   current_num_of_room: number;
