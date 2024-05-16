@@ -48,7 +48,7 @@ export default function ExpCommentList({ expId }: PropsType) {
       <Paging
         pageState={pageState}
         setPageState={setPageState}
-        totalPages={3}
+        totalPages={resData?.totalPages}
       />
     </div>
   );

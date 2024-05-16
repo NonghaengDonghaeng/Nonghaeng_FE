@@ -14,7 +14,7 @@ export default function MypageLayout({
 }>) {
   return (
     <>
-      {/* <AdminRoute /> */}
+      <AdminRoute />
       <Nav href={mypageHref} />
       <main id="main">{children}</main>
     </>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { cancelReserveApi } from "../../(api)/cancelReserveApi";
 import {
   expContentType,
@@ -5,6 +6,7 @@ import {
   roomContentType,
 } from "../../(types)/myReserveDataType";
 import styles from "./Reserve.module.css";
+import Paging from "@/common/components/Paging/Paging";
 
 type PropsType = {
   myReserveData: myReserveDataType | undefined;
@@ -21,6 +23,12 @@ const isRoom = (item: ReserveType): item is roomContentType => {
 };
 
 export default function ReserveList({ myReserveData }: PropsType) {
+  const [resData, setResData] = useState<myReserveDataType>();
+
+  const [pageIndex, setPageIndx] = useState({
+    pageIndex: 1,
+  });
+
   const cancelReserve = ({ type, id }: { type: string; id: number }) => {
     cancelReserveApi({ type: type, id: id });
   };
@@ -96,5 +104,10 @@ export default function ReserveList({ myReserveData }: PropsType) {
       );
     }
   });
-  return <ul className={styles.reserve_list}>{reserveList}</ul>;
+  return (
+    <>
+      <ul className={styles.reserve_list}>{reserveList}</ul>
+      {/* <Paging pageState={pageIndex} setPageState={setPageIndx} /> */}
+    </>
+  );
 }

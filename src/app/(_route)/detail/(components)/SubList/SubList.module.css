@@ -6,22 +6,22 @@
   .sub_list > p {
     @apply text-[18px] font-[500] text-orange;
   }
-  .sub_list > li {
+  .sub_list > ul > li {
     @apply w-full h-[100px] mt-[14px]  rounded-md cursor-pointer;
   }
-  .sub_list > li:hover {
+  .sub_list > ul > li:hover {
     @apply bg-orange/10;
   }
-  .sub_list > li > a {
+  .sub_list > ul > li > a {
     @apply flex;
   }
-  .sub_list > li > a > img {
-    @apply w-[100px]  rounded-md;
+  .sub_list > ul > li > a > img {
+    @apply w-[40%] rounded-md;
   }
-  .sub_list > li > a > div {
-    @apply w-full h-[100px] p-[20px] border-[1px] border-stone/20 rounded-md;
+  .sub_list > ul > li > a > div {
+    @apply w-[60%] h-[100px] p-[20px] border-[1px] border-stone/20 rounded-md;
   }
-  .sub_list > li > a > div > span {
+  .sub_list > ul > li > a > div > span {
     @apply mb-[14px] block;
   }
   .sub_list_off {
@@ -32,28 +32,31 @@
 /* 모바일 */
 @media (max-width: 767px) {
   .sub_list {
-    @apply w-[95%] h-[400px] mr-[2.5%] p-[14px] border-[1px] overflow-scroll duration-500 border-orange rounded-md bg-white absolute;
+    @apply w-[95%] h-[400px] mx-auto p-[20px] border-[1px] duration-500 border-orange rounded-md bg-white absolute;
   }
   .sub_list > p {
-    @apply text-[18px] font-[500] text-orange;
+    @apply h-[40px] text-[18px] font-[500] text-orange;
   }
-  .sub_list > li {
-    @apply w-full h-[100px] mt-[14px]  rounded-md cursor-pointer;
+  .sub_list > ul {
+    @apply h-[320px] overflow-scroll rounded-md;
   }
-  .sub_list > li:hover {
+  .sub_list > ul > li {
+    @apply w-full h-[100px] mt-[14px] rounded-md cursor-pointer;
+  }
+  .sub_list > ul > li:hover {
     @apply bg-orange/10;
   }
-  .sub_list > li > a {
+  .sub_list > ul > li > a {
     @apply flex;
   }
-  .sub_list > li > a > img {
-    @apply w-[140px] h-[100px]  rounded-md;
+  .sub_list > ul > li > a > img {
+    @apply w-[40%] h-[100px]  rounded-md;
   }
-  .sub_list > li > a > div {
-    @apply w-full h-[100px] p-[20px] border-[1px] border-stone/20 rounded-md;
+  .sub_list > ul > li > a > div {
+    @apply w-[60%] h-[100px] p-[20px] border-[1px] border-stone/20 rounded-md;
   }
-  .sub_list > li > a > div > span {
-    @apply mb-[14px] block;
+  .sub_list > ul > li > a > div > span {
+    @apply mb-[14px] overflow-hidden text-ellipsis text-nowrap block;
   }
   .sub_list_off {
     @apply w-[95%] h-0 duration-500  overflow-hidden border-orange rounded-md bg-white absolute;

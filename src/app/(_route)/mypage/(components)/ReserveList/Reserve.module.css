@@ -5,13 +5,19 @@
   .reserve_list > li {
     @apply w-full h-[80px] my-[10px] flex border border-stone/40 rounded-md;
   }
-  .reserve_list > li > div:nth-child(2n + 1) {
-    @apply w-[25%];
+  .reserve_list > li > div:nth-child(1) {
+    @apply w-[30%];
   }
-  .reserve_list > li > div:nth-child(2n) {
+  .reserve_list > li > div:nth-child(2) {
+    @apply w-[10%];
+  }
+  .reserve_list > li > div:nth-child(3) {
+    @apply w-[30%];
+  }
+  .reserve_list > li > div:nth-child(4) {
     @apply w-[20%];
   }
-  .reserve_list > li > div:last-child {
+  .reserve_list > li > div:nth-child(5) {
     @apply w-[10%];
   }
   .reserve_list > li > div > label {
@@ -21,7 +27,7 @@
     @apply h-[50px] text-stone/80 flex justify-center items-center;
   }
   .reserve_list > li > div > p {
-    @apply h-[50px] flex items-center text-stone/80 overflow-hidden text-ellipsis text-nowrap;
+    @apply h-[50px] py-[13px] text-stone/80 overflow-hidden text-ellipsis text-nowrap;
   }
   .reserve_list > li > div > button {
     @apply w-full h-[50px] text-center bg-stone/60 text-white;

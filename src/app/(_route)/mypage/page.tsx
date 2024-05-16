@@ -7,8 +7,8 @@ import Person_orange_Ic from "icon/person_orange.svg";
 import { mypageDataType } from "./(types)/mypageDataType";
 import { getMypageApi } from "@/app/(_route)/mypage/(api)/getMypageDataApi";
 import store from "@/redux/loginStateStore";
-import mypageResData from "@/db/mypageResData.json";
 import ReserveList from "./(components)/ReserveList/ReserveList";
+import mypageData from "@/db/mypageResData.json";
 
 export default function Page() {
   const router = useRouter();

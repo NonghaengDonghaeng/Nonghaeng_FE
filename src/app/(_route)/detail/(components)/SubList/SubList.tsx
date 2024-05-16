@@ -1,39 +1,39 @@
 import Link from "next/link";
 import CustomImage from "@/common/components/CustomImage/CustomImage";
 import styles from "./SubList.module.css";
+import {
+  ExpSummaryListType,
+  RoomSummaryListType,
+} from "../../(types)/tourDetailDataType";
 
 type SubListPropsType = {
   isClick: { exp: boolean; lodg: boolean };
-  expSubListData:
-    | { expId: number; expName: string; price: number; img_url: string }[]
-    | undefined;
-  lodgSubListData:
-    | { roomId: number; roomName: string; price: number; img_url: string }[]
-    | undefined;
+  expSubListData: ExpSummaryListType | undefined;
+  roomSubListData: RoomSummaryListType | undefined;
 };
 
 export default function SubList({
   isClick,
   expSubListData,
-  lodgSubListData,
+  roomSubListData,
 }: SubListPropsType) {
   const expList = expSubListData?.map((item, index) => (
     <li key={index}>
-      <Link href={`/detail/exp?exp_id=${item.expId}`}>
-        <CustomImage src={item.img_url} />
+      <Link href={`/detail/exp?exp_id=${item.exp_id}`}>
+        <CustomImage src={item.photo_info_dto.img_url} />
         <div>
-          <span>{item.expName}</span>
+          <span>{item.exp_name}</span>
           {item.price}원
         </div>
       </Link>
     </li>
   ));
-  const lodgList = lodgSubListData?.map((item, index) => (
+  const lodgList = roomSubListData?.map((item, index) => (
     <li key={index}>
-      <Link href={`/detail/lodg?lodg_id=${item.roomId}`}>
-        <CustomImage src={item.img_url} />
+      <Link href={`/detail/lodg/room?room_id=${item.room_id}`}>
+        <CustomImage src={item.photo_info_dto.img_url} />
         <div>
-          <span>{item.roomName}</span>
+          <span>{item.room_name}</span>
           {item.price}원
         </div>
       </Link>
@@ -41,7 +41,7 @@ export default function SubList({
   ));
 
   return (
-    <ul
+    <div
       className={`${
         isClick.exp || isClick.lodg ? styles.sub_list : styles.sub_list_off
       }`}
@@ -50,8 +50,10 @@ export default function SubList({
         {isClick.exp && "농촌체험"}
         {isClick.lodg && "농촌숙박"}
       </p>
-      {isClick.exp && expList}
-      {isClick.lodg && lodgList}
-    </ul>
+      <ul>
+        {isClick.exp && expList}
+        {isClick.lodg && lodgList}
+      </ul>
+    </div>
   );
 }

@@ -1,63 +1,139 @@
 {
-  "photo_info_dto_list": [],
-  "name": "창민체험휴양마을",
-  "grade": 5,
-  "comment_count": 6,
-  "tel": "010-3323-3791",
-  "address": "대전시 유성구 지족동",
-  "homepage_url": "창민체험휴양마을.com",
-  "introduction": "아주좋은 마을입니다. 블라블라",
-  "one_line_intro": "촌캉스",
-  "summary": "아주좋은 마을입니다.",
-  "restaurant": "없음.",
-  "parking": "숙소 예약시 1객실당 2대 이용가능.",
-  "toilet": "30명 이용가능한 세미나실",
-  "amenities": "5인실 2, 8인실 1",
-  "area_name": "대전",
+  "name": "산들강웅포마을",
+  "homepage_url": "http://www.ungpo.kr",
+  "introduction": "산들강웅포마을은 이름 그대로 산과 들, 강이 어우러진 아름다운 마을입니다. 마을 앞으로 금강이 흐르고, 뒤로는 함라산이 자리한 이곳은 서쪽으로는 옥구평야, 남쪽으로는 만경강을 경계로 김제평야와 인접해 있습니다. 아름다운 자연경관만으로도 농촌여행지로 손색이 없는, 전북특별자치도에서 으뜸촌으로 선정된 마을입니다. 농어촌관광사업 등급결정제도에서 교육, 체험, 숙박, 음식에 대한 등급평가가 모두 1등급이어야 으뜸촌으로 선정되는데 산들강웅포마을은 그야말로 등급으로 인증된 농촌체험여행지라고 할 수 있습니다.",
+  "one_line_intro": "산과 들 강이 어우러진 마을",
+  "summary": "마을 앞으로 금강이 흐르며, 일몰이 장관인 산들강웅포마을은 7대 낙조 명소 중 하나로 꼽히는 곳입니다. 환경과 생태계 보호를 위해 힘쓰고 있으며, 깔끔한 숙박, 맛있는 음식, 다양한 체험 프로그램을 경험할 수 있습니다.",
+  "restaurant": "메뉴정보: 산들강시골밥상 기타사항: 뷔페식",
+  "parking": "80대",
+  "toilet": "남녀 화장실",
+  "amenities": "바베큐장, 공용주방, 다목적구장(족구, 농구장)",
+  "area_name": "전북",
   "room_summary_list": [
     {
-      "roomId": 1,
-      "roomName": "사랑방",
-      "price": 80000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002444/0"
+      "room_id": 1,
+      "room_name": "3인실(별관)",
+      "price": 40000,
+      "photo_info_dto": {
+        "photo_id": 22,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/rooms/image_1715839574027_2972cd28-e086-4cb6-8863-7191ebf7919a.jpeg",
+        "representative": true
+      }
     },
     {
-      "roomId": 2,
-      "roomName": "사랑방12",
-      "price": 70000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000002444/0"
+      "room_id": 2,
+      "room_name": "5인실(별관)",
+      "price": 80000,
+      "photo_info_dto": {
+        "photo_id": 28,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/rooms/image_1715839591468_0a7a4811-0e8b-4d5e-9c29-2bd3b16d2ec6.jpeg",
+        "representative": true
+      }
+    },
+    {
+      "room_id": 3,
+      "room_name": "6인실(본관)",
+      "price": 150000,
+      "photo_info_dto": {
+        "photo_id": 33,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/rooms/image_1715839606024_43a67d03-fffd-4d65-80a5-5072a8773a90.jpeg",
+        "representative": true
+      }
+    },
+    {
+      "room_id": 4,
+      "room_name": "4인실(침대방)",
+      "price": 120000,
+      "photo_info_dto": {
+        "photo_id": 38,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/rooms/image_1715839621292_428b306a-a04b-4c71-a9d9-9c1bde077c96.jpeg",
+        "representative": true
+      }
+    },
+    {
+      "room_id": 5,
+      "room_name": "별관(다목적실)",
+      "price": 200000,
+      "photo_info_dto": {
+        "photo_id": 43,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/rooms/image_1715839630495_2032f116-f79c-4103-84ac-52a1e427a9d9.jpeg",
+        "representative": true
+      }
     }
   ],
   "exp_summary_list": [
     {
-      "expId": 2,
-      "expName": "소타기 체험",
-      "price": 9000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
+      "exp_id": 1,
+      "exp_name": "감자수확 체험",
+      "price": 10000,
+      "photo_info_dto": {
+        "photo_id": 7,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715839233701_6d952a0f-e793-4e52-bb90-09a725714662.jpeg",
+        "representative": true
+      }
     },
     {
-      "expId": 3,
-      "expName": "말타기 체험",
-      "price": 1000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
+      "exp_id": 2,
+      "exp_name": "반려식물심기",
+      "price": 17000,
+      "photo_info_dto": {
+        "photo_id": 8,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715839247820_58fede8f-0ac4-4a7a-ab2b-281e9ae5d11a.jpeg",
+        "representative": true
+      }
     },
     {
-      "expId": 4,
-      "expName": "말타기 체험",
-      "price": 1000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
+      "exp_id": 3,
+      "exp_name": "쑥개떡만들기 체험",
+      "price": 10000,
+      "photo_info_dto": {
+        "photo_id": 14,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715839260762_e55149df-a883-4b89-9644-f49129e4ac53.jpeg",
+        "representative": true
+      }
     },
     {
-      "expId": 5,
-      "expName": "말타기 체험",
-      "price": 1000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
-    },
-    {
-      "expId": 6,
-      "expName": "말타기 체험",
-      "price": 1000,
-      "img_url": "https://www.chamchamtrip.com/site/resource/thumb/file/FILE_000000000022569/0"
+      "exp_id": 4,
+      "exp_name": "블루베리호떡만들기 체험 ",
+      "price": 10000,
+      "photo_info_dto": {
+        "photo_id": 16,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715839277882_34e587e3-1291-413e-96a6-3873920fefbe.jpeg",
+        "representative": true
+      }
     }
-  ]
+  ],
+  "photo_info_dto_list": [
+    {
+      "photo_id": 1,
+      "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839168389_6159deeb-a7c3-4092-b39e-bfab6af8e862.jpeg",
+      "representative": true
+    },
+    {
+      "photo_id": 2,
+      "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839171757_4b2b7909-c2c0-47d5-8283-e16b3bd33b65.jpeg",
+      "representative": false
+    },
+    {
+      "photo_id": 3,
+      "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839171938_c3bbaa0b-dc77-4670-88ad-68423917ba13.jpeg",
+      "representative": false
+    },
+    {
+      "photo_id": 4,
+      "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839172130_d1d907dd-2f40-40c6-8f4b-481e49ed122d.jpeg",
+      "representative": false
+    },
+    {
+      "photo_id": 5,
+      "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839172330_039c38fe-4003-49a8-a4cb-95fd306e86c5.jpeg",
+      "representative": false
+    },
+    {
+      "photo_id": 6,
+      "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839172510_21e06574-01de-4f27-85b8-bb5bad4b0434.jpeg",
+      "representative": false
+    }
+  ],
+  "likes": 0
 }

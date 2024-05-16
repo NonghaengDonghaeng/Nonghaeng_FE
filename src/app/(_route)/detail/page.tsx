@@ -35,6 +35,7 @@ export default function Page() {
     getTourDetailApi({ tourId }).then((res) => {
       setResData(res?.data);
     });
+    // setResData(tourDetailPageResData);
   }, []);
 
   return (
@@ -45,11 +46,11 @@ export default function Page() {
           {resData?.name}
           <span>
             <Grade_orange_Ic />
-            {resData?.grade}
+            {/* {resData?.grade} */}
           </span>
           <span>
             <Comment_orange_Ic />
-            {resData?.comment_count}
+            {/* {resData?.comment_count} */}
           </span>
         </h1>
         <h2>{resData?.introduction}</h2>
@@ -57,7 +58,7 @@ export default function Page() {
           <ul>
             <li>
               <Tell_orange_Ic />
-              {resData?.tel}
+              {/* {resData?.tel} */}
             </li>
             <li>
               <Email_orange_Ic />
@@ -65,7 +66,7 @@ export default function Page() {
             </li>
             <li>
               <Location_orange_Ic />
-              {resData?.address}
+              {/* {resData?.address} */}
             </li>
           </ul>
           <ul>
@@ -101,7 +102,7 @@ export default function Page() {
           <SubList
             isClick={pageState.isClick}
             expSubListData={resData?.exp_summary_list}
-            lodgSubListData={resData?.room_summary_list}
+            roomSubListData={resData?.room_summary_list}
           />
         </div>
       </section>
