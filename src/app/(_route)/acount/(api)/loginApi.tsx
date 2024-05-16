@@ -47,7 +47,7 @@ type sellerPropsType = { seller: sellerType };
 export const sellerLoginApi = async ({ seller }: sellerPropsType) => {
   try {
     const response = await axios.post(
-      process.env.NEXT_PUBLIC_API_URL + "seller-login",
+      process.env.NEXT_PUBLIC_API_URL + "login",
       seller
     );
     let token = response.headers["authorization"];

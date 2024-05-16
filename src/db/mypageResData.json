@@ -1,27 +1,78 @@
 {
-  "name": "user3",
-  "email": "user3@email.com",
-  "number": "user3",
-  "point": 74000,
-  "reservations": [
-    {
-      "room_reservation_id": 2,
-      "room_name": "사랑방",
-      "reservation_state": "예약 대기",
-      "reservation_dates": ["2024-04-19"],
-      "price": 11000,
-      "num_of_participant": 3,
-      "num_of_room": 1,
-      "type": "room"
+  "name": "user1",
+  "email": "user1@email.com",
+  "number": "user1",
+  "point": 0,
+  "reservation_page": {
+    "content": [
+      {
+        "experience_reservation_id": 1,
+        "experience_name": "감자수확 체험",
+        "reservation_state": "예약 대기",
+        "reservation_date": "2024-05-13",
+        "price": 10000,
+        "num_of_participant": 1,
+        "type": "experience"
+      },
+      {
+        "experience_reservation_id": 2,
+        "experience_name": "고소한 들깨초콜릿만들기",
+        "reservation_state": "예약 대기",
+        "reservation_date": "2024-05-13",
+        "price": 14000,
+        "num_of_participant": 1,
+        "type": "experience"
+      },
+      {
+        "experience_reservation_id": 3,
+        "experience_name": "산양교감체험 + 쿠킹교실",
+        "reservation_state": "예약 대기",
+        "reservation_date": "2024-05-13",
+        "price": 18000,
+        "num_of_participant": 1,
+        "type": "experience"
+      },
+      {
+        "room_reservation_id": 15,
+        "room_name": "6인실(본관)",
+        "reservation_state": "예약 대기",
+        "reservation_dates": ["2024-05-16"],
+        "price": 150000,
+        "num_of_participant": 1,
+        "num_of_room": 1,
+        "type": "room"
+      }
+    ],
+    "pageable": "INSTANCE",
+    "last": true,
+    "totalPages": 1,
+    "totalElements": 0,
+    "size": 0,
+    "number": 0,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
     },
-    {
-      "experience_reservation_id": 1,
-      "experience_name": "소타기 체험",
-      "reservation_state": "예약 대기",
-      "reservation_date": "2024-04-19",
-      "price": 15000,
-      "num_of_participant": 1,
-      "type": "experience"
-    }
-  ]
+    "first": true,
+    "numberOfElements": 0,
+    "empty": true
+  },
+  "review_page": {
+    "content": [],
+    "pageable": "INSTANCE",
+    "last": true,
+    "totalPages": 1,
+    "totalElements": 0,
+    "size": 0,
+    "number": 0,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "first": true,
+    "numberOfElements": 0,
+    "empty": true
+  }
 }

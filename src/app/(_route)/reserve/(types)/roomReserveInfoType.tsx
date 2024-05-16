@@ -3,7 +3,7 @@ export type roomReserveInfoType = {
   num_of_room: number;
   num_of_participant: number;
   reservation_dates: (string | null)[];
-  reservation_name: string | null;
+  reservation_name: string | undefined;
   number: string | undefined;
   email: string | undefined;
   final_price: number;

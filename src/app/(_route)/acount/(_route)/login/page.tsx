@@ -19,7 +19,7 @@ export default function Page() {
   const router = useRouter();
 
   const [user, setUser] = useState<userType>({
-    number: "",
+    username: "",
     password: "",
   });
 

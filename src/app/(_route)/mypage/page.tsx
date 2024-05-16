@@ -7,6 +7,8 @@ import Person_orange_Ic from "icon/person_orange.svg";
 import { mypageDataType } from "./(types)/mypageDataType";
 import { getMypageApi } from "@/app/(_route)/mypage/(api)/getMypageDataApi";
 import store from "@/redux/loginStateStore";
+import mypageResData from "@/db/mypageResData.json";
+import ReserveList from "./(components)/ReserveList/ReserveList";
 
 export default function Page() {
   const router = useRouter();
@@ -14,7 +16,7 @@ export default function Page() {
   const [resData, setResData] = useState<mypageDataType>();
 
   useEffect(() => {
-    getMypageApi({ setResData });
+    getMypageApi().then((res) => setResData(res?.data));
   }, []);
 
   const logout = () => {
@@ -23,34 +25,6 @@ export default function Page() {
     router.push("/");
   };
 
-  // const reserveList =
-  //   resData?.reservations &&
-  //   resData.reservations?.map((item, index) => (
-  //     <li key={index}>
-  //       {item.type == "room" && (
-  //         <ul className={styles.room_list}>
-  //           숙박
-  //           <li>{item.room_name}</li>
-  //           <li>{item.num_of_participant}</li>
-  //           <li>{item.reservation_dates}</li>
-  //           <li>{item.price}</li>
-  //           <li>{item.num_of_room}</li>
-  //           <li>{item.reservation_state}</li>
-  //         </ul>
-  //       )}
-  //       {item.type == "experience" && (
-  //         <ul className={styles.exp_list}>
-  //           체험
-  //           <li>{item.experience_name}</li>
-  //           <li>{item.num_of_participant}</li>
-  //           <li>{item.reservation_date}</li>
-  //           <li>{item.price}</li>
-  //           <li>{item.reservation_state}</li>
-  //         </ul>
-  //       )}
-  //     </li>
-  //   ));
-
   return (
     <section className={styles.mypage_main}>
       <article>
@@ -58,22 +32,19 @@ export default function Page() {
           <h1>{resData?.name}의 마이페이지</h1>
           <Link href="/mypage/edit">
             <Person_orange_Ic />
-            회원정보 관리
+            회원정보수정
           </Link>
-          <button onClick={logout}>로그아웃</button>
         </div>
         <div>
           <h1>보유포인트</h1>
-          {resData?.point}
+          <span>{resData?.point}</span>
         </div>
-        <div>
-          <h1>나의 예약</h1>
-        </div>
+        <button onClick={logout}>로그아웃</button>
       </article>
       <article>
         <h1>나의 예약</h1>
         <hr />
-        {/* <ul className={styles.reserve_list}>{reserveList}</ul> */}
+        <ReserveList myReserveData={resData?.reservation_page} />
       </article>
       <article>
         <h1>나의 작성글</h1>
