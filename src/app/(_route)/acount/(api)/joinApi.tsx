@@ -1,6 +1,7 @@
 import { userType } from "../(types)/userType";
 import { sellerType } from "../(types)/sellerType";
 import axios from "axios";
+import { getErrorMessage } from "@/common/utils/getErrorData";
 
 type userPropsType = { user: userType };
 
@@ -12,8 +13,9 @@ export const joinUserApi = async ({ user }: userPropsType) => {
     );
     console.log(response);
     // router.push("/acount/login");
-  } catch (error) {
-    console.log(error);
+  } catch (e) {
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };
 
@@ -27,7 +29,8 @@ export const joinSellerApi = async ({ seller }: sellerPropsType) => {
     );
     console.log(response);
     // router.push("/acount/login");
-  } catch (error) {
-    console.log(error);
+  } catch (e) {
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };

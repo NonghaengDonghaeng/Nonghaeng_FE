@@ -1,5 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { roomReserveInfoType } from "../(types)/roomReserveInfoType";
+import { getErrorMessage } from "@/common/utils/getErrorData";
 
 type PropsType = {
   roomReserveInfo: roomReserveInfoType;
@@ -15,6 +16,7 @@ export const roomReserveApi = async ({ roomReserveInfo }: PropsType) => {
     );
     return res;
   } catch (e) {
-    console.log(e);
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };

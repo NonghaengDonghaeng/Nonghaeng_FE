@@ -1,3 +1,4 @@
+import { getErrorMessage } from "@/common/utils/getErrorData";
 import axios from "axios";
 
 type PropsType = {
@@ -16,6 +17,7 @@ export const getExpRoundApi = async ({ date, id }: PropsType) => {
     );
     return res;
   } catch (e) {
-    console.log(e);
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };

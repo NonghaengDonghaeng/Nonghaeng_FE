@@ -1,16 +1,11 @@
 import { getErrorMessage } from "@/common/utils/getErrorData";
 import axios from "axios";
 
-type PropsType = {
-  type: string;
-  id: number;
-};
-
-export const cancelReserveApi = async ({ type, id }: PropsType) => {
+const getMainApi = async () => {
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
-      process.env.NEXT_PUBLIC_API_URL + `${type}/cancel/${id}`,
+      process.env.NEXT_PUBLIC_API_URL + "trips/best",
       {
         headers: { Authorization: token },
       }
@@ -21,3 +16,5 @@ export const cancelReserveApi = async ({ type, id }: PropsType) => {
     console.log(message);
   }
 };
+
+export default getMainApi;

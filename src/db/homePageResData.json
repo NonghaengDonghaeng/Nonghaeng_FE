@@ -1,120 +1,130 @@
 {
-  "expContent": [
+  "tour_summary_dto_list": [
     {
-      "experience_id": 5,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "tour_id": 1,
+      "name": "산들강웅포마을",
+      "area_name": "전북",
+      "tour_type": "농촌체험휴양마을",
+      "count_experience": 4,
+      "count_room": 5,
+      "one_line_intro": "산과 들 강이 어우러진 마을",
       "photo_info_dto": {
-        "photo_id": 41,
-        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715446266850_b8ddec97-f479-4ff3-ad57-d5731d4f95cf.jpeg",
+        "photo_id": 1,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839168389_6159deeb-a7c3-4092-b39e-bfab6af8e862.jpeg",
+        "representative": true
+      },
+      "likes": 0
+    },
+    {
+      "tour_id": 2,
+      "name": "동편제마을",
+      "area_name": "전북",
+      "tour_type": "농촌체험휴양마을",
+      "count_experience": 2,
+      "count_room": 2,
+      "one_line_intro": "동편제의 역사와 전통을 잇다",
+      "photo_info_dto": {
+        "photo_id": 50,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839842949_007d57bf-3e56-43fa-a1a3-c067c2d9d48a.jpeg",
+        "representative": true
+      },
+      "likes": 0
+    }
+  ],
+  "room_tour_summary_dto_list": [
+    {
+      "tour_id": 1,
+      "tour_name": "산들강웅포마을",
+      "area_name": "전북",
+      "room_type_name": "마을숙박",
+      "one_line_intro": "산과 들 강이 어우러진 마을",
+      "min_price": 40000,
+      "max_price": 200000,
+      "likes": 0,
+      "photo_info_dto": {
+        "photo_id": 1,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839168389_6159deeb-a7c3-4092-b39e-bfab6af8e862.jpeg",
         "representative": true
       }
     },
     {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
+      "tour_id": 2,
+      "tour_name": "동편제마을",
+      "area_name": "전북",
+      "room_type_name": "마을숙박",
+      "one_line_intro": "동편제의 역사와 전통을 잇다",
+      "min_price": 180000,
+      "max_price": 200000,
+      "likes": 0,
       "photo_info_dto": {
-        "photo_id": 41,
-        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715446266850_b8ddec97-f479-4ff3-ad57-d5731d4f95cf.jpeg",
-        "representative": true
-      }
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": {
-        "photo_id": 41,
-        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715446266850_b8ddec97-f479-4ff3-ad57-d5731d4f95cf.jpeg",
-        "representative": true
-      }
-    },
-    {
-      "experience_id": 6,
-      "experience_name": "말타기 체험",
-      "price": 1000,
-      "min_participant": 2,
-      "max_participant": 20,
-      "area_name": "대전",
-      "tour_name": "창민체험휴양마을",
-      "summary": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "photo_info_dto": {
-        "photo_id": 41,
-        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715446266850_b8ddec97-f479-4ff3-ad57-d5731d4f95cf.jpeg",
+        "photo_id": 50,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715839842949_007d57bf-3e56-43fa-a1a3-c067c2d9d48a.jpeg",
         "representative": true
       }
     }
   ],
-  "lodgContent": [
+  "exp_summary_dto_list": [
     {
-      "tour_id": 4,
-      "tour_name": "창민체험휴양마을",
-      "area_name": "대전",
-      "room_type_name": "농촌민박",
-      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "min_price": 50000,
-      "max_price": 90000,
+      "experience_id": 1,
+      "experience_name": "감자수확 체험",
+      "price": 10000,
+      "min_participant": 10,
+      "max_participant": 60,
+      "area_name": "전북",
+      "tour_name": "산들강웅포마을",
+      "summary": "감자수확",
+      "likes": 1,
       "photo_info_dto": {
-        "photo_id": 1,
-        "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715445641050_a1fb876f-d262-409e-85d3-3a8114851d1c.jpeg",
+        "photo_id": 7,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715839233701_6d952a0f-e793-4e52-bb90-09a725714662.jpeg",
         "representative": true
       }
     },
     {
-      "tour_id": 4,
-      "tour_name": "창민체험휴양마을",
-      "area_name": "대전",
-      "room_type_name": "농촌민박",
-      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "min_price": 50000,
-      "max_price": 90000,
+      "experience_id": 2,
+      "experience_name": "반려식물심기",
+      "price": 17000,
+      "min_participant": 2,
+      "max_participant": 40,
+      "area_name": "전북",
+      "tour_name": "산들강웅포마을",
+      "summary": "화분이 아닌 액자에 식물을 심다?",
+      "likes": 1,
       "photo_info_dto": {
-        "photo_id": 1,
-        "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715445641050_a1fb876f-d262-409e-85d3-3a8114851d1c.jpeg",
+        "photo_id": 8,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715839247820_58fede8f-0ac4-4a7a-ab2b-281e9ae5d11a.jpeg",
         "representative": true
       }
     },
     {
-      "tour_id": 4,
-      "tour_name": "창민체험휴양마을",
-      "area_name": "대전",
-      "room_type_name": "농촌민박",
-      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "min_price": 50000,
-      "max_price": 90000,
+      "experience_id": 3,
+      "experience_name": "쑥개떡만들기 체험",
+      "price": 10000,
+      "min_participant": 2,
+      "max_participant": 100,
+      "area_name": "전북",
+      "tour_name": "산들강웅포마을",
+      "summary": "봄나물 쑥을 이용해 떡을 만들어 보는 체험",
+      "likes": 0,
       "photo_info_dto": {
-        "photo_id": 1,
-        "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715445641050_a1fb876f-d262-409e-85d3-3a8114851d1c.jpeg",
+        "photo_id": 14,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715839260762_e55149df-a883-4b89-9644-f49129e4ac53.jpeg",
         "representative": true
       }
     },
     {
-      "tour_id": 4,
-      "tour_name": "창민체험휴양마을",
-      "area_name": "대전",
-      "room_type_name": "농촌민박",
-      "one_line_intro": "여수바다마을에는 조개, 꽃게, 가물치가 거주 중에 있나봅니다.",
-      "min_price": 50000,
-      "max_price": 90000,
+      "experience_id": 4,
+      "experience_name": "블루베리호떡만들기 체험 ",
+      "price": 10000,
+      "min_participant": 4,
+      "max_participant": 40,
+      "area_name": "전북",
+      "tour_name": "산들강웅포마을",
+      "summary": "달달한 호떡과 새콤달콤한 블루베리가 만났다~",
+      "likes": 0,
       "photo_info_dto": {
-        "photo_id": 1,
-        "img_url": "https://image.changmin.duckdns.org/nonghaeng/tours/image_1715445641050_a1fb876f-d262-409e-85d3-3a8114851d1c.jpeg",
+        "photo_id": 16,
+        "img_url": "https://image.changmin.duckdns.org/nonghaeng/experiences/image_1715839277882_34e587e3-1291-413e-96a6-3873920fefbe.jpeg",
         "representative": true
       }
     }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { expReserveInfoType } from "../(types)/expReserveInfoType";
+import { getErrorMessage } from "@/common/utils/getErrorData";
 
 type PropsType = {
   expReserveInfo: expReserveInfoType;
@@ -15,6 +16,7 @@ export const expReserveApi = async ({ expReserveInfo }: PropsType) => {
     );
     return res;
   } catch (e) {
-    console.log(e);
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };

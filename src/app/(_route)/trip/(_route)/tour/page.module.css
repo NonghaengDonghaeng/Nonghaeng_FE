@@ -1,12 +1,6 @@
 .tour_main {
   @apply mt-[80px] mb-[100px];
 }
-.tour_main > div:first-child {
-  @apply items-center flex justify-between;
-}
-.tour_main > div:first-child > h1 {
-  @apply text-[24px]  font-[600] text-green;
-}
 .tour_main > hr {
   @apply border-[1px] border-stone/80;
 }

@@ -1,7 +1,26 @@
-.loading {
-  @apply w-full h-[300px];
+@screen mobile {
+  .loading {
+    @apply w-full h-[800px] flex items-center justify-center;
+  }
+  .loading > img {
+    @apply w-[40px] h-[40px] animate-spin;
+  }
 }
 
-.loading > img {
-  @apply w-[40px] h-[40px] mx-auto mt-[120px] animate-spin;
+@screen tablet {
+  .loading {
+    @apply w-full h-[800px] flex items-center justify-center;
+  }
+  .loading > img {
+    @apply w-[40px] h-[40px] animate-spin;
+  }
+}
+
+@screen pc {
+  .loading {
+    @apply w-full h-[800px] flex items-center justify-center;
+  }
+  .loading > img {
+    @apply w-[40px] h-[40px] animate-spin;
+  }
 }

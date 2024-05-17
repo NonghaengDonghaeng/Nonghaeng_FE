@@ -1,4 +1,4 @@
-import { getErrorMessage } from "@/common/utils/getErrorMessage";
+import { getErrorMessage } from "@/common/utils/getErrorData";
 import axios from "axios";
 
 type LodgPropsType = {
@@ -20,6 +20,7 @@ export const getLodgListApi = async ({
     );
     return res;
   } catch (e) {
-    getErrorMessage(e);
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };

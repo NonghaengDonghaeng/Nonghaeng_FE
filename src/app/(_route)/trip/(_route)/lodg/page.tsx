@@ -3,8 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import Filter from "../../(components)/Filter/Filter";
-import FilterOn from "../../(components)/FilterOn/FilterOn";
+import ListTitle from "@/common/components/ListTitle/ListTitle";
 import LodgList from "@/common/components/LodgList/LodgList";
 import Paging from "@/common/components/Paging/Paging";
 import styles from "./page.module.css";
@@ -12,7 +11,6 @@ import { pageStateType } from "../../(types)/pageStateType";
 import { lodgListDataType } from "@/common/types/lodgListDataType";
 import { getLodgListApi } from "../../(api)/getLodgListApi";
 import lodgListPageResData from "@/db/lodgdata/list.json";
-import Overlay from "@/common/components/Overlay/Overlay";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -39,7 +37,6 @@ export default function Page() {
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     }).then((res) => {
-      console.log(res, res?.data);
       setResData(res?.data);
     });
   }, [pageState.state, pageState.pageIndex]);
@@ -47,15 +44,12 @@ export default function Page() {
   return (
     <>
       <section className={styles.lodg_main}>
-        <div>
-          <h1>농촌숙박</h1>
-          <FilterOn pageState={pageState} setPageState={setPageState} />
-          {/* <Overlay isClick={pageState.isClick} /> */}
-        </div>
+        <ListTitle
+          title="농촌숙박"
+          pageState={pageState}
+          setPageState={setPageState}
+        />
         <hr></hr>
-        <Overlay isClick={pageState.isClick}>
-          <Filter pageState={pageState} setPageState={setPageState} />
-        </Overlay>
         <article>
           <LodgList content={resData?.content} />
         </article>

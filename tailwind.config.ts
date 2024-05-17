@@ -22,6 +22,11 @@ const config: Config = {
       boxShadow: {
         top: "0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06)",
       },
+      screens: {
+        mobile: { max: "767px" },
+        tablet: { min: "768px", max: "1023px" },
+        pc: { min: "1024px" },
+      },
     },
     minHeight: {
       "real-screen": "calc(var(--vh) * 100)",

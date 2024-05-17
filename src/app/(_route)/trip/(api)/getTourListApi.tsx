@@ -1,4 +1,4 @@
-import { getErrorMessage } from "@/common/utils/getErrorMessage";
+import { getErrorMessage } from "@/common/utils/getErrorData";
 import axios from "axios";
 
 type TourPropsType = {
@@ -6,10 +6,7 @@ type TourPropsType = {
   searchWord: string | undefined;
 };
 
-export const getTourListApi = async ({
-  pageIndex,
-  searchWord,
-}: TourPropsType) => {
+const getTourListApi = async ({ pageIndex, searchWord }: TourPropsType) => {
   console.log("관광 리스트 api");
   try {
     let token = localStorage.getItem("jwt");
@@ -22,6 +19,9 @@ export const getTourListApi = async ({
     );
     return res;
   } catch (e) {
-    getErrorMessage(e);
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };
+
+export default getTourListApi;

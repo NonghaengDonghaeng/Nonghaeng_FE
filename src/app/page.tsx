@@ -3,25 +3,25 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SearchMain from "./(components)/SearchMain/SearchMain";
+import ListTitle from "@/common/components/ListTitle/ListTitle";
 import ExpList from "@/common/components/ExpList/ExpList";
 import LodgList from "@/common/components/LodgList/LodgList";
+import getMainApi from "./(api)/getMainApi";
 import styles from "./page.module.css";
 import { expListContentDataType } from "@/common/types/expListDataType";
 import { lodgListContentDataType } from "@/common/types/lodgListDataType";
 import section1_bg from "img/bg/home_bg1.png";
 import More_nonghang_Ic from "icon/more_nonghaeng_white.svg";
-import More_green_Ic from "icon/more_green.svg";
 import homePageResData from "@/db/homePageResData.json";
 
 export default function Home() {
   const [resData, setResData] = useState<{
-    expContent: expListContentDataType;
-    lodgContent: lodgListContentDataType;
+    exp_summary_dto_list: expListContentDataType;
+    room_tour_summary_dto_list: lodgListContentDataType;
   }>();
 
   useEffect(() => {
-    console.log("홈 페이지 api");
-    setResData(homePageResData);
+    getMainApi().then((res) => setResData(res?.data));
   }, []);
 
   return (
@@ -45,26 +45,14 @@ export default function Home() {
       <SearchMain />
       <section className={styles.section2}>
         <article>
-          <h1>
-            우수 체험
-            <Link href="/trip/exp">
-              더 많은 농촌체험 보러가기
-              <More_green_Ic />
-            </Link>
-          </h1>
+          <ListTitle title="우수체험" />
           <hr />
-          <ExpList content={resData?.expContent} />
+          <ExpList content={resData?.exp_summary_dto_list} />
         </article>
         <article>
-          <h1>
-            우수 숙박
-            <Link href="/trip/lodg">
-              더 많은 농촌숙박 보러가기
-              <More_green_Ic />
-            </Link>
-          </h1>
+          <ListTitle title="우수숙박" />
           <hr />
-          <LodgList content={resData?.lodgContent} />
+          <LodgList content={resData?.room_tour_summary_dto_list} />
         </article>
       </section>
     </main>

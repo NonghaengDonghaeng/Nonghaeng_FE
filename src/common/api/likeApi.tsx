@@ -1,6 +1,6 @@
 import store from "@/redux/loginStateStore";
 import axios from "axios";
-import { getErrorMessage } from "../utils/getErrorMessage";
+import { getErrorMessage } from "../utils/getErrorData";
 
 type PropsType = {
   type: string;
@@ -17,7 +17,8 @@ export const likeApi = async ({ type, id }: PropsType) => {
       );
       alert(res.data);
     } catch (e) {
-      getErrorMessage(e);
+      const message = getErrorMessage(e);
+      console.log(message);
     }
   } else alert("로그인후 이용가능합니다.");
 };

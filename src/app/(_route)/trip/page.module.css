@@ -4,15 +4,6 @@
 .trip_main > article {
   @apply w-full mt-[60px];
 }
-.trip_main > article > h1 {
-  @apply text-[24px] font-[600] items-center flex justify-between text-green;
-}
-.trip_main > article > h1 > a {
-  @apply text-[15px] flex items-center;
-}
-.trip_main > article > h1 > a > svg {
-  @apply ml-[5px];
-}
 .trip_main > article > hr {
   @apply border-[1px] mb-[20px] border-stone/80;
 }

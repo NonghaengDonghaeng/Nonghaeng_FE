@@ -25,12 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Suspense fallback={<Loading />}>
-          <ScollTop />
-          <Header />
-          {children}
-          <Footer />
-        </Suspense>
+        <ScollTop />
+        <Header />
+        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Footer />
       </body>
     </html>
   );

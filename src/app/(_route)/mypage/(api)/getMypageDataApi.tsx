@@ -1,4 +1,4 @@
-import { getErrorMessage } from "@/common/utils/getErrorMessage";
+import { getErrorMessage } from "@/common/utils/getErrorData";
 import axios from "axios";
 
 export const getMypageApi = async () => {
@@ -10,6 +10,7 @@ export const getMypageApi = async () => {
     });
     return res;
   } catch (e) {
-    getErrorMessage(e);
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };

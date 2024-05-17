@@ -2,6 +2,7 @@ import axios from "axios";
 import store from "@/redux/loginStateStore";
 import { userType } from "../(types)/userType";
 import { sellerType } from "../(types)/sellerType";
+import { getErrorMessage } from "@/common/utils/getErrorData";
 
 export const verifyJwtApi = async () => {
   let token = localStorage.getItem("jwt");
@@ -36,8 +37,9 @@ export const loginApi = async ({ user }: userPropsType) => {
     console.log(response.headers.authorization);
     let token = response.headers["authorization"];
     localStorage.setItem("jwt", "Bearer " + token);
-  } catch (error) {
-    console.log(error);
+  } catch (e) {
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };
 
@@ -53,8 +55,9 @@ export const sellerLoginApi = async ({ seller }: sellerPropsType) => {
     let token = response.headers["authorization"];
     console.log(response.headers.authorization);
     localStorage.setItem("jwt", "Bearer " + token);
-  } catch (error) {
-    console.log(error);
+  } catch (e) {
+    const message = getErrorMessage(e);
+    console.log(message);
   }
 };
 

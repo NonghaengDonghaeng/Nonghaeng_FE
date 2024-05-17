@@ -2,16 +2,14 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
+import ListTitle from "@/common/components/ListTitle/ListTitle";
 import TourList from "@/common/components/TourList/TourList";
 import Paging from "@/common/components/Paging/Paging";
-import { getTourListApi } from "../../(api)/getTourListApi";
+import getTourListApi from "../../(api)/getTourListApi";
 import styles from "./page.module.css";
 import { tourListDataType } from "@/common/types/tourListDataType";
 import { pageStateType } from "../../(types)/pageStateType";
-import Filter from "../../(components)/Filter/Filter";
-import FilterOn from "../../(components)/FilterOn/FilterOn";
 import tourListPageResData from "@/db/tourdata/list.json";
-import Overlay from "@/common/components/Overlay/Overlay";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -37,7 +35,6 @@ export default function Page() {
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     }).then((res) => {
-      console.log(res, res?.data);
       setResData(res?.data);
     });
   }, [pageState.state, pageState.pageIndex]);
@@ -45,15 +42,12 @@ export default function Page() {
   return (
     <>
       <section className={styles.tour_main}>
-        <div>
-          <h1>농촌관광</h1>
-          <FilterOn pageState={pageState} setPageState={setPageState} />
-          {/* <Overlay isClick={pageState.isClick} /> */}
-        </div>
+        <ListTitle
+          title="농촌관광"
+          pageState={pageState}
+          setPageState={setPageState}
+        />
         <hr></hr>
-        <Overlay isClick={pageState.isClick}>
-          <Filter pageState={pageState} setPageState={setPageState} />
-        </Overlay>
         <article>
           <TourList content={resData?.content} />
         </article>

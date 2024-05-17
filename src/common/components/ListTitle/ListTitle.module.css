@@ -1,0 +1,44 @@
+@screen mobile {
+  .list_title {
+    @apply w-full h-[36px] flex justify-between items-center text-green;
+  }
+  .list_title > h1 {
+    @apply text-[24px] font-[600];
+  }
+  .list_title > a {
+    @apply flex items-center;
+  }
+  .list_title > a > svg {
+    @apply ml-[5px];
+  }
+}
+
+@screen tablet {
+  .list_title {
+    @apply w-full h-[36px] flex justify-between items-center text-green;
+  }
+  .list_title > h1 {
+    @apply text-[24px] font-[600];
+  }
+  .list_title > a {
+    @apply flex items-center;
+  }
+  .list_title > a > svg {
+    @apply ml-[5px];
+  }
+}
+
+@screen pc {
+  .list_title {
+    @apply w-full h-[36px] flex justify-between items-center text-green;
+  }
+  .list_title > h1 {
+    @apply text-[24px] font-[600];
+  }
+  .list_title > a {
+    @apply flex items-center;
+  }
+  .list_title > a > svg {
+    @apply ml-[5px];
+  }
+}

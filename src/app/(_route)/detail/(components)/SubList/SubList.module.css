@@ -25,7 +25,7 @@
     @apply mb-[14px] block;
   }
   .sub_list_off {
-    @apply w-[280px] h-0 top-[920px] right-[10%] duration-500 overflow-hidden border-orange rounded-md bg-white absolute;
+    @apply hidden;
   }
 }
 
@@ -43,9 +43,6 @@
   .sub_list > ul > li {
     @apply w-full h-[100px] mt-[14px] rounded-md cursor-pointer;
   }
-  .sub_list > ul > li:hover {
-    @apply bg-orange/10;
-  }
   .sub_list > ul > li > a {
     @apply flex;
   }
@@ -59,6 +56,6 @@
     @apply mb-[14px] overflow-hidden text-ellipsis text-nowrap block;
   }
   .sub_list_off {
-    @apply w-[95%] h-0 duration-500  overflow-hidden border-orange rounded-md bg-white absolute;
+    @apply hidden;
   }
 }

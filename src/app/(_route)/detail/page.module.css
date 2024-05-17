@@ -79,12 +79,6 @@
   .section1 > div:nth-child(4) > ul:nth-child(2) > li {
     @apply w-[100px] h-[68px] px-[16px] rounded-md items-center flex justify-between cursor-pointer text-orange;
   }
-  .section1 > div:nth-child(4) > ul:nth-child(2) > li:hover {
-    @apply bg-orange/20 duration-500;
-  }
-  .section1 > div:nth-child(4) > ul:nth-child(2) > li:hover > span > label {
-    @apply bg-white duration-500;
-  }
   .section1 > div:nth-child(4) > ul:nth-child(2) > li > span > label {
     @apply w-full h-[16px] px-[10px] block text-[12px] rounded-full cursor-pointer;
   }

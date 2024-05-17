@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import Filter from "../../(components)/Filter/Filter";
-import FilterOn from "../../(components)/FilterOn/FilterOn";
+import ListTitle from "@/common/components/ListTitle/ListTitle";
 import ExpList from "@/common/components/ExpList/ExpList";
 import Paging from "@/common/components/Paging/Paging";
 import styles from "./page.module.css";
@@ -11,7 +10,6 @@ import { pageStateType } from "../../(types)/pageStateType";
 import { expListDatatype } from "@/common/types/expListDataType";
 import { getExpListApi } from "../../(api)/getExpListApi";
 import expListPageResData from "@/db/expdata/list.json";
-import Overlay from "@/common/components/Overlay/Overlay";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -46,15 +44,12 @@ export default function Page() {
   return (
     <>
       <section className={styles.exp_main}>
-        <div>
-          <h1>농촌체험</h1>
-          <FilterOn pageState={pageState} setPageState={setPageState} />
-          {/* <Overlay isClick={pageState.isClick} /> */}
-        </div>
+        <ListTitle
+          title="농촌체험"
+          pageState={pageState}
+          setPageState={setPageState}
+        />
         <hr></hr>
-        <Overlay isClick={pageState.isClick}>
-          <Filter pageState={pageState} setPageState={setPageState} />
-        </Overlay>
         <article>
           <ExpList content={resData?.content} />
         </article>

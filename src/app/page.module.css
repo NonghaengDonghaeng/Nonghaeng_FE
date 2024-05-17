@@ -21,15 +21,6 @@
   .section2 {
     @apply mt-[120px];
   }
-  .section2 > article > h1 {
-    @apply mt-[60px] text-[24px] font-[600] items-center flex justify-between  text-green;
-  }
-  .section2 > article > h1 > a {
-    @apply text-[15px] flex items-center;
-  }
-  .section2 > article > h1 > a > svg {
-    @apply ml-[5px];
-  }
   .section2 > article > hr {
     @apply border-[1px] border-stone/80;
   }
@@ -61,15 +52,6 @@
   }
   .section2 > article {
     @apply w-full h-[700px] mt-[40px];
-  }
-  .section2 > article > h1 {
-    @apply text-[24px] font-[600] items-center flex justify-between  text-green;
-  }
-  .section2 > article > h1 > a {
-    @apply text-[15px] flex items-center;
-  }
-  .section2 > article > h1 > a > svg {
-    @apply ml-[5px];
   }
   .section2 > article > hr {
     @apply border-[1px] mb-[20px] border-stone/80;
