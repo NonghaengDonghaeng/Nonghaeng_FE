@@ -1,3 +1,4 @@
+import { getErrorMessage } from "@/common/utils/getErrorMessage";
 import axios from "axios";
 
 type PropsType = {
@@ -16,6 +17,6 @@ export const cancelReserveApi = async ({ type, id }: PropsType) => {
     );
     return res;
   } catch (e) {
-    console.log(e);
+    getErrorMessage(e);
   }
 };

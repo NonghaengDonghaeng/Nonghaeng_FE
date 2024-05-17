@@ -1,3 +1,4 @@
+import { getErrorMessage } from "@/common/utils/getErrorMessage";
 import axios from "axios";
 
 export const getMypageApi = async () => {
@@ -8,7 +9,7 @@ export const getMypageApi = async () => {
       headers: { Authorization: token },
     });
     return res;
-  } catch (err) {
-    console.log(err);
+  } catch (e) {
+    getErrorMessage(e);
   }
 };

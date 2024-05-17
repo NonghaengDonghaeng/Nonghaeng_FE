@@ -1,3 +1,4 @@
+import { getErrorMessage } from "@/common/utils/getErrorMessage";
 import axios from "axios";
 
 type TourPropsType = {
@@ -20,7 +21,7 @@ export const getTourListApi = async ({
       }
     );
     return res;
-  } catch (err) {
-    console.log(err);
+  } catch (e) {
+    getErrorMessage(e);
   }
 };

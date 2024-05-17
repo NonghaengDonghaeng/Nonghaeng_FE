@@ -20,7 +20,7 @@ type RoomListPropsType = {
 
 export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
   const [isClick, setIsClick] = useState(false);
-  const [personCount, setPersonCount] = useState(1);
+  // const [personCount, setPersonCount] = useState(1);
   const [roomCount, setRoomCount] = useState(1);
   const [check_in, setCheck_in] = useState(null);
   const [check_out, setCheck_out] = useState(null);
@@ -38,7 +38,7 @@ export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
         lodgId: lodgId,
         checkIn: check_in,
         checkOut: check_out,
-        personCount: personCount,
+        // personCount: personCount,
         roomCount: roomCount,
       }).then((res) => {
         setResData(res?.data);
@@ -94,11 +94,11 @@ export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
           <Calendar_orange_Ic />
         </div>
         <div>
-          <div>
+          {/* <div>
             <ClickCount count={personCount} setCount={setPersonCount} />
             <label>인원수</label>
             <Person_orange_Ic />
-          </div>
+          </div> */}
           <div>
             <ClickCount count={roomCount} setCount={setRoomCount} />
             <label>객실수</label>

@@ -1,3 +1,4 @@
+import { getErrorMessage } from "@/common/utils/getErrorMessage";
 import axios from "axios";
 
 type LodgPropsType = {
@@ -18,7 +19,7 @@ export const getLodgListApi = async ({
       { headers: { Authorization: token } }
     );
     return res;
-  } catch (err) {
-    console.log(err);
+  } catch (e) {
+    getErrorMessage(e);
   }
 };
