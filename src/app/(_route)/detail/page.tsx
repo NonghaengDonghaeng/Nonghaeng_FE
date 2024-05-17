@@ -23,6 +23,7 @@ export default function Page() {
   const [tourId, setTourId] = useState<number>(
     Number(searchParams.get("tour_id"))
   );
+
   const [pageState, setPageState] = useState<{
     isClick: { exp: boolean; lodg: boolean };
   }>({

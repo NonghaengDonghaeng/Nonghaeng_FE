@@ -8,6 +8,7 @@ type LodgListPropsType = {
   content: lodgListContentDataType | undefined;
 };
 
+
 export default function LodgList({ content }: LodgListPropsType) {
   const lodgList = content?.map((item, index) => (
     <li key={index}>
