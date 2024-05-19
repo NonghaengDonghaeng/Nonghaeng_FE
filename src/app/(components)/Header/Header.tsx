@@ -29,14 +29,14 @@ function Header() {
 
   // 로그인 상태관리
   useEffect(() => {
-    if (pathName !== "/acount/login" && pathName !== "/acount/join") {
-      //임시로 로그인 하지 않은 유저 막음
-      verifyJwtApi().then(() => {
-        if (store.getState() == true) {
-          setLoginState(true);
-        } else setLoginState(false);
-      });
-    }
+    // if (pathName !== "/acount/login" && pathName !== "/acount/join") {
+    //   //임시로 로그인 하지 않은 유저 막음
+    //   verifyJwtApi().then(() => {
+    //     if (store.getState() == true) {
+    //       setLoginState(true);
+    //     } else setLoginState(false);
+    //   });
+    // }
   }, [pathName]);
 
   function logout() {
