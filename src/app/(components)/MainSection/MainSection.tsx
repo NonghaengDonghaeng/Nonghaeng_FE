@@ -2,8 +2,8 @@ import styles from './MainSection.module.css';
 import SectionComponent1 from "@/app/(components)/SectionComponents/SectionComponent1/SectionComponent1";
 import SectionComponent2 from "@/app/(components)/SectionComponents/SectionComponent2/SectionComponent2";
 import SectionComponent3 from "@/app/(components)/SectionComponents/SectionComponent3/SectionComponent3";
-import {useCallback, useEffect, useState} from "react";
-import BackIc from "icon/back_stone.svg"
+import {useEffect, useState} from "react";
+import BackIc from "icon/back_stone.svg";
 import FrontIc from "icon/front_stone.svg"
 import StopIc from "icon/stop_stone.svg";
 
