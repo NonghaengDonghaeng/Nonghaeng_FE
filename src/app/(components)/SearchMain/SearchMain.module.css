@@ -101,7 +101,7 @@
 }
 
 /* 모바일 */
-@media (max-width: 767px) {
+@screen mobile {
   .search_main {
     @apply w-[95%] h-[112px] px-[2.5%] mx-auto rounded-[5px] top-[322px] absolute bg-yellow/90;
   }

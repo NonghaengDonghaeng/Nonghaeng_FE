@@ -33,9 +33,9 @@
 }
 
 /* 모바일 */
-@media screen and (max-width: 767px) {
+@screen mobile {
   .exp_info > span {
-    @apply hidden;
+    @apply opacity-40 font-[400];
   }
   .exp_info h1 {
     @apply flex text-[24px] font-[600] my-[20px];

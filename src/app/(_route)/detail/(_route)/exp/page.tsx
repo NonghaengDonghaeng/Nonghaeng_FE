@@ -11,6 +11,7 @@ import ExpCommentList from "../../(components)/ExpComment/ExpCommentList";
 import store from "@/redux/loginStateStore";
 import LikeAndReserve from "../../(components)/LikeAndReserve/LikeAndReserve";
 import ExpInfo from "../../(components)/ExpInfo/ExpInfo";
+import expDetailPageData from "@/db/expdata/detail.json"
 
 export default function Page() {
   const { element, moveElement } = useMove();
@@ -23,10 +24,10 @@ export default function Page() {
 
   // api useEffect
   useEffect(() => {
-    getExpDetailApi({ expId }).then((res) => {
+    getExpDetailApi({expId}).then((res) => {
       setResData(res?.data);
     });
-    // setResData(expDetailPageResData);
+    // setResData(expDetailPageData);
   }, []);
 
   const routeExpReserve = () => {
