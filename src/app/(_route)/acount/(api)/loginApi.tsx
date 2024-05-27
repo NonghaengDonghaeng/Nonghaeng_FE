@@ -28,38 +28,42 @@ export const verifyJwtApi = async () => {
 // 소비자로그인
 type userPropsType = { user: userType };
 
-export const loginApi = async ({ user }: userPropsType) => {
+export const loginApi = async ({user}: userPropsType) => {
   try {
-    const response = await axios.post(
-      process.env.NEXT_PUBLIC_API_URL + "login",
-      user
-    );
-    console.log(response.headers.authorization);
-    let token = response.headers["authorization"];
-    localStorage.setItem("jwt", "Bearer " + token);
+    await axios.post(
+        process.env.NEXT_PUBLIC_API_URL + "login",
+        user
+    ).then((res) => {
+      if (res?.status == 200) {
+        alert(res.data);
+        const jwtToken = res.headers.authorization;
+        localStorage.setItem("jwt", "Bearer " + jwtToken);
+        window.location.replace("/")
+      }
+    });
   } catch (e) {
     const message = getErrorMessage(e);
-    console.log(message);
+    alert(message);
   }
 };
 
 // 판매자로그인
-type sellerPropsType = { seller: sellerType };
-
-export const sellerLoginApi = async ({ seller }: sellerPropsType) => {
-  try {
-    const response = await axios.post(
-      process.env.NEXT_PUBLIC_API_URL + "login",
-      seller
-    );
-    let token = response.headers["authorization"];
-    console.log(response.headers.authorization);
-    localStorage.setItem("jwt", "Bearer " + token);
-  } catch (e) {
-    const message = getErrorMessage(e);
-    console.log(message);
-  }
-};
+// type sellerPropsType = { seller: sellerType };
+//
+// export const sellerLoginApi = async ({ seller }: sellerPropsType) => {
+//   try {
+//     const response = await axios.post(
+//       process.env.NEXT_PUBLIC_API_URL + "login",
+//       seller
+//     );
+//     let token = response.headers["authorization"];
+//     console.log(response.headers.authorization);
+//     localStorage.setItem("jwt", "Bearer " + token);
+//   } catch (e) {
+//     const message = getErrorMessage(e);
+//     console.log(message);
+//   }
+// };
 
 // 카카오로그인
 export const kakaoLoginApi = async () => {

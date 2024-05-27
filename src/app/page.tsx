@@ -18,9 +18,9 @@ export default function Home() {
     room_tour_summary_dto_list: lodgListContentDataType;
   }>();
 
-  useEffect(() => {
-    getMainApi().then((res) => setResData(res?.data));
-  }, []);
+    useEffect(() => {
+        getMainApi().then((res) => setResData(res?.data));
+    }, []);
 
 
     return (

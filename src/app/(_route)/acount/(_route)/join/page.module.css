@@ -1,16 +1,19 @@
-.join_main {
-  @apply mt-[80px] mb-[40px] text-stone font-[500] flex justify-between;
+@screen mobile {
+  .join_main {
+    @apply mt-[80px] mb-[40px] text-stone font-[500];
+  }
+  .join_main > article {
+    @apply w-full mt-[80px] text-center;
+  }
+  .join_main > article > h1 {
+    @apply text-[24px];
+  }
+  .join_main > article > h2 {
+    @apply my-[40px];
+  }
+  .join_main > article > a {
+    @apply w-full h-[60px] items-center flex justify-center rounded-md text-white bg-stone/80;
+  }
 }
 
-.join_main > article {
-  @apply w-[40%] text-center;
-}
-.join_main > article > h1 {
-  @apply text-[24px];
-}
-.join_main > article > h2 {
-  @apply my-[60px];
-}
-.join_main > article > a {
-  @apply w-full h-[60px] items-center flex justify-center rounded-md text-white bg-stone/80;
-}
+
