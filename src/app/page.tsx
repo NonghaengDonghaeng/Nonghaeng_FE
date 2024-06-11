@@ -15,16 +15,26 @@ export default function Home() {
     exp_summary_dto_list: expListContentDataType;
     room_tour_summary_dto_list: lodgListContentDataType;
   }>();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    getMainApi().then((res) => setResData(res?.data));
+    getMainApi().then((res) => {
+      if (res?.status == 200) {
+        setResData(res?.data);
+        setVisible(true);
+      }
+    });
   }, []);
 
   return (
     <main id="main">
       <MainSection />
       <SearchMain />
-      <section className={styles.section2}>
+      <section
+        className={`${styles.section2} ${
+          visible ? "isvisible" : "isinvisible"
+        }`}
+      >
         <article>
           <ListTitle title="우수체험" />
           <hr />

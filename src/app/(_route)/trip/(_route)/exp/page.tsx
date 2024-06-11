@@ -28,6 +28,7 @@ export default function Page() {
   });
 
   const [resData, setResData] = useState<expListDatatype>();
+  const [visible, setVisible] = useState(false);
 
   // api useEffect
   useEffect(() => {
@@ -36,14 +37,21 @@ export default function Page() {
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     }).then((res) => {
-      setResData(res?.data);
+      if (res?.status == 200) {
+        setResData(res?.data);
+        setVisible(true);
+      }
     });
     // setResData(expListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 
   return (
     <>
-      <section className={styles.exp_main}>
+      <section
+        className={`${styles.exp_main} ${
+          visible ? "isvisible" : "isinvisible"
+        }`}
+      >
         <ListTitle
           title="농촌체험"
           pageState={pageState}

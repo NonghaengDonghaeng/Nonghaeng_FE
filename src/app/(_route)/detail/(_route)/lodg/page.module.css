@@ -1,41 +1,41 @@
 /* 데스크탑 */
-@media (min-width: 768px) {
-  .section1 {
+@screen pc {
+  .lodg_detail > article:nth-child(1) {
     @apply mt-[80px] flex justify-between;
   }
-  .section1 > article:first-child {
+  .lodg_detail > article:nth-child(1) > div:first-child {
     @apply w-[50%] h-full;
   }
-  .section1 > article:last-child {
+  .lodg_detail > article:nth-child(1) > div:last-child {
     @apply w-[40%] h-full py-[20px];
   }
-  .section1 > article:last-child > h1 {
+  .lodg_detail > article:nth-child(1) > div:last-child > h1 {
     @apply text-[24px] font-[600];
   }
-  .section1 > article:last-child > hr {
+  .lodg_detail > article:nth-child(1) > div:last-child > hr {
     @apply my-[20px] border-stone/40;
   }
-  .section1 > article:last-child > h2 {
+  .lodg_detail > article:nth-child(1) > div:last-child > h2 {
     @apply font-[400];
   }
 }
 
 /* 모바일 */
-@media (max-width: 767px) {
-  .section1 {
+@screen mobile {
+  .lodg_detail > article:nth-child(1) {
     @apply mt-[60px];
   }
-  .section1 > article:last-child > h1 {
+  .lodg_detail > article:nth-child(1) > div:last-child > h1 {
     @apply my-[20px] text-[24px] font-[600];
   }
-  .section1 > article:last-child > hr {
+  .lodg_detail > article:nth-child(1) > div:last-child > hr {
     @apply hidden;
   }
-  .section1 > article:last-child > h2 {
+  .lodg_detail > article:nth-child(1) > div:last-child > h2 {
     @apply my-[20px] font-[400];
   }
 }
 
-.section2 > article {
+.lodg_detail > article:nth-child(2) > div {
   @apply w-full;
 }

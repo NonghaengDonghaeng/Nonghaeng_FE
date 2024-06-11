@@ -27,6 +27,7 @@ export default function Page() {
   });
 
   const [resData, setResData] = useState<tourListDataType>();
+  const [visible, setVisible] = useState(false);
 
   // api useEffect
   useEffect(() => {
@@ -35,13 +36,20 @@ export default function Page() {
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     }).then((res) => {
-      setResData(res?.data);
+      if (res?.status) {
+        setResData(res?.data);
+        setVisible(true);
+      }
     });
   }, [pageState.state, pageState.pageIndex]);
 
   return (
     <>
-      <section className={styles.tour_main}>
+      <section
+        className={`${styles.tour_main} ${
+          visible ? "isvisible" : "isinvisible"
+        }`}
+      >
         <ListTitle
           title="농촌관광"
           pageState={pageState}

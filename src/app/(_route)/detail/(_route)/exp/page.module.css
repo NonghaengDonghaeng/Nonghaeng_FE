@@ -1,19 +1,19 @@
 /* 데스크탑 */
-@media (min-width: 768px) {
-  .section1 {
+@screen pc {
+  .exp_detail > article:nth-child(1) {
     @apply w-full mt-[80px]  flex justify-between;
   }
-  .section1 > article:first-child {
+  .exp_detail > article:nth-child(1) > div:first-child {
     @apply w-[50%] h-full;
   }
-  .section1 > article:last-child {
+  .exp_detail > article:nth-child(1) > div:last-child {
     @apply w-[40%] h-full py-[20px];
   }
 }
 
 /* 모바일 */
-@media (max-width: 767px) {
-  .section1 {
+@screen mobile {
+  .exp_detail > article:nth-child(1) {
     @apply w-full mt-[60px];
   }
 }

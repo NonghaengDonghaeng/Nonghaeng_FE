@@ -29,6 +29,7 @@ export default function Page() {
   });
 
   const [resData, setResData] = useState<lodgListDataType>();
+  const [visible, setVisible] = useState(false);
 
   // api useEffect1
   useEffect(() => {
@@ -37,13 +38,20 @@ export default function Page() {
       pageIndex: pageState.pageIndex,
       searchWord: pageState.searchWord,
     }).then((res) => {
-      setResData(res?.data);
+      if (res?.status == 200) {
+        setResData(res?.data);
+        setVisible(true);
+      }
     });
   }, [pageState.state, pageState.pageIndex]);
 
   return (
     <>
-      <section className={styles.lodg_main}>
+      <section
+        className={`${styles.lodg_main} ${
+          visible ? "isvisible" : "isinvisible"
+        }`}
+      >
         <ListTitle
           title="농촌숙박"
           pageState={pageState}

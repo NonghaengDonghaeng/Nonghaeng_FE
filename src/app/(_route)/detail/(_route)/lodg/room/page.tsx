@@ -28,11 +28,14 @@ export default function Page() {
   const [check_out, setCheck_out] = useState(null);
 
   const [resData, setResData] = useState<roomDetailDataType>();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     getRoomDetailApi({ roomId }).then((res) => {
-      console.log(res, res?.data);
-      setResData(res?.data);
+      if (res?.status == 200) {
+        setResData(res?.data);
+        setVisible(true);
+      }
     });
   }, []);
 
@@ -53,12 +56,16 @@ export default function Page() {
   }
 
   return (
-    <>
-      <section className={styles.section1}>
-        <article>
+    <section
+      className={`${styles.room_detail} ${
+        visible ? "isvisible" : "isinvisible"
+      }`}
+    >
+      <article>
+        <div>
           <DetailImg photoInfo={resData?.photo_info_dto_list} />
-        </article>
-        <article>
+        </div>
+        <div>
           <RoomInfo roomData={resData} />
           <div>
             <div>
@@ -93,34 +100,34 @@ export default function Page() {
             id={roomId}
             routerFunction={routeReservation}
           />
-        </article>
-      </section>
-      <section className={styles.section2}>
-        <article ref={element[0]}>
+        </div>
+      </article>
+      <article>
+        <div ref={element[0]}>
           <NavDetail
             moveElement={moveElement}
             title={["기본정보", "숙박후기", "숙박문의"]}
             nowRef={0}
           />
           기본정보
-        </article>
-        <article ref={element[1]}>
+        </div>
+        <div ref={element[1]}>
           <NavDetail
             moveElement={moveElement}
             title={["기본정보", "숙박후기", "숙박문의"]}
             nowRef={1}
           />
           여행후기
-        </article>
-        <article ref={element[2]}>
+        </div>
+        <div ref={element[2]}>
           <NavDetail
             moveElement={moveElement}
             title={["기본정보", "숙박후기", "숙박문의"]}
             nowRef={2}
           />
           문의
-        </article>
-      </section>
-    </>
+        </div>
+      </article>
+    </section>
   );
 }

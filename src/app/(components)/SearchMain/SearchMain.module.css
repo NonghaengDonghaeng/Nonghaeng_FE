@@ -1,5 +1,5 @@
 /* desktop */
-@media (min-width: 1024px) {
+@screen pc {
   .search_main {
     @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[510px] flex justify-between absolute bg-yellow/85;
   }
@@ -23,11 +23,9 @@
     @apply mt-[6px];
   }
   .search_main > div > div > ul {
-    @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer relative z-[10] text-stone bg-white;
+    @apply w-full rounded-[5px] border-stone overflow-auto cursor-pointer relative z-[10] text-stone bg-white duration-300;
   }
-  .search_main > div > div:first-child > ul {
-    @apply h-[246px];
-  }
+
   .search_main > div > div > ul > li {
     @apply py-[10px] px-[20px];
   }
@@ -38,10 +36,13 @@
     @apply text-stone bg-white;
   }
   .search_main_off > ul {
-    @apply hidden;
+    @apply h-0;
   }
   .search_main_on {
     @apply text-white bg-stone;
+  }
+  .search_main_on > ul {
+    @apply h-[246px] border-[2px];
   }
   /* input */
   .search_main > div > input {
@@ -50,7 +51,7 @@
 }
 
 /* 테블릿 */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@screen tablet {
   .search_main {
     @apply w-[90%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[510px] flex justify-between absolute bg-yellow/85;
   }
@@ -74,11 +75,9 @@
     @apply mt-[6px];
   }
   .search_main > div > div > ul {
-    @apply w-full rounded-[5px] border-[2px] border-stone overflow-auto cursor-pointer relative z-[10] text-stone bg-white;
+    @apply w-full rounded-[5px] border-stone overflow-auto cursor-pointer relative z-[10] text-stone bg-white duration-300;
   }
-  .search_main > div > div:first-child > ul {
-    @apply h-[246px];
-  }
+
   .search_main > div > div > ul > li {
     @apply py-[10px] px-[20px];
   }
@@ -89,10 +88,13 @@
     @apply text-stone bg-white;
   }
   .search_main_off > ul {
-    @apply hidden;
+    @apply h-0;
   }
   .search_main_on {
     @apply text-white bg-stone;
+  }
+  .search_main_on > ul {
+    @apply h-[246px] border-[2px];
   }
   /* input */
   .search_main > div > input {
@@ -119,10 +121,7 @@
     @apply w-full h-full px-[10%] flex justify-between items-center cursor-pointer;
   }
   .search_main > div > div > ul {
-    @apply w-full rounded-[5px] border-[2px] relative z-[10] border-stone overflow-auto cursor-pointer text-stone bg-white;
-  }
-  .search_main > div > div:first-child > ul {
-    @apply h-[246px];
+    @apply w-full rounded-[5px] relative z-[10] border-stone overflow-auto cursor-pointer text-stone bg-white duration-300;
   }
   .search_main > div > div > ul > li {
     @apply py-[10px] px-[20px];
@@ -134,10 +133,13 @@
     @apply text-stone bg-white;
   }
   .search_main_off > ul {
-    @apply hidden;
+    @apply h-[0];
   }
   .search_main_on {
     @apply text-white bg-stone;
+  }
+  .search_main_on > ul {
+    @apply h-[246px] border-[2px];
   }
   /* input */
   .search_main > div > input {

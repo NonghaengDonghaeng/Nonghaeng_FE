@@ -38,6 +38,14 @@ body {
   @apply hidden;
 }
 
+/* 데이터 도착시 보이게 */
+.isvisible {
+  @apply opacity-100 duration-1000;
+}
+.isinvisible {
+  @apply opacity-0;
+}
+
 /* img {
   @apply object-cover;
 } */

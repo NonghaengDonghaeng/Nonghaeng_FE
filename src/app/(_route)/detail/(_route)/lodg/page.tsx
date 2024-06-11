@@ -17,27 +17,35 @@ export default function Page() {
     Number(searchParams.get("lodg_id"))
   );
   const [resData, setResData] = useState<lodgDetailDataType | undefined>();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     getLodgDetailApi({ lodgId }).then((res) => {
-      setResData(res?.data);
+      if (res?.status == 200) {
+        setResData(res?.data);
+        setVisible(true);
+      }
     });
   }, []);
 
   return (
-    <>
-      <section className={styles.section1}>
-        <article>
+    <section
+      className={`${styles.lodg_detail} ${
+        visible ? "isvisible" : "isinvisible"
+      }`}
+    >
+      <article>
+        <div>
           <DetailImg photoInfo={resData?.photo_info_dto_list} />
-        </article>
-        <article>
+        </div>
+        <div>
           <h1>{resData?.tour_name}</h1>
           <hr />
           <h2>{resData?.tour_one_line_intro}</h2>
-        </article>
-      </section>
-      <section className={styles.section2}>
-        <article ref={element[0]}>
+        </div>
+      </article>
+      <article>
+        <div ref={element[0]}>
           <NavDetail
             moveElement={moveElement}
             title={["객실선택", "기본정보", "숙박후기"]}
@@ -47,22 +55,22 @@ export default function Page() {
             lodgId={lodgId}
             roomListData={resData?.room_summary_dto_list}
           />
-        </article>
-        <article ref={element[1]}>
+        </div>
+        <div ref={element[1]}>
           <NavDetail
             moveElement={moveElement}
             title={["객실선택", "기본정보", "숙박후기"]}
             nowRef={1}
           />
-        </article>
-        <article ref={element[2]}>
+        </div>
+        <div ref={element[2]}>
           <NavDetail
             moveElement={moveElement}
             title={["객실선택", "기본정보", "숙박후기"]}
             nowRef={2}
           />
-        </article>
-      </section>
-    </>
+        </div>
+      </article>
+    </section>
   );
 }

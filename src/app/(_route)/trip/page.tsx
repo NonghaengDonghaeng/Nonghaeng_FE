@@ -17,15 +17,27 @@ export default function Page() {
     exp_summary_dto_list: expListContentDataType;
     room_tour_summary_dto_list: lodgListContentDataType;
   }>();
+  const [visible, setVisible] = useState(false);
 
   // api useEffect
   useEffect(() => {
-    getTripMainApi().then((res) => setResData(res?.data));
+    // getTripMainApi().then((res) => {
+    //   if (res?.status == 200) {
+    //     setResData(res.data);
+    //     setVisible(true);
+    //   }
+    // });
+    setResData(tripPageResData);
+    setVisible(true);
   }, []);
 
   return (
     <>
-      <section className={styles.trip_main}>
+      <section
+        className={`${styles.trip_main} ${
+          visible ? "isvisible" : "isinvisible"
+        }`}
+      >
         <article>
           <ListTitle title="농촌관광" />
           <hr />

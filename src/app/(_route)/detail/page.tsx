@@ -33,17 +33,25 @@ export default function Page() {
   });
 
   const [resData, setResData] = useState<tourDetailDataType>();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     getTourDetailApi({ tourId }).then((res) => {
-      setResData(res?.data);
+      if (res?.status == 200) {
+        setResData(res?.data);
+        setVisible(true);
+      }
     });
     // setResData(tourDetailPageResData);
   }, []);
 
   return (
-    <>
-      <section className={styles.section1}>
+    <section
+      className={`${styles.tour_detail} ${
+        visible ? "isvisible" : "isinvisible"
+      }`}
+    >
+      <article>
         <DetailImg photoInfo={resData?.photo_info_dto_list} />
         <h1>
           {resData?.name}
@@ -108,27 +116,27 @@ export default function Page() {
             roomSubListData={resData?.room_summary_list}
           />
         </div>
-      </section>
-      <section className={styles.section2}>
+      </article>
+      <article>
         <NavDetail
           moveElement={moveElement}
           title={["기본정보", "여행후기", "여행문의"]}
           nowRef={0}
         />
-        <article ref={element[0]}>기본정보</article>
+        <div ref={element[0]}>기본정보</div>
         <NavDetail
           moveElement={moveElement}
           title={["기본정보", "여행후기", "여행문의"]}
           nowRef={1}
         />
-        <article ref={element[1]}></article>
+        <div ref={element[1]}></div>
         <NavDetail
           moveElement={moveElement}
           title={["기본정보", "여행후기", "여행문의"]}
           nowRef={2}
         />
-        <article ref={element[2]}>문의</article>
-      </section>
-    </>
+        <div ref={element[2]}>문의</div>
+      </article>
+    </section>
   );
 }
