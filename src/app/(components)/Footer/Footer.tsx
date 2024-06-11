@@ -2,11 +2,7 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import { footerHref } from "@/model/href/href";
-import Home_Ic from "icon/home.svg";
-import Menu_Ic from "icon/sitemap_gray.svg";
-import Search_Ic from "icon/search_gray.svg";
-import Person_Ic from "icon/person_gray.svg";
-import Back_Ic from "icon/back_gray.svg";
+import { Home_Ic, Menu_Ic, Search_Ic, Person_Ic, Back_Ic } from "icon/index";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

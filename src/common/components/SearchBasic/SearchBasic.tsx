@@ -4,7 +4,7 @@ import { useSearch } from "@/hooks/useSearch";
 import { useChange } from "@/hooks/useChange";
 import styles from "./SearchBasic.module.css";
 import { inputType, formType } from "@/common/types/eventType";
-import Search_gray_Ic from "icon/search_gray.svg";
+import { Search_gray_Ic } from "icon/index";
 
 export default function SearchBasic() {
   const search = useSearch();

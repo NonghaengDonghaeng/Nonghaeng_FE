@@ -7,7 +7,7 @@ import {
   pageStateType,
   setPageStateType,
 } from "@/app/(_route)/trip/(types)/pageStateType";
-import More_green_Ic from "icon/more_green.svg";
+import { More_green_Ic } from "icon/index";
 
 type PropsType = {
   title: string;

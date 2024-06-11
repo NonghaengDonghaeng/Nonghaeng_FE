@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./CustomImage.module.css";
 // 이미지가 없는 경우 렌더링될 기본 이미지
-import defaultImg from "img/errorImg.png";
+import { defaultImg } from "img/index";
 
 type PropsType = {
   src: string | null | undefined;

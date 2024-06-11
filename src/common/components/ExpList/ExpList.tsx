@@ -2,7 +2,7 @@ import CustomImage from "../CustomImage/CustomImage";
 import Link from "next/link";
 import styles from "./ExpList.module.css";
 import { expListContentDataType } from "@/common/types/expListDataType";
-import Location_orange_Ic from "icon/location_orange.svg";
+import { Location_orange_Ic } from "icon/index";
 
 type ExpListPropsType = {
   content: expListContentDataType | undefined;

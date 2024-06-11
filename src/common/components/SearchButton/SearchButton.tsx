@@ -1,5 +1,5 @@
 import styles from "./SearchButton.module.css";
-import Search_white_Ic from "icon/search_white.svg";
+import { Search_white_Ic } from "icon/index";
 
 export default function SearchButton() {
   return (

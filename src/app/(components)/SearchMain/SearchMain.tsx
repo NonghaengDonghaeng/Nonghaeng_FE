@@ -7,8 +7,7 @@ import styles from "./SearchMain.module.css";
 import { inputType, formType } from "@/common/types/eventType";
 import { searchItemType } from "@/common/types/searchItemType";
 import { region, category } from "@/model/name/name";
-import More_gray_Ic from "icon/more_gray.svg";
-import More_white_Ic from "icon/more_white.svg";
+import { More_gray_Ic, More_white_Ic } from "icon/index";
 
 export default function SearchMain() {
   const search = useSearch();

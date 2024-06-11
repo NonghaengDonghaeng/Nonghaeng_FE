@@ -2,12 +2,11 @@ import Link from "next/link";
 import CustomImage from "../CustomImage/CustomImage";
 import styles from "./LodgList.module.css";
 import { lodgListContentDataType } from "@/common/types/lodgListDataType";
-import Location_orange_Ic from "icon/location_orange.svg";
+import { Location_orange_Ic } from "icon/index";
 
 type LodgListPropsType = {
   content: lodgListContentDataType | undefined;
 };
-
 
 export default function LodgList({ content }: LodgListPropsType) {
   const lodgList = content?.map((item, index) => (

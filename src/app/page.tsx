@@ -10,35 +10,32 @@ import { expListContentDataType } from "@/common/types/expListDataType";
 import { lodgListContentDataType } from "@/common/types/lodgListDataType";
 import MainSection from "@/app/(components)/MainSection/MainSection";
 
-
-
 export default function Home() {
   const [resData, setResData] = useState<{
     exp_summary_dto_list: expListContentDataType;
     room_tour_summary_dto_list: lodgListContentDataType;
   }>();
 
-    useEffect(() => {
-        getMainApi().then((res) => setResData(res?.data));
-    }, []);
+  useEffect(() => {
+    getMainApi().then((res) => setResData(res?.data));
+  }, []);
 
-
-    return (
-        <main id="main">
-            <MainSection/>
-            <SearchMain/>
-            <section className={styles.section2}>
-                <article>
-                    <ListTitle title="우수체험"/>
-                    <hr/>
-                    <ExpList content={resData?.exp_summary_dto_list}/>
-                </article>
-                <article>
-                    <ListTitle title="우수숙박"/>
-                    <hr/>
-                    <LodgList content={resData?.room_tour_summary_dto_list}/>
-                </article>
-            </section>
-        </main>
-    );
-};
+  return (
+    <main id="main">
+      <MainSection />
+      <SearchMain />
+      <section className={styles.section2}>
+        <article>
+          <ListTitle title="우수체험" />
+          <hr />
+          <ExpList content={resData?.exp_summary_dto_list} />
+        </article>
+        <article>
+          <ListTitle title="우수숙박" />
+          <hr />
+          <LodgList content={resData?.room_tour_summary_dto_list} />
+        </article>
+      </section>
+    </main>
+  );
+}

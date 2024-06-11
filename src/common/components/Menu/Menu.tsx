@@ -1,8 +1,8 @@
 import Link from "next/link";
 import styles from "./Menu.module.css";
 import { menuHref } from "@/model/href/href";
-import More_Ic from "icon/more_gray.svg";
 import SearchBasic from "../SearchBasic/SearchBasic";
+import { More_Ic } from "icon/index";
 
 type ItemType = {
   title: string;

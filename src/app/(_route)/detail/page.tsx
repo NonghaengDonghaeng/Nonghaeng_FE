@@ -7,13 +7,15 @@ import SubList from "./(components)/SubList/SubList";
 import styles from "./page.module.css";
 import { tourDetailDataType } from "./(types)/tourDetailDataType";
 import tourDetailPageResData from "@/db/tourdata/detail.json";
-import Grade_orange_Ic from "icon/grade_orange.svg";
-import Comment_orange_Ic from "icon/commnet_orange.svg";
-import Location_orange_Ic from "icon/location_orange.svg";
-import Email_orange_Ic from "icon/email_orange.svg";
-import Tell_orange_Ic from "icon/tell_orange.svg";
-import Exp_orange_Ic from "icon/exp_orange.svg";
-import Lodg_orange_Ic from "icon/lodg_orange.svg";
+import {
+  Lodg_orange_Ic,
+  Grade_orange_Ic,
+  Comment_orange_Ic,
+  Location_orange_Ic,
+  Email_orange_Ic,
+  Tell_orange_Ic,
+  Exp_orange_Ic,
+} from "icon/index";
 import DetailImg from "./(components)/DetailImg/DetailImg";
 import { getTourDetailApi } from "./(api)/getTourDetailApi";
 

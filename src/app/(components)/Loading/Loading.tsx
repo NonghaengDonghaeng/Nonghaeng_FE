@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./Loading.module.css";
-import loading_img from "icon/favicon.ico";
+import { loading_img } from "icon/index";
 
 export default function Loading() {
   return (
