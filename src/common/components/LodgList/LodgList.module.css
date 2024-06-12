@@ -1,10 +1,13 @@
 /* 데스크탑 */
-@media screen and (min-width: 1024px) {
+@screen pc {
   .lodg_list {
     @apply block;
   }
+  .lodg_list > li:hover {
+    @apply scale-105 duration-300;
+  }
   .lodg_list > li {
-    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl;
+    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl duration-300;
   }
   .lodg_list > li:nth-child(2n-1) {
     @apply mr-[2%];
@@ -14,10 +17,10 @@
   }
   /* 사진영역 */
   .lodg_list > li > a > div:first-child {
-    @apply w-[45%] h-full;
+    @apply w-[45%] h-full relative;
   }
   .lodg_list > li > a > div:first-child > img {
-    @apply w-[17.6%] h-[200px] rounded-xl absolute;
+    @apply w-full h-full rounded-xl absolute;
   }
   .lodg_list > li > a > div:first-child > span {
     @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
@@ -47,12 +50,15 @@
 }
 
 /* 테블릿 */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@screen tablet {
   .lodg_list {
     @apply block;
   }
   .lodg_list > li {
-    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl;
+    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl duration-300;
+  }
+  .lodg_list > li:hover {
+    @apply scale-105 duration-300;
   }
   .lodg_list > li:nth-child(2n-1) {
     @apply mr-[2%];
@@ -95,7 +101,7 @@
 }
 
 /* 모바일 */
-@media screen and (max-width: 767px) {
+@screen mobile {
   .lodg_list {
   }
   /* 사진영역 */

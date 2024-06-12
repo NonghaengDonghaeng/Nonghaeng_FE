@@ -3,7 +3,10 @@
   .tour_list {
   }
   .tour_list > li {
-    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl;
+    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl duration-300;
+  }
+  .tour_list > li:hover {
+    @apply scale-105 duration-300;
   }
   .tour_list > li:nth-child(2n-1) {
     @apply mr-[2%];
@@ -13,10 +16,10 @@
   }
   /* 사진영역 */
   .tour_list > li > a > div:first-child {
-    @apply w-[45%] h-full;
+    @apply w-[45%] h-full relative;
   }
   .tour_list > li > a > div:first-child > img {
-    @apply w-[17.6%] h-[200px] rounded-xl absolute;
+    @apply w-full h-[200px] rounded-xl absolute;
   }
   .tour_list > li > a > div:first-child > span {
     @apply ml-[20px] mt-[20px] absolute flex items-center text-[16px] font-[500] text-white;
@@ -53,7 +56,10 @@
   .tour_list {
   }
   .tour_list > li {
-    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl;
+    @apply w-[49%] h-[200px] mb-[20px] inline-block rounded-xl duration-300;
+  }
+  .tour_list > li:hover {
+    @apply scale-105 duration-300;
   }
   .tour_list > li:nth-child(2n-1) {
     @apply mr-[2%];
