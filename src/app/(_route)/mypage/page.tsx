@@ -14,9 +14,17 @@ export default function Page() {
   const router = useRouter();
 
   const [resData, setResData] = useState<mypageDataType>();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    getMypageApi().then((res) => setResData(res?.data));
+    getMypageApi().then((res) => {
+      if (res?.status == 200) {
+        setResData(res?.data);
+        setVisible(true);
+      }
+    });
+    // setResData(mypageData);
+    // setVisible(true);
   }, []);
 
   const logout = () => {
@@ -26,7 +34,11 @@ export default function Page() {
   };
 
   return (
-    <section className={styles.mypage_main}>
+    <section
+      className={`${styles.mypage_main} ${
+        visible ? "isvisible" : "isinvisible"
+      }`}
+    >
       <article>
         <div>
           <h1>{resData?.name}의 마이페이지</h1>

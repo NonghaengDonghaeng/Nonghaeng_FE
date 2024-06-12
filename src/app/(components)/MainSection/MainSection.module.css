@@ -1,17 +1,53 @@
+@screen pc {
+  .main_section {
+    @apply w-full h-[490px] mt-[80px];
+  }
+  .main_section > div:nth-child(1) {
+    @apply w-full h-full;
+  }
+  .main_section > div:nth-child(2) {
+    @apply w-[120px] h-[30px] flex items-center justify-between top-[460px] right-[10%] absolute;
+  }
+  .main_section > div:nth-child(2) > button {
+    @apply w-[30px] h-[30px] rounded-full flex items-center justify-center bg-white/80;
+  }
+  .main_section > div:nth-child(2) > div {
+    @apply w-[80px] h-[30px] px-[6px] flex items-center justify-between rounded-full bg-white/80;
+  }
+}
+
+@screen tablet {
+  .main_section {
+    @apply w-full h-[490px] mt-[80px];
+  }
+  .main_section > div:nth-child(1) {
+    @apply w-full h-full;
+  }
+  .main_section > div:nth-child(2) {
+    @apply w-[120px] h-[30px] flex items-center justify-between top-[460px] right-[5%] absolute;
+  }
+  .main_section > div:nth-child(2) > button {
+    @apply w-[30px] h-[30px] rounded-full flex items-center justify-center bg-white/80;
+  }
+  .main_section > div:nth-child(2) > div {
+    @apply w-[80px] h-[30px] px-[6px] flex items-center justify-between rounded-full bg-white/80;
+  }
+}
+
 @screen mobile {
-    .main_section {
-        @apply w-full h-[320px] mt-[60px]
-    }
-    .main_section > div:nth-child(1) {
-        @apply w-full h-full
-    }
-    .main_section > div:nth-child(2){
-        @apply w-[120px] h-[30px] flex items-center justify-between top-[280px] right-[2.5%] absolute
-    }
-    .main_section > div:nth-child(2) > button {
-        @apply w-[30px] h-[30px] rounded-full flex items-center justify-center bg-white/80
-    }
-    .main_section > div:nth-child(2) > div {
-        @apply w-[80px] h-[30px] px-[6px] flex items-center justify-between rounded-full bg-white/80
-    }
+  .main_section {
+    @apply w-full h-[320px] mt-[60px];
+  }
+  .main_section > div:nth-child(1) {
+    @apply w-full h-full;
+  }
+  .main_section > div:nth-child(2) {
+    @apply w-[120px] h-[30px] flex items-center justify-between top-[280px] right-[2.5%] absolute;
+  }
+  .main_section > div:nth-child(2) > button {
+    @apply w-[30px] h-[30px] rounded-full flex items-center justify-center bg-white/80;
+  }
+  .main_section > div:nth-child(2) > div {
+    @apply w-[80px] h-[30px] px-[6px] flex items-center justify-between rounded-full bg-white/80;
+  }
 }

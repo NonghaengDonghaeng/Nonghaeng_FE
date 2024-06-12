@@ -36,7 +36,7 @@ export default function Page() {
       .toString()
       .padStart(2, "0")}-${today.getDate().toString().padStart(2, "0")}`
   );
-  const [paymentPrice, setPaymentPrice] = useState(expPrice);
+  const [paymentPrice, setPaymentPrice] = useState(expPrice * personCount);
 
   const [expReserveInfo, setExpReserveInfo] = useState<expReserveInfoType>({
     round_id: selectedRound?.round_id,
@@ -58,9 +58,11 @@ export default function Page() {
       email: userResData?.email,
       final_price: paymentPrice,
     });
-  }, [selectedRound, day, personCount, userResData]);
+  }, [selectedRound, day, personCount, userResData, paymentPrice]);
 
-  useEffect(() => setPaymentPrice(expPrice * personCount), [personCount]);
+  useEffect(() => {
+    setPaymentPrice(expPrice * personCount);
+  }, [personCount]);
 
   useEffect(() => {
     getUserDataApi().then((res) => setUserResData(res?.data));

@@ -9,6 +9,7 @@ import styles from "./page.module.css";
 import { expListContentDataType } from "@/common/types/expListDataType";
 import { lodgListContentDataType } from "@/common/types/lodgListDataType";
 import MainSection from "@/app/(components)/MainSection/MainSection";
+import homePageResData from "@/db/homePageResData.json";
 
 export default function Home() {
   const [resData, setResData] = useState<{
@@ -24,6 +25,8 @@ export default function Home() {
         setVisible(true);
       }
     });
+    // setResData(homePageResData);
+    // setVisible(true);
   }, []);
 
   return (

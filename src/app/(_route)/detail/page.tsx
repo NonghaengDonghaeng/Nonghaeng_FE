@@ -43,6 +43,7 @@ export default function Page() {
       }
     });
     // setResData(tourDetailPageResData);
+    // setVisible(true);
   }, []);
 
   return (

@@ -21,14 +21,14 @@ export default function Page() {
 
   // api useEffect
   useEffect(() => {
-    // getTripMainApi().then((res) => {
-    //   if (res?.status == 200) {
-    //     setResData(res.data);
-    //     setVisible(true);
-    //   }
-    // });
-    setResData(tripPageResData);
-    setVisible(true);
+    getTripMainApi().then((res) => {
+      if (res?.status == 200) {
+        setResData(res.data);
+        setVisible(true);
+      }
+    });
+    // setResData(tripPageResData);
+    // setVisible(true);
   }, []);
 
   return (

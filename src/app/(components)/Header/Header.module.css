@@ -3,12 +3,12 @@
 }
 
 /* desktop */
-@media screen and (min-width: 1024px) {
+@screen pc {
   .header_inner > button {
     @apply hidden;
   }
   .header_inner > ul {
-    @apply w-[400px] h-[60px] flex justify-between items-center;
+    @apply w-[400px] h-full flex justify-between items-center;
   }
   .header_inner > ul > li {
     @apply relative w-[100px] text-center;
@@ -49,7 +49,7 @@
 }
 
 /* 테블릿 */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@screen tablet {
   .header_inner {
     @apply h-full px-[24px] flex justify-between items-center;
   }
@@ -74,7 +74,7 @@
 }
 
 /* mobile */
-@media screen and (max-width: 767px) {
+@screen mobile {
   .header_inner {
     @apply h-full flex justify-center;
   }

@@ -29,8 +29,8 @@ export default function ReserveList({ myReserveData }: PropsType) {
     pageIndex: 1,
   });
 
-  const cancelReserve = ({ type, id }: { type: string; id: number }) => {
-    cancelReserveApi({ type: type, id: id });
+  const cancelReserve = (id: number) => {
+    cancelReserveApi({ id: id }).then((res) => console.log(res?.data));
   };
 
   const reserveList = myReserveData?.content.map((item, index) => {
@@ -38,30 +38,27 @@ export default function ReserveList({ myReserveData }: PropsType) {
       return (
         <li key={index}>
           <div>
-            <label>체험</label>
-            <p>{item.experience_name}</p>
+            <div>
+              <label>체험</label>
+              <p>{item.experience_name}</p>
+            </div>
+            <div>
+              <label>인원</label>
+              <span>{item.num_of_participant}</span>
+            </div>
+            <div>
+              <label>날짜</label>
+              <p>{item.reservation_date}</p>
+            </div>
+            <div>
+              <label>상태</label>
+              <span>{item.reservation_state}</span>
+            </div>
           </div>
           <div>
-            <label>인원</label>
-            <span>{item.num_of_participant}</span>
-          </div>
-          <div>
-            <label>날짜</label>
-            <p>{item.reservation_date}</p>
-          </div>
-          <div>
-            <label>상태</label>
-            <span>{item.reservation_state}</span>
-          </div>
-          <div>
-            <label></label>
+            <button>후기</button>
             <button
-              onClick={() =>
-                cancelReserve({
-                  type: "experience",
-                  id: item.experience_reservation_id,
-                })
-              }
+              onClick={() => cancelReserve(item.experience_reservation_id)}
             >
               취소
             </button>
@@ -72,31 +69,26 @@ export default function ReserveList({ myReserveData }: PropsType) {
       return (
         <li key={index}>
           <div>
-            <label>숙박</label>
-            <p>{item.room_name}</p>
+            <div>
+              <label>숙박</label>
+              <p>{item.room_name}</p>
+            </div>
+            <div>
+              <label>인원</label>
+              <span>{item.num_of_participant}</span>
+            </div>
+            <div>
+              <label>날짜</label>
+              <p>{item.reservation_dates}</p>
+            </div>
+            <div>
+              <label>상태</label>
+              <span>{item.reservation_state}</span>
+            </div>
           </div>
           <div>
-            <label>인원</label>
-            <span>{item.num_of_participant}</span>
-          </div>
-          <div>
-            <label>날짜</label>
-            <p>{item.reservation_dates}</p>
-          </div>
-          <div>
-            <label>상태</label>
-            <span>{item.reservation_state}</span>
-          </div>
-          <div>
-            <label></label>
-            <button
-              onClick={() =>
-                cancelReserve({
-                  type: "room",
-                  id: item.room_reservation_id,
-                })
-              }
-            >
+            <button>후기</button>
+            <button onClick={() => cancelReserve(item.room_reservation_id)}>
               취소
             </button>
           </div>
