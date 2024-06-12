@@ -1,0 +1,77 @@
+{
+  "content": [
+    {
+      "room_reservation_id": 4,
+      "room_name": "사랑방",
+      "reservation_state": "예약 대기",
+      "reservation_dates": [
+        "2024-06-20",
+        "2024-06-21",
+        "2024-06-22",
+        "2024-06-23"
+      ],
+      "price": 40000,
+      "num_of_participant": 3,
+      "num_of_room": 1,
+      "type": "room"
+    },
+    {
+      "experience_reservation_id": 5,
+      "experience_name": "소타기 체험",
+      "reservation_state": "예약 대기",
+      "reservation_date": "2024-06-19",
+      "price": 15000,
+      "num_of_participant": 1,
+      "type": "experience"
+    },
+    {
+      "room_reservation_id": 6,
+      "room_name": "사랑방",
+      "reservation_state": "예약 대기",
+      "reservation_dates": [
+        "2024-06-20",
+        "2024-06-21",
+        "2024-06-22",
+        "2024-06-23"
+      ],
+      "price": 40000,
+      "num_of_participant": 3,
+      "num_of_room": 1,
+      "type": "room"
+    },
+    {
+      "experience_reservation_id": 7,
+      "experience_name": "소타기 체험",
+      "reservation_state": "예약 대기",
+      "reservation_date": "2024-06-19",
+      "price": 15000,
+      "num_of_participant": 1,
+      "type": "experience"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": true,
+      "unsorted": true,
+      "sorted": false
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalPages": 1,
+  "totalElements": 4,
+  "first": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "unsorted": true,
+    "sorted": false
+  },
+  "numberOfElements": 4,
+  "empty": false
+}

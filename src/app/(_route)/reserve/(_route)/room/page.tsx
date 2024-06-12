@@ -27,8 +27,10 @@ export default function Page() {
   const [roomPrice, setRoomPrice] = useState(
     Number(searchParams.get("room_price"))
   );
-  const [userResData, setUserResData] = useState<userInfoDataType>();
   const [paymentPrice, setPaymentPrice] = useState(roomPrice * roomCount);
+
+  const [userResData, setUserResData] = useState<userInfoDataType>();
+  const [visible, setVisible] = useState(false);
 
   const [roomReserveInfo, setRoomReserveInfo] = useState<roomReserveInfoType>({
     room_id: roomId,
@@ -78,7 +80,11 @@ export default function Page() {
   };
 
   return (
-    <section className={styles.reserve_room}>
+    <section
+      className={`${styles.reserve_room} ${
+        visible ? "isvisible" : "isinvisible"
+      }`}
+    >
       <article>
         <h1>
           <div />

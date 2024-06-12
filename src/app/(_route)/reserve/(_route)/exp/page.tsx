@@ -28,7 +28,6 @@ export default function Page() {
   const [expPrice, setExpPrice] = useState(
     Number(searchParams.get("exp_price"))
   );
-  const [userResData, setUserResData] = useState<userInfoDataType>();
   const [roundResData, setRoundResData] = useState<expRoundListType>();
   const [selectedRound, setSelectedRound] = useState<expRoundType>();
   const [day, setDay] = useState(
@@ -37,6 +36,9 @@ export default function Page() {
       .padStart(2, "0")}-${today.getDate().toString().padStart(2, "0")}`
   );
   const [paymentPrice, setPaymentPrice] = useState(expPrice * personCount);
+
+  const [userResData, setUserResData] = useState<userInfoDataType>();
+  const [visible, setVisible] = useState(false);
 
   const [expReserveInfo, setExpReserveInfo] = useState<expReserveInfoType>({
     round_id: selectedRound?.round_id,
@@ -64,14 +66,21 @@ export default function Page() {
     setPaymentPrice(expPrice * personCount);
   }, [personCount]);
 
+  // 데이터 받아오기
   useEffect(() => {
-    getUserDataApi().then((res) => setUserResData(res?.data));
+    getUserDataApi().then((res) => {
+      if (res?.status == 200) {
+        setUserResData(res?.data);
+        setVisible(true);
+      }
+    });
   }, []);
-
   useEffect(() => {
-    getExpRoundApi({ date: day, id: expId }).then((res) =>
-      setRoundResData(res?.data)
-    );
+    getExpRoundApi({ date: day, id: expId }).then((res) => {
+      if (res?.status == 200) {
+        setRoundResData(res?.data);
+      }
+    });
   }, [day]);
 
   const checkExpReserve = () => {
@@ -92,7 +101,11 @@ export default function Page() {
   };
 
   return (
-    <section className={styles.reserve_exp}>
+    <section
+      className={`${styles.reserve_exp} ${
+        visible ? "isvisible" : "isinvisible"
+      }`}
+    >
       <article>
         <h1>
           <div />
