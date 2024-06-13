@@ -3,10 +3,10 @@
   .reserve_list {
   }
   .reserve_list > li {
-    @apply w-full h-[110px] my-[10px];
+    @apply w-full my-[10px];
   }
   .reserve_list > li > div:nth-child(1) {
-    @apply flex border border-stone/40 rounded-md;
+    @apply h-[80px] flex border border-stone/40 rounded-md;
   }
   .reserve_list > li > div:nth-child(1) > div:nth-child(1) {
     @apply w-[30%];
@@ -29,17 +29,5 @@
   }
   .reserve_list > li > div:nth-child(1) > div > p {
     @apply h-[50px] py-[13px] text-stone/80 overflow-hidden text-ellipsis text-nowrap;
-  }
-  .reserve_list > li > div:nth-child(2) {
-    @apply w-full h-[30px] flex justify-between;
-  }
-  .reserve_list > li > div:nth-child(2) > button {
-    @apply w-full text-center text-white;
-  }
-  .reserve_list > li > div:nth-child(2) > button:nth-child(1) {
-    @apply bg-green/80 rounded-l-md;
-  }
-  .reserve_list > li > div:nth-child(2) > button:nth-child(2) {
-    @apply bg-stone/60 rounded-r-md;
   }
 }

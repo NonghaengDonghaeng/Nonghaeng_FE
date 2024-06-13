@@ -1,14 +1,17 @@
-import resData from "@/db/reserve/reserveListData.json";
+"use client";
+import reserveResData from "@/db/reserve/reserveListData.json";
 import { useEffect, useState } from "react";
+import { myReserveDataType } from "../../(types)/myReserveDataType";
 
 export default function Page() {
-  const [resData, setResData] = useState();
-  const [visible, setVisible] = useState(false);
+  // const [resData, setResData] = useState<myReserveDataType | undefined>();
+  // const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    setResData(resData);
-    setVisible(true);
-  }, []);
+  // useEffect(() => {
+  //   setResData(reserveResData);
+  //   console.log(reserveResData);
+  //   setVisible(true);
+  // }, []);
 
-  return <section></section>;
+  return <section>구상중 ...</section>;
 }

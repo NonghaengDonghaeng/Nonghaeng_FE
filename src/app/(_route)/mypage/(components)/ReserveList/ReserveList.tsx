@@ -8,6 +8,8 @@ import {
 import styles from "./Reserve.module.css";
 import Paging from "@/common/components/Paging/Paging";
 
+import EditReserve from "../EditReserve/EditReserve";
+
 type PropsType = {
   myReserveData: myReserveDataType | undefined;
 };
@@ -28,10 +30,6 @@ export default function ReserveList({ myReserveData }: PropsType) {
   const [pageIndex, setPageIndx] = useState({
     pageIndex: 1,
   });
-
-  const cancelReserve = (id: number) => {
-    cancelReserveApi({ id: id }).then((res) => console.log(res?.data));
-  };
 
   const reserveList = myReserveData?.content.map((item, index) => {
     if (isExp(item)) {
@@ -55,14 +53,7 @@ export default function ReserveList({ myReserveData }: PropsType) {
               <span>{item.reservation_state}</span>
             </div>
           </div>
-          <div>
-            <button>후기</button>
-            <button
-              onClick={() => cancelReserve(item.experience_reservation_id)}
-            >
-              취소
-            </button>
-          </div>
+          <EditReserve id={item.experience_reservation_id} />
         </li>
       );
     } else if (isRoom(item)) {
@@ -86,12 +77,7 @@ export default function ReserveList({ myReserveData }: PropsType) {
               <span>{item.reservation_state}</span>
             </div>
           </div>
-          <div>
-            <button>후기</button>
-            <button onClick={() => cancelReserve(item.room_reservation_id)}>
-              취소
-            </button>
-          </div>
+          <EditReserve id={item.room_reservation_id} />
         </li>
       );
     }

@@ -11,6 +11,7 @@ type PropsType = {
     password?: string;
     check_password?: string;
     number?: string;
+    content?: string;
   };
   setChangeItem: React.Dispatch<
     React.SetStateAction<{
@@ -23,6 +24,7 @@ type PropsType = {
       password?: string;
       check_password?: string;
       number?: string;
+      content?: string;
     }>
   >;
   e: inputType | selectType;
