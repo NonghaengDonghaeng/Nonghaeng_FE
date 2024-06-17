@@ -6,14 +6,16 @@ import { getUserDataApi } from "../../(api)/getUserDataApi";
 import { userInfoDataType } from "../../(types)/userInfoDataType";
 import UserInfo from "../../(components)/UserInfo/UserInfo";
 import { roomReserveApi } from "../../(api)/roomReserveApi";
-import { roomReserveInfoType } from "../../(types)/roomReserveInfoType";
+import {
+  ReturnRoomReserveType,
+  roomReserveInfoType,
+} from "../../(types)/roomReserveInfoType";
 import Overlay from "@/common/components/Overlay/Overlay";
 import CheckReserve from "../../(components)/CheckReserve/CheckReserve";
 
 export default function Page() {
   const searchParams = useSearchParams();
 
-  const [isCheck, setIsCheck] = useState(false);
   const [roomId, setRoomId] = useState(Number(searchParams.get("room_id")));
   const [roomName, setRoomName] = useState(searchParams.get("room_name"));
   const [personCount, setPersonCount] = useState(
@@ -30,6 +32,10 @@ export default function Page() {
   const [paymentPrice, setPaymentPrice] = useState(roomPrice * roomCount);
 
   const [userResData, setUserResData] = useState<userInfoDataType>();
+  const [returnReserveData, setReturnReserveData] = useState<
+    ReturnRoomReserveType
+  >();
+  const [isCheck, setIsCheck] = useState(false);
   const [visible, setVisible] = useState(false);
 
   const [roomReserveInfo, setRoomReserveInfo] = useState<roomReserveInfoType>({
@@ -64,19 +70,23 @@ export default function Page() {
     userResData,
   ]);
 
-  // user data api
+  // 유저 데이터 받아오기
   useEffect(() => {
-    getUserDataApi().then((res) => setUserResData(res?.data));
+    getUserDataApi().then((res) => {
+      if (res?.status == 200) {
+        setUserResData(res?.data);
+        setVisible(true);
+      }
+    });
   }, []);
 
-  const checkRoomReserve = () => {
-    if (paymentPrice > Number(userResData?.point)) {
-      alert("포인트가 부족합니다.");
-    } else setIsCheck(true);
-  };
-
-  const roomReserve = () => {
-    roomReserveApi({ roomReserveInfo }).then((res) => console.log(res?.data));
+  const checkReserve = () => {
+    roomReserveApi({ roomReserveInfo: roomReserveInfo }).then((res) => {
+      if (res?.status == 200) {
+        setReturnReserveData(res.data);
+        setIsCheck(true);
+      }
+    });
   };
 
   return (
@@ -91,6 +101,10 @@ export default function Page() {
           예약하기
         </h1>
         <hr />
+        <p>
+          <label>숙박이름</label>
+          <span>{roomName}</span>
+        </p>
         <p>
           <label>체크인</label>
           <span>{checkIn}</span>
@@ -127,16 +141,12 @@ export default function Page() {
           <span>{paymentPrice}</span>
         </p>
       </article>
-      <button onClick={() => checkRoomReserve()}>결제진행</button>
+      <button onClick={() => checkReserve()}>결제진행</button>
       <Overlay isClick={isCheck}>
         <CheckReserve
           isCheck={isCheck}
           setIsCheck={setIsCheck}
-          roomReserveData={{
-            roomReserveInfo: roomReserveInfo,
-            roomName: roomName,
-          }}
-          reserveFuncion={roomReserve}
+          roomReserveData={returnReserveData}
         />
       </Overlay>
     </section>

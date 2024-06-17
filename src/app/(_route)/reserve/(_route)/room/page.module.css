@@ -1,5 +1,5 @@
 /* 모바일 */
-@media screen and (max-width: 767px) {
+@screen mobile {
   .reserve_room {
     @apply mt-[80px] text-stone font-[500];
   }

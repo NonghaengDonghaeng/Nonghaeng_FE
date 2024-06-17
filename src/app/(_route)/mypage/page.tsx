@@ -47,10 +47,10 @@ export default function Page() {
             회원정보수정
           </Link>
         </div>
-        <div>
+        {/* <div>
           <h1>보유포인트</h1>
           <span>{resData?.point}</span>
-        </div>
+        </div> */}
         <button onClick={logout}>로그아웃</button>
       </article>
       <article>

@@ -13,22 +13,23 @@ import { expReserveApi } from "../../(api)/expReserveApi";
 import Overlay from "@/common/components/Overlay/Overlay";
 import UserInfo from "../../(components)/UserInfo/UserInfo";
 import ExpRoundList from "../../(components)/ExpRoundList/ExpRoundList";
-import { expReserveInfoType } from "../../(types)/expReserveInfoType";
+import {
+  expReserveInfoType,
+  returnExpReserveType,
+} from "../../(types)/expReserveInfoType";
 
 export default function Page() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const today = new Date();
 
+  // 체험관련
   const [expId, setExpId] = useState(Number(searchParams.get("exp_id")));
   const [isClick, setIsClick] = useState(false);
-  const [isCheck, setIsCheck] = useState(false);
   const [expName, setExpName] = useState(searchParams.get("exp_name"));
   const [personCount, setPersonCount] = useState(1);
   const [expPrice, setExpPrice] = useState(
     Number(searchParams.get("exp_price"))
   );
-  const [roundResData, setRoundResData] = useState<expRoundListType>();
   const [selectedRound, setSelectedRound] = useState<expRoundType>();
   const [day, setDay] = useState(
     `${today.getFullYear()}-${(today.getMonth() + 1)
@@ -37,10 +38,19 @@ export default function Page() {
   );
   const [paymentPrice, setPaymentPrice] = useState(expPrice * personCount);
 
-  const [userResData, setUserResData] = useState<userInfoDataType>();
   const [visible, setVisible] = useState(false);
+  const [isCheck, setIsCheck] = useState(false);
 
+  // 서버에서 받아온 데이터
+  const [roundResData, setRoundResData] = useState<expRoundListType>();
+  const [userResData, setUserResData] = useState<userInfoDataType>();
+  const [returnReserveData, setReturnReserveData] = useState<
+    returnExpReserveType
+  >();
+
+  // 서버로 보낼 데이터
   const [expReserveInfo, setExpReserveInfo] = useState<expReserveInfoType>({
+    type: "experience",
     round_id: selectedRound?.round_id,
     reservation_date: day,
     num_of_participant: personCount,
@@ -52,6 +62,7 @@ export default function Page() {
 
   useEffect(() => {
     setExpReserveInfo({
+      ...expReserveInfo,
       round_id: selectedRound?.round_id,
       reservation_date: day,
       num_of_participant: personCount,
@@ -62,11 +73,12 @@ export default function Page() {
     });
   }, [selectedRound, day, personCount, userResData, paymentPrice]);
 
+  // 가격 최신화
   useEffect(() => {
     setPaymentPrice(expPrice * personCount);
   }, [personCount]);
 
-  // 데이터 받아오기
+  // 유저 데이터 받아오기
   useEffect(() => {
     getUserDataApi().then((res) => {
       if (res?.status == 200) {
@@ -75,6 +87,8 @@ export default function Page() {
       }
     });
   }, []);
+
+  // 체험 회차 데이터 받아오기
   useEffect(() => {
     getExpRoundApi({ date: day, id: expId }).then((res) => {
       if (res?.status == 200) {
@@ -83,21 +97,22 @@ export default function Page() {
     });
   }, [day]);
 
-  const checkExpReserve = () => {
+  // 예약 검증
+  const checkReserve = () => {
     if (!selectedRound) {
       alert("회차를 선택해주세요.");
     } else if (userResData && paymentPrice > userResData?.point) {
       alert("보유포인트가 부족합니다.");
     } else if (personCount > selectedRound.remain_participant) {
       alert("인원이 초과되었습니다.");
-    } else setIsCheck(true);
-  };
-
-  // 예약하기 function
-  const expReserve = () => {
-    expReserveApi({ expReserveInfo }).then((res) => {
-      console.log(res?.data);
-    });
+    } else {
+      expReserveApi({ expReserveInfo }).then((res) => {
+        if (res?.status == 200) {
+          setReturnReserveData(res.data);
+          setIsCheck(true);
+        }
+      });
+    }
   };
 
   return (
@@ -162,16 +177,12 @@ export default function Page() {
           <span>{paymentPrice}</span>
         </p>
       </article>
-      <button onClick={() => checkExpReserve()}>결제진행</button>
+      <button onClick={() => checkReserve()}>결제진행</button>
       <Overlay isClick={isCheck}>
         <CheckReserve
           isCheck={isCheck}
           setIsCheck={setIsCheck}
-          expReserveData={{
-            expReserveInfo: expReserveInfo,
-            selectedRound: selectedRound,
-          }}
-          reserveFuncion={expReserve}
+          expReserveData={returnReserveData}
         />
       </Overlay>
     </section>

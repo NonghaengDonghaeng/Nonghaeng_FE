@@ -20,10 +20,10 @@ export default function UserInfo({ userData }: PropsType) {
         <label>이메일 :</label>
         <span>{userData?.email}</span>
       </p>
-      <p>
+      {/* <p>
         <label>보유포인트 :</label>
         <span>{userData?.point}</span>
-      </p>
+      </p> */}
     </div>
   );
 }

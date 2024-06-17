@@ -1,0 +1,12 @@
+{
+  "type": "room",
+  "room_id": 8,
+  "num_of_room": 1,
+  "num_of_participant": 3,
+  "start_date": "2024-06-20",
+  "end_date": "2024-06-22",
+  "reservation_name": "changmin",
+  "number": "1234-1234",
+  "email": "user@user.com",
+  "final_price": 240
+}

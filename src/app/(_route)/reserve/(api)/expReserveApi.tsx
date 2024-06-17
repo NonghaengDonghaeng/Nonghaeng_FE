@@ -10,7 +10,7 @@ export const expReserveApi = async ({ expReserveInfo }: PropsType) => {
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.post(
-      process.env.NEXT_PUBLIC_API_URL + "reservations/experience",
+      process.env.NEXT_PUBLIC_API_URL + "reservations",
       expReserveInfo,
       { headers: { Authorization: token } }
     );
