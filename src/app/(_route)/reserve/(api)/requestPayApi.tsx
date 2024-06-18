@@ -23,19 +23,19 @@ async function requestPay({ paymentDto }: PropsType) {
       totalAmount: paymentDto.payment_price,
       currency: "CURRENCY_KRW",
       payMethod: "CARD",
-      redirectUrl:
-        process.env.NEXT_PUBLIC_API_URL + `reserve/${paymentDto.payment_uid}`,
+      redirectUrl: `https://nonghaeng.site/reserve/${paymentDto.payment_uid}`,
     });
 
     // 백엔드 사후검증 api
     console.log("포트원", response);
     const res = await axios.get(
-      process.env.NEXT_PUBLIC_API_URL + `payment/${paymentDto.payment_uid}`,
+      process.env.NEXT_PUBLIC_API_URL +
+        `reservations/payment/${paymentDto.payment_uid}`,
       {
         headers: { Authorization: token },
       }
     );
-    return paymentDto.payment_uid;
+    console.log(res);
   } catch (e) {
     console.log(e);
   }

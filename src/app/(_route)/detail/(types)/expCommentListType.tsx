@@ -7,6 +7,7 @@ export type expCommentListDataType = {
     author: string;
     create_date: string;
     type: string;
+    content: string;
   }[];
   pageable: {
     pageNumber: number;

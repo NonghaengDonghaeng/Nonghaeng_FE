@@ -22,12 +22,12 @@ export default function CheckReserve({
 
   const reserve = () => {
     if (expReserveData) {
-      requestPay({ paymentDto: expReserveData.payment_dto }).then((res) =>
-        router.push(`/reserve/${res}`)
+      requestPay({ paymentDto: expReserveData.payment_dto }).then(() =>
+        router.push(`/reserve/${expReserveData.payment_dto.payment_uid}`)
       );
     } else if (roomReserveData) {
-      requestPay({ paymentDto: roomReserveData.payment_dto }).then((res) =>
-        router.push(`/reserve/${res}`)
+      requestPay({ paymentDto: roomReserveData.payment_dto }).then(() =>
+        router.push(`/reserve/${roomReserveData.payment_dto.payment_uid}`)
       );
     }
   };

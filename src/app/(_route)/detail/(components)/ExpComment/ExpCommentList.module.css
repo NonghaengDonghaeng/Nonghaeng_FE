@@ -1,5 +1,5 @@
 /* 데스크탑 */
-@media screen and (min-width: 1024px) {
+@screen pc {
   .exp_comment {
     @apply mt-[10px];
   }
@@ -28,7 +28,7 @@
     @apply my-[10px] text-[18px] overflow-hidden text-ellipsis text-nowrap;
   }
   .exp_comment > ul > li > a > div > h2 {
-    @apply mb-[42px] font-[400];
+    @apply mb-[42px] font-[400] overflow-hidden text-ellipsis text-nowrap;
   }
   .exp_comment > ul > li > a > div > div {
     @apply flex justify-between;
@@ -39,7 +39,7 @@
 }
 
 /* 테블릿 */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@screen tablet {
   .exp_comment {
     @apply mt-[10px];
   }
@@ -68,7 +68,7 @@
     @apply my-[10px] text-[18px] overflow-hidden text-ellipsis text-nowrap;
   }
   .exp_comment > ul > li > a > div > h2 {
-    @apply mb-[42px] font-[400];
+    @apply mb-[42px] font-[400] overflow-hidden text-ellipsis text-nowrap;
   }
   .exp_comment > ul > li > a > div > div {
     @apply flex justify-between;
@@ -79,7 +79,7 @@
 }
 
 /* 모바일 */
-@media screen and (max-width: 767px) {
+@screen mobile {
   .exp_comment {
     @apply mt-[10px];
   }
@@ -108,7 +108,7 @@
     @apply text-[18px] overflow-hidden text-ellipsis text-nowrap;
   }
   .exp_comment > ul > li > a > div > h2 {
-    @apply my-[10px] font-[400];
+    @apply my-[10px] font-[400] overflow-hidden text-ellipsis text-nowrap;
   }
   .exp_comment > ul > li > a > div > div {
     @apply flex justify-between;

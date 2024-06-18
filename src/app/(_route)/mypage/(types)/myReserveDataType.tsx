@@ -17,6 +17,7 @@ export type roomContentType = {
   num_of_participant: number;
   num_of_room: number;
   type: string;
+  written_review: boolean;
 };
 
 export type myReserveDataType = {

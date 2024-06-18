@@ -32,7 +32,7 @@ export default function ExpCommentList({ expId }: PropsType) {
         <div>
           <span>{item.exp_name}</span>
           <h1>{item.title}</h1>
-          <h2>내용</h2>
+          <h2>{item.content}</h2>
           <div>
             <span>{item.author}</span>
             <span>{item.create_date}</span>

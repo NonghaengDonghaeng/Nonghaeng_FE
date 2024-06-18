@@ -1,0 +1,6 @@
+.reserve_check {
+  @apply w-full h-[600px] flex items-center justify-center;
+}
+/* .reserve_check > div {
+  @apply;
+} */

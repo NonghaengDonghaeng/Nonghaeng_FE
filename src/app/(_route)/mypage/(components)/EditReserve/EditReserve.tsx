@@ -26,7 +26,12 @@ function EditReserve({ id }: PropsType) {
   useEffect(() => setReviewItem({ ...reviewItem, reservation_id: id }), [id]);
 
   const editReview = () => {
-    editReviewApi({ reveiwItem: reviewItem }).then((res) => console.log(res));
+    editReviewApi({ reveiwItem: reviewItem }).then((res) => {
+      if (res?.status == 200) {
+        alert("후기가  작성되었습니다.");
+        setIsClick(false);
+      }
+    });
   };
 
   const cancelReserve = (id: number) => {
