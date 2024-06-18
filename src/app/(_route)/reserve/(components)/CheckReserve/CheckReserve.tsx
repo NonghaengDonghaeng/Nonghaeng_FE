@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import { setBooleanType } from "@/common/types/setStateType";
 import styles from "./CheckReserve.module.css";
 import { returnExpReserveType } from "../../(types)/expReserveInfoType";
@@ -17,17 +18,24 @@ export default function CheckReserve({
   expReserveData,
   roomReserveData,
 }: ReserveInfoType) {
+  const router = useRouter();
+
   const reserve = () => {
     if (expReserveData) {
-      requestPay({ paymentDto: expReserveData.payment_dto });
+      requestPay({ paymentDto: expReserveData.payment_dto }).then((res) =>
+        router.push(`/reserve/${res}`)
+      );
     } else if (roomReserveData) {
-      requestPay({ paymentDto: roomReserveData.payment_dto });
+      requestPay({ paymentDto: roomReserveData.payment_dto }).then((res) =>
+        router.push(`/reserve/${res}`)
+      );
     }
   };
+
   return (
     <div
       className={`${styles.check_reserve} ${
-        isCheck ? "isvisible" : "isinvisible"
+        isCheck ? "isvisible" : "isinvisible hidden"
       }`}
     >
       <h1>예약정보확인</h1>

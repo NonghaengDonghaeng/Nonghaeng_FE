@@ -1,17 +1,18 @@
 import axios from "axios";
-import { expReserveInfoType } from "../(types)/expReserveInfoType";
+import { roomReserveInfoType } from "../(types)/roomReserveInfoType";
 import { getErrorMessage } from "@/common/utils/getErrorData";
+import { expReserveInfoType } from "../(types)/expReserveInfoType";
 
 type PropsType = {
-  expReserveInfo: expReserveInfoType;
+  reserveInfo: roomReserveInfoType | expReserveInfoType | undefined;
 };
 
-export const expReserveApi = async ({ expReserveInfo }: PropsType) => {
+export const reserveApi = async ({ reserveInfo }: PropsType) => {
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.post(
       process.env.NEXT_PUBLIC_API_URL + "reservations",
-      expReserveInfo,
+      reserveInfo,
       { headers: { Authorization: token } }
     );
     return res;

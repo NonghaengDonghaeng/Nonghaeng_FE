@@ -38,6 +38,16 @@ body {
   @apply hidden;
 }
 
+button * {
+  @apply cursor-pointer;
+}
+a * {
+  @apply cursor-pointer;
+}
+li * {
+  @apply cursor-pointer;
+}
+
 /* 데이터 도착시 보이게 */
 .isvisible {
   @apply opacity-100 duration-1000;

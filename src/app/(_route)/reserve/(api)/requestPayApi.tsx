@@ -8,7 +8,7 @@ type PropsType = {
 
 async function requestPay({ paymentDto }: PropsType) {
   try {
-    console.log("백에서 받은것", paymentDto);
+    // 포트원 api
     let token = localStorage.getItem("jwt");
     const response = await PortOne.requestPayment({
       storeId: "store-4aae6d89-e267-4dc3-a893-c2b43a91d19b",
@@ -23,8 +23,11 @@ async function requestPay({ paymentDto }: PropsType) {
       totalAmount: paymentDto.payment_price,
       currency: "CURRENCY_KRW",
       payMethod: "CARD",
-      redirectUrl: "http://locahost:3000",
+      redirectUrl:
+        process.env.NEXT_PUBLIC_API_URL + `reserve/${paymentDto.payment_uid}`,
     });
+
+    // 백엔드 사후검증 api
     console.log("포트원", response);
     const res = await axios.get(
       process.env.NEXT_PUBLIC_API_URL + `payment/${paymentDto.payment_uid}`,
@@ -32,7 +35,7 @@ async function requestPay({ paymentDto }: PropsType) {
         headers: { Authorization: token },
       }
     );
-    console.log("백엔드", res);
+    return paymentDto.payment_uid;
   } catch (e) {
     console.log(e);
   }

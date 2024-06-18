@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import { getUserDataApi } from "../../(api)/getUserDataApi";
 import { userInfoDataType } from "../../(types)/userInfoDataType";
 import UserInfo from "../../(components)/UserInfo/UserInfo";
-import { roomReserveApi } from "../../(api)/roomReserveApi";
+import { reserveApi } from "../../(api)/reserveApi";
 import {
   ReturnRoomReserveType,
   roomReserveInfoType,
@@ -38,23 +38,16 @@ export default function Page() {
   const [isCheck, setIsCheck] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  const [roomReserveInfo, setRoomReserveInfo] = useState<roomReserveInfoType>({
-    room_id: roomId,
-    num_of_room: roomCount,
-    num_of_participant: personCount,
-    reservation_dates: [checkIn],
-    reservation_name: userResData?.reservation_person_name,
-    number: userResData?.phone_number,
-    email: userResData?.email,
-    final_price: paymentPrice,
-  });
+  const [roomReserveInfo, setRoomReserveInfo] = useState<roomReserveInfoType>();
 
   useEffect(() => {
     setRoomReserveInfo({
+      type: "room",
       room_id: roomId,
       num_of_room: roomCount,
       num_of_participant: personCount,
-      reservation_dates: [checkIn],
+      start_date: checkIn,
+      end_date: checkOut,
       reservation_name: userResData?.reservation_person_name,
       number: userResData?.phone_number,
       email: userResData?.email,
@@ -81,7 +74,7 @@ export default function Page() {
   }, []);
 
   const checkReserve = () => {
-    roomReserveApi({ roomReserveInfo: roomReserveInfo }).then((res) => {
+    reserveApi({ reserveInfo: roomReserveInfo }).then((res) => {
       if (res?.status == 200) {
         setReturnReserveData(res.data);
         setIsCheck(true);

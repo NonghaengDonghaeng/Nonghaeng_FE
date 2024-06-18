@@ -9,7 +9,7 @@ import { expRoundListType, expRoundType } from "../../(types)/expRoundType";
 import { userInfoDataType } from "../../(types)/userInfoDataType";
 import { getUserDataApi } from "../../(api)/getUserDataApi";
 import ClickCount from "@/common/components/ClickCount/ClickCount";
-import { expReserveApi } from "../../(api)/expReserveApi";
+import { reserveApi } from "../../(api)/reserveApi";
 import Overlay from "@/common/components/Overlay/Overlay";
 import UserInfo from "../../(components)/UserInfo/UserInfo";
 import ExpRoundList from "../../(components)/ExpRoundList/ExpRoundList";
@@ -49,20 +49,11 @@ export default function Page() {
   >();
 
   // 서버로 보낼 데이터
-  const [expReserveInfo, setExpReserveInfo] = useState<expReserveInfoType>({
-    type: "experience",
-    round_id: selectedRound?.round_id,
-    reservation_date: day,
-    num_of_participant: personCount,
-    reservation_name: userResData?.reservation_person_name,
-    number: userResData?.phone_number,
-    email: userResData?.email,
-    final_price: paymentPrice,
-  });
+  const [expReserveInfo, setExpReserveInfo] = useState<expReserveInfoType>();
 
   useEffect(() => {
     setExpReserveInfo({
-      ...expReserveInfo,
+      type: "experience",
       round_id: selectedRound?.round_id,
       reservation_date: day,
       num_of_participant: personCount,
@@ -101,12 +92,10 @@ export default function Page() {
   const checkReserve = () => {
     if (!selectedRound) {
       alert("회차를 선택해주세요.");
-    } else if (userResData && paymentPrice > userResData?.point) {
-      alert("보유포인트가 부족합니다.");
     } else if (personCount > selectedRound.remain_participant) {
       alert("인원이 초과되었습니다.");
     } else {
-      expReserveApi({ expReserveInfo }).then((res) => {
+      reserveApi({ reserveInfo: expReserveInfo }).then((res) => {
         if (res?.status == 200) {
           setReturnReserveData(res.data);
           setIsCheck(true);
