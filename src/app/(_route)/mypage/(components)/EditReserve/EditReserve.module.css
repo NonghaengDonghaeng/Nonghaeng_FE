@@ -1,3 +1,69 @@
+@screen pc {
+  .edit_reserve > form > div:nth-child(2) {
+    @apply w-full h-[30px] flex justify-between;
+  }
+  .edit_reserve > form > div:nth-child(2) > button {
+    @apply w-full text-center text-white;
+  }
+  .edit_reserve > form > div:nth-child(2) > button:nth-child(1) {
+    @apply bg-green/80 rounded-l-md;
+  }
+  .edit_reserve > form > div:nth-child(2) > button:nth-child(2) {
+    @apply bg-stone/60 rounded-r-md;
+  }
+  .edit_reserve > form > div:nth-child(1) > input {
+    @apply w-full px-[6px] border border-stone/40 rounded-md;
+  }
+  .edit_reserve > form > div:nth-child(1) > input:nth-child(1) {
+    @apply h-[40px];
+  }
+  .edit_reserve > form > div:nth-child(1) > input:nth-child(2) {
+    @apply h-[140px];
+  }
+  .form_off {
+    @apply h-0 border-none duration-300;
+  }
+  .form_off * {
+    @apply hidden;
+  }
+  .form_on {
+    @apply h-[200px] p-[6px] duration-300 rounded-md border-stone/40 border;
+  }
+}
+
+@screen tablet {
+  .edit_reserve > form > div:nth-child(2) {
+    @apply w-full h-[30px] flex justify-between;
+  }
+  .edit_reserve > form > div:nth-child(2) > button {
+    @apply w-full text-center text-white;
+  }
+  .edit_reserve > form > div:nth-child(2) > button:nth-child(1) {
+    @apply bg-green/80 rounded-l-md;
+  }
+  .edit_reserve > form > div:nth-child(2) > button:nth-child(2) {
+    @apply bg-stone/60 rounded-r-md;
+  }
+  .edit_reserve > form > div:nth-child(1) > input {
+    @apply w-full px-[6px] border border-stone/40 rounded-md;
+  }
+  .edit_reserve > form > div:nth-child(1) > input:nth-child(1) {
+    @apply h-[40px];
+  }
+  .edit_reserve > form > div:nth-child(1) > input:nth-child(2) {
+    @apply h-[140px];
+  }
+  .form_off {
+    @apply h-0 border-none duration-300;
+  }
+  .form_off * {
+    @apply hidden;
+  }
+  .form_on {
+    @apply h-[200px] p-[6px] duration-300 rounded-md border-stone/40 border;
+  }
+}
+
 @screen mobile {
   .edit_reserve > form > div:nth-child(2) {
     @apply w-full h-[30px] flex justify-between;

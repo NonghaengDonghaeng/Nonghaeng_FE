@@ -26,16 +26,27 @@ function EditReserve({ id }: PropsType) {
   useEffect(() => setReviewItem({ ...reviewItem, reservation_id: id }), [id]);
 
   const editReview = () => {
-    editReviewApi({ reveiwItem: reviewItem }).then((res) => {
-      if (res?.status == 201) {
-        alert("후기가  작성되었습니다.");
-        setIsClick(false);
-      }
-    });
+    if (reviewItem.title == "") {
+      alert("후기 제목을 작성해주세요.");
+    }
+    if (reviewItem.content == "") {
+      alert("후기 내용을 작성해주세요.");
+    } else {
+      editReviewApi({ reveiwItem: reviewItem }).then((res) => {
+        if (res?.status == 201) {
+          alert("후기가  작성되었습니다.");
+          setIsClick(false);
+        }
+      });
+    }
   };
 
   const cancelReserve = (id: number) => {
-    cancelReserveApi({ id: id }).then((res) => console.log(res?.data));
+    cancelReserveApi({ id: id }).then((res) => {
+      if (res?.status == 200) {
+        alert("예약이 취소되었습니다");
+      }
+    });
   };
 
   return (

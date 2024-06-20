@@ -1,5 +1,60 @@
+@screen pc {
+  .mypage_main {
+  }
+  .mypage_main > article:nth-child(1) {
+    @apply w-full p-[20px] rounded-md bg-stone/20 flex;
+  }
+  .mypage_main > article:nth-child(1) > div > h1 {
+    @apply text-[20px];
+  }
+  .mypage_main > article:nth-child(1) > div > a {
+    @apply flex items-center my-[20px];
+  }
+  .mypage_main > article:nth-child(1) > div > a > svg {
+    @apply mr-[8px];
+  }
+  .mypage_main > article:nth-child(1) > div > button {
+    @apply w-full h-[40px] items-center bg-stone/60 text-white rounded-md;
+  }
+  .mypage_main > article {
+    @apply my-[40px];
+  }
+  .mypage_main > article > h1 {
+    @apply text-[20px];
+  }
+  .mypage_main > article > hr {
+    @apply my-[10px];
+  }
+}
+
+@screen tablet {
+  .mypage_main {
+  }
+  .mypage_main > article:nth-child(1) {
+    @apply w-full p-[20px] rounded-md bg-stone/20 flex;
+  }
+  .mypage_main > article:nth-child(1) > div > h1 {
+    @apply text-[20px];
+  }
+  .mypage_main > article:nth-child(1) > div > a {
+    @apply flex items-center my-[20px];
+  }
+  .mypage_main > article:nth-child(1) > div > a > svg {
+    @apply mr-[8px];
+  }
+  .mypage_main > article:nth-child(1) > div > button {
+    @apply w-full h-[40px] items-center bg-stone/60 text-white rounded-md;
+  }
+  .mypage_main > article > h1 {
+    @apply text-[20px];
+  }
+  .mypage_main > article > hr {
+    @apply my-[10px];
+  }
+}
+
 /* 모바일 */
-@media screen and (max-width: 767px) {
+@screen mobile {
   .mypage_main {
     @apply mt-[60px] mb-[100px];
   }
@@ -7,7 +62,7 @@
     @apply my-[20px] w-full p-[10px] rounded-md bg-stone/10;
   }
   .mypage_main > article > div {
-    @apply my-[20px];
+    @apply mt-[20px];
   }
   .mypage_main > article > div > h1 {
     @apply flex my-[10px] justify-center items-center  text-[20px];
@@ -21,8 +76,8 @@
   .mypage_main > article > div > span {
     @apply flex items-center justify-center;
   }
-  .mypage_main > article > button {
-    @apply w-full h-[40px] mt-[10px] rounded-md bg-stone/60 text-white;
+  .mypage_main > article > div > button {
+    @apply w-full h-[40px] mt-[20px] rounded-md bg-stone/60 text-white;
   }
   .mypage_main > article > h1 {
     @apply text-[20px];
@@ -32,7 +87,7 @@
   }
 }
 
-.reserve_list {
+/* .reserve_list {
 }
 
 .reserve_list > li {
@@ -52,4 +107,4 @@
 
 .exp_list > li {
   @apply h-full px-[10px] flex items-center border-l-[1px] border-stone/40;
-}
+} */

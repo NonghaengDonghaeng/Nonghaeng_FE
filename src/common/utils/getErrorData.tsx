@@ -20,7 +20,7 @@ export const getErrorMessage = (error: unknown) => {
     return data.reason;
   }
   if (response?.status == 400) {
-    const data = response.data as ValidErrorType;
+    const data = response?.data as ValidErrorType;
     return data.message;
   }
 };

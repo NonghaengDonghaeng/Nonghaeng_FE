@@ -46,12 +46,12 @@ export default function Page() {
             <Person_orange_Ic />
             회원정보수정
           </Link>
+          <button onClick={logout}>로그아웃</button>
         </div>
         {/* <div>
           <h1>보유포인트</h1>
           <span>{resData?.point}</span>
         </div> */}
-        <button onClick={logout}>로그아웃</button>
       </article>
       <article>
         <h1>나의 예약</h1>

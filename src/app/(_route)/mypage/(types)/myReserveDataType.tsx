@@ -6,6 +6,7 @@ export type expContentType = {
   price: number;
   num_of_participant: number;
   type: string;
+  written_review: boolean;
 };
 
 export type roomContentType = {
@@ -22,7 +23,18 @@ export type roomContentType = {
 
 export type myReserveDataType = {
   content: (expContentType | roomContentType)[];
-  pageable: string;
+  pageable: {
+    pageNumber: number;
+    pageSize: number;
+    sort: {
+      empty: boolean;
+      sorted: boolean;
+      unsorted: boolean;
+    };
+    offset: number;
+    paged: boolean;
+    unpaged: boolean;
+  };
   last: boolean;
   totalPages: number;
   totalElements: number;

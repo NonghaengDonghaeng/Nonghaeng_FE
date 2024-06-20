@@ -1,53 +1,48 @@
 {
-  "name": "user1",
-  "email": "user1@email.com",
-  "number": "user1",
+  "name": "김선인",
+  "email": "jumto10@naver.com",
+  "number": "010-3323-3791",
   "point": 0,
   "reservation_page": {
     "content": [
       {
-        "experience_reservation_id": 1,
-        "experience_name": "감자수확 체험",
-        "reservation_state": "예약 대기",
-        "reservation_date": "2024-05-13",
-        "price": 10000,
-        "num_of_participant": 1,
-        "type": "experience"
-      },
-      {
-        "experience_reservation_id": 2,
-        "experience_name": "고소한 들깨초콜릿만들기",
-        "reservation_state": "예약 대기",
-        "reservation_date": "2024-05-13",
-        "price": 14000,
-        "num_of_participant": 1,
-        "type": "experience"
-      },
-      {
         "experience_reservation_id": 3,
-        "experience_name": "산양교감체험 + 쿠킹교실",
+        "experience_name": "테스트 체험",
         "reservation_state": "예약 대기",
-        "reservation_date": "2024-05-13",
-        "price": 18000,
-        "num_of_participant": 1,
-        "type": "experience"
+        "reservation_date": "2024-06-20",
+        "price": 1000,
+        "num_of_participant": 10,
+        "type": "experience",
+        "written_review": true
       },
       {
-        "room_reservation_id": 15,
-        "room_name": "6인실(본관)",
+        "room_reservation_id": 4,
+        "room_name": "테스트룸",
         "reservation_state": "예약 대기",
-        "reservation_dates": ["2024-05-16"],
-        "price": 150000,
+        "reservation_dates": ["2024-06-20"],
+        "price": 1000,
         "num_of_participant": 1,
         "num_of_room": 1,
-        "type": "room"
+        "type": "room",
+        "written_review": true
       }
     ],
-    "pageable": "INSTANCE",
+    "pageable": {
+      "pageNumber": 0,
+      "pageSize": 4,
+      "sort": {
+        "empty": true,
+        "sorted": false,
+        "unsorted": true
+      },
+      "offset": 0,
+      "paged": true,
+      "unpaged": false
+    },
     "last": true,
     "totalPages": 1,
-    "totalElements": 0,
-    "size": 0,
+    "totalElements": 2,
+    "size": 4,
     "number": 0,
     "sort": {
       "empty": true,
@@ -55,16 +50,50 @@
       "unsorted": true
     },
     "first": true,
-    "numberOfElements": 0,
-    "empty": true
+    "numberOfElements": 2,
+    "empty": false
   },
   "review_page": {
-    "content": [],
-    "pageable": "INSTANCE",
+    "content": [
+      {
+        "review_id": 1,
+        "exp_name": "테스트 체험",
+        "title": "[테스트마을] 재밌음",
+        "content": "대충 재밌다는 내용",
+        "author": "김선인",
+        "create_date": "2024-06-20",
+        "type": "experience",
+        "likes": 0,
+        "photo_info_dto": null
+      },
+      {
+        "review_id": 2,
+        "room_name": "테스트룸",
+        "title": "[테스트마을] 재밌음",
+        "content": "대충 재밌다는 내용",
+        "author": "김선인",
+        "create_date": "2024-06-20",
+        "type": "room",
+        "likes": 0,
+        "photo_info_dto": null
+      }
+    ],
+    "pageable": {
+      "pageNumber": 0,
+      "pageSize": 4,
+      "sort": {
+        "empty": true,
+        "sorted": false,
+        "unsorted": true
+      },
+      "offset": 0,
+      "paged": true,
+      "unpaged": false
+    },
     "last": true,
     "totalPages": 1,
-    "totalElements": 0,
-    "size": 0,
+    "totalElements": 2,
+    "size": 4,
     "number": 0,
     "sort": {
       "empty": true,
@@ -72,7 +101,7 @@
       "unsorted": true
     },
     "first": true,
-    "numberOfElements": 0,
-    "empty": true
+    "numberOfElements": 2,
+    "empty": false
   }
 }
