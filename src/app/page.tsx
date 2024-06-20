@@ -33,20 +33,20 @@ export default function Home() {
     <main id="main">
       <MainSection />
       <SearchMain />
-      <section
-        className={`${styles.section2} ${
-          visible ? "isvisible" : "isinvisible"
-        }`}
-      >
+      <section className={styles.section2}>
         <article>
           <ListTitle title="우수체험" />
           <hr />
-          <ExpList content={resData?.exp_summary_dto_list} />
+          <div className={visible ? "isvisible" : "isinvisible"}>
+            <ExpList content={resData?.exp_summary_dto_list} />
+          </div>
         </article>
         <article>
           <ListTitle title="우수숙박" />
           <hr />
-          <LodgList content={resData?.room_tour_summary_dto_list} />
+          <div className={visible ? "isvisible" : "isinvisible"}>
+            <LodgList content={resData?.room_tour_summary_dto_list} />
+          </div>
         </article>
       </section>
     </main>

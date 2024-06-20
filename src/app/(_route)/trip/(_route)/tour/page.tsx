@@ -45,18 +45,14 @@ export default function Page() {
 
   return (
     <>
-      <section
-        className={`${styles.tour_main} ${
-          visible ? "isvisible" : "isinvisible"
-        }`}
-      >
+      <section className={styles.tour_main}>
         <ListTitle
           title="농촌관광"
           pageState={pageState}
           setPageState={setPageState}
         />
         <hr></hr>
-        <article>
+        <article className={visible ? "isvisible" : "isinvisible"}>
           <TourList content={resData?.content} />
         </article>
         <Paging

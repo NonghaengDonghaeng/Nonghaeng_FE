@@ -18,6 +18,7 @@ import {
 } from "icon/index";
 import DetailImg from "./(components)/DetailImg/DetailImg";
 import { getTourDetailApi } from "./(api)/getTourDetailApi";
+import ReviewtList from "./(components)/ReveiwList/ReviewList";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -134,7 +135,7 @@ export default function Page() {
             title={["기본정보", "여행후기", "여행문의"]}
             nowRef={1}
           />
-          여행후기
+          <ReviewtList id={tourId} type="tour" />
         </div>
         <div ref={element[2]}>
           <NavDetail

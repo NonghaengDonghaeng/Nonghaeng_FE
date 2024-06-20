@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 import { expDetailDataType } from "../../(types)/expDetailDataType";
 import DetailImg from "../../(components)/DetailImg/DetailImg";
 import { getExpDetailApi } from "../../(api)/getExpDetailApi";
-import ExpCommentList from "../../(components)/ExpComment/ExpCommentList";
+import ReviewtList from "../../(components)/ReveiwList/ReviewList";
 import store from "@/redux/loginStateStore";
 import LikeAndReserve from "../../(components)/LikeAndReserve/LikeAndReserve";
 import ExpInfo from "../../(components)/ExpInfo/ExpInfo";
@@ -77,7 +77,7 @@ export default function Page() {
           nowRef={1}
         />
         <div ref={element[1]}>
-          <ExpCommentList expId={expId} />
+          <ReviewtList id={expId} type="experience" />
         </div>
         <NavDetail
           moveElement={moveElement}

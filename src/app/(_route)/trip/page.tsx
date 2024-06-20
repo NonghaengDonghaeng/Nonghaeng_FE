@@ -32,28 +32,28 @@ export default function Page() {
   }, []);
 
   return (
-    <>
-      <section
-        className={`${styles.trip_main} ${
-          visible ? "isvisible" : "isinvisible"
-        }`}
-      >
-        <article>
-          <ListTitle title="농촌관광" />
-          <hr />
+    <section className={styles.trip_main}>
+      <article>
+        <ListTitle title="농촌관광" />
+        <hr />
+        <div className={visible ? "isvisible" : "isinvisible"}>
           <TourList content={resData?.tour_summary_dto_list} />
-        </article>
-        <article>
-          <ListTitle title="농촌체험" />
-          <hr />
+        </div>
+      </article>
+      <article>
+        <ListTitle title="농촌체험" />
+        <hr />
+        <div className={visible ? "isvisible" : "isinvisible"}>
           <ExpList content={resData?.exp_summary_dto_list} />
-        </article>
-        <article>
-          <ListTitle title="농촌숙박" />
-          <hr />
+        </div>
+      </article>
+      <article>
+        <ListTitle title="농촌숙박" />
+        <hr />
+        <div className={visible ? "isvisible" : "isinvisible"}>
           <LodgList content={resData?.room_tour_summary_dto_list} />
-        </article>
-      </section>
-    </>
+        </div>
+      </article>
+    </section>
   );
 }

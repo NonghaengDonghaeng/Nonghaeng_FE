@@ -46,27 +46,21 @@ export default function Page() {
   }, [pageState.state, pageState.pageIndex]);
 
   return (
-    <>
-      <section
-        className={`${styles.lodg_main} ${
-          visible ? "isvisible" : "isinvisible"
-        }`}
-      >
-        <ListTitle
-          title="농촌숙박"
-          pageState={pageState}
-          setPageState={setPageState}
-        />
-        <hr></hr>
-        <article>
-          <LodgList content={resData?.content} />
-        </article>
-        <Paging
-          pageState={pageState}
-          setPageState={setPageState}
-          totalPages={resData?.totalPages}
-        />
-      </section>
-    </>
+    <section className={styles.lodg_main}>
+      <ListTitle
+        title="농촌숙박"
+        pageState={pageState}
+        setPageState={setPageState}
+      />
+      <hr></hr>
+      <article className={visible ? "isvisible" : "isinvisible"}>
+        <LodgList content={resData?.content} />
+      </article>
+      <Paging
+        pageState={pageState}
+        setPageState={setPageState}
+        totalPages={resData?.totalPages}
+      />
+    </section>
   );
 }

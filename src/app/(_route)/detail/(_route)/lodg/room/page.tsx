@@ -14,6 +14,7 @@ import DetailImg from "../../../(components)/DetailImg/DetailImg";
 import { getRoomDetailApi } from "../../../(api)/getRoomDetailApi";
 import LikeAndReserve from "../../../(components)/LikeAndReserve/LikeAndReserve";
 import RoomInfo from "../../../(components)/RoomInfo/RoomInfo";
+import ReviewtList from "../../../(components)/ReveiwList/ReviewList";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -117,7 +118,7 @@ export default function Page() {
             title={["기본정보", "숙박후기", "숙박문의"]}
             nowRef={1}
           />
-          여행후기
+          <ReviewtList id={roomId} type="room" />
         </div>
         <div ref={element[2]}>
           <NavDetail

@@ -1,119 +1,119 @@
 /* 데스크탑 */
 @screen pc {
-  .exp_comment {
+  .review_list {
     @apply mt-[10px];
   }
-  .exp_comment > ul {
+  .review_list > ul {
     @apply w-full h-full mt-[20px];
   }
-  .exp_comment > ul > li {
+  .review_list > ul > li {
     @apply w-[49%] h-[200px] mb-[20px] inline-block;
   }
-  .exp_comment > ul > li:nth-child(2n-1) {
+  .review_list > ul > li:nth-child(2n-1) {
     @apply mr-[2%];
   }
-  .exp_comment > ul > li > a {
+  .review_list > ul > li > a {
     @apply w-full h-full flex;
   }
-  .exp_comment > ul > li > a > img {
+  .review_list > ul > li > a > img {
     @apply w-[40%] h-full rounded-md;
   }
-  .exp_comment > ul > li > a > div {
+  .review_list > ul > li > a > div {
     @apply w-[60%] h-full border border-stone/20 rounded-md p-[20px];
   }
-  .exp_comment > ul > li > a > div > span {
+  .review_list > ul > li > a > div > span {
     @apply text-[14px] font-[400] text-orange;
   }
-  .exp_comment > ul > li > a > div > h1 {
+  .review_list > ul > li > a > div > h1 {
     @apply my-[10px] text-[18px] overflow-hidden text-ellipsis text-nowrap;
   }
-  .exp_comment > ul > li > a > div > h2 {
+  .review_list > ul > li > a > div > h2 {
     @apply mb-[42px] font-[400] overflow-hidden text-ellipsis text-nowrap;
   }
-  .exp_comment > ul > li > a > div > div {
+  .review_list > ul > li > a > div > div {
     @apply flex justify-between;
   }
-  .exp_comment > ul > li > a > div > div > span {
+  .review_list > ul > li > a > div > div > span {
     @apply text-[14px] font-[400] text-orange;
   }
 }
 
 /* 테블릿 */
 @screen tablet {
-  .exp_comment {
+  .review_list {
     @apply mt-[10px];
   }
-  .exp_comment > ul {
+  .review_list > ul {
     @apply w-full h-full mt-[20px];
   }
-  .exp_comment > ul > li {
+  .review_list > ul > li {
     @apply w-[49%] h-[200px] mb-[20px] inline-block;
   }
-  .exp_comment > ul > li:nth-child(2n-1) {
+  .review_list > ul > li:nth-child(2n-1) {
     @apply mr-[2%];
   }
-  .exp_comment > ul > li > a {
+  .review_list > ul > li > a {
     @apply w-full h-full flex;
   }
-  .exp_comment > ul > li > a > img {
+  .review_list > ul > li > a > img {
     @apply w-[40%] h-full rounded-md;
   }
-  .exp_comment > ul > li > a > div {
+  .review_list > ul > li > a > div {
     @apply w-[60%] h-full border border-stone/20 rounded-md p-[20px];
   }
-  .exp_comment > ul > li > a > div > span {
+  .review_list > ul > li > a > div > span {
     @apply text-[14px] font-[400] text-orange;
   }
-  .exp_comment > ul > li > a > div > h1 {
+  .review_list > ul > li > a > div > h1 {
     @apply my-[10px] text-[18px] overflow-hidden text-ellipsis text-nowrap;
   }
-  .exp_comment > ul > li > a > div > h2 {
+  .review_list > ul > li > a > div > h2 {
     @apply mb-[42px] font-[400] overflow-hidden text-ellipsis text-nowrap;
   }
-  .exp_comment > ul > li > a > div > div {
+  .review_list > ul > li > a > div > div {
     @apply flex justify-between;
   }
-  .exp_comment > ul > li > a > div > div > span {
+  .review_list > ul > li > a > div > div > span {
     @apply text-[14px] font-[400] text-orange;
   }
 }
 
 /* 모바일 */
 @screen mobile {
-  .exp_comment {
+  .review_list {
     @apply mt-[10px];
   }
-  .exp_comment > ul {
+  .review_list > ul {
     @apply w-full h-full;
   }
-  .exp_comment > ul > li {
+  .review_list > ul > li {
     @apply w-[49%] h-[260px] mb-[20px] inline-block;
   }
-  .exp_comment > ul > li:nth-child(2n-1) {
+  .review_list > ul > li:nth-child(2n-1) {
     @apply mr-[2%];
   }
-  .exp_comment > ul > li > a {
+  .review_list > ul > li > a {
     @apply w-full h-full;
   }
-  .exp_comment > ul > li > a > img {
+  .review_list > ul > li > a > img {
     @apply w-full h-[140px] rounded-md;
   }
-  .exp_comment > ul > li > a > div {
+  .review_list > ul > li > a > div {
     @apply w-full h-[120px] p-[10px] border border-stone/20 rounded-md;
   }
-  .exp_comment > ul > li > a > div > span {
+  .review_list > ul > li > a > div > span {
     @apply hidden;
   }
-  .exp_comment > ul > li > a > div > h1 {
+  .review_list > ul > li > a > div > h1 {
     @apply text-[18px] overflow-hidden text-ellipsis text-nowrap;
   }
-  .exp_comment > ul > li > a > div > h2 {
+  .review_list > ul > li > a > div > h2 {
     @apply my-[10px] font-[400] overflow-hidden text-ellipsis text-nowrap;
   }
-  .exp_comment > ul > li > a > div > div {
+  .review_list > ul > li > a > div > div {
     @apply flex justify-between;
   }
-  .exp_comment > ul > li > a > div > div > span {
+  .review_list > ul > li > a > div > div > span {
     @apply text-[14px] font-[400] text-orange;
   }
 }

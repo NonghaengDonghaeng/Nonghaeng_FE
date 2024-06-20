@@ -47,18 +47,14 @@ export default function Page() {
 
   return (
     <>
-      <section
-        className={`${styles.exp_main} ${
-          visible ? "isvisible" : "isinvisible"
-        }`}
-      >
+      <section className={styles.exp_main}>
         <ListTitle
           title="농촌체험"
           pageState={pageState}
           setPageState={setPageState}
         />
         <hr></hr>
-        <article>
+        <article className={visible ? "isvisible" : "isinvisible"}>
           <ExpList content={resData?.content} />
         </article>
         <Paging
