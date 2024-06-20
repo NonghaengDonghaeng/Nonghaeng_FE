@@ -7,7 +7,6 @@ type PropsType = {
 };
 
 export const getExpListApi = async ({ pageIndex, searchWord }: PropsType) => {
-  console.log("체험 리스트 api");
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
@@ -15,9 +14,10 @@ export const getExpListApi = async ({ pageIndex, searchWord }: PropsType) => {
         `experiences?page=${Number(pageIndex) - 1}&keyword=${searchWord}`,
       { headers: { Authorization: token } }
     );
+    console.log("체험리스트 api res", res);
     return res;
   } catch (e) {
     const message = getErrorMessage(e);
-    console.log(message);
+    alert(message);
   }
 };

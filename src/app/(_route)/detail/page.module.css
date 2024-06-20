@@ -1,7 +1,7 @@
 /* 데스크탑 */
 @screen pc {
   .tour_detail > article:nth-child(1) {
-    @apply w-full mt-[80px]  text-stone font-[500];
+    @apply w-full mt-[80px]  text-stone font-[500] relative;
   }
   .tour_detail > article:nth-child(1) > h1 {
     @apply my-[20px] text-[24px] font-[600] flex items-center;
@@ -16,7 +16,7 @@
     @apply my-[20px];
   }
   .tour_detail > article:nth-child(1) > div:nth-child(4) {
-    @apply w-full h-[140px] my-[40px] px-[40px] py-[36px] flex justify-between border-[1px] border-stone/40 rounded-md;
+    @apply w-full h-[140px] mt-[40px] px-[40px] py-[36px] flex justify-between border-[1px] border-stone/40 rounded-md;
   }
   .tour_detail > article:nth-child(1) > div:nth-child(4) > ul:first-child {
     @apply w-[380px];
@@ -69,10 +69,10 @@
   }
 }
 
-/* 데스크탑 */
+/* 테블릿*/
 @screen tablet {
   .tour_detail > article:nth-child(1) {
-    @apply w-full mt-[80px]  text-stone font-[500];
+    @apply w-full mt-[80px]  text-stone font-[500] relative;
   }
   .tour_detail > article:nth-child(1) > h1 {
     @apply my-[20px] text-[24px] font-[600] flex items-center;
@@ -87,7 +87,7 @@
     @apply my-[20px];
   }
   .tour_detail > article:nth-child(1) > div:nth-child(4) {
-    @apply w-full h-[140px] my-[40px] px-[40px] py-[36px] flex justify-between border-[1px] border-stone/40 rounded-md;
+    @apply w-full h-[140px] mt-[40px] px-[40px] py-[36px] flex justify-between border-[1px] border-stone/40 rounded-md;
   }
   .tour_detail > article:nth-child(1) > div:nth-child(4) > ul:first-child {
     @apply w-[380px];
@@ -143,7 +143,7 @@
 /* 모바일 */
 @screen mobile {
   .tour_detail > article:nth-child(1) {
-    @apply w-full mt-[60px]  text-stone font-[500];
+    @apply w-full mt-[60px]  text-stone font-[500] relative;
   }
   .tour_detail > article:nth-child(1) > h1 {
     @apply my-[20px] text-[24px] font-[600] flex items-center;
@@ -158,7 +158,7 @@
     @apply my-[20px];
   }
   .tour_detail > article:nth-child(1) > div:nth-child(4) {
-    @apply my-[20px];
+    @apply mt-[20px];
   }
   .tour_detail > article:nth-child(1) > div:nth-child(4) > ul:first-child {
     @apply my-[20px] p-[20px] border-[1px] border-stone/40 rounded-md block;
@@ -206,5 +206,5 @@
 }
 
 .tour_detail > article:nth-child(2) > div {
-  @apply w-full h-[600px];
+  @apply w-full h-[600px] my-[20px];
 }

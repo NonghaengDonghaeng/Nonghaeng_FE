@@ -15,10 +15,11 @@ const editReviewApi = async ({ reveiwItem }: PropsType) => {
         headers: { Authorization: token },
       }
     );
+    console.log("리뷰작성 api res", res);
     return res;
   } catch (e) {
     const message = getErrorMessage(e);
-    console.log(message);
+    alert(message);
   }
 };
 

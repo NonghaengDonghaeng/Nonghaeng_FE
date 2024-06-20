@@ -10,10 +10,11 @@ const getMainApi = async () => {
         headers: { Authorization: token },
       }
     );
+    console.log("홈 api res", res);
     return res;
   } catch (e) {
     const message = getErrorMessage(e);
-    console.log(message);
+    alert(message);
   }
 };
 

@@ -7,7 +7,6 @@ type TourPropsType = {
 };
 
 const getTourListApi = async ({ pageIndex, searchWord }: TourPropsType) => {
-  console.log("관광 리스트 api");
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
@@ -17,10 +16,11 @@ const getTourListApi = async ({ pageIndex, searchWord }: TourPropsType) => {
         headers: { Authorization: token },
       }
     );
+    console.log("관광리스트 api res", res);
     return res;
   } catch (e) {
     const message = getErrorMessage(e);
-    console.log(message);
+    alert(message);
   }
 };
 

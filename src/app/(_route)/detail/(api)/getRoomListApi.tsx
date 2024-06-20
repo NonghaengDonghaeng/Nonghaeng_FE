@@ -16,7 +16,6 @@ export const getRoomListApi = async ({
   // personCount,
   roomCount,
 }: PropsType) => {
-  console.log("방 리스트 api");
   try {
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
@@ -24,9 +23,10 @@ export const getRoomListApi = async ({
         `rooms/list/${lodgId}?start_date=${checkIn}&end_date=${checkOut}&num=${roomCount}`,
       { headers: { Authorization: token } }
     );
+    console.log("방 리스트 api res", res);
     return res;
   } catch (e) {
     const message = getErrorMessage(e);
-    console.log(message);
+    alert(message);
   }
 };

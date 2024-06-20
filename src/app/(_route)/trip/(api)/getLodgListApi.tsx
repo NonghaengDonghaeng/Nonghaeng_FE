@@ -11,16 +11,16 @@ export const getLodgListApi = async ({
   searchWord,
 }: LodgPropsType) => {
   try {
-    console.log("숙박 리스트 api");
     let token = localStorage.getItem("jwt");
     const res = await axios.get(
       process.env.NEXT_PUBLIC_API_URL +
         `rooms?page=${Number(pageIndex) - 1}&keyword=${searchWord}`,
       { headers: { Authorization: token } }
     );
+    console.log("숙박리스트 api res", res);
     return res;
   } catch (e) {
     const message = getErrorMessage(e);
-    console.log(message);
+    alert(message);
   }
 };

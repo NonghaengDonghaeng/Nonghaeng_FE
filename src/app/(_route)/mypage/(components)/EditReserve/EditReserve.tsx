@@ -27,7 +27,7 @@ function EditReserve({ id }: PropsType) {
 
   const editReview = () => {
     editReviewApi({ reveiwItem: reviewItem }).then((res) => {
-      if (res?.status == 200) {
+      if (res?.status == 201) {
         alert("후기가  작성되었습니다.");
         setIsClick(false);
       }

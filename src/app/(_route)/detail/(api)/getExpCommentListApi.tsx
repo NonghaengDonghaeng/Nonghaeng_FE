@@ -13,9 +13,10 @@ export const getExpCommentList = async ({ expId }: PropsType) => {
       process.env.NEXT_PUBLIC_API_URL + `reviews/experience/${expId}`,
       { headers: { Authorization: token } }
     );
+    console.log("체험리뷰 api res", res);
     return res;
   } catch (e) {
     const message = getErrorMessage(e);
-    console.log(message);
+    alert(message);
   }
 };

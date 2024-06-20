@@ -46,14 +46,17 @@ export default function SubList({
         isClick.exp || isClick.lodg ? styles.sub_list : styles.sub_list_off
       }`}
     >
-      <p>
-        {isClick.exp && "농촌체험"}
-        {isClick.lodg && "농촌숙박"}
-      </p>
-      <ul>
-        {isClick.exp && expList}
-        {isClick.lodg && lodgList}
-      </ul>
+      <div>
+        <p>
+          {isClick.exp && "농촌체험"}
+          {isClick.lodg && "농촌숙박"}
+        </p>
+
+        <ul>
+          {isClick.exp && expList}
+          {isClick.lodg && lodgList}
+        </ul>
+      </div>
     </div>
   );
 }

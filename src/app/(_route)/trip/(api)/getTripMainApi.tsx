@@ -7,10 +7,11 @@ const getTripMainApi = async () => {
     const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "trips", {
       headers: { Authorization: token },
     });
+    console.log("농촌여행 api res", res);
     return res;
   } catch (e) {
     const message = getErrorMessage(e);
-    console.log(message);
+    alert(message);
   }
 };
 

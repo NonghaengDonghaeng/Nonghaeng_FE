@@ -111,32 +111,39 @@ export default function Page() {
               </span>
             </li>
           </ul>
-          <SubList
-            isClick={pageState.isClick}
-            expSubListData={resData?.exp_summary_list}
-            roomSubListData={resData?.room_summary_list}
-          />
         </div>
+        <SubList
+          isClick={pageState.isClick}
+          expSubListData={resData?.exp_summary_list}
+          roomSubListData={resData?.room_summary_list}
+        />
       </article>
       <article>
-        <NavDetail
-          moveElement={moveElement}
-          title={["기본정보", "여행후기", "여행문의"]}
-          nowRef={0}
-        />
-        <div ref={element[0]}>기본정보</div>
-        <NavDetail
-          moveElement={moveElement}
-          title={["기본정보", "여행후기", "여행문의"]}
-          nowRef={1}
-        />
-        <div ref={element[1]}></div>
-        <NavDetail
-          moveElement={moveElement}
-          title={["기본정보", "여행후기", "여행문의"]}
-          nowRef={2}
-        />
-        <div ref={element[2]}>문의</div>
+        <div ref={element[0]}>
+          <NavDetail
+            moveElement={moveElement}
+            title={["기본정보", "여행후기", "여행문의"]}
+            nowRef={0}
+          />
+          기본정보
+        </div>
+
+        <div ref={element[1]}>
+          <NavDetail
+            moveElement={moveElement}
+            title={["기본정보", "여행후기", "여행문의"]}
+            nowRef={1}
+          />
+          여행후기
+        </div>
+        <div ref={element[2]}>
+          <NavDetail
+            moveElement={moveElement}
+            title={["기본정보", "여행후기", "여행문의"]}
+            nowRef={2}
+          />
+          여행문의
+        </div>
       </article>
     </section>
   );
