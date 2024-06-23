@@ -38,13 +38,15 @@ function ListTitle({ title, pageState, setPageState }: PropsType) {
         </>
       )}
       {!pageState && (
-        <div className={styles.list_title}>
-          <h1>{title}</h1>
-          <Link href={`trip/${linkMap[title].href}`}>
-            {`더 많은 ${linkMap[title].linkTitle} 보러가기`}
-            <More_green_Ic />
-          </Link>
-        </div>
+        <>
+          <div className={styles.list_title}>
+            <h1>{title}</h1>
+            <Link href={`trip/${linkMap[title].href}`}>
+              {`더 많은 ${linkMap[title].linkTitle} 보러가기`}
+              <More_green_Ic />
+            </Link>
+          </div>
+        </>
       )}
     </>
   );

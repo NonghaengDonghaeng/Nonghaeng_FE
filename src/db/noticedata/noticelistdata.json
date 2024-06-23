@@ -1,0 +1,50 @@
+{
+  "content": [
+    {
+      "notice_id": 1,
+      "title": "공지사항1",
+      "author": "tmpAdmin",
+      "important": true,
+      "create_time": "2024-06-23T07:07:25.639073"
+    },
+    {
+      "notice_id": 2,
+      "title": "공지사항2",
+      "author": "tmpAdmin",
+      "important": false,
+      "create_time": "2024-06-23T07:07:33.51686"
+    },
+    {
+      "notice_id": 3,
+      "title": "공지사항3",
+      "author": "tmpAdmin",
+      "important": true,
+      "create_time": "2024-06-23T07:07:39.984699"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1,
+  "totalElements": 3,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 3,
+  "first": true,
+  "empty": false
+}

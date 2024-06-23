@@ -1,6 +1,6 @@
 /* desktop
 ----------------------------------*/
-@media (min-width: 768px) {
+@screen pc {
   .footer_inner > ul {
     @apply hidden;
   }
@@ -13,6 +13,25 @@
   /* footer_main */
   .footer_inner > div:nth-child(3) {
     @apply w-[80%] mt-[20px] mx-auto text-white;
+  }
+  .footer_inner > div:nth-child(3) > * {
+    @apply my-[20px] mr-[20px];
+  }
+}
+
+@screen tablet {
+  .footer_inner > ul {
+    @apply hidden;
+  }
+  .footer_inner > div:first-child {
+    @apply w-[90%] h-[80px] mx-auto;
+  }
+  .footer_inner > hr {
+    @apply border-[1px];
+  }
+  /* footer_main */
+  .footer_inner > div:nth-child(3) {
+    @apply w-[90%] mt-[20px] mx-auto text-white;
   }
   .footer_inner > div:nth-child(3) > * {
     @apply my-[20px] mr-[20px];

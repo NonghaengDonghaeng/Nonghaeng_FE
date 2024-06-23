@@ -1,0 +1,17 @@
+@screen pc {
+  .notice_list > hr {
+    @apply mb-[20px] border-[1px] border-stone/80;
+  }
+}
+
+@screen tablet {
+  .notice_list > hr {
+    @apply mb-[20px] border-[1px] border-stone/80;
+  }
+}
+
+@screen mobile {
+  .notice_list > hr {
+    @apply mb-[20px] border-[1px] border-stone/80;
+  }
+}
