@@ -11,7 +11,7 @@ type ExpListPropsType = {
 export default function ExpList({ content }: ExpListPropsType) {
   const expList = content?.map((item, index) => (
     <li key={index}>
-      <Link href={`/detail/exp?exp_id=${item.experience_id}`}>
+      <Link href={`/detail/exp/${item.experience_id}`}>
         <div>
           <CustomImage src={item.photo_info_dto?.img_url} />
           <span>

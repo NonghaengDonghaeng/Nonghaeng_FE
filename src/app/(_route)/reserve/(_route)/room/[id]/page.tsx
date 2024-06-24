@@ -2,21 +2,21 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
-import { getUserDataApi } from "../../(api)/getUserDataApi";
-import { userInfoDataType } from "../../(types)/userInfoDataType";
-import UserInfo from "../../(components)/UserInfo/UserInfo";
-import { reserveApi } from "../../(api)/reserveApi";
+import { getUserDataApi } from "../../../(api)/getUserDataApi";
+import { userInfoDataType } from "../../../(types)/userInfoDataType";
+import UserInfo from "../../../(components)/UserInfo/UserInfo";
+import { reserveApi } from "../../../(api)/reserveApi";
 import {
   ReturnRoomReserveType,
   roomReserveInfoType,
-} from "../../(types)/roomReserveInfoType";
+} from "../../../(types)/roomReserveInfoType";
 import Overlay from "@/common/components/Overlay/Overlay";
-import CheckReserve from "../../(components)/CheckReserve/CheckReserve";
+import CheckReserve from "../../../(components)/CheckReserve/CheckReserve";
 
-export default function Page() {
+export default function Page({ params }: { params: { id: string } }) {
   const searchParams = useSearchParams();
 
-  const [roomId, setRoomId] = useState(Number(searchParams.get("room_id")));
+  const [roomId, setRoomId] = useState(Number(params.id));
   const [roomName, setRoomName] = useState(searchParams.get("room_name"));
   const [personCount, setPersonCount] = useState(
     Number(searchParams.get("person_count"))

@@ -6,7 +6,7 @@
     @apply text-[18px];
   }
   .list_comp > li > div {
-    @apply w-[50%] flex items-center justify-between;
+    @apply w-[50%] flex items-center justify-between text-[16px] font-[400];
   }
   .list_comp > li > div > span:nth-child(2) {
     @apply min-w-[300px] flex justify-end;
@@ -36,6 +36,6 @@
     @apply text-[18px];
   }
   .list_comp > li > div {
-    @apply mt-[20px] flex items-center justify-between;
+    @apply mt-[20px] flex items-center justify-between text-[16px] font-[400];
   }
 }

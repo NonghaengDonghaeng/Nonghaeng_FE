@@ -2,28 +2,28 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import styles from "./page.module.css";
-import CustomCalendar from "../../(components)/CustomCalendar/CustomCalendar";
-import CheckReserve from "../../(components)/CheckReserve/CheckReserve";
-import { getExpRoundApi } from "../../(api)/getExpRoundApi";
-import { expRoundListType, expRoundType } from "../../(types)/expRoundType";
-import { userInfoDataType } from "../../(types)/userInfoDataType";
-import { getUserDataApi } from "../../(api)/getUserDataApi";
+import CustomCalendar from "../../../(components)/CustomCalendar/CustomCalendar";
+import CheckReserve from "../../../(components)/CheckReserve/CheckReserve";
+import { getExpRoundApi } from "../../../(api)/getExpRoundApi";
+import { expRoundListType, expRoundType } from "../../../(types)/expRoundType";
+import { userInfoDataType } from "../../../(types)/userInfoDataType";
+import { getUserDataApi } from "../../../(api)/getUserDataApi";
 import ClickCount from "@/common/components/ClickCount/ClickCount";
-import { reserveApi } from "../../(api)/reserveApi";
+import { reserveApi } from "../../../(api)/reserveApi";
 import Overlay from "@/common/components/Overlay/Overlay";
-import UserInfo from "../../(components)/UserInfo/UserInfo";
-import ExpRoundList from "../../(components)/ExpRoundList/ExpRoundList";
+import UserInfo from "../../../(components)/UserInfo/UserInfo";
+import ExpRoundList from "../../../(components)/ExpRoundList/ExpRoundList";
 import {
   expReserveInfoType,
   returnExpReserveType,
-} from "../../(types)/expReserveInfoType";
+} from "../../../(types)/expReserveInfoType";
 
-export default function Page() {
+export default function Page({ params }: { params: { id: string } }) {
   const searchParams = useSearchParams();
   const today = new Date();
 
   // 체험관련
-  const [expId, setExpId] = useState(Number(searchParams.get("exp_id")));
+  const [expId, setExpId] = useState(Number(params.id));
   const [isClick, setIsClick] = useState(false);
   const [expName, setExpName] = useState(searchParams.get("exp_name"));
   const [personCount, setPersonCount] = useState(1);

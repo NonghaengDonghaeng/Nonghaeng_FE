@@ -11,7 +11,7 @@ type LodgListPropsType = {
 export default function LodgList({ content }: LodgListPropsType) {
   const lodgList = content?.map((item, index) => (
     <li key={index}>
-      <Link href={`/detail/lodg?lodg_id=${item.tour_id}`}>
+      <Link href={`/detail/lodg/${item.tour_id}`}>
         <div>
           <CustomImage src={item?.photo_info_dto?.img_url} />
           <span>

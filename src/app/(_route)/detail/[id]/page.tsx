@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import useMove from "@/hooks/useMove";
-import NavDetail from "./(components)/NavDetail/NavDetail";
-import SubList from "./(components)/SubList/SubList";
+import NavDetail from "../(components)/NavDetail/NavDetail";
+import SubList from "../(components)/SubList/SubList";
 import styles from "./page.module.css";
-import { tourDetailDataType } from "./(types)/tourDetailDataType";
+import { tourDetailDataType } from "../(types)/tourDetailDataType";
 import tourDetailPageResData from "@/db/tourdata/detail.json";
 import {
   Lodg_orange_Ic,
@@ -16,20 +16,16 @@ import {
   Tell_orange_Ic,
   Exp_orange_Ic,
 } from "icon/index";
-import DetailImg from "./(components)/DetailImg/DetailImg";
-import { getTourDetailApi } from "./(api)/getTourDetailApi";
-import ReviewtList from "./(components)/ReveiwList/ReviewList";
+import DetailImg from "../(components)/DetailImg/DetailImg";
+import { getTourDetailApi } from "../(api)/getTourDetailApi";
+import ReviewtList from "../(components)/ReveiwList/ReviewList";
 
-export default function Page() {
+export default function Page({ params }: { params: { id: string } }) {
   const searchParams = useSearchParams();
   const { element, moveElement } = useMove();
-  const [tourId, setTourId] = useState<number>(
-    Number(searchParams.get("tour_id"))
-  );
 
-  const [pageState, setPageState] = useState<{
-    isClick: { exp: boolean; lodg: boolean };
-  }>({
+  const [tourId, setTourId] = useState<number>(Number(params.id));
+  const [pageState, setPageState] = useState({
     isClick: { exp: false, lodg: false },
   });
 

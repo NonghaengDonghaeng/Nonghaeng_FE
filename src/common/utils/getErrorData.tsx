@@ -8,18 +8,17 @@ type ErrorType = {
 
 type ValidErrorType = {
   message: string;
-  role: string | null;
   valid: boolean;
+  role: string | null;
 };
 
 export const getErrorMessage = (error: unknown) => {
   console.log(error);
   const { response } = (error as unknown) as AxiosError;
-  if (response?.status == 502 || 404) {
+  if (response?.status == 502 || response?.status == 404) {
     const data = response?.data as ErrorType;
     return data.reason;
-  }
-  if (response?.status == 400) {
+  } else if (response?.status == 400) {
     const data = response?.data as ValidErrorType;
     return data.message;
   }

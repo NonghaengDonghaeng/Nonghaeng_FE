@@ -11,7 +11,7 @@ type TourListPropsType = {
 export default function TourList({ content }: TourListPropsType) {
   const tourList = content?.map((item, index) => (
     <li key={index}>
-      <Link href={`/detail?tour_id=${item.tour_id}`}>
+      <Link href={`/detail/${item.tour_id}`}>
         <div>
           <CustomImage src={item?.photo_info_dto?.img_url} />
           <span>

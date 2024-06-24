@@ -3,25 +3,25 @@ import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import useMove from "@/hooks/useMove";
 import ClickCount from "@/common/components/ClickCount/ClickCount";
-import { CustomRangeCalendar } from "../../../(components)/CustomRoundCalendar/CustomRangeCalendar";
-import NavDetail from "../../../(components)/NavDetail/NavDetail";
+import { CustomRangeCalendar } from "../../../../(components)/CustomRoundCalendar/CustomRangeCalendar";
+import NavDetail from "../../../../(components)/NavDetail/NavDetail";
 import styles from "./page.module.css";
-import { roomDetailDataType } from "../../../(types)/roomDetailDataType";
+import { roomDetailDataType } from "../../../../(types)/roomDetailDataType";
 import Room_orange_Ic from "icon/room_orange.svg";
 import Person_orange_Ic from "icon/person_orange.svg";
 import Calendar_orange_Ic from "icon/calendar_orange.svg";
-import DetailImg from "../../../(components)/DetailImg/DetailImg";
-import { getRoomDetailApi } from "../../../(api)/getRoomDetailApi";
-import LikeAndReserve from "../../../(components)/LikeAndReserve/LikeAndReserve";
-import RoomInfo from "../../../(components)/RoomInfo/RoomInfo";
-import ReviewtList from "../../../(components)/ReveiwList/ReviewList";
+import DetailImg from "../../../../(components)/DetailImg/DetailImg";
+import { getRoomDetailApi } from "../../../../(api)/getRoomDetailApi";
+import LikeAndReserve from "../../../../(components)/LikeAndReserve/LikeAndReserve";
+import RoomInfo from "../../../../(components)/RoomInfo/RoomInfo";
+import ReviewtList from "../../../../(components)/ReveiwList/ReviewList";
 
-export default function Page() {
+export default function Page({ params }: { params: { id: string } }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { element, moveElement } = useMove();
 
-  const [roomId, setRoomId] = useState(Number(searchParams.get("room_id")));
+  const [roomId, setRoomId] = useState(Number(params.id));
   const [isClick, setIsClick] = useState(false);
   const [person_count, setPerson_count] = useState(1);
   const [room_count, setRoom_count] = useState(1);
@@ -51,7 +51,7 @@ export default function Page() {
       alert("예약가능한 방이 없습니다.");
     } else {
       router.push(
-        `/reserve/room?room_id=${roomId}&room_name=${resData?.room_name}&room_price=${resData?.price_off_peak}&person_count=${person_count}&room_count=${room_count}&check_in=${check_in}&check_out=${check_out}`
+        `/reserve/room/${roomId}?room_name=${resData?.room_name}&room_price=${resData?.price_off_peak}&person_count=${person_count}&room_count=${room_count}&check_in=${check_in}&check_out=${check_out}`
       );
     }
   }

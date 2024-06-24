@@ -2,24 +2,23 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import useMove from "@/hooks/useMove";
-import NavDetail from "../../(components)/NavDetail/NavDetail";
+import NavDetail from "../../../(components)/NavDetail/NavDetail";
 import styles from "./page.module.css";
-import { expDetailDataType } from "../../(types)/expDetailDataType";
-import DetailImg from "../../(components)/DetailImg/DetailImg";
-import { getExpDetailApi } from "../../(api)/getExpDetailApi";
-import ReviewtList from "../../(components)/ReveiwList/ReviewList";
+import { expDetailDataType } from "../../../(types)/expDetailDataType";
+import DetailImg from "../../../(components)/DetailImg/DetailImg";
+import { getExpDetailApi } from "../../../(api)/getExpDetailApi";
+import ReviewtList from "../../../(components)/ReveiwList/ReviewList";
 import store from "@/redux/loginStateStore";
-import LikeAndReserve from "../../(components)/LikeAndReserve/LikeAndReserve";
-import ExpInfo from "../../(components)/ExpInfo/ExpInfo";
+import LikeAndReserve from "../../../(components)/LikeAndReserve/LikeAndReserve";
+import ExpInfo from "../../../(components)/ExpInfo/ExpInfo";
 import expDetailPageData from "@/db/expdata/detail.json";
 
-export default function Page() {
+export default function Page({ params }: { params: { id: string } }) {
   const { element, moveElement } = useMove();
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [expId, setExpId] = useState<number>(
-    Number(searchParams.get("exp_id"))
-  );
+
+  const [expId, setExpId] = useState<number>(Number(params.id));
 
   const [resData, setResData] = useState<expDetailDataType>();
   const [visible, setVisible] = useState(false);
@@ -38,7 +37,7 @@ export default function Page() {
   const routeExpReserve = () => {
     if (store.getState()) {
       router.push(
-        `/reserve/exp?exp_id=${expId}&exp_name=${resData?.experience_name}&exp_price=${resData?.price}`
+        `/reserve/exp/${expId}?exp_name=${resData?.experience_name}&exp_price=${resData?.price}`
       );
     } else {
       alert("로그인후 이용가능합니다.");

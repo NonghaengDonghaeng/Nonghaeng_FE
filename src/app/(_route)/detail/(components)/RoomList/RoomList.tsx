@@ -48,7 +48,7 @@ export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
 
   const roomList = resData?.map((item, index) => (
     <li key={index}>
-      <Link href={`/detail/lodg/room?room_id=${item.room_id}`}>
+      <Link href={`/detail/lodg/room/${item.room_id}`}>
         <CustomImage src={item.photo_info_dto?.img_url} />
         <div>
           <h1>

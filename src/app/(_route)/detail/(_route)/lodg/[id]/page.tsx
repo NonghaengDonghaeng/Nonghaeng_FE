@@ -1,21 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import NavDetail from "../../(components)/NavDetail/NavDetail";
+import NavDetail from "../../../(components)/NavDetail/NavDetail";
 import useMove from "@/hooks/useMove";
-import RoomList from "../../(components)/RoomList/RoomList";
+import RoomList from "../../../(components)/RoomList/RoomList";
 import styles from "./page.module.css";
-import { lodgDetailDataType } from "../../(types)/lodgDetailDataType";
+import { lodgDetailDataType } from "../../../(types)/lodgDetailDataType";
 import lodgDetailPageResData from "@/db/lodgdata/detail.json";
-import DetailImg from "../../(components)/DetailImg/DetailImg";
-import { getLodgDetailApi } from "../../(api)/getLodgDetailApi";
+import DetailImg from "../../../(components)/DetailImg/DetailImg";
+import { getLodgDetailApi } from "../../../(api)/getLodgDetailApi";
 
-export default function Page() {
+export default function Page({ params }: { params: { id: string } }) {
   const searchParams = useSearchParams();
   const { element, moveElement } = useMove();
-  const [lodgId, setLodgId] = useState<number>(
-    Number(searchParams.get("lodg_id"))
-  );
+
+  const [lodgId, setLodgId] = useState<number>(Number(params.id));
+
   const [resData, setResData] = useState<lodgDetailDataType | undefined>();
   const [visible, setVisible] = useState(false);
 
