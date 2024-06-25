@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import store from "@/redux/loginStateStore";
@@ -8,9 +8,8 @@ export default function AdminRoute() {
   const router = useRouter();
   const pathName = usePathname();
 
-  const [loginState, setLoginState] = useState(store.getState());
-
   useEffect(() => {
+    const loginState = store.getState();
     if (loginState == "guest") {
       // 로그인하지 않고 예약
       if (pathName == "/reserve/exp" || pathName == "/reserve/lodg") {
