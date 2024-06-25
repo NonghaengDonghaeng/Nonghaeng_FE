@@ -20,6 +20,14 @@ export default function CheckReserve({
 }: ReserveInfoType) {
   const router = useRouter();
 
+  const cancel = () => {
+    if (expReserveData) {
+      router.replace(`/reserve/${expReserveData.payment_dto.payment_uid}`);
+    } else if (roomReserveData) {
+      router.replace(`/reserve/${roomReserveData.payment_dto.payment_uid}`);
+    }
+  };
+
   const reserve = () => {
     if (expReserveData) {
       requestPay({ paymentDto: expReserveData.payment_dto }).then(() =>
@@ -82,7 +90,7 @@ export default function CheckReserve({
         </div>
       )}
       <div>
-        <button onClick={() => setIsCheck(!isCheck)}>취소</button>
+        <button onClick={() => cancel()}>취소</button>
         <button onClick={() => reserve()}>결제</button>
       </div>
     </div>

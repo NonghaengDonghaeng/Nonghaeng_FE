@@ -8,19 +8,24 @@ import { pageStateType } from "@/app/(_route)/trip/(types)/pageStateType";
 import Paging from "@/common/components/Paging/Paging";
 import noticeListData from "@/db/noticedata/noticelistdata.json";
 import NoticeList from "../../(components)/NoticeList";
+import useSetUrl from "@/hooks/useSetUrl";
 
 export default function Page() {
   const searchParams = useSearchParams();
+  const setUrl = useSetUrl();
 
   const [pageState, setPageState] = useState<pageStateType>({
     searchWord: searchParams.get("search_word") || "",
     pageIndex: Number(searchParams.get("page_index")) || 1,
+    state: false,
+    isClick: false,
   });
 
   const [resData, setResData] = useState<NoticeListType>();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    setUrl({ urlItem: pageState });
     getNoticeListApi().then((res) => {
       if (res?.status == 200) {
         setResData(res?.data);
@@ -29,7 +34,7 @@ export default function Page() {
     });
     // setResData(noticeListData);
     // setVisible(true);
-  }, []);
+  }, [pageState.state, pageState.pageIndex]);
 
   return (
     <section className={styles.notice_list}>

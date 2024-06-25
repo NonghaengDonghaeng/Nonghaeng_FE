@@ -100,24 +100,30 @@ export default function Filter({ pageState, setPageState }: FilterPropsType) {
           <X_Ic />
         </button>
       </h1>
-      <div>
-        <span>지역선택</span>
-        <hr />
-        <ul>{regionList}</ul>
-      </div>
-      <div>
-        <span>
-          {pageState.pageType == "tour" && "관광유형선택"}
-          {pageState.pageType == "exp" && "체험유형선택"}
-          {pageState.pageType == "lodg" && "숙박유형선택"}
-        </span>
-        <hr />
-        <ul>
-          {pageState.pageType == "tour" && tourCategoryList}
-          {pageState.pageType == "exp" && expCategoryList}
-          {pageState.pageType == "lodg" && lodgCategoryList}
-        </ul>
-      </div>
+      {(pageState.pageType == "tour" ||
+        pageState.pageType == "exp" ||
+        pageState.pageType == "lodg") && (
+        <>
+          <div>
+            <span>지역선택</span>
+            <hr />
+            <ul>{regionList}</ul>
+          </div>
+          <div>
+            <span>
+              {pageState.pageType == "tour" && "관광유형선택"}
+              {pageState.pageType == "exp" && "체험유형선택"}
+              {pageState.pageType == "lodg" && "숙박유형선택"}
+            </span>
+            <hr />
+            <ul>
+              {pageState.pageType == "tour" && tourCategoryList}
+              {pageState.pageType == "exp" && expCategoryList}
+              {pageState.pageType == "lodg" && lodgCategoryList}
+            </ul>
+          </div>
+        </>
+      )}
       <input name="searchWord" placeholder="검색어를 입력하세요."></input>
       <button
         onClick={() =>

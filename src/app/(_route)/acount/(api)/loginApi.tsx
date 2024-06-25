@@ -28,19 +28,18 @@ export const verifyJwtApi = async () => {
 // 소비자로그인
 type userPropsType = { user: userType };
 
-export const loginApi = async ({user}: userPropsType) => {
+export const loginApi = async ({ user }: userPropsType) => {
   try {
-    await axios.post(
-        process.env.NEXT_PUBLIC_API_URL + "login",
-        user
-    ).then((res) => {
-      if (res?.status == 200) {
-        alert(res.data);
-        const jwtToken = res.headers.authorization;
-        localStorage.setItem("jwt", "Bearer " + jwtToken);
-        window.location.replace("/")
-      }
-    });
+    await axios
+      .post(process.env.NEXT_PUBLIC_API_URL + "login", user)
+      .then((res) => {
+        if (res?.status == 200) {
+          alert(res.data);
+          const jwtToken = res.headers.authorization;
+          localStorage.setItem("jwt", "Bearer " + jwtToken);
+          window.location.replace("/");
+        }
+      });
   } catch (e) {
     const message = getErrorMessage(e);
     alert(message);

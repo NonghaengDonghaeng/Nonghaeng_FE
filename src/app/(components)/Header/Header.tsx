@@ -31,7 +31,7 @@ function Header() {
     if (pathName !== "/acount/login" && pathName !== "/acount/join") {
       //임시로 로그인 하지 않은 유저 막음
       verifyJwtApi().then(() => {
-        if (store.getState() == true) {
+        if (store.getState() == "user") {
           setLoginState(true);
         } else setLoginState(false);
       });

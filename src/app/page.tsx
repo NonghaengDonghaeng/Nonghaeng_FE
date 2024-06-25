@@ -10,6 +10,7 @@ import { expListContentDataType } from "@/common/types/expListDataType";
 import { lodgListContentDataType } from "@/common/types/lodgListDataType";
 import MainSection from "@/app/(components)/MainSection/MainSection";
 import homePageResData from "@/db/homePageResData.json";
+import guestLoginApi from "./(api)/guestLoginApi";
 
 export default function Home() {
   const [resData, setResData] = useState<{
@@ -19,6 +20,14 @@ export default function Home() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // 게스트 로그인, 이미 로그인 중이라면 return이 오지 않음
+    guestLoginApi().then((res) => {
+      if (res?.status == 200) {
+        const jwtToken = res.headers.authorization;
+        localStorage.setItem("jwt", "Bearer " + jwtToken);
+      }
+    });
+    //홈페이지 우수체험, 우수숙박 데이터 받아오기
     getMainApi().then((res) => {
       if (res?.status == 200) {
         setResData(res?.data);
