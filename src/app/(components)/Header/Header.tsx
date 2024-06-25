@@ -10,6 +10,7 @@ import SearchBasic from "@/common/components/SearchBasic/SearchBasic";
 import Menu from "@/common/components/Menu/Menu";
 import { useMediaQuery } from "react-responsive";
 import { Nonghaeng_Ic, Sitemap_gray_Ic } from "icon/index";
+import guestLoginApi from "@/app/(api)/guestLoginApi";
 
 type SubMenuType = { href: string; title: string };
 
@@ -28,12 +29,27 @@ function Header() {
 
   // 로그인 상태관리
   useEffect(() => {
-    if (pathName !== "/acount/login" && pathName !== "/acount/join") {
-      //임시로 로그인 하지 않은 유저 막음
-      verifyJwtApi().then(() => {
-        if (store.getState() == "user") {
+    // jwt가 없는경우 게스트로 로그인시킴
+    if (!localStorage.getItem("jwt")) {
+      // 게스트 로그인, 이미 로그인 중이라면 return이 오지 않음
+      guestLoginApi().then((res) => {
+        if (res?.status == 200) {
+          store.dispatch({ type: "GUEST" });
+          const jwtToken = res.headers.authorization;
+          localStorage.setItem("jwt", "Bearer " + jwtToken);
+        }
+      });
+    }
+    //jwt 검증
+    else {
+      verifyJwtApi().then((res) => {
+        if (res?.data.role == "USER") {
           setLoginState(true);
-        } else setLoginState(false);
+          store.dispatch({ type: "USER" });
+        } else {
+          store.dispatch({ type: "GUEST" });
+          setLoginState(false);
+        }
       });
     }
   }, [pathName]);

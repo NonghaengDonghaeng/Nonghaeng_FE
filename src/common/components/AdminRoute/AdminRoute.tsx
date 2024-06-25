@@ -1,14 +1,17 @@
 "use client";
-import { useEffect } from "react";
+import { use, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import store from "@/redux/loginStateStore";
 
 export default function AdminRoute() {
   const router = useRouter();
   const pathName = usePathname();
 
+  const [loginState, setLoginState] = useState(store.getState());
+
   useEffect(() => {
-    if (!localStorage.getItem("jwt")) {
+    if (loginState == "guest") {
       // 로그인하지 않고 예약
       if (pathName == "/reserve/exp" || pathName == "/reserve/lodg") {
         alert("로그인되지 않음");
@@ -23,7 +26,7 @@ export default function AdminRoute() {
         console.log("로그아웃 상태");
         router.replace("/acount/login");
       }
-    } else if (localStorage.getItem("jwt")) {
+    } else if (loginState == "user" || loginState == "seller") {
       // 로그인하고 acount
       if (
         pathName == "/acount/login" ||

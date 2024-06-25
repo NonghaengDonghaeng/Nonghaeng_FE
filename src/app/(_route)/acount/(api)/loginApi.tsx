@@ -11,16 +11,12 @@ export const verifyJwtApi = async () => {
     const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "valid", {
       headers: { Authorization: token },
     });
-    if (res.status == 200) {
-      console.log("검증완료, 로그인 유지");
-      store.dispatch({ type: "LOGIN" });
-    }
+    return res;
   } catch (err) {
     alert("세션이 만료되었습니다.");
-    store.dispatch({ type: "LOGOUT" });
     localStorage.removeItem("jwt");
     // window.location.replace("/");
-    window.location.replace("/acount/login");
+    window.location.replace("/");
   }
   // }
 };

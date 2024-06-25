@@ -30,11 +30,12 @@ export default function Page() {
   useEffect(() => {
     let token = params.get("accessToken");
     if (token) {
-      {
-        console.log("토큰 확인");
-        localStorage.setItem("jwt", "Bearer " + token);
-        router.push("/");
-      }
+      // 기존 게스트 jwt 삭제
+      localStorage.removeItem("jwt");
+      console.log("토큰 확인");
+      // 로그인후 return받은 jwt추가
+      localStorage.setItem("jwt", "Bearer " + token);
+      router.push("/");
     }
   }, [pathName]);
 
