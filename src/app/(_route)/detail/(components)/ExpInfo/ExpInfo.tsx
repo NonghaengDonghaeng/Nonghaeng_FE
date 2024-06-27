@@ -14,7 +14,7 @@ export default function ExpInfo({ expData }: PropsType) {
   return (
     <div className={styles.exp_info}>
       <span>
-        <Link href={`/detail?tour_id=${expData?.tour_info.tourId}`}>
+        <Link href={`/detail/${expData?.tour_info.tourId}`}>
           {expData?.tour_info.tourName}
         </Link>
         {" > "}

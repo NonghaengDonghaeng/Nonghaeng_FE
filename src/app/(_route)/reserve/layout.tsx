@@ -1,4 +1,3 @@
-import AdminRoute from "@/common/components/AdminRoute/AdminRoute";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +11,6 @@ export default function ReserveLayout({
 }>) {
   return (
     <>
-      {/* <AdminRoute /> */}
       <main id="main">{children}</main>
     </>
   );

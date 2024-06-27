@@ -10,7 +10,6 @@ import { expListContentDataType } from "@/common/types/expListDataType";
 import { lodgListContentDataType } from "@/common/types/lodgListDataType";
 import MainSection from "@/app/(components)/MainSection/MainSection";
 import homePageResData from "@/db/homePageResData.json";
-import guestLoginApi from "../common/api/guestLoginApi";
 
 export default function Home() {
   const [resData, setResData] = useState<{

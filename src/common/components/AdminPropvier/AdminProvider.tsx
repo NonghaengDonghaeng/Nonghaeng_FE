@@ -28,35 +28,25 @@ export default function AdminProvider({
           store.dispatch({ type: "GUEST" });
           const jwtToken = res.headers.authorization;
           localStorage.setItem("jwt", "Bearer " + jwtToken);
+          window.location.replace("/");
         }
       });
     }
     //jwt가 있는경우 jwt검증 -> 로그인 유지 or 로그인 종료
     else if (localStorage.getItem("jwt")) {
       verifyJwtApi().then((res) => {
+        console.log("로그인 검증", res?.data.role);
         if (res?.data.role == "USER") {
-          console.log("로그인 검증", res?.data.role);
           setLoginState(true);
-          if (
-            pathName == "/acount/login" ||
-            pathName == "/acount/join" ||
-            pathName == "/acount/join/user" ||
-            pathName == "/acount/join/seller" ||
-            pathName == "/acount/findid" ||
-            pathName == "/acount/finpass"
-          ) {
+          if (pathName.split("/")[1] == "acount") {
             console.log("로그인 상태");
             router.replace("/mypage");
           }
         } else {
           setLoginState(false);
-          console.log("로그인 검증", res?.data.role);
           if (
-            pathName == "/reserve/exp" ||
-            pathName == "/reserve/lodg" ||
-            pathName == "/mypage" ||
-            pathName == "/mypage/edit" ||
-            pathName == "/mypage/reserve"
+            pathName.split("/")[1] == "reserve" ||
+            pathName.split("/")[1] == "mypage"
           ) {
             alert("로그인되지 않음");
             router.replace("/acount/login");

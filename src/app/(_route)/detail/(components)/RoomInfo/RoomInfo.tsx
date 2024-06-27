@@ -11,9 +11,7 @@ export default function RoomInfo({ roomData }: PropsType) {
   return (
     <div className={styles.room_info}>
       <span>
-        <Link href={`/detail?tour_id=${roomData?.tour_id}`}>
-          {roomData?.tour_name}
-        </Link>
+        <Link href={`/detail/${roomData?.tour_id}`}>{roomData?.tour_name}</Link>
         {" > "}
         {roomData?.room_name}
       </span>

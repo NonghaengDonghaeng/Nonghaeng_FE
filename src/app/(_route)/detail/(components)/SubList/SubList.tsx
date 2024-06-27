@@ -19,7 +19,7 @@ export default function SubList({
 }: SubListPropsType) {
   const expList = expSubListData?.map((item, index) => (
     <li key={index}>
-      <Link href={`/detail/exp?exp_id=${item.exp_id}`}>
+      <Link href={`/detail/exp/${item.exp_id}`}>
         <CustomImage src={item.photo_info_dto?.img_url} />
         <div>
           <span>{item.exp_name}</span>
@@ -30,7 +30,7 @@ export default function SubList({
   ));
   const lodgList = roomSubListData?.map((item, index) => (
     <li key={index}>
-      <Link href={`/detail/lodg/room?room_id=${item.room_id}`}>
+      <Link href={`/detail/lodg/room/${item.room_id}`}>
         <CustomImage src={item.photo_info_dto?.img_url} />
         <div>
           <span>{item.room_name}</span>
