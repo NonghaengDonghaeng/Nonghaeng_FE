@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import ListTitle from "@/common/components/ListTitle/ListTitle";
 import TourList from "@/common/components/TourList/TourList";
@@ -39,6 +39,8 @@ export default function Page() {
       if (res?.status) {
         setResData(res?.data);
         setVisible(true);
+      } else {
+        window.location.replace("/trip/tour");
       }
     });
   }, [pageState.state, pageState.pageIndex]);

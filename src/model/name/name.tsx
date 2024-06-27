@@ -1,15 +1,4 @@
 // home_search
-export const region = [
-  "인천",
-  "서울",
-  "경기",
-  "대전",
-  "부산",
-  "광주",
-  "강원",
-  "속초",
-  "충청",
-];
 export const category = ["관광", "체험", "숙박"];
 
 export const tourCategoryMap = [
@@ -32,7 +21,7 @@ export const lodgCategoryMap = [
 ];
 
 export const regionMap = [
-  { code: "02", title: "서울특별기" },
+  { code: "02", title: "서울특별시" },
   { code: "031", title: "경기도" },
   { code: "032", title: "인천광역시" },
   { code: "033", title: "강원도" },

@@ -6,7 +6,7 @@ import SearchButton from "@/common/components/SearchButton/SearchButton";
 import styles from "./SearchMain.module.css";
 import { inputType, formType } from "@/common/types/eventType";
 import { searchItemType } from "@/common/types/searchItemType";
-import { region, category } from "@/model/name/name";
+import { category, regionMap } from "@/model/name/name";
 import { More_gray_Ic, More_white_Ic } from "icon/index";
 
 export default function SearchMain() {
@@ -25,12 +25,12 @@ export default function SearchMain() {
     search({ searchItem: searhcItem });
   }
 
-  const regionList = region.map((item, index) => (
+  const regionList = regionMap.map((item, index) => (
     <li
       key={index}
-      onClick={() => setSearchItem({ ...searhcItem, region: item })}
+      onClick={() => setSearchItem({ ...searhcItem, region: item.title })}
     >
-      {item}
+      {item.title}
     </li>
   ));
   const categoryList = category.map((item, index) => (

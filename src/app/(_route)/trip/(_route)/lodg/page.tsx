@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import ListTitle from "@/common/components/ListTitle/ListTitle";
 import LodgList from "@/common/components/LodgList/LodgList";
@@ -41,6 +41,8 @@ export default function Page() {
       if (res?.status == 200) {
         setResData(res?.data);
         setVisible(true);
+      } else {
+        window.location.replace("/trip/lodg");
       }
     });
   }, [pageState.state, pageState.pageIndex]);

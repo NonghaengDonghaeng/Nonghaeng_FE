@@ -29,7 +29,7 @@
   .search_main > div > div > ul > li {
     @apply py-[10px] px-[20px];
   }
-  .search_main > div > ul > li:hover {
+  .search_main > div > div > ul > li:hover {
     @apply bg-stone/10;
   }
   .search_main_off {

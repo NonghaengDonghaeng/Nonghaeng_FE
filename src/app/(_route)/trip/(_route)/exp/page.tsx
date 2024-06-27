@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
 import ListTitle from "@/common/components/ListTitle/ListTitle";
 import ExpList from "@/common/components/ExpList/ExpList";
@@ -40,29 +40,29 @@ export default function Page() {
       if (res?.status == 200) {
         setResData(res?.data);
         setVisible(true);
+      } else {
+        window.location.replace("/trip/exp");
       }
     });
     // setResData(expListPageResData);
   }, [pageState.state, pageState.pageIndex]);
 
   return (
-    <>
-      <section className={styles.exp_main}>
-        <ListTitle
-          title="농촌체험"
-          pageState={pageState}
-          setPageState={setPageState}
-        />
-        <hr></hr>
-        <article className={visible ? "isvisible" : "isinvisible"}>
-          <ExpList content={resData?.content} />
-        </article>
-        <Paging
-          pageState={pageState}
-          setPageState={setPageState}
-          totalPages={resData?.totalPages}
-        />
-      </section>
-    </>
+    <section className={styles.exp_main}>
+      <ListTitle
+        title="농촌체험"
+        pageState={pageState}
+        setPageState={setPageState}
+      />
+      <hr></hr>
+      <article className={visible ? "isvisible" : "isinvisible"}>
+        <ExpList content={resData?.content} />
+      </article>
+      <Paging
+        pageState={pageState}
+        setPageState={setPageState}
+        totalPages={resData?.totalPages}
+      />
+    </section>
   );
 }
