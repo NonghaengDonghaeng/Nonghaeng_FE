@@ -17,3 +17,7 @@
 <input type="checkbox" checked> 숙박상세 후기 컴포넌트 제작 및 추가
 
 ### 해야할 것
+
+<input type="checkbox" > Header에서 로그인 관련 로직 제거
+
+<input type="checkbox" > AdminRouter에 모든 로그인 로직 추가, 앞으로는 AdminRouter에서 모든 로그인 상태관리 로직 관리

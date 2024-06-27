@@ -4,19 +4,17 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 import { headerMenuHref } from "@/model/href/href";
-import store from "@/redux/loginStateStore";
-import { verifyJwtApi } from "@/app/(_route)/acount/(api)/loginApi";
 import SearchBasic from "@/common/components/SearchBasic/SearchBasic";
 import Menu from "@/common/components/Menu/Menu";
 import { useMediaQuery } from "react-responsive";
 import { Nonghaeng_Ic, Sitemap_gray_Ic } from "icon/index";
-import guestLoginApi from "@/app/(api)/guestLoginApi";
 
+type PropsType = { loginState: boolean };
 type SubMenuType = { href: string; title: string };
 
-function Header() {
+function Header({ loginState }: PropsType) {
   const pathName = usePathname();
-  const [loginState, setLoginState] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
   const [isClick, setIsClick] = useState(false);
 
   const isMobile = useMediaQuery({
@@ -27,37 +25,14 @@ function Header() {
   });
   useEffect(() => setIsClick(false), [isMobile, isDesktop, pathName]);
 
-  // 로그인 상태관리
   useEffect(() => {
-    // jwt가 없는경우 게스트로 로그인시킴
-    if (!localStorage.getItem("jwt")) {
-      // 게스트 로그인, 이미 로그인 중이라면 return이 오지 않음
-      guestLoginApi().then((res) => {
-        if (res?.status == 200) {
-          store.dispatch({ type: "GUEST" });
-          const jwtToken = res.headers.authorization;
-          localStorage.setItem("jwt", "Bearer " + jwtToken);
-        }
-      });
-    }
-    //jwt 검증
-    else {
-      verifyJwtApi().then((res) => {
-        if (res?.data.role == "USER") {
-          setLoginState(true);
-          store.dispatch({ type: "USER" });
-        } else {
-          store.dispatch({ type: "GUEST" });
-          setLoginState(false);
-        }
-      });
-    }
-  }, [pathName]);
+    setIsLogin(loginState);
+  }, [loginState]);
 
   function logout() {
     localStorage.removeItem("jwt");
-    setLoginState(false);
-    store.dispatch({ type: "LOGOUT" });
+    setIsLogin(false);
+    window.location.replace("/");
   }
 
   const [isHover, setIsHover] = useState(false);
@@ -93,7 +68,7 @@ function Header() {
           </ul>
           <SearchBasic />
           <div>
-            {loginState ? (
+            {isLogin ? (
               <button onClick={logout}>로그아웃</button>
             ) : (
               <Link href="/acount/login">로그인</Link>

@@ -6,6 +6,7 @@ import Header from "./(components)/Header/Header";
 import Footer from "./(components)/Footer/Footer";
 import Loading from "./(components)/Loading/Loading";
 import "./globals.css";
+import AdminProvider from "@/common/components/AdminPropvier/AdminProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,9 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ScollTop />
-        <Header />
-        <Suspense fallback={<Loading />}>{children}</Suspense>
-        <Footer />
+        <AdminProvider>{children}</AdminProvider>
       </body>
     </html>
   );
