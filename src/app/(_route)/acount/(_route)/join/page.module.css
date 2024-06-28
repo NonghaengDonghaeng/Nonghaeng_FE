@@ -1,3 +1,39 @@
+@screen pc {
+  .join_main {
+    @apply my-[100px] flex justify-between;
+  }
+  .join_main > article {
+    @apply w-[48%] text-center;
+  }
+  .join_main > article > h1 {
+    @apply text-[24px];
+  }
+  .join_main > article > h2 {
+    @apply my-[40px];
+  }
+  .join_main > article > a {
+    @apply w-full h-[60px] items-center flex justify-center rounded-md text-white bg-stone/80;
+  }
+}
+
+@screen tablet {
+  .join_main {
+    @apply my-[100px] flex justify-between;
+  }
+  .join_main > article {
+    @apply w-[48%] text-center;
+  }
+  .join_main > article > h1 {
+    @apply text-[24px];
+  }
+  .join_main > article > h2 {
+    @apply my-[40px];
+  }
+  .join_main > article > a {
+    @apply w-full h-[60px] items-center flex justify-center rounded-md text-white bg-stone/80;
+  }
+}
+
 @screen mobile {
   .join_main {
     @apply mt-[80px] mb-[40px] text-stone font-[500];
@@ -15,5 +51,3 @@
     @apply w-full h-[60px] items-center flex justify-center rounded-md text-white bg-stone/80;
   }
 }
-
-

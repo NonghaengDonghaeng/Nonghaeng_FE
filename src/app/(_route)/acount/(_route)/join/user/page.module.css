@@ -1,28 +1,92 @@
+@screen pc {
+  .join_user {
+    @apply w-full my-[100px] flex justify-between;
+  }
+  .join_user > article {
+    @apply w-[48%];
+  }
+  .join_user > article > h1 {
+    @apply text-[24px] text-center;
+  }
+  .join_user > article > hr {
+    @apply my-[20px] border-[1px] border-stone/40;
+  }
+  .join_user > article > form > div {
+  }
+  .join_user > article > form > div > div {
+    @apply my-[20px] flex justify-between;
+  }
+  .join_user > article > form > div > div > label {
+    @apply min-w-[120px] text-[18px];
+  }
+  .join_user > article > form > div > div > input {
+    @apply w-full px-[4px] border-[1px] rounded-md;
+  }
+  .join_user > article > form > div > div > select {
+    @apply w-full border-[1px] rounded-md;
+  }
+  .join_user > article > form > button {
+    @apply w-full h-[60px] bg-green text-white rounded-md;
+  }
+}
+
+@screen tablet {
+  .join_user {
+    @apply w-full my-[100px] flex justify-between;
+  }
+  .join_user > article {
+    @apply w-[48%];
+  }
+  .join_user > article > h1 {
+    @apply text-[24px] text-center;
+  }
+  .join_user > article > hr {
+    @apply my-[20px] border-[1px] border-stone/40;
+  }
+  .join_user > article > form > div {
+  }
+  .join_user > article > form > div > div {
+    @apply my-[20px] flex justify-between;
+  }
+  .join_user > article > form > div > div > label {
+    @apply min-w-[120px] text-[18px];
+  }
+  .join_user > article > form > div > div > input {
+    @apply w-full px-[4px] border-[1px] rounded-md;
+  }
+  .join_user > article > form > div > div > select {
+    @apply w-full border-[1px] rounded-md;
+  }
+  .join_user > article > form > button {
+    @apply w-full h-[60px] bg-green text-white rounded-md;
+  }
+}
+
 @screen mobile {
   .join_user {
     @apply w-full mt-[80px] text-stone font-[500];
   }
-  .join_user > h1 {
+  .join_user > article > h1 {
     @apply text-[24px] text-center;
   }
-  .join_user > hr {
+  .join_user > article > hr {
     @apply my-[20px] border-[1px] border-stone/40;
   }
-  .join_user > form > div {
+  .join_user > article > form > div {
   }
-  .join_user > form > div > div {
+  .join_user > article > form > div > div {
     @apply my-[20px] flex justify-between;
   }
-  .join_user > form > div > div > label {
+  .join_user > article > form > div > div > label {
     @apply min-w-[120px] text-[18px];
   }
-  .join_user > form > div > div > input {
+  .join_user > article > form > div > div > input {
     @apply w-full px-[4px] border-[1px] rounded-md;
   }
-  .join_user > form > div > div > select {
-    @apply w-[70%] border-[1px] rounded-md;
+  .join_user > article > form > div > div > select {
+    @apply w-full border-[1px] rounded-md;
   }
-  .join_user > form > button {
+  .join_user > article > form > button {
     @apply w-full h-[60px] bg-green text-white rounded-md;
   }
 }

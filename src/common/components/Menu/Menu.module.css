@@ -14,7 +14,7 @@
     @apply h-0;
   }
   .menu {
-    @apply w-[240px] absolute overflow-hidden duration-500 rounded-b-md right-0 top-0 mt-[80px] z-[50] text-white bg-orange/80;
+    @apply w-[300px] fixed overflow-hidden duration-500 rounded-b-md right-0 top-0 mt-[80px] z-[50] text-white bg-orange/80;
   }
   .menu > div {
     @apply w-full;

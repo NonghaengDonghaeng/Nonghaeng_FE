@@ -1,41 +1,101 @@
-@screen mobile{
-.join_seller {
-  @apply w-[70%] mt-[80px] mx-auto mb-[40px] text-stone font-[500];
+@screen pc {
+  .join_seller {
+    @apply w-full my-[100px] flex justify-between;
+  }
+  .join_seller > article {
+    @apply w-[48%];
+  }
+  .join_seller > article > h1 {
+    @apply text-[24px] text-center;
+  }
+  .join_seller > article > hr {
+    @apply my-[20px] border-[1px] border-stone/40;
+  }
+  .join_seller > article > form > div {
+  }
+  .join_seller > article > form > div > span {
+    @apply text-[20px] flex justify-center;
+  }
+  .join_seller > article > form > div > div {
+    @apply my-[20px] flex justify-between;
+  }
+  .join_seller > article > form > div > div > label {
+    @apply text-[18px];
+  }
+  .join_seller > article > form > div > div > input {
+    @apply w-[70%] px-[4px] border-[1px] rounded-md;
+  }
+  .join_seller > article > form > div > div > select {
+    @apply w-[70%] border-[1px] rounded-md;
+  }
+  .join_seller > article > form > button {
+    @apply w-full h-[60px] bg-green text-white rounded-md;
+  }
 }
 
-.join_seller > h1 {
-  @apply text-[24px] text-center;
+@screen tablet {
+  .join_seller {
+    @apply w-full my-[100px] flex justify-between;
+  }
+  .join_seller > article {
+    @apply w-[48%];
+  }
+  .join_seller > article > h1 {
+    @apply text-[24px] text-center;
+  }
+  .join_seller > article > hr {
+    @apply my-[20px] border-[1px] border-stone/40;
+  }
+  .join_seller > article > form > div {
+  }
+  .join_seller > article > form > div > span {
+    @apply text-[20px] flex justify-center;
+  }
+  .join_seller > article > form > div > div {
+    @apply my-[20px] flex justify-between;
+  }
+  .join_seller > article > form > div > div > label {
+    @apply text-[18px];
+  }
+  .join_seller > article > form > div > div > input {
+    @apply w-[70%] px-[4px] border-[1px] rounded-md;
+  }
+  .join_seller > article > form > div > div > select {
+    @apply w-[70%] border-[1px] rounded-md;
+  }
+  .join_seller > article > form > button {
+    @apply w-full h-[60px] bg-green text-white rounded-md;
+  }
 }
 
-.join_seller > hr {
-  @apply my-[20px] border-[1px] border-stone/40;
-}
-
-.join_seller > form > div {
-}
-
-.join_seller > form > div > span {
-  @apply text-[20px] flex justify-center;
-}
-
-.join_seller > form > div > div {
-  @apply my-[20px] flex justify-between;
-}
-
-.join_seller > form > div > div > label {
-  @apply text-[18px];
-}
-
-.join_seller > form > div > div > input {
-  @apply w-[70%] px-[4px] border-[1px] rounded-md;
-}
-
-.join_seller > form > div > div > select {
-  @apply w-[70%] border-[1px] rounded-md;
-}
-
-.join_seller > form > button {
-  @apply w-full h-[60px] bg-green text-white rounded-md;
-}
-
+@screen mobile {
+  .join_seller {
+    @apply w-[70%] mt-[80px] mx-auto mb-[40px] text-stone font-[500];
+  }
+  .join_seller > article > h1 {
+    @apply text-[24px] text-center;
+  }
+  .join_seller > article > hr {
+    @apply my-[20px] border-[1px] border-stone/40;
+  }
+  .join_seller > article > form > div {
+  }
+  .join_seller > article > form > div > span {
+    @apply text-[20px] flex justify-center;
+  }
+  .join_seller > article > form > div > div {
+    @apply my-[20px] flex justify-between;
+  }
+  .join_seller > article > form > div > div > label {
+    @apply text-[18px];
+  }
+  .join_seller > article > form > div > div > input {
+    @apply w-[70%] px-[4px] border-[1px] rounded-md;
+  }
+  .join_seller > article > form > div > div > select {
+    @apply w-[70%] border-[1px] rounded-md;
+  }
+  .join_seller > article > form > button {
+    @apply w-full h-[60px] bg-green text-white rounded-md;
+  }
 }

@@ -1,6 +1,6 @@
 @screen mobile {
   .login {
-    @apply mt-[80px] mb-[80px];
+    @apply my-[80px];
   }
   .login > article {
     @apply mt-[40px];
@@ -34,10 +34,10 @@
 /* 데스크탑 */
 @media (min-width: 768px) {
   .login {
-    @apply my-[60px] flex justify-between;
+    @apply my-[100px] flex justify-between;
   }
   .login > article {
-    @apply w-[48%] mt-[40px];
+    @apply w-[48%];
   }
   .login > article > h1 {
     @apply text-[20px] font-[600] flex justify-center;
@@ -70,4 +70,3 @@
     @apply my-[40px] border-stone/40;
   }
 }
-
