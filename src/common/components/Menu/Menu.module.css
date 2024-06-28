@@ -1,14 +1,20 @@
 /* 데스크탑 */
 @screen pc {
   .menu {
-    @apply w-0 h-0;
+    @apply w-0 h-0 hidden;
   }
 }
 
 /* 테블릿 */
 @screen tablet {
+  .menu_on {
+    @apply h-[500px];
+  }
+  .menu_off {
+    @apply h-0;
+  }
   .menu {
-    @apply fixed w-[240px] h-[500px] rounded-md right-0 top-0 pt-[80px] z-[50] text-white bg-orange/80;
+    @apply w-[240px] absolute overflow-hidden duration-500 rounded-b-md right-0 top-0 mt-[80px] z-[50] text-white bg-orange/80;
   }
   .menu > div {
     @apply w-full;
@@ -35,31 +41,28 @@
 
 /* 모바일 */
 @screen mobile {
+  .menu_on {
+    @apply h-full;
+  }
+  .menu_off {
+    @apply h-0;
+  }
   .menu {
-    @apply fixed w-full left-0 h-full top-0 pt-[60px] z-[50] bg-white;
+    @apply w-full fixed overflow-hidden left-0 top-0 pt-[60px] z-[50] bg-white;
   }
   .menu > div:first-child {
     @apply hidden;
   }
   .menu > div {
-    @apply w-full;
+    @apply px-[2.5%] mb-[20px] w-full flex;
   }
   .menu > div > span {
-    @apply flex h-[60px] items-center justify-center text-[18px];
-  }
-  .menu > div > span > svg {
-    @apply ml-[10px];
+    @apply text-[18px] min-w-[100px];
   }
   .menu a:hover {
     @apply text-orange;
   }
-  .menu > div:hover > ul {
-    @apply h-[100px] duration-500;
-  }
-  .menu > div > ul {
-    @apply w-full h-0 duration-500 overflow-hidden;
-  }
   .menu > div > ul > li {
-    @apply flex justify-center text-stone/60;
+    @apply mb-[5px] text-stone/60;
   }
 }

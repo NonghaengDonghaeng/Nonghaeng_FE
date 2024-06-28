@@ -1,5 +1,5 @@
 /* 데스크탑 */
-@media screen and (min-width: 1024px) {
+@screen pc {
   .search_base > form {
     @apply w-[234px] h-[36px] shadow-md flex border rounded-full border-stone/60;
   }
@@ -12,9 +12,9 @@
 }
 
 /* 테블릿 */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@screen tablet {
   .search_base {
-    @apply w-full flex justify-center;
+    @apply w-full flex justify-center text-stone;
   }
   .search_base > form {
     @apply w-[200px] h-[36px] my-[10px] flex border rounded-md bg-white;
@@ -28,7 +28,7 @@
 }
 
 /* 모바일 */
-@media screen and (max-width: 767px) {
+@screen mobile {
   .search_base {
     @apply fixed w-full h-full top-0 pt-[60px] z-[50] bg-white;
   }

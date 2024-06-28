@@ -73,7 +73,7 @@ export default function Footer() {
           </ul>
         </div>
       </footer>
-      {isClick.menu && <Menu />}
+      {isClick.menu && <Menu isClick={isClick.menu} />}
       {isClick.search && <SearchBasic />}
     </>
   );

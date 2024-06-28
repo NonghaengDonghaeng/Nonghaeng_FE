@@ -90,7 +90,7 @@ function Header({ loginState }: PropsType) {
           ></div>
         </div>
       </header>
-      {isClick && <Menu />}
+      <Menu isClick={isClick} />
     </>
   );
 }

@@ -4,6 +4,9 @@ import { menuHref } from "@/model/href/href";
 import SearchBasic from "../SearchBasic/SearchBasic";
 import { More_Ic } from "icon/index";
 
+type PropsType = {
+  isClick: boolean;
+};
 type ItemType = {
   title: string;
   href: string;
@@ -13,7 +16,7 @@ type ItemType = {
   }[];
 };
 
-export default function Menu() {
+export default function Menu({ isClick }: PropsType) {
   const subMenuList = (item: ItemType) => (
     <ul>
       <li>
@@ -28,16 +31,15 @@ export default function Menu() {
   );
   const mainMenuList = menuHref.map((item, index) => (
     <div key={index}>
-      <span>
-        {item.title}
-        <More_Ic />
-      </span>
+      <span>{item.title}</span>
       {item.subMenu && subMenuList(item)}
     </div>
   ));
 
   return (
-    <div className={styles.menu}>
+    <div
+      className={`${styles.menu} ${isClick ? styles.menu_on : styles.menu_off}`}
+    >
       <SearchBasic />
       {mainMenuList}
     </div>
