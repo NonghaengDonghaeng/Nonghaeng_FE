@@ -1,5 +1,37 @@
-/* 데스크탑 */
-@media (min-width: 768px) {
+@screen pc {
+  .sub_list {
+    @apply w-[280px] h-[400px] p-[14px] right-0 border-[1px] overflow-scroll duration-500 border-orange rounded-md bg-white absolute;
+  }
+  .sub_list > div {
+    @apply w-full h-full overflow-scroll rounded-md;
+  }
+  .sub_list > div > p {
+    @apply text-[18px] font-[500] text-orange;
+  }
+  .sub_list > div > ul > li {
+    @apply w-full h-[100px] mt-[14px]  rounded-md cursor-pointer;
+  }
+  .sub_list > div > ul > li:hover {
+    @apply bg-orange/10;
+  }
+  .sub_list > div > ul > li > a {
+    @apply flex;
+  }
+  .sub_list > div > ul > li > a > img {
+    @apply w-[40%] rounded-md;
+  }
+  .sub_list > div > ul > li > a > div {
+    @apply w-[60%] h-[100px] p-[20px] border-[1px] border-stone/20 rounded-md;
+  }
+  .sub_list > div > ul > li > a > div > span {
+    @apply mb-[14px] block overflow-hidden text-ellipsis text-nowrap;
+  }
+  .sub_list_off {
+    @apply w-[280px] h-0 px-[14px] right-0 duration-500 rounded-md bg-white absolute;
+  }
+}
+
+@screen tablet {
   .sub_list {
     @apply w-[280px] h-[400px] p-[14px] right-0 border-[1px] overflow-scroll duration-500 border-orange rounded-md bg-white absolute;
   }

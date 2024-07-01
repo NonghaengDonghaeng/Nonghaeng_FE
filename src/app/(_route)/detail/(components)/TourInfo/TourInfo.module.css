@@ -1,0 +1,138 @@
+.on {
+  @apply bg-orange/20;
+}
+.on > span > label {
+  @apply bg-white;
+}
+
+.off > span > label {
+  @apply bg-orange/20;
+}
+
+@screen pc {
+  .tour_info {
+    @apply text-[16px] font-[400] relative;
+  }
+  .tour_info > h1 {
+    @apply my-[20px] text-[24px] font-[600] flex items-center;
+  }
+  .tour_info > h1 > span {
+    @apply ml-[14px];
+  }
+  .tour_info > h2 {
+    @apply mb-[20px];
+  }
+  .tour_info > div:nth-child(3) {
+    @apply h-[100px] p-[20px] flex justify-between border-[1px] border-stone/40 rounded-md;
+  }
+  .tour_info > div:nth-child(3) > ul > li {
+    @apply mr-[12px] inline-block items-center;
+  }
+  .tour_info > div:nth-child(3) > ul > li > svg {
+    @apply mr-[6px] inline-block;
+  }
+  .tour_info > div:nth-child(3) > div {
+    @apply w-[200px] flex;
+  }
+  .tour_info > div:nth-child(3) > div > button {
+    @apply w-[50%] px-[12px] h-full flex items-center rounded-md;
+  }
+  .tour_info > div:nth-child(3) > div > button:hover {
+    @apply bg-orange/20;
+  }
+
+  .tour_info > div:nth-child(3) > div > button > span {
+    @apply w-full text-orange;
+  }
+  .tour_info > div:nth-child(3) > div > button > span > label {
+    @apply block rounded-full mx-[12px] text-[12px];
+  }
+  .tour_info > div:nth-child(3) > div > button:hover > span > label {
+    @apply bg-white;
+  }
+}
+
+@screen tablet {
+  .tour_info {
+    @apply text-[16px] font-[400] relative;
+  }
+  .tour_info > h1 {
+    @apply my-[20px] text-[24px] font-[600] flex items-center;
+  }
+  .tour_info > h1 > span {
+    @apply ml-[14px];
+  }
+  .tour_info > h2 {
+    @apply mb-[20px];
+  }
+  .tour_info > div:nth-child(3) {
+    @apply h-[100px] p-[20px] flex justify-between border-[1px] border-stone/40 rounded-md;
+  }
+  .tour_info > div:nth-child(3) > ul > li {
+    @apply mr-[12px] inline-block items-center;
+  }
+  .tour_info > div:nth-child(3) > ul > li > svg {
+    @apply mr-[6px] inline-block;
+  }
+  .tour_info > div:nth-child(3) > div {
+    @apply w-[200px] flex;
+  }
+  .tour_info > div:nth-child(3) > div > button {
+    @apply w-[100px] px-[12px] h-full flex items-center rounded-md;
+  }
+  .tour_info > div:nth-child(3) > div > button:hover {
+    @apply bg-orange/20;
+  }
+
+  .tour_info > div:nth-child(3) > div > button > span {
+    @apply w-full text-orange;
+  }
+  .tour_info > div:nth-child(3) > div > button > span > label {
+    @apply block rounded-full mx-[12px] text-[12px];
+  }
+  .tour_info > div:nth-child(3) > div > button:hover > span > label {
+    @apply bg-white;
+  }
+}
+
+@screen mobile {
+  .tour_info {
+    @apply text-[16px] font-[400] relative;
+  }
+  .tour_info > h1 {
+    @apply my-[20px] text-[24px] font-[600] flex items-center;
+  }
+  .tour_info > h1 > span {
+    @apply ml-[14px];
+  }
+  .tour_info > h2 {
+    @apply mb-[20px];
+  }
+  .tour_info > div:nth-child(3) > ul {
+    @apply my-[20px] p-[20px] border-[1px] border-stone/40  rounded-md;
+  }
+  .tour_info > div:nth-child(3) > ul > li {
+    @apply mr-[12px] inline-block items-center;
+  }
+  .tour_info > div:nth-child(3) > ul > li > svg {
+    @apply mr-[6px] inline-block;
+  }
+  .tour_info > div:nth-child(3) > div {
+    @apply h-[100px] p-[20px] flex justify-between border-[1px] border-stone/40 rounded-md;
+  }
+  .tour_info > div:nth-child(3) > div > button {
+    @apply w-[100px] px-[12px] h-full flex items-center rounded-md;
+  }
+  .tour_info > div:nth-child(3) > div > button:hover {
+    @apply bg-orange/20;
+  }
+  .tour_info > div:nth-child(3) > div > button > span {
+    @apply w-full text-orange;
+  }
+  .tour_info > div:nth-child(3) > div > button > span > label {
+    @apply block rounded-full mx-[12px] text-[12px];
+  }
+  .tour_info > div:nth-child(3) > div > button:hover > span > label {
+    @apply bg-white;
+  }
+}

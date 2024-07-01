@@ -21,3 +21,11 @@
 <input type="checkbox" > Header에서 로그인 관련 로직 제거
 
 <input type="checkbox" > AdminRouter에 모든 로그인 로직 추가, 앞으로는 AdminRouter에서 모든 로그인 상태관리 로직 관리
+
+## 2024-06-30
+
+### 오늘할일
+
+- 관리자페이지 구성하기: 관리자 마이페이지(내체험, 내 관광, 예약신청 ..각 컴포넌트로) 구성하기
+
+- 관광, 체험, 숙박 기본정보 md ReactMarkDown을 통해 렌더링. md를 html태그로 변환후 각 태그에 css를 적용해야함, 이때 css는 하나하나 집적 적용함

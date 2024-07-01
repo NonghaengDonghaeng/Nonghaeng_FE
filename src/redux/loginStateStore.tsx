@@ -1,15 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-function updateLoginReducer(state = "guest", action: { type: string }) {
+function updateLoginReducer(
+  loginState = { state: false, role: "GUEST_USER" },
+  action: { type: string }
+) {
   switch (action.type) {
-    case "GUEST":
-      return (state = "guest");
+    case "GUEST_USER":
+      return (loginState = { state: false, role: "GUEST_USER" });
     case "USER":
-      return (state = "user");
+      return (loginState = { state: true, role: "USER" });
     case "SELLER":
-      return (state = "seller");
+      return (loginState = { state: true, role: "SELLER" });
   }
-  return state;
+  return loginState;
 }
 
 const store = configureStore({ reducer: updateLoginReducer });

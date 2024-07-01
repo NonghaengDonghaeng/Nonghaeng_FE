@@ -1,7 +1,7 @@
 "use client";
 import reserveResData from "@/db/reserve/reserveListData.json";
 import { useEffect, useState } from "react";
-import { myReserveDataType } from "../../(types)/myReserveDataType";
+import { myReserveDataType } from "@/app/(_route)/mypage/(types)/myReserveDataType";
 
 export default function Page() {
   // const [resData, setResData] = useState<myReserveDataType | undefined>();

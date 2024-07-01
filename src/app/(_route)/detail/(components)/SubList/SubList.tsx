@@ -7,7 +7,7 @@ import {
 } from "../../(types)/tourDetailDataType";
 
 type SubListPropsType = {
-  isClick: { exp: boolean; lodg: boolean };
+  isClick: { exp: boolean; room: boolean };
   expSubListData: ExpSummaryListType | undefined;
   roomSubListData: RoomSummaryListType | undefined;
 };
@@ -43,18 +43,18 @@ export default function SubList({
   return (
     <div
       className={`${
-        isClick.exp || isClick.lodg ? styles.sub_list : styles.sub_list_off
+        isClick.exp || isClick.room ? styles.sub_list : styles.sub_list_off
       }`}
     >
       <div>
         <p>
           {isClick.exp && "농촌체험"}
-          {isClick.lodg && "농촌숙박"}
+          {isClick.room && "농촌숙박"}
         </p>
 
         <ul>
           {isClick.exp && expList}
-          {isClick.lodg && lodgList}
+          {isClick.room && lodgList}
         </ul>
       </div>
     </div>

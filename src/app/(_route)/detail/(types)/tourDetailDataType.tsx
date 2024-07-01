@@ -20,7 +20,7 @@ export type tourDetailDataType = {
   // grade: number;
   // comment_count: number;
   // tel: string;
-  // address: string;
+  address: string;
   homepage_url: string;
   introduction: string;
   one_line_intro: string;

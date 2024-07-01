@@ -28,7 +28,7 @@ export default function ExpInfo({ expData }: PropsType) {
         </span>
       </h1>
       <hr />
-      <h2>{expData?.detail_introduction}</h2>
+      <h2>{expData?.summary}</h2>
       <div>
         <p>
           <Person_orange_Ic />

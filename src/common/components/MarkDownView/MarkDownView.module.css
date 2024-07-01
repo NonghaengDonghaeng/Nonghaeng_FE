@@ -1,0 +1,19 @@
+.markdownview h1 {
+  @apply text-[24px] my-[20px] font-[600];
+}
+
+.markdownview h2 {
+  @apply text-[22px] my-[20px];
+}
+
+.markdownview h3 {
+  @apply text-[20px] my-[20px];
+}
+
+.markdownview hr {
+  @apply border-[1px] my-[20px];
+}
+
+.markdownview img {
+  @apply w-full my-[20px] object-cover rounded-md;
+}

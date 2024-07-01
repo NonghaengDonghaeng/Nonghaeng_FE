@@ -68,6 +68,14 @@ export const mypageHref = {
     { href: "/mypage/edit", title: "회원정보수정" },
   ],
 };
+export const sellerPageHref = {
+  mainMenu: { title: "판매자페이지", href: "/sellerpage" },
+  subMenu: [
+    { href: "/sellerpage/tour", title: "관광등록" },
+    { href: "/sellerpage/exp", title: "체험등록" },
+    { href: "/sellerpage/edit", title: "회원정보수정" },
+  ],
+};
 export const acountHref = {
   mainMenu: { title: "마이페이지", href: "/acount/login" },
   subMenu: [
@@ -80,14 +88,6 @@ export const acountHref = {
 export const sitemapHref = {
   mainMenu: { title: "사이트맵", href: "/sitemap" },
   subMenu: [],
-};
-export const adminHref = {
-  mainMenu: { title: "관리자 페이지", href: "/admin" },
-  subMenu: [
-    { href: "/admin/tour", title: "관광등록" },
-    { href: "/admin/experience", title: "체험등록" },
-    { href: "/admin/room", title: "숙소등록" },
-  ],
 };
 
 // footer href

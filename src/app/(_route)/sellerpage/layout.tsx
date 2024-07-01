@@ -1,19 +1,19 @@
 import { Metadata } from "next";
 import Nav from "@/common/components/Nav/Nav";
-import { adminHref, mypageHref } from "@/model/href/href";
+import { sellerPageHref } from "@/model/href/href";
 
 export const metadata: Metadata = {
-  title: "농행동행 | 관리자페이지",
+  title: "농행동행 | 판매자페이지",
 };
 
-export default function AdminLayout({
+export default function sellerPageLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <>
-      <Nav href={adminHref} />
+      <Nav href={sellerPageHref} />
       <main id="main">{children}</main>
     </>
   );

@@ -9,12 +9,17 @@ import Menu from "@/common/components/Menu/Menu";
 import { useMediaQuery } from "react-responsive";
 import { Nonghaeng_Ic, Sitemap_gray_Ic } from "icon/index";
 
-type PropsType = { loginState: boolean };
+type PropsType = {
+  loginState: {
+    state: boolean;
+    href: string;
+    role: string;
+  };
+};
 type SubMenuType = { href: string; title: string };
 
 function Header({ loginState }: PropsType) {
   const pathName = usePathname();
-  const [isLogin, setIsLogin] = useState(false);
   const [isClick, setIsClick] = useState(false);
 
   const isMobile = useMediaQuery({
@@ -25,13 +30,8 @@ function Header({ loginState }: PropsType) {
   });
   useEffect(() => setIsClick(false), [isMobile, isDesktop, pathName]);
 
-  useEffect(() => {
-    setIsLogin(loginState);
-  }, [loginState]);
-
   function logout() {
     localStorage.removeItem("jwt");
-    setIsLogin(false);
     window.location.replace("/");
   }
 
@@ -68,14 +68,12 @@ function Header({ loginState }: PropsType) {
           </ul>
           <SearchBasic />
           <div>
-            {isLogin ? (
+            {loginState.state ? (
               <button onClick={logout}>로그아웃</button>
             ) : (
               <Link href="/acount/login">로그인</Link>
             )}
-            <Link href={loginState ? "/mypage" : "/acount/login"}>
-              마이페이지
-            </Link>
+            <Link href={loginState.href}>마이페이지</Link>
             <Link href="/sitemap">
               <Sitemap_gray_Ic />
             </Link>
