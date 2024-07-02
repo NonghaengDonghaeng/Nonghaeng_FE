@@ -1,0 +1,6 @@
+.title {
+  @apply w-full h-[36px] items-center text-green;
+}
+.title > h1 {
+  @apply text-[24px] font-[600];
+}

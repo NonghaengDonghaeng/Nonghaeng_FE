@@ -1,0 +1,5 @@
+@screen pc {
+  .tour_regist > hr {
+    @apply mb-[20px] border-[1px] border-stone/80;
+  }
+}
