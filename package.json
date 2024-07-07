@@ -23,7 +23,7 @@
     "canary": "^0.2.5",
     "cookie": "^0.6.0",
     "cookies": "^0.9.1",
-    "cookies-next": "^4.1.1",
+    "cookies-next": "^4.2.1",
     "date-fns": "^3.6.0",
     "dayjs": "^1.11.10",
     "install": "^0.13.0",
