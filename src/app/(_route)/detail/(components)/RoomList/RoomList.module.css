@@ -27,47 +27,49 @@
     @apply bg-orange;
   }
 
-  .off {
-    @apply hidden;
+  .room_list > ul {
+    @apply z-0
   }
-  .on {
-    @apply absolute;
+  .room_list > ul > li:hover {
+    @apply scale-105 duration-300;
   }
-
-  .room_list > ul:nth-child(3) > li > a {
+  .room_list > ul > li {
+    @apply duration-300;
+  }
+  .room_list > ul > li > a {
     @apply w-full h-[240px] my-[20px] flex border-stone/20;
   }
-  .room_list > ul:nth-child(3) > li > a > img {
+  .room_list > ul > li > a > img {
     @apply w-[40%] rounded-md;
   }
-  .room_list > ul:nth-child(3) > li > a > div {
+  .room_list > ul > li > a > div {
     @apply w-[60%] rounded-md border-[1px] border-stone/20 p-[20px];
   }
-  .room_list > ul:nth-child(3) > li > a > div > h1 {
+  .room_list > ul > li > a > div > h1 {
     @apply flex items-center text-[20px] overflow-hidden text-ellipsis text-nowrap text-orange;
   }
-  .room_list > ul:nth-child(3) > li > a > div > h1 > span {
+  .room_list > ul > li > a > div > h1 > span {
     @apply ml-[20px] flex items-center text-[14px] font-[400];
   }
-  .room_list > ul:nth-child(3) > li > a > div > h1 > span > svg {
+  .room_list > ul > li > a > div > h1 > span > svg {
     @apply mr-[6px];
   }
-  .room_list > ul:nth-child(3) > li > a > div > P {
+  .room_list > ul > li > a > div > P {
     @apply my-[10px] text-[20px];
   }
-  .room_list > ul:nth-child(3) > li > a > div > div {
+  .room_list > ul > li > a > div > div {
     @apply w-full h-[108px] rounded-md px-[18px] py-[2px] bg-stone/5;
   }
-  .room_list > ul:nth-child(3) > li > a > div > div > P {
+  .room_list > ul > li > a > div > div > P {
     @apply my-[8px] text-[14px] text-stone/80 font-[400];
   }
-  .room_list > ul:nth-child(3) > li > a > div > div > P > label {
+  .room_list > ul > li > a > div > div > P > label {
     @apply text-[16px] text-stone font-[500] mr-[8px];
   }
 }
 
 /* 모바일 */
-@media (max-width: 767px) {
+@screen mobile {
   .room_list > div:first-child {
     @apply w-full;
   }
@@ -99,13 +101,11 @@
     @apply bg-orange;
   }
 
-  .off {
-    @apply hidden;
-  }
-  .on {
-    @apply absolute;
-  }
 
+
+  .room_list > ul {
+    @apply z-0
+  }
   .room_list > ul > li {
     @apply w-full h-[160px] my-[10px];
   }

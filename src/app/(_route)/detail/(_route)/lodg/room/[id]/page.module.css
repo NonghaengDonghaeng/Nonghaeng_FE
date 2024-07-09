@@ -1,7 +1,7 @@
 /* 데스크탑 */
 @screen pc {
   .room_detail > article:nth-child(1) {
-    @apply w-full mt-[80px]  text-stone font-[500] flex justify-between;
+    @apply w-full mt-[80px] text-stone font-[500] flex justify-between;
   }
   .room_detail > article:nth-child(1) > div:first-child {
     @apply w-[50%] h-full;
@@ -53,6 +53,54 @@
   }
 }
 
+
+@screen tablet {
+  .room_detail > article:nth-child(1) {
+    @apply w-full mt-[80px];
+  }
+  .room_detail > article:nth-child(1) > div:last-child {
+    @apply w-full h-full;
+  }
+  .room_detail > article:nth-child(1) > div:last-child > div:nth-child(2) {
+    @apply flex;
+  }
+  .room_detail
+  > article:nth-child(1)
+  > div:last-child
+  > div:nth-child(2)
+  > div:nth-child(2) {
+    @apply ml-[20px];
+  }
+  .room_detail
+  > article:nth-child(1)
+  > div:last-child
+  > div:nth-child(2)
+  > div {
+    @apply flex items-center;
+  }
+  .room_detail
+  > article:nth-child(1)
+  > div:last-child
+  > div:nth-child(2)
+  > div
+  > svg {
+    @apply mr-[6px];
+  }
+  .room_detail > article:nth-child(1) > div:last-child > div:nth-child(3) {
+    @apply flex items-center;
+  }
+  .room_detail
+  > article:nth-child(1)
+  > div:last-child
+  > div:nth-child(3)
+  > svg {
+    @apply mr-[6px];
+  }
+  .room_detail > article:nth-child(1) > div:last-child > div:nth-child(3) > div {
+    @apply w-full h-[30px] flex justify-center items-center border-[1px]  border-stone/40 rounded-xl cursor-pointer text-[14px] font-[400];
+  }
+}
+
 /* 모바일 */
 @screen mobile {
   .room_detail > article:nth-child(1) {
@@ -96,11 +144,7 @@
     > svg {
     @apply mr-[6px];
   }
-  .room_detail
-    > article:nth-child(1)
-    > div:last-child
-    > div:nth-child(3)
-    > div {
+  .room_detail > article:nth-child(1) > div:last-child > div:nth-child(3) > div {
     @apply w-full h-[30px] flex justify-center items-center border-[1px]  border-stone/40 rounded-xl cursor-pointer text-[14px] font-[400];
   }
 }

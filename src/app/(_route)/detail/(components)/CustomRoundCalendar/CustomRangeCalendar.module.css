@@ -1,5 +1,5 @@
 .on {
-  @apply absolute;
+  @apply absolute z-[10];
 }
 .off {
   @apply hidden;

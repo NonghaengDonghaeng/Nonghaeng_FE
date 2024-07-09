@@ -9,7 +9,7 @@ function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
   useEffect(() => {
     setMount(true)
-  }, [])
+  }, []);
 
   if (!isMount) {
     return null

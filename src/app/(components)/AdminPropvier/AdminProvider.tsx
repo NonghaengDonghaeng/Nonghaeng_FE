@@ -1,31 +1,21 @@
 "use client";
-import { useEffect, useState, Suspense, ReactNode } from "react";
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
-import Footer from "@/app/(components)/Footer/Footer";
-import Header from "@/app/(components)/Header/Header";
-import Loading from "@/app/(components)/Loading/Loading";
-import store from "@/redux/loginStateStore";
+import {useEffect, useState, Suspense, ReactNode} from "react";
+import {useRouter} from "next/navigation";
+import {usePathname} from "next/navigation";
 import guestLoginApi from "@/common/api/guestLoginApi";
 import verifyJwtApi from "@/common/api/verifyJwtApi";
 import useStickyState from "@/hooks/useStickyState";
-import { LoginContext } from "@/hooks/useLogin";
+import {LoginContext} from "@/hooks/useLogin";
 
 interface PropsType {
   children: ReactNode;
   initialLoginState?: boolean;
 }
 
-function AdminProvider({ children, initialLoginState = false }: PropsType) {
+function AdminProvider({children, initialLoginState = false}: PropsType) {
   const router = useRouter();
   const pathName = usePathname();
   const [login, setLogin] = useStickyState(initialLoginState, "login");
-
-  // const [loginState, setLoginState] = useState({
-  //   state: false,
-  //   href: "",
-  //   role: "",
-  // });
 
   useEffect(() => {
     //jwt가 없는 경우 -> 게스트로 로그인시킴
@@ -76,7 +66,7 @@ function AdminProvider({ children, initialLoginState = false }: PropsType) {
   }, [pathName]);
 
   return (
-    <LoginContext.Provider value={{ login, setLogin }}>
+    <LoginContext.Provider value={{login, setLogin}}>
       {children}
     </LoginContext.Provider>
   );

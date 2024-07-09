@@ -20,6 +20,21 @@
   }
 }
 
+@screen tablet {
+  .lodg_detail > article:nth-child(1) {
+    @apply mt-[60px];
+  }
+  .lodg_detail > article:nth-child(1) > div:last-child > h1 {
+    @apply my-[20px] text-[24px] font-[600];
+  }
+  .lodg_detail > article:nth-child(1) > div:last-child > hr {
+    @apply hidden;
+  }
+  .lodg_detail > article:nth-child(1) > div:last-child > h2 {
+    @apply my-[20px] font-[400];
+  }
+}
+
 /* 모바일 */
 @screen mobile {
   .lodg_detail > article:nth-child(1) {

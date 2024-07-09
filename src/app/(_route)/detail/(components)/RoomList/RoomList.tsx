@@ -18,22 +18,26 @@ type RoomListPropsType = {
   roomListData: roomListDataType | undefined;
 };
 
-export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
+export default function RoomList({lodgId, roomListData}: RoomListPropsType) {
   const [isClick, setIsClick] = useState(false);
   // const [personCount, setPersonCount] = useState(1);
   const [roomCount, setRoomCount] = useState(1);
   const [check_in, setCheck_in] = useState(null);
   const [check_out, setCheck_out] = useState(null);
+
   const [resData, setResData] = useState<roomListDataType | undefined>();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     setResData(roomListData);
+    setVisible(true);
   }, [roomListData]);
 
   function getRoomList() {
     if (!check_in || !check_out) {
       alert("날짜를 선택하세요.");
     } else {
+      setVisible(false);
       getRoomListApi({
         lodgId: lodgId,
         checkIn: check_in,
@@ -41,7 +45,17 @@ export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
         // personCount: personCount,
         roomCount: roomCount,
       }).then((res) => {
-        setResData(res?.data);
+        if (res?.status == 200) {
+          setResData(res?.data);
+          setVisible(true);
+        } else {
+          setCheck_in(null)
+          setCheck_out(null)
+          setRoomCount(1);
+          setResData(roomListData)
+          setVisible(true)
+        }
+
       });
     }
   }
@@ -49,12 +63,12 @@ export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
   const roomList = resData?.map((item, index) => (
     <li key={index}>
       <Link href={`/detail/lodg/room/${item.room_id}`}>
-        <CustomImage src={item.photo_info_dto?.img_url} />
+        <CustomImage src={item.photo_info_dto?.img_url}/>
         <div>
           <h1>
             {item.room_name}
             <span>
-              <Room_orange_Ic />
+              <Room_orange_Ic/>
               {"객실수 : "}
               {item.current_num_of_room}
             </span>
@@ -91,7 +105,7 @@ export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
             {" - "}
             {check_out || "체크아웃"}
           </div>
-          <Calendar_orange_Ic />
+          <Calendar_orange_Ic/>
         </div>
         <div>
           {/* <div>
@@ -100,9 +114,9 @@ export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
             <Person_orange_Ic />
           </div> */}
           <div>
-            <ClickCount count={roomCount} setCount={setRoomCount} />
+            <ClickCount count={roomCount} setCount={setRoomCount}/>
             <label>객실수</label>
-            <Room_orange_Ic />
+            <Room_orange_Ic/>
           </div>
           <button onClick={getRoomList}>검색</button>
         </div>
@@ -113,7 +127,7 @@ export default function RoomList({ lodgId, roomListData }: RoomListPropsType) {
         isClick={isClick}
         setIsClick={setIsClick}
       />
-      <ul>{roomList}</ul>
+      <ul className={visible ? "isvisible" : "isinvisible"}>{roomList}</ul>
     </div>
   );
-}
+};

@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import styles from "./Header.module.css";
-import { headerMenuHref } from "@/model/href/href";
+import {useState, useEffect} from "react";
+import {usePathname} from "next/navigation";
+import {useLogin} from "@/hooks/useLogin";
 import SearchBasic from "@/common/components/SearchBasic/SearchBasic";
 import Menu from "@/common/components/Menu/Menu";
-import { useMediaQuery } from "react-responsive";
-import { Nonghaeng_Ic, Sitemap_gray_Ic } from "icon/index";
-import { useLogin } from "@/hooks/useLogin";
+import {useMediaQuery} from "react-responsive";
+import styles from "./Header.module.css";
+import {headerMenuHref} from "@/model/href/href";
+import {Nonghaeng_Ic, Sitemap_gray_Ic} from "icon/index";
 
 type SubMenuType = { href: string; title: string };
 
@@ -70,7 +70,7 @@ function Header() {
             ) : (
               <Link href="/acount/login">로그인</Link>
             )}
-            <Link href={login ? "/mypage" : "acount/login"}>마이페이지</Link>
+            <Link href={login ? "/mypage" : "/acount/login"}>마이페이지</Link>
             <Link href="/sitemap">
               <Sitemap_gray_Ic />
             </Link>
