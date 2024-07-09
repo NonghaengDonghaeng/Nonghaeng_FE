@@ -44,10 +44,10 @@ jobs:
 #            docker rmi $(docker images | grep "${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe" | awk '{print $3}')
 
       - name: Docker Build
-        run: docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe:latest .
+        run: docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe .
 
       - name: Docker Push
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe
 
       - name: Pull and Run
         uses: appleboy/ssh-action@master
