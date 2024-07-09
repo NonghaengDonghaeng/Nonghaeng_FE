@@ -36,19 +36,21 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe:1.1.8
+          tags: ${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          script: |
+            docker rmi $(docker images | grep "${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe" | awk '{print $3}')
 
       - name: Pull and Run
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port : ${{ SSH_PORT }}
           script: |
-            cd ~/docker-compose/nonghaeng/nonghaeng-fe
+            cd ~/docker-compose/nonghaeng/fe
             docker-compose down
             docker rmi $(docker images | grep "${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe" | awk '{print $3}')
             docker-compose up -d
