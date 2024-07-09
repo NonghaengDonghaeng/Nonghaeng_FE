@@ -48,7 +48,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          port : ${{ SSH_PORT }}
+          port : ${{ secrets.SSH_PORT }}
           script: |
             cd ~/docker-compose/nonghaeng/fe
             docker-compose down
