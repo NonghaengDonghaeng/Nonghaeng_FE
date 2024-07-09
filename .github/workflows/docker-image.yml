@@ -43,6 +43,7 @@ jobs:
 #          script: |
 #            docker rmi $(docker images | grep "${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe" | awk '{print $3}')
 
+
       - name: Docker Build
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/nonghaeng-fe .
 
