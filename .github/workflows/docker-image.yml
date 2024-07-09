@@ -17,8 +17,8 @@ jobs:
 
       - name: Make .env
         run: |
-          touch ./.env
-          echo "${{ secrets.ENV }}" >> ./.env
+            touch ./.env
+            echo "${{ secrets.ENV }}" >> ./.env
         shell: bash
 
 #      - name: Set up Docker Buildx
