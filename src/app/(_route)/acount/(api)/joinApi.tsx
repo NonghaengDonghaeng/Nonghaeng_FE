@@ -1,7 +1,7 @@
 import {userType} from "../(types)/userType";
 import {sellerType} from "../(types)/sellerType";
 import axios, {AxiosResponse} from "axios";
-import {getErrorMessage} from "@/common/utils/getErrorData";
+import {getErrorMessage} from "@/utils/getErrorData";
 
 type userPropsType = { user: userType };
 

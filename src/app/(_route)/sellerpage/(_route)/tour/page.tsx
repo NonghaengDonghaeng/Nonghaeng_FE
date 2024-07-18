@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useState } from "react";
-import Editor from "@/common/components/Editor/Editor";
-import Title from "@/common/components/Title/Title";
+import Editor from "@/components/Editor/Editor";
+import Title from "@/components/Title/Title";
 import styles from "./page.module.css";
 
 function Page() {

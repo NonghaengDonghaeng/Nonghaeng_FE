@@ -26,6 +26,8 @@ export default function Page({ params }: { params: { id: string } }) {
         setVisible(true);
       }
     });
+    // setResData(lodgDetailPageResData)
+    // setVisible(true)
   }, []);
 
   return (

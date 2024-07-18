@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Nav from "@/common/components/Nav/Nav";
-import { sellerPageHref } from "@/model/href/href";
+import Nav from "@/components/Nav/Nav"
+import { sellerPageHref } from "@/models/href";
 
 export const metadata: Metadata = {
   title: "농행동행 | 판매자페이지",

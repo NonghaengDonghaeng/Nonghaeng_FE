@@ -2,12 +2,12 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import ListTitle from "@/common/components/ListTitle/ListTitle";
-import ExpList from "@/common/components/ExpList/ExpList";
-import Paging from "@/common/components/Paging/Paging";
+import ListTitle from "@/components/ListTitle/ListTitle";
+import ExpList from "@/components/ExpList/ExpList";
+import Paging from "@/components/Paging/Paging";
 import styles from "./page.module.css";
 import { pageStateType } from "../../(types)/pageStateType";
-import { expListDatatype } from "@/common/types/expListDataType";
+import { expListDatatype } from "@/types/expListDataType";
 import { getExpListApi } from "../../(api)/getExpListApi";
 import expListPageResData from "@/db/expdata/list.json";
 

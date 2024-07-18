@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./RoomInfo.module.css";
 import Room_orange_Ic from "icon/room_orange.svg";
 import { roomDetailDataType } from "../../(types)/roomDetailDataType";
+import {RoomIc} from "public/svg";
 
 type PropsType = {
   roomData: roomDetailDataType | undefined;
@@ -18,7 +19,7 @@ export default function RoomInfo({ roomData }: PropsType) {
       <h1>
         {roomData?.room_name}
         <span>
-          <Room_orange_Ic />
+          <RoomIc />
           잔여객실 : {roomData?.current_num_of_room}
         </span>
       </h1>

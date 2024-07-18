@@ -6,7 +6,7 @@ import {
   roomContentType,
 } from "../../(types)/myReserveDataType";
 import styles from "./Reserve.module.css";
-import Paging from "@/common/components/Paging/Paging";
+import Paging from "@/components/Paging/Paging";
 
 import EditReserve from "../EditReserve/EditReserve";
 

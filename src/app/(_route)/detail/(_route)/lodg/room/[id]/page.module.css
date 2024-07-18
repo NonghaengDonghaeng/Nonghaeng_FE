@@ -32,7 +32,7 @@
     > div:nth-child(2)
     > div
     > svg {
-    @apply mr-[6px];
+    @apply mr-[6px] text-orange;
   }
   .room_detail > article:nth-child(1) > div:last-child > div:nth-child(3) {
     @apply flex items-center;
@@ -49,7 +49,7 @@
     > div:last-child
     > div:nth-child(3)
     > svg {
-    @apply mr-[6px];
+    @apply mr-[6px] text-orange;
   }
 }
 

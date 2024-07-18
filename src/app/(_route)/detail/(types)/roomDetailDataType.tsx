@@ -1,4 +1,4 @@
-import { photoInfoDtoType } from "@/common/types/photoInfoDtoType";
+import { photoInfoDtoType } from "@/types/photoInfoDtoType";
 
 export type roomDetailDataType = {
   photo_info_dto_list: photoInfoDtoType[];

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getErrorMessage } from "@/common/utils/getErrorData";
+import { getErrorMessage } from "@/utils/getErrorData";
 
 type PropsType = {
   id: string;

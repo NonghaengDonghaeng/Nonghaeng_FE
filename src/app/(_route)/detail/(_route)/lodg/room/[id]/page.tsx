@@ -1,23 +1,21 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import useMove from "@/hooks/useMove";
-import ClickCount from "@/common/components/ClickCount/ClickCount";
+import ClickCount from "@/components/ClickCount/ClickCount";
 import { CustomRangeCalendar } from "../../../../(components)/CustomRoundCalendar/CustomRangeCalendar";
 import NavDetail from "../../../../(components)/NavDetail/NavDetail";
 import styles from "./page.module.css";
-import { roomDetailDataType } from "../../../../(types)/roomDetailDataType";
-import Room_orange_Ic from "icon/room_orange.svg";
-import Person_orange_Ic from "icon/person_orange.svg";
-import Calendar_orange_Ic from "icon/calendar_orange.svg";
 import DetailImg from "../../../../(components)/DetailImg/DetailImg";
 import { getRoomDetailApi } from "../../../../(api)/getRoomDetailApi";
 import LikeAndReserve from "../../../../(components)/LikeAndReserve/LikeAndReserve";
 import RoomInfo from "../../../../(components)/RoomInfo/RoomInfo";
-import ReviewtList from "../../../../(components)/ReveiwList/ReviewList";
+import ReviewList from "../../../../(components)/ReveiwList/ReviewList";
+import { roomDetailDataType } from "../../../../(types)/roomDetailDataType";
+import roomDetailResData from "@/db/roomdata/detail.json";
+import {CalendarIc, PersonIc, RoomIc} from "public/svg";
 
 export default function Page({ params }: { params: { id: string } }) {
-  const searchParams = useSearchParams();
   const router = useRouter();
   const { element, moveElement } = useMove();
 
@@ -38,6 +36,8 @@ export default function Page({ params }: { params: { id: string } }) {
         setVisible(true);
       }
     });
+    // setResData(roomDetailResData)
+    // setVisible(true)
   }, []);
 
   function routeReservation() {
@@ -70,7 +70,7 @@ export default function Page({ params }: { params: { id: string } }) {
           <RoomInfo roomData={resData} />
           <div>
             <div>
-              <Room_orange_Ic />
+              <RoomIc />
               <ClickCount
                 count={room_count}
                 setCount={setRoom_count}
@@ -78,12 +78,12 @@ export default function Page({ params }: { params: { id: string } }) {
               />
             </div>
             <div>
-              <Person_orange_Ic />
+              <PersonIc />
               <ClickCount count={person_count} setCount={setPerson_count} />
             </div>
           </div>
           <div>
-            <Calendar_orange_Ic />
+            <CalendarIc />
             <div onClick={() => setIsClick(!isClick)}>
               {check_in || "체크인"}
               {" - "}
@@ -118,7 +118,7 @@ export default function Page({ params }: { params: { id: string } }) {
             title={["기본정보", "숙박후기", "숙박문의"]}
             nowRef={1}
           />
-          <ReviewtList id={roomId} type="room" />
+          <ReviewList id={roomId} type="room" />
         </div>
         <div ref={element[2]}>
           <NavDetail

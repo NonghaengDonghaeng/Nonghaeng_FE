@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
 import styles from "./Footer.module.css";
-import { footerHref } from "@/model/href/href";
-import { Home_Ic, Menu_Ic, Search_Ic, Person_Ic, Back_Ic } from "icon/index";
+import { footerHref } from "@/models/href";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import Menu from "@/common/components/Menu/Menu";
-import SearchBasic from "@/common/components/SearchBasic/SearchBasic";
+import Menu from "@/components/Menu/Menu"
+import SearchBasic from "@/components/SearchBasic/SearchBasic";
+import {SearchIc, MoreLeftIc, HomeIc, MenuIc, PersonIc} from "public/svg";
 
 export default function Footer() {
   const pathName = usePathname();
@@ -50,25 +50,25 @@ export default function Footer() {
                 setIsClick({ ...isClick, menu: !isClick.menu, search: false })
               }
             >
-              <Menu_Ic />
+              <MenuIc />
             </li>
             <li
               onClick={() =>
                 setIsClick({ ...isClick, search: !isClick.search, menu: false })
               }
             >
-              <Search_Ic />
+              <SearchIc />
             </li>
             <li onClick={() => window.location.replace("/")}>
-              <Home_Ic />
+              <HomeIc />
             </li>
             <li>
               <Link href="/mypage">
-                <Person_Ic />
+                <PersonIc />
               </Link>
             </li>
             <li onClick={routeBack}>
-              <Back_Ic />
+              <MoreLeftIc />
             </li>
           </ul>
         </div>

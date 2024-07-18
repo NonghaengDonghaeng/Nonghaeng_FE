@@ -1,4 +1,4 @@
-import { getErrorMessage } from "@/common/utils/getErrorData";
+import { getErrorMessage } from "@/utils/getErrorData";
 import axios from "axios";
 
 const getNoticeListApi = async () => {

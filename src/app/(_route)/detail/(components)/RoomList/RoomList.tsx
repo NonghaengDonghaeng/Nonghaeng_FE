@@ -1,16 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import CustomImage from "@/common/components/CustomImage/CustomImage";
+import CustomImage from "@/components/CustomImage/CustomImage";
 import { CustomRangeCalendar } from "../CustomRoundCalendar/CustomRangeCalendar";
-import ClickCount from "@/common/components/ClickCount/ClickCount";
+import ClickCount from "@/components/ClickCount/ClickCount";
 import styles from "./RoomList.module.css";
 import { roomListDataType } from "../../(types)/lodgDetailDataType";
-import Room_orange_Ic from "icon/room_orange.svg";
-import Calendar_orange_Ic from "icon/calendar_orange.svg";
-import Person_orange_Ic from "icon/person_orange.svg";
 import roomListResData from "@/db/roomdata/list.json";
 import { getRoomListApi } from "../../(api)/getRoomListApi";
+import {CalendarIc, RoomIc} from "public/svg";
 
 // RoomList -----------------------------------------------------
 type RoomListPropsType = {
@@ -68,7 +66,7 @@ export default function RoomList({lodgId, roomListData}: RoomListPropsType) {
           <h1>
             {item.room_name}
             <span>
-              <Room_orange_Ic/>
+              <RoomIc/>
               {"객실수 : "}
               {item.current_num_of_room}
             </span>
@@ -105,7 +103,7 @@ export default function RoomList({lodgId, roomListData}: RoomListPropsType) {
             {" - "}
             {check_out || "체크아웃"}
           </div>
-          <Calendar_orange_Ic/>
+          <CalendarIc/>
         </div>
         <div>
           {/* <div>
@@ -116,7 +114,7 @@ export default function RoomList({lodgId, roomListData}: RoomListPropsType) {
           <div>
             <ClickCount count={roomCount} setCount={setRoomCount}/>
             <label>객실수</label>
-            <Room_orange_Ic/>
+            <RoomIc/>
           </div>
           <button onClick={getRoomList}>검색</button>
         </div>

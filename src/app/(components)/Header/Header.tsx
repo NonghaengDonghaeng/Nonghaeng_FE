@@ -3,12 +3,12 @@ import Link from "next/link";
 import {useState, useEffect} from "react";
 import {usePathname} from "next/navigation";
 import {useLogin} from "@/hooks/useLogin";
-import SearchBasic from "@/common/components/SearchBasic/SearchBasic";
-import Menu from "@/common/components/Menu/Menu";
+import SearchBasic from "@/components/SearchBasic/SearchBasic";
+import Menu from "@/components/Menu/Menu";
 import {useMediaQuery} from "react-responsive";
 import styles from "./Header.module.css";
-import {headerMenuHref} from "@/model/href/href";
-import {Nonghaeng_Ic, Sitemap_gray_Ic} from "icon/index";
+import {headerMenuHref} from "@/models/href";
+import {MenuIc, NongHaengIc} from "public/svg";
 
 type SubMenuType = { href: string; title: string };
 
@@ -55,7 +55,7 @@ function Header() {
       <header id="header">
         <div className={styles.header_inner}>
           <Link href="/">
-            <Nonghaeng_Ic />
+            <NongHaengIc />
           </Link>
           <ul
             onMouseOver={() => setIsHover(true)}
@@ -72,11 +72,11 @@ function Header() {
             )}
             <Link href={login ? "/mypage" : "/acount/login"}>마이페이지</Link>
             <Link href="/sitemap">
-              <Sitemap_gray_Ic />
+              <MenuIc />
             </Link>
           </div>
           <button onClick={() => setIsClick(!isClick)}>
-            <Sitemap_gray_Ic />
+            <MenuIc />
           </button>
           <div
             className={`${styles.subMenu_bg} ${isHover && styles.on}`}

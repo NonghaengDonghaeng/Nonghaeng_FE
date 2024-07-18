@@ -8,9 +8,9 @@ import { getExpRoundApi } from "../../../(api)/getExpRoundApi";
 import { expRoundListType, expRoundType } from "../../../(types)/expRoundType";
 import { userInfoDataType } from "../../../(types)/userInfoDataType";
 import { getUserDataApi } from "../../../(api)/getUserDataApi";
-import ClickCount from "@/common/components/ClickCount/ClickCount";
+import ClickCount from "@/components/ClickCount/ClickCount";
 import { reserveApi } from "../../../(api)/reserveApi";
-import Overlay from "@/common/components/Overlay/Overlay";
+import Overlay from "@/components/Overlay/Overlay";
 import UserInfo from "../../../(components)/UserInfo/UserInfo";
 import ExpRoundList from "../../../(components)/ExpRoundList/ExpRoundList";
 import {

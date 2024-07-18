@@ -1,7 +1,7 @@
 /* desktop */
 @screen pc {
   .search_main {
-    @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-[5px] top-[510px] flex justify-between absolute bg-yellow/85;
+    @apply w-[80%] h-[112px] py-[32px] px-[64px] rounded-md top-[510px] flex justify-between absolute bg-yellow/85;
   }
   .search_main > div {
     @apply flex justify-between;
@@ -14,13 +14,10 @@
   }
   /* region, category box*/
   .search_main > div > div {
-    @apply w-[48%] h-[48px] rounded-[5px];
+    @apply w-[48%] h-[48px] rounded-md;
   }
   .search_main > div > div > label {
     @apply py-[12px] px-[20px] flex justify-between cursor-pointer;
-  }
-  .search_main > div > div > label > svg {
-    @apply mt-[6px];
   }
   .search_main > div > div > ul {
     @apply w-full rounded-[5px] border-stone overflow-auto cursor-pointer relative z-[10] text-stone bg-white duration-300;
@@ -46,7 +43,7 @@
   }
   /* input */
   .search_main > div > input {
-    @apply w-[60%] h-[48px] px-[16px] rounded-[5px];
+    @apply w-[60%] h-[48px] px-[16px] rounded-md;
   }
 }
 
@@ -70,9 +67,6 @@
   }
   .search_main > div > div > label {
     @apply py-[12px] px-[20px] flex justify-between cursor-pointer;
-  }
-  .search_main > div > div > label > svg {
-    @apply mt-[6px];
   }
   .search_main > div > div > ul {
     @apply w-full rounded-[5px] border-stone overflow-auto cursor-pointer relative z-[10] text-stone bg-white duration-300;

@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import SearchMain from "./(components)/SearchMain/SearchMain";
-import ListTitle from "@/common/components/ListTitle/ListTitle";
-import ExpList from "@/common/components/ExpList/ExpList";
-import LodgList from "@/common/components/LodgList/LodgList";
+import ListTitle from "@/components/ListTitle/ListTitle";
+import ExpList from "@/components/ExpList/ExpList";
+import LodgList from "@/components/LodgList/LodgList";
 import getMainApi from "./(api)/getMainApi";
 import styles from "./page.module.css";
-import { expListContentDataType } from "@/common/types/expListDataType";
-import { lodgListContentDataType } from "@/common/types/lodgListDataType";
+import { expListContentDataType } from "@/types/expListDataType";
+import { lodgListContentDataType } from "@/types/lodgListDataType";
 import MainSection from "@/app/(components)/MainSection/MainSection";
 import homePageResData from "@/db/homePageResData.json";
 

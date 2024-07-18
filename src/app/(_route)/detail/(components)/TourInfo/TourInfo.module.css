@@ -11,13 +11,13 @@
 
 @screen pc {
   .tour_info {
-    @apply text-[16px] font-[400] relative;
+    @apply relative;
   }
   .tour_info > h1 {
     @apply my-[20px] text-[24px] font-[600] flex items-center;
   }
   .tour_info > h1 > span {
-    @apply ml-[14px];
+    @apply ml-[14px] text-orange;
   }
   .tour_info > h2 {
     @apply mb-[20px];
@@ -29,13 +29,13 @@
     @apply mr-[12px] inline-block items-center;
   }
   .tour_info > div:nth-child(3) > ul > li > svg {
-    @apply mr-[6px] inline-block;
+    @apply mr-[6px] inline-block text-orange;
   }
   .tour_info > div:nth-child(3) > div {
     @apply w-[200px] flex;
   }
   .tour_info > div:nth-child(3) > div > button {
-    @apply w-[50%] px-[12px] h-full flex items-center rounded-md;
+    @apply w-[50%] px-[12px] h-full flex items-center rounded-md text-orange;
   }
   .tour_info > div:nth-child(3) > div > button:hover {
     @apply bg-orange/20;
@@ -54,13 +54,13 @@
 
 @screen tablet {
   .tour_info {
-    @apply text-[16px] font-[400] relative;
+    @apply relative;
   }
   .tour_info > h1 {
     @apply my-[20px] text-[24px] font-[600] flex items-center;
   }
   .tour_info > h1 > span {
-    @apply ml-[14px];
+    @apply ml-[14px] text-orange;
   }
   .tour_info > h2 {
     @apply mb-[20px];
@@ -72,13 +72,13 @@
     @apply mr-[12px] inline-block items-center;
   }
   .tour_info > div:nth-child(3) > ul > li > svg {
-    @apply mr-[6px] inline-block;
+    @apply mr-[6px] inline-block text-orange;
   }
   .tour_info > div:nth-child(3) > div {
     @apply w-[200px] flex;
   }
   .tour_info > div:nth-child(3) > div > button {
-    @apply w-[100px] px-[12px] h-full flex items-center rounded-md;
+    @apply w-[100px] px-[12px] h-full flex items-center rounded-md text-orange;
   }
   .tour_info > div:nth-child(3) > div > button:hover {
     @apply bg-orange/20;
@@ -97,13 +97,13 @@
 
 @screen mobile {
   .tour_info {
-    @apply text-[16px] font-[400] relative;
+    @apply relative;
   }
   .tour_info > h1 {
     @apply my-[20px] text-[24px] font-[600] flex items-center;
   }
   .tour_info > h1 > span {
-    @apply ml-[14px];
+    @apply ml-[14px] text-orange;
   }
   .tour_info > h2 {
     @apply mb-[20px];
@@ -115,19 +115,19 @@
     @apply mr-[12px] inline-block items-center;
   }
   .tour_info > div:nth-child(3) > ul > li > svg {
-    @apply mr-[6px] inline-block;
+    @apply mr-[6px] inline-block text-orange;
   }
   .tour_info > div:nth-child(3) > div {
     @apply h-[100px] p-[20px] flex justify-between border-[1px] border-stone/40 rounded-md;
   }
   .tour_info > div:nth-child(3) > div > button {
-    @apply w-[100px] px-[12px] h-full flex items-center rounded-md;
+    @apply w-[100px] px-[12px] h-full flex items-center rounded-md text-orange;
   }
   .tour_info > div:nth-child(3) > div > button:hover {
     @apply bg-orange/20;
   }
   .tour_info > div:nth-child(3) > div > button > span {
-    @apply w-full text-orange;
+    @apply w-full;
   }
   .tour_info > div:nth-child(3) > div > button > span > label {
     @apply block rounded-full mx-[12px] text-[12px];

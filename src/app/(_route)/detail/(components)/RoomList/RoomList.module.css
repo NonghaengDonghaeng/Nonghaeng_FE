@@ -3,7 +3,7 @@
     @apply text-stone font-[500];
   }
   .room_list > div:first-child {
-    @apply w-full flex items-center justify-between;
+    @apply w-full my-[10px] flex items-center justify-between;
   }
   .room_list > div:first-child > div {
     @apply flex items-center text-[14px] text-orange;
@@ -71,7 +71,7 @@
 /* 모바일 */
 @screen mobile {
   .room_list > div:first-child {
-    @apply w-full;
+    @apply w-full my-[10px];
   }
   .room_list > div:first-child > div {
     @apply flex items-center text-[14px] text-orange;

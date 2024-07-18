@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { useChange } from "@/hooks/useChange";
 import styles from "./page.module.css";
-import { regionMap } from "@/model/name/name";
-import { formType, inputType } from "@/common/types/eventType";
+import { regionMap } from "@/models/name";
+import { formType, inputType } from "@/types/eventType";
 import { sellerType } from "../../../(types)/sellerType";
 import { joinSellerApi } from "@/app/(_route)/acount/(api)/joinApi";
 

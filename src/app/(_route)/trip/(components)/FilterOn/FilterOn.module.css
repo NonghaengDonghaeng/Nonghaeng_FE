@@ -1,33 +1,27 @@
 /* 데스크탑 */
-@media (min-width: 1024px) {
+@screen pc {
   .filter_on {
-    @apply absolute right-[10%] flex items-center;
+    @apply absolute right-[10%] flex items-center text-stone;
   }
   .filter_on > svg {
-    @apply mr-[10px];
-  }
-  .filter_on > span {
-    @apply text-[18px] text-stone font-[500];
+    @apply mr-[6px];
   }
 }
 
 /* 데스크탑 */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@screen tablet {
   .filter_on {
-    @apply absolute right-[5%] flex items-center;
+    @apply absolute right-[5%] flex items-center text-stone;
   }
   .filter_on > svg {
-    @apply mr-[10px];
-  }
-  .filter_on > span {
-    @apply text-[18px] text-stone font-[500];
+    @apply mr-[6px];
   }
 }
 
 /* 모바일 */
-@media (max-width: 767px) {
+@screen mobile {
   .filter_on {
-    @apply absolute right-[2.5%] flex items-center;
+    @apply absolute right-[2.5%] flex items-center text-stone;
   }
   .filter_on > span {
     @apply hidden;

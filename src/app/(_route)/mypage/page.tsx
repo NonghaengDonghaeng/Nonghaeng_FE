@@ -3,12 +3,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
-import Person_orange_Ic from "icon/person_orange.svg";
 import { mypageDataType } from "./(types)/mypageDataType";
 import { getMypageApi } from "@/app/(_route)/mypage/(api)/getMypageDataApi";
 import store from "@/redux/loginStateStore";
 import ReserveList from "./(components)/ReserveList/ReserveList";
 import mypageData from "@/db/mypageResData.json";
+import {PersonIc} from "public/svg";
 
 export default function Page() {
   const router = useRouter();
@@ -43,7 +43,7 @@ export default function Page() {
         <div>
           <h1>{resData?.name}의 마이페이지</h1>
           <Link href="/mypage/edit">
-            <Person_orange_Ic />
+            <PersonIc />
             회원정보수정
           </Link>
           <button onClick={logout}>로그아웃</button>

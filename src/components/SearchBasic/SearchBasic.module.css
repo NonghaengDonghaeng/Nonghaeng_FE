@@ -1,0 +1,42 @@
+/* 데스크탑 */
+@screen pc {
+  .search_base > form {
+    @apply h-[36px] px-[6px] shadow flex justify-between items-center border rounded-full border-stone;
+  }
+  .search_base > form > input {
+    @apply px-[8px] mr-[6px] rounded-full;
+  }
+
+}
+
+/* 테블릿 */
+@screen tablet {
+  .search_base {
+    @apply w-full flex justify-center text-stone;
+  }
+  .search_base > form {
+    @apply w-[200px] h-[36px] my-[10px] flex border rounded-md bg-white;
+  }
+  .search_base > form > input {
+    @apply w-[160px] h-[30px] m-[2px] px-[8px] rounded-md text-[13px];
+  }
+  .search_base > form > button {
+    @apply w-[24px] h-[24px] mt-[2px]  mr-[10px] rounded-full;
+  }
+}
+
+/* 모바일 */
+@screen mobile {
+  .search_base {
+    @apply fixed w-full h-full top-0 pt-[60px] z-[50] bg-white;
+  }
+  .search_base > form {
+    @apply flex px-[10%] justify-between items-center;
+  }
+  .search_base > form > input {
+    @apply w-full h-[40px] px-[8px] rounded-md border border-stone/60;
+  }
+  .search_base > form > button {
+    @apply ml-[10px];
+  }
+}

@@ -3,7 +3,7 @@ import SectionComponent1 from "@/app/(components)/SectionComponents/SectionCompo
 import SectionComponent2 from "@/app/(components)/SectionComponents/SectionComponent2/SectionComponent2";
 import SectionComponent3 from "@/app/(components)/SectionComponents/SectionComponent3/SectionComponent3";
 import { useEffect, useState } from "react";
-import { BackIc, FrontIc, StopIc } from "icon/index";
+import {MoreRightIc, MoreLeftIc, StopIc} from "public/svg";
 
 function MainSection() {
   const sectionMap: any = {
@@ -49,17 +49,17 @@ function MainSection() {
       <div>{sectionMap[sectionNumber]}</div>
       <div>
         <button onClick={() => setIsNumbering(!isNumbering)}>
-          {isNumbering ? <StopIc /> : <FrontIc />}
+          {isNumbering ? <StopIc /> : <MoreRightIc />}
         </button>
         <div>
           <button onClick={() => decreaseNumber()}>
-            <BackIc />
+            <MoreLeftIc/>
           </button>
           {sectionNumber}
           {" / "}
           {Object.keys(sectionMap).length}
           <button onClick={() => increaseNumber()}>
-            <FrontIc />
+            <MoreRightIc />
           </button>
         </div>
       </div>

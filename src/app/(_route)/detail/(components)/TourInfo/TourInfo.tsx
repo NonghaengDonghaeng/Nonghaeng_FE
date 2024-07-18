@@ -2,14 +2,8 @@
 import { useState } from "react";
 import SubList from "../SubList/SubList";
 import styles from "./TourInfo.module.css";
-import {
-  Email_orange_Ic,
-  Exp_orange_Ic,
-  Grade_orange_Ic,
-  Location_orange_Ic,
-  Lodg_orange_Ic,
-  Tell_orange_Ic,
-} from "icon/index";
+
+import {StarIc, LinkIc, LocationIc, ExpIc, RoomIc} from "public/svg";
 import { tourDetailDataType } from "../../(types)/tourDetailDataType";
 
 type PropsType = {
@@ -24,7 +18,7 @@ function TourInfo({ tourInfo }: PropsType) {
       <h1>
         {tourInfo?.name}
         <span>
-          <Grade_orange_Ic />
+          <StarIc/>
         </span>
       </h1>
       <h2>{tourInfo?.summary}</h2>
@@ -34,20 +28,20 @@ function TourInfo({ tourInfo }: PropsType) {
             <Tell_orange_Ic />
           </li> */}
           <li>
-            <Email_orange_Ic />
+            <LinkIc/>
             {tourInfo?.homepage_url}
           </li>
           <li>
-            <Location_orange_Ic />
+            <LocationIc/>
             {tourInfo?.address}
           </li>
         </ul>
         <div>
           <button
             className={isClick.exp ? styles.on : styles.off}
-            onClick={() => setIsClick({ exp: !isClick.exp, room: false })}
+            onClick={() => setIsClick({exp: !isClick.exp, room: false})}
           >
-            <Exp_orange_Ic />
+            <ExpIc/>
             <span>
               체험
               <label>{tourInfo?.exp_summary_list.length}</label>
@@ -55,9 +49,9 @@ function TourInfo({ tourInfo }: PropsType) {
           </button>
           <button
             className={isClick.room ? styles.on : styles.off}
-            onClick={() => setIsClick({ exp: false, room: !isClick.room })}
+            onClick={() => setIsClick({exp: false, room: !isClick.room})}
           >
-            <Lodg_orange_Ic />
+            <RoomIc />
             <span>
               숙박<label> {tourInfo?.room_summary_list.length}</label>
             </span>

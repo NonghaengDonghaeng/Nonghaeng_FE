@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CustomImage from "@/common/components/CustomImage/CustomImage";
+import CustomImage from "@/components/CustomImage/CustomImage";
 import styles from "./SubList.module.css";
 import {
   ExpSummaryListType,

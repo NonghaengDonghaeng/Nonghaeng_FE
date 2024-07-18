@@ -6,9 +6,9 @@ import {
   tourCategoryMap,
   lodgCategoryMap,
   expCategoryMap,
-} from "@/model/name/name";
-import { inputType } from "@/common/types/eventType";
-import X_Ic from "icon/x_gray.svg";
+} from "@/models/name";
+import { inputType } from "@/types/eventType";
+import {XIc} from "public/svg";
 
 type FilterPropsType = {
   pageState: pageStateType;
@@ -97,7 +97,7 @@ export default function Filter({ pageState, setPageState }: FilterPropsType) {
       <h1>
         상세검색
         <button onClick={() => setPageState({ ...pageState, isClick: false })}>
-          <X_Ic />
+          <XIc />
         </button>
       </h1>
       {(pageState.pageType == "tour" ||

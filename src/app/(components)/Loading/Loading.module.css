@@ -2,7 +2,7 @@
   .loading {
     @apply w-full h-[800px] flex items-center justify-center;
   }
-  .loading > img {
+  .loading > svg {
     @apply w-[40px] h-[40px] animate-spin;
   }
 }
@@ -11,7 +11,7 @@
   .loading {
     @apply w-full h-[800px] flex items-center justify-center;
   }
-  .loading > img {
+  .loading > svg {
     @apply w-[40px] h-[40px] animate-spin;
   }
 }
@@ -20,7 +20,7 @@
   .loading {
     @apply w-full h-[800px] flex items-center justify-center;
   }
-  .loading > img {
+  .loading > svg {
     @apply w-[40px] h-[40px] animate-spin;
   }
 }

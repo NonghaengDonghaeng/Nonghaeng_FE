@@ -3,12 +3,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import ListTitle from "@/common/components/ListTitle/ListTitle";
-import LodgList from "@/common/components/LodgList/LodgList";
-import Paging from "@/common/components/Paging/Paging";
+import ListTitle from "@/components/ListTitle/ListTitle";
+import LodgList from "@/components/LodgList/LodgList";
+import Paging from "@/components/Paging/Paging";
 import styles from "./page.module.css";
 import { pageStateType } from "../../(types)/pageStateType";
-import { lodgListDataType } from "@/common/types/lodgListDataType";
+import { lodgListDataType } from "@/types/lodgListDataType";
 import { getLodgListApi } from "../../(api)/getLodgListApi";
 import lodgListPageResData from "@/db/lodgdata/list.json";
 

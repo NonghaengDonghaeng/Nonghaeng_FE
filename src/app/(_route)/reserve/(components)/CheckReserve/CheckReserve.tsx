@@ -1,5 +1,5 @@
 import { useRouter } from "next/navigation";
-import { setBooleanType } from "@/common/types/setStateType";
+import { setBooleanType } from "@/types/setStateType";
 import styles from "./CheckReserve.module.css";
 import { returnExpReserveType } from "../../(types)/expReserveInfoType";
 import requestPay from "../../(api)/requestPayApi";

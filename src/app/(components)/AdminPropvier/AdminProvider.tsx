@@ -2,8 +2,8 @@
 import {useEffect, useState, Suspense, ReactNode} from "react";
 import {useRouter} from "next/navigation";
 import {usePathname} from "next/navigation";
-import guestLoginApi from "@/common/api/guestLoginApi";
-import verifyJwtApi from "@/common/api/verifyJwtApi";
+import guestLoginApi from "@/api/guestLoginApi";
+import verifyJwtApi from "@/api/verifyJwtApi";
 import useStickyState from "@/hooks/useStickyState";
 import {LoginContext} from "@/hooks/useLogin";
 

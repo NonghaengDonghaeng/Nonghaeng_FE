@@ -2,12 +2,12 @@
 import { useState } from "react";
 import { useSearch } from "@/hooks/useSearch";
 import { useChange } from "@/hooks/useChange";
-import SearchButton from "@/common/components/SearchButton/SearchButton";
+import SearchButton from "@/components/SearchButton/SearchButton";
 import styles from "./SearchMain.module.css";
-import { inputType, formType } from "@/common/types/eventType";
-import { searchItemType } from "@/common/types/searchItemType";
-import { category, regionMap } from "@/model/name/name";
-import { More_gray_Ic, More_white_Ic } from "icon/index";
+import { inputType, formType } from "@/types/eventType";
+import { searchItemType } from "@/types/searchItemType";
+import { category, regionMap } from "@/models/name";
+import {MoreUpDownIc} from "public/svg";
 
 export default function SearchMain() {
   const search = useSearch();
@@ -53,7 +53,7 @@ export default function SearchMain() {
         >
           <label>
             {searhcItem.region}
-            {isClick.region ? <More_white_Ic /> : <More_gray_Ic />}
+            <MoreUpDownIc />
           </label>
           <ul>{regionList}</ul>
         </div>
@@ -67,7 +67,7 @@ export default function SearchMain() {
         >
           <label>
             {searhcItem.category}
-            {isClick.category ? <More_white_Ic /> : <More_gray_Ic />}
+            <MoreUpDownIc />
           </label>
           <ul>{categoryList}</ul>
         </div>

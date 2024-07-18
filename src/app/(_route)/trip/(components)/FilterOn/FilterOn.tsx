@@ -1,6 +1,6 @@
 import { pageStateType, setPageStateType } from "../../(types)/pageStateType";
 import styles from "./FilterOn.module.css";
-import Filter_Ic from "icon/sitemap_gray.svg";
+import {FilterIc} from "public/svg";
 
 type FilterOnPropsType = {
   pageState: pageStateType;
@@ -16,7 +16,7 @@ export default function FilterOn({
       className={styles.filter_on}
       onClick={() => setPageState({ ...pageState, isClick: true })}
     >
-      <Filter_Ic />
+      <FilterIc />
       <span>상세검색</span>
     </button>
   );

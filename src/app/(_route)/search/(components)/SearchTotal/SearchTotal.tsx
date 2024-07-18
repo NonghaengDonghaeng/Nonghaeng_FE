@@ -3,10 +3,10 @@ import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useSearch } from "@/hooks/useSearch";
 import { useChange } from "@/hooks/useChange";
-import SearchButton from "@/common/components/SearchButton/SearchButton";
+import SearchButton from "@/components/SearchButton/SearchButton";
 import styles from "./SearchTotal.module.css";
-import { inputType, formType } from "@/common/types/eventType";
-import { searchItemType } from "@/common/types/searchItemType";
+import { inputType, formType } from "@/types/eventType";
+import { searchItemType } from "@/types/searchItemType";
 
 export default function SearchTotal() {
   const searchParams = useSearchParams();

@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "@/redux/loginStateStore";
 import { userType } from "../(types)/userType";
 import { sellerType } from "../(types)/sellerType";
-import { getErrorMessage } from "@/common/utils/getErrorData";
+import { getErrorMessage } from "@/utils/getErrorData";
 
 // 소비자로그인
 type userPropsType = { user: userType };

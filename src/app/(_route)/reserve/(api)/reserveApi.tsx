@@ -1,6 +1,6 @@
 import axios from "axios";
 import { roomReserveInfoType } from "../(types)/roomReserveInfoType";
-import { getErrorMessage } from "@/common/utils/getErrorData";
+import { getErrorMessage } from "@/utils/getErrorData";
 import { expReserveInfoType } from "../(types)/expReserveInfoType";
 
 type PropsType = {

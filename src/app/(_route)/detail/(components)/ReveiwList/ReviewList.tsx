@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./ReviewList.module.css";
-import Paging from "@/common/components/Paging/Paging";
+import Paging from "@/components/Paging/Paging";
 import { pageStateType } from "@/app/(_route)/trip/(types)/pageStateType";
 import {
   ExpReviewContentType,
@@ -10,7 +10,7 @@ import {
 import expCommentData from "@/db/expdata/review.json";
 import Link from "next/link";
 import { getReviewtListApi } from "../../(api)/getReviewListApi";
-import CustomImage from "@/common/components/CustomImage/CustomImage";
+import CustomImage from "@/components/CustomImage/CustomImage";
 
 type PropsType = { id: number; type: string };
 
@@ -23,7 +23,7 @@ const isRoom = (item: ReviewContentType): item is RoomReviewContentType => {
   return item.type === "room";
 };
 
-function ReviewtList({ id, type }: PropsType) {
+function ReviewList({ id, type }: PropsType) {
   const [pageState, setPageState] = useState<pageStateType>({
     pageIndex: 1,
   });
@@ -74,4 +74,4 @@ function ReviewtList({ id, type }: PropsType) {
   );
 }
 
-export default ReviewtList;
+export default ReviewList;

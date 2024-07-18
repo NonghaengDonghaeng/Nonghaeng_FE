@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Nav from "@/common/components/Nav/Nav";
-import { sitemapHref } from "@/model/href/href";
+import Nav from "@/components/Nav/Nav"
+import { sitemapHref } from "@/models/href";
 
 export const metadata: Metadata = {
   title: "농행동행 | 사이트맵",

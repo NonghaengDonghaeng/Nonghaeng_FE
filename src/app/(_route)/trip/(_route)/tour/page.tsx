@@ -2,12 +2,12 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import useSetUrl from "@/hooks/useSetUrl";
-import ListTitle from "@/common/components/ListTitle/ListTitle";
-import TourList from "@/common/components/TourList/TourList";
-import Paging from "@/common/components/Paging/Paging";
+import ListTitle from "@/components/ListTitle/ListTitle";
+import TourList from "@/components/TourList/TourList";
+import Paging from "@/components/Paging/Paging";
 import getTourListApi from "../../(api)/getTourListApi";
 import styles from "./page.module.css";
-import { tourListDataType } from "@/common/types/tourListDataType";
+import { tourListDataType } from "@/types/tourListDataType";
 import { pageStateType } from "../../(types)/pageStateType";
 import tourListPageResData from "@/db/tourdata/list.json";
 

@@ -12,7 +12,7 @@ import store from "@/redux/loginStateStore";
 import LikeAndReserve from "../../../(components)/LikeAndReserve/LikeAndReserve";
 import ExpInfo from "../../../(components)/ExpInfo/ExpInfo";
 import expDetailPageData from "@/db/expdata/detail.json";
-import MarkDownView from "@/common/components/MarkDownView/MarkDownView";
+import MarkDownView from "@/components/MarkDownView/MarkDownView";
 
 export default function Page({ params }: { params: { id: string } }) {
   const { element, moveElement } = useMove();
@@ -33,6 +33,7 @@ export default function Page({ params }: { params: { id: string } }) {
       }
     });
     // setResData(expDetailPageData);
+    // setVisible(true)
   }, []);
 
   const routeExpReserve = () => {

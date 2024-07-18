@@ -1,6 +1,6 @@
-import Nav from "@/common/components/Nav/Nav";
+import Nav from "@/components/Nav/Nav"
 import { Metadata } from "next";
-import { commuHref } from "@/model/href/href";
+import { commuHref } from "@/models/href";
 
 export const metadata: Metadata = {
   title: "농행동행 | 커뮤니티",

@@ -32,7 +32,7 @@ html {
 }
 
 body {
-  @apply text-stone font-[500];
+  @apply text-stone font-[400];
 }
 ::-webkit-scrollbar {
   @apply hidden;

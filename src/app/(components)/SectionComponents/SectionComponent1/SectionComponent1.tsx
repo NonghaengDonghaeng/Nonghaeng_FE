@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./SectionComponent1.module.css";
 import { section1_bg } from "img/index";
-import { More_nonghang_Ic } from "icon/index";
+import {MoreRightIc} from "public/svg";
 
 function SectionComponent1() {
   return (
@@ -19,7 +19,7 @@ function SectionComponent1() {
       </h2>
       <Link href="/intro/nonghaeng">
         농행동행 알아보기
-        <More_nonghang_Ic />
+        <MoreRightIc/>
       </Link>
     </div>
   );

@@ -10,7 +10,7 @@ import {
   ReturnRoomReserveType,
   roomReserveInfoType,
 } from "../../../(types)/roomReserveInfoType";
-import Overlay from "@/common/components/Overlay/Overlay";
+import Overlay from "@/components/Overlay/Overlay";
 import CheckReserve from "../../../(components)/CheckReserve/CheckReserve";
 
 export default function Page({ params }: { params: { id: string } }) {

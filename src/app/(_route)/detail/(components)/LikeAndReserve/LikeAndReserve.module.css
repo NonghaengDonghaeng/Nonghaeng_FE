@@ -7,8 +7,14 @@
 .like_and_reserve > button:nth-child(1) {
   @apply bg-orange/10;
 }
+.like_and_reserve > button:nth-child(1)  > svg{
+  @apply text-orange
+}
 .like_and_reserve > button:nth-child(2) {
   @apply bg-green/10;
+}
+.like_and_reserve > button:nth-child(2) > svg {
+  @apply text-green
 }
 .like_and_reserve > button > svg {
   @apply ml-[6px];

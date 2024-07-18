@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import CustomImage from "@/common/components/CustomImage/CustomImage";
+import CustomImage from "@/components/CustomImage/CustomImage";
 import styles from "./DetailImg.module.css";
 
 type PropsType = {

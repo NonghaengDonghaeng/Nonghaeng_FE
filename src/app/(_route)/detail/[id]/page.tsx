@@ -9,7 +9,7 @@ import tourDetailPageResData from "@/db/tourdata/detail.json";
 import DetailImg from "../(components)/DetailImg/DetailImg";
 import { getTourDetailApi } from "../(api)/getTourDetailApi";
 import ReviewtList from "../(components)/ReveiwList/ReviewList";
-import MarkDownView from "@/common/components/MarkDownView/MarkDownView";
+import MarkDownView from "@/components/MarkDownView/MarkDownView";
 import TourInfo from "../(components)/TourInfo/TourInfo";
 
 export default function Page({ params }: { params: { id: string } }) {
@@ -21,14 +21,14 @@ export default function Page({ params }: { params: { id: string } }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    getTourDetailApi({ tourId }).then((res) => {
-      if (res?.status == 200) {
-        setResData(res?.data);
-        setVisible(true);
-      }
-    });
-    // setResData(tourDetailPageResData);
-    // setVisible(true);
+    // getTourDetailApi({ tourId }).then((res) => {
+    //   if (res?.status == 200) {
+    //     setResData(res?.data);
+    //     setVisible(true);
+    //   }
+    // });
+    setResData(tourDetailPageResData);
+    setVisible(true);
   }, []);
 
   return (

@@ -1,10 +1,7 @@
 import Link from "next/link";
 import styles from "./ExpInfo.module.css";
-import Grade_orange_Ic from "icon/grade_orange.svg";
-import Person_orange_Ic from "icon/person_orange.svg";
-import Time_orange_Ic from "icon/time_orange.svg";
-import Price_orange_Ic from "icon/price_orange.svg";
 import { expDetailDataType } from "../../(types)/expDetailDataType";
+import {PersonIc, PriceIc, StarIc, TimeIc} from "public/svg";
 
 type PropsType = {
   expData: expDetailDataType | undefined;
@@ -23,7 +20,7 @@ export default function ExpInfo({ expData }: PropsType) {
       <h1>
         {expData?.experience_name}
         <span>
-          <Grade_orange_Ic />
+          <StarIc />
           {expData?.likes}
         </span>
       </h1>
@@ -31,18 +28,18 @@ export default function ExpInfo({ expData }: PropsType) {
       <h2>{expData?.summary}</h2>
       <div>
         <p>
-          <Person_orange_Ic />
+          <PersonIc/>
           <label>참여인원</label>
           {expData?.min_participant}명{" ~ "}
           {expData?.max_participant}명
         </p>
         <p>
-          <Time_orange_Ic />
+          <TimeIc/>
           <label>소요시간</label>
           {expData?.duration_hours}시간
         </p>
         <p>
-          <Price_orange_Ic />
+          <PriceIc/>
           <label>체험비용</label>
           {expData?.price}원
         </p>

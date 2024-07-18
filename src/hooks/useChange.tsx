@@ -1,4 +1,4 @@
-import { inputType, selectType } from "@/common/types/eventType";
+import { inputType, selectType } from "@/types/eventType";
 
 type PropsType = {
   changeItem: {

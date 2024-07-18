@@ -3,7 +3,7 @@ import { cancelReserveApi } from "../../(api)/cancelReserveApi";
 import { useChange } from "@/hooks/useChange";
 import styles from "./EditReserve.module.css";
 import editReviewApi from "../../(api)/editReview";
-import { inputType } from "@/common/types/eventType";
+import { inputType } from "@/types/eventType";
 
 type PropsType = {
   id: number;
