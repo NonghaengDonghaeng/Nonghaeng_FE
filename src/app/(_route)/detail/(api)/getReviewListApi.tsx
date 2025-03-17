@@ -17,6 +17,6 @@ export const getReviewtListApi = async ({ id, type }: PropsType) => {
     return res;
   } catch (e) {
     const message = getErrorMessage(e);
-    alert(message);
+    console.log(message);
   }
 };
