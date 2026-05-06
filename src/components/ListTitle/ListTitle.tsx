@@ -17,11 +17,14 @@ type PropsType = {
 
 function ListTitle({ title, pageState, setPageState }: PropsType) {
   const linkMap: any = {
-    농촌관광: { href: "tour", linkTitle: "농촌관광" },
-    우수체험: { href: "exp", linkTitle: "농촌체험" },
-    농촌체험: { href: "exp", linkTitle: "농촌체험" },
-    우수숙박: { href: "lodg", linkTitle: "농촌숙박" },
-    농촌숙박: { href: "lodg", linkTitle: "농촌숙박" },
+    농촌관광: { href: "trip/tour", linkTitle: "농촌관광" },
+    우수체험: { href: "trip/exp", linkTitle: "농촌체험" },
+    농촌체험: { href: "trip/exp", linkTitle: "농촌체험" },
+    우수숙박: { href: "trip/lodg", linkTitle: "농촌숙박" },
+    농촌숙박: { href: "trip/lodg", linkTitle: "농촌숙박" },
+    공지사항: { href: "commu/notice", linkTitle: "공지사항" },
+    농행후기: { href: "commu/review", linkTitle: "농행후기" },
+    고객문의: { href: "commu/inquiry", linkTitle: "고객문의" },
   };
 
   return (
@@ -41,7 +44,7 @@ function ListTitle({ title, pageState, setPageState }: PropsType) {
         <>
           <div className={styles.list_title}>
             <h1>{title}</h1>
-            <Link href={`trip/${linkMap[title].href}`}>
+            <Link href={`/${linkMap[title].href}`}>
               {`더 많은 ${linkMap[title].linkTitle} 보러가기`}
               <MoreRightIc />
             </Link>
